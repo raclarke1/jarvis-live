@@ -385,6 +385,21 @@
             gap: 12px;
         }
 
+        .market-asset-icon-link {
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 10px;
+        }
+
+        .market-asset-icon-link:hover {
+            transform: scale(1.1);
+        }
+
+        .market-asset-icon-link:hover .market-asset-icon {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
         .market-asset-icon {
             width: 36px;
             height: 36px;
@@ -709,11 +724,11 @@
         <div class="grid grid-main">
             <!-- Left Column -->
             <div>
-                <!-- Active Position -->
+                <!-- Active Trades -->
                 <div class="card position-card fade-in" style="margin-bottom: 24px;">
                     <div class="card-header">
-                        <span class="card-title">📊 Active Position</span>
-                        <span style="font-size: 12px; color: var(--text-muted);">No open positions</span>
+                        <span class="card-title">🔥 Active Trades</span>
+                        <span style="font-size: 12px; color: var(--text-muted);" id="activeTradesStatus">No open positions</span>
                     </div>
                     <div class="card-body">
                         <div style="text-align: center; padding: 24px;">
@@ -744,7 +759,9 @@
                             </div>
                             <div class="market-row" id="btcRow">
                                 <div class="market-asset">
-                                    <div class="market-asset-icon" style="background: linear-gradient(135deg, #f7931a 0%, #e8850f 100%);">₿</div>
+                                    <a href="https://www.tradingview.com/chart/?symbol=COINBASE:BTCUSD" target="_blank" class="market-asset-icon-link" title="Open BTC chart on TradingView">
+                                        <div class="market-asset-icon" style="background: linear-gradient(135deg, #f7931a 0%, #e8850f 100%);">₿</div>
+                                    </a>
                                     <div>
                                         <div class="market-asset-name">Bitcoin</div>
                                         <div class="market-asset-pair">BTC/USD</div>
@@ -757,7 +774,9 @@
                             </div>
                             <div class="market-row" id="xrpRow">
                                 <div class="market-asset">
-                                    <div class="market-asset-icon" style="background: linear-gradient(135deg, #23292F 0%, #1a1f2e 100%); border: 1px solid #3d4a5c;">X</div>
+                                    <a href="https://www.tradingview.com/chart/?symbol=COINBASE:XRPUSD" target="_blank" class="market-asset-icon-link" title="Open XRP chart on TradingView">
+                                        <div class="market-asset-icon" style="background: linear-gradient(135deg, #23292F 0%, #1a1f2e 100%); border: 1px solid #3d4a5c;">X</div>
+                                    </a>
                                     <div>
                                         <div class="market-asset-name">XRP</div>
                                         <div class="market-asset-pair">XRP/USD</div>
@@ -770,7 +789,9 @@
                             </div>
                             <div class="market-row" id="solRow">
                                 <div class="market-asset">
-                                    <div class="market-asset-icon" style="background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);">◎</div>
+                                    <a href="https://www.tradingview.com/chart/?symbol=COINBASE:SOLUSD" target="_blank" class="market-asset-icon-link" title="Open SOL chart on TradingView">
+                                        <div class="market-asset-icon" style="background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);">◎</div>
+                                    </a>
                                     <div>
                                         <div class="market-asset-name">Solana</div>
                                         <div class="market-asset-pair">SOL/USD</div>
@@ -783,7 +804,9 @@
                             </div>
                             <div class="market-row" id="suiRow">
                                 <div class="market-asset">
-                                    <div class="market-asset-icon" style="background: linear-gradient(135deg, #6fbcf0 0%, #4da2e0 100%);">S</div>
+                                    <a href="https://www.tradingview.com/chart/?symbol=COINBASE:SUIUSD" target="_blank" class="market-asset-icon-link" title="Open SUI chart on TradingView">
+                                        <div class="market-asset-icon" style="background: linear-gradient(135deg, #6fbcf0 0%, #4da2e0 100%);">S</div>
+                                    </a>
                                     <div>
                                         <div class="market-asset-name">Sui</div>
                                         <div class="market-asset-pair">SUI/USD</div>
@@ -809,11 +832,11 @@
                     <div class="card-body">
                         <div class="perf-grid">
                             <div class="perf-item">
-                                <div class="perf-value">5</div>
+                                <div class="perf-value">6</div>
                                 <div class="perf-label">Total Trades</div>
                             </div>
                             <div class="perf-item">
-                                <div class="perf-value positive">5</div>
+                                <div class="perf-value positive">6</div>
                                 <div class="perf-label">Winners</div>
                             </div>
                             <div class="perf-item">
@@ -829,10 +852,11 @@
                     </div>
                 </div>
 
-                <!-- Recent Trades -->
+                <!-- Trade History -->
                 <div class="card fade-in" style="animation-delay: 0.2s;">
                     <div class="card-header">
-                        <span class="card-title">📜 Recent Trades</span>
+                        <span class="card-title">📜 Trade History</span>
+                        <span style="font-size: 12px; color: var(--accent-green);">6 trades • +$164.07</span>
                     </div>
                     <div class="card-body">
                         <div class="trade-item">
@@ -885,6 +909,19 @@
                             <div class="trade-pnl">
                                 <div class="trade-pnl-value positive">+$11.06</div>
                                 <div class="trade-pnl-percent">+0.55%</div>
+                            </div>
+                        </div>
+                        <div class="trade-item">
+                            <div class="trade-info">
+                                <div class="trade-icon win">✓</div>
+                                <div class="trade-details">
+                                    <h4>SUI LONG</h4>
+                                    <p>Jan 26 • Framework Reset</p>
+                                </div>
+                            </div>
+                            <div class="trade-pnl">
+                                <div class="trade-pnl-value positive">+$2.07</div>
+                                <div class="trade-pnl-percent">+0.21%</div>
                             </div>
                         </div>
                     </div>
