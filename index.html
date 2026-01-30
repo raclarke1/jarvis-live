@@ -522,6 +522,48 @@
             color: var(--text-muted);
         }
 
+        .trade-item-expanded {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .trade-item-expanded .trade-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .trade-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            margin-top: 8px;
+        }
+
+        .trade-meta-item {
+            text-align: center;
+        }
+
+        .trade-meta-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .trade-meta-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .trade-meta-value.stop { color: var(--accent-red); }
+        .trade-meta-value.target { color: var(--accent-green); }
+
         /* Chart Container */
         .chart-container {
             height: 200px;
@@ -693,7 +735,7 @@
 
         <!-- Framework Badge -->
         <div class="framework-badge">
-            <span>📚 Framework: Al Brooks Price Action v2.0</span>
+            <span>📚 Framework: Backtest-Optimized v3.0 (4H Trend + 1H Entry)</span>
         </div>
 
         <!-- Stats Row -->
@@ -859,69 +901,178 @@
                         <span style="font-size: 12px; color: var(--accent-green);">6 trades • +$164.07</span>
                     </div>
                     <div class="card-body">
-                        <div class="trade-item">
-                            <div class="trade-info">
-                                <div class="trade-icon win">✓</div>
-                                <div class="trade-details">
-                                    <h4>XRP SHORT (Closed)</h4>
-                                    <p>Jan 30 • Full position closed</p>
+                        <!-- Trade #6: XRP SHORT -->
+                        <div class="trade-item trade-item-expanded">
+                            <div class="trade-header">
+                                <div class="trade-info">
+                                    <div class="trade-icon win">✓</div>
+                                    <div class="trade-details">
+                                        <h4>XRP SHORT</h4>
+                                        <p>Jan 29-30 • 25 hrs • Manual close</p>
+                                    </div>
+                                </div>
+                                <div class="trade-pnl">
+                                    <div class="trade-pnl-value positive">+$133.77</div>
+                                    <div class="trade-pnl-percent">+2.59%</div>
                                 </div>
                             </div>
-                            <div class="trade-pnl">
-                                <div class="trade-pnl-value positive">+$133.77</div>
-                                <div class="trade-pnl-percent">+2.59%</div>
+                            <div class="trade-meta">
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Entry</div>
+                                    <div class="trade-meta-value">$1.7855</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Exit</div>
+                                    <div class="trade-meta-value">$1.7287</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Stop</div>
+                                    <div class="trade-meta-value stop">$1.80</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Size</div>
+                                    <div class="trade-meta-value">2,898 XRP</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="trade-item">
-                            <div class="trade-info">
-                                <div class="trade-icon win">✓</div>
-                                <div class="trade-details">
-                                    <h4>BTC LONG</h4>
-                                    <p>Jan 26 • Framework Reset</p>
+
+                        <!-- Trade #5: BTC LONG -->
+                        <div class="trade-item trade-item-expanded">
+                            <div class="trade-header">
+                                <div class="trade-info">
+                                    <div class="trade-icon win">✓</div>
+                                    <div class="trade-details">
+                                        <h4>BTC LONG</h4>
+                                        <p>Jan 26 • 3 hrs • Framework reset</p>
+                                    </div>
+                                </div>
+                                <div class="trade-pnl">
+                                    <div class="trade-pnl-value positive">+$11.08</div>
+                                    <div class="trade-pnl-percent">+0.55%</div>
                                 </div>
                             </div>
-                            <div class="trade-pnl">
-                                <div class="trade-pnl-value positive">+$11.08</div>
-                                <div class="trade-pnl-percent">+0.55%</div>
+                            <div class="trade-meta">
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Entry</div>
+                                    <div class="trade-meta-value">$88,246</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Exit</div>
+                                    <div class="trade-meta-value">$88,735</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Stop</div>
+                                    <div class="trade-meta-value stop">N/A</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Size</div>
+                                    <div class="trade-meta-value">0.023 BTC</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="trade-item">
-                            <div class="trade-info">
-                                <div class="trade-icon win">✓</div>
-                                <div class="trade-details">
-                                    <h4>SOL LONG</h4>
-                                    <p>Jan 26 • Framework Reset</p>
+
+                        <!-- Trade #4: SOL LONG -->
+                        <div class="trade-item trade-item-expanded">
+                            <div class="trade-header">
+                                <div class="trade-info">
+                                    <div class="trade-icon win">✓</div>
+                                    <div class="trade-details">
+                                        <h4>SOL LONG</h4>
+                                        <p>Jan 26 • 14 hrs • Framework reset</p>
+                                    </div>
+                                </div>
+                                <div class="trade-pnl">
+                                    <div class="trade-pnl-value positive">+$7.34</div>
+                                    <div class="trade-pnl-percent">+0.73%</div>
                                 </div>
                             </div>
-                            <div class="trade-pnl">
-                                <div class="trade-pnl-value positive">+$7.34</div>
-                                <div class="trade-pnl-percent">+0.73%</div>
+                            <div class="trade-meta">
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Entry</div>
+                                    <div class="trade-meta-value">$123.85</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Exit</div>
+                                    <div class="trade-meta-value">$124.72</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Stop</div>
+                                    <div class="trade-meta-value stop">N/A</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Size</div>
+                                    <div class="trade-meta-value">8.08 SOL</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="trade-item">
-                            <div class="trade-info">
-                                <div class="trade-icon win">✓</div>
-                                <div class="trade-details">
-                                    <h4>XRP LONG x2</h4>
-                                    <p>Jan 26 • Framework Reset</p>
+
+                        <!-- Trade #3: XRP LONG x2 -->
+                        <div class="trade-item trade-item-expanded">
+                            <div class="trade-header">
+                                <div class="trade-info">
+                                    <div class="trade-icon win">✓</div>
+                                    <div class="trade-details">
+                                        <h4>XRP LONG x2</h4>
+                                        <p>Jan 26 • 14 hrs • Framework reset</p>
+                                    </div>
+                                </div>
+                                <div class="trade-pnl">
+                                    <div class="trade-pnl-value positive">+$11.06</div>
+                                    <div class="trade-pnl-percent">+0.55%</div>
                                 </div>
                             </div>
-                            <div class="trade-pnl">
-                                <div class="trade-pnl-value positive">+$11.06</div>
-                                <div class="trade-pnl-percent">+0.55%</div>
+                            <div class="trade-meta">
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Entry</div>
+                                    <div class="trade-meta-value">$1.90</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Exit</div>
+                                    <div class="trade-meta-value">$1.91</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Stop</div>
+                                    <div class="trade-meta-value stop">N/A</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Size</div>
+                                    <div class="trade-meta-value">1,053 XRP</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="trade-item">
-                            <div class="trade-info">
-                                <div class="trade-icon win">✓</div>
-                                <div class="trade-details">
-                                    <h4>SUI LONG</h4>
-                                    <p>Jan 26 • Framework Reset</p>
+
+                        <!-- Trade #2: SUI LONG -->
+                        <div class="trade-item trade-item-expanded">
+                            <div class="trade-header">
+                                <div class="trade-info">
+                                    <div class="trade-icon win">✓</div>
+                                    <div class="trade-details">
+                                        <h4>SUI LONG</h4>
+                                        <p>Jan 26 • 3 hrs • Framework reset</p>
+                                    </div>
+                                </div>
+                                <div class="trade-pnl">
+                                    <div class="trade-pnl-value positive">+$2.07</div>
+                                    <div class="trade-pnl-percent">+0.21%</div>
                                 </div>
                             </div>
-                            <div class="trade-pnl">
-                                <div class="trade-pnl-value positive">+$2.07</div>
-                                <div class="trade-pnl-percent">+0.21%</div>
+                            <div class="trade-meta">
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Entry</div>
+                                    <div class="trade-meta-value">$1.447</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Exit</div>
+                                    <div class="trade-meta-value">$1.45</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Stop</div>
+                                    <div class="trade-meta-value stop">N/A</div>
+                                </div>
+                                <div class="trade-meta-item">
+                                    <div class="trade-meta-label">Size</div>
+                                    <div class="trade-meta-value">691 SUI</div>
+                                </div>
                             </div>
                         </div>
                     </div>
