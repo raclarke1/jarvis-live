@@ -685,23 +685,23 @@
         <div class="grid grid-stats" style="margin-bottom: 24px;">
             <div class="card stat-card fade-in">
                 <div class="stat-label">Portfolio Value</div>
-                <div class="stat-value" id="portfolioValue">$10,030.30</div>
-                <div class="stat-change positive" id="portfolioChange">↑ +0.30%</div>
+                <div class="stat-value" id="portfolioValue">$10,164.07</div>
+                <div class="stat-change positive" id="portfolioChange">↑ +1.64%</div>
             </div>
             <div class="card stat-card fade-in" style="animation-delay: 0.1s;">
                 <div class="stat-label">Total P&L</div>
-                <div class="stat-value positive" id="totalPnl">+$30.30</div>
-                <div class="stat-change positive">Phase 1 Gains</div>
+                <div class="stat-value positive" id="totalPnl">+$164.07</div>
+                <div class="stat-change positive">Phase 1 + 2</div>
             </div>
             <div class="card stat-card fade-in" style="animation-delay: 0.2s;">
                 <div class="stat-label">Open Positions</div>
-                <div class="stat-value" id="openPositions">1</div>
-                <div class="stat-change" style="background: var(--accent-blue-dim); color: var(--accent-blue);">XRP SHORT</div>
+                <div class="stat-value" id="openPositions">0</div>
+                <div class="stat-change" style="background: var(--accent-blue-dim); color: var(--accent-blue);">Flat</div>
             </div>
             <div class="card stat-card fade-in" style="animation-delay: 0.3s;">
                 <div class="stat-label">Win Rate</div>
                 <div class="stat-value" id="winRate">100%</div>
-                <div class="stat-change positive">5/5 Trades</div>
+                <div class="stat-change positive">6/6 Trades</div>
             </div>
         </div>
 
@@ -713,63 +713,15 @@
                 <div class="card position-card fade-in" style="margin-bottom: 24px;">
                     <div class="card-header">
                         <span class="card-title">📊 Active Position</span>
-                        <span style="font-size: 12px; color: var(--text-muted);">Opened Jan 29, 2026</span>
+                        <span style="font-size: 12px; color: var(--text-muted);">No open positions</span>
                     </div>
                     <div class="card-body">
-                        <div class="position-header">
-                            <div class="position-asset">
-                                <div class="asset-icon xrp">XRP</div>
-                                <div class="asset-info">
-                                    <h3>XRP / USD</h3>
-                                    <p>Trend Trade — Actively Managed</p>
-                                </div>
-                            </div>
-                            <span class="position-type short">SHORT</span>
-                        </div>
-
-                        <div class="position-grid">
-                            <div class="position-metric">
-                                <div class="position-metric-label">Entry Price</div>
-                                <div class="position-metric-value">$1.7855</div>
-                            </div>
-                            <div class="position-metric">
-                                <div class="position-metric-label">Current Price</div>
-                                <div class="position-metric-value" id="xrpCurrentPrice">$1.755</div>
-                            </div>
-                            <div class="position-metric">
-                                <div class="position-metric-label">Stop Loss</div>
-                                <div class="position-metric-value" style="color: var(--accent-red);">$1.80</div>
-                                <div class="position-metric-note">Breakeven+ protected</div>
-                            </div>
-                            <div class="position-metric">
-                                <div class="position-metric-label">Position Size</div>
-                                <div class="position-metric-value">1,449 XRP</div>
-                                <div class="position-metric-note">50% remaining</div>
-                            </div>
-                        </div>
-
-                        <!-- Stop Distance Visual -->
-                        <div class="stop-visual">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                <span style="font-size: 12px; color: var(--text-muted);">Distance to Stop</span>
-                                <span style="font-size: 12px; font-weight: 600;" id="stopDistance">$0.045 (2.6%)</span>
-                            </div>
-                            <div class="stop-bar">
-                                <div class="stop-bar-fill" id="stopBarFill" style="width: 26%; background: var(--gradient-red); right: 0; left: auto;"></div>
-                            </div>
-                            <div class="stop-labels">
-                                <span>Target $1.70 ↓</span>
-                                <span>Current</span>
-                                <span>Stop $1.80 ↑</span>
-                            </div>
-                        </div>
-
-                        <!-- P&L Display -->
-                        <div class="pnl-display">
-                            <div class="pnl-label">Unrealized P&L</div>
-                            <div class="pnl-value positive" id="unrealizedPnl">+$44.20</div>
-                            <div class="pnl-breakdown">
-                                Realized: +$51.44 (50% exit @ $1.75) • Total: <span id="totalPositionPnl">+$95.64</span>
+                        <div style="text-align: center; padding: 24px;">
+                            <div style="font-size: 48px; margin-bottom: 16px;">💰</div>
+                            <h3 style="margin-bottom: 8px; color: var(--text-primary);">Flat — 100% Cash</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 16px;">Hunting for the next setup across BTC, SOL, XRP</p>
+                            <div style="background: var(--accent-green-dim); padding: 12px 20px; border-radius: 8px; display: inline-block;">
+                                <span style="color: var(--accent-green); font-weight: 600;">Last Trade: XRP SHORT +$133.77 ✅</span>
                             </div>
                         </div>
                     </div>
@@ -887,13 +839,13 @@
                             <div class="trade-info">
                                 <div class="trade-icon win">✓</div>
                                 <div class="trade-details">
-                                    <h4>XRP SHORT (Partial)</h4>
-                                    <p>Jan 29 • 50% exit @ $1.75</p>
+                                    <h4>XRP SHORT (Closed)</h4>
+                                    <p>Jan 30 • Full position closed</p>
                                 </div>
                             </div>
                             <div class="trade-pnl">
-                                <div class="trade-pnl-value positive">+$51.44</div>
-                                <div class="trade-pnl-percent">+1.99%</div>
+                                <div class="trade-pnl-value positive">+$133.77</div>
+                                <div class="trade-pnl-percent">+2.59%</div>
                             </div>
                         </div>
                         <div class="trade-item">
