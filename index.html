@@ -54,19 +54,14 @@
         .framework { background: rgba(0,255,136,0.05); border-left: 3px solid #00ff88; padding: 15px; margin-bottom: 20px; font-size: 0.85rem; }
         .framework-title { color: #00ff88; font-weight: bold; margin-bottom: 10px; }
         .signal-card { border: 2px solid #ff4757; }
-        .signal-card.active { border-color: #00ff88; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); } 50% { box-shadow: 0 0 20px 10px rgba(0,255,136,0.1); } }
         .footer { text-align: center; color: #444; font-size: 0.8rem; margin-top: 40px; }
-        .progress-bar { height: 4px; background: #2a2a4a; border-radius: 2px; margin-top: 10px; overflow: hidden; }
-        .progress-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
         .hunt-status { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
         .hunt-dot { width: 10px; height: 10px; border-radius: 50%; animation: blink 1.5s infinite; }
-        .hunt-dot.hunting { background: #ffa502; }
         .hunt-dot.skip { background: #ff4757; }
-        .hunt-dot.ready { background: #00ff88; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         .version-badge { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-left: 10px; }
         .improvement { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); border-radius: 8px; padding: 10px; margin-top: 15px; }
+        .flash-crash { background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.3); border-radius: 8px; padding: 10px; margin-top: 15px; }
         @media (max-width: 768px) { 
             .status-card { grid-column: span 1; } 
             .status-grid { grid-template-columns: repeat(2, 1fr); } 
@@ -76,7 +71,7 @@
 <body>
     <div class="container">
         <h1>🤖 Jarvis Live <span class="version-badge">v3.2</span></h1>
-        <p class="subtitle">Paper Trading Dashboard — Last updated: Jan 31, 2026 @ 10:45 AM MST</p>
+        <p class="subtitle">Paper Trading Dashboard — Last updated: Jan 31, 2026 @ 12:05 PM MST</p>
         
         <div class="framework">
             <div class="framework-title">📊 Framework v3.2 (Freqtrade Optimized)</div>
@@ -94,34 +89,34 @@
         <div class="grid">
             <div class="card">
                 <h2>Bitcoin (BTC)</h2>
-                <div class="price">$78,692</div>
-                <div class="change down">▼ DOWNTREND (Sustained)</div>
+                <div class="price">$78,047</div>
+                <div class="change down">▼ DOWNTREND (Flash crashed to $76k)</div>
                 <span class="tag tag-skip">SKIP LONGS</span>
-                <div class="ta-row"><span class="ta-label">EMA 15</span><span class="ta-value">$82,500</span></div>
-                <div class="ta-row"><span class="ta-label">EMA 45</span><span class="ta-value">$82,700</span></div>
-                <div class="ta-row"><span class="ta-label">Trend Duration</span><span class="ta-value down">>3 days ❌</span></div>
+                <div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">$80,730</span></div>
+                <div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">$76,022</span></div>
+                <div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">$75,000</span></div>
                 <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
             </div>
             
             <div class="card">
                 <h2>Solana (SOL)</h2>
-                <div class="price">$103.47</div>
-                <div class="change down">▼ DOWNTREND (Sustained)</div>
+                <div class="price">$102.82</div>
+                <div class="change down">▼ DOWNTREND (Crashed below $100)</div>
                 <span class="tag tag-skip">SKIP LONGS</span>
-                <div class="ta-row"><span class="ta-label">EMA 15</span><span class="ta-value">$113</span></div>
-                <div class="ta-row"><span class="ta-label">EMA 45</span><span class="ta-value">$114</span></div>
-                <div class="ta-row"><span class="ta-label">Trend Duration</span><span class="ta-value down">>3 days ❌</span></div>
+                <div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">$107.44</span></div>
+                <div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">$99.04</span></div>
+                <div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">$95</span></div>
                 <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
             </div>
             
             <div class="card">
                 <h2>XRP</h2>
-                <div class="price">$1.567</div>
-                <div class="change down">▼ DOWNTREND (Sustained)</div>
+                <div class="price">$1.597</div>
+                <div class="change down">▼ DOWNTREND</div>
                 <span class="tag tag-skip">SKIP LONGS</span>
-                <div class="ta-row"><span class="ta-label">EMA 15</span><span class="ta-value">$1.68</span></div>
-                <div class="ta-row"><span class="ta-label">EMA 45</span><span class="ta-value">$1.70</span></div>
-                <div class="ta-row"><span class="ta-label">Trend Duration</span><span class="ta-value down">>3 days ❌</span></div>
+                <div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">$1.62</span></div>
+                <div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">$1.52</span></div>
+                <div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">$1.50</span></div>
                 <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
             </div>
             
@@ -131,13 +126,12 @@
                     <div class="hunt-dot skip"></div>
                     <span style="color: #ff4757;">SKIP LONGS — SUSTAINED DOWNTREND</span>
                 </div>
-                <div style="margin-top: 15px;">
-                    <div class="ta-row"><span class="ta-label">All Assets</span><span class="ta-value down">Downtrend >3 days</span></div>
-                    <div class="ta-row"><span class="ta-label">v3.2 Rule</span><span class="ta-value">Skip longs in sustained downtrend</span></div>
-                    <div class="ta-row"><span class="ta-label">Next Action</span><span class="ta-value neutral">Wait for trend reversal OR Kraken shorting</span></div>
+                <div class="flash-crash">
+                    <strong>⚠️ Flash Crash Today:</strong> BTC dropped $80k → $76k in minutes, bounced to $78k. Extreme volatility confirms SKIP_LONGS is correct call.
                 </div>
-                <div style="margin-top: 15px; padding: 10px; background: rgba(255,71,87,0.1); border-radius: 8px; font-size: 0.8rem;">
-                    <strong>Why sitting out:</strong> v3.2 backtest showed taking longs in sustained downtrends = guaranteed stop-outs. Patience > losses.
+                <div style="margin-top: 15px;">
+                    <div class="ta-row"><span class="ta-label">v3.2 Status</span><span class="ta-value up">Saved from losses ✓</span></div>
+                    <div class="ta-row"><span class="ta-label">Next Action</span><span class="ta-value neutral">Wait for Kraken shorting</span></div>
                 </div>
             </div>
         </div>
@@ -171,14 +165,12 @@
         <div class="card" style="margin-top: 20px;">
             <h2>📋 Today's Activity Log</h2>
             <div style="font-size: 0.85rem; line-height: 1.8;">
+                <div class="ta-row"><span class="ta-label">12:05 PM</span><span class="ta-value">Dashboard synced with current prices</span></div>
+                <div class="ta-row"><span class="ta-label">11:45 AM</span><span class="ta-value down">🚨 Flash crash: BTC $76k, SOL below $100</span></div>
+                <div class="ta-row"><span class="ta-label">11:35 AM</span><span class="ta-value down">BTC broke $78k support</span></div>
                 <div class="ta-row"><span class="ta-label">10:45 AM</span><span class="ta-value">Dashboard updated to v3.2 framework</span></div>
-                <div class="ta-row"><span class="ta-label">10:35 AM</span><span class="ta-value up">v3.2 deployed: 61.5% win rate, trailing stop only</span></div>
-                <div class="ta-row"><span class="ta-label">10:33 AM</span><span class="ta-value">Hyperopt complete: EMA 15/45, Volume 2.0x optimal</span></div>
-                <div class="ta-row"><span class="ta-label">10:20 AM</span><span class="ta-value">Backtest: Removing exit signals = 63% less losses</span></div>
-                <div class="ta-row"><span class="ta-label">10:17 AM</span><span class="ta-value">Freqtrade backtest complete</span></div>
-                <div class="ta-row"><span class="ta-label">10:15 AM</span><span class="ta-value">Freqtrade installed and configured</span></div>
+                <div class="ta-row"><span class="ta-label">10:35 AM</span><span class="ta-value up">v3.2 deployed: 61.5% win rate</span></div>
                 <div class="ta-row"><span class="ta-label">10:05 AM</span><span class="ta-value down">Alert: BTC broke below $80k</span></div>
-                <div class="ta-row"><span class="ta-label">9:45 AM</span><span class="ta-value">Alert: Capital One credit limit email</span></div>
             </div>
         </div>
 
