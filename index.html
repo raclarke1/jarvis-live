@@ -30,6 +30,7 @@
             transition: all 0.3s ease;
         }
         .card:hover { border-color: #00ff88; box-shadow: 0 0 20px rgba(0,255,136,0.1); }
+        .card.alert { border-color: #ffa502; box-shadow: 0 0 20px rgba(255,165,2,0.2); }
         .card h2 { color: #888; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
         .price { font-size: 2rem; font-weight: bold; color: #fff; }
         .change { font-size: 0.9rem; margin-top: 5px; }
@@ -42,6 +43,7 @@
         .stat-value { font-size: 1.5rem; color: #00ff88; font-weight: bold; }
         .stat-label { font-size: 0.75rem; color: #666; text-transform: uppercase; }
         .no-positions { color: #666; font-style: italic; padding: 20px; text-align: center; }
+        .watching { color: #ffa502; padding: 20px; text-align: center; }
         .levels { margin-top: 10px; font-size: 0.8rem; color: #666; }
         .levels span { margin-right: 10px; }
         .support { color: #00ff88; }
@@ -53,31 +55,31 @@
 <body>
     <div class="container">
         <h1>🤖 Jarvis Live</h1>
-        <p class="subtitle">Paper Trading Dashboard — Last updated: Jan 31, 2026 @ 8:30 AM MST</p>
+        <p class="subtitle">Paper Trading Dashboard — Last updated: Jan 31, 2026 @ 8:40 AM MST</p>
         
         <div class="grid">
             <div class="card">
                 <h2>Bitcoin (BTC)</h2>
-                <div class="price">$82,271</div>
-                <div class="change down">▼ -0.28%</div>
+                <div class="price">$82,115</div>
+                <div class="change down">▼ -0.19%</div>
                 <div class="levels"><span class="support">S: $80K</span><span class="resistance">R: $90K</span></div>
             </div>
             <div class="card">
                 <h2>Solana (SOL)</h2>
-                <div class="price">$113.02</div>
-                <div class="change down">▼ -0.44%</div>
-                <div class="levels"><span class="support">S: $110</span><span class="resistance">R: $130</span></div>
+                <div class="price">$112.19</div>
+                <div class="change down">▼ -0.73%</div>
+                <div class="levels"><span class="support">S: $110 ⚠️</span><span class="resistance">R: $130</span></div>
             </div>
-            <div class="card">
-                <h2>XRP</h2>
-                <div class="price">$1.6609</div>
-                <div class="change down">▼ -0.38%</div>
-                <div class="levels"><span class="support">S: $1.65 ⚠️</span><span class="resistance">R: $1.85</span></div>
+            <div class="card alert">
+                <h2>XRP ⚡ AT SUPPORT</h2>
+                <div class="price">$1.6539</div>
+                <div class="change down">▼ -0.42%</div>
+                <div class="levels"><span class="support">S: $1.65 🎯</span><span class="resistance">R: $1.85</span></div>
             </div>
             <div class="card">
                 <h2>SUI</h2>
-                <div class="price">$1.2027</div>
-                <div class="change down">▼ -0.66%</div>
+                <div class="price">$1.1946</div>
+                <div class="change down">▼ -0.67%</div>
                 <div class="levels"><span class="support">S: $1.15</span><span class="resistance">R: $1.40</span></div>
             </div>
         </div>
@@ -100,7 +102,7 @@
         
         <div class="card">
             <h2>🎯 Current Positions</h2>
-            <div class="no-positions">No open positions — XRP approaching $1.65 support, watching for bounce setup</div>
+            <div class="watching">⚡ XRP testing $1.65 support — watching for bounce confirmation before entry</div>
         </div>
         
         <div class="footer">
