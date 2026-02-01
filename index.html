@@ -58,20 +58,21 @@
         .hunt-status { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
         .hunt-dot { width: 10px; height: 10px; border-radius: 50%; animation: blink 1.5s infinite; }
         .hunt-dot.skip { background: #ff4757; }
+        .hunt-dot.hunting { background: #00ff88; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         .version-badge { background: linear-gradient(135deg, #00ff88, #00cc6a); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-left: 10px; }
         .improvement { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); border-radius: 8px; padding: 10px; margin-top: 15px; }
-        .flash-crash { background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.3); border-radius: 8px; padding: 10px; margin-top: 15px; }
         @media (max-width: 768px) { 
             .status-card { grid-column: span 1; } 
             .status-grid { grid-template-columns: repeat(2, 1fr); } 
         }
+        .loading { opacity: 0.5; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🤖 Jarvis Live <span class="version-badge">v3.2</span></h1>
-        <p class="subtitle">Paper Trading Dashboard — Last updated: Feb 1, 2026 @ 5:23 AM MST</p>
+        <h1>🤖 Jarvis Live <span class="version-badge" id="version">v3.2</span></h1>
+        <p class="subtitle">Paper Trading Dashboard — Last updated: <span id="lastUpdate">Loading...</span></p>
         
         <div class="framework">
             <div class="framework-title">📊 Framework v3.2 (Freqtrade Optimized)</div>
@@ -86,64 +87,18 @@
             </div>
         </div>
         
-        <div class="grid">
-            <div class="card">
-                <h2>Bitcoin (BTC)</h2>
-                <div class="price">$78,333</div>
-                <div class="change down">▼ DOWNTREND (Recovered from $76k flash crash)</div>
-                <span class="tag tag-skip">SKIP LONGS</span>
-                <div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">$80,730</span></div>
-                <div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">$76,022</span></div>
-                <div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">$75,000</span></div>
-                <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
-            </div>
-            
-            <div class="card">
-                <h2>Solana (SOL)</h2>
-                <div class="price">$104.31</div>
-                <div class="change down">▼ DOWNTREND (Bounced from $99)</div>
-                <span class="tag tag-skip">SKIP LONGS</span>
-                <div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">$107.44</span></div>
-                <div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">$99.04</span></div>
-                <div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">$95</span></div>
-                <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
-            </div>
-            
-            <div class="card">
-                <h2>XRP</h2>
-                <div class="price">$1.635</div>
-                <div class="change down">▼ DOWNTREND</div>
-                <span class="tag tag-skip">SKIP LONGS</span>
-                <div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">$1.68</span></div>
-                <div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">$1.52</span></div>
-                <div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">$1.50</span></div>
-                <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
-            </div>
-            
-            <div class="card signal-card">
-                <h2>🎯 Current Status</h2>
-                <div class="hunt-status">
-                    <div class="hunt-dot skip"></div>
-                    <span style="color: #ff4757;">SKIP LONGS — SUSTAINED DOWNTREND</span>
-                </div>
-                <div class="flash-crash">
-                    <strong>⚠️ Flash Crash Today:</strong> BTC dropped $80k → $76k in minutes, bounced to $78k. Extreme volatility confirms SKIP_LONGS is correct call.
-                </div>
-                <div style="margin-top: 15px;">
-                    <div class="ta-row"><span class="ta-label">v3.2 Status</span><span class="ta-value up">Saved from losses ✓</span></div>
-                    <div class="ta-row"><span class="ta-label">Next Action</span><span class="ta-value neutral">Wait for Kraken shorting</span></div>
-                </div>
-            </div>
+        <div class="grid" id="priceCards">
+            <!-- Price cards populated by JS -->
         </div>
         
         <div class="grid">
             <div class="card status-card">
                 <h2>📊 Paper Trading Account</h2>
                 <div class="status-grid">
-                    <div class="stat"><div class="stat-value">$10,164</div><div class="stat-label">Balance</div></div>
-                    <div class="stat"><div class="stat-value up">+1.64%</div><div class="stat-label">Total Return</div></div>
-                    <div class="stat"><div class="stat-value">0</div><div class="stat-label">Open Positions</div></div>
-                    <div class="stat"><div class="stat-value">1</div><div class="stat-label">Closed Trades</div></div>
+                    <div class="stat"><div class="stat-value" id="balance">$--</div><div class="stat-label">Balance</div></div>
+                    <div class="stat"><div class="stat-value up" id="totalReturn">--%</div><div class="stat-label">Total Return</div></div>
+                    <div class="stat"><div class="stat-value" id="openPositions">--</div><div class="stat-label">Open Positions</div></div>
+                    <div class="stat"><div class="stat-value" id="closedTrades">--</div><div class="stat-label">Closed Trades</div></div>
                 </div>
                 <div style="margin-top: 15px; text-align: center; color: #666; font-size: 0.8rem;">
                     Framework v3.2 active • 61.5% win rate • Trailing stop + ROI exits only
@@ -152,25 +107,20 @@
             
             <div class="card">
                 <h2>📈 Last Trade</h2>
-                <div class="price up">+$133.77</div>
-                <div class="change">XRP SHORT — Closed for profit</div>
+                <div class="price" id="lastTradePnl">--</div>
+                <div class="change" id="lastTradeDesc">--</div>
                 <div style="margin-top: 15px;">
-                    <div class="ta-row"><span class="ta-label">Entry</span><span class="ta-value">$1.7855</span></div>
-                    <div class="ta-row"><span class="ta-label">Exit</span><span class="ta-value">$1.7287</span></div>
-                    <div class="ta-row"><span class="ta-label">R Multiple</span><span class="ta-value up">+2.6R</span></div>
+                    <div class="ta-row"><span class="ta-label">Entry</span><span class="ta-value" id="lastTradeEntry">--</span></div>
+                    <div class="ta-row"><span class="ta-label">Exit</span><span class="ta-value" id="lastTradeExit">--</span></div>
+                    <div class="ta-row"><span class="ta-label">R Multiple</span><span class="ta-value up" id="lastTradeR">--</span></div>
                 </div>
             </div>
         </div>
         
         <div class="card" style="margin-top: 20px;">
-            <h2>📋 Today's Activity Log</h2>
-            <div style="font-size: 0.85rem; line-height: 1.8;">
-                <div class="ta-row"><span class="ta-label">5:23 AM</span><span class="ta-value up">Dashboard refreshed — prices stabilizing</span></div>
-                <div class="ta-row"><span class="ta-label">12:05 PM (prev)</span><span class="ta-value">Dashboard synced with current prices</span></div>
-                <div class="ta-row"><span class="ta-label">11:45 AM (prev)</span><span class="ta-value down">🚨 Flash crash: BTC $76k, SOL below $100</span></div>
-                <div class="ta-row"><span class="ta-label">11:35 AM (prev)</span><span class="ta-value down">BTC broke $78k support</span></div>
-                <div class="ta-row"><span class="ta-label">10:45 AM (prev)</span><span class="ta-value">Dashboard updated to v3.2 framework</span></div>
-                <div class="ta-row"><span class="ta-label">10:35 AM (prev)</span><span class="ta-value up">v3.2 deployed: 61.5% win rate</span></div>
+            <h2>📋 Activity Log</h2>
+            <div style="font-size: 0.85rem; line-height: 1.8;" id="activityLog">
+                <!-- Populated by JS -->
             </div>
         </div>
 
@@ -200,8 +150,99 @@
         
         <div class="footer">
             <p>Jarvis AI Trading Bot • Framework v3.2 • Paper Mode • Auto-refresh every 5 min</p>
-            <p style="margin-top: 5px;">🔗 <a href="https://github.com/raclarke1/jarvis-live" style="color: #00ff88;">GitHub</a> • Freqtrade-optimized • Next: Kraken shorting</p>
+            <p style="margin-top: 5px;">🔗 <a href="https://github.com/raclarke1/jarvis-live" style="color: #00ff88;">GitHub</a> • Data loaded from state.json</p>
         </div>
     </div>
+
+    <script>
+        async function loadState() {
+            try {
+                const response = await fetch('state.json?' + Date.now());
+                const state = await response.json();
+                renderDashboard(state);
+            } catch (err) {
+                console.error('Failed to load state:', err);
+                document.getElementById('lastUpdate').textContent = 'Error loading data';
+            }
+        }
+
+        function formatPrice(price) {
+            if (price >= 1000) return '$' + price.toLocaleString('en-US', {maximumFractionDigits: 0});
+            if (price >= 1) return '$' + price.toFixed(2);
+            return '$' + price.toFixed(4);
+        }
+
+        function formatDate(isoString) {
+            const d = new Date(isoString);
+            return d.toLocaleString('en-US', { 
+                month: 'short', day: 'numeric', year: 'numeric',
+                hour: 'numeric', minute: '2-digit', hour12: true,
+                timeZone: 'America/Denver'
+            }) + ' MST';
+        }
+
+        function renderDashboard(state) {
+            // Update timestamp
+            document.getElementById('lastUpdate').textContent = formatDate(state.lastUpdate);
+            document.getElementById('version').textContent = 'v' + state.version;
+
+            // Render price cards
+            const priceCardsHtml = Object.entries(state.prices).map(([symbol, data]) => {
+                const levels = state.levels[symbol] || {};
+                const trendClass = data.trend === 'up' ? 'up' : (data.trend === 'down' ? 'down' : 'neutral');
+                const trendArrow = data.trend === 'up' ? '▲ UPTREND' : (data.trend === 'down' ? '▼ DOWNTREND' : '◆ SIDEWAYS');
+                const tagClass = data.trend === 'down' ? 'tag-skip' : 'tag-wait';
+                const tagText = data.trend === 'down' ? 'SKIP LONGS' : 'WATCHING';
+                
+                return `
+                    <div class="card">
+                        <h2>${symbol}</h2>
+                        <div class="price">${formatPrice(data.price)}</div>
+                        <div class="change ${trendClass}">${trendArrow}${data.note ? ' (' + data.note + ')' : ''}</div>
+                        <span class="tag ${tagClass}">${tagText}</span>
+                        ${levels.sessionHigh ? `<div class="ta-row"><span class="ta-label">Session High</span><span class="ta-value">${formatPrice(levels.sessionHigh)}</span></div>` : ''}
+                        ${levels.sessionLow ? `<div class="ta-row"><span class="ta-label">Session Low</span><span class="ta-value down">${formatPrice(levels.sessionLow)}</span></div>` : ''}
+                        ${levels.support ? `<div class="ta-row"><span class="ta-label">Support</span><span class="ta-value">${formatPrice(levels.support)}</span></div>` : ''}
+                        <div class="ta-row"><span class="ta-label">Signal</span><span class="ta-value down">Waiting for Kraken (SHORT)</span></div>
+                    </div>
+                `;
+            }).join('');
+            document.getElementById('priceCards').innerHTML = priceCardsHtml;
+
+            // Account stats
+            const account = state.account;
+            const returnPct = ((account.balance - account.startingBalance) / account.startingBalance * 100).toFixed(2);
+            document.getElementById('balance').textContent = '$' + account.balance.toLocaleString();
+            document.getElementById('totalReturn').textContent = (returnPct >= 0 ? '+' : '') + returnPct + '%';
+            document.getElementById('totalReturn').className = 'stat-value ' + (returnPct >= 0 ? 'up' : 'down');
+            document.getElementById('openPositions').textContent = account.openPositions;
+            document.getElementById('closedTrades').textContent = account.closedTrades;
+
+            // Last trade
+            const trade = state.lastTrade;
+            if (trade) {
+                const pnlClass = trade.pnl >= 0 ? 'up' : 'down';
+                document.getElementById('lastTradePnl').className = 'price ' + pnlClass;
+                document.getElementById('lastTradePnl').textContent = (trade.pnl >= 0 ? '+' : '') + '$' + trade.pnl.toFixed(2);
+                document.getElementById('lastTradeDesc').textContent = `${trade.asset} ${trade.direction} — Closed for ${trade.pnl >= 0 ? 'profit' : 'loss'}`;
+                document.getElementById('lastTradeEntry').textContent = formatPrice(trade.entry);
+                document.getElementById('lastTradeExit').textContent = formatPrice(trade.exit);
+                document.getElementById('lastTradeR').textContent = (trade.rMultiple >= 0 ? '+' : '') + trade.rMultiple.toFixed(1) + 'R';
+            }
+
+            // Activity log
+            const logHtml = state.activityLog.map(entry => {
+                const typeClass = entry.type === 'up' ? 'up' : (entry.type === 'down' ? 'down' : '');
+                return `<div class="ta-row"><span class="ta-label">${entry.time}</span><span class="ta-value ${typeClass}">${entry.message}</span></div>`;
+            }).join('');
+            document.getElementById('activityLog').innerHTML = logHtml;
+        }
+
+        // Load on page load
+        loadState();
+        
+        // Refresh every 60 seconds
+        setInterval(loadState, 60000);
+    </script>
 </body>
 </html>

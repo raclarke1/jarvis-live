@@ -1,0 +1,42 @@
+{
+  "lastUpdate": "2026-02-01T12:23:00.000Z",
+  "version": "3.2",
+  "mode": "paper",
+  "prices": {
+    "BTC": { "price": 78333, "trend": "down", "note": "Recovered from $76k flash crash" },
+    "SOL": { "price": 104.31, "trend": "down", "note": "Bounced from $99" },
+    "XRP": { "price": 1.635, "trend": "down", "note": "Holding above $1.50 support" },
+    "SUI": { "price": 1.13, "trend": "down", "note": "Range-bound" }
+  },
+  "levels": {
+    "BTC": { "support": 75000, "resistance": 82500, "sessionHigh": 80730, "sessionLow": 76022 },
+    "SOL": { "support": 95, "resistance": 115, "sessionHigh": 107.44, "sessionLow": 99.04 },
+    "XRP": { "support": 1.50, "resistance": 1.80, "sessionHigh": 1.68, "sessionLow": 1.52 }
+  },
+  "account": {
+    "balance": 10164,
+    "startingBalance": 10000,
+    "openPositions": 0,
+    "closedTrades": 1
+  },
+  "lastTrade": {
+    "asset": "XRP",
+    "direction": "SHORT",
+    "pnl": 133.77,
+    "entry": 1.7855,
+    "exit": 1.7287,
+    "rMultiple": 2.6
+  },
+  "status": {
+    "hunting": false,
+    "signal": "SKIP LONGS — SUSTAINED DOWNTREND",
+    "nextAction": "Wait for Kraken shorting"
+  },
+  "activityLog": [
+    { "time": "5:23 AM", "message": "Dashboard refreshed — prices stabilizing", "type": "up" },
+    { "time": "12:05 PM (prev)", "message": "Dashboard synced with current prices", "type": "neutral" },
+    { "time": "11:45 AM (prev)", "message": "🚨 Flash crash: BTC $76k, SOL below $100", "type": "down" },
+    { "time": "11:35 AM (prev)", "message": "BTC broke $78k support", "type": "down" },
+    { "time": "10:45 AM (prev)", "message": "Dashboard updated to v3.2 framework", "type": "neutral" }
+  ]
+}
