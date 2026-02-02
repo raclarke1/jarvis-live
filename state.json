@@ -27,6 +27,7 @@
       "entry": 100.58,
       "stopLoss": 91.27,
       "takeProfit": 107.56,
+      "notional": 7500,
       "openedAt": "2026-02-02T07:05:00Z",
       "strategy": "4H Mean Reversion",
       "status": "OPEN"
@@ -38,6 +39,7 @@
       "entry": 76478,
       "stopLoss": 72616,
       "takeProfit": 79375,
+      "notional": 7500,
       "openedAt": "2026-02-01T20:05:00Z",
       "strategy": "4H Mean Reversion",
       "status": "OPEN"
@@ -49,6 +51,7 @@
       "entry": 1.7855,
       "stopLoss": 1.85,
       "takeProfit": 1.70,
+      "notional": 4200,
       "openedAt": "2026-01-30T14:00:00Z",
       "closedAt": "2026-01-31T10:30:00Z",
       "exitPrice": 1.7287,

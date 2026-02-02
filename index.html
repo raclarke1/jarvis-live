@@ -316,7 +316,8 @@
                         <th>Stop Loss</th>
                         <th>Take Profit</th>
                         <th>Current</th>
-                        <th>P&L</th>
+                        <th>P&L %</th>
+                        <th>P&L $</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -452,6 +453,9 @@
                     const dirClass = t.direction === 'LONG' ? 'up' : 'down';
                     const openDate = new Date(t.openedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
                     
+                    const positionSize = t.notional || 7500; // Default 75% of $10k
+                    const pnlDollar = (pnlPct / 100) * positionSize;
+                    
                     return `<tr>
                         <td>${openDate}</td>
                         <td><strong>${t.asset}</strong></td>
@@ -461,12 +465,13 @@
                         <td class="up">${formatPrice(t.takeProfit)}</td>
                         <td>${t.status === 'OPEN' ? formatPrice(currentPrice) : formatPrice(t.exitPrice)}</td>
                         <td class="${pnlClass}">${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%</td>
+                        <td class="${pnlClass}">${pnlDollar >= 0 ? '+' : ''}$${Math.abs(pnlDollar).toFixed(2)}</td>
                         <td class="${statusClass}">${t.status}</td>
                     </tr>`;
                 }).join('');
                 document.getElementById('tradeTableBody').innerHTML = tradesHtml;
             } else {
-                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
+                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="10" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
             }
         }
 
