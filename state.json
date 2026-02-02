@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-02T18:18:00.000Z",
+  "lastUpdate": "2026-02-02T18:27:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": { "price": 78655, "trend": "up", "note": "Bouncing, approaching TP" },
-    "SOL": { "price": 104.25, "trend": "up", "note": "Recovery in progress" },
+    "BTC": { "price": 78423, "trend": "up", "note": "Resistance at prior highs" },
+    "SOL": { "price": 104.00, "trend": "up", "note": "Resistance at prior highs" },
     "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
     "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
   },
@@ -14,10 +14,10 @@
     "XRP": { "support": 1.50, "resistance": 1.80, "sessionHigh": 1.68, "sessionLow": 1.52 }
   },
   "account": {
-    "balance": 10164,
+    "balance": 10610,
     "startingBalance": 10000,
-    "openPositions": 2,
-    "closedTrades": 1
+    "openPositions": 0,
+    "closedTrades": 3
   },
   "trades": [
     {
@@ -29,8 +29,11 @@
       "takeProfit": 107.56,
       "notional": 7500,
       "openedAt": "2026-02-02T07:05:00Z",
+      "closedAt": "2026-02-02T18:27:00Z",
+      "exitPrice": 104.00,
       "strategy": "4H Mean Reversion",
-      "status": "OPEN"
+      "status": "CLOSED",
+      "pnl": 255.06
     },
     {
       "id": 2,
@@ -41,8 +44,11 @@
       "takeProfit": 79375,
       "notional": 7500,
       "openedAt": "2026-02-01T20:05:00Z",
+      "closedAt": "2026-02-02T18:27:00Z",
+      "exitPrice": 78423,
       "strategy": "4H Mean Reversion",
-      "status": "OPEN"
+      "status": "CLOSED",
+      "pnl": 190.67
     },
     {
       "id": 1,
@@ -61,23 +67,23 @@
     }
   ],
   "lastTrade": {
-    "asset": "XRP",
-    "direction": "SHORT",
-    "pnl": 133.77,
-    "entry": 1.7855,
-    "exit": 1.7287,
-    "rMultiple": 2.6
+    "asset": "SOL",
+    "direction": "LONG",
+    "pnl": 255.06,
+    "entry": 100.58,
+    "exit": 104.00,
+    "rMultiple": 1.0
   },
   "status": {
-    "hunting": false,
-    "signal": "2 POSITIONS OPEN",
-    "nextAction": "Monitor for TP/SL"
+    "hunting": true,
+    "signal": "FLAT - Looking for setups",
+    "nextAction": "Wait for next 4H signal"
   },
   "activityLog": [
-    { "time": "Feb 2 11:18 AM", "message": "Added trade ledger to dashboard", "type": "up" },
-    { "time": "Feb 2 11:12 AM", "message": "Updated dashboard with open positions", "type": "up" },
-    { "time": "Feb 2 00:05 AM", "message": "OPENED: SOL LONG @ $100.58", "type": "up" },
-    { "time": "Feb 1 08:05 PM", "message": "OPENED: BTC LONG @ $76,478", "type": "up" },
-    { "time": "Jan 31 10:30 AM", "message": "CLOSED: XRP SHORT +$133.77 (TP HIT)", "type": "up" }
+    { "time": "Feb 2 11:27 AM", "message": "CLOSED: SOL LONG +$255.06 (Manual - resistance)", "type": "up" },
+    { "time": "Feb 2 11:27 AM", "message": "CLOSED: BTC LONG +$190.67 (Manual - resistance)", "type": "up" },
+    { "time": "Feb 2 11:18 AM", "message": "Added trade ledger to dashboard", "type": "neutral" },
+    { "time": "Feb 2 00:05 AM", "message": "OPENED: SOL LONG @ $100.58", "type": "neutral" },
+    { "time": "Feb 1 08:05 PM", "message": "OPENED: BTC LONG @ $76,478", "type": "neutral" }
   ]
 }
