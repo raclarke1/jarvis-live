@@ -1,55 +1,46 @@
 {
-  "lastUpdate": "2026-02-01T12:32:46.000Z",
+  "lastUpdate": "2026-02-02T18:12:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": {
-      "price": 78401.46,
-      "trend": "down",
-      "note": "Recovered from $76k flash crash"
-    },
-    "SOL": {
-      "price": 104.5,
-      "trend": "down",
-      "note": "Bounced from $99"
-    },
-    "XRP": {
-      "price": 1.63765,
-      "trend": "down",
-      "note": "Holding above $1.50 support"
-    },
-    "SUI": {
-      "price": 1.13205,
-      "trend": "down",
-      "note": "Range-bound"
-    }
+    "BTC": { "price": 78655, "trend": "up", "note": "Bouncing, approaching TP" },
+    "SOL": { "price": 104.25, "trend": "up", "note": "Recovery in progress" },
+    "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
+    "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
   },
   "levels": {
-    "BTC": {
-      "support": 75000,
-      "resistance": 82500,
-      "sessionHigh": 80730,
-      "sessionLow": 76022
-    },
-    "SOL": {
-      "support": 95,
-      "resistance": 115,
-      "sessionHigh": 107.44,
-      "sessionLow": 99.04
-    },
-    "XRP": {
-      "support": 1.50,
-      "resistance": 1.80,
-      "sessionHigh": 1.68,
-      "sessionLow": 1.52
-    }
+    "BTC": { "support": 75000, "resistance": 82500, "sessionHigh": 80730, "sessionLow": 76022 },
+    "SOL": { "support": 95, "resistance": 115, "sessionHigh": 107.44, "sessionLow": 99.04 },
+    "XRP": { "support": 1.50, "resistance": 1.80, "sessionHigh": 1.68, "sessionLow": 1.52 }
   },
   "account": {
     "balance": 10164,
     "startingBalance": 10000,
-    "openPositions": 0,
+    "openPositions": 2,
     "closedTrades": 1
   },
+  "openTrades": [
+    {
+      "asset": "BTC",
+      "direction": "LONG",
+      "entry": 76478,
+      "stopLoss": 72616,
+      "takeProfit": 79375,
+      "size": "75%",
+      "openedAt": "2026-02-01T20:05:00Z",
+      "strategy": "4H Mean Reversion"
+    },
+    {
+      "asset": "SOL",
+      "direction": "LONG",
+      "entry": 100.58,
+      "stopLoss": 91.27,
+      "takeProfit": 107.56,
+      "size": "75%",
+      "openedAt": "2026-02-02T07:05:00Z",
+      "strategy": "4H Mean Reversion"
+    }
+  ],
   "lastTrade": {
     "asset": "XRP",
     "direction": "SHORT",
@@ -60,34 +51,13 @@
   },
   "status": {
     "hunting": false,
-    "signal": "SKIP LONGS — SUSTAINED DOWNTREND",
-    "nextAction": "Wait for Kraken shorting"
+    "signal": "2 POSITIONS OPEN",
+    "nextAction": "Monitor for TP/SL"
   },
   "activityLog": [
-    {
-      "time": "5:23 AM",
-      "message": "Dashboard refreshed — prices stabilizing",
-      "type": "up"
-    },
-    {
-      "time": "12:05 PM (prev)",
-      "message": "Dashboard synced with current prices",
-      "type": "neutral"
-    },
-    {
-      "time": "11:45 AM (prev)",
-      "message": "🚨 Flash crash: BTC $76k, SOL below $100",
-      "type": "down"
-    },
-    {
-      "time": "11:35 AM (prev)",
-      "message": "BTC broke $78k support",
-      "type": "down"
-    },
-    {
-      "time": "10:45 AM (prev)",
-      "message": "Dashboard updated to v3.2 framework",
-      "type": "neutral"
-    }
+    { "time": "Feb 2 11:12 AM", "message": "Updated dashboard with open positions", "type": "up" },
+    { "time": "Feb 2 00:05 AM", "message": "OPENED: SOL LONG @ $100.58", "type": "up" },
+    { "time": "Feb 1 08:05 PM", "message": "OPENED: BTC LONG @ $76,478", "type": "up" },
+    { "time": "Feb 1 05:23 AM", "message": "Dashboard refreshed — prices stabilizing", "type": "neutral" }
   ]
 }
