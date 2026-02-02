@@ -190,6 +190,32 @@
         }
         footer a { color: var(--accent-green); text-decoration: none; }
         
+        /* Trade Table */
+        .trade-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .trade-table th {
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        .trade-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+        .trade-table tr:hover { background: var(--bg-secondary); }
+        .trade-table .status-open { color: var(--accent-blue); }
+        .trade-table .status-tp { color: var(--accent-green); }
+        .trade-table .status-sl { color: var(--accent-red); }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .card.span-2 { grid-column: span 1; }
@@ -276,6 +302,28 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <h2 class="section-title">📈 Trade Ledger</h2>
+        <div class="card" style="overflow-x: auto;">
+            <table class="trade-table" id="tradeTable">
+                <thead>
+                    <tr>
+                        <th>Opened</th>
+                        <th>Asset</th>
+                        <th>Side</th>
+                        <th>Entry</th>
+                        <th>Stop Loss</th>
+                        <th>Take Profit</th>
+                        <th>Current</th>
+                        <th>P&L</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tradeTableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
         </div>
 
         <h2 class="section-title">📋 Activity Log</h2>
@@ -390,6 +438,36 @@
                 return `<div class="log-entry"><span class="log-time">${entry.time}</span> — <span class="${typeClass}">${entry.message}</span></div>`;
             }).join('');
             document.getElementById('activityLog').innerHTML = logHtml;
+
+            // Trade Ledger (most recent first)
+            if (state.trades && state.trades.length > 0) {
+                const sortedTrades = [...state.trades].sort((a, b) => new Date(b.openedAt) - new Date(a.openedAt));
+                const tradesHtml = sortedTrades.map(t => {
+                    const currentPrice = state.prices[t.asset]?.price || t.exitPrice || t.entry;
+                    const pnlPct = t.status === 'OPEN' 
+                        ? ((currentPrice - t.entry) / t.entry * 100 * (t.direction === 'LONG' ? 1 : -1))
+                        : ((t.exitPrice - t.entry) / t.entry * 100 * (t.direction === 'LONG' ? 1 : -1));
+                    const pnlClass = pnlPct >= 0 ? 'up' : 'down';
+                    const statusClass = t.status === 'OPEN' ? 'status-open' : (t.status === 'TP HIT' ? 'status-tp' : 'status-sl');
+                    const dirClass = t.direction === 'LONG' ? 'up' : 'down';
+                    const openDate = new Date(t.openedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+                    
+                    return `<tr>
+                        <td>${openDate}</td>
+                        <td><strong>${t.asset}</strong></td>
+                        <td class="${dirClass}">${t.direction}</td>
+                        <td>${formatPrice(t.entry)}</td>
+                        <td class="down">${formatPrice(t.stopLoss)}</td>
+                        <td class="up">${formatPrice(t.takeProfit)}</td>
+                        <td>${t.status === 'OPEN' ? formatPrice(currentPrice) : formatPrice(t.exitPrice)}</td>
+                        <td class="${pnlClass}">${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%</td>
+                        <td class="${statusClass}">${t.status}</td>
+                    </tr>`;
+                }).join('');
+                document.getElementById('tradeTableBody').innerHTML = tradesHtml;
+            } else {
+                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
+            }
         }
 
         loadState();

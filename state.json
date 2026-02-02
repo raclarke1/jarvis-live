@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-02T18:12:00.000Z",
+  "lastUpdate": "2026-02-02T18:18:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
@@ -19,26 +19,42 @@
     "openPositions": 2,
     "closedTrades": 1
   },
-  "openTrades": [
+  "trades": [
     {
-      "asset": "BTC",
-      "direction": "LONG",
-      "entry": 76478,
-      "stopLoss": 72616,
-      "takeProfit": 79375,
-      "size": "75%",
-      "openedAt": "2026-02-01T20:05:00Z",
-      "strategy": "4H Mean Reversion"
-    },
-    {
+      "id": 3,
       "asset": "SOL",
       "direction": "LONG",
       "entry": 100.58,
       "stopLoss": 91.27,
       "takeProfit": 107.56,
-      "size": "75%",
       "openedAt": "2026-02-02T07:05:00Z",
-      "strategy": "4H Mean Reversion"
+      "strategy": "4H Mean Reversion",
+      "status": "OPEN"
+    },
+    {
+      "id": 2,
+      "asset": "BTC",
+      "direction": "LONG",
+      "entry": 76478,
+      "stopLoss": 72616,
+      "takeProfit": 79375,
+      "openedAt": "2026-02-01T20:05:00Z",
+      "strategy": "4H Mean Reversion",
+      "status": "OPEN"
+    },
+    {
+      "id": 1,
+      "asset": "XRP",
+      "direction": "SHORT",
+      "entry": 1.7855,
+      "stopLoss": 1.85,
+      "takeProfit": 1.70,
+      "openedAt": "2026-01-30T14:00:00Z",
+      "closedAt": "2026-01-31T10:30:00Z",
+      "exitPrice": 1.7287,
+      "strategy": "4H Mean Reversion",
+      "status": "TP HIT",
+      "pnl": 133.77
     }
   ],
   "lastTrade": {
@@ -55,9 +71,10 @@
     "nextAction": "Monitor for TP/SL"
   },
   "activityLog": [
+    { "time": "Feb 2 11:18 AM", "message": "Added trade ledger to dashboard", "type": "up" },
     { "time": "Feb 2 11:12 AM", "message": "Updated dashboard with open positions", "type": "up" },
     { "time": "Feb 2 00:05 AM", "message": "OPENED: SOL LONG @ $100.58", "type": "up" },
     { "time": "Feb 1 08:05 PM", "message": "OPENED: BTC LONG @ $76,478", "type": "up" },
-    { "time": "Feb 1 05:23 AM", "message": "Dashboard refreshed — prices stabilizing", "type": "neutral" }
+    { "time": "Jan 31 10:30 AM", "message": "CLOSED: XRP SHORT +$133.77 (TP HIT)", "type": "up" }
   ]
 }
