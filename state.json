@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-02-03T20:30:00.000Z",
+  "lastUpdate": "2026-02-03T20:40:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": { "price": 75585, "trend": "strong", "note": "LONG +3.4% - TP only $554 away!" },
-    "SOL": { "price": 99.98, "trend": "strong", "note": "Testing $100" },
-    "LTC": { "price": 59.93, "trend": "strong", "note": "Near $60" },
+    "BTC": { "price": 76283, "trend": "strong", "note": "TP HIT! +$333.44" },
+    "SOL": { "price": 100.97, "trend": "strong", "note": "Broke $100!" },
+    "LTC": { "price": 60.84, "trend": "strong", "note": "Above $60" },
     "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
     "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
   },
@@ -16,10 +16,10 @@
     "XRP": { "support": 1.50, "resistance": 1.80, "sessionHigh": 1.68, "sessionLow": 1.52 }
   },
   "account": {
-    "balance": 10610,
+    "balance": 10943.44,
     "startingBalance": 10000,
-    "openPositions": 1,
-    "closedTrades": 3
+    "openPositions": 0,
+    "closedTrades": 4
   },
   "trades": [
     {
@@ -31,8 +31,11 @@
       "takeProfit": 76139,
       "notional": 7958,
       "openedAt": "2026-02-03T19:03:00Z",
+      "closedAt": "2026-02-03T20:40:00Z",
+      "exitPrice": 76139,
       "strategy": "4H Mean Reversion",
-      "status": "OPEN"
+      "status": "TP HIT",
+      "pnl": 333.44
     },
     {
       "id": 3,
@@ -83,17 +86,18 @@
   "lastTrade": {
     "asset": "BTC",
     "direction": "LONG",
-    "pnl": 0,
+    "pnl": 333.44,
     "entry": 73075,
-    "exit": null,
-    "rMultiple": 0
+    "exit": 76139,
+    "rMultiple": 1.5
   },
   "status": {
-    "hunting": false,
-    "signal": "BTC LONG +3.4%",
-    "nextAction": "TP $76,139 ($554 away!) | SL $68,990 (safe)"
+    "hunting": true,
+    "signal": "NO POSITION",
+    "nextAction": "Scanning for next setup..."
   },
   "activityLog": [
+    { "time": "Feb 3 1:40 PM", "message": "TP HIT: BTC LONG +$333.44 (4.2% gain)", "type": "up" },
     { "time": "Feb 3 12:03 PM", "message": "OPENED: BTC LONG @ $73,075 (swing low break)", "type": "up" },
     { "time": "Feb 2 5:00 PM", "message": "Added LTC to watchlist", "type": "neutral" },
     { "time": "Feb 2 11:27 AM", "message": "CLOSED: SOL LONG +$255.06 (Manual - resistance)", "type": "up" },
