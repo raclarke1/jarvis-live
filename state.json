@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-02-03T21:40:00.000Z",
+  "lastUpdate": "2026-02-03T21:50:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": { "price": 76173, "trend": "consolidating", "note": "Pullback to $76k" },
-    "SOL": { "price": 100.42, "trend": "consolidating", "note": "Testing $100" },
-    "LTC": { "price": 60.15, "trend": "consolidating", "note": "Holding $60" },
+    "BTC": { "price": 76162, "trend": "consolidating", "note": "Holding $76k" },
+    "SOL": { "price": 100.18, "trend": "consolidating", "note": "At $100" },
+    "LTC": { "price": 60.04, "trend": "consolidating", "note": "At $60" },
     "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
     "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
   },
