@@ -441,37 +441,49 @@
             document.getElementById('activityLog').innerHTML = logHtml;
 
             // Trade Ledger (most recent first)
-            if (state.trades && state.trades.length > 0) {
-                const sortedTrades = [...state.trades].sort((a, b) => new Date(b.openedAt) - new Date(a.openedAt));
-                const tradesHtml = sortedTrades.map(t => {
-                    const currentPrice = state.prices[t.asset]?.price || t.exitPrice || t.entry;
-                    const pnlPct = t.status === 'OPEN' 
-                        ? ((currentPrice - t.entry) / t.entry * 100 * (t.direction === 'LONG' ? 1 : -1))
-                        : ((t.exitPrice - t.entry) / t.entry * 100 * (t.direction === 'LONG' ? 1 : -1));
-                    const pnlClass = pnlPct >= 0 ? 'up' : 'down';
-                    const statusClass = t.status === 'OPEN' ? 'status-open' : (t.status === 'TP HIT' ? 'status-tp' : 'status-sl');
-                    const dirClass = t.direction === 'LONG' ? 'up' : 'down';
-                    const openDate = new Date(t.openedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
-                    
-                    const positionSize = t.notional || 7500; // Default 75% of $10k
-                    const pnlDollar = (pnlPct / 100) * positionSize;
-                    
-                    return `<tr>
-                        <td>${openDate}</td>
-                        <td><strong>${t.asset}</strong></td>
-                        <td class="${dirClass}">${t.direction}</td>
-                        <td>${formatPrice(t.entry)}</td>
-                        <td class="down">${formatPrice(t.stopLoss)}</td>
-                        <td class="up">${formatPrice(t.takeProfit)}</td>
-                        <td>${t.status === 'OPEN' ? formatPrice(currentPrice) : formatPrice(t.exitPrice)}</td>
-                        <td class="${pnlClass}">${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%</td>
-                        <td class="${pnlClass}">${pnlDollar >= 0 ? '+' : ''}$${Math.abs(pnlDollar).toFixed(2)}</td>
-                        <td class="${statusClass}">${t.status}</td>
-                    </tr>`;
-                }).join('');
-                document.getElementById('tradeTableBody').innerHTML = tradesHtml;
-            } else {
-                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="10" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
+            try {
+                if (state.trades && state.trades.length > 0) {
+                    const sortedTrades = [...state.trades].sort((a, b) => new Date(b.openedAt) - new Date(a.openedAt));
+                    const tradesHtml = sortedTrades.map(t => {
+                        const currentPrice = state.prices[t.asset]?.price || t.exitPrice || t.entry;
+                        const exitPrice = t.exitPrice || currentPrice;
+                        
+                        let pnlPct = 0;
+                        if (t.status === 'OPEN') {
+                            pnlPct = ((currentPrice - t.entry) / t.entry * 100) * (t.direction === 'LONG' ? 1 : -1);
+                        } else if (exitPrice && t.entry) {
+                            pnlPct = ((exitPrice - t.entry) / t.entry * 100) * (t.direction === 'LONG' ? 1 : -1);
+                        }
+                        
+                        const pnlClass = pnlPct >= 0 ? 'up' : 'down';
+                        const statusClass = t.status === 'OPEN' ? 'status-open' : 
+                            (t.status === 'TP HIT' || t.status === 'CLOSED' || t.pnl > 0) ? 'status-tp' : 'status-sl';
+                        const dirClass = t.direction === 'LONG' ? 'up' : 'down';
+                        const openDate = new Date(t.openedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+                        
+                        const positionSize = t.notional || 7500;
+                        const pnlDollar = t.pnl || (pnlPct / 100) * positionSize;
+                        
+                        return `<tr>
+                            <td>${openDate}</td>
+                            <td><strong>${t.asset}</strong></td>
+                            <td class="${dirClass}">${t.direction}</td>
+                            <td>${formatPrice(t.entry)}</td>
+                            <td class="down">${formatPrice(t.stopLoss)}</td>
+                            <td class="up">${formatPrice(t.takeProfit)}</td>
+                            <td>${t.status === 'OPEN' ? formatPrice(currentPrice) : formatPrice(exitPrice)}</td>
+                            <td class="${pnlClass}">${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%</td>
+                            <td class="${pnlClass}">${pnlDollar >= 0 ? '+' : ''}$${Math.abs(pnlDollar).toFixed(2)}</td>
+                            <td class="${statusClass}">${t.status}</td>
+                        </tr>`;
+                    }).join('');
+                    document.getElementById('tradeTableBody').innerHTML = tradesHtml;
+                } else {
+                    document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="10" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
+                }
+            } catch (e) {
+                console.error('Error rendering trades:', e);
+                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="10" style="text-align: center; color: var(--accent-red);">Error loading trades</td></tr>';
             }
         }
 
