@@ -1,19 +1,59 @@
 {
-  "lastUpdate": "2026-02-03T23:20:00.000Z",
+  "lastUpdate": "2026-02-03T23:30:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": { "price": 75670, "trend": "consolidating", "note": "Bounce to $75.7k" },
-    "SOL": { "price": 97.80, "trend": "consolidating", "note": "Holding $97.8" },
-    "LTC": { "price": 59.37, "trend": "consolidating", "note": "Near $59.4" },
-    "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
-    "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
+    "BTC": {
+      "price": 75656,
+      "trend": "consolidating",
+      "note": "Bounce to $75.7k"
+    },
+    "SOL": {
+      "price": 97.78,
+      "trend": "consolidating",
+      "note": "Holding $97.8"
+    },
+    "LTC": {
+      "price": 59.33,
+      "trend": "consolidating",
+      "note": "Near $59.4"
+    },
+    "XRP": {
+      "price": 1.64,
+      "trend": "neutral",
+      "note": "Consolidating"
+    },
+    "SUI": {
+      "price": 1.13,
+      "trend": "neutral",
+      "note": "Range-bound"
+    }
   },
   "levels": {
-    "BTC": { "support": 69000, "resistance": 78000, "sessionHigh": 83672, "sessionLow": 73075 },
-    "SOL": { "support": 95, "resistance": 115, "sessionHigh": 118.46, "sessionLow": 95.88 },
-    "LTC": { "support": 55, "resistance": 64, "sessionHigh": 64.25, "sessionLow": 55.34 },
-    "XRP": { "support": 1.50, "resistance": 1.80, "sessionHigh": 1.68, "sessionLow": 1.52 }
+    "BTC": {
+      "support": 69000,
+      "resistance": 78000,
+      "sessionHigh": 83672,
+      "sessionLow": 73075
+    },
+    "SOL": {
+      "support": 95,
+      "resistance": 115,
+      "sessionHigh": 118.46,
+      "sessionLow": 95.88
+    },
+    "LTC": {
+      "support": 55,
+      "resistance": 64,
+      "sessionHigh": 64.25,
+      "sessionLow": 55.34
+    },
+    "XRP": {
+      "support": 1.50,
+      "resistance": 1.80,
+      "sessionHigh": 1.68,
+      "sessionLow": 1.52
+    }
   },
   "account": {
     "balance": 10943.44,
@@ -97,11 +137,35 @@
     "nextAction": "Scanning for next setup..."
   },
   "activityLog": [
-    { "time": "Feb 3 1:40 PM", "message": "TP HIT: BTC LONG +$333.44 (4.2% gain)", "type": "up" },
-    { "time": "Feb 3 12:03 PM", "message": "OPENED: BTC LONG @ $73,075 (swing low break)", "type": "up" },
-    { "time": "Feb 2 5:00 PM", "message": "Added LTC to watchlist", "type": "neutral" },
-    { "time": "Feb 2 11:27 AM", "message": "CLOSED: SOL LONG +$255.06 (Manual - resistance)", "type": "up" },
-    { "time": "Feb 2 11:27 AM", "message": "CLOSED: BTC LONG +$190.67 (Manual - resistance)", "type": "up" },
-    { "time": "Feb 2 11:18 AM", "message": "Added trade ledger to dashboard", "type": "neutral" }
+    {
+      "time": "Feb 3 1:40 PM",
+      "message": "TP HIT: BTC LONG +$333.44 (4.2% gain)",
+      "type": "up"
+    },
+    {
+      "time": "Feb 3 12:03 PM",
+      "message": "OPENED: BTC LONG @ $73,075 (swing low break)",
+      "type": "up"
+    },
+    {
+      "time": "Feb 2 5:00 PM",
+      "message": "Added LTC to watchlist",
+      "type": "neutral"
+    },
+    {
+      "time": "Feb 2 11:27 AM",
+      "message": "CLOSED: SOL LONG +$255.06 (Manual - resistance)",
+      "type": "up"
+    },
+    {
+      "time": "Feb 2 11:27 AM",
+      "message": "CLOSED: BTC LONG +$190.67 (Manual - resistance)",
+      "type": "up"
+    },
+    {
+      "time": "Feb 2 11:18 AM",
+      "message": "Added trade ledger to dashboard",
+      "type": "neutral"
+    }
   ]
 }
