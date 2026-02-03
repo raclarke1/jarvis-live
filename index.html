@@ -424,13 +424,15 @@
             // Last trade
             const trade = state.lastTrade;
             if (trade) {
-                const pnlClass = trade.pnl >= 0 ? 'up' : 'down';
+                const pnl = trade.pnl || 0;
+                const pnlClass = pnl >= 0 ? 'up' : 'down';
                 document.getElementById('lastTradePnl').className = 'card-value ' + pnlClass;
-                document.getElementById('lastTradePnl').textContent = (trade.pnl >= 0 ? '+' : '') + '$' + trade.pnl.toFixed(2);
+                document.getElementById('lastTradePnl').textContent = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2);
                 document.getElementById('lastTradeDesc').textContent = `${trade.asset} ${trade.direction}`;
                 document.getElementById('lastTradeEntry').textContent = formatPrice(trade.entry);
-                document.getElementById('lastTradeExit').textContent = formatPrice(trade.exit);
-                document.getElementById('lastTradeR').textContent = (trade.rMultiple >= 0 ? '+' : '') + trade.rMultiple.toFixed(1) + 'R';
+                document.getElementById('lastTradeExit').textContent = trade.exit ? formatPrice(trade.exit) : '--';
+                const rMult = trade.rMultiple || 0;
+                document.getElementById('lastTradeR').textContent = (rMult >= 0 ? '+' : '') + rMult.toFixed(1) + 'R';
             }
 
             // Activity log
