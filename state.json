@@ -1,27 +1,39 @@
 {
-  "lastUpdate": "2026-02-02T23:00:00.000Z",
+  "lastUpdate": "2026-02-03T19:03:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": { "price": 78423, "trend": "up", "note": "Resistance at prior highs" },
-    "SOL": { "price": 104.00, "trend": "up", "note": "Resistance at prior highs" },
-    "LTC": { "price": 59.96, "trend": "neutral", "note": "Added - strong backtest performer" },
+    "BTC": { "price": 73075, "trend": "down", "note": "Broke swing low - LONG signal" },
+    "SOL": { "price": 96.74, "trend": "down", "note": "Testing support at $95" },
+    "LTC": { "price": 57.01, "trend": "down", "note": "Near support $55" },
     "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
     "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
   },
   "levels": {
-    "BTC": { "support": 75000, "resistance": 82500, "sessionHigh": 80730, "sessionLow": 76022 },
-    "SOL": { "support": 95, "resistance": 115, "sessionHigh": 107.44, "sessionLow": 99.04 },
-    "LTC": { "support": 55, "resistance": 70, "sessionHigh": 62, "sessionLow": 58 },
+    "BTC": { "support": 69000, "resistance": 78000, "sessionHigh": 83672, "sessionLow": 73075 },
+    "SOL": { "support": 95, "resistance": 115, "sessionHigh": 118.46, "sessionLow": 95.88 },
+    "LTC": { "support": 55, "resistance": 64, "sessionHigh": 64.25, "sessionLow": 55.34 },
     "XRP": { "support": 1.50, "resistance": 1.80, "sessionHigh": 1.68, "sessionLow": 1.52 }
   },
   "account": {
     "balance": 10610,
     "startingBalance": 10000,
-    "openPositions": 0,
+    "openPositions": 1,
     "closedTrades": 3
   },
   "trades": [
+    {
+      "id": 4,
+      "asset": "BTC",
+      "direction": "LONG",
+      "entry": 73075,
+      "stopLoss": 68990,
+      "takeProfit": 76139,
+      "notional": 7958,
+      "openedAt": "2026-02-03T19:03:00Z",
+      "strategy": "4H Mean Reversion",
+      "status": "OPEN"
+    },
     {
       "id": 3,
       "asset": "SOL",
@@ -69,23 +81,23 @@
     }
   ],
   "lastTrade": {
-    "asset": "SOL",
+    "asset": "BTC",
     "direction": "LONG",
-    "pnl": 255.06,
-    "entry": 100.58,
-    "exit": 104.00,
-    "rMultiple": 1.0
+    "pnl": 0,
+    "entry": 73075,
+    "exit": null,
+    "rMultiple": 0
   },
   "status": {
-    "hunting": true,
-    "signal": "FLAT - Looking for setups",
-    "nextAction": "Wait for next 4H signal"
+    "hunting": false,
+    "signal": "BTC LONG ACTIVE",
+    "nextAction": "Monitor for TP $76,139 or SL $68,990"
   },
   "activityLog": [
-    { "time": "Feb 2 5:00 PM", "message": "Added LTC to watchlist", "type": "up" },
+    { "time": "Feb 3 12:03 PM", "message": "OPENED: BTC LONG @ $73,075 (swing low break)", "type": "up" },
+    { "time": "Feb 2 5:00 PM", "message": "Added LTC to watchlist", "type": "neutral" },
     { "time": "Feb 2 11:27 AM", "message": "CLOSED: SOL LONG +$255.06 (Manual - resistance)", "type": "up" },
     { "time": "Feb 2 11:27 AM", "message": "CLOSED: BTC LONG +$190.67 (Manual - resistance)", "type": "up" },
-    { "time": "Feb 2 11:18 AM", "message": "Added trade ledger to dashboard", "type": "neutral" },
-    { "time": "Feb 2 00:05 AM", "message": "OPENED: SOL LONG @ $100.58", "type": "neutral" }
+    { "time": "Feb 2 11:18 AM", "message": "Added trade ledger to dashboard", "type": "neutral" }
   ]
 }
