@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-02-03T19:40:00.000Z",
+  "lastUpdate": "2026-02-03T19:50:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
-    "BTC": { "price": 74761, "trend": "recovering", "note": "LONG +2.3% - TP $1,378 away" },
-    "SOL": { "price": 99.39, "trend": "recovering", "note": "Bouncing toward $100" },
-    "LTC": { "price": 59.13, "trend": "recovering", "note": "Holding above $58" },
+    "BTC": { "price": 74390, "trend": "consolidating", "note": "LONG +1.8% - TP $1,749 away" },
+    "SOL": { "price": 98.55, "trend": "consolidating", "note": "Pulling back from $99" },
+    "LTC": { "price": 58.90, "trend": "consolidating", "note": "Holding $58-59 range" },
     "XRP": { "price": 1.64, "trend": "neutral", "note": "Consolidating" },
     "SUI": { "price": 1.13, "trend": "neutral", "note": "Range-bound" }
   },
@@ -90,8 +90,8 @@
   },
   "status": {
     "hunting": false,
-    "signal": "BTC LONG +2.3%",
-    "nextAction": "TP $76,139 ($1,378 away) | SL $68,990 (safe)"
+    "signal": "BTC LONG +1.8%",
+    "nextAction": "TP $76,139 ($1,749 away) | SL $68,990 (safe)"
   },
   "activityLog": [
     { "time": "Feb 3 12:03 PM", "message": "OPENED: BTC LONG @ $73,075 (swing low break)", "type": "up" },
