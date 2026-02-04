@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T19:38:00.000Z",
+  "lastUpdate": "2026-02-04T20:01:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -25,10 +25,10 @@
       "note": "Ranging $72k-$75k"
     },
     "SOL": {
-      "price": 93.56,
-      "change24h": "-5.7%",
+      "price": 93.86,
+      "change24h": "-5.0%",
       "trend": "flat",
-      "note": "🟢 LONG ACTIVE - Holding near entry"
+      "note": "🟢 LONG ACTIVE - Slightly positive"
     },
     "LINK": {
       "price": 9.34,
@@ -67,12 +67,12 @@
       "asset": "SOL",
       "direction": "LONG",
       "entry": 93.69,
-      "current": 93.56,
+      "current": 93.86,
       "size": 26.40,
       "notional": 2473,
       "stopLoss": 86.41,
       "takeProfit": 97.96,
-      "unrealizedPnL": -3.43,
+      "unrealizedPnL": 4.49,
       "status": "OPEN",
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
@@ -83,7 +83,7 @@
     "asset": "SOL",
     "direction": "LONG",
     "entry": 93.69,
-    "current": 93.56,
+    "current": 93.86,
     "exit": null,
     "pnl": 0,
     "rMultiple": 0
