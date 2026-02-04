@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T21:00:00.000Z",
+  "lastUpdate": "2026-02-04T22:50:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -19,16 +19,16 @@
   },
   "prices": {
     "BTC": {
-      "price": 73124.1,
-      "change24h": "-3.0%",
+      "price": 72556.9,
+      "change24h": "-4.5%",
       "trend": "down",
       "note": "Ranging $72k-$75k"
     },
     "SOL": {
-      "price": 92.98,
-      "change24h": "-6.0%",
+      "price": 91.97,
+      "change24h": "-9.0%",
       "trend": "down",
-      "note": "Position closed at stop loss"
+      "note": "No position - monitoring"
     },
     "LINK": {
       "price": 9.31,
