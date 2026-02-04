@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T20:10:00.000Z",
+  "lastUpdate": "2026-02-04T20:50:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -19,22 +19,22 @@
   },
   "prices": {
     "BTC": {
-      "price": 75550,
-      "change24h": "-3.4%",
+      "price": 73484.4,
+      "change24h": "-2.5%",
       "trend": "down",
-      "note": "Testing $75k support"
+      "note": "Ranging $72k-$75k"
     },
     "SOL": {
-      "price": 92.29,
-      "change24h": "-4.8%",
+      "price": 92.98,
+      "change24h": "-6.0%",
       "trend": "down",
-      "note": "🟢 LONG OPEN - Entry $93.69, down 1.5%"
+      "note": "🟢 LONG ACTIVE - Underwater $19"
     },
     "LINK": {
-      "price": 9.51,
-      "change24h": "-1.4%",
-      "trend": "neutral",
-      "note": "Holding $9 support"
+      "price": 9.31,
+      "change24h": "+2.0%",
+      "trend": "up",
+      "note": "Holding above $9"
     }
   },
   "levels": {
@@ -73,8 +73,8 @@
       "status": "OPEN",
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
-      "currentPrice": 92.29,
-      "unrealizedPnL": -37,
+      "currentPrice": 92.98,
+      "unrealizedPnL": -18.74,
       "reason": "4H Mean Reversion - broke below 20-bar low, fade signal"
     }
   ],
@@ -83,8 +83,8 @@
     "direction": "LONG",
     "entry": 93.69,
     "exit": null,
-    "pnl": -37,
-    "rMultiple": -0.2
+    "pnl": -18.74,
+    "rMultiple": -0.1
   },
   "status": {
     "hunting": false,
