@@ -1,45 +1,40 @@
 {
-  "lastUpdate": "2026-02-04T10:50:00.000Z",
+  "lastUpdate": "2026-02-04T11:00:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
     "coinbase": {
       "enabled": true,
-      "capabilities": [
-        "LONG"
-      ],
+      "capabilities": ["LONG"],
       "balance": 0,
       "note": "Spot only - LONG positions"
     },
     "kraken": {
       "enabled": true,
-      "capabilities": [
-        "LONG",
-        "SHORT"
-      ],
+      "capabilities": ["LONG", "SHORT"],
       "balance": 10102.67,
       "leverage": "3x",
-      "note": "Margin enabled - LONG or SHORT"
+      "note": "Margin enabled - LONG or SHORT (API nonce issues)"
     }
   },
   "prices": {
     "BTC": {
-      "price": 76138,
+      "price": 76165,
+      "change24h": "-2.8%",
       "trend": "neutral",
-      "note": "Watching for setup"
+      "note": "Range: $72.8k-$78.4k (24h)"
     },
     "SOL": {
-      "price": 96.79,
-      "trend": "neutral",
-      "note": "Watching for setup"
+      "price": 96.93,
+      "change24h": "-6.4%",
+      "trend": "down",
+      "note": "Near support $95, range $96-$104"
     },
     "LINK": {
-      "price": 9.69,
-      "trend": "down",
-      "note": "Near support"
-    },
-    "LTC": {
-      "price": 60.66
+      "price": 9.59,
+      "change24h": "+0.5%",
+      "trend": "neutral",
+      "note": "Range: $9.08-$9.88 (24h)"
     }
   },
   "levels": {
@@ -70,9 +65,19 @@
   "status": {
     "hunting": true,
     "signal": "SCANNING",
-    "nextAction": "Looking for first LIVE trade setup..."
+    "nextAction": "SOL approaching $95 support - watching for bounce setup"
   },
   "activityLog": [
+    {
+      "time": "Feb 4 4:00 AM",
+      "message": "📊 Prices: BTC $76,165 | SOL $96.93 | LINK $9.59",
+      "type": "neutral"
+    },
+    {
+      "time": "Feb 4 4:00 AM",
+      "message": "⚠️ Kraken API nonce errors - investigating",
+      "type": "down"
+    },
     {
       "time": "Feb 3 10:10 PM",
       "message": "✅ Coinbase verified - $10,020.51 USDC (LONG only)",
@@ -89,28 +94,8 @@
       "type": "up"
     },
     {
-      "time": "Feb 3 9:47 PM",
-      "message": "🧪 Test SHORT closed @ $98.28 (-$0.43 fees)",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 3 9:47 PM",
-      "message": "🧪 Test SHORT opened: 0.5 SOL @ $98.28 (3x)",
-      "type": "neutral"
-    },
-    {
       "time": "Feb 3 9:39 PM",
       "message": "🚀 LIVE MODE ACTIVATED - Kraken $10,102.24",
-      "type": "up"
-    },
-    {
-      "time": "Feb 3 9:37 PM",
-      "message": "✅ Kraken short test passed - ready for production",
-      "type": "up"
-    },
-    {
-      "time": "Feb 3 9:31 PM",
-      "message": "💰 Kraken funded with $10,103 USDC",
       "type": "up"
     }
   ]
