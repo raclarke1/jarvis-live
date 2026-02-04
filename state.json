@@ -1,40 +1,40 @@
 {
-  "lastUpdate": "2026-02-04T11:00:00.000Z",
+  "lastUpdate": "2026-02-04T13:37:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
     "coinbase": {
       "enabled": true,
       "capabilities": ["LONG"],
-      "balance": 0,
+      "balance": 10020.51,
       "note": "Spot only - LONG positions"
     },
     "kraken": {
       "enabled": true,
       "capabilities": ["LONG", "SHORT"],
-      "balance": 10102.67,
+      "balance": 10102.24,
       "leverage": "3x",
-      "note": "Margin enabled - LONG or SHORT (API nonce issues)"
+      "note": "Margin enabled - LONG or SHORT"
     }
   },
   "prices": {
     "BTC": {
-      "price": 76165,
-      "change24h": "-2.8%",
-      "trend": "neutral",
-      "note": "Range: $72.8k-$78.4k (24h)"
+      "price": 75550,
+      "change24h": "-3.4%",
+      "trend": "down",
+      "note": "Testing $75k support"
     },
     "SOL": {
-      "price": 96.93,
-      "change24h": "-6.4%",
+      "price": 95.04,
+      "change24h": "-7.7%",
       "trend": "down",
-      "note": "Near support $95, range $96-$104"
+      "note": "At $95 support - watching closely"
     },
     "LINK": {
-      "price": 9.59,
-      "change24h": "+0.5%",
+      "price": 9.51,
+      "change24h": "-1.4%",
       "trend": "neutral",
-      "note": "Range: $9.08-$9.88 (24h)"
+      "note": "Holding $9 support"
     }
   },
   "levels": {
@@ -65,13 +65,18 @@
   "status": {
     "hunting": true,
     "signal": "SCANNING",
-    "nextAction": "SOL approaching $95 support - watching for bounce setup"
+    "nextAction": "SOL at $95 support - key test area. BTC weak at $75.5k."
   },
   "activityLog": [
     {
-      "time": "Feb 4 4:00 AM",
-      "message": "📊 Prices: BTC $76,165 | SOL $96.93 | LINK $9.59",
+      "time": "Feb 4 6:37 AM",
+      "message": "📊 Prices: BTC $75,550 | SOL $95.04 | LINK $9.51",
       "type": "neutral"
+    },
+    {
+      "time": "Feb 4 6:36 AM",
+      "message": "⚠️ Market weak - SOL testing $95 support",
+      "type": "down"
     },
     {
       "time": "Feb 4 4:00 AM",
@@ -81,16 +86,6 @@
     {
       "time": "Feb 3 10:10 PM",
       "message": "✅ Coinbase verified - $10,020.51 USDC (LONG only)",
-      "type": "up"
-    },
-    {
-      "time": "Feb 3 10:09 PM",
-      "message": "🧪 Coinbase test: BUY/SELL 0.1 SOL complete",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 3 9:49 PM",
-      "message": "✅ Kraken verified - $10,102.24 (LONG + SHORT)",
       "type": "up"
     },
     {
