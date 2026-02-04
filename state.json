@@ -57,10 +57,10 @@
     }
   },
   "account": {
-    "balance": 10102.24,
-    "startingBalance": 10102.24,
+    "balance": 20122.75,
+    "startingBalance": 20122.75,
     "krakenBalance": 10102.24,
-    "coinbaseBalance": 0,
+    "coinbaseBalance": 10020.51,
     "openPositions": 0,
     "closedTrades": 0,
     "totalPnL": 0
@@ -74,8 +74,18 @@
   },
   "activityLog": [
     {
+      "time": "Feb 3 10:10 PM",
+      "message": "✅ Coinbase verified - $10,020.51 USDC (LONG only)",
+      "type": "up"
+    },
+    {
+      "time": "Feb 3 10:09 PM",
+      "message": "🧪 Coinbase test: BUY/SELL 0.1 SOL complete",
+      "type": "neutral"
+    },
+    {
       "time": "Feb 3 9:49 PM",
-      "message": "✅ Automation test complete - Kraken SHORT verified",
+      "message": "✅ Kraken verified - $10,102.24 (LONG + SHORT)",
       "type": "up"
     },
     {
