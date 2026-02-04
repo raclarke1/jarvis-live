@@ -497,8 +497,201 @@
             </div>
         </div>
 
+        <h2 class="section-title">🚀 Multi-Year Breakout Scanner</h2>
+        <div class="card" style="overflow-x: auto;">
+            <div class="card-header">
+                📈 3-5 Year Highs & Lows — Updated <span id="scannerUpdate">Loading...</span>
+            </div>
+            <div class="card-content padded">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 20px;">
+                    <div>
+                        <h3 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.9rem;">📈 BREAKOUTS (Near Multi-Year Highs)</h3>
+                        <table class="scanner-table" id="breakoutsTable">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>5Y High</th>
+                                    <th>% From High</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent-red); margin-bottom: 12px; font-size: 0.9rem;">📉 BREAKDOWNS (Near Multi-Year Lows)</h3>
+                        <table class="scanner-table" id="breakdownsTable">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>5Y Low</th>
+                                    <th>% From Low</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <h3 style="color: var(--text-secondary); margin: 24px 0 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">All Assets by Category</h3>
+                <div id="allAssetsContainer"></div>
+            </div>
+        </div>
+
+        <style>
+            .scanner-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.8rem;
+            }
+            .scanner-table th {
+                text-align: left;
+                padding: 8px 10px;
+                border-bottom: 2px solid var(--border-color);
+                color: var(--text-secondary);
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .scanner-table td {
+                padding: 8px 10px;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .scanner-table tr:hover { background: var(--bg-secondary); }
+            .scanner-table .breakout { color: var(--accent-green); font-weight: 600; }
+            .scanner-table .breakdown { color: var(--accent-red); font-weight: 600; }
+            .scanner-table .neutral { color: var(--text-muted); }
+            .category-section {
+                margin-bottom: 20px;
+            }
+            .category-title {
+                color: var(--accent-blue);
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+                padding: 8px 12px;
+                background: var(--bg-secondary);
+                border-radius: 6px;
+            }
+            .signal-badge {
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-size: 0.65rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            .signal-breakout { background: var(--accent-green); color: #000; }
+            .signal-breakdown { background: var(--accent-red); color: #fff; }
+            .signal-neutral { background: var(--bg-tertiary); color: var(--text-muted); }
+        </style>
+
+        <script>
+            async function loadScannerData() {
+                try {
+                    const response = await fetch('breakout-data.json?' + Date.now());
+                    const data = await response.json();
+                    renderScanner(data);
+                } catch (err) {
+                    console.error('Failed to load scanner data:', err);
+                    document.getElementById('scannerUpdate').textContent = 'Error loading data';
+                }
+            }
+
+            function formatScannerDate(isoString) {
+                const d = new Date(isoString);
+                return d.toLocaleString('en-US', { 
+                    month: 'short', day: 'numeric', year: 'numeric',
+                    hour: 'numeric', minute: '2-digit', hour12: true,
+                    timeZone: 'America/Denver'
+                }) + ' MST';
+            }
+
+            function renderScanner(data) {
+                document.getElementById('scannerUpdate').textContent = formatScannerDate(data.lastUpdate);
+
+                // Breakouts table
+                const breakoutsBody = document.querySelector('#breakoutsTable tbody');
+                breakoutsBody.innerHTML = data.breakouts.map(b => `
+                    <tr>
+                        <td><strong>${b.name}</strong></td>
+                        <td style="color: var(--text-muted); font-size: 0.75rem;">${b.category}</td>
+                        <td>${b.currentPrice}</td>
+                        <td>${b.high5y}</td>
+                        <td class="breakout">${b.pctFrom5yHigh}%</td>
+                    </tr>
+                `).join('') || '<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No breakouts detected</td></tr>';
+
+                // Breakdowns table
+                const breakdownsBody = document.querySelector('#breakdownsTable tbody');
+                breakdownsBody.innerHTML = data.breakdowns.map(b => `
+                    <tr>
+                        <td><strong>${b.name}</strong></td>
+                        <td style="color: var(--text-muted); font-size: 0.75rem;">${b.category}</td>
+                        <td>${b.currentPrice}</td>
+                        <td>${b.low5y}</td>
+                        <td class="breakdown">+${b.pctFrom5yLow}%</td>
+                    </tr>
+                `).join('') || '<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No breakdowns detected</td></tr>';
+
+                // All assets by category
+                const allContainer = document.getElementById('allAssetsContainer');
+                let allHtml = '';
+                
+                for (const [category, assets] of Object.entries(data.allAssets)) {
+                    allHtml += `
+                        <div class="category-section">
+                            <div class="category-title">${category}</div>
+                            <table class="scanner-table">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Price</th>
+                                        <th>3Y High</th>
+                                        <th>3Y Low</th>
+                                        <th>5Y High</th>
+                                        <th>5Y Low</th>
+                                        <th>From 5Y High</th>
+                                        <th>From 5Y Low</th>
+                                        <th>Signal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${assets.map(a => {
+                                        const signalClass = a.signal === 'BREAKOUT' ? 'signal-breakout' : 
+                                                           (a.signal === 'BREAKDOWN' ? 'signal-breakdown' : 'signal-neutral');
+                                        const highClass = parseFloat(a.pctFrom5yHigh) >= -2 ? 'breakout' : '';
+                                        const lowClass = parseFloat(a.pctFrom5yLow) <= 5 ? 'breakdown' : '';
+                                        return `
+                                            <tr>
+                                                <td><strong>${a.name}</strong></td>
+                                                <td>${a.currentPrice}</td>
+                                                <td>${a.high3y}</td>
+                                                <td>${a.low3y}</td>
+                                                <td>${a.high5y}</td>
+                                                <td>${a.low5y}</td>
+                                                <td class="${highClass}">${a.pctFrom5yHigh}%</td>
+                                                <td class="${lowClass}">+${a.pctFrom5yLow}%</td>
+                                                <td><span class="signal-badge ${signalClass}">${a.signal}</span></td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                }
+                allContainer.innerHTML = allHtml;
+            }
+
+            loadScannerData();
+        </script>
+
         <footer>
             <p>📊 Macro Dashboard by Jarvis | Live data from <a href="https://tradingview.com" target="_blank">TradingView</a></p>
+            <p style="margin-top: 4px; font-size: 0.75rem;">Breakout scanner updates daily • Run <code>node breakout-scanner.js</code> to refresh</p>
         </footer>
     </div>
 </body>
