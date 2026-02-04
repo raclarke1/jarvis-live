@@ -57,9 +57,9 @@
     }
   },
   "account": {
-    "balance": 10102.67,
-    "startingBalance": 10102.67,
-    "krakenBalance": 10102.67,
+    "balance": 10102.24,
+    "startingBalance": 10102.24,
+    "krakenBalance": 10102.24,
     "coinbaseBalance": 0,
     "openPositions": 0,
     "closedTrades": 0,
@@ -74,8 +74,23 @@
   },
   "activityLog": [
     {
+      "time": "Feb 3 9:49 PM",
+      "message": "✅ Automation test complete - Kraken SHORT verified",
+      "type": "up"
+    },
+    {
+      "time": "Feb 3 9:47 PM",
+      "message": "🧪 Test SHORT closed @ $98.28 (-$0.43 fees)",
+      "type": "neutral"
+    },
+    {
+      "time": "Feb 3 9:47 PM",
+      "message": "🧪 Test SHORT opened: 0.5 SOL @ $98.28 (3x)",
+      "type": "neutral"
+    },
+    {
       "time": "Feb 3 9:39 PM",
-      "message": "🚀 LIVE MODE ACTIVATED - Kraken $10,102.67",
+      "message": "🚀 LIVE MODE ACTIVATED - Kraken $10,102.24",
       "type": "up"
     },
     {
