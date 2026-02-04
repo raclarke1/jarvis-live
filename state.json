@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T15:13:00.000Z",
+  "lastUpdate": "2026-02-04T18:50:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -19,28 +19,28 @@
   },
   "prices": {
     "BTC": {
-      "price": 75550,
-      "change24h": "-3.4%",
+      "price": 73549,
+      "change24h": "-4.3%",
       "trend": "down",
-      "note": "Testing $75k support"
+      "note": "Broke $75k support, testing $73k"
     },
     "SOL": {
-      "price": 93.69,
-      "change24h": "-7.1%",
+      "price": 92.20,
+      "change24h": "-9.5%",
       "trend": "down",
-      "note": "🟢 LONG ACTIVE - Entry $93.69"
+      "note": "🟢 LONG ACTIVE - Underwater (-$39)"
     },
     "LINK": {
-      "price": 9.51,
-      "change24h": "-1.4%",
-      "trend": "neutral",
-      "note": "Holding $9 support"
+      "price": 9.34,
+      "change24h": "+2.4%",
+      "trend": "up",
+      "note": "Holding above $9"
     }
   },
   "levels": {
     "BTC": {
-      "support": 73000,
-      "resistance": 78000
+      "support": 72000,
+      "resistance": 75000
     },
     "SOL": {
       "support": 86.41,
@@ -58,7 +58,8 @@
     "coinbaseBalance": 7520.57,
     "openPositions": 1,
     "closedTrades": 0,
-    "totalPnL": 0
+    "totalPnL": -39.32,
+    "unrealizedPnL": -39.32
   },
   "trades": [
     {
@@ -66,10 +67,12 @@
       "asset": "SOL",
       "direction": "LONG",
       "entry": 93.69,
+      "current": 92.20,
       "size": 26.40,
       "notional": 2473,
       "stopLoss": 86.41,
       "takeProfit": 97.96,
+      "unrealizedPnL": -39.32,
       "status": "OPEN",
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
@@ -80,16 +83,27 @@
     "asset": "SOL",
     "direction": "LONG",
     "entry": 93.69,
+    "current": 92.20,
     "exit": null,
-    "pnl": 0,
-    "rMultiple": 0
+    "pnl": -39.32,
+    "rMultiple": -0.22
   },
   "status": {
     "hunting": false,
     "signal": "POSITION OPEN",
-    "nextAction": "Monitoring SOL LONG - SL $86.41 / TP $97.96"
+    "nextAction": "Monitoring SOL LONG - Price $92.20 | SL $86.41 | TP $97.96"
   },
   "activityLog": [
+    {
+      "time": "Feb 4 11:50 AM",
+      "message": "📊 SOL @ $92.20 | Unrealized: -$39 | SL safe at $86.41",
+      "type": "neutral"
+    },
+    {
+      "time": "Feb 4 11:50 AM",
+      "message": "📉 BTC broke $75k, now $73,549 - market weakness",
+      "type": "down"
+    },
     {
       "time": "Feb 4 8:12 AM",
       "message": "🟢 SOL LONG OPENED @ $93.69 - 26.40 SOL ($2,473)",
@@ -104,16 +118,6 @@
       "time": "Feb 4 8:11 AM",
       "message": "🚨 4H Mean Reversion signal triggered - SOL",
       "type": "neutral"
-    },
-    {
-      "time": "Feb 4 6:37 AM",
-      "message": "📊 Prices: BTC $75,550 | SOL $95.04 | LINK $9.51",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 4 4:00 AM",
-      "message": "⚠️ Kraken API nonce errors - investigating",
-      "type": "down"
     }
   ]
 }
