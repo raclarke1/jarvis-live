@@ -1,15 +1,15 @@
 {
-  "lastUpdate": "2026-02-04T00:10:00.000Z",
+  "lastUpdate": "2026-02-04T00:20:00.000Z",
   "version": "3.2",
   "mode": "paper",
   "prices": {
     "BTC": {
-      "price": 75520,
+      "price": 75668,
       "trend": "consolidating",
       "note": "Holding $75.7k support"
     },
     "SOL": {
-      "price": 97.42,
+      "price": 97.61,
       "trend": "consolidating",
       "note": "Testing $98 level"
     },
@@ -19,7 +19,7 @@
       "note": "Major selloff - watch $9 support"
     },
     "LTC": {
-      "price": 59.19
+      "price": 59.47
     }
   },
   "levels": {
