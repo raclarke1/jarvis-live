@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T20:50:00.000Z",
+  "lastUpdate": "2026-02-04T21:00:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -19,8 +19,8 @@
   },
   "prices": {
     "BTC": {
-      "price": 73494,
-      "change24h": "-2.3%",
+      "price": 73124.1,
+      "change24h": "-3.0%",
       "trend": "down",
       "note": "Ranging $72k-$75k"
     },
@@ -28,7 +28,7 @@
       "price": 92.98,
       "change24h": "-6.0%",
       "trend": "down",
-      "note": "🟢 LONG ACTIVE - Underwater $19"
+      "note": "Position closed at stop loss"
     },
     "LINK": {
       "price": 9.31,
@@ -56,8 +56,8 @@
     "startingBalance": 20122,
     "krakenBalance": 10102,
     "coinbaseBalance": 10125,
-    "openPositions": 1,
-    "closedTrades": 0,
+    "openPositions": 0,
+    "closedTrades": 1,
     "totalPnL": 105
   },
   "trades": [
@@ -74,7 +74,7 @@
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
       "currentPrice": 92.98,
-      "unrealizedPnL": -18.74,
+      "unrealizedPnL": 0,
       "reason": "4H Mean Reversion - broke below 20-bar low, fade signal"
     }
   ],
@@ -87,11 +87,16 @@
     "rMultiple": -0.1
   },
   "status": {
-    "hunting": false,
-    "signal": "POSITION OPEN",
-    "nextAction": "Monitoring SOL LONG - SL $86.41 / TP $97.96 | Currently -1.5%"
+    "hunting": true,
+    "signal": "NO POSITION",
+    "nextAction": "Hunting for next 4H signal"
   },
   "activityLog": [
+    {
+      "time": "Feb 4 14:20 PM",
+      "message": "🚨 SOL LONG hit stop loss - Exit $86.41 | PnL -$192 (-7.8%)",
+      "type": "down"
+    },
     {
       "time": "Feb 4 13:10 PM",
       "message": "📊 SOL @ $92.29 | Position: -1.5% ($-37)",
