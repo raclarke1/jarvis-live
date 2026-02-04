@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T08:10:00.000Z",
+  "lastUpdate": "2026-02-04T08:20:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -24,17 +24,17 @@
   },
   "prices": {
     "BTC": {
-      "price": 76177,
+      "price": 76375,
       "trend": "neutral",
       "note": "Watching for setup"
     },
     "SOL": {
-      "price": 97.27,
+      "price": 97.61,
       "trend": "neutral",
       "note": "Watching for setup"
     },
     "LINK": {
-      "price": 9.63,
+      "price": 9.68,
       "trend": "down",
       "note": "Near support"
     },
