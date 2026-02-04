@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T19:10:00.000Z",
+  "lastUpdate": "2026-02-04T19:38:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -19,16 +19,16 @@
   },
   "prices": {
     "BTC": {
-      "price": 73579,
-      "change24h": "-4.3%",
+      "price": 73143,
+      "change24h": "-2.3%",
       "trend": "down",
-      "note": "Consolidating around $73.5k"
+      "note": "Ranging $72k-$75k"
     },
     "SOL": {
-      "price": 93.69,
-      "change24h": "-8.1%",
-      "trend": "recovering",
-      "note": "🟢 LONG ACTIVE - Back to breakeven!"
+      "price": 93.56,
+      "change24h": "-5.7%",
+      "trend": "flat",
+      "note": "🟢 LONG ACTIVE - Holding near entry"
     },
     "LINK": {
       "price": 9.34,
@@ -67,12 +67,12 @@
       "asset": "SOL",
       "direction": "LONG",
       "entry": 93.69,
-      "current": 93.69,
+      "current": 93.56,
       "size": 26.40,
       "notional": 2473,
       "stopLoss": 86.41,
       "takeProfit": 97.96,
-      "unrealizedPnL": 0,
+      "unrealizedPnL": -3.43,
       "status": "OPEN",
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
@@ -83,7 +83,7 @@
     "asset": "SOL",
     "direction": "LONG",
     "entry": 93.69,
-    "current": 93.69,
+    "current": 93.56,
     "exit": null,
     "pnl": 0,
     "rMultiple": 0
