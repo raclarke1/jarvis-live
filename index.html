@@ -312,6 +312,7 @@
                         <th>Opened</th>
                         <th>Asset</th>
                         <th>Side</th>
+                        <th>Size</th>
                         <th>Entry</th>
                         <th>Stop Loss</th>
                         <th>Take Profit</th>
@@ -466,10 +467,12 @@
                         const positionSize = t.notional || 7500;
                         const pnlDollar = t.pnl || (pnlPct / 100) * positionSize;
                         
+                        const sizeDisplay = t.notional ? `$${t.notional.toLocaleString()}` : (t.size ? `${t.size} ${t.asset}` : '--');
                         return `<tr>
                             <td>${openDate}</td>
                             <td><strong>${t.asset}</strong></td>
                             <td class="${dirClass}">${t.direction}</td>
+                            <td>${sizeDisplay}</td>
                             <td>${formatPrice(t.entry)}</td>
                             <td class="down">${formatPrice(t.stopLoss)}</td>
                             <td class="up">${formatPrice(t.takeProfit)}</td>
@@ -481,11 +484,11 @@
                     }).join('');
                     document.getElementById('tradeTableBody').innerHTML = tradesHtml;
                 } else {
-                    document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="10" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
+                    document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="11" style="text-align: center; color: var(--text-muted);">No trades yet</td></tr>';
                 }
             } catch (e) {
                 console.error('Error rendering trades:', e);
-                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="10" style="text-align: center; color: var(--accent-red);">Error loading trades</td></tr>';
+                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="11" style="text-align: center; color: var(--accent-red);">Error loading trades</td></tr>';
             }
         }
 
