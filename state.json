@@ -1,46 +1,46 @@
 {
-  "lastUpdate": "2026-02-04T18:56:00.000Z",
+  "lastUpdate": "2026-02-04T19:10:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
     "coinbase": {
       "enabled": true,
       "capabilities": ["LONG"],
-      "balance": 7528,
+      "balance": 7520.57,
       "note": "Spot only - LONG positions"
     },
     "kraken": {
       "enabled": true,
       "capabilities": ["LONG", "SHORT"],
-      "balance": 10102,
+      "balance": 10102.24,
       "leverage": "3x",
       "note": "Fixed! Ready for shorts"
     }
   },
   "prices": {
     "BTC": {
-      "price": 76000,
-      "change24h": "-2.5%",
+      "price": 73579,
+      "change24h": "-4.3%",
       "trend": "down",
-      "note": "Weak, testing support"
+      "note": "Consolidating around $73.5k"
     },
     "SOL": {
-      "price": 92.29,
-      "change24h": "-4.8%",
-      "trend": "down",
-      "note": "🟢 LONG OPEN - Entry $93.69, down 1.5%"
+      "price": 93.69,
+      "change24h": "-8.1%",
+      "trend": "recovering",
+      "note": "🟢 LONG ACTIVE - Back to breakeven!"
     },
     "LINK": {
-      "price": 9.40,
-      "change24h": "-2%",
-      "trend": "down",
-      "note": "Weak with market"
+      "price": 9.34,
+      "change24h": "+2.4%",
+      "trend": "up",
+      "note": "Holding above $9"
     }
   },
   "levels": {
     "BTC": {
-      "support": 73000,
-      "resistance": 78000
+      "support": 72000,
+      "resistance": 75000
     },
     "SOL": {
       "support": 86.41,
@@ -52,13 +52,14 @@
     }
   },
   "account": {
-    "balance": 20227,
-    "startingBalance": 20122,
-    "krakenBalance": 10102,
-    "coinbaseBalance": 10125,
+    "balance": 17622.81,
+    "startingBalance": 20122.75,
+    "krakenBalance": 10102.24,
+    "coinbaseBalance": 7520.57,
     "openPositions": 1,
     "closedTrades": 0,
-    "totalPnL": 105
+    "totalPnL": 0,
+    "unrealizedPnL": 0
   },
   "trades": [
     {
@@ -66,15 +67,15 @@
       "asset": "SOL",
       "direction": "LONG",
       "entry": 93.69,
+      "current": 93.69,
       "size": 26.40,
       "notional": 2473,
       "stopLoss": 86.41,
       "takeProfit": 97.96,
+      "unrealizedPnL": 0,
       "status": "OPEN",
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
-      "currentPrice": 92.29,
-      "unrealizedPnL": -37,
       "reason": "4H Mean Reversion - broke below 20-bar low, fade signal"
     }
   ],
@@ -82,19 +83,30 @@
     "asset": "SOL",
     "direction": "LONG",
     "entry": 93.69,
+    "current": 93.69,
     "exit": null,
-    "pnl": -37,
-    "rMultiple": -0.2
+    "pnl": 0,
+    "rMultiple": 0
   },
   "status": {
     "hunting": false,
     "signal": "POSITION OPEN",
-    "nextAction": "Monitoring SOL LONG - SL $86.41 / TP $97.96 | Currently -1.5%"
+    "nextAction": "Monitoring SOL LONG - At breakeven | SL $86.41 | TP $97.96"
   },
   "activityLog": [
     {
-      "time": "Feb 4 11:56 AM",
-      "message": "📊 SOL @ $92.29 | Position: -1.5% ($-37)",
+      "time": "Feb 4 12:10 PM",
+      "message": "📈 SOL bounced to $93.69 - back to breakeven!",
+      "type": "up"
+    },
+    {
+      "time": "Feb 4 11:50 AM",
+      "message": "📊 SOL @ $92.20 | Unrealized: -$39 | SL safe at $86.41",
+      "type": "neutral"
+    },
+    {
+      "time": "Feb 4 11:50 AM",
+      "message": "📉 BTC broke $75k, now $73,549 - market weakness",
       "type": "down"
     },
     {
@@ -106,16 +118,6 @@
       "time": "Feb 4 8:12 AM",
       "message": "⚙️ SL: $86.41 (-7.8%) | TP: $97.96 (+4.6%)",
       "type": "neutral"
-    },
-    {
-      "time": "Feb 4 8:11 AM",
-      "message": "🚨 4H Mean Reversion signal triggered - SOL",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 4 6:37 AM",
-      "message": "🚀 LIVE MODE - Kraken + Coinbase active",
-      "type": "up"
     }
   ]
 }
