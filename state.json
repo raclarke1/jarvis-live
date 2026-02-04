@@ -1,17 +1,22 @@
 {
-  "lastUpdate": "2026-02-04T04:39:00.000Z",
+  "lastUpdate": "2026-02-04T04:40:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
     "coinbase": {
       "enabled": true,
-      "capabilities": ["LONG"],
+      "capabilities": [
+        "LONG"
+      ],
       "balance": 0,
       "note": "Spot only - LONG positions"
     },
     "kraken": {
       "enabled": true,
-      "capabilities": ["LONG", "SHORT"],
+      "capabilities": [
+        "LONG",
+        "SHORT"
+      ],
       "balance": 10102.67,
       "leverage": "3x",
       "note": "Margin enabled - LONG or SHORT"
@@ -19,12 +24,12 @@
   },
   "prices": {
     "BTC": {
-      "price": 76572,
+      "price": 76552,
       "trend": "neutral",
       "note": "Watching for setup"
     },
     "SOL": {
-      "price": 98.81,
+      "price": 98.63,
       "trend": "neutral",
       "note": "Watching for setup"
     },
@@ -32,6 +37,9 @@
       "price": 9.49,
       "trend": "down",
       "note": "Near support"
+    },
+    "LTC": {
+      "price": 60.69
     }
   },
   "levels": {
