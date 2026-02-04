@@ -57,7 +57,8 @@
     }
   },
   "account": {
-    "totalEquity": 10102.67,
+    "balance": 10102.67,
+    "startingBalance": 10102.67,
     "krakenBalance": 10102.67,
     "coinbaseBalance": 0,
     "openPositions": 0,

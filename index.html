@@ -262,7 +262,7 @@
 
         <div class="grid">
             <div class="card span-2">
-                <div class="card-title">📊 Paper Trading Account</div>
+                <div class="card-title">📊 Live Trading Account</div>
                 <div class="stat-grid">
                     <div class="stat">
                         <div class="stat-value" id="balance">$--</div>
@@ -332,31 +332,31 @@
             <div id="activityLog" style="max-height: 250px; overflow-y: auto;"></div>
         </div>
 
-        <h2 class="section-title">🔬 Backtest Comparison</h2>
+        <h2 class="section-title">💰 Exchange Balances</h2>
         <div class="grid">
-            <div class="card">
-                <div class="card-title">❌ v3.1 (Exit Signals ON)</div>
-                <div class="data-row"><span class="data-label">Win Rate</span><span class="data-value down">19.4%</span></div>
-                <div class="data-row"><span class="data-label">Total P&L</span><span class="data-value down">-18.45%</span></div>
-                <div class="data-row"><span class="data-label">Trades</span><span class="data-value">31</span></div>
-            </div>
             <div class="card" style="border-color: var(--accent-green);">
-                <div class="card-title">✅ v3.2 (Trailing Stop Only)</div>
-                <div class="data-row"><span class="data-label">Win Rate</span><span class="data-value up">61.5%</span></div>
-                <div class="data-row"><span class="data-label">Total P&L</span><span class="data-value neutral">-6.86%</span></div>
-                <div class="data-row"><span class="data-label">Trades</span><span class="data-value">13</span></div>
+                <div class="card-title">🩳 Kraken (Margin)</div>
+                <div class="data-row"><span class="data-label">Balance</span><span class="data-value up" id="krakenBalance">$10,102.67</span></div>
+                <div class="data-row"><span class="data-label">Capabilities</span><span class="data-value">LONG + SHORT</span></div>
+                <div class="data-row"><span class="data-label">Leverage</span><span class="data-value">3x</span></div>
             </div>
             <div class="card">
-                <div class="card-title">📊 Key Findings</div>
-                <div class="data-row"><span class="data-label">ROI Exits</span><span class="data-value up">100% win</span></div>
-                <div class="data-row"><span class="data-label">Signal Exits</span><span class="data-value down">4% win</span></div>
-                <div class="data-row"><span class="data-label">vs Market</span><span class="data-value up">+13.8%</span></div>
+                <div class="card-title">🟢 Coinbase (Spot)</div>
+                <div class="data-row"><span class="data-label">Balance</span><span class="data-value" id="coinbaseBalance">$0.00</span></div>
+                <div class="data-row"><span class="data-label">Capabilities</span><span class="data-value">LONG only</span></div>
+                <div class="data-row"><span class="data-label">Status</span><span class="data-value">Backup</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title">📊 Strategy</div>
+                <div class="data-row"><span class="data-label">Method</span><span class="data-value">4H Mean Reversion</span></div>
+                <div class="data-row"><span class="data-label">Risk/Trade</span><span class="data-value">2% (~$200)</span></div>
+                <div class="data-row"><span class="data-label">Stop Loss</span><span class="data-value">Auto-set</span></div>
             </div>
         </div>
 
         <footer>
-            <p>Jarvis Trading Bot • Framework v3.2 • Paper Mode • Auto-refresh 5 min</p>
-            <p style="margin-top: 8px;">🔗 <a href="https://github.com/raclarke1/jarvis-live">GitHub</a></p>
+            <p>Jarvis Trading Bot • Framework v4.0 • 🚀 LIVE MODE • Auto-refresh 5 min</p>
+            <p style="margin-top: 8px;">Kraken (margin) + Coinbase (spot) • 🔗 <a href="https://github.com/raclarke1/jarvis-live">GitHub</a></p>
         </footer>
     </div>
 
