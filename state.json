@@ -10,11 +10,11 @@
       "note": "Spot only - LONG positions"
     },
     "kraken": {
-      "enabled": false,
+      "enabled": true,
       "capabilities": ["LONG", "SHORT"],
       "balance": 10102.24,
       "leverage": "3x",
-      "note": "Nonce issues - investigating"
+      "note": "Fixed! Ready for shorts"
     }
   },
   "prices": {
