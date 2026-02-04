@@ -1,163 +1,83 @@
 {
-  "lastUpdate": "2026-02-04T04:30:00.000Z",
-  "version": "3.2",
-  "mode": "paper",
+  "lastUpdate": "2026-02-04T04:39:00.000Z",
+  "version": "4.0",
+  "mode": "LIVE",
+  "exchanges": {
+    "coinbase": {
+      "enabled": true,
+      "capabilities": ["LONG"],
+      "balance": 0,
+      "note": "Spot only - LONG positions"
+    },
+    "kraken": {
+      "enabled": true,
+      "capabilities": ["LONG", "SHORT"],
+      "balance": 10102.67,
+      "leverage": "3x",
+      "note": "Margin enabled - LONG or SHORT"
+    }
+  },
   "prices": {
     "BTC": {
-      "price": 76479,
-      "trend": "consolidating",
-      "note": "Holding $75.7k support"
+      "price": 76572,
+      "trend": "neutral",
+      "note": "Watching for setup"
     },
     "SOL": {
-      "price": 98.72,
-      "trend": "consolidating",
-      "note": "Testing $98 level"
+      "price": 98.81,
+      "trend": "neutral",
+      "note": "Watching for setup"
     },
     "LINK": {
       "price": 9.49,
       "trend": "down",
-      "note": "Major selloff - watch $9 support"
-    },
-    "LTC": {
-      "price": 60.68
+      "note": "Near support"
     }
   },
   "levels": {
     "BTC": {
       "support": 73000,
-      "resistance": 78000,
-      "sessionHigh": 76139,
-      "sessionLow": 73075
+      "resistance": 78000
     },
     "SOL": {
       "support": 95,
-      "resistance": 105,
-      "sessionHigh": 104.00,
-      "sessionLow": 95.88
+      "resistance": 105
     },
     "LINK": {
       "support": 9.00,
-      "resistance": 12.00,
-      "sessionHigh": 12.50,
-      "sessionLow": 9.40
+      "resistance": 12.00
     }
   },
   "account": {
-    "balance": 10943.44,
-    "startingBalance": 10000,
+    "totalEquity": 10102.67,
+    "krakenBalance": 10102.67,
+    "coinbaseBalance": 0,
     "openPositions": 0,
-    "closedTrades": 4
+    "closedTrades": 0,
+    "totalPnL": 0
   },
-  "trades": [
-    {
-      "id": 4,
-      "asset": "BTC",
-      "direction": "LONG",
-      "entry": 73075,
-      "stopLoss": 68990,
-      "takeProfit": 76139,
-      "notional": 7958,
-      "openedAt": "2026-02-03T19:03:00Z",
-      "closedAt": "2026-02-03T20:40:00Z",
-      "exitPrice": 76139,
-      "strategy": "4H Mean Reversion",
-      "status": "TP HIT",
-      "pnl": 333.44
-    },
-    {
-      "id": 3,
-      "asset": "SOL",
-      "direction": "LONG",
-      "entry": 100.58,
-      "stopLoss": 91.27,
-      "takeProfit": 107.56,
-      "notional": 7500,
-      "openedAt": "2026-02-02T07:05:00Z",
-      "closedAt": "2026-02-02T18:27:00Z",
-      "exitPrice": 104.00,
-      "strategy": "4H Mean Reversion",
-      "status": "CLOSED",
-      "pnl": 255.06
-    },
-    {
-      "id": 2,
-      "asset": "BTC",
-      "direction": "LONG",
-      "entry": 76478,
-      "stopLoss": 72616,
-      "takeProfit": 79375,
-      "notional": 7500,
-      "openedAt": "2026-02-01T20:05:00Z",
-      "closedAt": "2026-02-02T18:27:00Z",
-      "exitPrice": 78423,
-      "strategy": "4H Mean Reversion",
-      "status": "CLOSED",
-      "pnl": 190.67
-    },
-    {
-      "id": 1,
-      "asset": "XRP",
-      "direction": "SHORT",
-      "entry": 1.7855,
-      "stopLoss": 1.85,
-      "takeProfit": 1.70,
-      "notional": 4200,
-      "openedAt": "2026-01-30T14:00:00Z",
-      "closedAt": "2026-01-31T10:30:00Z",
-      "exitPrice": 1.7287,
-      "strategy": "4H Mean Reversion",
-      "status": "TP HIT",
-      "pnl": 133.77
-    }
-  ],
-  "lastTrade": {
-    "asset": "BTC",
-    "direction": "LONG",
-    "pnl": 333.44,
-    "entry": 73075,
-    "exit": 76139,
-    "rMultiple": 1.5
-  },
+  "trades": [],
+  "lastTrade": null,
   "status": {
     "hunting": true,
-    "signal": "NO POSITION",
-    "nextAction": "Scanning for next setup..."
+    "signal": "SCANNING",
+    "nextAction": "Looking for first LIVE trade setup..."
   },
   "activityLog": [
     {
-      "time": "Feb 3 4:37 PM",
-      "message": "Scanning: BTC $75.7k, SOL $98, LINK $9.49 (watching for setups)",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 3 1:40 PM",
-      "message": "TP HIT: BTC LONG +$333.44 (4.2% gain)",
+      "time": "Feb 3 9:39 PM",
+      "message": "🚀 LIVE MODE ACTIVATED - Kraken $10,102.67",
       "type": "up"
     },
     {
-      "time": "Feb 3 12:03 PM",
-      "message": "OPENED: BTC LONG @ $73,075 (swing low break)",
+      "time": "Feb 3 9:37 PM",
+      "message": "✅ Kraken short test passed - ready for production",
       "type": "up"
     },
     {
-      "time": "Feb 2 5:00 PM",
-      "message": "Added LTC to watchlist",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 2 11:27 AM",
-      "message": "CLOSED: SOL LONG +$255.06 (Manual - resistance)",
+      "time": "Feb 3 9:31 PM",
+      "message": "💰 Kraken funded with $10,103 USDC",
       "type": "up"
-    },
-    {
-      "time": "Feb 2 11:27 AM",
-      "message": "CLOSED: BTC LONG +$190.67 (Manual - resistance)",
-      "type": "up"
-    },
-    {
-      "time": "Feb 2 11:18 AM",
-      "message": "Added trade ledger to dashboard",
-      "type": "neutral"
     }
   ]
 }
