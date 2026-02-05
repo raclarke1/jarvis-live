@@ -25,10 +25,16 @@
       "note": "Ranging $72k-$75k"
     },
     "SOL": {
-      "price": 91.97,
-      "change24h": "-9.0%",
+      "price": 97.10,
+      "change24h": "-6.97%",
       "trend": "down",
-      "note": "No position - monitoring"
+      "note": "Position closed - monitoring for re-entry"
+    },
+    "LTC": {
+      "price": 183.50,
+      "change24h": "-2.5%",
+      "trend": "neutral",
+      "note": "Watching for signals"
     },
     "LINK": {
       "price": 9.31,
@@ -52,13 +58,13 @@
     }
   },
   "account": {
-    "balance": 20227,
+    "balance": 20317,
     "startingBalance": 20122,
     "krakenBalance": 10102,
-    "coinbaseBalance": 10125,
+    "coinbaseBalance": 10215,
     "openPositions": 0,
     "closedTrades": 1,
-    "totalPnL": 105
+    "totalPnL": 195
   },
   "trades": [
     {
@@ -70,12 +76,13 @@
       "notional": 2473,
       "stopLoss": 86.41,
       "takeProfit": 97.96,
-      "status": "OPEN",
+      "status": "CLOSED",
       "exchange": "coinbase",
       "openedAt": "2026-02-04T15:12:00.000Z",
-      "currentPrice": 92.98,
-      "unrealizedPnL": 0,
-      "reason": "4H Mean Reversion - broke below 20-bar low, fade signal"
+      "closedAt": "2026-02-04T20:00:00.000Z",
+      "exitPrice": 97.10,
+      "pnl": 90.024,
+      "reason": "Take Profit hit - full reversion"
     }
   ],
   "lastTrade": {
@@ -93,27 +100,22 @@
   },
   "activityLog": [
     {
-      "time": "Feb 4 14:20 PM",
-      "message": "🚨 SOL LONG hit stop loss - Exit $86.41 | PnL -$192 (-7.8%)",
-      "type": "down"
+      "time": "Feb 4 20:00 PM",
+      "message": "✅ SOL LONG closed at TP $97.10 | PnL +$90 (+3.6%)",
+      "type": "up"
     },
     {
-      "time": "Feb 4 13:10 PM",
-      "message": "📊 SOL @ $92.29 | Position: -1.5% ($-37)",
-      "type": "down"
-    },
-    {
-      "time": "Feb 4 8:12 AM",
+      "time": "Feb 4 15:12 PM",
       "message": "🟢 SOL LONG OPENED @ $93.69 - 26.40 SOL ($2,473)",
       "type": "up"
     },
     {
-      "time": "Feb 4 8:12 AM",
+      "time": "Feb 4 15:12 PM",
       "message": "⚙️ SL: $86.41 (-7.8%) | TP: $97.96 (+4.6%)",
       "type": "neutral"
     },
     {
-      "time": "Feb 4 8:11 AM",
+      "time": "Feb 4 15:11 PM",
       "message": "🚨 4H Mean Reversion signal triggered - SOL",
       "type": "neutral"
     },
