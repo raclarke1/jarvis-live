@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-06T22:57:00Z",
+  "lastUpdate": "2026-02-06T23:00:00Z",
   "version": "5.0",
   "status": "ACTIVE",
   "accounts": {
     "kraken": {
-      "balance": 10102.24,
+      "balance": 10091.45,
       "marginUsed": 2500,
-      "freeMargin": 7602.24
+      "freeMargin": 7591.45
     }
   },
   "openPositions": [
@@ -15,15 +15,15 @@
       "asset": "SOL",
       "direction": "SHORT",
       "entry": 89.42,
+      "current": 89.19,
       "size": 27.96,
       "notional": 2500,
       "leverage": "3x",
+      "unrealizedPnl": 6.43,
       "stopLoss": 91.82,
       "takeProfit": 86.15,
       "openedAt": "2026-02-06T22:40:00Z",
       "txid": "OVFUSL-NPN3P-MUCOND",
-      "slOrderId": "O24XWI-BLRRH-3CJFSZ",
-      "tpOrderId": "O43AGT-VHJY4-CT4BMC",
       "status": "OPEN"
     }
   ],
@@ -34,9 +34,9 @@
     "tpMultiplier": 2.0
   },
   "prices": {
-    "BTC": 71207,
-    "SOL": 89.42,
-    "LTC": 55.57,
-    "updatedAt": "2026-02-06T22:40:00Z"
+    "BTC": 71313,
+    "SOL": 89.19,
+    "LTC": 55.47,
+    "updatedAt": "2026-02-06T23:00:00Z"
   }
 }
