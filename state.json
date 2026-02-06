@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-04T22:50:00.000Z",
+  "lastUpdate": "2026-02-06T19:04:00.000Z",
   "version": "4.0",
   "mode": "LIVE",
   "exchanges": {
@@ -19,42 +19,42 @@
   },
   "prices": {
     "BTC": {
-      "price": 72556.9,
-      "change24h": "-4.5%",
+      "price": 69910.30,
+      "change24h": "-2.2%",
       "trend": "down",
-      "note": "Ranging $72k-$75k"
+      "note": "24h range $60.5k-$71.4k - volatile"
     },
     "SOL": {
-      "price": 97.10,
-      "change24h": "-6.97%",
+      "price": 86.34,
+      "change24h": "-2.6%",
       "trend": "down",
-      "note": "Position closed - monitoring for re-entry"
+      "note": "Testing support at $86"
     },
     "LTC": {
-      "price": 183.50,
-      "change24h": "-2.5%",
-      "trend": "neutral",
-      "note": "Watching for signals"
+      "price": 54.87,
+      "change24h": "-10.5%",
+      "trend": "down",
+      "note": "Sharp decline from $61"
     },
     "LINK": {
-      "price": 9.31,
-      "change24h": "+2.0%",
-      "trend": "up",
-      "note": "Holding above $9"
+      "price": 8.82,
+      "change24h": "-5.3%",
+      "trend": "down",
+      "note": "Below $9 support"
     }
   },
   "levels": {
     "BTC": {
-      "support": 73000,
-      "resistance": 78000
+      "support": 60500,
+      "resistance": 71500
     },
     "SOL": {
-      "support": 86.41,
-      "resistance": 97.96
+      "support": 67,
+      "resistance": 89
     },
     "LINK": {
-      "support": 9.00,
-      "resistance": 12.00
+      "support": 8.00,
+      "resistance": 10.00
     }
   },
   "account": {
@@ -89,9 +89,9 @@
     "asset": "SOL",
     "direction": "LONG",
     "entry": 93.69,
-    "exit": null,
-    "pnl": -18.74,
-    "rMultiple": -0.1
+    "exit": 97.10,
+    "pnl": 90.024,
+    "rMultiple": 1.2
   },
   "status": {
     "hunting": true,
@@ -99,6 +99,11 @@
     "nextAction": "Hunting for next 4H signal"
   },
   "activityLog": [
+    {
+      "time": "Feb 6 12:04 PM",
+      "message": "🔄 Dashboard synced - Jarvis back online!",
+      "type": "neutral"
+    },
     {
       "time": "Feb 4 20:00 PM",
       "message": "✅ SOL LONG closed at TP $97.10 | PnL +$90 (+3.6%)",
