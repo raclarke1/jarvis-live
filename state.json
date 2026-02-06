@@ -4,17 +4,17 @@
   "mode": "LIVE",
   "exchanges": {
     "coinbase": {
-      "enabled": true,
+      "enabled": false,
       "capabilities": ["LONG"],
       "balance": 10125,
-      "note": "Spot only - LONG positions"
+      "note": "DISABLED - Using Kraken only"
     },
     "kraken": {
       "enabled": true,
       "capabilities": ["LONG", "SHORT"],
       "balance": 10102,
       "leverage": "3x",
-      "note": "Fixed! Ready for shorts"
+      "note": "Primary exchange for all trades"
     }
   },
   "prices": {
