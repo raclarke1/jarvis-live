@@ -1,133 +1,40 @@
 {
-  "lastUpdate": "2026-02-06T19:04:00.000Z",
-  "version": "4.0",
-  "mode": "LIVE",
-  "exchanges": {
-    "coinbase": {
-      "enabled": false,
-      "capabilities": ["LONG"],
-      "balance": 10125,
-      "note": "DISABLED - Using Kraken only"
-    },
+  "lastUpdate": "2026-02-06T22:40:00Z",
+  "version": "5.0",
+  "status": "ACTIVE",
+  "accounts": {
     "kraken": {
-      "enabled": true,
-      "capabilities": ["LONG", "SHORT"],
-      "balance": 10102,
-      "leverage": "3x",
-      "note": "Primary exchange for all trades"
+      "balance": 10102.24,
+      "marginUsed": 2500,
+      "freeMargin": 7602.24
     }
   },
-  "prices": {
-    "BTC": {
-      "price": 69910.30,
-      "change24h": "-2.2%",
-      "trend": "down",
-      "note": "24h range $60.5k-$71.4k - volatile"
-    },
-    "SOL": {
-      "price": 86.34,
-      "change24h": "-2.6%",
-      "trend": "down",
-      "note": "Testing support at $86"
-    },
-    "LTC": {
-      "price": 54.87,
-      "change24h": "-10.5%",
-      "trend": "down",
-      "note": "Sharp decline from $61"
-    },
-    "LINK": {
-      "price": 8.82,
-      "change24h": "-5.3%",
-      "trend": "down",
-      "note": "Below $9 support"
-    }
-  },
-  "levels": {
-    "BTC": {
-      "support": 60500,
-      "resistance": 71500
-    },
-    "SOL": {
-      "support": 67,
-      "resistance": 89
-    },
-    "LINK": {
-      "support": 8.00,
-      "resistance": 10.00
-    }
-  },
-  "account": {
-    "balance": 20317,
-    "startingBalance": 20122,
-    "krakenBalance": 10102,
-    "coinbaseBalance": 10215,
-    "openPositions": 0,
-    "closedTrades": 1,
-    "totalPnL": 195
-  },
-  "trades": [
+  "openPositions": [
     {
-      "id": "SOL-LONG-20260204",
+      "exchange": "Kraken",
       "asset": "SOL",
-      "direction": "LONG",
-      "entry": 93.69,
-      "size": 26.40,
-      "notional": 2473,
-      "stopLoss": 86.41,
-      "takeProfit": 97.96,
-      "status": "CLOSED",
-      "exchange": "coinbase",
-      "openedAt": "2026-02-04T15:12:00.000Z",
-      "closedAt": "2026-02-04T20:00:00.000Z",
-      "exitPrice": 97.10,
-      "pnl": 90.024,
-      "reason": "Take Profit hit - full reversion"
+      "direction": "SHORT",
+      "entry": 89.42,
+      "size": 27.96,
+      "notional": 2500,
+      "leverage": "3x",
+      "stopLoss": 91.82,
+      "takeProfit": 86.15,
+      "openedAt": "2026-02-06T22:40:00Z",
+      "txid": "OVFUSL-NPN3P-MUCOND",
+      "status": "OPEN"
     }
   ],
-  "lastTrade": {
-    "asset": "SOL",
-    "direction": "LONG",
-    "entry": 93.69,
-    "exit": 97.10,
-    "pnl": 90.024,
-    "rMultiple": 1.2
+  "strategy": {
+    "name": "v5.0 Mean Reversion",
+    "timeframe": "1H",
+    "slMultiplier": 1.5,
+    "tpMultiplier": 2.0
   },
-  "status": {
-    "hunting": true,
-    "signal": "NO POSITION",
-    "nextAction": "Hunting for next 4H signal"
-  },
-  "activityLog": [
-    {
-      "time": "Feb 6 12:04 PM",
-      "message": "🔄 Dashboard synced - Jarvis back online!",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 4 20:00 PM",
-      "message": "✅ SOL LONG closed at TP $97.10 | PnL +$90 (+3.6%)",
-      "type": "up"
-    },
-    {
-      "time": "Feb 4 15:12 PM",
-      "message": "🟢 SOL LONG OPENED @ $93.69 - 26.40 SOL ($2,473)",
-      "type": "up"
-    },
-    {
-      "time": "Feb 4 15:12 PM",
-      "message": "⚙️ SL: $86.41 (-7.8%) | TP: $97.96 (+4.6%)",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 4 15:11 PM",
-      "message": "🚨 4H Mean Reversion signal triggered - SOL",
-      "type": "neutral"
-    },
-    {
-      "time": "Feb 4 6:37 AM",
-      "message": "🚀 LIVE MODE - Kraken + Coinbase active",
-      "type": "up"
-    }
-  ]
+  "prices": {
+    "BTC": 71207,
+    "SOL": 89.42,
+    "LTC": 55.57,
+    "updatedAt": "2026-02-06T22:40:00Z"
+  }
 }
