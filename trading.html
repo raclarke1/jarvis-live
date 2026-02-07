@@ -299,6 +299,18 @@
     </div>
 
     <script>
+        console.log('Script starting...');
+        
+        // Quick test fetch
+        fetch('trading-stats.json').then(r => {
+            console.log('Test fetch status:', r.status);
+            return r.text();
+        }).then(t => {
+            console.log('Test fetch got', t.length, 'chars');
+        }).catch(e => {
+            console.error('Test fetch failed:', e);
+        });
+        
         // Utility functions
         function formatCurrency(value) {
             if (value === undefined || value === null) return '-';
@@ -475,12 +487,19 @@
                 
             } catch (err) {
                 console.error('Failed to load data:', err);
-                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data<br><small style="color:#ff4757">' + err.message + '</small></div>';
+                console.error('Error name:', err.name);
+                console.error('Error message:', err.message);
+                console.error('Error stack:', err.stack);
+                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data<br><small style="color:#ff4757">Error: ' + (err.message || err.toString() || 'Unknown error') + '</small></div>';
+                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="7" style="color:#ff4757">Error: ' + (err.message || 'Check console') + '</td></tr>';
             }
         }
         
         // Initial load
-        loadData();
+        loadData().catch(e => {
+            alert('Load failed: ' + e.message);
+            console.error('Uncaught in loadData:', e);
+        });
         
         // Auto-refresh every 5 minutes
         setInterval(loadData, 300000);
