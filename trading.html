@@ -435,18 +435,31 @@
         // Load and render data
         async function loadData() {
             try {
+                console.log('Loading data...');
                 const cacheBust = Date.now();
                 const [statsRes, tradesRes] = await Promise.all([
                     fetch(`trading-stats.json?v=${cacheBust}`),
                     fetch(`trading-trades.json?v=${cacheBust}`)
                 ]);
                 
+                console.log('Stats response:', statsRes.status, statsRes.ok);
+                console.log('Trades response:', tradesRes.status, tradesRes.ok);
+                
+                if (!statsRes.ok) throw new Error('Stats fetch failed: ' + statsRes.status);
+                if (!tradesRes.ok) throw new Error('Trades fetch failed: ' + tradesRes.status);
+                
                 const stats = await statsRes.json();
                 const trades = await tradesRes.json();
                 
+                console.log('Loaded', stats.length, 'strategies and', trades.length, 'trades');
+                
                 // Render strategy cards
                 const grid = document.getElementById('strategiesGrid');
-                grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
+                console.log('Rendering strategy cards...');
+                grid.innerHTML = stats.map((s, i) => {
+                    console.log('Rendering strategy', i, s.strategy);
+                    return renderStrategyCard(s);
+                }).join('');
                 
                 // Render trade table
                 const tbody = document.getElementById('tradeTableBody');
@@ -462,7 +475,7 @@
                 
             } catch (err) {
                 console.error('Failed to load data:', err);
-                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data</div>';
+                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data<br><small style="color:#ff4757">' + err.message + '</small></div>';
             }
         }
         
