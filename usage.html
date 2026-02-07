@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Usage | Jarvis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-tertiary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --accent-blue: #58a6ff;
+            --accent-green: #00ff88;
+            --accent-purple: #a855f7;
+            --accent-orange: #ffa502;
+            --border-color: #2a2a2a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 24px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+        
+        h1 { font-size: 2rem; font-weight: 600; }
+        .subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; }
+        .updated { color: var(--text-secondary); font-size: 0.8rem; }
+        
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .summary-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .summary-card .label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary-card .value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        .summary-card .value.cost { color: var(--accent-orange); }
+        .summary-card .value.tokens { color: var(--accent-blue); }
+        .summary-card .value.requests { color: var(--accent-green); }
+        
+        .summary-card .detail {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        
+        /* Chart Section */
+        .chart-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .chart-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        
+        /* Daily Breakdown Table */
+        .table-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .table-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        td { font-size: 0.9rem; }
+        
+        .text-right { text-align: right; }
+        .text-cost { color: var(--accent-orange); }
+        .text-tokens { color: var(--accent-blue); }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 48px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>API Usage</h1>
+                <p class="subtitle">Token consumption and costs by day</p>
+            </div>
+            <div class="updated" id="lastUpdated">Loading...</div>
+        </div>
+        
+        <!-- Summary Cards -->
+        <div class="summary-grid" id="summaryGrid">
+            <div class="summary-card">
+                <div class="label">Total Cost</div>
+                <div class="value cost" id="totalCost">-</div>
+                <div class="detail" id="avgCostDay">-</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Total Tokens</div>
+                <div class="value tokens" id="totalTokens">-</div>
+                <div class="detail" id="tokenBreakdown">-</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">API Requests</div>
+                <div class="value requests" id="totalRequests">-</div>
+                <div class="detail" id="avgRequestsDay">-</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Cache Efficiency</div>
+                <div class="value tokens" id="cacheEfficiency">-</div>
+                <div class="detail" id="cacheDetail">-</div>
+            </div>
+        </div>
+        
+        <!-- Chart -->
+        <div class="chart-section">
+            <h2>Daily Usage (Last 30 Days)</h2>
+            <div class="chart-container">
+                <canvas id="usageChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Daily Breakdown -->
+        <div class="table-section">
+            <h2>Daily Breakdown</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th class="text-right">Requests</th>
+                        <th class="text-right">Input Tokens</th>
+                        <th class="text-right">Output Tokens</th>
+                        <th class="text-right">Cache Read</th>
+                        <th class="text-right">Cost</th>
+                    </tr>
+                </thead>
+                <tbody id="dailyTable">
+                    <tr><td colspan="6" class="loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            Data extracted from OpenClaw session logs • Costs are estimates based on token usage
+        </div>
+    </div>
+
+    <script>
+        function formatNumber(n) {
+            if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+            if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+            return n.toLocaleString();
+        }
+        
+        function formatCost(n) {
+            return '$' + n.toFixed(2);
+        }
+        
+        function formatDate(dateStr) {
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+        
+        async function loadData() {
+            try {
+                const res = await fetch('usage-data.json?v=' + Date.now());
+                const data = await res.json();
+                
+                // Update summary cards
+                document.getElementById('totalCost').textContent = formatCost(data.totals.totalCost);
+                document.getElementById('avgCostDay').textContent = `~${formatCost(data.totals.totalCost / data.daily.length)}/day avg`;
+                
+                document.getElementById('totalTokens').textContent = formatNumber(data.totals.totalTokens);
+                document.getElementById('tokenBreakdown').textContent = `${formatNumber(data.totals.inputTokens)} in / ${formatNumber(data.totals.outputTokens)} out`;
+                
+                document.getElementById('totalRequests').textContent = formatNumber(data.totals.requests);
+                document.getElementById('avgRequestsDay').textContent = `~${Math.round(data.totals.requests / data.daily.length)}/day avg`;
+                
+                const cacheRatio = data.totals.cacheRead / (data.totals.inputTokens + data.totals.outputTokens + data.totals.cacheRead) * 100;
+                document.getElementById('cacheEfficiency').textContent = cacheRatio.toFixed(1) + '%';
+                document.getElementById('cacheDetail').textContent = `${formatNumber(data.totals.cacheRead)} tokens from cache`;
+                
+                document.getElementById('lastUpdated').textContent = `Updated ${new Date(data.generatedAt).toLocaleString()}`;
+                
+                // Render chart
+                renderChart(data.daily);
+                
+                // Render table
+                renderTable(data.daily);
+                
+            } catch (err) {
+                console.error('Failed to load data:', err);
+                document.getElementById('dailyTable').innerHTML = '<tr><td colspan="6" class="loading">Failed to load data</td></tr>';
+            }
+        }
+        
+        function renderChart(daily) {
+            const ctx = document.getElementById('usageChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: daily.map(d => formatDate(d.date)),
+                    datasets: [
+                        {
+                            label: 'Cost ($)',
+                            data: daily.map(d => d.totalCost),
+                            backgroundColor: 'rgba(255, 165, 2, 0.7)',
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Requests',
+                            data: daily.map(d => d.requests),
+                            type: 'line',
+                            borderColor: '#00ff88',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#888' }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#888' },
+                            grid: { color: '#2a2a2a' }
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left',
+                            ticks: { 
+                                color: '#ffa502',
+                                callback: v => '$' + v.toFixed(0)
+                            },
+                            grid: { color: '#2a2a2a' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            ticks: { color: '#00ff88' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function renderTable(daily) {
+            const tbody = document.getElementById('dailyTable');
+            tbody.innerHTML = daily.slice().reverse().map(d => `
+                <tr>
+                    <td>${formatDate(d.date)}</td>
+                    <td class="text-right">${d.requests.toLocaleString()}</td>
+                    <td class="text-right text-tokens">${formatNumber(d.inputTokens)}</td>
+                    <td class="text-right text-tokens">${formatNumber(d.outputTokens)}</td>
+                    <td class="text-right">${formatNumber(d.cacheRead)}</td>
+                    <td class="text-right text-cost">${formatCost(d.totalCost)}</td>
+                </tr>
+            `).join('');
+        }
+        
+        loadData();
+    </script>
+</body>
+</html>
