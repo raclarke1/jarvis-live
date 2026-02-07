@@ -354,7 +354,7 @@
                         </div>
                         <div class="metric-card">
                             <div class="label">Profit Factor</div>
-                            <div class="value ${stats.profitFactor >= 1 ? 'positive' : 'negative'}">${stats.profitFactor === Infinity ? '∞' : stats.profitFactor.toFixed(2)}</div>
+                            <div class="value ${stats.profitFactor >= 1 ? 'positive' : 'negative'}">${stats.profitFactor === null || stats.profitFactor === Infinity ? '∞' : stats.profitFactor.toFixed(2)}</div>
                         </div>
                         <div class="metric-card">
                             <div class="label">Max Drawdown</div>
