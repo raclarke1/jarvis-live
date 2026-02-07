@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-06T23:50:00Z",
-  "version": "5.0",
-  "status": "IDLE",
+  "lastUpdate": "2026-02-07T02:33:00Z",
+  "version": "5.0 + IBB",
+  "status": "ACTIVE",
   "accounts": {
     "kraken": {
-      "balance": 10160.10,
+      "balance": 24980.24,
       "marginUsed": 0,
-      "freeMargin": 10160.10
+      "freeMargin": 24980.24
     }
   },
   "openPositions": [],
@@ -20,17 +20,33 @@
     "duration": "1.5h",
     "closedAt": "2026-02-06T23:50:00Z"
   },
-  "strategy": {
-    "name": "v5.0 Mean Reversion",
-    "timeframe": "1H",
-    "slMultiplier": 1.5,
-    "tpMultiplier": 2.0
+  "strategies": {
+    "v5": {
+      "name": "v5.0 Mean Reversion",
+      "assets": ["BTC", "SOL", "LTC"],
+      "timeframe": "1H",
+      "schedule": "Every hour at :05",
+      "slMultiplier": 1.5,
+      "tpMultiplier": 2.0
+    },
+    "ibb": {
+      "name": "IBB Inside Bar Breakout",
+      "assets": ["DOGE", "LINK", "ADA", "LTC", "XRP", "SOL"],
+      "timeframe": "1H",
+      "schedule": "Every hour at :10",
+      "slMultiplier": 1.0,
+      "tpMultiplier": 2.0
+    }
   },
   "prices": {
     "BTC": 71313,
-    "SOL": 86.41,
-    "LTC": 55.47,
-    "updatedAt": "2026-02-06T23:50:00Z"
+    "SOL": 87.36,
+    "LTC": 54.76,
+    "DOGE": 0.0984,
+    "LINK": 8.88,
+    "ADA": 0.273,
+    "XRP": 1.467,
+    "updatedAt": "2026-02-07T02:33:00Z"
   },
   "stats": {
     "todayPnl": 84,
