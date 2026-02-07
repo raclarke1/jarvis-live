@@ -299,18 +299,6 @@
     </div>
 
     <script>
-        console.log('Script starting...');
-        
-        // Quick test fetch
-        fetch('trading-stats.json').then(r => {
-            console.log('Test fetch status:', r.status);
-            return r.text();
-        }).then(t => {
-            console.log('Test fetch got', t.length, 'chars');
-        }).catch(e => {
-            console.error('Test fetch failed:', e);
-        });
-        
         // Utility functions
         function formatCurrency(value) {
             if (value === undefined || value === null || typeof value !== 'number' || isNaN(value)) return '-';
@@ -448,15 +436,11 @@
         // Load and render data
         async function loadData() {
             try {
-                console.log('Loading data...');
                 const cacheBust = Date.now();
                 const [statsRes, tradesRes] = await Promise.all([
                     fetch(`trading-stats.json?v=${cacheBust}`),
                     fetch(`trading-trades.json?v=${cacheBust}`)
                 ]);
-                
-                console.log('Stats response:', statsRes.status, statsRes.ok);
-                console.log('Trades response:', tradesRes.status, tradesRes.ok);
                 
                 if (!statsRes.ok) throw new Error('Stats fetch failed: ' + statsRes.status);
                 if (!tradesRes.ok) throw new Error('Trades fetch failed: ' + tradesRes.status);
@@ -464,15 +448,9 @@
                 const stats = await statsRes.json();
                 const trades = await tradesRes.json();
                 
-                console.log('Loaded', stats.length, 'strategies and', trades.length, 'trades');
-                
                 // Render strategy cards
                 const grid = document.getElementById('strategiesGrid');
-                console.log('Rendering strategy cards...');
-                grid.innerHTML = stats.map((s, i) => {
-                    console.log('Rendering strategy', i, s.strategy);
-                    return renderStrategyCard(s);
-                }).join('');
+                grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
                 
                 // Render trade table
                 const tbody = document.getElementById('tradeTableBody');
@@ -488,23 +466,15 @@
                 
             } catch (err) {
                 console.error('Failed to load data:', err);
-                console.error('Error name:', err.name);
-                console.error('Error message:', err.message);
-                console.error('Error stack:', err.stack);
-                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data<br><small style="color:#ff4757">Error: ' + (err.message || err.toString() || 'Unknown error') + '</small></div>';
-                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="7" style="color:#ff4757">Error: ' + (err.message || 'Check console') + '</td></tr>';
+                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data</div>';
             }
         }
         
         // Initial load
-        loadData().catch(e => {
-            alert('Load failed: ' + e.message);
-            console.error('Uncaught in loadData:', e);
-        });
+        loadData();
         
         // Auto-refresh every 5 minutes
         setInterval(loadData, 300000);
     </script>
 </body>
 </html>
-<!-- cache bust Fri Feb  6 21:42:01 MST 2026 -->
