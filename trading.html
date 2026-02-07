@@ -435,9 +435,10 @@
         // Load and render data
         async function loadData() {
             try {
+                const cacheBust = Date.now();
                 const [statsRes, tradesRes] = await Promise.all([
-                    fetch('trading-stats.json'),
-                    fetch('trading-trades.json')
+                    fetch(`trading-stats.json?v=${cacheBust}`),
+                    fetch(`trading-trades.json?v=${cacheBust}`)
                 ]);
                 
                 const stats = await statsRes.json();
