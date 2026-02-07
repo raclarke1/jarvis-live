@@ -1,15 +1,33 @@
 {
-  "lastUpdate": "2026-02-07T02:33:00Z",
+  "lastUpdate": "2026-02-07T02:37:00Z",
   "version": "5.0 + IBB",
   "status": "ACTIVE",
   "accounts": {
     "kraken": {
       "balance": 24980.24,
-      "marginUsed": 0,
-      "freeMargin": 24980.24
+      "marginUsed": 100,
+      "freeMargin": 24880.24
     }
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "exchange": "Kraken",
+      "asset": "DOGE",
+      "direction": "LONG",
+      "entry": 0.098,
+      "size": 1019.04,
+      "notional": 100,
+      "leverage": "3x",
+      "stopLoss": 0.0962,
+      "takeProfit": 0.1016,
+      "openedAt": "2026-02-07T02:37:00Z",
+      "txid": "O57BBG-W6LYO-KANII7",
+      "slOrderId": "OHX6WH-FK5PZ-A5Y7UW",
+      "tpOrderId": "O6TPSB-NNKHK-W7I65T",
+      "strategy": "IBB-TEST",
+      "status": "OPEN"
+    }
+  ],
   "lastTrade": {
     "asset": "SOL",
     "direction": "SHORT",
@@ -42,15 +60,15 @@
     "BTC": 71313,
     "SOL": 87.36,
     "LTC": 54.76,
-    "DOGE": 0.0984,
+    "DOGE": 0.098,
     "LINK": 8.88,
     "ADA": 0.273,
     "XRP": 1.467,
-    "updatedAt": "2026-02-07T02:33:00Z"
+    "updatedAt": "2026-02-07T02:37:00Z"
   },
   "stats": {
     "todayPnl": 84,
-    "todayTrades": 1,
+    "todayTrades": 2,
     "todayWins": 1
   }
 }
