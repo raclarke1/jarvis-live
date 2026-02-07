@@ -313,18 +313,19 @@
         
         // Utility functions
         function formatCurrency(value) {
-            if (value === undefined || value === null) return '-';
+            if (value === undefined || value === null || typeof value !== 'number' || isNaN(value)) return '-';
             const abs = Math.abs(value);
             const formatted = abs >= 1000 ? `$${(abs/1000).toFixed(1)}k` : `$${abs.toFixed(2)}`;
             return value < 0 ? `-${formatted}` : formatted;
         }
         
         function formatPercent(value) {
-            if (value === undefined || value === null) return '-';
+            if (value === undefined || value === null || typeof value !== 'number' || isNaN(value)) return '-';
             return `${value >= 0 ? '+' : ''}${value.toFixed(2)}%`;
         }
         
         function formatDuration(ms) {
+            if (ms === undefined || ms === null || typeof ms !== 'number' || isNaN(ms)) return '-';
             const hours = ms / (1000 * 60 * 60);
             return hours < 24 ? `${hours.toFixed(1)}h` : `${(hours/24).toFixed(1)}d`;
         }
