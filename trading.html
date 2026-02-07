@@ -363,7 +363,7 @@
                         </div>
                         <div class="metric-card">
                             <div class="label">Win Rate</div>
-                            <div class="value ${stats.winRate >= 50 ? 'positive' : 'negative'}">${stats.winRate.toFixed(1)}%</div>
+                            <div class="value ${stats.winRate >= 50 ? 'positive' : 'negative'}">${stats.winRate?.toFixed(1) ?? '-'}%</div>
                         </div>
                         <div class="metric-card">
                             <div class="label">Profit Factor</div>
@@ -371,7 +371,7 @@
                         </div>
                         <div class="metric-card">
                             <div class="label">Max Drawdown</div>
-                            <div class="value ${stats.maxDrawdownPercent < 20 ? 'positive' : 'negative'}">-${stats.maxDrawdownPercent.toFixed(1)}%</div>
+                            <div class="value ${(stats.maxDrawdownPercent ?? 0) < 20 ? 'positive' : 'negative'}">-${stats.maxDrawdownPercent?.toFixed(1) ?? '0'}%</div>
                         </div>
                     </div>
                     
