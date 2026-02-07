@@ -1,32 +1,25 @@
 {
-  "lastUpdate": "2026-02-06T23:00:00Z",
+  "lastUpdate": "2026-02-06T23:50:00Z",
   "version": "5.0",
-  "status": "ACTIVE",
+  "status": "IDLE",
   "accounts": {
     "kraken": {
-      "balance": 10091.45,
-      "marginUsed": 2500,
-      "freeMargin": 7591.45
+      "balance": 10160.10,
+      "marginUsed": 0,
+      "freeMargin": 10160.10
     }
   },
-  "openPositions": [
-    {
-      "exchange": "Kraken",
-      "asset": "SOL",
-      "direction": "SHORT",
-      "entry": 89.42,
-      "current": 89.19,
-      "size": 27.96,
-      "notional": 2500,
-      "leverage": "3x",
-      "unrealizedPnl": 6.43,
-      "stopLoss": 91.82,
-      "takeProfit": 86.15,
-      "openedAt": "2026-02-06T22:40:00Z",
-      "txid": "OVFUSL-NPN3P-MUCOND",
-      "status": "OPEN"
-    }
-  ],
+  "openPositions": [],
+  "lastTrade": {
+    "asset": "SOL",
+    "direction": "SHORT",
+    "entry": 89.42,
+    "exit": 86.41,
+    "pnl": 84,
+    "result": "WIN",
+    "duration": "1.5h",
+    "closedAt": "2026-02-06T23:50:00Z"
+  },
   "strategy": {
     "name": "v5.0 Mean Reversion",
     "timeframe": "1H",
@@ -35,8 +28,13 @@
   },
   "prices": {
     "BTC": 71313,
-    "SOL": 89.19,
+    "SOL": 86.41,
     "LTC": 55.47,
-    "updatedAt": "2026-02-06T23:00:00Z"
+    "updatedAt": "2026-02-06T23:50:00Z"
+  },
+  "stats": {
+    "todayPnl": 84,
+    "todayTrades": 1,
+    "todayWins": 1
   }
 }
