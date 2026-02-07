@@ -136,6 +136,61 @@
         .text-cost { color: var(--accent-orange); }
         .text-tokens { color: var(--accent-blue); }
         
+        /* Model Grid */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        
+        .model-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        
+        .model-card .model-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .model-card .model-name .badge {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .model-card .model-name .badge.opus { background: rgba(168,85,247,0.2); color: #a855f7; }
+        .model-card .model-name .badge.grok { background: rgba(88,166,255,0.2); color: #58a6ff; }
+        .model-card .model-name .badge.other { background: rgba(136,136,136,0.2); color: #888; }
+        
+        .model-card .model-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        .model-card .stat {
+            text-align: center;
+        }
+        
+        .model-card .stat .value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .model-card .stat .label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        
         /* Footer */
         .footer {
             text-align: center;
@@ -191,6 +246,14 @@
             <h2>Daily Usage (Last 30 Days)</h2>
             <div class="chart-container">
                 <canvas id="usageChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Model Breakdown -->
+        <div class="chart-section">
+            <h2>Usage by Model</h2>
+            <div class="model-grid" id="modelGrid">
+                <!-- Populated by JS -->
             </div>
         </div>
         
@@ -258,6 +321,9 @@
                 
                 // Render chart
                 renderChart(data.daily);
+                
+                // Render model breakdown
+                renderModelBreakdown(data.daily);
                 
                 // Render table
                 renderTable(data.daily);
@@ -328,6 +394,54 @@
                     }
                 }
             });
+        }
+        
+        function renderModelBreakdown(daily) {
+            // Aggregate by model across all days
+            const modelTotals = {};
+            for (const day of daily) {
+                for (const [model, stats] of Object.entries(day.models || {})) {
+                    if (!modelTotals[model]) {
+                        modelTotals[model] = { requests: 0, tokens: 0, cost: 0 };
+                    }
+                    modelTotals[model].requests += stats.requests;
+                    modelTotals[model].tokens += stats.tokens;
+                    modelTotals[model].cost += stats.cost;
+                }
+            }
+            
+            const grid = document.getElementById('modelGrid');
+            grid.innerHTML = Object.entries(modelTotals)
+                .filter(([model]) => model !== 'delivery-mirror') // Skip internal
+                .sort((a, b) => b[1].cost - a[1].cost)
+                .map(([model, stats]) => {
+                    const badgeClass = model.includes('opus') ? 'opus' : 
+                                       model.includes('grok') ? 'grok' : 'other';
+                    const displayName = model.includes('opus') ? 'Claude Opus 4.5' :
+                                        model.includes('grok') ? 'Grok' : model;
+                    return `
+                        <div class="model-card">
+                            <div class="model-name">
+                                ${displayName}
+                                <span class="badge ${badgeClass}">${badgeClass.toUpperCase()}</span>
+                            </div>
+                            <div class="model-stats">
+                                <div class="stat">
+                                    <div class="value text-cost">${formatCost(stats.cost)}</div>
+                                    <div class="label">Cost</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="value">${formatNumber(stats.requests)}</div>
+                                    <div class="label">Requests</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="value text-tokens">${formatNumber(stats.tokens)}</div>
+                                    <div class="label">Tokens</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
         }
         
         function renderTable(daily) {
