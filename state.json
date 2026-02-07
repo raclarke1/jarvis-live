@@ -1,42 +1,25 @@
 {
-  "lastUpdate": "2026-02-07T02:37:00Z",
+  "lastUpdate": "2026-02-07T02:39:00Z",
   "version": "5.0 + IBB",
-  "status": "ACTIVE",
+  "status": "WATCHING",
   "accounts": {
     "kraken": {
       "balance": 24980.24,
-      "marginUsed": 100,
-      "freeMargin": 24880.24
+      "marginUsed": 0,
+      "freeMargin": 24980.24
     }
   },
-  "openPositions": [
-    {
-      "exchange": "Kraken",
-      "asset": "DOGE",
-      "direction": "LONG",
-      "entry": 0.098,
-      "size": 1019.04,
-      "notional": 100,
-      "leverage": "3x",
-      "stopLoss": 0.0962,
-      "takeProfit": 0.1016,
-      "openedAt": "2026-02-07T02:37:00Z",
-      "txid": "O57BBG-W6LYO-KANII7",
-      "slOrderId": "OHX6WH-FK5PZ-A5Y7UW",
-      "tpOrderId": "O6TPSB-NNKHK-W7I65T",
-      "strategy": "IBB-TEST",
-      "status": "OPEN"
-    }
-  ],
+  "openPositions": [],
   "lastTrade": {
-    "asset": "SOL",
-    "direction": "SHORT",
-    "entry": 89.42,
-    "exit": 86.41,
-    "pnl": 84,
-    "result": "WIN",
-    "duration": "1.5h",
-    "closedAt": "2026-02-06T23:50:00Z"
+    "asset": "DOGE",
+    "direction": "LONG",
+    "entry": 0.098,
+    "exit": 0.098,
+    "pnl": 0,
+    "result": "TEST",
+    "duration": "2m",
+    "closedAt": "2026-02-07T02:39:00Z",
+    "note": "IBB test trade - closed manually"
   },
   "strategies": {
     "v5": {
@@ -64,7 +47,7 @@
     "LINK": 8.88,
     "ADA": 0.273,
     "XRP": 1.467,
-    "updatedAt": "2026-02-07T02:37:00Z"
+    "updatedAt": "2026-02-07T02:39:00Z"
   },
   "stats": {
     "todayPnl": 84,
