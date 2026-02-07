@@ -1,0 +1,48 @@
+[
+  {
+    "_creationTime": 1770436596276.162,
+    "_id": "jd70gb29je9f9gy5ce443f2whn80paxg",
+    "avgHoldingTimeMs": 3600000,
+    "avgLossUsd": 126.76056338028167,
+    "avgWinUsd": 155.38412713912555,
+    "currentCapital": 10339.391818037095,
+    "firstTradeTime": 1770432989719,
+    "largestLossUsd": 126.76056338028167,
+    "largestWinUsd": 175.1824817518248,
+    "lastUpdated": 1770436596276,
+    "losingTrades": 1,
+    "maxDrawdownPercent": 1.2111476955499367,
+    "profitFactor": 3.677424342292639,
+    "startingCapital": 10000,
+    "strategy": "V5.0",
+    "totalPnlPercent": 3.39391818037095,
+    "totalPnlUsd": 339.391818037095,
+    "totalTrades": 4,
+    "winRate": 75,
+    "winningTrades": 3
+  },
+  {
+    "_creationTime": 1770436596744.632,
+    "_id": "jd71ygrr6h8pxgc1caf0xf9c4x80p295",
+    "avgHoldingTimeMs": 3600000,
+    "avgLossUsd": 0,
+    "avgWinUsd": 122.5590955806783,
+    "currentCapital": 5245.118191161357,
+    "firstTradeTime": 1770432991900,
+    "largestLossUsd": 0,
+    "largestWinUsd": 128.57142857142856,
+    "lastUpdated": 1770436596744,
+    "losingTrades": 0,
+    "maxDrawdownPercent": 0,
+    "profitFactor": {
+      "$float": "AAAAAAAA8H8="
+    },
+    "startingCapital": 5000,
+    "strategy": "IBB",
+    "totalPnlPercent": 4.902363823227132,
+    "totalPnlUsd": 245.1181911613566,
+    "totalTrades": 2,
+    "winRate": 100,
+    "winningTrades": 2
+  }
+]

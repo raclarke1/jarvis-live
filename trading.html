@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Performance | Jarvis</title>
+    <meta http-equiv="refresh" content="300">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: linear-gradient(135deg, #1a1a2e 0%, #16162a 100%);
+            --text-primary: #e0e0e0;
+            --text-secondary: #888;
+            --accent-green: #00ff88;
+            --accent-green-dim: rgba(0,255,136,0.15);
+            --accent-red: #ff4757;
+            --accent-red-dim: rgba(255,71,87,0.15);
+            --accent-blue: #58a6ff;
+            --accent-purple: #a855f7;
+            --border-color: #2a2a4a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 24px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle { color: var(--text-secondary); margin-top: 4px; }
+        .header .updated {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        /* Strategy Cards Grid */
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        /* Strategy Card */
+        .strategy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .strategy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .strategy-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .strategy-since {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .total-return {
+            text-align: right;
+        }
+        .total-return .value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .total-return .value.positive { color: var(--accent-green); }
+        .total-return .value.negative { color: var(--accent-red); }
+        .total-return .label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .metric-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .metric-card .label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .metric-card .value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .metric-card .value.positive { color: var(--accent-green); }
+        .metric-card .value.negative { color: var(--accent-red); }
+        
+        /* Mini Stats */
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            text-align: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+        .mini-stat .label {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        .mini-stat .value {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* Capital Progress */
+        .capital-progress {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 16px;
+            margin-top: 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+        }
+        .capital-progress .start { color: var(--text-secondary); }
+        .capital-progress .arrow { color: var(--text-secondary); }
+        .capital-progress .current { font-weight: 600; }
+        
+        /* Trade Log */
+        .trade-log {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .trade-log-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .trade-log-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .trade-log-header .count {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        
+        /* Table */
+        .trade-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .trade-table th {
+            background: rgba(0,0,0,0.3);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .trade-table th:last-child { text-align: right; }
+        .trade-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.875rem;
+        }
+        .trade-table tr:hover { background: rgba(255,255,255,0.02); }
+        
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .tag.v5 { background: rgba(88,166,255,0.2); color: var(--accent-blue); }
+        .tag.ibb { background: rgba(168,85,247,0.2); color: var(--accent-purple); }
+        .tag.long { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.short { background: var(--accent-red-dim); color: var(--accent-red); }
+        .tag.open { background: rgba(255,165,2,0.2); color: #ffa502; }
+        
+        /* P&L Cell */
+        .pnl-cell { text-align: right; }
+        .pnl-cell .usd { font-weight: 600; }
+        .pnl-cell .usd.positive { color: var(--accent-green); }
+        .pnl-cell .usd.negative { color: var(--accent-red); }
+        .pnl-cell .pct { font-size: 0.75rem; }
+        .pnl-cell .pct.positive { color: rgba(0,255,136,0.7); }
+        .pnl-cell .pct.negative { color: rgba(255,71,87,0.7); }
+        
+        /* Asset Cell */
+        .asset-cell .name { font-weight: 500; }
+        .asset-cell .exchange { font-size: 0.7rem; color: var(--text-secondary); }
+        
+        /* Entry/Exit Cell */
+        .price-cell .price { }
+        .price-cell .time { font-size: 0.7rem; color: var(--text-secondary); }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 48px;
+            color: var(--text-secondary);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .strategies-grid { grid-template-columns: 1fr; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .mini-stats { grid-template-columns: repeat(3, 1fr); }
+            .trade-table { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>Trading Performance</h1>
+                <p class="subtitle">Live strategy performance and trade history</p>
+            </div>
+            <div class="updated" id="lastUpdated">Loading...</div>
+        </div>
+        
+        <!-- Strategy Cards -->
+        <div class="strategies-grid" id="strategiesGrid">
+            <!-- Populated by JS -->
+        </div>
+        
+        <!-- Trade Log -->
+        <div class="trade-log">
+            <div class="trade-log-header">
+                <h2>Trade History</h2>
+                <p class="count" id="tradeCount">Loading...</p>
+            </div>
+            <table class="trade-table">
+                <thead>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>Asset</th>
+                        <th>Direction</th>
+                        <th>Entry</th>
+                        <th>Exit</th>
+                        <th>Size</th>
+                        <th>P&L</th>
+                    </tr>
+                </thead>
+                <tbody id="tradeTableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Updated after each trade • Kraken for spot/margin • Drift for perpetuals
+        </div>
+    </div>
+
+    <script>
+        // Utility functions
+        function formatCurrency(value) {
+            if (value === undefined || value === null) return '-';
+            const abs = Math.abs(value);
+            const formatted = abs >= 1000 ? `$${(abs/1000).toFixed(1)}k` : `$${abs.toFixed(2)}`;
+            return value < 0 ? `-${formatted}` : formatted;
+        }
+        
+        function formatPercent(value) {
+            if (value === undefined || value === null) return '-';
+            return `${value >= 0 ? '+' : ''}${value.toFixed(2)}%`;
+        }
+        
+        function formatDuration(ms) {
+            const hours = ms / (1000 * 60 * 60);
+            return hours < 24 ? `${hours.toFixed(1)}h` : `${(hours/24).toFixed(1)}d`;
+        }
+        
+        function formatDate(ts) {
+            const d = new Date(ts);
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        }
+        
+        function formatDateShort(ts) {
+            const d = new Date(ts);
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+        
+        // Render strategy card
+        function renderStrategyCard(stats) {
+            const isProfit = stats.totalPnlUsd >= 0;
+            return `
+                <div class="strategy-card">
+                    <div class="strategy-header">
+                        <div>
+                            <div class="strategy-name">${stats.strategy} Strategy</div>
+                            <div class="strategy-since">Since ${formatDateShort(stats.firstTradeTime)}</div>
+                        </div>
+                        <div class="total-return">
+                            <div class="value ${isProfit ? 'positive' : 'negative'}">${formatPercent(stats.totalPnlPercent)}</div>
+                            <div class="label">Total Return</div>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="label">Total P&L</div>
+                            <div class="value ${stats.totalPnlUsd >= 0 ? 'positive' : 'negative'}">${formatCurrency(stats.totalPnlUsd)}</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="label">Win Rate</div>
+                            <div class="value ${stats.winRate >= 50 ? 'positive' : 'negative'}">${stats.winRate.toFixed(1)}%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="label">Profit Factor</div>
+                            <div class="value ${stats.profitFactor >= 1 ? 'positive' : 'negative'}">${stats.profitFactor === Infinity ? '∞' : stats.profitFactor.toFixed(2)}</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="label">Max Drawdown</div>
+                            <div class="value ${stats.maxDrawdownPercent < 20 ? 'positive' : 'negative'}">-${stats.maxDrawdownPercent.toFixed(1)}%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mini-stats">
+                        <div class="mini-stat">
+                            <div class="label">Trades</div>
+                            <div class="value">${stats.totalTrades}</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="label">Wins</div>
+                            <div class="value">${stats.winningTrades}</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="label">Losses</div>
+                            <div class="value">${stats.losingTrades}</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="label">Avg Win</div>
+                            <div class="value">${formatCurrency(stats.avgWinUsd)}</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="label">Avg Loss</div>
+                            <div class="value">${formatCurrency(stats.avgLossUsd)}</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="label">Avg Hold</div>
+                            <div class="value">${formatDuration(stats.avgHoldingTimeMs)}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="capital-progress">
+                        <span class="start">Capital: ${formatCurrency(stats.startingCapital)}</span>
+                        <span class="arrow">→</span>
+                        <span class="current">${formatCurrency(stats.currentCapital)}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render trade row
+        function renderTradeRow(trade) {
+            const isOpen = trade.status === 'OPEN';
+            const isWin = (trade.pnlUsd || 0) > 0;
+            
+            return `
+                <tr>
+                    <td><span class="tag ${trade.strategy === 'V5.0' ? 'v5' : 'ibb'}">${trade.strategy}</span></td>
+                    <td class="asset-cell">
+                        <div class="name">${trade.asset}</div>
+                        <div class="exchange">${trade.exchange}</div>
+                    </td>
+                    <td><span class="tag ${trade.direction.toLowerCase()}">${trade.direction} ${trade.leverage}x</span></td>
+                    <td class="price-cell">
+                        <div class="price">$${trade.entryPrice.toLocaleString()}</div>
+                        <div class="time">${formatDate(trade.entryTime)}</div>
+                    </td>
+                    <td class="price-cell">
+                        ${isOpen ? '<span class="tag open">Open</span>' : `
+                            <div class="price">$${trade.exitPrice?.toLocaleString()}</div>
+                            <div class="time">${trade.exitReason}</div>
+                        `}
+                    </td>
+                    <td>${formatCurrency(trade.positionSize)}</td>
+                    <td class="pnl-cell">
+                        ${isOpen ? '-' : `
+                            <div class="usd ${isWin ? 'positive' : 'negative'}">${formatCurrency(trade.pnlUsd)}</div>
+                            <div class="pct ${isWin ? 'positive' : 'negative'}">${formatPercent(trade.pnlPercent)}</div>
+                        `}
+                    </td>
+                </tr>
+            `;
+        }
+        
+        // Load and render data
+        async function loadData() {
+            try {
+                const [statsRes, tradesRes] = await Promise.all([
+                    fetch('trading-stats.json'),
+                    fetch('trading-trades.json')
+                ]);
+                
+                const stats = await statsRes.json();
+                const trades = await tradesRes.json();
+                
+                // Render strategy cards
+                const grid = document.getElementById('strategiesGrid');
+                grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
+                
+                // Render trade table
+                const tbody = document.getElementById('tradeTableBody');
+                if (trades.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No trades logged yet</td></tr>';
+                } else {
+                    tbody.innerHTML = trades.map(t => renderTradeRow(t)).join('');
+                }
+                
+                // Update counts and timestamp
+                document.getElementById('tradeCount').textContent = `${trades.length} trades • Most recent first`;
+                document.getElementById('lastUpdated').textContent = `Updated ${new Date().toLocaleString()}`;
+                
+            } catch (err) {
+                console.error('Failed to load data:', err);
+                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data</div>';
+            }
+        }
+        
+        // Initial load
+        loadData();
+        
+        // Auto-refresh every 5 minutes
+        setInterval(loadData, 300000);
+    </script>
+</body>
+</html>
