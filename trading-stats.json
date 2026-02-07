@@ -42,5 +42,27 @@
     "totalTrades": 6,
     "winRate": 83.33333333333334,
     "winningTrades": 5
+  },
+  {
+    "_creationTime": 1770437707494.789,
+    "_id": "jd7d3de24ca48tx5m1pmctejq580pnhk",
+    "avgHoldingTimeMs": 64853333.333333336,
+    "avgLossUsd": 8.163265306122456,
+    "avgWinUsd": 5.2951771924986195,
+    "currentCapital": 1002.4270890788748,
+    "firstTradeTime": 1738357560000,
+    "largestLossUsd": 8.163265306122456,
+    "largestWinUsd": 10.542091836734693,
+    "lastUpdated": 1770437707494,
+    "losingTrades": 1,
+    "maxDrawdownPercent": 0.8077719395105678,
+    "profitFactor": 1.2973184121621606,
+    "startingCapital": 1000,
+    "strategy": "DeFi",
+    "totalPnlPercent": 0.2427089078874783,
+    "totalPnlUsd": 2.4270890788747828,
+    "totalTrades": 3,
+    "winRate": 66.66666666666666,
+    "winningTrades": 2
   }
 ]

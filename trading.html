@@ -206,6 +206,7 @@
         }
         .tag.v5 { background: rgba(88,166,255,0.2); color: var(--accent-blue); }
         .tag.ibb { background: rgba(168,85,247,0.2); color: var(--accent-purple); }
+        .tag.defi { background: rgba(0,255,136,0.2); color: var(--accent-green); }
         .tag.long { background: var(--accent-green-dim); color: var(--accent-green); }
         .tag.short { background: var(--accent-red-dim); color: var(--accent-red); }
         .tag.open { background: rgba(255,165,2,0.2); color: #ffa502; }
@@ -404,7 +405,7 @@
             
             return `
                 <tr>
-                    <td><span class="tag ${trade.strategy === 'V5.0' ? 'v5' : 'ibb'}">${trade.strategy}</span></td>
+                    <td><span class="tag ${trade.strategy === 'V5.0' ? 'v5' : trade.strategy === 'IBB' ? 'ibb' : 'defi'}">${trade.strategy}</span></td>
                     <td class="asset-cell">
                         <div class="name">${trade.asset}</div>
                         <div class="exchange">${trade.exchange}</div>
