@@ -56,9 +56,7 @@
     "lastUpdated": 1770438323768,
     "losingTrades": 0,
     "maxDrawdownPercent": 0,
-    "profitFactor": {
-      "$float": "AAAAAAAA8H8="
-    },
+    "profitFactor": null,
     "startingCapital": 10000,
     "strategy": "IBB",
     "totalPnlPercent": 0.00030556121409643886,
