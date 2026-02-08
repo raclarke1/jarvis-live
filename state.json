@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-07T19:05:00Z",
+  "lastUpdate": "2026-02-08T11:40:12.957Z",
   "version": "5.0 + IBB",
   "status": "WATCHING",
   "accounts": {
     "kraken": {
       "balance": 24980.24,
-      "marginUsed": 0,
-      "freeMargin": 24980.24
+      "marginUsed": 6250,
+      "freeMargin": 18730.24
     },
     "drift": {
       "equity": 743.56,
@@ -14,12 +14,29 @@
       "leverage": 0
     }
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "exchange": "Kraken",
+      "asset": "BTC",
+      "direction": "SHORT",
+      "entry": 70838.8,
+      "size": 0.0882,
+      "notional": 6250,
+      "leverage": "3x",
+      "stopLoss": 71954.38,
+      "takeProfit": 69351.36,
+      "openedAt": "2026-02-08T11:40:12.957Z",
+      "txid": "OU5SYA-DFWFO-YZG4AW",
+      "status": "OPEN",
+      "slOrderId": "AUTO",
+      "tpOrderId": "AUTO"
+    }
+  ],
   "lastTrade": {
     "asset": "SOL",
     "direction": "LONG",
     "entry": 84.59,
-    "exit": 88.00,
+    "exit": 88,
     "size": 2.95,
     "pnl": 23.43,
     "result": "WIN",
@@ -34,7 +51,7 @@
       "asset": "SOL",
       "direction": "LONG",
       "entry": 84.59,
-      "exit": 88.00,
+      "exit": 88,
       "pnl": 23.43,
       "result": "WIN",
       "exchange": "Drift",
@@ -56,43 +73,59 @@
   "strategies": {
     "v5": {
       "name": "v5.0 Mean Reversion",
-      "assets": ["BTC", "SOL", "LTC"],
+      "assets": [
+        "BTC",
+        "SOL",
+        "LTC"
+      ],
       "timeframe": "1H",
       "schedule": "Every hour at :05",
       "slMultiplier": 1.5,
-      "tpMultiplier": 2.0,
+      "tpMultiplier": 2,
       "exchange": "Kraken"
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
-      "assets": ["DOGE", "LINK", "ADA", "LTC", "XRP", "SOL"],
+      "assets": [
+        "DOGE",
+        "LINK",
+        "ADA",
+        "LTC",
+        "XRP",
+        "SOL"
+      ],
       "timeframe": "1H",
       "schedule": "Every hour at :10",
-      "slMultiplier": 1.0,
-      "tpMultiplier": 2.0,
+      "slMultiplier": 1,
+      "tpMultiplier": 2,
       "exchange": "Kraken"
     },
     "drift_ibb": {
       "name": "IBB on Drift",
-      "assets": ["SOL", "DOGE", "LINK", "XRP"],
+      "assets": [
+        "SOL",
+        "DOGE",
+        "LINK",
+        "XRP"
+      ],
       "timeframe": "1H",
       "schedule": "Every hour at :15",
-      "slMultiplier": 1.0,
-      "tpMultiplier": 2.0,
+      "slMultiplier": 1,
+      "tpMultiplier": 2,
       "exchange": "Drift",
       "positionSize": "25%",
       "leverage": "3x"
     }
   },
   "prices": {
-    "BTC": 71313,
+    "BTC": 70838.8,
     "SOL": 87.36,
     "LTC": 54.76,
     "DOGE": 0.098,
     "LINK": 8.88,
     "ADA": 0.273,
     "XRP": 1.467,
-    "updatedAt": "2026-02-07T19:05:00Z"
+    "updatedAt": "2026-02-08T11:40:12.957Z"
   },
   "stats": {
     "todayPnl": 23.43,
