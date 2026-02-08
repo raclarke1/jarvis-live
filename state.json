@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-08T11:40:12.957Z",
+  "lastUpdate": "2026-02-08T13:01:19.263Z",
   "version": "5.0 + IBB",
   "status": "WATCHING",
   "accounts": {
     "kraken": {
       "balance": 24980.24,
-      "marginUsed": 6250,
-      "freeMargin": 18730.24
+      "marginUsed": 12500,
+      "freeMargin": 12480.240000000002
     },
     "drift": {
       "equity": 743.56,
@@ -27,6 +27,22 @@
       "takeProfit": 69351.36,
       "openedAt": "2026-02-08T11:40:12.957Z",
       "txid": "OU5SYA-DFWFO-YZG4AW",
+      "status": "OPEN",
+      "slOrderId": "AUTO",
+      "tpOrderId": "AUTO"
+    },
+    {
+      "exchange": "Kraken",
+      "asset": "BTC",
+      "direction": "SHORT",
+      "entry": 71210.9,
+      "size": 0.0878,
+      "notional": 6250,
+      "leverage": "3x",
+      "stopLoss": 72047.09,
+      "takeProfit": 70095.98,
+      "openedAt": "2026-02-08T13:01:19.263Z",
+      "txid": "O2ODVL-PJWUV-6SN5MJ",
       "status": "OPEN",
       "slOrderId": "AUTO",
       "tpOrderId": "AUTO"
@@ -118,14 +134,14 @@
     }
   },
   "prices": {
-    "BTC": 70838.8,
+    "BTC": 71210.9,
     "SOL": 87.36,
     "LTC": 54.76,
     "DOGE": 0.098,
     "LINK": 8.88,
     "ADA": 0.273,
     "XRP": 1.467,
-    "updatedAt": "2026-02-08T11:40:12.957Z"
+    "updatedAt": "2026-02-08T13:01:19.263Z"
   },
   "stats": {
     "todayPnl": 23.43,
