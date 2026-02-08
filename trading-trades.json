@@ -1,5 +1,24 @@
 [
   {
+    "_creationTime": 1770516483181,
+    "_id": "drift_sol_1770516483181",
+    "asset": "SOL-PERP",
+    "direction": "LONG",
+    "entryPrice": 84.59,
+    "entryTime": 1770444000000,
+    "exchange": "DRIFT",
+    "exitPrice": 88,
+    "exitReason": "MANUAL",
+    "exitTime": 1770487200000,
+    "leverage": 3,
+    "notes": "Funding arb (-42% APR) + price rally. WIN!",
+    "pnlPercent": 12.09,
+    "pnlUsd": 23.43,
+    "positionSize": 250,
+    "status": "CLOSED",
+    "strategy": "DeFi"
+  },
+  {
     "_creationTime": 1770438316845.159,
     "_id": "jh73sz1wf169mfgajqm1czx0f180q080",
     "asset": "DOGE",
