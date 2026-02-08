@@ -7,11 +7,13 @@
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #fff; padding: 20px; }
     .container { max-width: 1200px; margin: 0 auto; }
     h1 { text-align: center; color: #00d4ff; }
+    .updated { text-align: center; color: #666; font-size: 12px; margin-top: -10px; }
     .chart-container { background: #16213e; border-radius: 12px; padding: 20px; margin: 20px 0; }
-    .stats { display: flex; justify-content: space-around; margin: 20px 0; }
-    .stat-box { background: #16213e; border-radius: 12px; padding: 20px; text-align: center; min-width: 200px; }
+    .stats { display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap; gap: 20px; }
+    .stat-box { background: #16213e; border-radius: 12px; padding: 20px; text-align: center; min-width: 280px; flex: 1; }
     .stat-box h3 { margin: 0 0 10px 0; color: #888; font-size: 14px; }
-    .stat-box .value { font-size: 28px; font-weight: bold; }
+    .stat-box .value { font-size: 24px; font-weight: bold; margin: 5px 0; }
+    .stat-box .outperform { font-size: 16px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #333; }
     .btc { color: #f7931a; }
     .xrp { color: #00aae4; }
     .positive { color: #00ff88; }
@@ -19,24 +21,26 @@
     .legend { display: flex; justify-content: center; gap: 30px; margin: 10px 0; }
     .legend-item { display: flex; align-items: center; gap: 8px; }
     .legend-color { width: 20px; height: 4px; border-radius: 2px; }
+    .loading { text-align: center; padding: 40px; color: #888; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📊 XRP vs BTC Performance Comparison</h1>
+    <p class="updated" id="lastUpdated">Loading...</p>
     
     <div class="stats">
-      <div class="stat-box">
-        <h3>5-YEAR RETURN (2021-2026)</h3>
-        <div class="value btc">BTC: +52.7%</div>
-        <div class="value xrp">XRP: +204.4%</div>
-        <div class="value positive" style="font-size: 18px; margin-top: 10px;">XRP outperforms by +151.7%</div>
+      <div class="stat-box" id="stats5y">
+        <h3 id="period5y">5-YEAR RETURN</h3>
+        <div class="value btc" id="btc5y">Loading...</div>
+        <div class="value xrp" id="xrp5y">Loading...</div>
+        <div class="outperform" id="outperform5y">--</div>
       </div>
-      <div class="stat-box">
-        <h3>1-YEAR RETURN (2025-2026)</h3>
-        <div class="value negative">BTC: -26.4%</div>
-        <div class="value negative">XRP: -39.4%</div>
-        <div class="value negative" style="font-size: 18px; margin-top: 10px;">BTC outperforms by +13.0%</div>
+      <div class="stat-box" id="stats1y">
+        <h3 id="period1y">1-YEAR RETURN</h3>
+        <div class="value" id="btc1y">Loading...</div>
+        <div class="value" id="xrp1y">Loading...</div>
+        <div class="outperform" id="outperform1y">--</div>
       </div>
     </div>
 
@@ -60,12 +64,62 @@
   </div>
 
   <script>
-    // Load data
+    function formatReturn(val) {
+      const sign = val >= 0 ? '+' : '';
+      return sign + val.toFixed(1) + '%';
+    }
+    
+    function formatPrice(val) {
+      if (val >= 1000) return '$' + val.toLocaleString(undefined, {maximumFractionDigits: 0});
+      if (val >= 1) return '$' + val.toFixed(2);
+      return '$' + val.toFixed(4);
+    }
+
     fetch('xrp-btc-comparison.json')
       .then(r => r.json())
       .then(data => {
-        const btc = data.normalized.btc;
-        const xrp = data.normalized.xrp;
+        const { summary, normalized } = data;
+        const btc = normalized.btc;
+        const xrp = normalized.xrp;
+        
+        // Update last updated
+        if (data.lastUpdated) {
+          document.getElementById('lastUpdated').textContent = 'Last updated: ' + new Date(data.lastUpdated).toLocaleDateString();
+        }
+        
+        // Update 5-year stats
+        document.getElementById('period5y').textContent = '5-YEAR RETURN (' + summary.period5y.start + ' → ' + summary.period5y.end + ')';
+        document.getElementById('btc5y').textContent = 'BTC: ' + formatReturn(summary.btc.return5y);
+        document.getElementById('btc5y').className = 'value ' + (summary.btc.return5y >= 0 ? 'btc' : 'negative');
+        document.getElementById('xrp5y').textContent = 'XRP: ' + formatReturn(summary.xrp.return5y);
+        document.getElementById('xrp5y').className = 'value ' + (summary.xrp.return5y >= 0 ? 'xrp' : 'negative');
+        
+        const outperform5y = summary.xrp.return5y - summary.btc.return5y;
+        const out5yEl = document.getElementById('outperform5y');
+        if (outperform5y >= 0) {
+          out5yEl.textContent = '⚡ XRP outperforms by +' + outperform5y.toFixed(1) + ' pts';
+          out5yEl.className = 'outperform positive';
+        } else {
+          out5yEl.textContent = '⚡ BTC outperforms by +' + Math.abs(outperform5y).toFixed(1) + ' pts';
+          out5yEl.className = 'outperform negative';
+        }
+        
+        // Update 1-year stats
+        document.getElementById('period1y').textContent = '1-YEAR RETURN (' + summary.period1y.start + ' → ' + summary.period1y.end + ')';
+        document.getElementById('btc1y').textContent = 'BTC: ' + formatReturn(summary.btc.return1y);
+        document.getElementById('btc1y').className = 'value ' + (summary.btc.return1y >= 0 ? 'btc' : 'negative');
+        document.getElementById('xrp1y').textContent = 'XRP: ' + formatReturn(summary.xrp.return1y);
+        document.getElementById('xrp1y').className = 'value ' + (summary.xrp.return1y >= 0 ? 'xrp' : 'negative');
+        
+        const outperform1y = summary.xrp.return1y - summary.btc.return1y;
+        const out1yEl = document.getElementById('outperform1y');
+        if (outperform1y >= 0) {
+          out1yEl.textContent = '⚡ XRP outperforms by +' + outperform1y.toFixed(1) + ' pts';
+          out1yEl.className = 'outperform positive';
+        } else {
+          out1yEl.textContent = '⚡ BTC outperforms by +' + Math.abs(outperform1y).toFixed(1) + ' pts';
+          out1yEl.className = 'outperform negative';
+        }
         
         // 5-year chart
         new Chart(document.getElementById('chart5y'), {
@@ -105,18 +159,18 @@
               },
               y: { 
                 display: true, 
-                ticks: { color: '#888', callback: v => v + '%' },
+                ticks: { color: '#888', callback: v => v.toFixed(0) },
                 grid: { color: 'rgba(255,255,255,0.1)' }
               }
             }
           }
         });
 
-        // 1-year chart (last 365 points)
+        // 1-year chart (last 365 points, re-indexed to 100)
         const btc1y = btc.slice(-365);
         const xrp1y = xrp.slice(-365);
-        const btcStart1y = btc1y[0].value;
-        const xrpStart1y = xrp1y[0].value;
+        const btcBase1y = btc1y[0].value;
+        const xrpBase1y = xrp1y[0].value;
         
         new Chart(document.getElementById('chart1y'), {
           type: 'line',
@@ -125,7 +179,7 @@
             datasets: [
               {
                 label: 'BTC',
-                data: btc1y.map(d => (d.value / btcStart1y) * 100),
+                data: btc1y.map(d => (d.value / btcBase1y) * 100),
                 borderColor: '#f7931a',
                 backgroundColor: 'rgba(247, 147, 26, 0.1)',
                 fill: true,
@@ -134,7 +188,7 @@
               },
               {
                 label: 'XRP',
-                data: xrp1y.map(d => (d.value / xrpStart1y) * 100),
+                data: xrp1y.map(d => (d.value / xrpBase1y) * 100),
                 borderColor: '#00aae4',
                 backgroundColor: 'rgba(0, 170, 228, 0.1)',
                 fill: true,
@@ -155,12 +209,15 @@
               },
               y: { 
                 display: true, 
-                ticks: { color: '#888', callback: v => v + '%' },
+                ticks: { color: '#888', callback: v => v.toFixed(0) },
                 grid: { color: 'rgba(255,255,255,0.1)' }
               }
             }
           }
         });
+      })
+      .catch(err => {
+        document.getElementById('lastUpdated').textContent = 'Error loading data: ' + err.message;
       });
   </script>
 </body>
