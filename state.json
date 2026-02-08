@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-07T02:39:00Z",
+  "lastUpdate": "2026-02-07T19:05:00Z",
   "version": "5.0 + IBB",
   "status": "WATCHING",
   "accounts": {
@@ -7,20 +7,52 @@
       "balance": 24980.24,
       "marginUsed": 0,
       "freeMargin": 24980.24
+    },
+    "drift": {
+      "equity": 743.56,
+      "freeCollateral": 743.49,
+      "leverage": 0
     }
   },
   "openPositions": [],
   "lastTrade": {
-    "asset": "DOGE",
+    "asset": "SOL",
     "direction": "LONG",
-    "entry": 0.098,
-    "exit": 0.098,
-    "pnl": 0,
-    "result": "TEST",
-    "duration": "2m",
-    "closedAt": "2026-02-07T02:39:00Z",
-    "note": "IBB test trade - closed manually"
+    "entry": 84.59,
+    "exit": 88.00,
+    "size": 2.95,
+    "pnl": 23.43,
+    "result": "WIN",
+    "exchange": "Drift",
+    "strategy": "Funding Arb",
+    "duration": "~12h",
+    "closedAt": "2026-02-07T18:00:00Z",
+    "note": "Funding arb (-42% APR) + price moved in our favor"
   },
+  "recentTrades": [
+    {
+      "asset": "SOL",
+      "direction": "LONG",
+      "entry": 84.59,
+      "exit": 88.00,
+      "pnl": 23.43,
+      "result": "WIN",
+      "exchange": "Drift",
+      "strategy": "Funding Arb",
+      "closedAt": "2026-02-07T18:00:00Z"
+    },
+    {
+      "asset": "SOL",
+      "direction": "SHORT",
+      "entry": 89.42,
+      "exit": 86.21,
+      "pnl": 84,
+      "result": "WIN",
+      "exchange": "Kraken",
+      "strategy": "v5.0",
+      "closedAt": "2026-02-06T22:00:00Z"
+    }
+  ],
   "strategies": {
     "v5": {
       "name": "v5.0 Mean Reversion",
@@ -28,7 +60,8 @@
       "timeframe": "1H",
       "schedule": "Every hour at :05",
       "slMultiplier": 1.5,
-      "tpMultiplier": 2.0
+      "tpMultiplier": 2.0,
+      "exchange": "Kraken"
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
@@ -36,7 +69,19 @@
       "timeframe": "1H",
       "schedule": "Every hour at :10",
       "slMultiplier": 1.0,
-      "tpMultiplier": 2.0
+      "tpMultiplier": 2.0,
+      "exchange": "Kraken"
+    },
+    "drift_ibb": {
+      "name": "IBB on Drift",
+      "assets": ["SOL", "DOGE", "LINK", "XRP"],
+      "timeframe": "1H",
+      "schedule": "Every hour at :15",
+      "slMultiplier": 1.0,
+      "tpMultiplier": 2.0,
+      "exchange": "Drift",
+      "positionSize": "25%",
+      "leverage": "3x"
     }
   },
   "prices": {
@@ -47,11 +92,14 @@
     "LINK": 8.88,
     "ADA": 0.273,
     "XRP": 1.467,
-    "updatedAt": "2026-02-07T02:39:00Z"
+    "updatedAt": "2026-02-07T19:05:00Z"
   },
   "stats": {
-    "todayPnl": 84,
-    "todayTrades": 2,
-    "todayWins": 1
+    "todayPnl": 23.43,
+    "todayTrades": 1,
+    "todayWins": 1,
+    "weekPnl": 107.43,
+    "weekTrades": 2,
+    "weekWins": 2
   }
 }
