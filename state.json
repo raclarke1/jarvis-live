@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-08T13:01:19.263Z",
+  "lastUpdate": "2026-02-10T03:14:28.630Z",
   "version": "5.0 + IBB",
   "status": "WATCHING",
   "accounts": {
@@ -9,9 +9,9 @@
       "freeMargin": 12480.240000000002
     },
     "drift": {
-      "equity": 743.56,
-      "freeCollateral": 743.49,
-      "leverage": 0
+      "equity": 725.28,
+      "freeCollateral": 696.98,
+      "leverage": 0.29
     }
   },
   "openPositions": [
@@ -46,23 +46,46 @@
       "status": "OPEN",
       "slOrderId": "AUTO",
       "tpOrderId": "AUTO"
+    },
+    {
+      "exchange": "Drift",
+      "asset": "SUI",
+      "direction": "SHORT",
+      "entry": 0.9806,
+      "size": 254,
+      "notional": 249,
+      "leverage": "1x",
+      "stopLoss": 1.02,
+      "openedAt": "2026-02-09T04:58:46Z",
+      "status": "OPEN",
+      "strategy": "DeFi"
     }
   ],
   "lastTrade": {
-    "asset": "SOL",
-    "direction": "LONG",
-    "entry": 84.59,
-    "exit": 88,
-    "size": 2.95,
-    "pnl": 23.43,
-    "result": "WIN",
+    "asset": "XRP",
+    "direction": "SHORT",
+    "entry": 0.8249,
+    "exit": 0.858,
+    "size": 302,
+    "pnl": -8.78,
+    "result": "LOSS",
     "exchange": "Drift",
-    "strategy": "Funding Arb",
-    "duration": "~12h",
-    "closedAt": "2026-02-07T18:00:00Z",
-    "note": "Funding arb (-42% APR) + price moved in our favor"
+    "strategy": "DeFi",
+    "closedAt": "2026-02-09T23:09:13Z",
+    "note": "Stopped out during XRP price spike"
   },
   "recentTrades": [
+    {
+      "asset": "XRP",
+      "direction": "SHORT",
+      "entry": 0.8249,
+      "exit": 0.858,
+      "pnl": -8.78,
+      "result": "LOSS",
+      "exchange": "Drift",
+      "strategy": "DeFi",
+      "closedAt": "2026-02-09T23:09:13Z"
+    },
     {
       "asset": "SOL",
       "direction": "LONG",
@@ -144,8 +167,8 @@
     "updatedAt": "2026-02-08T13:01:19.263Z"
   },
   "stats": {
-    "todayPnl": 23.43,
-    "todayTrades": 1,
+    "todayPnl": 14.65,
+    "todayTrades": 2,
     "todayWins": 1,
     "weekPnl": 107.43,
     "weekTrades": 2,
