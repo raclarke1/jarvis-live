@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-10T03:14:28.630Z",
+  "lastUpdate": "2026-02-10T03:19:53.798Z",
   "version": "5.0 + IBB",
   "status": "WATCHING",
   "accounts": {
@@ -59,6 +59,20 @@
       "openedAt": "2026-02-09T04:58:46Z",
       "status": "OPEN",
       "strategy": "DeFi"
+    },
+    {
+      "exchange": "Kraken",
+      "asset": "ADA",
+      "direction": "SHORT",
+      "entry": 0.2677,
+      "size": 23329,
+      "notional": 6250,
+      "leverage": "3x",
+      "stopLoss": 0.27,
+      "takeProfit": 0.26,
+      "openedAt": "2026-02-10T03:19:53.798Z",
+      "status": "OPEN",
+      "strategy": "IBB"
     }
   ],
   "lastTrade": {
