@@ -1,17 +1,17 @@
 {
-  "lastUpdate": "2026-02-10T03:19:53.798Z",
-  "version": "5.0 + IBB",
+  "lastUpdate": "2026-02-10T22:02:00Z",
+  "version": "5.0 + IBB + DeFi",
   "status": "WATCHING",
   "accounts": {
     "kraken": {
       "balance": 24980.24,
       "marginUsed": 12500,
-      "freeMargin": 12480.240000000002
+      "freeMargin": 12480.24
     },
     "drift": {
-      "equity": 725.28,
-      "freeCollateral": 696.98,
-      "leverage": 0.29
+      "equity": 708.60,
+      "freeCollateral": 684.69,
+      "leverage": 0.15
     }
   },
   "openPositions": [
@@ -48,19 +48,6 @@
       "tpOrderId": "AUTO"
     },
     {
-      "exchange": "Drift",
-      "asset": "SUI",
-      "direction": "SHORT",
-      "entry": 0.9806,
-      "size": 254,
-      "notional": 249,
-      "leverage": "1x",
-      "stopLoss": 1.02,
-      "openedAt": "2026-02-09T04:58:46Z",
-      "status": "OPEN",
-      "strategy": "DeFi"
-    },
-    {
       "exchange": "Kraken",
       "asset": "ADA",
       "direction": "SHORT",
@@ -73,22 +60,47 @@
       "openedAt": "2026-02-10T03:19:53.798Z",
       "status": "OPEN",
       "strategy": "IBB"
+    },
+    {
+      "exchange": "Drift",
+      "asset": "XRP",
+      "direction": "LONG",
+      "entry": 0.8140,
+      "size": 154,
+      "notional": 124.86,
+      "leverage": "1x",
+      "stopLoss": 0.7814,
+      "openedAt": "2026-02-10T21:30:00Z",
+      "status": "OPEN",
+      "strategy": "DeFi",
+      "note": "Funding arb: -78% APR (collecting)"
     }
   ],
   "lastTrade": {
-    "asset": "XRP",
+    "asset": "SUI",
     "direction": "SHORT",
-    "entry": 0.8249,
-    "exit": 0.858,
-    "size": 302,
-    "pnl": -8.78,
-    "result": "LOSS",
+    "entry": 0.9806,
+    "exit": 0.9238,
+    "size": 254,
+    "pnl": 14.42,
+    "result": "WIN",
     "exchange": "Drift",
     "strategy": "DeFi",
-    "closedAt": "2026-02-09T23:09:13Z",
-    "note": "Stopped out during XRP price spike"
+    "closedAt": "2026-02-10T21:30:00Z",
+    "note": "Closed when funding reversed from +35% to -1.3%"
   },
   "recentTrades": [
+    {
+      "asset": "SUI",
+      "direction": "SHORT",
+      "entry": 0.9806,
+      "exit": 0.9238,
+      "pnl": 14.42,
+      "result": "WIN",
+      "exchange": "Drift",
+      "strategy": "DeFi",
+      "closedAt": "2026-02-10T21:30:00Z"
+    },
     {
       "asset": "XRP",
       "direction": "SHORT",
@@ -126,11 +138,7 @@
   "strategies": {
     "v5": {
       "name": "v5.0 Mean Reversion",
-      "assets": [
-        "BTC",
-        "SOL",
-        "LTC"
-      ],
+      "assets": ["BTC", "SOL", "LTC"],
       "timeframe": "1H",
       "schedule": "Every hour at :05",
       "slMultiplier": 1.5,
@@ -139,14 +147,7 @@
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
-      "assets": [
-        "DOGE",
-        "LINK",
-        "ADA",
-        "LTC",
-        "XRP",
-        "SOL"
-      ],
+      "assets": ["DOGE", "LINK", "ADA", "LTC", "XRP", "SOL"],
       "timeframe": "1H",
       "schedule": "Every hour at :10",
       "slMultiplier": 1,
@@ -155,12 +156,7 @@
     },
     "drift_ibb": {
       "name": "IBB on Drift",
-      "assets": [
-        "SOL",
-        "DOGE",
-        "LINK",
-        "XRP"
-      ],
+      "assets": ["SOL", "DOGE", "LINK", "XRP"],
       "timeframe": "1H",
       "schedule": "Every hour at :15",
       "slMultiplier": 1,
@@ -168,6 +164,15 @@
       "exchange": "Drift",
       "positionSize": "25%",
       "leverage": "3x"
+    },
+    "defi": {
+      "name": "DeFi Funding Arb",
+      "assets": ["Any with |APR| > 35%"],
+      "timeframe": "On-demand",
+      "schedule": "Heartbeat check",
+      "stopLoss": "4%",
+      "exchange": "Drift",
+      "note": "Threshold lowered from 39% to 35% on Feb 9"
     }
   },
   "prices": {
@@ -177,15 +182,16 @@
     "DOGE": 0.098,
     "LINK": 8.88,
     "ADA": 0.273,
-    "XRP": 1.467,
-    "updatedAt": "2026-02-08T13:01:19.263Z"
+    "XRP": 0.8036,
+    "SUI": 0.9238,
+    "updatedAt": "2026-02-10T22:02:00Z"
   },
   "stats": {
-    "todayPnl": 14.65,
-    "todayTrades": 2,
+    "todayPnl": 14.42,
+    "todayTrades": 1,
     "todayWins": 1,
-    "weekPnl": 107.43,
-    "weekTrades": 2,
+    "weekPnl": 29.07,
+    "weekTrades": 3,
     "weekWins": 2
   }
 }
