@@ -1,5 +1,19 @@
 [
   {
+    "_creationTime": 1770850467177,
+    "_id": "unified_test_1770850467177",
+    "asset": "DOGE",
+    "direction": "SHORT",
+    "entryPrice": 0.091,
+    "entryTime": 1770850467177,
+    "exchange": "KRAKEN",
+    "leverage": 3,
+    "notes": "UNIFIED TEST - SL: $0.0955, TP: $0.0864",
+    "positionSize": 100,
+    "status": "OPEN",
+    "strategy": "V5.0"
+  },
+  {
     "_creationTime": 1770516483181,
     "_id": "drift_sol_1770516483181",
     "asset": "SOL-PERP",
