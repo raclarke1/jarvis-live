@@ -1,5 +1,23 @@
 [
   {
+    "id": "drift_xrp_test_20260211",
+    "asset": "XRP-PERP",
+    "exchange": "Drift",
+    "strategy": "V5.0",
+    "direction": "LONG",
+    "leverage": 2,
+    "entryPrice": 0.847,
+    "currentPrice": 0.847,
+    "stopLoss": 0.82,
+    "takeProfit": 0.88,
+    "positionSize": 200,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "hasStop": true,
+    "hasTP": true,
+    "lastUpdated": 1770847800000
+  },
+  {
     "id": "TMIHYV-3AP3C-2CX62K",
     "asset": "XRP",
     "exchange": "Kraken",
