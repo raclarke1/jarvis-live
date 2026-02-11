@@ -235,6 +235,83 @@
             color: var(--text-secondary);
         }
         
+        /* Systems Status Panel */
+        .systems-status {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .systems-status.healthy { border-color: rgba(0,255,136,0.3); }
+        .systems-status.warning { border-color: rgba(255,165,2,0.3); }
+        .systems-status.error { border-color: rgba(255,71,87,0.3); }
+        
+        .systems-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .systems-header h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .systems-header .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-badge.healthy { background: var(--accent-green-dim); color: var(--accent-green); }
+        .status-badge.warning { background: rgba(255,165,2,0.2); color: #ffa502; }
+        .status-badge.error { background: var(--accent-red-dim); color: var(--accent-red); }
+        
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .system-check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        .system-check .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .system-check .indicator.ok { background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+        .system-check .indicator.warn { background: #ffa502; box-shadow: 0 0 8px #ffa502; }
+        .system-check .indicator.error { background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red); }
+        .system-check .name { flex: 1; }
+        .system-check .detail { color: var(--text-secondary); font-size: 0.75rem; }
+        
+        .last-executions {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+        }
+        .execution-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .execution-item .label { color: var(--text-secondary); }
+        .execution-item .time { font-weight: 500; }
+        .execution-item .time.stale { color: var(--accent-red); }
+        
         /* Footer */
         .footer {
             text-align: center;
@@ -261,6 +338,20 @@
                 <p class="subtitle">Live strategy performance and trade history</p>
             </div>
             <div class="updated" id="lastUpdated">Loading...</div>
+        </div>
+        
+        <!-- Systems Status Panel -->
+        <div class="systems-status" id="systemsStatus">
+            <div class="systems-header">
+                <h2>🐕 Trading Systems Status</h2>
+                <span class="status-badge" id="systemsBadge">Loading...</span>
+            </div>
+            <div class="systems-grid" id="systemsGrid">
+                <!-- Populated by JS -->
+            </div>
+            <div class="last-executions" id="lastExecutions">
+                <!-- Populated by JS -->
+            </div>
         </div>
         
         <!-- Strategy Cards -->
@@ -470,11 +561,130 @@
             }
         }
         
+        // Load watchdog status
+        async function loadWatchdogStatus() {
+            try {
+                const cacheBust = Date.now();
+                const res = await fetch(`watchdog-status.json?v=${cacheBust}`);
+                
+                if (!res.ok) {
+                    renderWatchdogError('Status file not found');
+                    return;
+                }
+                
+                const status = await res.json();
+                renderWatchdogStatus(status);
+                
+            } catch (err) {
+                console.error('Failed to load watchdog status:', err);
+                renderWatchdogError('Failed to load');
+            }
+        }
+        
+        function renderWatchdogError(message) {
+            const panel = document.getElementById('systemsStatus');
+            const badge = document.getElementById('systemsBadge');
+            const grid = document.getElementById('systemsGrid');
+            const executions = document.getElementById('lastExecutions');
+            
+            panel.className = 'systems-status warning';
+            badge.className = 'status-badge warning';
+            badge.textContent = 'Unknown';
+            grid.innerHTML = `<div class="system-check"><span class="indicator warn"></span><span class="name">${message}</span></div>`;
+            executions.innerHTML = '';
+        }
+        
+        function renderWatchdogStatus(status) {
+            const panel = document.getElementById('systemsStatus');
+            const badge = document.getElementById('systemsBadge');
+            const grid = document.getElementById('systemsGrid');
+            const executions = document.getElementById('lastExecutions');
+            
+            // Determine overall status
+            let overallStatus = 'healthy';
+            let badgeText = 'All Systems Go';
+            
+            if (status.issueCount > 0) {
+                overallStatus = 'error';
+                badgeText = `${status.issueCount} Issue${status.issueCount > 1 ? 's' : ''}`;
+            } else if (status.warningCount > 0) {
+                overallStatus = 'warning';
+                badgeText = `${status.warningCount} Warning${status.warningCount > 1 ? 's' : ''}`;
+            }
+            
+            // Check if status is stale (>1 hour old)
+            const ageMs = Date.now() - status.timestamp;
+            const ageHours = ageMs / (1000 * 60 * 60);
+            if (ageHours > 1) {
+                overallStatus = 'warning';
+                badgeText = `Stale (${ageHours.toFixed(1)}h ago)`;
+            }
+            
+            panel.className = `systems-status ${overallStatus}`;
+            badge.className = `status-badge ${overallStatus}`;
+            badge.textContent = badgeText;
+            
+            // Render checks
+            grid.innerHTML = status.checks.map(check => {
+                const indicatorClass = check.status === 'ok' ? 'ok' : check.status === 'warn' ? 'warn' : 'error';
+                return `
+                    <div class="system-check">
+                        <span class="indicator ${indicatorClass}"></span>
+                        <span class="name">${check.name}</span>
+                        <span class="detail">${check.message.substring(0, 30)}</span>
+                    </div>
+                `;
+            }).join('');
+            
+            // Render last executions
+            const exec = status.executions;
+            let execHtml = '';
+            
+            if (exec.v5) {
+                const isStale = parseFloat(exec.v5.hoursAgo) > 2;
+                execHtml += `
+                    <div class="execution-item">
+                        <span class="label">V5.0:</span>
+                        <span class="time ${isStale ? 'stale' : ''}">${exec.v5.hoursAgo}h ago</span>
+                    </div>
+                `;
+            }
+            if (exec.ibb) {
+                const isStale = parseFloat(exec.ibb.hoursAgo) > 2;
+                execHtml += `
+                    <div class="execution-item">
+                        <span class="label">IBB:</span>
+                        <span class="time ${isStale ? 'stale' : ''}">${exec.ibb.hoursAgo}h ago</span>
+                    </div>
+                `;
+            }
+            if (exec.drift) {
+                const isStale = parseFloat(exec.drift.hoursAgo) > 2;
+                execHtml += `
+                    <div class="execution-item">
+                        <span class="label">Drift:</span>
+                        <span class="time ${isStale ? 'stale' : ''}">${exec.drift.hoursAgo}h ago</span>
+                    </div>
+                `;
+            }
+            
+            execHtml += `
+                <div class="execution-item" style="margin-left: auto;">
+                    <span class="label">Last Check:</span>
+                    <span class="time">${new Date(status.timestamp).toLocaleTimeString()}</span>
+                </div>
+            `;
+            
+            executions.innerHTML = execHtml;
+        }
+        
         // Initial load
         loadData();
+        loadWatchdogStatus();
         
         // Auto-refresh every 5 minutes
         setInterval(loadData, 300000);
+        setInterval(loadWatchdogStatus, 60000); // Watchdog status every minute
     </script>
 </body>
 </html>
