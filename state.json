@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-02-11T16:10:15.000Z",
-  "version": "5.1 + IBB + DeFi",
+  "version": "5.1 + IBB + BRT + DeFi",
   "status": "ACTIVE",
   "accounts": {
     "kraken": {
@@ -161,6 +161,22 @@
       "exchange": "Drift",
       "positionSize": "12%",
       "leverage": "3x"
+    },
+    "brt": {
+      "name": "BRT Break & Retest",
+      "assets": [
+        "XRP",
+        "LTC",
+        "SOL",
+        "LINK",
+        "BTC"
+      ],
+      "timeframe": "1H",
+      "schedule": "Every hour at :20",
+      "riskReward": 2.0,
+      "exchange": "Kraken",
+      "positionSize": "12%",
+      "note": "S/R breakout with retest confirmation"
     },
     "defi": {
       "name": "DeFi Funding Arb",
