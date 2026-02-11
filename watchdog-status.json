@@ -1,10 +1,10 @@
 {
-  "timestamp": 1770820120969,
-  "lastCheck": "2026-02-11T14:28:40.969Z",
+  "timestamp": 1770838080854,
+  "lastCheck": "2026-02-11T19:28:00.854Z",
   "healthy": true,
-  "hasWarnings": true,
+  "hasWarnings": false,
   "issueCount": 0,
-  "warningCount": 2,
+  "warningCount": 0,
   "checks": [
     {
       "name": "V5.0 Script",
@@ -22,14 +22,19 @@
       "message": "Present and valid"
     },
     {
+      "name": "BRT Script",
+      "status": "ok",
+      "message": "Present and valid"
+    },
+    {
       "name": "Kraken Balance",
       "status": "ok",
-      "message": "$24,782.229 USDC"
+      "message": "$24,778.505 USDC"
     },
     {
       "name": "Kraken Positions",
       "status": "ok",
-      "message": "Flat (no open positions)"
+      "message": "Has positions with stops"
     },
     {
       "name": "Drift API",
@@ -43,23 +48,33 @@
     },
     {
       "name": "V5.0 Execution",
-      "status": "warn",
-      "message": "No execution history yet"
+      "status": "ok",
+      "message": "Last check 1.2h ago"
     },
     {
       "name": "IBB Execution",
-      "status": "warn",
-      "message": "No execution history yet"
+      "status": "ok",
+      "message": "Last check 1.2h ago"
     }
   ],
   "issues": [],
-  "warnings": [
-    "V5.0 Execution: No execution history yet",
-    "IBB Execution: No execution history yet"
-  ],
+  "warnings": [],
   "executions": {
-    "v5": null,
-    "ibb": null,
-    "drift": null
+    "v5": {
+      "timestamp": 1770833804540,
+      "hoursAgo": "1.2"
+    },
+    "ibb": {
+      "timestamp": 1770833810533,
+      "hoursAgo": "1.2"
+    },
+    "brt": {
+      "lastCheck": "2026-02-11T19:22:16.513Z",
+      "hoursAgo": "0.1"
+    },
+    "drift": {
+      "timestamp": 1770833707834,
+      "hoursAgo": "1.2"
+    }
   }
 }
