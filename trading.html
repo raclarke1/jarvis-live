@@ -313,6 +313,106 @@
         .execution-item .time { font-weight: 500; }
         .execution-item .time.stale { color: var(--accent-red); }
         
+        /* Open Positions Panel */
+        .open-positions {
+            background: linear-gradient(135deg, #1a2a1a 0%, #162a16 100%);
+            border: 2px solid rgba(0,255,136,0.3);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .open-positions.no-positions {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        .open-positions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .open-positions-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .position-count {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--accent-green-dim);
+            color: var(--accent-green);
+        }
+        .position-count.none {
+            background: rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+        }
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 16px;
+        }
+        .position-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .position-card.profit { border-left: 3px solid var(--accent-green); }
+        .position-card.loss { border-left: 3px solid var(--accent-red); }
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .position-asset {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .position-meta {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .position-pnl {
+            text-align: right;
+        }
+        .position-pnl .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .position-pnl .value.positive { color: var(--accent-green); }
+        .position-pnl .value.negative { color: var(--accent-red); }
+        .position-pnl .pct {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .position-details {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+        .position-detail .label {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .position-detail .value {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .position-detail .value.sl { color: var(--accent-red); }
+        .position-detail .value.tp { color: var(--accent-green); }
+        .no-positions-msg {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-secondary);
+        }
+        
         /* Footer */
         .footer {
             text-align: center;
@@ -339,6 +439,17 @@
                 <p class="subtitle">Live strategy performance and trade history</p>
             </div>
             <div class="updated" id="lastUpdated">Loading...</div>
+        </div>
+        
+        <!-- Open Positions Panel -->
+        <div class="open-positions" id="openPositions">
+            <div class="open-positions-header">
+                <h2>📊 Open Positions</h2>
+                <span class="position-count" id="positionCount">Loading...</span>
+            </div>
+            <div class="positions-grid" id="positionsGrid">
+                <!-- Populated by JS -->
+            </div>
         </div>
         
         <!-- Systems Status Panel -->
@@ -491,6 +602,49 @@
             `;
         }
         
+        // Render open position card
+        function renderPositionCard(pos) {
+            const isProfit = (pos.unrealizedPnl || 0) >= 0;
+            const pnlClass = isProfit ? 'profit' : 'loss';
+            const pnlValueClass = isProfit ? 'positive' : 'negative';
+            
+            return `
+                <div class="position-card ${pnlClass}">
+                    <div class="position-header">
+                        <div>
+                            <div class="position-asset">${pos.asset}</div>
+                            <div class="position-meta">
+                                <span class="tag ${pos.direction.toLowerCase()}">${pos.direction} ${pos.leverage}x</span>
+                                <span class="tag ${pos.strategy === 'V5.0' || pos.strategy === 'v5.0' || pos.strategy === 'v5.1' ? 'v5' : pos.strategy === 'IBB' ? 'ibb' : 'defi'}">${pos.strategy}</span>
+                            </div>
+                        </div>
+                        <div class="position-pnl">
+                            <div class="value ${pnlValueClass}">${formatCurrency(pos.unrealizedPnl)}</div>
+                            <div class="pct">${formatPercent(pos.unrealizedPnlPct)}</div>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="position-detail">
+                            <div class="label">Entry</div>
+                            <div class="value">$${pos.entryPrice?.toLocaleString()}</div>
+                        </div>
+                        <div class="position-detail">
+                            <div class="label">Current</div>
+                            <div class="value">$${pos.currentPrice?.toLocaleString()}</div>
+                        </div>
+                        <div class="position-detail">
+                            <div class="label">Stop Loss</div>
+                            <div class="value sl">$${pos.stopLoss?.toLocaleString() || '-'}</div>
+                        </div>
+                        <div class="position-detail">
+                            <div class="label">Take Profit</div>
+                            <div class="value tp">$${pos.takeProfit?.toLocaleString() || '-'}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
         // Render trade row
         function renderTradeRow(trade) {
             const isOpen = trade.status === 'OPEN';
@@ -529,9 +683,10 @@
         async function loadData() {
             try {
                 const cacheBust = Date.now();
-                const [statsRes, tradesRes] = await Promise.all([
+                const [statsRes, tradesRes, positionsRes] = await Promise.all([
                     fetch(`trading-stats.json?v=${cacheBust}`),
-                    fetch(`trading-trades.json?v=${cacheBust}`)
+                    fetch(`trading-trades.json?v=${cacheBust}`),
+                    fetch(`open-positions.json?v=${cacheBust}`)
                 ]);
                 
                 if (!statsRes.ok) throw new Error('Stats fetch failed: ' + statsRes.status);
@@ -540,26 +695,58 @@
                 const stats = await statsRes.json();
                 const trades = await tradesRes.json();
                 
+                // Handle open positions (may not exist yet)
+                let openPositions = [];
+                if (positionsRes.ok) {
+                    openPositions = await positionsRes.json();
+                }
+                
+                // Render open positions
+                renderOpenPositions(openPositions);
+                
                 // Render strategy cards
                 const grid = document.getElementById('strategiesGrid');
                 grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
                 
+                // Filter out open trades from history (only show closed)
+                const closedTrades = trades.filter(t => t.status !== 'OPEN');
+                
                 // Render trade table
                 const tbody = document.getElementById('tradeTableBody');
-                if (trades.length === 0) {
+                if (closedTrades.length === 0) {
                     tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No trades logged yet</td></tr>';
                 } else {
-                    tbody.innerHTML = trades.map(t => renderTradeRow(t)).join('');
+                    tbody.innerHTML = closedTrades.map(t => renderTradeRow(t)).join('');
                 }
                 
                 // Update counts and timestamp
-                document.getElementById('tradeCount').textContent = `${trades.length} trades • Most recent first`;
+                document.getElementById('tradeCount').textContent = `${closedTrades.length} closed trades • Most recent first`;
                 document.getElementById('lastUpdated').textContent = `Updated ${new Date().toLocaleString()}`;
                 
             } catch (err) {
                 console.error('Failed to load data:', err);
                 document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data</div>';
             }
+        }
+        
+        // Render open positions
+        function renderOpenPositions(positions) {
+            const panel = document.getElementById('openPositions');
+            const countBadge = document.getElementById('positionCount');
+            const grid = document.getElementById('positionsGrid');
+            
+            if (!positions || positions.length === 0) {
+                panel.className = 'open-positions no-positions';
+                countBadge.className = 'position-count none';
+                countBadge.textContent = 'No Open Positions';
+                grid.innerHTML = '<div class="no-positions-msg">All flat — watching for signals...</div>';
+                return;
+            }
+            
+            panel.className = 'open-positions';
+            countBadge.className = 'position-count';
+            countBadge.textContent = `${positions.length} Position${positions.length > 1 ? 's' : ''} Open`;
+            grid.innerHTML = positions.map(p => renderPositionCard(p)).join('');
         }
         
         // Load watchdog status

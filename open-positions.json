@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sol_short_20260211",
+    "asset": "SOL",
+    "exchange": "Kraken",
+    "strategy": "v5.1",
+    "direction": "SHORT",
+    "leverage": 3,
+    "entryPrice": 79.93,
+    "currentPrice": 79.77,
+    "stopLoss": 81.50,
+    "takeProfit": 77.07,
+    "positionSize": 500,
+    "entryTime": 1770838800000,
+    "unrealizedPnl": 3.00,
+    "unrealizedPnlPct": 0.60
+  },
+  {
+    "id": "xrp_short_20260211",
+    "asset": "XRP",
+    "exchange": "Kraken",
+    "strategy": "v5.1",
+    "direction": "SHORT",
+    "leverage": 3,
+    "entryPrice": 1.37,
+    "currentPrice": 1.379,
+    "stopLoss": 1.42,
+    "takeProfit": 1.32,
+    "positionSize": 500,
+    "entryTime": 1770838800000,
+    "unrealizedPnl": -9.80,
+    "unrealizedPnlPct": -1.97
+  }
+]
