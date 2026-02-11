@@ -1,6 +1,6 @@
 {
-  "timestamp": 1770838080854,
-  "lastCheck": "2026-02-11T19:28:00.854Z",
+  "timestamp": 1770838107319,
+  "lastCheck": "2026-02-11T19:28:27.319Z",
   "healthy": true,
   "hasWarnings": false,
   "issueCount": 0,
@@ -69,8 +69,8 @@
       "hoursAgo": "1.2"
     },
     "brt": {
-      "lastCheck": "2026-02-11T19:22:16.513Z",
-      "hoursAgo": "0.1"
+      "lastCheck": "2026-02-11T19:28:06.767Z",
+      "hoursAgo": "0.0"
     },
     "drift": {
       "timestamp": 1770833707834,
