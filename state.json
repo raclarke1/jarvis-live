@@ -1,15 +1,15 @@
 {
-  "lastUpdate": "2026-02-10T22:02:00Z",
+  "lastUpdate": "2026-02-11T02:35:30.573Z",
   "version": "5.0 + IBB + DeFi",
   "status": "WATCHING",
   "accounts": {
     "kraken": {
       "balance": 24980.24,
-      "marginUsed": 12500,
+      "marginUsed": 37500,
       "freeMargin": 12480.24
     },
     "drift": {
-      "equity": 708.60,
+      "equity": 708.6,
       "freeCollateral": 684.69,
       "leverage": 0.15
     }
@@ -65,7 +65,7 @@
       "exchange": "Drift",
       "asset": "XRP",
       "direction": "LONG",
-      "entry": 0.8140,
+      "entry": 0.814,
       "size": 154,
       "notional": 124.86,
       "leverage": "1x",
@@ -74,6 +74,40 @@
       "status": "OPEN",
       "strategy": "DeFi",
       "note": "Funding arb: -78% APR (collecting)"
+    },
+    {
+      "exchange": "Kraken",
+      "asset": "DOGE",
+      "direction": "LONG",
+      "entry": 0.093,
+      "size": 66883.62,
+      "notional": 6250,
+      "leverage": "3x",
+      "stopLoss": 0.09,
+      "takeProfit": 0.0948,
+      "openedAt": "2026-02-11T02:35:30.572Z",
+      "txid": "OQMOPR-55ZUT-CHTZ7T",
+      "strategy": "IBB",
+      "slOrderId": "AUTO",
+      "tpOrderId": "O2XHCZ-KS2SF-PIPXUV",
+      "status": "OPEN"
+    },
+    {
+      "exchange": "Kraken",
+      "asset": "LTC",
+      "direction": "LONG",
+      "entry": 53.63,
+      "size": 116.54,
+      "notional": 6250,
+      "leverage": "3x",
+      "stopLoss": 53.06,
+      "takeProfit": 54.41,
+      "openedAt": "2026-02-11T02:35:30.573Z",
+      "txid": "OMHL47-C2SLI-HRDHE3",
+      "strategy": "IBB",
+      "slOrderId": "AUTO",
+      "tpOrderId": "OGFHWO-EQQTG-6VQBGK",
+      "status": "OPEN"
     }
   ],
   "lastTrade": {
@@ -138,7 +172,11 @@
   "strategies": {
     "v5": {
       "name": "v5.0 Mean Reversion",
-      "assets": ["BTC", "SOL", "LTC"],
+      "assets": [
+        "BTC",
+        "SOL",
+        "LTC"
+      ],
       "timeframe": "1H",
       "schedule": "Every hour at :05",
       "slMultiplier": 1.5,
@@ -147,7 +185,14 @@
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
-      "assets": ["DOGE", "LINK", "ADA", "LTC", "XRP", "SOL"],
+      "assets": [
+        "DOGE",
+        "LINK",
+        "ADA",
+        "LTC",
+        "XRP",
+        "SOL"
+      ],
       "timeframe": "1H",
       "schedule": "Every hour at :10",
       "slMultiplier": 1,
@@ -156,7 +201,12 @@
     },
     "drift_ibb": {
       "name": "IBB on Drift",
-      "assets": ["SOL", "DOGE", "LINK", "XRP"],
+      "assets": [
+        "SOL",
+        "DOGE",
+        "LINK",
+        "XRP"
+      ],
       "timeframe": "1H",
       "schedule": "Every hour at :15",
       "slMultiplier": 1,
@@ -167,7 +217,9 @@
     },
     "defi": {
       "name": "DeFi Funding Arb",
-      "assets": ["Any with |APR| > 35%"],
+      "assets": [
+        "Any with |APR| > 35%"
+      ],
       "timeframe": "On-demand",
       "schedule": "Heartbeat check",
       "stopLoss": "4%",
