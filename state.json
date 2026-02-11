@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-02-11T09:55:50.160Z",
-  "version": "5.0 + IBB + DeFi",
+  "version": "5.1 + IBB + DeFi",
   "status": "WATCHING",
   "accounts": {
     "kraken": {
@@ -99,11 +99,13 @@
   ],
   "strategies": {
     "v5": {
-      "name": "v5.0 Mean Reversion",
+      "name": "v5.1 Mean Reversion",
       "assets": [
-        "BTC",
         "SOL",
-        "LTC"
+        "NEAR",
+        "APT",
+        "LTC",
+        "DOGE"
       ],
       "timeframe": "1H",
       "schedule": "Every hour at :05",
