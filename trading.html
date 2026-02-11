@@ -390,7 +390,7 @@
         }
         .position-details {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 12px;
             padding-top: 12px;
             border-top: 1px solid var(--border-color);
@@ -624,6 +624,10 @@
                         </div>
                     </div>
                     <div class="position-details">
+                        <div class="position-detail">
+                            <div class="label">Size</div>
+                            <div class="value">${formatCurrency(pos.positionSize)}</div>
+                        </div>
                         <div class="position-detail">
                             <div class="label">Entry</div>
                             <div class="value">$${pos.entryPrice?.toLocaleString()}</div>
