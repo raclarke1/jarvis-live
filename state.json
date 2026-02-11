@@ -24,7 +24,7 @@
       "notional": 500,
       "leverage": 3,
       "sl": 81.50,
-      "tp": null,
+      "tp": 77.07,
       "strategy": "v5.1-TEST",
       "txid": "OCVNVY-G5HWV-35UCSI",
       "openedAt": "2026-02-11T16:10:00Z"
