@@ -7,15 +7,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "currentPrice": 1.3785,
+    "currentPrice": 1.3885,
     "stopLoss": 1.42,
     "takeProfit": 1.32,
     "positionSize": 499.99,
-    "unrealizedPnl": 5.12,
-    "unrealizedPnlPct": 1.02,
+    "unrealizedPnl": -5.75,
+    "unrealizedPnlPct": -1.15,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770841419186
+    "lastUpdated": 1770846621080
   },
   {
     "id": "THBZ4H-5H5OL-ZH7NNF",
@@ -25,14 +25,14 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 79.9,
-    "currentPrice": 79.41,
+    "currentPrice": 80.26,
     "stopLoss": 81.5,
     "takeProfit": 77.07,
     "positionSize": 499.78,
-    "unrealizedPnl": 9.19,
-    "unrealizedPnlPct": 1.84,
+    "unrealizedPnl": -6.76,
+    "unrealizedPnlPct": -1.35,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770841419363
+    "lastUpdated": 1770846621289
   }
 ]
