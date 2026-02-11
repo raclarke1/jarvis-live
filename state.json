@@ -1,7 +1,7 @@
 {
-  "lastUpdate": "2026-02-11T09:55:50.160Z",
+  "lastUpdate": "2026-02-11T16:10:15.000Z",
   "version": "5.1 + IBB + DeFi",
-  "status": "WATCHING",
+  "status": "ACTIVE",
   "accounts": {
     "kraken": {
       "balance": 24785.19,
@@ -14,7 +14,22 @@
       "leverage": 0.15
     }
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "exchange": "Kraken",
+      "asset": "SOL",
+      "direction": "SHORT",
+      "entry": 79.93,
+      "size": 6.26,
+      "notional": 500,
+      "leverage": 3,
+      "sl": 81.50,
+      "tp": null,
+      "strategy": "v5.1-TEST",
+      "txid": "OCVNVY-G5HWV-35UCSI",
+      "openedAt": "2026-02-11T16:10:00Z"
+    }
+  ],
   "lastTrade": {
     "asset": "LTC",
     "direction": "LONG",
@@ -161,7 +176,7 @@
   },
   "prices": {
     "BTC": 71210.9,
-    "SOL": 87.36,
+    "SOL": 79.93,
     "LTC": 54.76,
     "DOGE": 0.098,
     "LINK": 8.88,
