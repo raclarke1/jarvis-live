@@ -1,6 +1,6 @@
 [
   {
-    "id": "unified_test_kraken_1770850467176",
+    "id": "TXYZ5J-2BFJP-7POL3T",
     "asset": "DOGE",
     "exchange": "Kraken",
     "strategy": "V5.0",
@@ -10,12 +10,12 @@
     "currentPrice": 0.091,
     "stopLoss": 0.09555,
     "takeProfit": 0.08645,
-    "positionSize": 100,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
+    "positionSize": 99.99,
+    "unrealizedPnl": -0.18,
+    "unrealizedPnlPct": -0.18,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850467176
+    "lastUpdated": 1770850585121
   },
   {
     "id": "TMIHYV-3AP3C-2CX62K",
@@ -25,15 +25,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "currentPrice": 1.3713,
+    "currentPrice": 1.3712,
     "stopLoss": 1.42,
     "takeProfit": 1.32,
     "positionSize": 499.99,
-    "unrealizedPnl": 12.92,
-    "unrealizedPnlPct": 2.58,
+    "unrealizedPnl": 12.99,
+    "unrealizedPnlPct": 2.6,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850286609
+    "lastUpdated": 1770850585306
   },
   {
     "id": "THBZ4H-5H5OL-ZH7NNF",
@@ -43,32 +43,32 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 79.9,
-    "currentPrice": 79.74,
+    "currentPrice": 79.59,
     "stopLoss": 81.5,
     "takeProfit": 77.07,
     "positionSize": 499.78,
-    "unrealizedPnl": 3,
-    "unrealizedPnlPct": 0.6,
+    "unrealizedPnl": 5.82,
+    "unrealizedPnlPct": 1.16,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850286664
+    "lastUpdated": 1770850585484
   },
   {
-    "id": "drift_xrp_1770850297932",
-    "asset": "XRP-PERP",
+    "id": "drift_sol_1770850596675",
+    "asset": "SOL-PERP",
     "exchange": "Drift",
     "strategy": "V5.0",
     "direction": "LONG",
     "leverage": 2,
-    "entryPrice": 0.8503,
-    "currentPrice": 0.8374,
+    "entryPrice": 79.4873,
+    "currentPrice": 79.565,
     "stopLoss": null,
     "takeProfit": null,
-    "positionSize": 197.62640000000002,
-    "unrealizedPnl": -3.13,
-    "unrealizedPnlPct": -1.559768536329152,
+    "positionSize": 199.70815,
+    "unrealizedPnl": 0.13,
+    "unrealizedPnlPct": 0.06515862116999692,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850297932
+    "lastUpdated": 1770850596675
   }
 ]
