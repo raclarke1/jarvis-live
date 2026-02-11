@@ -1,9 +1,9 @@
 {
-  "timestamp": 1770839180517,
-  "lastCheck": "2026-02-11T19:46:20.517Z",
-  "healthy": true,
+  "timestamp": 1770845440294,
+  "lastCheck": "2026-02-11T21:30:40.294Z",
+  "healthy": false,
   "hasWarnings": false,
-  "issueCount": 0,
+  "issueCount": 1,
   "warningCount": 0,
   "checks": [
     {
@@ -29,7 +29,7 @@
     {
       "name": "Kraken Balance",
       "status": "ok",
-      "message": "$24,777.173 USDC"
+      "message": "$24,652.195 USDC"
     },
     {
       "name": "Kraken Positions",
@@ -49,32 +49,34 @@
     {
       "name": "V5.0 Execution",
       "status": "ok",
-      "message": "Last check 1.5h ago"
+      "message": "Last check 0.0h ago"
     },
     {
       "name": "IBB Execution",
-      "status": "ok",
-      "message": "Last check 1.5h ago"
+      "status": "error",
+      "message": "Last check 3.2h ago - STALE!"
     }
   ],
-  "issues": [],
+  "issues": [
+    "IBB Execution: Last check 3.2h ago - STALE!"
+  ],
   "warnings": [],
   "executions": {
     "v5": {
-      "timestamp": 1770833804540,
-      "hoursAgo": "1.5"
+      "timestamp": 1770845410181,
+      "hoursAgo": "0.0"
     },
     "ibb": {
       "timestamp": 1770833810533,
-      "hoursAgo": "1.5"
+      "hoursAgo": "3.2"
     },
     "brt": {
       "lastCheck": "2026-02-11T19:46:03.288Z",
-      "hoursAgo": "0.0"
+      "hoursAgo": "1.7"
     },
     "drift": {
       "timestamp": 1770833707834,
-      "hoursAgo": "1.5"
+      "hoursAgo": "3.3"
     }
   }
 }
