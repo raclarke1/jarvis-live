@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-11T02:35:30.573Z",
+  "lastUpdate": "2026-02-11T09:55:50.160Z",
   "version": "5.0 + IBB + DeFi",
   "status": "WATCHING",
   "accounts": {
     "kraken": {
-      "balance": 24980.24,
-      "marginUsed": 37500,
-      "freeMargin": 12480.24
+      "balance": 24785.19,
+      "marginUsed": 0,
+      "freeMargin": 24785.19
     },
     "drift": {
       "equity": 708.6,
@@ -16,19 +16,42 @@
   },
   "openPositions": [],
   "lastTrade": {
-    "asset": "SUI",
-    "direction": "SHORT",
-    "entry": 0.9806,
-    "exit": 0.9238,
-    "size": 254,
-    "pnl": 14.42,
-    "result": "WIN",
-    "exchange": "Drift",
-    "strategy": "DeFi",
-    "closedAt": "2026-02-10T21:30:00Z",
-    "note": "Closed when funding reversed from +35% to -1.3%"
+    "asset": "LTC",
+    "direction": "LONG",
+    "entry": 53.63,
+    "exit": 53.03,
+    "pnl": -65.71,
+    "result": "LOSS",
+    "exchange": "Kraken",
+    "strategy": "IBB",
+    "closedAt": "2026-02-11T09:09:00Z",
+    "reason": "SL"
   },
   "recentTrades": [
+    {
+      "asset": "LTC",
+      "direction": "LONG",
+      "entry": 53.63,
+      "exit": 53.03,
+      "pnl": -65.71,
+      "result": "LOSS",
+      "exchange": "Kraken",
+      "strategy": "IBB",
+      "closedAt": "2026-02-11T09:09:00Z",
+      "reason": "SL"
+    },
+    {
+      "asset": "DOGE",
+      "direction": "LONG",
+      "entry": 0.093,
+      "exit": 0.09,
+      "pnl": -60.48,
+      "result": "LOSS",
+      "exchange": "Kraken",
+      "strategy": "IBB",
+      "closedAt": "2026-02-11T09:09:00Z",
+      "reason": "SL"
+    },
     {
       "asset": "SUI",
       "direction": "SHORT",
@@ -146,11 +169,13 @@
     "updatedAt": "2026-02-10T22:02:00Z"
   },
   "stats": {
-    "todayPnl": 14.42,
-    "todayTrades": 1,
+    "todayPnl": -111.76999999999998,
+    "todayTrades": 3,
     "todayWins": 1,
-    "weekPnl": 29.07,
-    "weekTrades": 3,
-    "weekWins": 2
+    "weekPnl": -97.11999999999999,
+    "weekTrades": 5,
+    "weekWins": 2,
+    "todayLosses": 2,
+    "weekLosses": 2
   }
 }
