@@ -142,14 +142,14 @@
     "ibb": {
       "name": "IBB Inside Bar Breakout",
       "assets": ["SNX", "SAND", "ATOM", "DASH", "ALGO"],
-      "backtestReturns": "SNX +177%, SAND +115%, ATOM +98%, DASH +78%, ALGO +78%",
+      "backtestReturns": "DASH +222%, SNX +212%, SAND +189%, ALGO +170%, ATOM +150%",
       "timeframe": "1H",
       "schedule": "Every hour",
       "slMultiplier": 1.0,
-      "tpMultiplier": 2.0,
+      "tpMultiplier": "2.0 (SNX/DASH: 3.0)",
       "exchange": "Kraken",
-      "positionSize": "18%",
-      "note": "Backtest optimized Feb 11, 2026 - 37 assets tested"
+      "positionSize": "18% (DASH: 30%)",
+      "note": "SNX/DASH optimized: EMA=15, ATR=7, TP=3.0"
     }
   },
   "prices": {
