@@ -129,27 +129,27 @@
   "strategies": {
     "v50": {
       "name": "V5.0 Mean Reversion",
-      "assets": ["SOL", "LTC", "NEAR", "AVAX"],
-      "backtestReturns": "SOL +137%, LTC +57%, NEAR +36%, AVAX +23%",
+      "assets": ["SNX", "SOL", "COMP", "BCH", "AAVE"],
+      "backtestReturns": "SNX +170%, SOL +137%, COMP +131%, BCH +67%, AAVE +61%",
       "timeframe": "1H",
       "schedule": "Every hour",
       "slMultiplier": 1.5,
       "tpMultiplier": 2.0,
       "exchange": "Kraken",
       "positionSize": "18%",
-      "note": "Backtest optimized Feb 11, 2026"
+      "note": "Backtest optimized Feb 11, 2026 - 37 assets tested"
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
-      "assets": ["ATOM", "DOT", "DOGE", "UNI"],
-      "backtestReturns": "ATOM +98%, DOT +58%, DOGE +25%, UNI +14%",
+      "assets": ["SNX", "SAND", "ATOM", "DASH", "ALGO"],
+      "backtestReturns": "SNX +177%, SAND +115%, ATOM +98%, DASH +78%, ALGO +78%",
       "timeframe": "1H",
       "schedule": "Every hour",
       "slMultiplier": 1.0,
       "tpMultiplier": 2.0,
       "exchange": "Kraken",
       "positionSize": "18%",
-      "note": "Backtest optimized Feb 11, 2026"
+      "note": "Backtest optimized Feb 11, 2026 - 37 assets tested"
     }
   },
   "prices": {
