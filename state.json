@@ -127,25 +127,32 @@
     }
   ],
   "strategies": {
-    "v50": {
-      "name": "V5.0 Mean Reversion",
+    "v50_kraken": {
+      "name": "V5.0 Mean Reversion (Kraken)",
       "assets": ["SNX", "SOL", "COMP", "BCH", "AAVE"],
-      "backtestReturns": "V5.0 optimized +70% overall",
+      "backtestReturns": "+$170k (2yr)",
       "timeframe": "1H",
-      "schedule": "Every hour",
       "exchange": "Kraken",
       "positionSize": "18%",
-      "note": "Per-asset optimization: SNX +48%, SOL +17%, COMP +81%, BCH +177%, AAVE +71%"
+      "note": "Per-asset optimized: SNX +48%, SOL +17%, COMP +81%, BCH +177%, AAVE +71%"
     },
-    "ibb": {
-      "name": "IBB Inside Bar Breakout",
+    "ibb_kraken": {
+      "name": "IBB Inside Bar (Kraken)",
       "assets": ["SNX", "SAND", "ATOM", "DASH", "ALGO", "MANA", "GRT"],
-      "backtestReturns": "IBB optimized +14% (SNX/DASH params)",
+      "backtestReturns": "+$270k (2yr)",
       "timeframe": "1H",
-      "schedule": "Every hour",
       "exchange": "Kraken",
-      "positionSize": "18% (SNX: 25%, DASH: 30%)",
-      "note": "7 assets, optimized SNX/DASH: EMA=15, ATR=7, TP=3.0"
+      "positionSize": "18% (SNX 25%, DASH 30%)",
+      "note": "7 assets, SNX/DASH optimized"
+    },
+    "ibb_drift": {
+      "name": "IBB Inside Bar (Drift)",
+      "assets": ["ARB", "DOGE", "APT", "OP", "LINK"],
+      "backtestReturns": "+$4,466 (2yr, 638%)",
+      "timeframe": "1H",
+      "exchange": "Drift",
+      "positionSize": "25%",
+      "note": "Top 5 IBB performers on Drift"
     }
   },
   "prices": {

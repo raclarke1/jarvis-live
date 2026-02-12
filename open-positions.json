@@ -70,5 +70,20 @@
     "hasStop": true,
     "hasTP": true,
     "lastUpdated": 1770859217468
+  },
+  {
+    "id": "OX7I7R-ZCOR3-RRQIBN",
+    "asset": "ATOM",
+    "exchange": "Kraken",
+    "strategy": "IBB",
+    "direction": "LONG",
+    "leverage": 2,
+    "entryPrice": 1.9638,
+    "stopLoss": 1.9436249954338192,
+    "takeProfit": 2.0041500091323616,
+    "positionSize": 4437.3114289512005,
+    "hasStop": true,
+    "hasTP": true,
+    "lastUpdated": 1770866409218
   }
 ]
