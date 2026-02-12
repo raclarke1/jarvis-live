@@ -7,15 +7,15 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 0.0839,
-    "currentPrice": 0.0841,
+    "currentPrice": 0.0849,
     "stopLoss": 0.0828,
     "takeProfit": null,
     "positionSize": 13320.6,
-    "unrealizedPnl": 78.32,
-    "unrealizedPnlPct": 0.59,
+    "unrealizedPnl": 459.2,
+    "unrealizedPnlPct": 3.45,
     "hasStop": true,
     "hasTP": false,
-    "lastUpdated": 1770874806807
+    "lastUpdated": 1770878404009
   },
   {
     "id": "TFCH5Z-OLLQZ-JYGVZ3",
@@ -25,15 +25,15 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 1.9654,
-    "currentPrice": 1.9697,
+    "currentPrice": 1.977,
     "stopLoss": 1.9436,
     "takeProfit": null,
     "positionSize": 8881.79,
-    "unrealizedPnl": 58.48,
-    "unrealizedPnlPct": 0.66,
+    "unrealizedPnl": 157.45,
+    "unrealizedPnlPct": 1.77,
     "hasStop": true,
     "hasTP": false,
-    "lastUpdated": 1770874807109
+    "lastUpdated": 1770878404495
   },
   {
     "id": "TXYZ5J-2BFJP-7POL3T",
@@ -43,15 +43,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 0.091,
-    "currentPrice": 0.0919,
+    "currentPrice": 0.0925,
     "stopLoss": 0.09555,
     "takeProfit": 0.08645,
     "positionSize": 99.99,
-    "unrealizedPnl": -3.15,
-    "unrealizedPnlPct": -3.15,
+    "unrealizedPnl": -5.01,
+    "unrealizedPnlPct": -5.01,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770874807415
+    "lastUpdated": 1770878404687
   },
   {
     "id": "TMIHYV-3AP3C-2CX62K",
@@ -61,15 +61,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "currentPrice": 1.3763,
+    "currentPrice": 1.3816,
     "stopLoss": 1.42,
     "takeProfit": 1.32,
     "positionSize": 499.99,
-    "unrealizedPnl": 7.48,
-    "unrealizedPnlPct": 1.5,
+    "unrealizedPnl": 1.79,
+    "unrealizedPnlPct": 0.36,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770874807624
+    "lastUpdated": 1770878404879
   },
   {
     "id": "THBZ4H-5H5OL-ZH7NNF",
@@ -79,32 +79,32 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 79.9,
-    "currentPrice": 80.26,
+    "currentPrice": 80.67,
     "stopLoss": 81.5,
     "takeProfit": 77.07,
     "positionSize": 499.78,
-    "unrealizedPnl": -6.76,
-    "unrealizedPnlPct": -1.35,
+    "unrealizedPnl": -14.45,
+    "unrealizedPnlPct": -2.89,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770874807823
+    "lastUpdated": 1770878405076
   },
   {
-    "id": "drift_sol_1770874820399",
+    "id": "drift_sol_1770878417198",
     "asset": "SOL-PERP",
     "exchange": "Drift",
     "strategy": "V5.0",
     "direction": "LONG",
     "leverage": 2,
     "entryPrice": 79.4873,
-    "currentPrice": 80.3025,
+    "currentPrice": 80.6769,
     "stopLoss": null,
     "takeProfit": null,
-    "positionSize": 201.55927499999996,
-    "unrealizedPnl": 2.06,
-    "unrealizedPnlPct": 1.0325135354630282,
+    "positionSize": 202.499019,
+    "unrealizedPnl": 2.96,
+    "unrealizedPnlPct": 1.4836116820245453,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770874820399
+    "lastUpdated": 1770878417198
   }
 ]
