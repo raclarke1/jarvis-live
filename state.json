@@ -127,81 +127,29 @@
     }
   ],
   "strategies": {
-    "v5": {
-      "name": "v5.1 Mean Reversion",
-      "assets": [
-        "SOL",
-        "NEAR",
-        "APT",
-        "LTC",
-        "DOGE"
-      ],
+    "v50": {
+      "name": "V5.0 Mean Reversion",
+      "assets": ["SOL", "LTC", "NEAR", "AVAX"],
+      "backtestReturns": "SOL +137%, LTC +57%, NEAR +36%, AVAX +23%",
       "timeframe": "1H",
-      "schedule": "Every hour at :05",
+      "schedule": "Every hour",
       "slMultiplier": 1.5,
-      "tpMultiplier": 2,
+      "tpMultiplier": 2.0,
       "exchange": "Kraken",
-      "positionSize": "12%"
+      "positionSize": "18%",
+      "note": "Backtest optimized Feb 11, 2026"
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
-      "assets": [
-        "DOGE",
-        "LINK",
-        "ADA",
-        "LTC",
-        "XRP",
-        "SOL"
-      ],
+      "assets": ["ATOM", "DOT", "DOGE", "UNI"],
+      "backtestReturns": "ATOM +98%, DOT +58%, DOGE +25%, UNI +14%",
       "timeframe": "1H",
-      "schedule": "Every hour at :10",
-      "slMultiplier": 1,
-      "tpMultiplier": 2,
+      "schedule": "Every hour",
+      "slMultiplier": 1.0,
+      "tpMultiplier": 2.0,
       "exchange": "Kraken",
-      "positionSize": "12%"
-    },
-    "drift_ibb": {
-      "name": "IBB on Drift",
-      "assets": [
-        "SOL",
-        "DOGE",
-        "LINK",
-        "XRP"
-      ],
-      "timeframe": "1H",
-      "schedule": "Every hour at :15",
-      "slMultiplier": 1,
-      "tpMultiplier": 2,
-      "exchange": "Drift",
-      "positionSize": "12%",
-      "leverage": "3x"
-    },
-    "brt": {
-      "name": "BRT Break & Retest",
-      "assets": [
-        "XRP",
-        "LTC",
-        "SOL",
-        "LINK",
-        "BTC"
-      ],
-      "timeframe": "1H",
-      "schedule": "Every hour at :20",
-      "riskReward": 2.0,
-      "exchange": "Kraken",
-      "positionSize": "12%",
-      "note": "S/R breakout with retest confirmation"
-    },
-    "defi": {
-      "name": "DeFi Funding Arb",
-      "assets": [
-        "Any with |APR| > 35%"
-      ],
-      "timeframe": "On-demand",
-      "schedule": "Heartbeat check",
-      "stopLoss": "4%",
-      "exchange": "Drift",
-      "note": "Threshold lowered from 39% to 35% on Feb 9"
+      "positionSize": "18%",
+      "note": "Backtest optimized Feb 11, 2026"
     }
   },
   "prices": {
