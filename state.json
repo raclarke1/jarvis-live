@@ -130,26 +130,22 @@
     "v50": {
       "name": "V5.0 Mean Reversion",
       "assets": ["SNX", "SOL", "COMP", "BCH", "AAVE"],
-      "backtestReturns": "SNX +170%, SOL +137%, COMP +131%, BCH +67%, AAVE +61%",
+      "backtestReturns": "V5.0 optimized +70% overall",
       "timeframe": "1H",
       "schedule": "Every hour",
-      "slMultiplier": 1.5,
-      "tpMultiplier": 2.0,
       "exchange": "Kraken",
       "positionSize": "18%",
-      "note": "Backtest optimized Feb 11, 2026 - 37 assets tested"
+      "note": "Per-asset optimization: SNX +48%, SOL +17%, COMP +81%, BCH +177%, AAVE +71%"
     },
     "ibb": {
       "name": "IBB Inside Bar Breakout",
-      "assets": ["SNX", "SAND", "ATOM", "DASH", "ALGO"],
-      "backtestReturns": "DASH +222%, SNX +212%, SAND +189%, ALGO +170%, ATOM +150%",
+      "assets": ["SNX", "SAND", "ATOM", "DASH", "ALGO", "MANA", "GRT"],
+      "backtestReturns": "IBB optimized +14% (SNX/DASH params)",
       "timeframe": "1H",
       "schedule": "Every hour",
-      "slMultiplier": 1.0,
-      "tpMultiplier": "2.0 (SNX/DASH: 3.0)",
       "exchange": "Kraken",
-      "positionSize": "18% (DASH: 30%)",
-      "note": "SNX/DASH optimized: EMA=15, ATR=7, TP=3.0"
+      "positionSize": "18% (SNX: 25%, DASH: 30%)",
+      "note": "7 assets, optimized SNX/DASH: EMA=15, ATR=7, TP=3.0"
     }
   },
   "prices": {
