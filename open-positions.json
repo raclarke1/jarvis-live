@@ -7,15 +7,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 0.091,
-    "currentPrice": 0.091,
+    "currentPrice": 0.0917,
     "stopLoss": 0.09555,
     "takeProfit": 0.08645,
     "positionSize": 99.99,
-    "unrealizedPnl": -0.18,
-    "unrealizedPnlPct": -0.18,
+    "unrealizedPnl": -2.53,
+    "unrealizedPnlPct": -2.53,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850585121
+    "lastUpdated": 1770859204626
   },
   {
     "id": "TMIHYV-3AP3C-2CX62K",
@@ -25,15 +25,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "currentPrice": 1.3712,
+    "currentPrice": 1.382,
     "stopLoss": 1.42,
     "takeProfit": 1.32,
     "positionSize": 499.99,
-    "unrealizedPnl": 12.99,
-    "unrealizedPnlPct": 2.6,
+    "unrealizedPnl": 1.29,
+    "unrealizedPnlPct": 0.26,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850585306
+    "lastUpdated": 1770859205134
   },
   {
     "id": "THBZ4H-5H5OL-ZH7NNF",
@@ -43,32 +43,32 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 79.9,
-    "currentPrice": 79.59,
+    "currentPrice": 80.18,
     "stopLoss": 81.5,
     "takeProfit": 77.07,
     "positionSize": 499.78,
-    "unrealizedPnl": 5.82,
-    "unrealizedPnlPct": 1.16,
+    "unrealizedPnl": -5.25,
+    "unrealizedPnlPct": -1.05,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850585484
+    "lastUpdated": 1770859205378
   },
   {
-    "id": "drift_sol_1770850596675",
+    "id": "drift_sol_1770859217468",
     "asset": "SOL-PERP",
     "exchange": "Drift",
     "strategy": "V5.0",
     "direction": "LONG",
     "leverage": 2,
     "entryPrice": 79.4873,
-    "currentPrice": 79.565,
+    "currentPrice": 80.1513,
     "stopLoss": null,
     "takeProfit": null,
-    "positionSize": 199.70815,
-    "unrealizedPnl": 0.13,
-    "unrealizedPnlPct": 0.06515862116999692,
+    "positionSize": 201.179763,
+    "unrealizedPnl": 1.63,
+    "unrealizedPnlPct": 0.8169888654391921,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770850596675
+    "lastUpdated": 1770859217468
   }
 ]
