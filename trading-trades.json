@@ -304,5 +304,22 @@
     "pnlUsd": -107.11,
     "pnlPercent": -1.26,
     "status": "CLOSED"
+  },
+  {
+    "id": "OP26MX-ILECL-DPTRHX",
+    "asset": "ALGO",
+    "exchange": "Kraken",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 2,
+    "entryPrice": 0.08997,
+    "exitPrice": 0.091,
+    "entryTime": 1770934210086,
+    "exitTime": 1770937475557,
+    "exitReason": "UNKNOWN",
+    "positionSize": 4171.6838848842,
+    "pnlUsd": -99.13,
+    "pnlPercent": -1.19,
+    "status": "CLOSED"
   }
 ]
