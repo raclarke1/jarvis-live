@@ -52,5 +52,20 @@
     "hasStop": true,
     "hasTP": true,
     "lastUpdated": 1770917497891
+  },
+  {
+    "id": "OMECYS-LD5ZD-SPVFFZ",
+    "asset": "SNX",
+    "exchange": "Kraken",
+    "strategy": "V5.0",
+    "direction": "LONG",
+    "leverage": 2,
+    "entryPrice": 0.2833,
+    "stopLoss": 0.2769322268634108,
+    "takeProfit": 0.30367687403708543,
+    "positionSize": 4267.0935756234,
+    "hasStop": true,
+    "hasTP": true,
+    "lastUpdated": 1770918009125
   }
 ]
