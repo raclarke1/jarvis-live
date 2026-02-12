@@ -758,7 +758,10 @@
                 grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
                 
                 // Filter out open trades from history (only show closed)
-                const closedTrades = trades.filter(t => t.status !== 'OPEN');
+                // Sort by exit time (newest first)
+                const closedTrades = trades
+                    .filter(t => t.status !== 'OPEN')
+                    .sort((a, b) => (b.exitTime || b.entryTime || 0) - (a.exitTime || a.entryTime || 0));
                 
                 // Render trade table
                 const tbody = document.getElementById('tradeTableBody');
