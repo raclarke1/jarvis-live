@@ -79,11 +79,15 @@
     "direction": "LONG",
     "leverage": 2,
     "entryPrice": 1.9638,
-    "stopLoss": 1.9436249954338192,
-    "takeProfit": 2.0041500091323616,
-    "positionSize": 4437.3114289512005,
+    "currentPrice": 1.9739,
+    "stopLoss": 1.9436,
+    "takeProfit": 2.0042,
+    "positionSize": 4437.31,
+    "unrealizedPnl": 22.83,
+    "unrealizedPnlPct": 0.51,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770866409218
+    "entryTime": 1770866409218,
+    "lastUpdated": 1770867865000
   }
 ]

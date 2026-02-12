@@ -392,6 +392,12 @@
             display: flex;
             gap: 8px;
             margin-top: 4px;
+            align-items: center;
+        }
+        .entry-date {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-left: auto;
         }
         .position-pnl {
             text-align: right;
@@ -643,6 +649,7 @@
             const pnlValueClass = isProfit ? 'positive' : 'negative';
             const strategy = pos.strategy || 'V5.0';
             const strategyClass = strategy === 'IBB' ? 'ibb' : 'v50';
+            const entryDate = pos.entryTime || pos.lastUpdated;
             
             return `
                 <div class="position-card ${pnlClass}">
@@ -652,6 +659,7 @@
                             <div class="position-exchange">${pos.exchange || 'Kraken'} • <span class="strategy-tag ${strategyClass}">${strategy}</span></div>
                             <div class="position-meta">
                                 <span class="tag ${pos.direction.toLowerCase()}">${pos.direction} ${pos.leverage}x</span>
+                                <span class="entry-date">${entryDate ? formatDate(entryDate) : ''}</span>
                             </div>
                         </div>
                         <div class="position-pnl">
