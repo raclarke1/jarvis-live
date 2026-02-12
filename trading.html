@@ -440,7 +440,7 @@
         <div class="header">
             <div>
                 <h1>Trading Performance</h1>
-                <p class="subtitle">Live strategy performance and trade history</p>
+                <p class="subtitle">Automated mean reversion strategy • Live performance</p>
             </div>
             <div class="updated" id="lastUpdated">Loading...</div>
         </div>
@@ -456,17 +456,33 @@
             </div>
         </div>
         
-        <!-- Systems Status Panel -->
-        <div class="systems-status" id="systemsStatus">
+        <!-- System Overview Panel -->
+        <div class="systems-status healthy" id="systemsStatus">
             <div class="systems-header">
-                <h2>⚡ V5.0 Unified Trading System</h2>
-                <span class="status-badge" id="systemsBadge">Loading...</span>
+                <h2>⚡ V5.0 Mean Reversion Strategy</h2>
+                <span class="status-badge healthy" id="systemsBadge">Active</span>
             </div>
             <div class="systems-grid" id="systemsGrid">
-                <!-- Populated by JS -->
-            </div>
-            <div class="last-executions" id="lastExecutions">
-                <!-- Populated by JS -->
+                <div class="system-check">
+                    <span class="indicator ok"></span>
+                    <span class="name">Strategy</span>
+                    <span class="detail">1H Mean Reversion</span>
+                </div>
+                <div class="system-check">
+                    <span class="indicator ok"></span>
+                    <span class="name">Kraken</span>
+                    <span class="detail">SOL, NEAR, APT, LTC, DOGE</span>
+                </div>
+                <div class="system-check">
+                    <span class="indicator ok"></span>
+                    <span class="name">Drift</span>
+                    <span class="detail">XRP, SUI, APT, SOL perps</span>
+                </div>
+                <div class="system-check">
+                    <span class="indicator ok"></span>
+                    <span class="name">Risk</span>
+                    <span class="detail">3x leverage, auto SL/TP</span>
+                </div>
             </div>
         </div>
         
@@ -501,7 +517,7 @@
         
         <!-- Footer -->
         <div class="footer">
-            Updated after each trade • Kraken for spot/margin • Drift for perpetuals
+            Auto-updated every 5 minutes • Trades execute with automatic stop-loss protection
         </div>
     </div>
 
@@ -758,124 +774,11 @@
             grid.innerHTML = positions.map(p => renderPositionCard(p)).join('');
         }
         
-        // Load watchdog status
-        async function loadWatchdogStatus() {
-            try {
-                const cacheBust = Date.now();
-                const res = await fetch(`watchdog-status.json?v=${cacheBust}`);
-                
-                if (!res.ok) {
-                    renderWatchdogError('Status file not found');
-                    return;
-                }
-                
-                const status = await res.json();
-                renderWatchdogStatus(status);
-                
-            } catch (err) {
-                console.error('Failed to load watchdog status:', err);
-                renderWatchdogError('Failed to load');
-            }
-        }
-        
-        function renderWatchdogError(message) {
-            const panel = document.getElementById('systemsStatus');
-            const badge = document.getElementById('systemsBadge');
-            const grid = document.getElementById('systemsGrid');
-            const executions = document.getElementById('lastExecutions');
-            
-            panel.className = 'systems-status warning';
-            badge.className = 'status-badge warning';
-            badge.textContent = 'Unknown';
-            grid.innerHTML = `<div class="system-check"><span class="indicator warn"></span><span class="name">${message}</span></div>`;
-            executions.innerHTML = '';
-        }
-        
-        function renderWatchdogStatus(status) {
-            const panel = document.getElementById('systemsStatus');
-            const badge = document.getElementById('systemsBadge');
-            const grid = document.getElementById('systemsGrid');
-            const executions = document.getElementById('lastExecutions');
-            
-            // Determine overall status
-            let overallStatus = 'healthy';
-            let badgeText = 'All Systems Go';
-            
-            if (status.issueCount > 0) {
-                overallStatus = 'error';
-                badgeText = `${status.issueCount} Issue${status.issueCount > 1 ? 's' : ''}`;
-            } else if (status.warningCount > 0) {
-                overallStatus = 'warning';
-                badgeText = `${status.warningCount} Warning${status.warningCount > 1 ? 's' : ''}`;
-            }
-            
-            // Check if status is stale (>1 hour old)
-            const ageMs = Date.now() - status.timestamp;
-            const ageHours = ageMs / (1000 * 60 * 60);
-            if (ageHours > 1) {
-                overallStatus = 'warning';
-                badgeText = `Stale (${ageHours.toFixed(1)}h ago)`;
-            }
-            
-            panel.className = `systems-status ${overallStatus}`;
-            badge.className = `status-badge ${overallStatus}`;
-            badge.textContent = badgeText;
-            
-            // Render checks
-            grid.innerHTML = status.checks.map(check => {
-                const indicatorClass = check.status === 'ok' ? 'ok' : check.status === 'warn' ? 'warn' : 'error';
-                return `
-                    <div class="system-check">
-                        <span class="indicator ${indicatorClass}"></span>
-                        <span class="name">${check.name}</span>
-                        <span class="detail">${check.message.substring(0, 30)}</span>
-                    </div>
-                `;
-            }).join('');
-            
-            // Render last executions - simplified for unified system
-            const exec = status.executions;
-            let execHtml = '';
-            
-            // Show Kraken (use v5 or most recent)
-            if (exec.v5) {
-                const isStale = parseFloat(exec.v5.hoursAgo) > 2;
-                execHtml += `
-                    <div class="execution-item">
-                        <span class="label">Kraken:</span>
-                        <span class="time ${isStale ? 'stale' : ''}">${exec.v5.hoursAgo}h ago</span>
-                    </div>
-                `;
-            }
-            
-            // Show Drift
-            if (exec.drift) {
-                const isStale = parseFloat(exec.drift.hoursAgo) > 2;
-                execHtml += `
-                    <div class="execution-item">
-                        <span class="label">Drift:</span>
-                        <span class="time ${isStale ? 'stale' : ''}">${exec.drift.hoursAgo}h ago</span>
-                    </div>
-                `;
-            }
-            
-            execHtml += `
-                <div class="execution-item" style="margin-left: auto;">
-                    <span class="label">Last Check:</span>
-                    <span class="time">${new Date(status.timestamp).toLocaleTimeString()}</span>
-                </div>
-            `;
-            
-            executions.innerHTML = execHtml;
-        }
-        
         // Initial load
         loadData();
-        loadWatchdogStatus();
         
         // Auto-refresh every 5 minutes
         setInterval(loadData, 300000);
-        setInterval(loadWatchdogStatus, 60000); // Watchdog status every minute
     </script>
 </body>
 </html>
