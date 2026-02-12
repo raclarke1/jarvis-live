@@ -205,9 +205,8 @@
             font-weight: 500;
         }
         .tag.v5 { background: rgba(88,166,255,0.2); color: var(--accent-blue); }
-        .tag.ibb { background: rgba(168,85,247,0.2); color: var(--accent-purple); }
-        .tag.brt { background: rgba(34,197,94,0.2); color: var(--accent-green); }
-        .tag.defi { background: rgba(0,255,136,0.2); color: var(--accent-green); }
+        .tag.kraken { background: rgba(88,166,255,0.2); color: var(--accent-blue); }
+        .tag.drift { background: rgba(168,85,247,0.2); color: var(--accent-purple); }
         .tag.long { background: var(--accent-green-dim); color: var(--accent-green); }
         .tag.short { background: var(--accent-red-dim); color: var(--accent-red); }
         .tag.open { background: rgba(255,165,2,0.2); color: #ffa502; }
@@ -370,6 +369,11 @@
             font-size: 1.25rem;
             font-weight: 600;
         }
+        .position-exchange {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
         .position-meta {
             display: flex;
             gap: 8px;
@@ -455,7 +459,7 @@
         <!-- Systems Status Panel -->
         <div class="systems-status" id="systemsStatus">
             <div class="systems-header">
-                <h2>🐕 Trading Systems Status</h2>
+                <h2>⚡ V5.0 Unified Trading System</h2>
                 <span class="status-badge" id="systemsBadge">Loading...</span>
             </div>
             <div class="systems-grid" id="systemsGrid">
@@ -613,9 +617,9 @@
                     <div class="position-header">
                         <div>
                             <div class="position-asset">${pos.asset}</div>
+                            <div class="position-exchange">${pos.exchange || 'Kraken'}</div>
                             <div class="position-meta">
                                 <span class="tag ${pos.direction.toLowerCase()}">${pos.direction} ${pos.leverage}x</span>
-                                <span class="tag ${pos.strategy === 'V5.0' || pos.strategy === 'v5.0' || pos.strategy === 'v5.1' ? 'v5' : pos.strategy === 'IBB' ? 'ibb' : 'defi'}">${pos.strategy}</span>
                             </div>
                         </div>
                         <div class="position-pnl">
@@ -653,10 +657,11 @@
         function renderTradeRow(trade) {
             const isOpen = trade.status === 'OPEN';
             const isWin = (trade.pnlUsd || 0) > 0;
+            const strategyClass = trade.exchange === 'Drift' ? 'drift' : 'kraken';
             
             return `
                 <tr>
-                    <td><span class="tag ${trade.strategy === 'V5.0' || trade.strategy === 'v5.0' || trade.strategy === 'v5.1' ? 'v5' : trade.strategy === 'IBB' ? 'ibb' : trade.strategy === 'BRT' ? 'brt' : 'defi'}">${trade.strategy}</span></td>
+                    <td><span class="tag ${strategyClass}">${trade.strategy}</span></td>
                     <td class="asset-cell">
                         <div class="name">${trade.asset}</div>
                         <div class="exchange">${trade.exchange}</div>
@@ -828,37 +833,22 @@
                 `;
             }).join('');
             
-            // Render last executions
+            // Render last executions - simplified for unified system
             const exec = status.executions;
             let execHtml = '';
             
+            // Show Kraken (use v5 or most recent)
             if (exec.v5) {
                 const isStale = parseFloat(exec.v5.hoursAgo) > 2;
                 execHtml += `
                     <div class="execution-item">
-                        <span class="label">V5.0:</span>
+                        <span class="label">Kraken:</span>
                         <span class="time ${isStale ? 'stale' : ''}">${exec.v5.hoursAgo}h ago</span>
                     </div>
                 `;
             }
-            if (exec.ibb) {
-                const isStale = parseFloat(exec.ibb.hoursAgo) > 2;
-                execHtml += `
-                    <div class="execution-item">
-                        <span class="label">IBB:</span>
-                        <span class="time ${isStale ? 'stale' : ''}">${exec.ibb.hoursAgo}h ago</span>
-                    </div>
-                `;
-            }
-            if (exec.brt) {
-                const isStale = parseFloat(exec.brt.hoursAgo) > 2;
-                execHtml += `
-                    <div class="execution-item">
-                        <span class="label">BRT:</span>
-                        <span class="time ${isStale ? 'stale' : ''}">${exec.brt.hoursAgo}h ago</span>
-                    </div>
-                `;
-            }
+            
+            // Show Drift
             if (exec.drift) {
                 const isStale = parseFloat(exec.drift.hoursAgo) > 2;
                 execHtml += `
