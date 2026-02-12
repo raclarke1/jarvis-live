@@ -106,5 +106,20 @@
     "hasStop": true,
     "hasTP": true,
     "lastUpdated": 1770878417198
+  },
+  {
+    "id": "ONGJ57-PS3HC-5VAVBD",
+    "asset": "SNX",
+    "exchange": "Kraken",
+    "strategy": "V5.0",
+    "direction": "SHORT",
+    "leverage": 2,
+    "entryPrice": 0.2868,
+    "stopLoss": 0.29169005202497994,
+    "takeProfit": 0.27506387514004815,
+    "positionSize": 4426.3262726694,
+    "hasStop": true,
+    "hasTP": true,
+    "lastUpdated": 1770879009022
   }
 ]

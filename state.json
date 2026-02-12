@@ -1,7 +1,8 @@
 {
-  "lastUpdate": "2026-02-11T19:45:30.000Z",
-  "version": "5.1 + IBB + BRT + DeFi",
+  "lastUpdate": "2026-02-12T12:56:00.000Z",
+  "version": "5.2 + IBB v2 (TP=4.0x ATR)",
   "status": "ACTIVE",
+  "configNote": "Feb 12: Upgraded TP from 2.0x to 4.0x ATR - backtest +1119% vs +1047%",
   "accounts": {
     "kraken": {
       "balance": 24785.19,
