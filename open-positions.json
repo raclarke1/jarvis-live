@@ -1,5 +1,23 @@
 [
   {
+    "id": "TSZXJE-R2AAG-6RI4VQ",
+    "asset": "MANA",
+    "exchange": "Kraken",
+    "strategy": "V5.0",
+    "direction": "SHORT",
+    "leverage": 3,
+    "entryPrice": 0.0981,
+    "currentPrice": 0.0985,
+    "stopLoss": 0.0993,
+    "takeProfit": 0.0939,
+    "positionSize": 12413.02,
+    "unrealizedPnl": -168.38,
+    "unrealizedPnlPct": -1.36,
+    "hasStop": true,
+    "hasTP": true,
+    "lastUpdated": 1770949204617
+  },
+  {
     "id": "T5HSEV-BDWSJ-5XSXPH",
     "asset": "BCH",
     "exchange": "Kraken",
@@ -7,15 +25,15 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 499.9601,
-    "currentPrice": 502.24,
+    "currentPrice": 508.64,
     "stopLoss": 488.77,
     "takeProfit": null,
     "positionSize": 12784.43,
-    "unrealizedPnl": 174.9,
-    "unrealizedPnlPct": 1.37,
+    "unrealizedPnl": 665.86,
+    "unrealizedPnlPct": 5.21,
     "hasStop": true,
     "hasTP": false,
-    "lastUpdated": 1770942003911
+    "lastUpdated": 1770949205101
   },
   {
     "id": "TNYO2V-CFCCT-QMXU6E",
@@ -25,15 +43,15 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 0.2842,
-    "currentPrice": 0.2861,
+    "currentPrice": 0.2876,
     "stopLoss": 0.2769,
     "takeProfit": null,
     "positionSize": 8560.41,
-    "unrealizedPnl": 174.38,
-    "unrealizedPnlPct": 2.04,
+    "unrealizedPnl": 309.94,
+    "unrealizedPnlPct": 3.62,
     "hasStop": true,
     "hasTP": false,
-    "lastUpdated": 1770942004133
+    "lastUpdated": 1770949205659
   },
   {
     "id": "TXYZ5J-2BFJP-7POL3T",
@@ -51,7 +69,7 @@
     "unrealizedPnlPct": -5.11,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770942004698
+    "lastUpdated": 1770949205972
   },
   {
     "id": "TMIHYV-3AP3C-2CX62K",
@@ -61,33 +79,14 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "currentPrice": 1.3593,
+    "currentPrice": 1.3617,
     "stopLoss": 1.42,
     "takeProfit": 1.32,
     "positionSize": 499.99,
-    "unrealizedPnl": 25.97,
-    "unrealizedPnlPct": 5.19,
+    "unrealizedPnl": 23.35,
+    "unrealizedPnlPct": 4.67,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770942004829
-  },
-  {
-    "id": "O7CWE3-URGNY-XVPUHT",
-    "asset": "MANA",
-    "exchange": "Kraken",
-    "strategy": "IBB",
-    "direction": "SHORT",
-    "leverage": 3,
-    "entryPrice": 0.09825,
-    "currentPrice": 0.09825,
-    "stopLoss": 0.09933160447342039,
-    "takeProfit": 0.09392358210631847,
-    "positionSize": 4144.1508697031995,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
-    "hasStop": true,
-    "hasTP": true,
-    "entryTime": 1770943211481,
-    "lastUpdated": 1770943211481
+    "lastUpdated": 1770949206034
   }
 ]
