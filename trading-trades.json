@@ -330,13 +330,13 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 499.9601,
-    "exitPrice": 488.77,
+    "exitPrice": 507.77,
     "entryTime": 1770949205101,
     "exitTime": 1770949413642,
-    "exitReason": "SL",
+    "exitReason": "MANUAL",
     "positionSize": 12784.43,
-    "pnlUsd": -858.42,
-    "pnlPercent": -2.24,
+    "pnlUsd": 599.12,
+    "pnlPercent": 4.69,
     "status": "CLOSED"
   },
   {
@@ -347,13 +347,13 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 0.2842,
-    "exitPrice": 0.2769,
+    "exitPrice": 0.2869,
     "entryTime": 1770949205659,
     "exitTime": 1770949413642,
-    "exitReason": "SL",
+    "exitReason": "MANUAL",
     "positionSize": 8560.41,
-    "pnlUsd": -659.65,
-    "pnlPercent": -2.57,
+    "pnlUsd": 243.98,
+    "pnlPercent": 2.85,
     "status": "CLOSED"
   },
   {
@@ -364,13 +364,13 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "exitPrice": 1.3617,
+    "exitPrice": 1.3606,
     "entryTime": 1770949206034,
     "exitTime": 1770949413642,
-    "exitReason": "UNKNOWN",
+    "exitReason": "MANUAL",
     "positionSize": 499.99,
-    "pnlUsd": 23.32,
-    "pnlPercent": 1.55,
+    "pnlUsd": 24.51,
+    "pnlPercent": 4.9,
     "status": "CLOSED"
   }
 ]

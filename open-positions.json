@@ -15,7 +15,7 @@
     "unrealizedPnlPct": -0.71,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770949400843
+    "lastUpdated": 1770949450230
   },
   {
     "id": "TXYZ5J-2BFJP-7POL3T",
@@ -25,14 +25,14 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 0.091,
-    "currentPrice": 0.0924,
+    "currentPrice": 0.0925,
     "stopLoss": 0.09555,
     "takeProfit": 0.08645,
     "positionSize": 99.99,
-    "unrealizedPnl": -4.62,
-    "unrealizedPnlPct": -4.62,
+    "unrealizedPnl": -4.89,
+    "unrealizedPnlPct": -4.89,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770949401318
+    "lastUpdated": 1770949450808
   }
 ]
