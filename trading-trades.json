@@ -491,5 +491,39 @@
     "pnlUsd": 444.91,
     "pnlPercent": 2.7,
     "status": "CLOSED"
+  },
+  {
+    "id": "OQPO27-ERMZJ-X7GITR",
+    "asset": "ALGO",
+    "exchange": "Kraken",
+    "strategy": "IBB",
+    "direction": "LONG",
+    "leverage": 2,
+    "entryPrice": 0.09133,
+    "exitPrice": 0.09,
+    "entryTime": 1770982210086,
+    "exitTime": 1770989417365,
+    "exitReason": "SL",
+    "positionSize": 4065.8115007421998,
+    "pnlUsd": -118.42,
+    "pnlPercent": -1.46,
+    "status": "CLOSED"
+  },
+  {
+    "id": "O2KWYQ-GT2DL-HZDABB",
+    "asset": "GRT",
+    "exchange": "Kraken",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 2,
+    "entryPrice": 0.02659,
+    "exitPrice": 0.03,
+    "entryTime": 1770985211957,
+    "exitTime": 1770989417365,
+    "exitReason": "SL",
+    "positionSize": 4056.7154224949995,
+    "pnlUsd": -1040.5,
+    "pnlPercent": -12.82,
+    "status": "CLOSED"
   }
 ]
