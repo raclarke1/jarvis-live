@@ -1,17 +1,1 @@
-[
-  {
-    "id": "kraken_sync_feb13",
-    "note": "Dashboard reset Feb 13. Previous records were inaccurate. See Kraken API for actual trade history.",
-    "summary": {
-      "period": "Feb 12-13, 2026",
-      "startingBalance": 24343.66,
-      "endingBalance": 20883.72,
-      "netPnl": -3459.94,
-      "totalTrades": 26,
-      "wins": 5,
-      "losses": 21,
-      "fees": 959.85
-    },
-    "status": "ARCHIVED"
-  }
-]
+[]

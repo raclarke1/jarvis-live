@@ -1,44 +1,15 @@
 [
   {
-    "strategy": "V5.0",
+    "strategy": "V5.0 + IBB",
     "currentCapital": 20883.72,
     "startingCapital": 24343.66,
-    "totalTrades": 26,
-    "winningTrades": 5,
-    "losingTrades": 21,
-    "winRate": 19.2,
-    "totalPnlUsd": -3459.94,
-    "totalPnlPercent": -14.21,
-    "avgWinUsd": 66.38,
-    "avgLossUsd": 174.33,
-    "profitFactor": 0.09,
-    "totalFees": 959.85,
-    "note": "CORRECTED Feb 13 - synced from Kraken ledger. Previous stats were wrong due to tracking bugs.",
-    "lastUpdated": 1771006800000
-  },
-  {
-    "strategy": "IBB",
-    "currentCapital": 0,
-    "startingCapital": 0,
     "totalTrades": 0,
     "winningTrades": 0,
     "losingTrades": 0,
     "winRate": 0,
     "totalPnlUsd": 0,
-    "totalPnlPercent": 0,
-    "note": "IBB trades were mixed with V5.0 - cannot separate. All tracked under V5.0.",
-    "lastUpdated": 1771006800000
-  },
-  {
-    "strategy": "DeFi",
-    "currentCapital": 689,
-    "startingCapital": 725,
-    "totalTrades": 4,
-    "winningTrades": 2,
-    "losingTrades": 2,
-    "winRate": 50,
-    "totalPnlUsd": -36,
-    "totalPnlPercent": -4.97,
-    "lastUpdated": 1771006800000
+    "totalPnlPercent": "0.00",
+    "totalFees": 0,
+    "lastUpdated": "2026-02-13T18:28:39.917Z"
   }
 ]
