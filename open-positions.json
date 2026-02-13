@@ -7,15 +7,15 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 499.9601,
-    "currentPrice": 500.54,
+    "currentPrice": 502.24,
     "stopLoss": 488.77,
     "takeProfit": null,
     "positionSize": 12784.43,
-    "unrealizedPnl": 44.49,
-    "unrealizedPnlPct": 0.35,
+    "unrealizedPnl": 174.9,
+    "unrealizedPnlPct": 1.37,
     "hasStop": true,
     "hasTP": false,
-    "lastUpdated": 1770938364344
+    "lastUpdated": 1770942003911
   },
   {
     "id": "TNYO2V-CFCCT-QMXU6E",
@@ -25,15 +25,15 @@
     "direction": "LONG",
     "leverage": 3,
     "entryPrice": 0.2842,
-    "currentPrice": 0.2875,
+    "currentPrice": 0.2861,
     "stopLoss": 0.2769,
     "takeProfit": null,
     "positionSize": 8560.41,
-    "unrealizedPnl": 300.9,
-    "unrealizedPnlPct": 3.52,
+    "unrealizedPnl": 174.38,
+    "unrealizedPnlPct": 2.04,
     "hasStop": true,
     "hasTP": false,
-    "lastUpdated": 1770938364631
+    "lastUpdated": 1770942004133
   },
   {
     "id": "TXYZ5J-2BFJP-7POL3T",
@@ -43,15 +43,15 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 0.091,
-    "currentPrice": 0.0926,
+    "currentPrice": 0.0925,
     "stopLoss": 0.09555,
     "takeProfit": 0.08645,
     "positionSize": 99.99,
-    "unrealizedPnl": -5.42,
-    "unrealizedPnlPct": -5.42,
+    "unrealizedPnl": -5.11,
+    "unrealizedPnlPct": -5.11,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770938365040
+    "lastUpdated": 1770942004698
   },
   {
     "id": "TMIHYV-3AP3C-2CX62K",
@@ -61,14 +61,14 @@
     "direction": "SHORT",
     "leverage": 3,
     "entryPrice": 1.3832,
-    "currentPrice": 1.3627,
+    "currentPrice": 1.3593,
     "stopLoss": 1.42,
     "takeProfit": 1.32,
     "positionSize": 499.99,
-    "unrealizedPnl": 22.28,
-    "unrealizedPnlPct": 4.46,
+    "unrealizedPnl": 25.97,
+    "unrealizedPnlPct": 5.19,
     "hasStop": true,
     "hasTP": true,
-    "lastUpdated": 1770938365161
+    "lastUpdated": 1770942004829
   }
 ]
