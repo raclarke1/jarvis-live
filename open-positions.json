@@ -70,5 +70,24 @@
     "hasStop": true,
     "hasTP": true,
     "lastUpdated": 1770942004829
+  },
+  {
+    "id": "O7CWE3-URGNY-XVPUHT",
+    "asset": "MANA",
+    "exchange": "Kraken",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 3,
+    "entryPrice": 0.09825,
+    "currentPrice": 0.09825,
+    "stopLoss": 0.09933160447342039,
+    "takeProfit": 0.09392358210631847,
+    "positionSize": 4144.1508697031995,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "hasStop": true,
+    "hasTP": true,
+    "entryTime": 1770943211481,
+    "lastUpdated": 1770943211481
   }
 ]
