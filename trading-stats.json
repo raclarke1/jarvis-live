@@ -1,21 +1,21 @@
 [
   {
     "strategy": "V5.0",
-    "currentCapital": 27377.28,
+    "currentCapital": 29272.53,
     "startingCapital": 25000,
-    "totalTrades": 17,
-    "winningTrades": 9,
+    "totalTrades": 18,
+    "winningTrades": 10,
     "losingTrades": 7,
-    "winRate": 52.9,
-    "totalPnlUsd": 2377.28,
-    "totalPnlPercent": 9.51,
-    "avgWinUsd": 420.3,
+    "winRate": 55.6,
+    "totalPnlUsd": 4272.53,
+    "totalPnlPercent": 17.09,
+    "avgWinUsd": 567.8,
     "avgLossUsd": 200.78,
-    "profitFactor": 2.69,
+    "profitFactor": 4.04,
     "maxDrawdownPercent": 0,
-    "avgHoldingTimeMs": 6024922,
+    "avgHoldingTimeMs": 5757243,
     "firstTradeTime": 1770179809000,
-    "lastUpdated": 1770989417369
+    "lastUpdated": 1770990617265
   },
   {
     "strategy": "IBB",
@@ -33,7 +33,7 @@
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 4121437,
     "firstTradeTime": 1770431807000,
-    "lastUpdated": 1770989417369
+    "lastUpdated": 1770990617265
   },
   {
     "strategy": "DeFi",
@@ -51,6 +51,6 @@
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 30510000,
     "firstTradeTime": 1738357560000,
-    "lastUpdated": 1770989417369
+    "lastUpdated": 1770990617265
   }
 ]

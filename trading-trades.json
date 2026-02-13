@@ -525,5 +525,22 @@
     "pnlUsd": -1040.5,
     "pnlPercent": -12.82,
     "status": "CLOSED"
+  },
+  {
+    "id": "T5ROMV-LBEHX-SITKI4",
+    "asset": "LTC",
+    "exchange": "Kraken",
+    "strategy": "V5.0",
+    "direction": "SHORT",
+    "leverage": 4,
+    "entryPrice": 53.55,
+    "exitPrice": 51.98,
+    "entryTime": 1770989410565,
+    "exitTime": 1770990617263,
+    "exitReason": "SL",
+    "positionSize": 16160.95,
+    "pnlUsd": 1895.25,
+    "pnlPercent": 2.93,
+    "status": "CLOSED"
   }
 ]
