@@ -406,5 +406,22 @@
     "pnlUsd": 15,
     "pnlPercent": 5,
     "status": "CLOSED"
+  },
+  {
+    "id": "TMPQOY-7ZIMT-HLQP4O",
+    "asset": "SOL",
+    "exchange": "Kraken",
+    "strategy": "V5.0",
+    "direction": "SHORT",
+    "leverage": 3,
+    "entryPrice": 79.69,
+    "exitPrice": 79.61,
+    "entryTime": 1770975116995,
+    "exitTime": 1770975354440,
+    "exitReason": "MANUAL",
+    "positionSize": 298.84,
+    "pnlUsd": 0.3,
+    "pnlPercent": 0.1,
+    "status": "CLOSED"
   }
 ]
