@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "TXTH2K-JU72O-CGCBZG",
+    "asset": "COMP",
+    "exchange": "Kraken",
+    "strategy": "V5.0",
+    "direction": "SHORT",
+    "leverage": 3,
+    "entryPrice": 16.7407,
+    "currentPrice": 16.76,
+    "stopLoss": 17.19,
+    "takeProfit": 15.99,
+    "positionSize": 12430.46,
+    "unrealizedPnl": -42.97,
+    "unrealizedPnlPct": -0.35,
+    "hasStop": true,
+    "hasTP": true,
+    "entryTime": 1770974930100,
+    "lastUpdated": 1770974930100
+  }
+]

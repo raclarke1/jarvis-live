@@ -15,7 +15,7 @@
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 7304855,
     "firstTradeTime": 1770179809000,
-    "lastUpdated": 1770974016787
+    "lastUpdated": 1770974942357
   },
   {
     "strategy": "IBB",
@@ -33,7 +33,7 @@
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 3829857,
     "firstTradeTime": 1770431807000,
-    "lastUpdated": 1770974016787
+    "lastUpdated": 1770974942357
   },
   {
     "strategy": "DeFi",
@@ -51,6 +51,6 @@
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 30510000,
     "firstTradeTime": 1738357560000,
-    "lastUpdated": 1770974016787
+    "lastUpdated": 1770974942357
   }
 ]
