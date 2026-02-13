@@ -1,141 +1,115 @@
 {
-  "lastUpdate": "2026-02-12T12:56:00.000Z",
-  "version": "5.2 + IBB v2 (TP=4.0x ATR)",
+  "lastUpdate": "2026-02-13T09:21:00.000Z",
+  "version": "5.5 (Trailing Stop)",
   "status": "ACTIVE",
-  "configNote": "Feb 12: Upgraded TP from 2.0x to 4.0x ATR - backtest +1119% vs +1047%",
+  "configNote": "Feb 13: Simplified to trailing stop only. Removed ADX filter + max positions. Backtest: +7,452% (5x better than v5.3)",
+  "changelog": [
+    "v5.5 (Feb 13): Trailing stop after 1h in profit. Removed ADX/max5 filters. +7,452% backtest.",
+    "v5.4 (Feb 12): Added trailing stop + ADX chop filter + max 5 positions.",
+    "v5.2 (Feb 12): Upgraded TP from 2.0x to 4.0x ATR.",
+    "v5.1 (Feb 11): Asset-specific optimizations for V5.0 + IBB."
+  ],
   "accounts": {
     "kraken": {
-      "balance": 24785.19,
+      "balance": 23183,
       "marginUsed": 0,
-      "freeMargin": 24785.19
+      "freeMargin": 23183
     },
     "drift": {
-      "equity": 708.6,
-      "freeCollateral": 684.69,
-      "leverage": 0.15
+      "equity": 700,
+      "freeCollateral": 700,
+      "leverage": 0
     }
   },
-  "openPositions": [
-    {
-      "exchange": "Kraken",
-      "asset": "SOL",
-      "direction": "SHORT",
-      "entry": 79.93,
-      "size": 6.26,
-      "notional": 500,
-      "leverage": 3,
-      "sl": 81.50,
-      "tp": 77.07,
-      "strategy": "v5.1-TEST",
-      "txid": "OCVNVY-G5HWV-35UCSI",
-      "openedAt": "2026-02-11T16:10:00Z"
-    },
-    {
-      "exchange": "Kraken",
-      "asset": "XRP",
-      "direction": "SHORT",
-      "entry": 1.383,
-      "size": 361.46,
-      "notional": 500,
-      "leverage": 3,
-      "sl": 1.42,
-      "tp": 1.32,
-      "strategy": "BRT",
-      "txid": "OLKCML-6CHDN-M4XOTQ",
-      "openedAt": "2026-02-11T19:45:30Z"
-    }
-  ],
+  "openPositions": [],
   "lastTrade": {
-    "asset": "LTC",
-    "direction": "LONG",
-    "entry": 53.63,
-    "exit": 53.03,
-    "pnl": -65.71,
-    "result": "LOSS",
+    "asset": "MANA",
+    "direction": "SHORT",
+    "entry": 0.0981,
+    "exit": 0.0939,
+    "pnl": 1594.33,
+    "result": "WIN",
     "exchange": "Kraken",
-    "strategy": "IBB",
-    "closedAt": "2026-02-11T09:09:00Z",
-    "reason": "SL"
+    "strategy": "V5.0",
+    "closedAt": "2026-02-13T09:13:00Z",
+    "reason": "TP"
   },
   "recentTrades": [
     {
-      "asset": "LTC",
-      "direction": "LONG",
-      "entry": 53.63,
-      "exit": 53.03,
-      "pnl": -65.71,
-      "result": "LOSS",
+      "asset": "MANA",
+      "direction": "SHORT",
+      "entry": 0.0981,
+      "exit": 0.0939,
+      "pnl": 1594.33,
+      "result": "WIN",
       "exchange": "Kraken",
-      "strategy": "IBB",
-      "closedAt": "2026-02-11T09:09:00Z",
-      "reason": "SL"
+      "strategy": "V5.0",
+      "closedAt": "2026-02-13T09:13:00Z",
+      "reason": "TP"
     },
     {
       "asset": "DOGE",
-      "direction": "LONG",
-      "entry": 0.093,
-      "exit": 0.09,
-      "pnl": -60.48,
-      "result": "LOSS",
+      "direction": "SHORT",
+      "entry": 0.091,
+      "exit": 0.0865,
+      "pnl": 15,
+      "result": "WIN",
       "exchange": "Kraken",
-      "strategy": "IBB",
-      "closedAt": "2026-02-11T09:09:00Z",
-      "reason": "SL"
+      "strategy": "V5.0",
+      "closedAt": "2026-02-13T09:13:00Z",
+      "reason": "TP"
     },
     {
-      "asset": "SUI",
-      "direction": "SHORT",
-      "entry": 0.9806,
-      "exit": 0.9238,
-      "pnl": 14.42,
+      "asset": "BCH",
+      "direction": "LONG",
+      "entry": 292.85,
+      "exit": 297.5,
+      "pnl": 599.12,
       "result": "WIN",
-      "exchange": "Drift",
-      "strategy": "DeFi",
-      "closedAt": "2026-02-10T21:30:00Z"
+      "exchange": "Kraken",
+      "strategy": "V5.0",
+      "closedAt": "2026-02-12T22:00:00Z"
+    },
+    {
+      "asset": "SNX",
+      "direction": "LONG",
+      "entry": 1.02,
+      "exit": 1.07,
+      "pnl": 244.24,
+      "result": "WIN",
+      "exchange": "Kraken",
+      "strategy": "V5.0",
+      "closedAt": "2026-02-12T22:00:00Z"
     },
     {
       "asset": "XRP",
       "direction": "SHORT",
-      "entry": 0.8249,
-      "exit": 0.858,
-      "pnl": -8.78,
-      "result": "LOSS",
-      "exchange": "Drift",
-      "strategy": "DeFi",
-      "closedAt": "2026-02-09T23:09:13Z"
-    },
-    {
-      "asset": "SOL",
-      "direction": "LONG",
-      "entry": 84.59,
-      "exit": 88,
-      "pnl": 23.43,
-      "result": "WIN",
-      "exchange": "Drift",
-      "strategy": "Funding Arb",
-      "closedAt": "2026-02-07T18:00:00Z"
-    },
-    {
-      "asset": "SOL",
-      "direction": "SHORT",
-      "entry": 89.42,
-      "exit": 86.21,
-      "pnl": 84,
+      "entry": 1.38,
+      "exit": 1.36,
+      "pnl": 24.51,
       "result": "WIN",
       "exchange": "Kraken",
-      "strategy": "v5.0",
-      "closedAt": "2026-02-06T22:00:00Z"
+      "strategy": "V5.0",
+      "closedAt": "2026-02-12T22:00:00Z"
     }
   ],
   "strategies": {
-    "v50_kraken": {
-      "name": "V5.0 Mean Reversion (Kraken)",
+    "v55": {
+      "name": "V5.5 Mean Reversion + Trailing Stop",
+      "description": "Fade Donchian breakouts, trail SL at 1.0x ATR after 1 hour in profit",
       "assets": ["SNX", "SOL", "COMP", "BCH", "AAVE"],
-      "backtestReturns": "+$170k (2yr)",
+      "backtestReturns": "+7,452% (2yr)",
       "timeframe": "1H",
       "exchange": "Kraken",
       "positionSize": "18%",
-      "note": "Per-asset optimized: SNX +48%, SOL +17%, COMP +81%, BCH +177%, AAVE +71%"
+      "params": {
+        "donchian": 20,
+        "atr": 5,
+        "sl": "1.5x ATR",
+        "tp": "4.0x ATR",
+        "trailingStart": "1 hour",
+        "trailingDistance": "1.0x ATR"
+      }
     },
     "ibb_kraken": {
       "name": "IBB Inside Bar (Kraken)",
@@ -143,38 +117,25 @@
       "backtestReturns": "+$270k (2yr)",
       "timeframe": "1H",
       "exchange": "Kraken",
-      "positionSize": "18% (SNX 25%, DASH 30%)",
-      "note": "7 assets, SNX/DASH optimized"
+      "positionSize": "18% (SNX 25%, DASH 30%)"
     },
     "ibb_drift": {
       "name": "IBB Inside Bar (Drift)",
-      "assets": ["ARB", "DOGE", "APT", "OP", "LINK"],
-      "backtestReturns": "+$4,466 (2yr, 638%)",
+      "assets": ["ARB", "DOGE", "APT", "OP", "LINK", "SOL", "INJ", "SUI"],
+      "backtestReturns": "+638% (2yr)",
       "timeframe": "1H",
       "exchange": "Drift",
-      "positionSize": "25%",
-      "note": "Top 5 IBB performers on Drift"
+      "positionSize": "25%"
     }
   },
-  "prices": {
-    "BTC": 71210.9,
-    "SOL": 79.93,
-    "LTC": 54.76,
-    "DOGE": 0.098,
-    "LINK": 8.88,
-    "ADA": 0.273,
-    "XRP": 0.8036,
-    "SUI": 0.9238,
-    "updatedAt": "2026-02-10T22:02:00Z"
-  },
   "stats": {
-    "todayPnl": -111.76999999999998,
-    "todayTrades": 3,
-    "todayWins": 1,
-    "weekPnl": -97.11999999999999,
+    "todayPnl": 1609.33,
+    "todayTrades": 2,
+    "todayWins": 2,
+    "todayLosses": 0,
+    "weekPnl": 2477.2,
     "weekTrades": 5,
-    "weekWins": 2,
-    "todayLosses": 2,
-    "weekLosses": 2
+    "weekWins": 5,
+    "weekLosses": 0
   }
 }
