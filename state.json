@@ -20,14 +20,15 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 1880.15,
+      "equity": 2012.58,
       "startingEquity": 1868.46,
-      "freeCollateral": 1879.90,
+      "freeCollateral": 1994.65,
       "leverage": 0,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 11.69,
-      "dayPnlPct": 0.63
+      "dayPnl": 144.12,
+      "dayPnlPct": 7.71,
+      "note": "Swapped 6.5 SOL → USDC for more trading capital"
     }
   },
   "megamax": {
