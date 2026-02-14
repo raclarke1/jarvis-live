@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-14T02:56:27.000Z",
+  "lastUpdate": "2026-02-14T02:58:02.000Z",
   "version": "MegaMax Drift v1.0",
   "status": "LIVE",
   "configNote": "Feb 13: Migrated to Drift (0.07% fees vs 0.52% Kraken). Running V5.0 + IBB on top 10 assets.",
@@ -17,9 +17,9 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 873.58,
-      "startingEquity": 873.58,
-      "freeCollateral": 873.33,
+      "equity": 1868.46,
+      "startingEquity": 1868.46,
+      "freeCollateral": 1868.38,
       "leverage": 0,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
@@ -71,7 +71,7 @@
     "riskManagement": {
       "leverage": 3,
       "positionSizePct": 10,
-      "positionSizeUsd": 70,
+      "positionSizeUsd": 186,
       "maxPositions": 5
     },
     "performance": {
