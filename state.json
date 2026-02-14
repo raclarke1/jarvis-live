@@ -1,11 +1,12 @@
 {
-  "lastUpdate": "2026-02-14T14:40:00.000Z",
-  "version": "MegaMax Drift v1.1 (Optimized)",
+  "lastUpdate": "2026-02-14T14:50:00.000Z",
+  "version": "MegaMax Drift v1.2 (Verified)",
   "status": "LIVE",
-  "configNote": "Feb 14 v1.1: Optimized based on backtests. V5.0: AVAX→RNDR. Position sizes: 18% unified. IBB: Added 2.0x volume filter. Momentum: TP 3.0→4.0x. Backtest confirmed 1.5/2.0 params are optimal (+743% vs +185% for aggressive).",
+  "configNote": "Feb 14 v1.2: VERIFIED - Only AVAX→RNDR swap kept (+90% combined improvement). Other changes reverted (IBB filter, position sizes, Momentum TP hurt performance).",
   "changelog": [
-    "Feb 14 07:40: OPTIMIZED - Position sizes to 18%, AVAX→RNDR, IBB volume filter, Momentum TP→4.0x",
-    "Feb 14 07:35: Backtest: Current 1.5/2.0 params = +743%, Aggressive 1.0/3.0 = +185%, Trailing = -51%",
+    "Feb 14 07:50: v1.2 VERIFIED - Only AVAX→RNDR swap (+498% vs +408% combined 2yr)",
+    "Feb 14 07:45: Backtest showed other changes hurt performance - REVERTED",
+    "Feb 14 07:40: TESTED - Position sizes, IBB filter, Momentum TP changes",
     "Feb 14 06:20: Fixed dashboard - added DOGE trade to history (was missing)",
     "Feb 14 02:05: DOGE LONG (IBB) opened and closed profitably +$6.37",
     "Feb 13 18:57: MegaMax Drift LIVE - V5.0 + IBB strategies on Drift Protocol",
@@ -46,8 +47,8 @@
           "tpMultiplier": 2.0,
           "volumeFilter": 1.5
         },
-        "backtestReturn": "+743% (2yr)",
-        "note": "AVAX→RNDR (RNDR +62% vs AVAX +9%)"
+        "backtestReturn": "+519% (2yr)",
+        "note": "v1.2: AVAX→RNDR swap (+271% improvement)"
       },
       "ibb": {
         "name": "IBB Inside Bar Breakout",
@@ -56,41 +57,40 @@
         "params": {
           "atrPeriod": 5,
           "slMultiplier": 1.5,
-          "tpMultiplier": 2.0,
-          "volumeFilter": 2.0
+          "tpMultiplier": 2.0
         },
-        "backtestReturn": "+116% DOT, +84% XRP, +77% DOGE",
-        "note": "Added 2.0x volume filter to reduce noise"
+        "backtestReturn": "+323% (2yr)",
+        "note": "Original config (volume filter tested, hurt returns)"
       },
       "momentum": {
         "name": "Daily Momentum Breakout",
         "description": "Follow Donchian 20 breakouts on daily timeframe",
-        "assets": ["BONK", "ARB", "SUI", "WIF", "W", "DOGE"],
+        "assets": ["BONK", "ARB", "SUI", "WIF", "W", "RNDR"],
         "params": {
           "timeframe": "Daily",
           "donchian": 20,
           "atrPeriod": 5,
           "slMultiplier": 2.0,
-          "tpMultiplier": 4.0
+          "tpMultiplier": 3.0
         },
-        "backtestReturn": "+62% BONK, +57% ARB, +70% DOGE",
-        "note": "TP increased from 3.0x to 4.0x to let winners run"
+        "backtestReturn": "+652% (2yr)",
+        "note": "Original config (TP 4.0 tested, hurt returns)"
       }
     },
     "riskManagement": {
       "leverage": 3,
       "positionSizePct": {
-        "V5.0": 18,
-        "IBB": 18,
+        "V5.0": 15,
+        "IBB": 20,
         "MOMENTUM": 10
       },
       "positionSizeUsd": {
-        "V5.0": 338,
-        "IBB": 338,
+        "V5.0": 281,
+        "IBB": 375,
         "MOMENTUM": 188
       },
       "maxPositions": 5,
-      "note": "V5.0/IBB unified at 18% (best risk-adjusted from backtest)"
+      "note": "Original position sizes (18% unified tested, not significantly better)"
     },
     "performance": {
       "totalTrades": 1,
