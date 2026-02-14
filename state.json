@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-14T01:45:00.000Z",
+  "lastUpdate": "2026-02-14T02:53:41.000Z",
   "version": "MegaMax Drift v1.0",
   "status": "LIVE",
   "configNote": "Feb 13: Migrated to Drift (0.07% fees vs 0.52% Kraken). Running V5.0 + IBB on top 10 assets.",
@@ -17,9 +17,9 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 718.10,
-      "startingEquity": 718.10,
-      "freeCollateral": 718.10,
+      "equity": 823.08,
+      "startingEquity": 823.08,
+      "freeCollateral": 823.0,
       "leverage": 0,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
@@ -34,7 +34,13 @@
       "v50": {
         "name": "V5.0 Mean Reversion",
         "description": "Fade Donchian 20 breakouts when volume is low",
-        "assets": ["SOL", "LTC", "AVAX", "INJ", "PEPE"],
+        "assets": [
+          "SOL",
+          "LTC",
+          "AVAX",
+          "INJ",
+          "PEPE"
+        ],
         "params": {
           "donchian": 20,
           "atrPeriod": 5,
@@ -47,7 +53,13 @@
       "ibb": {
         "name": "IBB Inside Bar Breakout",
         "description": "Trade breakouts of inside bar patterns",
-        "assets": ["DOT", "XRP", "DOGE", "ETH", "ADA"],
+        "assets": [
+          "DOT",
+          "XRP",
+          "DOGE",
+          "ETH",
+          "ADA"
+        ],
         "params": {
           "atrPeriod": 5,
           "slMultiplier": 1.5,
