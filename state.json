@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-14T02:58:02.000Z",
+  "lastUpdate": "2026-02-14T09:05:11.513Z",
   "version": "MegaMax Drift v1.0",
   "status": "LIVE",
   "configNote": "Feb 13: Migrated to Drift (0.07% fees vs 0.52% Kraken). Running V5.0 + IBB on top 10 assets.",
@@ -28,7 +28,7 @@
   "megamax": {
     "status": "LIVE",
     "exchange": "Drift",
-    "lastCheck": null,
+    "lastCheck": "2026-02-14T09:05:11.513Z",
     "nextCheck": null,
     "strategies": {
       "v50": {
@@ -45,7 +45,7 @@
           "donchian": 20,
           "atrPeriod": 5,
           "slMultiplier": 1.5,
-          "tpMultiplier": 2.0,
+          "tpMultiplier": 2,
           "volumeFilter": 1.5
         },
         "backtestReturn": "+28.5%"
@@ -63,7 +63,7 @@
         "params": {
           "atrPeriod": 5,
           "slMultiplier": 1.5,
-          "tpMultiplier": 2.0
+          "tpMultiplier": 2
         },
         "backtestReturn": "+43.2%"
       }

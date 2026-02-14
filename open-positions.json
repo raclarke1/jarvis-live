@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "asset": "DOGE",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "LONG",
+    "leverage": 3,
+    "entryPrice": 0.0976509,
+    "currentPrice": 0.0976509,
+    "stopLoss": 0.09699621,
+    "takeProfit": 0.09852382,
+    "positionSize": 186,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-14T09:05:11.508Z"
+  }
+]
