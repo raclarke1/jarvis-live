@@ -2,7 +2,7 @@
   "lastUpdate": "2026-02-14T13:20:00.000Z",
   "version": "MegaMax Drift v1.0",
   "status": "LIVE",
-  "configNote": "Feb 14: Added Multi-TF Momentum strategy (+179.7% backtest). Now running V5.0 + IBB + Momentum.",
+  "configNote": "Feb 14: Added Daily Momentum strategy (6 assets: BONK, ARB, SUI, WIF, W, RNDR). Now running V5.0 + IBB + MOMENTUM.",
   "changelog": [
     "Feb 14 06:20: Fixed dashboard - added DOGE trade to history (was missing)",
     "Feb 14 02:05: DOGE LONG (IBB) opened and closed profitably +$6.37",
@@ -50,8 +50,8 @@
       },
       "ibb": {
         "name": "IBB Inside Bar Breakout",
-        "description": "Trade breakouts of inside bar patterns",
-        "assets": ["DOT", "XRP", "DOGE", "ETH", "ADA"],
+        "description": "Trade breakouts of inside bar patterns (1H)",
+        "assets": ["DOT", "XRP", "DOGE", "ETH"],
         "params": {
           "atrPeriod": 5,
           "slMultiplier": 1.5,
@@ -60,17 +60,17 @@
         "backtestReturn": "+43.2%"
       },
       "momentum": {
-        "name": "Multi-TF Momentum",
-        "description": "4H trend + 1H pullback entry",
-        "assets": ["BONK", "TIA", "WIF", "JTO", "JUP", "ARB", "ADA", "DOGE", "INJ", "PEPE"],
+        "name": "Daily Momentum Breakout",
+        "description": "Follow Donchian 20 breakouts on daily timeframe",
+        "assets": ["BONK", "ARB", "SUI", "WIF", "W", "RNDR"],
         "params": {
-          "ema4h": 21,
-          "emaFast1h": 9,
-          "emaSlow1h": 21,
+          "timeframe": "Daily",
+          "donchian": 20,
+          "atrPeriod": 5,
           "slMultiplier": 2.0,
           "tpMultiplier": 3.0
         },
-        "backtestReturn": "+179.7%"
+        "backtestReturn": "+35.9% avg (top performers: DOGE +46%, FTM +46%, RNDR +44%)"
       }
     },
     "riskManagement": {
