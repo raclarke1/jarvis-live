@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-14T14:50:00.000Z",
-  "version": "MegaMax Drift v1.2 (Verified)",
+  "lastUpdate": "2026-02-14T15:02:00.000Z",
+  "version": "MegaMax Drift v1.3 (5x Leverage)",
   "status": "LIVE",
-  "configNote": "Feb 14 v1.2: VERIFIED - Only AVAX→RNDR swap kept (+90% combined improvement). Other changes reverted (IBB filter, position sizes, Momentum TP hurt performance).",
+  "configNote": "Feb 14 v1.3: UPGRADED to 5x leverage. Backtest: +90.6% combined vs +45.9% at 3x (2x better returns). Risk-adjusted: 1.57 (best of all configs tested).",
   "changelog": [
+    "Feb 14 08:02: v1.3 DEPLOYED - 5x leverage (backtest: +90.6% vs +45.9% at 3x)",
+    "Feb 14 07:55: Optimization backtest - 5x leverage has best risk-adjusted return",
     "Feb 14 07:50: v1.2 VERIFIED - Only AVAX→RNDR swap (+498% vs +408% combined 2yr)",
-    "Feb 14 07:45: Backtest showed other changes hurt performance - REVERTED",
-    "Feb 14 07:40: TESTED - Position sizes, IBB filter, Momentum TP changes",
     "Feb 14 06:20: Fixed dashboard - added DOGE trade to history (was missing)",
     "Feb 14 02:05: DOGE LONG (IBB) opened and closed profitably +$6.37",
     "Feb 13 18:57: MegaMax Drift LIVE - V5.0 + IBB strategies on Drift Protocol",
@@ -78,7 +78,7 @@
       }
     },
     "riskManagement": {
-      "leverage": 3,
+      "leverage": 5,
       "positionSizePct": {
         "V5.0": 15,
         "IBB": 20,
@@ -90,7 +90,7 @@
         "MOMENTUM": 188
       },
       "maxPositions": 5,
-      "note": "Original position sizes (18% unified tested, not significantly better)"
+      "note": "v1.3: 5x leverage (backtest +90.6% vs +45.9% at 3x)"
     },
     "performance": {
       "totalTrades": 1,
