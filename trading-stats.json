@@ -1,8 +1,8 @@
 [
   {
     "strategy": "V5.0",
-    "currentCapital": 25000,
-    "startingCapital": 25000,
+    "currentCapital": 1880,
+    "startingCapital": 1868,
     "totalTrades": 0,
     "winningTrades": 0,
     "losingTrades": 0,
@@ -14,13 +14,31 @@
     "profitFactor": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
-    "firstTradeTime": 1771075462477,
-    "lastUpdated": 1771075462477
+    "firstTradeTime": null,
+    "lastUpdated": 1771075800000
   },
   {
     "strategy": "IBB",
-    "currentCapital": 25000,
-    "startingCapital": 25000,
+    "currentCapital": 1880,
+    "startingCapital": 1868,
+    "totalTrades": 1,
+    "winningTrades": 1,
+    "losingTrades": 0,
+    "winRate": 100,
+    "totalPnlUsd": 6.37,
+    "totalPnlPercent": 0.34,
+    "avgWinUsd": 6.37,
+    "avgLossUsd": 0,
+    "profitFactor": 999,
+    "maxDrawdownPercent": 0,
+    "avgHoldingTimeMs": 3600000,
+    "firstTradeTime": 1771063500000,
+    "lastUpdated": 1771075800000
+  },
+  {
+    "strategy": "MOMENTUM",
+    "currentCapital": 1880,
+    "startingCapital": 1868,
     "totalTrades": 0,
     "winningTrades": 0,
     "losingTrades": 0,
@@ -32,7 +50,7 @@
     "profitFactor": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
-    "firstTradeTime": 1771075462477,
-    "lastUpdated": 1771075462477
+    "firstTradeTime": null,
+    "lastUpdated": 1771075800000
   }
 ]
