@@ -75,8 +75,16 @@
     },
     "riskManagement": {
       "leverage": 3,
-      "positionSizePct": 10,
-      "positionSizeUsd": 186,
+      "positionSizePct": {
+        "V5.0": 15,
+        "IBB": 20,
+        "MOMENTUM": 10
+      },
+      "positionSizeUsd": {
+        "V5.0": 281,
+        "IBB": 375,
+        "MOMENTUM": 188
+      },
       "maxPositions": 5
     },
     "performance": {
