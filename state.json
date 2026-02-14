@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-14T20:30:05.296Z",
+  "lastUpdate": "2026-02-14T21:40:04.751Z",
   "version": "MegaMax Drift v1.3 (5x Leverage)",
   "status": "LIVE",
   "configNote": "Feb 14 v1.3: UPGRADED to 5x leverage. Backtest: +90.6% combined vs +45.9% at 3x (2x better returns). Risk-adjusted: 1.57 (best of all configs tested).",
@@ -20,14 +20,14 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 2013.158991,
+      "equity": 2012.856917,
       "startingEquity": 1868.46,
-      "freeCollateral": 1995.201033,
+      "freeCollateral": 1994.96705,
       "leverage": 0,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 144.69899099999998,
-      "dayPnlPct": 7.744291609132653
+      "dayPnl": 144.39691700000003,
+      "dayPnlPct": 7.72812460528992
     }
   },
   "megamax": {
