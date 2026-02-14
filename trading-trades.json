@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "timestamp": "2026-02-14T13:24:22.183Z",
+    "strategy": "IBB",
+    "asset": "DOGE",
+    "direction": "LONG",
+    "entry": 0.0976509,
+    "exit": 0.09852382,
+    "stopLoss": 0.09699621,
+    "takeProfit": 0.09852382,
+    "size": 186,
+    "leverage": 3,
+    "pnl": 4.99,
+    "result": "WIN",
+    "reason": "TP hit - IBB strategy"
+  }
+]
