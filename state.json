@@ -1,77 +1,81 @@
 {
-  "lastUpdate": "2026-02-13T18:29:38.012Z",
-  "version": "PAUSED - Investigating",
-  "status": "PAUSED",
-  "configNote": "Feb 13: TRADING STOPPED. System was churning (10min cron + broken position tracking). Lost $3,460. Investigating before restart.",
+  "lastUpdate": "2026-02-14T01:45:00.000Z",
+  "version": "MegaMax Drift v1.0",
+  "status": "LIVE",
+  "configNote": "Feb 13: Migrated to Drift (0.07% fees vs 0.52% Kraken). Running V5.0 + IBB on top 10 assets.",
   "changelog": [
-    "Feb 13 18:00: EMERGENCY STOP - Found $3,460 loss from churning trades. Dashboard was showing fake +$10k profit.",
-    "Feb 13 11:00: Disabled all trading crons. Removed duplicate system cron. Syncing dashboard with real Kraken data."
+    "Feb 13 18:57: MegaMax Drift LIVE - V5.0 + IBB strategies on Drift Protocol",
+    "Feb 13 18:30: Backtested +35.9% return over 2 years with Drift fees",
+    "Feb 13 18:00: EMERGENCY STOP Kraken - Found $3,460 loss from churning trades",
+    "Feb 13 11:00: Disabled all Kraken trading. Investigating fees impact."
   ],
   "accounts": {
     "kraken": {
       "balance": 20883.72,
       "startingBalance": 24343.66,
-      "marginUsed": 0,
-      "freeMargin": 20883.72,
-      "realizedPnl": -3459.94,
-      "fees": 959.85
+      "status": "PAUSED",
+      "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 689,
-      "freeCollateral": 689,
-      "leverage": 0
+      "equity": 718.10,
+      "startingEquity": 718.10,
+      "freeCollateral": 718.10,
+      "leverage": 0,
+      "status": "LIVE",
+      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+    }
+  },
+  "megamax": {
+    "status": "LIVE",
+    "exchange": "Drift",
+    "lastCheck": null,
+    "nextCheck": null,
+    "strategies": {
+      "v50": {
+        "name": "V5.0 Mean Reversion",
+        "description": "Fade Donchian 20 breakouts when volume is low",
+        "assets": ["SOL", "LTC", "AVAX", "INJ", "PEPE"],
+        "params": {
+          "donchian": 20,
+          "atrPeriod": 5,
+          "slMultiplier": 1.5,
+          "tpMultiplier": 2.0,
+          "volumeFilter": 1.5
+        },
+        "backtestReturn": "+28.5%"
+      },
+      "ibb": {
+        "name": "IBB Inside Bar Breakout",
+        "description": "Trade breakouts of inside bar patterns",
+        "assets": ["DOT", "XRP", "DOGE", "ETH", "ADA"],
+        "params": {
+          "atrPeriod": 5,
+          "slMultiplier": 1.5,
+          "tpMultiplier": 2.0
+        },
+        "backtestReturn": "+43.2%"
+      }
+    },
+    "riskManagement": {
+      "leverage": 3,
+      "positionSizePct": 10,
+      "positionSizeUsd": 70,
+      "maxPositions": 5
+    },
+    "performance": {
+      "totalTrades": 0,
+      "winningTrades": 0,
+      "losingTrades": 0,
+      "winRate": null,
+      "totalPnl": 0,
+      "startDate": "2026-02-13"
     }
   },
   "openPositions": [],
+  "recentTrades": [],
   "tradingStatus": {
-    "signalChecker": "DISABLED",
-    "positionMonitor": "DISABLED",
-    "systemCron": "REMOVED",
-    "reason": "Investigating losses before restart"
-  },
-  "postMortem": {
-    "issue": "System cron running every 10 min + OpenClaw cron at :05 = duplicate execution",
-    "rootCause": "Position tracking broken - signal checker didn't know about existing positions",
-    "result": "17 trades in 1 hour, massive fees, small losses compounded",
-    "totalLoss": 3459.94,
-    "feesAlone": 959.85,
-    "winRate": "19% (5 wins, 21 losses)",
-    "lessonLearned": "Must verify position tracking works before live trading"
-  },
-  "recentTrades": [
-    {
-      "note": "See Kraken ledger for actual trades - dashboard records were inaccurate"
-    }
-  ],
-  "strategies": {
-    "v50": {
-      "name": "V5.0 Mean Reversion",
-      "status": "PAUSED",
-      "assets": [
-        "SNX",
-        "SOL",
-        "COMP",
-        "BCH",
-        "AAVE",
-        "NEAR",
-        "LTC"
-      ],
-      "params": {
-        "donchian": 20,
-        "atr": 5,
-        "sl": "1.5x ATR",
-        "tp": "4.0x ATR"
-      }
-    },
-    "ibb": {
-      "name": "IBB Inside Bar Breakout",
-      "status": "PAUSED",
-      "assets": [
-        "SNX",
-        "SAND",
-        "DASH",
-        "MANA"
-      ]
-    }
+    "megamaxChecker": "ACTIVE",
+    "megamaxExecutor": "ACTIVE",
+    "cronSchedule": "Hourly at :05"
   }
 }

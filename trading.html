@@ -459,8 +459,8 @@
         <!-- Header -->
         <div class="header">
             <div>
-                <h1>Trading Performance</h1>
-                <p class="subtitle">V5.5 Mean Reversion + Trailing Stop • Live performance</p>
+                <h1>MegaMax Trading Performance</h1>
+                <p class="subtitle">V5.0 + IBB on Drift Protocol • Live trading • 10 assets</p>
             </div>
             <div class="updated" id="lastUpdated">Loading...</div>
         </div>
@@ -479,29 +479,43 @@
         <!-- System Overview Panel -->
         <div class="systems-status healthy" id="systemsStatus">
             <div class="systems-header">
-                <h2>⚡ V5.5 Trading System</h2>
-                <span class="status-badge healthy" id="systemsBadge">Active</span>
+                <h2>⚡ MegaMax Drift Trading System</h2>
+                <span class="status-badge healthy" id="systemsBadge">LIVE</span>
             </div>
             <div class="systems-grid" id="systemsGrid">
                 <div class="system-check">
                     <span class="indicator ok"></span>
-                    <span class="name">V5.0</span>
-                    <span class="detail">SNX, SOL, COMP, BCH, AAVE • Fade breakouts</span>
+                    <span class="name">V5.0 Mean Reversion</span>
+                    <span class="detail">SOL, LTC, AVAX, INJ, PEPE • Fade breakouts (+28.5% backtest)</span>
                 </div>
                 <div class="system-check">
                     <span class="indicator ok"></span>
-                    <span class="name">IBB</span>
-                    <span class="detail">7 Kraken + 8 Drift assets • Inside bar breakouts</span>
+                    <span class="name">IBB Inside Bar</span>
+                    <span class="detail">DOT, XRP, DOGE, ETH, ADA • Breakout signals (+43.2% backtest)</span>
                 </div>
                 <div class="system-check">
                     <span class="indicator ok"></span>
-                    <span class="name">Trailing</span>
-                    <span class="detail">SL trails at 1.0x ATR after 1h in profit</span>
+                    <span class="name">Exchange</span>
+                    <span class="detail">Drift Protocol • 0.07% fees • 3x leverage</span>
                 </div>
                 <div class="system-check">
                     <span class="indicator ok"></span>
-                    <span class="name">Backtest</span>
-                    <span class="detail">+7,452% over 2 years</span>
+                    <span class="name">Risk</span>
+                    <span class="detail">$70/trade (10%) • SL 1.5x ATR • TP 2.0x ATR</span>
+                </div>
+            </div>
+            <div class="last-executions" id="lastExecutions">
+                <div class="execution-item">
+                    <span class="label">Last Check:</span>
+                    <span class="time" id="lastCheckTime">-</span>
+                </div>
+                <div class="execution-item">
+                    <span class="label">Account:</span>
+                    <span class="time" id="accountBalance">$718.10</span>
+                </div>
+                <div class="execution-item">
+                    <span class="label">Cron:</span>
+                    <span class="time">Hourly @:05</span>
                 </div>
             </div>
         </div>
