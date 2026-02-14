@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-14T15:02:00.000Z",
+  "lastUpdate": "2026-02-14T15:23:52.158Z",
   "version": "MegaMax Drift v1.3 (5x Leverage)",
   "status": "LIVE",
   "configNote": "Feb 14 v1.3: UPGRADED to 5x leverage. Backtest: +90.6% combined vs +45.9% at 3x (2x better returns). Risk-adjusted: 1.57 (best of all configs tested).",
@@ -26,9 +26,8 @@
       "leverage": 0,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 144.12,
-      "dayPnlPct": 7.71,
-      "note": "Swapped 6.5 SOL → USDC for more trading capital"
+      "dayPnl": -1868.46,
+      "dayPnlPct": -100
     }
   },
   "megamax": {
@@ -40,12 +39,18 @@
       "v50": {
         "name": "V5.0 Mean Reversion",
         "description": "Fade Donchian 20 breakouts when volume is low",
-        "assets": ["SOL", "LTC", "INJ", "PEPE", "RNDR"],
+        "assets": [
+          "SOL",
+          "LTC",
+          "INJ",
+          "PEPE",
+          "RNDR"
+        ],
         "params": {
           "donchian": 20,
           "atrPeriod": 5,
           "slMultiplier": 1.5,
-          "tpMultiplier": 2.0,
+          "tpMultiplier": 2,
           "volumeFilter": 1.5
         },
         "backtestReturn": "+519% (2yr)",
@@ -54,11 +59,16 @@
       "ibb": {
         "name": "IBB Inside Bar Breakout",
         "description": "Trade breakouts of inside bar patterns (1H)",
-        "assets": ["DOT", "XRP", "DOGE", "ETH"],
+        "assets": [
+          "DOT",
+          "XRP",
+          "DOGE",
+          "ETH"
+        ],
         "params": {
           "atrPeriod": 5,
           "slMultiplier": 1.5,
-          "tpMultiplier": 2.0
+          "tpMultiplier": 2
         },
         "backtestReturn": "+323% (2yr)",
         "note": "Original config (volume filter tested, hurt returns)"
@@ -66,13 +76,20 @@
       "momentum": {
         "name": "Daily Momentum Breakout",
         "description": "Follow Donchian 20 breakouts on daily timeframe",
-        "assets": ["BONK", "ARB", "SUI", "WIF", "W", "RNDR"],
+        "assets": [
+          "BONK",
+          "ARB",
+          "SUI",
+          "WIF",
+          "W",
+          "RNDR"
+        ],
         "params": {
           "timeframe": "Daily",
           "donchian": 20,
           "atrPeriod": 5,
-          "slMultiplier": 2.0,
-          "tpMultiplier": 3.0
+          "slMultiplier": 2,
+          "tpMultiplier": 3
         },
         "backtestReturn": "+652% (2yr)",
         "note": "Original config (TP 4.0 tested, hurt returns)"
@@ -97,27 +114,32 @@
       "totalTrades": 1,
       "winningTrades": 1,
       "losingTrades": 0,
+      "openTrades": 0,
       "winRate": 100,
       "totalPnl": 6.37,
-      "startDate": "2026-02-13"
+      "startDate": "2026-02-14"
     }
   },
   "openPositions": [],
   "recentTrades": [
     {
-      "timestamp": "2026-02-14T09:05:00.000Z",
+      "id": "1771059911511-DOGE",
+      "timestamp": "2026-02-14T09:05:11.511Z",
       "strategy": "IBB",
       "asset": "DOGE",
       "direction": "LONG",
       "entry": 0.0977,
       "exit": 0.0985,
-      "stopLoss": 0.0970,
+      "stopLoss": 0.097,
       "takeProfit": 0.0985,
       "size": 186,
       "leverage": 3,
       "pnl": 6.37,
+      "pnlPercent": 3.42,
       "result": "WIN",
-      "reason": "Inside bar breakout above $0.0967 - TP hit"
+      "reason": "Inside bar breakout above $0.0967",
+      "exitReason": "Take profit hit",
+      "holdTimeMs": 3588489
     }
   ],
   "tradingStatus": {
