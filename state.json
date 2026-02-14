@@ -1,9 +1,11 @@
 {
-  "lastUpdate": "2026-02-14T13:07:11.000Z",
+  "lastUpdate": "2026-02-14T13:20:00.000Z",
   "version": "MegaMax Drift v1.0",
   "status": "LIVE",
   "configNote": "Feb 14: Added Multi-TF Momentum strategy (+179.7% backtest). Now running V5.0 + IBB + Momentum.",
   "changelog": [
+    "Feb 14 06:20: Fixed dashboard - added DOGE trade to history (was missing)",
+    "Feb 14 02:05: DOGE LONG (IBB) opened and closed profitably +$6.37",
     "Feb 13 18:57: MegaMax Drift LIVE - V5.0 + IBB strategies on Drift Protocol",
     "Feb 13 18:30: Backtested +35.9% return over 2 years with Drift fees",
     "Feb 13 18:00: EMERGENCY STOP Kraken - Found $3,460 loss from churning trades",
@@ -17,30 +19,26 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 1868.46,
+      "equity": 1880.15,
       "startingEquity": 1868.46,
-      "freeCollateral": 1868.38,
+      "freeCollateral": 1879.90,
       "leverage": 0,
       "status": "LIVE",
-      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
+      "dayPnl": 11.69,
+      "dayPnlPct": 0.63
     }
   },
   "megamax": {
     "status": "LIVE",
     "exchange": "Drift",
-    "lastCheck": "2026-02-14T13:06:56.102Z",
+    "lastCheck": "2026-02-14T13:20:00.000Z",
     "nextCheck": null,
     "strategies": {
       "v50": {
         "name": "V5.0 Mean Reversion",
         "description": "Fade Donchian 20 breakouts when volume is low",
-        "assets": [
-          "SOL",
-          "LTC",
-          "AVAX",
-          "INJ",
-          "PEPE"
-        ],
+        "assets": ["SOL", "LTC", "AVAX", "INJ", "PEPE"],
         "params": {
           "donchian": 20,
           "atrPeriod": 5,
@@ -53,13 +51,7 @@
       "ibb": {
         "name": "IBB Inside Bar Breakout",
         "description": "Trade breakouts of inside bar patterns",
-        "assets": [
-          "DOT",
-          "XRP",
-          "DOGE",
-          "ETH",
-          "ADA"
-        ],
+        "assets": ["DOT", "XRP", "DOGE", "ETH", "ADA"],
         "params": {
           "atrPeriod": 5,
           "slMultiplier": 1.5,
@@ -70,18 +62,7 @@
       "momentum": {
         "name": "Multi-TF Momentum",
         "description": "4H trend + 1H pullback entry",
-        "assets": [
-          "BONK",
-          "TIA",
-          "WIF",
-          "JTO",
-          "JUP",
-          "ARB",
-          "ADA",
-          "DOGE",
-          "INJ",
-          "PEPE"
-        ],
+        "assets": ["BONK", "TIA", "WIF", "JTO", "JUP", "ARB", "ADA", "DOGE", "INJ", "PEPE"],
         "params": {
           "ema4h": 21,
           "emaFast1h": 9,
@@ -99,16 +80,32 @@
       "maxPositions": 5
     },
     "performance": {
-      "totalTrades": 0,
-      "winningTrades": 0,
+      "totalTrades": 1,
+      "winningTrades": 1,
       "losingTrades": 0,
-      "winRate": null,
-      "totalPnl": 0,
+      "winRate": 100,
+      "totalPnl": 6.37,
       "startDate": "2026-02-13"
     }
   },
   "openPositions": [],
-  "recentTrades": [],
+  "recentTrades": [
+    {
+      "timestamp": "2026-02-14T09:05:00.000Z",
+      "strategy": "IBB",
+      "asset": "DOGE",
+      "direction": "LONG",
+      "entry": 0.0977,
+      "exit": 0.0985,
+      "stopLoss": 0.0970,
+      "takeProfit": 0.0985,
+      "size": 186,
+      "leverage": 3,
+      "pnl": 6.37,
+      "result": "WIN",
+      "reason": "Inside bar breakout above $0.0967 - TP hit"
+    }
+  ],
   "tradingStatus": {
     "megamaxChecker": "ACTIVE",
     "megamaxExecutor": "ACTIVE",
