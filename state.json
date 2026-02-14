@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-14T09:05:11.513Z",
+  "lastUpdate": "2026-02-14T13:07:11.000Z",
   "version": "MegaMax Drift v1.0",
   "status": "LIVE",
-  "configNote": "Feb 13: Migrated to Drift (0.07% fees vs 0.52% Kraken). Running V5.0 + IBB on top 10 assets.",
+  "configNote": "Feb 14: Added Multi-TF Momentum strategy (+179.7% backtest). Now running V5.0 + IBB + Momentum.",
   "changelog": [
     "Feb 13 18:57: MegaMax Drift LIVE - V5.0 + IBB strategies on Drift Protocol",
     "Feb 13 18:30: Backtested +35.9% return over 2 years with Drift fees",
@@ -28,7 +28,7 @@
   "megamax": {
     "status": "LIVE",
     "exchange": "Drift",
-    "lastCheck": "2026-02-14T09:05:11.513Z",
+    "lastCheck": "2026-02-14T13:06:56.102Z",
     "nextCheck": null,
     "strategies": {
       "v50": {
@@ -66,6 +66,30 @@
           "tpMultiplier": 2
         },
         "backtestReturn": "+43.2%"
+      },
+      "momentum": {
+        "name": "Multi-TF Momentum",
+        "description": "4H trend + 1H pullback entry",
+        "assets": [
+          "BONK",
+          "TIA",
+          "WIF",
+          "JTO",
+          "JUP",
+          "ARB",
+          "ADA",
+          "DOGE",
+          "INJ",
+          "PEPE"
+        ],
+        "params": {
+          "ema4h": 21,
+          "emaFast1h": 9,
+          "emaSlow1h": 21,
+          "slMultiplier": 2.0,
+          "tpMultiplier": 3.0
+        },
+        "backtestReturn": "+179.7%"
       }
     },
     "riskManagement": {
