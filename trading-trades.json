@@ -1,19 +1,20 @@
 [
   {
-    "timestamp": "2026-02-14T09:05:00.000Z",
     "strategy": "IBB",
     "asset": "DOGE",
+    "exchange": "Drift",
     "direction": "LONG",
-    "entry": 0.0977,
-    "exit": 0.0985,
+    "leverage": 3,
+    "entryPrice": 0.0977,
+    "exitPrice": 0.0985,
+    "entryTime": 1771063500000,
+    "exitTime": 1771067100000,
     "stopLoss": 0.0970,
     "takeProfit": 0.0985,
-    "size": 186,
-    "leverage": 3,
-    "pnl": 6.37,
-    "pnlPct": 0.34,
-    "result": "WIN",
-    "reason": "Inside bar breakout above $0.0967 - TP hit",
-    "holdingTimeMs": 3600000
+    "positionSize": 186,
+    "pnlUsd": 6.37,
+    "pnlPercent": 0.34,
+    "exitReason": "TP Hit",
+    "status": "CLOSED"
   }
 ]
