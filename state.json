@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-15T01:12:22.703Z",
+  "lastUpdate": "2026-02-15T01:20:41.422Z",
   "version": "MegaMax Drift v1.4 (5x Leverage + LC)",
   "status": "LIVE",
   "configNote": "Feb 14 v1.4: Added LC (Larry Connors RSI(2)) strategy. Backtest: +4909% avg on top 5 assets.",
@@ -21,14 +21,14 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 2013.481451,
+      "equity": 2013.837076,
       "startingEquity": 1868.46,
-      "freeCollateral": 1995.479029,
-      "leverage": 0,
+      "freeCollateral": 1983.164275,
+      "leverage": 5,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 145.02145100000007,
-      "dayPnlPct": 7.761549671922335
+      "dayPnl": 145.377076,
+      "dayPnlPct": 7.780582725881207
     }
   },
   "megamax": {
@@ -137,74 +137,85 @@
       "note": "v1.3: 5x leverage (backtest +90.6% vs +45.9% at 3x)"
     },
     "performance": {
-      "totalTrades": 2,
-      "winningTrades": 0,
-      "losingTrades": 0,
-      "winRate": 0,
-      "totalPnl": 0,
-      "startDate": "2026-02-14"
+      "totalTrades": 4,
+      "winningTrades": 1,
+      "losingTrades": 2,
+      "openTrades": 1,
+      "winRate": 33.33333333333333,
+      "totalPnl": 6.37,
+      "startDate": "2026-02-15"
     }
   },
   "openPositions": [
     {
+      "id": "1771117940994-SOL",
+      "timestamp": "2026-02-15T01:12:20.994Z",
+      "strategy": "LC",
       "asset": "SOL",
-      "exchange": "Drift",
-      "strategy": "LC",
       "direction": "SHORT",
+      "entry": 88.31,
+      "exit": null,
+      "stopLoss": 90.05,
+      "takeProfit": 85.34,
+      "size": 249,
       "leverage": 5,
-      "entryPrice": 88.48,
-      "currentPrice": 88.48,
-      "stopLoss": 90.052,
-      "takeProfit": 85.33600000000001,
-      "positionSize": 187,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-15T01:12:20.992Z"
-    },
-    {
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.1129975,
-      "currentPrice": 0.1129975,
-      "stopLoss": 0.11728058000000001,
-      "takeProfit": 0.10443133999999998,
-      "positionSize": 187,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-15T01:12:22.701Z"
+      "pnl": null,
+      "pnlPercent": null,
+      "result": "OPEN",
+      "reason": "RSI(2) overbought at 100.0 > 90",
+      "exitReason": null,
+      "holdTimeMs": null
     }
   ],
   "recentTrades": [
     {
+      "id": "DOGE-1771118441420",
       "strategy": "LC",
       "asset": "DOGE",
-      "exchange": "Drift",
       "direction": "SHORT",
+      "entry": 0.1129975,
+      "exit": 0.11073755,
       "leverage": 5,
-      "entryPrice": 0.1129975,
-      "entryTime": 1771117942701,
-      "stopLoss": 0.11728058000000001,
-      "takeProfit": 0.10443133999999998,
-      "positionSize": 187,
-      "status": "OPEN",
-      "reason": "RSI(2) overbought at 100.0 > 90"
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "result": "LOSS",
+      "reason": "Signal",
+      "exitReason": "Position closed",
+      "holdTimeMs": null
     },
     {
+      "id": "SOL-1771118441420",
       "strategy": "LC",
       "asset": "SOL",
-      "exchange": "Drift",
       "direction": "SHORT",
+      "entry": 88.48,
+      "exit": 86.7104,
       "leverage": 5,
-      "entryPrice": 88.48,
-      "entryTime": 1771117940992,
-      "stopLoss": 90.052,
-      "takeProfit": 85.33600000000001,
-      "positionSize": 187,
-      "status": "OPEN",
-      "reason": "RSI(2) overbought at 100.0 > 90"
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "result": "LOSS",
+      "reason": "Signal",
+      "exitReason": "Position closed",
+      "holdTimeMs": null
+    },
+    {
+      "id": "1771059911511-DOGE",
+      "timestamp": "2026-02-14T09:05:11.511Z",
+      "strategy": "IBB",
+      "asset": "DOGE",
+      "direction": "LONG",
+      "entry": 0.0977,
+      "exit": 0.0985,
+      "stopLoss": 0.097,
+      "takeProfit": 0.0985,
+      "size": 186,
+      "leverage": 3,
+      "pnl": 6.37,
+      "pnlPercent": 3.42,
+      "result": "WIN",
+      "reason": "Inside bar breakout above $0.0967",
+      "exitReason": "Take profit hit",
+      "holdTimeMs": 3588489
     }
   ],
   "tradingStatus": {
