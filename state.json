@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-14T22:20:04.216Z",
+  "lastUpdate": "2026-02-15T01:12:22.703Z",
   "version": "MegaMax Drift v1.4 (5x Leverage + LC)",
   "status": "LIVE",
   "configNote": "Feb 14 v1.4: Added LC (Larry Connors RSI(2)) strategy. Backtest: +4909% avg on top 5 assets.",
@@ -34,7 +34,7 @@
   "megamax": {
     "status": "LIVE",
     "exchange": "Drift",
-    "lastCheck": "2026-02-14T13:20:00.000Z",
+    "lastCheck": "2026-02-15T01:12:22.703Z",
     "nextCheck": null,
     "strategies": {
       "v50": {
@@ -112,8 +112,8 @@
           "rsiPeriod": 2,
           "oversold": 10,
           "overbought": 90,
-          "slMultiplier": 2.0,
-          "tpMultiplier": 4.0
+          "slMultiplier": 2,
+          "tpMultiplier": 4
         },
         "backtestReturn": "+2615% avg (2yr)",
         "note": "Top 7 performers - RNDR +15709%, NEAR +757%, JUP +439%, SOL +361%, DOGE +296%, PYTH +174%, OP +169%"
@@ -137,35 +137,74 @@
       "note": "v1.3: 5x leverage (backtest +90.6% vs +45.9% at 3x)"
     },
     "performance": {
-      "totalTrades": 1,
-      "winningTrades": 1,
+      "totalTrades": 2,
+      "winningTrades": 0,
       "losingTrades": 0,
-      "openTrades": 0,
-      "winRate": 100,
-      "totalPnl": 6.37,
+      "winRate": 0,
+      "totalPnl": 0,
       "startDate": "2026-02-14"
     }
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "asset": "SOL",
+      "exchange": "Drift",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 88.48,
+      "currentPrice": 88.48,
+      "stopLoss": 90.052,
+      "takeProfit": 85.33600000000001,
+      "positionSize": 187,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-15T01:12:20.992Z"
+    },
+    {
+      "asset": "DOGE",
+      "exchange": "Drift",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.1129975,
+      "currentPrice": 0.1129975,
+      "stopLoss": 0.11728058000000001,
+      "takeProfit": 0.10443133999999998,
+      "positionSize": 187,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-15T01:12:22.701Z"
+    }
+  ],
   "recentTrades": [
     {
-      "id": "1771059911511-DOGE",
-      "timestamp": "2026-02-14T09:05:11.511Z",
-      "strategy": "IBB",
+      "strategy": "LC",
       "asset": "DOGE",
-      "direction": "LONG",
-      "entry": 0.0977,
-      "exit": 0.0985,
-      "stopLoss": 0.097,
-      "takeProfit": 0.0985,
-      "size": 186,
-      "leverage": 3,
-      "pnl": 6.37,
-      "pnlPercent": 3.42,
-      "result": "WIN",
-      "reason": "Inside bar breakout above $0.0967",
-      "exitReason": "Take profit hit",
-      "holdTimeMs": 3588489
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.1129975,
+      "entryTime": 1771117942701,
+      "stopLoss": 0.11728058000000001,
+      "takeProfit": 0.10443133999999998,
+      "positionSize": 187,
+      "status": "OPEN",
+      "reason": "RSI(2) overbought at 100.0 > 90"
+    },
+    {
+      "strategy": "LC",
+      "asset": "SOL",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 88.48,
+      "entryTime": 1771117940992,
+      "stopLoss": 90.052,
+      "takeProfit": 85.33600000000001,
+      "positionSize": 187,
+      "status": "OPEN",
+      "reason": "RSI(2) overbought at 100.0 > 90"
     }
   ],
   "tradingStatus": {
