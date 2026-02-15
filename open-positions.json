@@ -1,17 +1,1 @@
-[
-  {
-    "asset": "SOL",
-    "exchange": "Drift",
-    "strategy": "LC",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 88.31,
-    "currentPrice": 88.25,
-    "stopLoss": 90.05,
-    "takeProfit": 85.34,
-    "positionSize": 249,
-    "unrealizedPnl": 0.19,
-    "unrealizedPnlPct": 1.53,
-    "entryTime": "2026-02-15T01:12:20.992Z"
-  }
-]
+[]

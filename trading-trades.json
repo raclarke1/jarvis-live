@@ -1,30 +1,21 @@
 [
   {
-    "strategy": "LC",
+    "id": "1771059911511-DOGE",
+    "strategy": "IBB",
     "asset": "DOGE",
     "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.1129975,
-    "entryTime": 1771117942701,
-    "stopLoss": 0.11728058000000001,
-    "takeProfit": 0.10443133999999998,
-    "positionSize": 187,
-    "status": "OPEN",
-    "reason": "RSI(2) overbought at 100.0 > 90"
-  },
-  {
-    "strategy": "LC",
-    "asset": "SOL",
-    "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 88.48,
-    "entryTime": 1771117940992,
-    "stopLoss": 90.052,
-    "takeProfit": 85.33600000000001,
-    "positionSize": 187,
-    "status": "OPEN",
-    "reason": "RSI(2) overbought at 100.0 > 90"
+    "direction": "LONG",
+    "leverage": 3,
+    "entryPrice": 0.0977,
+    "exitPrice": 0.0985,
+    "entryTime": 1771059911511,
+    "exitTime": 1771063500000,
+    "positionSize": 186,
+    "stopLoss": 0.097,
+    "takeProfit": 0.0985,
+    "pnlUsd": 6.37,
+    "pnlPercent": 3.42,
+    "exitReason": "Take profit",
+    "status": "CLOSED"
   }
 ]
