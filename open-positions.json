@@ -1,21 +1,17 @@
 [
   {
-    "id": "1771117940994-SOL",
-    "timestamp": "2026-02-15T01:12:20.994Z",
-    "strategy": "LC",
     "asset": "SOL",
+    "exchange": "Drift",
+    "strategy": "LC",
     "direction": "SHORT",
-    "entry": 88.31,
-    "exit": null,
+    "leverage": 5,
+    "entryPrice": 88.31,
+    "currentPrice": 88.25,
     "stopLoss": 90.05,
     "takeProfit": 85.34,
-    "size": 249,
-    "leverage": 5,
-    "pnl": null,
-    "pnlPercent": null,
-    "result": "OPEN",
-    "reason": "RSI(2) overbought at 100.0 > 90",
-    "exitReason": null,
-    "holdTimeMs": null
+    "positionSize": 249,
+    "unrealizedPnl": 0.19,
+    "unrealizedPnlPct": 1.53,
+    "entryTime": 1771117940994
   }
 ]
