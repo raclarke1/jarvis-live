@@ -1,103 +1,112 @@
 {
-  "lastUpdate": "2026-02-15T17:08:00.000Z",
+  "lastUpdate": "2026-02-15T17:13:56.371Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2076.5,
-    "freeCollateral": 1741.9,
+    "equity": 2078.49,
+    "freeCollateral": 1742.55,
     "leverage": 1.48,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [
-    {
-      "symbol": "ETH",
-      "direction": "LONG",
-      "strategy": "IBB",
-      "entry": 2090.4,
-      "current": 2007.3,
-      "size": 1800,
-      "sizeUnits": 0.897,
-      "pnl": -74.51,
-      "pnlPercent": -3.99
-    },
-    {
-      "symbol": "DOGE",
-      "direction": "SHORT",
-      "strategy": "LC",
-      "entry": 0.1156,
-      "current": 0.1074,
-      "size": 1302,
-      "sizeUnits": 12124,
-      "pnl": 99.1,
-      "pnlPercent": 7.07
-    }
-  ],
+  "openPositions": [],
   "stats": {
-    "totalTrades": 5,
-    "wins": 3,
-    "losses": 2,
-    "winRate": 60,
-    "totalPnl": 108.22,
-    "avgPnl": 21.64
+    "totalTrades": 8,
+    "wins": 1,
+    "losses": 7,
+    "winRate": 13,
+    "totalPnl": 6.37,
+    "avgPnl": 0.79625
   },
   "recentTrades": [
     {
-      "id": "mm-genesis-005",
-      "symbol": "JUP",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 0.1739,
-      "exit": 0.1609,
-      "pnl": 86.25,
-      "pnlPercent": 7.47,
-      "entryTime": "2026-02-15T05:44:14.000Z",
-      "exitTime": "2026-02-15T16:30:00.000Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-genesis-004",
+      "id": "PYTH-1771138204372",
       "symbol": "PYTH",
       "strategy": "LC",
       "direction": "SHORT",
-      "entry": 0.057,
-      "exit": 0.0584,
-      "pnl": -6.91,
-      "pnlPercent": -2.46,
-      "entryTime": "2026-02-15T05:45:43.000Z",
-      "exitTime": "2026-02-15T06:00:00.000Z",
+      "entry": 0.05698,
+      "exit": 0.0558404,
+      "pnl": null,
+      "pnlPercent": 10.000000000000037,
+      "exitTime": "2026-02-15T06:50:04.372Z",
       "status": "CLOSED"
     },
     {
-      "id": "mm-genesis-003",
+      "id": "DOGE-1771138204372",
+      "symbol": "DOGE",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 0.1158721,
+      "exit": 0.113554658,
+      "pnl": null,
+      "pnlPercent": 10.000000000000014,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "JUP-1771138204372",
+      "symbol": "JUP",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 0.17393,
+      "exit": 0.1704514,
+      "pnl": null,
+      "pnlPercent": 9.999999999999996,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "XRP-1771138204372",
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "LONG",
-      "entry": 1.5691,
-      "exit": 1.5275,
-      "pnl": -15.6,
-      "pnlPercent": -2.65,
-      "entryTime": "2026-02-15T05:42:15.000Z",
-      "exitTime": "2026-02-15T06:15:00.000Z",
+      "entry": 1.56909,
+      "exit": 1.6004718000000002,
+      "pnl": null,
+      "pnlPercent": 10.000000000000039,
+      "exitTime": "2026-02-15T06:50:04.372Z",
       "status": "CLOSED"
     },
     {
-      "id": "mm-genesis-002",
+      "id": "SOL-1771138204372",
       "symbol": "SOL",
       "strategy": "LC",
       "direction": "SHORT",
-      "entry": 88.32,
-      "exit": 85.34,
-      "pnl": 38.11,
-      "pnlPercent": 3.38,
-      "entryTime": "2026-02-14T22:06:00.000Z",
-      "exitTime": "2026-02-15T04:30:00.000Z",
+      "entry": 88.3189,
+      "exit": 86.552522,
+      "pnl": null,
+      "pnlPercent": 10.000000000000018,
+      "exitTime": "2026-02-15T06:50:04.372Z",
       "status": "CLOSED"
     },
     {
-      "id": "mm-genesis-001",
+      "id": "DOGE-1771118441420",
+      "symbol": "DOGE",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 0.1129975,
+      "exit": 0.11073755,
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "exitTime": "2026-02-15T01:20:41.420Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "SOL-1771118441420",
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 88.48,
+      "exit": 86.7104,
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "exitTime": "2026-02-15T01:20:41.420Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771059911511-DOGE",
       "symbol": "DOGE",
       "strategy": "IBB",
       "direction": "LONG",
@@ -105,26 +114,50 @@
       "exit": 0.0985,
       "pnl": 6.37,
       "pnlPercent": 3.42,
-      "entryTime": "2026-02-14T09:05:11.000Z",
+      "entryTime": "2026-02-14T09:05:11.511Z",
       "exitTime": "2026-02-14T10:05:00.000Z",
       "status": "CLOSED"
     }
   ],
   "strategies": {
     "V5.0": {
-      "assets": ["SOL", "LTC", "INJ", "PEPE", "RNDR"],
+      "assets": [
+        "SOL",
+        "LTC",
+        "INJ",
+        "PEPE",
+        "RNDR"
+      ],
       "type": "Mean Reversion"
     },
     "IBB": {
-      "assets": ["DOT", "XRP", "DOGE", "ETH"],
+      "assets": [
+        "DOT",
+        "XRP",
+        "DOGE",
+        "ETH"
+      ],
       "type": "Inside Bar Breakout"
     },
     "LC": {
-      "assets": ["JUP", "SOL", "DOGE", "PYTH", "OP"],
+      "assets": [
+        "JUP",
+        "SOL",
+        "DOGE",
+        "PYTH",
+        "OP"
+      ],
       "type": "RSI(2) Mean Reversion"
     },
     "MOMENTUM": {
-      "assets": ["BONK", "ARB", "SUI", "WIF", "W", "RNDR"],
+      "assets": [
+        "BONK",
+        "ARB",
+        "SUI",
+        "WIF",
+        "W",
+        "RNDR"
+      ],
       "type": "Daily Breakouts"
     }
   }
