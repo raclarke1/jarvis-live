@@ -101,9 +101,11 @@
         "assets": [
           "RNDR",
           "NEAR",
+          "JUP",
           "SOL",
           "DOGE",
-          "JUP"
+          "PYTH",
+          "OP"
         ],
         "params": {
           "timeframe": "1H",
@@ -113,8 +115,8 @@
           "slMultiplier": 2.0,
           "tpMultiplier": 4.0
         },
-        "backtestReturn": "+4909% avg (2yr)",
-        "note": "New strategy Feb 14 - Top performers: RNDR +15157%, NEAR +742%, SOL +357%"
+        "backtestReturn": "+2615% avg (2yr)",
+        "note": "Top 7 performers - RNDR +15709%, NEAR +757%, JUP +439%, SOL +361%, DOGE +296%, PYTH +174%, OP +169%"
       }
     },
     "riskManagement": {
