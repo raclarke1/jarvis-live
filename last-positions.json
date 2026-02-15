@@ -4,8 +4,8 @@
       "symbol": "ETH",
       "direction": "LONG",
       "entry": 2090.4,
-      "mark": 2005.4734,
-      "notional": 1798.91,
+      "mark": 2006.6775,
+      "notional": 1799.99,
       "size": 0.897,
       "entryTime": "2026-02-15T17:00:47.872Z"
     },
@@ -13,11 +13,11 @@
       "symbol": "DOGE",
       "direction": "SHORT",
       "entry": 0.1156,
-      "mark": 0.1072,
-      "notional": 1300.15,
+      "mark": 0.1074,
+      "notional": 1301.95,
       "size": 12124,
       "entryTime": "2026-02-15T17:00:47.872Z"
     }
   },
-  "lastSync": "2026-02-15T17:00:47.872Z"
+  "lastSync": "2026-02-15T17:02:16.946Z"
 }

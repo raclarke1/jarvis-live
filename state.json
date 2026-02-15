@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-15T17:00:47.873Z",
+  "lastUpdate": "2026-02-15T17:02:16.946Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2076.43,
-    "freeCollateral": 1742.17,
+    "equity": 2077.15,
+    "freeCollateral": 1742.02,
     "leverage": 1.48,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
@@ -17,22 +17,22 @@
       "direction": "LONG",
       "strategy": "IBB",
       "entry": 2090.4,
-      "current": 2005.4734,
-      "size": 1798.91,
+      "current": 2006.6775,
+      "size": 1799.99,
       "sizeUnits": 0.897,
-      "pnl": 3674,
-      "pnlPercent": -195.94
+      "pnl": 3675.08,
+      "pnlPercent": -195.99
     },
     {
       "symbol": "DOGE",
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 0.1156,
-      "current": 0.1072,
-      "size": 1300.15,
+      "current": 0.1074,
+      "size": 1301.95,
       "sizeUnits": 12124,
-      "pnl": 101.14,
-      "pnlPercent": 7.22
+      "pnl": 99.34,
+      "pnlPercent": 7.09
     }
   ],
   "stats": {
