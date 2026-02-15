@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-15T03:00:43.453Z",
+  "lastUpdate": "2026-02-15T04:50:04.119Z",
   "version": "MegaMax Drift v1.4 (5x Leverage + LC)",
   "status": "LIVE",
   "configNote": "Feb 14 v1.4: Added LC (Larry Connors RSI(2)) strategy. Backtest: +4909% avg on top 5 assets.",
@@ -21,14 +21,14 @@
       "note": "Fees too high (0.52%). Not trading here."
     },
     "drift": {
-      "equity": 2014.238387,
+      "equity": 2012.221916,
       "startingEquity": 1868.46,
-      "freeCollateral": 1983.013869,
+      "freeCollateral": 1981.381593,
       "leverage": 5,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 145.77838700000007,
-      "dayPnlPct": 7.80206089506867
+      "dayPnl": 143.76191599999993,
+      "dayPnlPct": 7.6941393447009805
     }
   },
   "megamax": {
