@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-15T21:15:27.535Z",
+  "lastUpdate": "2026-02-15T21:26:22.635Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2024.68,
-    "freeCollateral": 2024.68,
+    "equity": 2024.72,
+    "freeCollateral": 2024.71,
     "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
@@ -14,11 +14,11 @@
   "openPositions": [],
   "stats": {
     "totalTrades": 18,
-    "wins": 1,
-    "losses": 17,
-    "winRate": 6,
-    "totalPnl": 6.37,
-    "avgPnl": 0.3538888888888889
+    "wins": 4,
+    "losses": 14,
+    "winRate": 22,
+    "totalPnl": 410.4,
+    "avgPnl": 22.799999999999997
   },
   "recentTrades": [
     {
