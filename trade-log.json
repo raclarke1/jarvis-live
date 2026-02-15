@@ -1,0 +1,126 @@
+{
+  "inception": "2026-02-13T18:00:00.000Z",
+  "version": "MegaMax v1.4",
+  "trades": [
+    {
+      "id": "mm-genesis-001",
+      "symbol": "DOGE",
+      "strategy": "IBB",
+      "direction": "LONG",
+      "exchange": "drift",
+      "leverage": 3,
+      "entry": {
+        "time": "2026-02-14T09:05:11.000Z",
+        "price": 0.0977,
+        "size": 186
+      },
+      "exit": {
+        "time": "2026-02-14T10:05:00.000Z",
+        "price": 0.0985,
+        "reason": "Take profit hit"
+      },
+      "pnl": 6.37,
+      "pnlPercent": 3.42,
+      "status": "CLOSED"
+    },
+    {
+      "id": "mm-genesis-002",
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "exchange": "drift",
+      "leverage": 5,
+      "entry": {
+        "time": "2026-02-14T22:06:00.000Z",
+        "price": 88.32,
+        "size": 253
+      },
+      "exit": {
+        "time": "2026-02-15T04:30:00.000Z",
+        "price": 85.34,
+        "reason": "Take profit hit"
+      },
+      "pnl": 38.11,
+      "pnlPercent": 3.38,
+      "status": "CLOSED"
+    },
+    {
+      "id": "mm-genesis-003",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "LONG",
+      "exchange": "drift",
+      "leverage": 5,
+      "entry": {
+        "time": "2026-02-15T05:42:15.000Z",
+        "price": 1.5691,
+        "size": 375
+      },
+      "exit": {
+        "time": "2026-02-15T06:15:00.000Z",
+        "price": 1.5275,
+        "reason": "Stop loss hit"
+      },
+      "pnl": -15.6,
+      "pnlPercent": -2.65,
+      "status": "CLOSED"
+    },
+    {
+      "id": "mm-genesis-004",
+      "symbol": "PYTH",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "exchange": "drift",
+      "leverage": 5,
+      "entry": {
+        "time": "2026-02-15T05:45:43.000Z",
+        "price": 0.057,
+        "size": 281
+      },
+      "exit": {
+        "time": "2026-02-15T06:00:00.000Z",
+        "price": 0.0584,
+        "reason": "Stop loss hit"
+      },
+      "pnl": -6.91,
+      "pnlPercent": -2.46,
+      "status": "CLOSED"
+    },
+    {
+      "id": "mm-1771174847871-i346",
+      "symbol": "ETH",
+      "strategy": "IBB",
+      "direction": "LONG",
+      "exchange": "drift",
+      "leverage": 5,
+      "entry": {
+        "time": "2026-02-15T17:00:47.871Z",
+        "price": 2090.4,
+        "size": 1798.91,
+        "sizeUnits": 0.897
+      },
+      "exit": null,
+      "pnl": null,
+      "pnlPercent": null,
+      "status": "OPEN"
+    },
+    {
+      "id": "mm-1771174847871-8z1w",
+      "symbol": "DOGE",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "exchange": "drift",
+      "leverage": 5,
+      "entry": {
+        "time": "2026-02-15T17:00:47.871Z",
+        "price": 0.1156,
+        "size": 1300.15,
+        "sizeUnits": 12124
+      },
+      "exit": null,
+      "pnl": null,
+      "pnlPercent": null,
+      "status": "OPEN"
+    }
+  ]
+}
