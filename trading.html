@@ -750,40 +750,84 @@
             `;
         }
         
-        // Load and render data
+        // Load and render data from state.json (single source of truth)
         async function loadData() {
             try {
                 const cacheBust = Date.now();
-                const [statsRes, tradesRes, positionsRes] = await Promise.all([
-                    fetch(`trading-stats.json?v=${cacheBust}`),
-                    fetch(`trading-trades.json?v=${cacheBust}`),
-                    fetch(`open-positions.json?v=${cacheBust}`)
-                ]);
+                const stateRes = await fetch(`state.json?v=${cacheBust}`);
                 
-                if (!statsRes.ok) throw new Error('Stats fetch failed: ' + statsRes.status);
-                if (!tradesRes.ok) throw new Error('Trades fetch failed: ' + tradesRes.status);
+                if (!stateRes.ok) throw new Error('State fetch failed: ' + stateRes.status);
                 
-                const stats = await statsRes.json();
-                const trades = await tradesRes.json();
+                const state = await stateRes.json();
                 
-                // Handle open positions (may not exist yet)
-                let openPositions = [];
-                if (positionsRes.ok) {
-                    openPositions = await positionsRes.json();
-                }
+                // Map state to expected formats
+                const openPositions = state.openPositions || [];
+                const recentTrades = state.recentTrades || [];
+                
+                // Build stats array from strategies
+                const stats = [
+                    {
+                        strategy: 'V5.0',
+                        name: 'Mean Reversion',
+                        assets: ['SOL', 'LTC', 'INJ', 'PEPE', 'RNDR'],
+                        params: 'SL: 1.5x ATR, TP: 3.0x ATR',
+                        status: 'active'
+                    },
+                    {
+                        strategy: 'IBB',
+                        name: 'Inside Bar Breakout',
+                        assets: ['DOT', 'XRP', 'DOGE', 'ETH'],
+                        params: 'SL: 1.5x ATR, TP: 2.0x ATR',
+                        status: 'active'
+                    },
+                    {
+                        strategy: 'LC',
+                        name: 'RSI(2) Mean Reversion',
+                        assets: ['JUP', 'SOL', 'DOGE', 'PYTH', 'OP'],
+                        params: 'RSI <10 Long, >90 Short',
+                        status: 'active'
+                    }
+                ];
+                
+                // Map open positions to expected format
+                const positionsForRender = openPositions.map(p => ({
+                    asset: p.symbol,
+                    exchange: 'Drift',
+                    strategy: p.strategy,
+                    direction: p.direction,
+                    leverage: 5,
+                    entryPrice: p.entry,
+                    currentPrice: p.current,
+                    stopLoss: null,
+                    takeProfit: null,
+                    positionSize: p.size,
+                    unrealizedPnl: p.pnl,
+                    unrealizedPnlPct: p.pnlPercent,
+                    entryTime: new Date().toISOString()
+                }));
                 
                 // Render open positions
-                renderOpenPositions(openPositions);
+                renderOpenPositions(positionsForRender);
                 
                 // Render strategy cards
                 const grid = document.getElementById('strategiesGrid');
                 grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
                 
-                // Filter out open trades from history (only show closed)
-                // Sort by exit time (newest first)
-                const closedTrades = trades
-                    .filter(t => t.status !== 'OPEN')
-                    .sort((a, b) => (b.exitTime || b.entryTime || 0) - (a.exitTime || a.entryTime || 0));
+                // Map trades to expected format
+                const closedTrades = recentTrades.map(t => ({
+                    strategy: t.strategy,
+                    asset: t.symbol,
+                    exchange: 'Drift',
+                    direction: t.direction,
+                    leverage: 5,
+                    entryPrice: t.entry,
+                    exitPrice: t.exit,
+                    entryTime: t.entryTime,
+                    exitTime: t.exitTime,
+                    pnl: t.pnl,
+                    pnlPercent: t.pnlPercent,
+                    status: t.status
+                }));
                 
                 // Render trade table
                 const tbody = document.getElementById('tradeTableBody');
@@ -794,8 +838,12 @@
                 }
                 
                 // Update counts and timestamp
-                document.getElementById('tradeCount').textContent = `${closedTrades.length} closed trades • Most recent first`;
-                document.getElementById('lastUpdated').textContent = `Updated ${new Date().toLocaleString()}`;
+                document.getElementById('tradeCount').textContent = `${closedTrades.length} closed trades • Win rate: ${state.stats?.winRate || 0}%`;
+                document.getElementById('lastUpdated').textContent = `Updated ${new Date(state.lastUpdate).toLocaleString()}`;
+                
+                // Update account info if elements exist
+                const equityEl = document.getElementById('accountEquity');
+                if (equityEl) equityEl.textContent = `$${state.account?.equity?.toFixed(2) || '0.00'}`;
                 
             } catch (err) {
                 console.error('Failed to load data:', err);
