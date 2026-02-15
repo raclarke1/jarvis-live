@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "strategy": "LC",
+    "asset": "PYTH",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.05698,
+    "entryTime": 1771134342999,
+    "stopLoss": 0.058404000000000005,
+    "takeProfit": 0.054132,
+    "positionSize": 281,
+    "status": "OPEN",
+    "reason": "RSI(2) overbought at 100.0 > 90"
+  },
+  {
+    "strategy": "LC",
+    "asset": "DOGE",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.1158721,
+    "entryTime": 1771134299342,
+    "stopLoss": 0.12082026,
+    "takeProfit": 0.10597578000000002,
+    "positionSize": 281,
+    "status": "OPEN",
+    "reason": "RSI(2) overbought at 94.2 > 90"
+  },
+  {
+    "strategy": "LC",
+    "asset": "JUP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.17393,
+    "entryTime": 1771134254056,
+    "stopLoss": 0.180446,
+    "takeProfit": 0.160898,
+    "positionSize": 281,
+    "status": "OPEN",
+    "reason": "RSI(2) overbought at 100.0 > 90"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "XRP",
+    "exchange": "Drift",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 1.56909,
+    "entryTime": 1771134135624,
+    "stopLoss": 1.5275370000000001,
+    "takeProfit": 1.624494,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout above 1.5596"
+  }
+]
