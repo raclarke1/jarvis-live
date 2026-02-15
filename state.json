@@ -1,24 +1,24 @@
 {
-  "lastUpdate": "2026-02-15T19:37:50.978Z",
+  "lastUpdate": "2026-02-15T21:15:27.535Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2024.05,
-    "freeCollateral": 2024,
+    "equity": 2024.68,
+    "freeCollateral": 2024.68,
     "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [],
   "stats": {
-    "totalTrades": 8,
+    "totalTrades": 18,
     "wins": 1,
-    "losses": 7,
-    "winRate": 13,
+    "losses": 17,
+    "winRate": 6,
     "totalPnl": 6.37,
-    "avgPnl": 0.79625
+    "avgPnl": 0.3538888888888889
   },
   "recentTrades": [
     {
@@ -116,6 +116,32 @@
       "pnlPercent": 3.42,
       "entryTime": "2026-02-14T09:05:11.511Z",
       "exitTime": "2026-02-14T10:05:00.000Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771117940994-SOL",
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 88.31,
+      "exit": null,
+      "pnl": null,
+      "pnlPercent": null,
+      "entryTime": "2026-02-15T01:12:20.994Z",
+      "exitTime": "2026-02-15T21:15:06.987Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771131984671-NEAR",
+      "symbol": "NEAR",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 1.076,
+      "exit": null,
+      "pnl": null,
+      "pnlPercent": null,
+      "entryTime": "2026-02-15T05:06:24.671Z",
+      "exitTime": "2026-02-15T21:15:06.987Z",
       "status": "CLOSED"
     }
   ],
