@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-15T17:02:51.932Z",
+  "lastUpdate": "2026-02-15T17:08:00.000Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -17,11 +17,11 @@
       "direction": "LONG",
       "strategy": "IBB",
       "entry": 2090.4,
-      "current": 2007.304,
-      "size": 1800.55,
+      "current": 2007.3,
+      "size": 1800,
       "sizeUnits": 0.897,
-      "pnl": 3675.64,
-      "pnlPercent": -196.02
+      "pnl": -74.51,
+      "pnlPercent": -3.99
     },
     {
       "symbol": "DOGE",
@@ -29,7 +29,7 @@
       "strategy": "LC",
       "entry": 0.1156,
       "current": 0.1074,
-      "size": 1302.19,
+      "size": 1302,
       "sizeUnits": 12124,
       "pnl": 99.1,
       "pnlPercent": 7.07
@@ -112,33 +112,20 @@
   ],
   "strategies": {
     "V5.0": {
-      "assets": [
-        "SOL",
-        "LTC",
-        "INJ",
-        "PEPE",
-        "RNDR"
-      ],
+      "assets": ["SOL", "LTC", "INJ", "PEPE", "RNDR"],
       "type": "Mean Reversion"
     },
     "IBB": {
-      "assets": [
-        "DOT",
-        "XRP",
-        "DOGE",
-        "ETH"
-      ],
+      "assets": ["DOT", "XRP", "DOGE", "ETH"],
       "type": "Inside Bar Breakout"
     },
     "LC": {
-      "assets": [
-        "JUP",
-        "SOL",
-        "DOGE",
-        "PYTH",
-        "OP"
-      ],
+      "assets": ["JUP", "SOL", "DOGE", "PYTH", "OP"],
       "type": "RSI(2) Mean Reversion"
+    },
+    "MOMENTUM": {
+      "assets": ["BONK", "ARB", "SUI", "WIF", "W", "RNDR"],
+      "type": "Daily Breakouts"
     }
   }
 }

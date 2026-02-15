@@ -564,9 +564,14 @@
     </div>
 
     <script>
-        // Utility functions
+        // ============================================================
+        // MegaMax Dashboard v2.0 - Robust Data Loading
+        // Loads: state.json (positions/trades) + trading-stats.json (strategy stats)
+        // ============================================================
+        
+        // Utility functions with safe defaults
         function formatCurrency(value) {
-            if (value === undefined || value === null || typeof value !== 'number' || isNaN(value)) return '-';
+            if (value === undefined || value === null || typeof value !== 'number' || isNaN(value)) return '$-';
             const abs = Math.abs(value);
             const formatted = abs >= 1000 ? `$${(abs/1000).toFixed(1)}k` : `$${abs.toFixed(2)}`;
             return value < 0 ? `-${formatted}` : formatted;
@@ -578,29 +583,46 @@
         }
         
         function formatDuration(ms) {
-            if (ms === undefined || ms === null || typeof ms !== 'number' || isNaN(ms)) return '-';
+            if (!ms || typeof ms !== 'number' || isNaN(ms)) return '-';
             const hours = ms / (1000 * 60 * 60);
             return hours < 24 ? `${hours.toFixed(1)}h` : `${(hours/24).toFixed(1)}d`;
         }
         
         function formatDate(ts) {
-            const d = new Date(ts);
-            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            if (!ts) return '-';
+            try {
+                const d = new Date(ts);
+                if (isNaN(d.getTime())) return '-';
+                return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            } catch { return '-'; }
         }
         
         function formatDateShort(ts) {
-            const d = new Date(ts);
-            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            if (!ts) return 'N/A';
+            try {
+                const d = new Date(ts);
+                if (isNaN(d.getTime())) return 'N/A';
+                return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            } catch { return 'N/A'; }
         }
         
-        // Render strategy card
+        function safeNum(val, fallback = 0) {
+            return (typeof val === 'number' && !isNaN(val)) ? val : fallback;
+        }
+        
+        // Render strategy card with safe defaults
         function renderStrategyCard(stats) {
-            const isProfit = stats.totalPnlUsd >= 0;
+            const pnl = safeNum(stats.totalPnlUsd);
+            const isProfit = pnl >= 0;
+            const winRate = safeNum(stats.winRate);
+            const pf = stats.profitFactor;
+            const pfDisplay = (!pf || pf === Infinity || pf > 100) ? '∞' : safeNum(pf).toFixed(2);
+            
             return `
                 <div class="strategy-card">
                     <div class="strategy-header">
                         <div>
-                            <div class="strategy-name">${stats.strategy} Strategy</div>
+                            <div class="strategy-name">${stats.strategy || 'Unknown'} Strategy</div>
                             <div class="strategy-since">Since ${formatDateShort(stats.firstTradeTime)}</div>
                         </div>
                         <div class="total-return">
@@ -612,34 +634,34 @@
                     <div class="metrics-grid">
                         <div class="metric-card">
                             <div class="label">Total P&L</div>
-                            <div class="value ${stats.totalPnlUsd >= 0 ? 'positive' : 'negative'}">${formatCurrency(stats.totalPnlUsd)}</div>
+                            <div class="value ${isProfit ? 'positive' : 'negative'}">${formatCurrency(pnl)}</div>
                         </div>
                         <div class="metric-card">
                             <div class="label">Win Rate</div>
-                            <div class="value ${stats.winRate >= 50 ? 'positive' : 'negative'}">${stats.winRate?.toFixed(1) ?? '-'}%</div>
+                            <div class="value ${winRate >= 50 ? 'positive' : 'negative'}">${winRate.toFixed(1)}%</div>
                         </div>
                         <div class="metric-card">
                             <div class="label">Profit Factor</div>
-                            <div class="value ${stats.profitFactor >= 1 ? 'positive' : 'negative'}">${stats.profitFactor === null || stats.profitFactor === Infinity ? '∞' : stats.profitFactor.toFixed(2)}</div>
+                            <div class="value ${safeNum(pf, 1) >= 1 ? 'positive' : 'negative'}">${pfDisplay}</div>
                         </div>
                         <div class="metric-card">
                             <div class="label">Max Drawdown</div>
-                            <div class="value ${(stats.maxDrawdownPercent ?? 0) < 20 ? 'positive' : 'negative'}">-${stats.maxDrawdownPercent?.toFixed(1) ?? '0'}%</div>
+                            <div class="value ${safeNum(stats.maxDrawdownPercent) < 20 ? 'positive' : 'negative'}">-${safeNum(stats.maxDrawdownPercent).toFixed(1)}%</div>
                         </div>
                     </div>
                     
                     <div class="mini-stats">
                         <div class="mini-stat">
                             <div class="label">Trades</div>
-                            <div class="value">${stats.totalTrades}</div>
+                            <div class="value">${safeNum(stats.totalTrades)}</div>
                         </div>
                         <div class="mini-stat">
                             <div class="label">Wins</div>
-                            <div class="value">${stats.winningTrades}</div>
+                            <div class="value">${safeNum(stats.winningTrades)}</div>
                         </div>
                         <div class="mini-stat">
                             <div class="label">Losses</div>
-                            <div class="value">${stats.losingTrades}</div>
+                            <div class="value">${safeNum(stats.losingTrades)}</div>
                         </div>
                         <div class="mini-stat">
                             <div class="label">Avg Win</div>
@@ -666,26 +688,28 @@
         
         // Render open position card
         function renderPositionCard(pos) {
-            const isProfit = (pos.unrealizedPnl || 0) >= 0;
+            const pnl = safeNum(pos.unrealizedPnl);
+            const isProfit = pnl >= 0;
             const pnlClass = isProfit ? 'profit' : 'loss';
             const pnlValueClass = isProfit ? 'positive' : 'negative';
             const strategy = pos.strategy || 'V5.0';
             const strategyClass = strategy === 'IBB' ? 'ibb' : strategy === 'LC' ? 'lc' : strategy === 'MOMENTUM' ? 'momentum' : 'v50';
-            const entryDate = pos.entryTime || pos.lastUpdated;
+            const leverage = safeNum(pos.leverage, 5);
+            const direction = pos.direction || 'LONG';
             
             return `
                 <div class="position-card ${pnlClass}">
                     <div class="position-header">
                         <div>
-                            <div class="position-asset">${pos.asset}</div>
-                            <div class="position-exchange">${pos.exchange || 'Kraken'} • <span class="strategy-tag ${strategyClass}">${strategy}</span></div>
+                            <div class="position-asset">${pos.asset || 'Unknown'}</div>
+                            <div class="position-exchange">${pos.exchange || 'Drift'} • <span class="strategy-tag ${strategyClass}">${strategy}</span></div>
                             <div class="position-meta">
-                                <span class="tag ${pos.direction.toLowerCase()}">${pos.direction} ${pos.leverage}x</span>
-                                <span class="entry-date">${entryDate ? formatDate(entryDate) : ''}</span>
+                                <span class="tag ${direction.toLowerCase()}">${direction} ${leverage}x</span>
+                                <span class="entry-date">${formatDate(pos.entryTime)}</span>
                             </div>
                         </div>
                         <div class="position-pnl">
-                            <div class="value ${pnlValueClass}">${formatCurrency(pos.unrealizedPnl)}</div>
+                            <div class="value ${pnlValueClass}">${formatCurrency(pnl)}</div>
                             <div class="pct">${formatPercent(pos.unrealizedPnlPct)}</div>
                         </div>
                     </div>
@@ -696,19 +720,19 @@
                         </div>
                         <div class="position-detail">
                             <div class="label">Entry</div>
-                            <div class="value">$${pos.entryPrice?.toLocaleString()}</div>
+                            <div class="value">$${safeNum(pos.entryPrice).toLocaleString()}</div>
                         </div>
                         <div class="position-detail">
                             <div class="label">Current</div>
-                            <div class="value">$${pos.currentPrice?.toLocaleString()}</div>
+                            <div class="value">$${safeNum(pos.currentPrice).toLocaleString()}</div>
                         </div>
                         <div class="position-detail">
                             <div class="label">Stop Loss</div>
-                            <div class="value sl">$${pos.stopLoss?.toLocaleString() || '-'}</div>
+                            <div class="value sl">${pos.stopLoss ? '$' + pos.stopLoss.toLocaleString() : '$-'}</div>
                         </div>
                         <div class="position-detail">
                             <div class="label">Take Profit</div>
-                            <div class="value tp">$${pos.takeProfit?.toLocaleString() || '-'}</div>
+                            <div class="value tp">${pos.takeProfit ? '$' + pos.takeProfit.toLocaleString() : '$-'}</div>
                         </div>
                     </div>
                 </div>
@@ -718,31 +742,34 @@
         // Render trade row
         function renderTradeRow(trade) {
             const isOpen = trade.status === 'OPEN';
-            const isWin = (trade.pnlUsd || 0) > 0;
-            const strategyClass = trade.exchange === 'Drift' ? 'drift' : 'kraken';
+            const pnl = safeNum(trade.pnlUsd);
+            const isWin = pnl > 0;
+            const strategy = trade.strategy || 'V5.0';
+            const direction = trade.direction || 'LONG';
+            const leverage = safeNum(trade.leverage, 5);
             
             return `
                 <tr>
-                    <td><span class="tag ${strategyClass}">${trade.strategy}</span></td>
+                    <td><span class="tag drift">${strategy}</span></td>
                     <td class="asset-cell">
-                        <div class="name">${trade.asset}</div>
-                        <div class="exchange">${trade.exchange}</div>
+                        <div class="name">${trade.asset || 'Unknown'}</div>
+                        <div class="exchange">${trade.exchange || 'Drift'}</div>
                     </td>
-                    <td><span class="tag ${trade.direction.toLowerCase()}">${trade.direction} ${trade.leverage}x</span></td>
+                    <td><span class="tag ${direction.toLowerCase()}">${direction} ${leverage}x</span></td>
                     <td class="price-cell">
-                        <div class="price">$${trade.entryPrice.toLocaleString()}</div>
+                        <div class="price">$${safeNum(trade.entryPrice).toLocaleString()}</div>
                         <div class="time">${formatDate(trade.entryTime)}</div>
                     </td>
                     <td class="price-cell">
                         ${isOpen ? '<span class="tag open">Open</span>' : `
-                            <div class="price">$${trade.exitPrice?.toLocaleString()}</div>
-                            <div class="time">${trade.exitReason}</div>
+                            <div class="price">$${safeNum(trade.exitPrice).toLocaleString()}</div>
+                            <div class="time">${trade.exitReason || 'Closed'}</div>
                         `}
                     </td>
                     <td>${formatCurrency(trade.positionSize)}</td>
                     <td class="pnl-cell">
                         ${isOpen ? '-' : `
-                            <div class="usd ${isWin ? 'positive' : 'negative'}">${formatCurrency(trade.pnlUsd)}</div>
+                            <div class="usd ${isWin ? 'positive' : 'negative'}">${formatCurrency(pnl)}</div>
                             <div class="pct ${isWin ? 'positive' : 'negative'}">${formatPercent(trade.pnlPercent)}</div>
                         `}
                     </td>
@@ -750,104 +777,179 @@
             `;
         }
         
-        // Load and render data from state.json (single source of truth)
+        // Main data loader - fetches both state.json and trading-stats.json
         async function loadData() {
+            const cacheBust = Date.now();
+            let state = null;
+            let strategyStats = [];
+            let errors = [];
+            
+            // Fetch state.json (positions + trades)
             try {
-                const cacheBust = Date.now();
                 const stateRes = await fetch(`state.json?v=${cacheBust}`);
-                
-                if (!stateRes.ok) throw new Error('State fetch failed: ' + stateRes.status);
-                
-                const state = await stateRes.json();
-                
-                // Map state to expected formats
-                const openPositions = state.openPositions || [];
-                const recentTrades = state.recentTrades || [];
-                
-                // Build stats array from strategies
-                const stats = [
-                    {
-                        strategy: 'V5.0',
-                        name: 'Mean Reversion',
-                        assets: ['SOL', 'LTC', 'INJ', 'PEPE', 'RNDR'],
-                        params: 'SL: 1.5x ATR, TP: 3.0x ATR',
-                        status: 'active'
-                    },
-                    {
-                        strategy: 'IBB',
-                        name: 'Inside Bar Breakout',
-                        assets: ['DOT', 'XRP', 'DOGE', 'ETH'],
-                        params: 'SL: 1.5x ATR, TP: 2.0x ATR',
-                        status: 'active'
-                    },
-                    {
-                        strategy: 'LC',
-                        name: 'RSI(2) Mean Reversion',
-                        assets: ['JUP', 'SOL', 'DOGE', 'PYTH', 'OP'],
-                        params: 'RSI <10 Long, >90 Short',
-                        status: 'active'
+                if (stateRes.ok) {
+                    state = await stateRes.json();
+                } else {
+                    errors.push(`state.json: ${stateRes.status}`);
+                }
+            } catch (e) {
+                errors.push(`state.json: ${e.message}`);
+            }
+            
+            // Fetch trading-stats.json (strategy performance)
+            try {
+                const statsRes = await fetch(`trading-stats.json?v=${cacheBust}`);
+                if (statsRes.ok) {
+                    strategyStats = await statsRes.json();
+                }
+            } catch (e) {
+                // Stats file optional - compute from trades if missing
+            }
+            
+            // If state.json failed completely, show error
+            if (!state) {
+                document.getElementById('lastUpdated').textContent = 'Error loading data';
+                document.getElementById('lastUpdated').style.color = '#ff4757';
+                document.getElementById('positionCount').textContent = 'Error';
+                document.getElementById('tradeCount').textContent = errors.join(', ');
+                return;
+            }
+            
+            // === RENDER OPEN POSITIONS ===
+            const openPositions = (state.openPositions || []).map(p => ({
+                asset: p.symbol || p.asset,
+                exchange: 'Drift',
+                strategy: p.strategy || 'V5.0',
+                direction: p.direction || 'LONG',
+                leverage: 5,
+                entryPrice: p.entry || p.entryPrice,
+                currentPrice: p.current || p.currentPrice,
+                stopLoss: p.stopLoss || null,
+                takeProfit: p.takeProfit || null,
+                positionSize: p.size || p.positionSize,
+                unrealizedPnl: p.pnl || p.unrealizedPnl,
+                unrealizedPnlPct: p.pnlPercent || p.unrealizedPnlPct,
+                entryTime: p.entryTime || state.lastUpdate
+            }));
+            renderOpenPositions(openPositions);
+            
+            // === RENDER STRATEGY CARDS ===
+            // Use trading-stats.json if available, otherwise create defaults
+            const defaultStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM'];
+            const statsMap = {};
+            
+            // Initialize with defaults
+            defaultStrategies.forEach(s => {
+                statsMap[s] = {
+                    strategy: s,
+                    totalTrades: 0,
+                    winningTrades: 0,
+                    losingTrades: 0,
+                    winRate: 0,
+                    totalPnlUsd: 0,
+                    totalPnlPercent: 0,
+                    avgWinUsd: 0,
+                    avgLossUsd: 0,
+                    profitFactor: 0,
+                    maxDrawdownPercent: 0,
+                    avgHoldingTimeMs: 0,
+                    startingCapital: state.account?.startingEquity || 1868.46,
+                    currentCapital: state.account?.equity || 2076,
+                    firstTradeTime: null
+                };
+            });
+            
+            // Merge loaded stats
+            strategyStats.forEach(s => {
+                if (s.strategy) {
+                    statsMap[s.strategy] = { ...statsMap[s.strategy], ...s };
+                }
+            });
+            
+            // Compute stats from trades if stats file is empty/missing
+            const allTrades = state.recentTrades || [];
+            if (allTrades.length > 0) {
+                allTrades.forEach(t => {
+                    const strat = t.strategy || 'V5.0';
+                    if (!statsMap[strat]) {
+                        statsMap[strat] = { ...statsMap['V5.0'], strategy: strat };
                     }
-                ];
+                    if (t.status === 'CLOSED') {
+                        statsMap[strat].totalTrades++;
+                        const pnl = t.pnl || 0;
+                        statsMap[strat].totalPnlUsd += pnl;
+                        if (pnl > 0) statsMap[strat].winningTrades++;
+                        else statsMap[strat].losingTrades++;
+                        
+                        if (!statsMap[strat].firstTradeTime || new Date(t.entryTime) < new Date(statsMap[strat].firstTradeTime)) {
+                            statsMap[strat].firstTradeTime = t.entryTime;
+                        }
+                    }
+                });
                 
-                // Map open positions to expected format
-                const positionsForRender = openPositions.map(p => ({
-                    asset: p.symbol,
+                // Calculate derived stats
+                Object.values(statsMap).forEach(s => {
+                    if (s.totalTrades > 0) {
+                        s.winRate = (s.winningTrades / s.totalTrades) * 100;
+                        s.totalPnlPercent = (s.totalPnlUsd / s.startingCapital) * 100;
+                    }
+                });
+            }
+            
+            // Render only strategies with trades or that are active
+            const activeStrategies = Object.values(statsMap).filter(s => 
+                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC'].includes(s.strategy)
+            );
+            
+            const grid = document.getElementById('strategiesGrid');
+            grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
+            
+            // === RENDER TRADE HISTORY ===
+            const closedTrades = allTrades
+                .filter(t => t.status === 'CLOSED')
+                .map(t => ({
+                    strategy: t.strategy || 'V5.0',
+                    asset: t.symbol || t.asset,
                     exchange: 'Drift',
-                    strategy: p.strategy,
-                    direction: p.direction,
+                    direction: t.direction || 'LONG',
                     leverage: 5,
-                    entryPrice: p.entry,
-                    currentPrice: p.current,
-                    stopLoss: null,
-                    takeProfit: null,
-                    positionSize: p.size,
-                    unrealizedPnl: p.pnl,
-                    unrealizedPnlPct: p.pnlPercent,
-                    entryTime: new Date().toISOString()
-                }));
-                
-                // Render open positions
-                renderOpenPositions(positionsForRender);
-                
-                // Render strategy cards
-                const grid = document.getElementById('strategiesGrid');
-                grid.innerHTML = stats.map(s => renderStrategyCard(s)).join('');
-                
-                // Map trades to expected format
-                const closedTrades = recentTrades.map(t => ({
-                    strategy: t.strategy,
-                    asset: t.symbol,
-                    exchange: 'Drift',
-                    direction: t.direction,
-                    leverage: 5,
-                    entryPrice: t.entry,
-                    exitPrice: t.exit,
+                    entryPrice: t.entry || t.entryPrice,
+                    exitPrice: t.exit || t.exitPrice,
                     entryTime: t.entryTime,
                     exitTime: t.exitTime,
-                    pnl: t.pnl,
-                    pnlPercent: t.pnlPercent,
+                    exitReason: t.exitReason || (t.pnl > 0 ? 'TP' : 'SL'),
+                    positionSize: t.size || t.positionSize || 0,
+                    pnlUsd: t.pnl || t.pnlUsd || 0,
+                    pnlPercent: t.pnlPercent || 0,
                     status: t.status
                 }));
-                
-                // Render trade table
-                const tbody = document.getElementById('tradeTableBody');
-                if (closedTrades.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No trades logged yet</td></tr>';
-                } else {
-                    tbody.innerHTML = closedTrades.map(t => renderTradeRow(t)).join('');
-                }
-                
-                // Update counts and timestamp
-                document.getElementById('tradeCount').textContent = `${closedTrades.length} closed trades • Win rate: ${state.stats?.winRate || 0}%`;
-                document.getElementById('lastUpdated').textContent = `Updated ${new Date(state.lastUpdate).toLocaleString()}`;
-                
-                // Update account info if elements exist
-                const equityEl = document.getElementById('accountEquity');
-                if (equityEl) equityEl.textContent = `$${state.account?.equity?.toFixed(2) || '0.00'}`;
-                
-            } catch (err) {
-                console.error('Failed to load data:', err);
-                document.getElementById('strategiesGrid').innerHTML = '<div class="empty-state">Failed to load trading data</div>';
+            
+            const tbody = document.getElementById('tradeTableBody');
+            if (closedTrades.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No closed trades yet</td></tr>';
+            } else {
+                tbody.innerHTML = closedTrades.map(t => renderTradeRow(t)).join('');
+            }
+            
+            // === UPDATE HEADER INFO ===
+            const totalWins = closedTrades.filter(t => t.pnlUsd > 0).length;
+            const winRate = closedTrades.length > 0 ? Math.round((totalWins / closedTrades.length) * 100) : 0;
+            document.getElementById('tradeCount').textContent = `${closedTrades.length} closed trades • Win rate: ${winRate}%`;
+            
+            // Update timestamp
+            const updateTime = state.lastUpdate ? new Date(state.lastUpdate) : new Date();
+            document.getElementById('lastUpdated').textContent = `Updated ${updateTime.toLocaleString()}`;
+            document.getElementById('lastUpdated').style.color = '';
+            
+            // Update account balance display
+            const balanceEl = document.getElementById('accountBalance');
+            if (balanceEl && state.account?.equity) {
+                balanceEl.textContent = `$${state.account.equity.toFixed(0)}`;
+            }
+            
+            const checkTimeEl = document.getElementById('lastCheckTime');
+            if (checkTimeEl) {
+                checkTimeEl.textContent = updateTime.toLocaleTimeString();
             }
         }
         
