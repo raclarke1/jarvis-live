@@ -1,17 +1,17 @@
 {
-  "lastUpdate": "2026-02-15T14:10:05.655Z",
+  "lastUpdate": "2026-02-15T15:02:29.396Z",
   "version": "MegaMax Drift v1.4 (5x Leverage + LC)",
   "status": "LIVE",
   "accounts": {
     "drift": {
-      "equity": 2082.585635,
+      "equity": 2089.198127,
       "startingEquity": 1868.46,
-      "freeCollateral": 1739.261312,
+      "freeCollateral": 1740.487316,
       "leverage": 5,
       "status": "LIVE",
       "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 214.12563499999987,
-      "dayPnlPct": 11.460006368881318
+      "dayPnl": 220.73812700000008,
+      "dayPnlPct": 11.813907014332663
     }
   },
   "megamax": {
