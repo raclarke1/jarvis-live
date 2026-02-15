@@ -1,9 +1,10 @@
 {
   "lastUpdate": "2026-02-14T22:20:04.216Z",
-  "version": "MegaMax Drift v1.3 (5x Leverage)",
+  "version": "MegaMax Drift v1.4 (5x Leverage + LC)",
   "status": "LIVE",
-  "configNote": "Feb 14 v1.3: UPGRADED to 5x leverage. Backtest: +90.6% combined vs +45.9% at 3x (2x better returns). Risk-adjusted: 1.57 (best of all configs tested).",
+  "configNote": "Feb 14 v1.4: Added LC (Larry Connors RSI(2)) strategy. Backtest: +4909% avg on top 5 assets.",
   "changelog": [
+    "Feb 14 17:47: v1.4 DEPLOYED - Added LC (Larry Connors RSI(2)) strategy",
     "Feb 14 08:02: v1.3 DEPLOYED - 5x leverage (backtest: +90.6% vs +45.9% at 3x)",
     "Feb 14 07:55: Optimization backtest - 5x leverage has best risk-adjusted return",
     "Feb 14 07:50: v1.2 VERIFIED - Only AVAX→RNDR swap (+498% vs +408% combined 2yr)",
@@ -93,6 +94,27 @@
         },
         "backtestReturn": "+652% (2yr)",
         "note": "Original config (TP 4.0 tested, hurt returns)"
+      },
+      "lc": {
+        "name": "LC (Larry Connors RSI)",
+        "description": "RSI(2) mean reversion - buy oversold, sell overbought",
+        "assets": [
+          "RNDR",
+          "NEAR",
+          "SOL",
+          "DOGE",
+          "JUP"
+        ],
+        "params": {
+          "timeframe": "1H",
+          "rsiPeriod": 2,
+          "oversold": 10,
+          "overbought": 90,
+          "slMultiplier": 2.0,
+          "tpMultiplier": 4.0
+        },
+        "backtestReturn": "+4909% avg (2yr)",
+        "note": "New strategy Feb 14 - Top performers: RNDR +15157%, NEAR +742%, SOL +357%"
       }
     },
     "riskManagement": {
@@ -100,12 +122,14 @@
       "positionSizePct": {
         "V5.0": 15,
         "IBB": 20,
-        "MOMENTUM": 10
+        "MOMENTUM": 10,
+        "LC": 15
       },
       "positionSizeUsd": {
         "V5.0": 281,
         "IBB": 375,
-        "MOMENTUM": 188
+        "MOMENTUM": 188,
+        "LC": 281
       },
       "maxPositions": 5,
       "note": "v1.3: 5x leverage (backtest +90.6% vs +45.9% at 3x)"
