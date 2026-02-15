@@ -388,6 +388,14 @@
             background: rgba(168, 85, 247, 0.2);
             color: var(--accent-purple);
         }
+        .strategy-tag.lc {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--accent-green);
+        }
+        .strategy-tag.momentum {
+            background: rgba(255, 165, 2, 0.2);
+            color: #ffa502;
+        }
         .position-meta {
             display: flex;
             gap: 8px;
@@ -460,7 +468,7 @@
         <div class="header">
             <div>
                 <h1>MegaMax Trading Performance</h1>
-                <p class="subtitle">V5.0 + IBB + Momentum on Drift Protocol • Live trading • 15 assets</p>
+                <p class="subtitle">V5.0 + IBB + Momentum + LC on Drift Protocol • Live trading • MegaMax v1.4</p>
             </div>
             <div class="updated" id="lastUpdated">Loading...</div>
         </div>
@@ -662,7 +670,7 @@
             const pnlClass = isProfit ? 'profit' : 'loss';
             const pnlValueClass = isProfit ? 'positive' : 'negative';
             const strategy = pos.strategy || 'V5.0';
-            const strategyClass = strategy === 'IBB' ? 'ibb' : 'v50';
+            const strategyClass = strategy === 'IBB' ? 'ibb' : strategy === 'LC' ? 'lc' : strategy === 'MOMENTUM' ? 'momentum' : 'v50';
             const entryDate = pos.entryTime || pos.lastUpdated;
             
             return `
