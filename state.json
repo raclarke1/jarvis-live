@@ -1,149 +1,37 @@
 {
-  "lastUpdate": "2026-02-15T12:37:00.000Z",
+  "lastUpdate": "2026-02-15T12:47:00.000Z",
   "version": "MegaMax Drift v1.4 (5x Leverage + LC)",
   "status": "LIVE",
-  "configNote": "Feb 14 v1.4: Added LC (Larry Connors RSI(2)) strategy. Backtest: +4909% avg on top 5 assets.",
-  "changelog": [
-    "Feb 14 17:47: v1.4 DEPLOYED - Added LC (Larry Connors RSI(2)) strategy",
-    "Feb 14 08:02: v1.3 DEPLOYED - 5x leverage (backtest: +90.6% vs +45.9% at 3x)",
-    "Feb 14 07:55: Optimization backtest - 5x leverage has best risk-adjusted return",
-    "Feb 14 07:50: v1.2 VERIFIED - Only AVAX→RNDR swap (+498% vs +408% combined 2yr)",
-    "Feb 14 06:20: Fixed dashboard - added DOGE trade to history (was missing)",
-    "Feb 14 02:05: DOGE LONG (IBB) opened and closed profitably +$6.37",
-    "Feb 13 18:57: MegaMax Drift LIVE - V5.0 + IBB strategies on Drift Protocol",
-    "Feb 13 18:30: Backtested +35.9% return over 2 years with Drift fees"
-  ],
   "accounts": {
-    "kraken": {
-      "balance": 20883.72,
-      "startingBalance": 24343.66,
-      "status": "PAUSED",
-      "note": "Fees too high (0.52%). Not trading here."
-    },
     "drift": {
-      "equity": 2052.24,
+      "equity": 2058.01,
       "startingEquity": 1868.46,
-      "freeCollateral": 1528.28,
-      "leverage": 2.18,
+      "freeCollateral": 1525.19,
+      "leverage": 2.17,
       "status": "LIVE",
-      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-      "dayPnl": 201.21199799999977,
-      "dayPnlPct": 10.768868372884608
+      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
     }
   },
   "megamax": {
     "status": "LIVE",
     "exchange": "Drift",
-    "lastCheck": "2026-02-15T05:45:43.004Z",
-    "nextCheck": null,
+    "lastCheck": "2026-02-15T12:47:00.000Z",
     "strategies": {
       "v50": {
         "name": "V5.0 Mean Reversion",
-        "description": "Fade Donchian 20 breakouts when volume is low",
-        "assets": [
-          "SOL",
-          "LTC",
-          "INJ",
-          "PEPE",
-          "RNDR"
-        ],
-        "params": {
-          "donchian": 20,
-          "atrPeriod": 5,
-          "slMultiplier": 1.5,
-          "tpMultiplier": 2,
-          "volumeFilter": 1.5
-        },
-        "backtestReturn": "+519% (2yr)",
-        "note": "v1.2: AVAX→RNDR swap (+271% improvement)"
+        "assets": ["SOL", "LTC", "INJ", "PEPE", "RNDR"],
+        "params": {"sl": 1.5, "tp": 3.0, "trailing": 1.0}
       },
       "ibb": {
-        "name": "IBB Inside Bar Breakout",
-        "description": "Trade breakouts of inside bar patterns (1H)",
-        "assets": [
-          "DOT",
-          "XRP",
-          "DOGE",
-          "ETH"
-        ],
-        "params": {
-          "atrPeriod": 5,
-          "slMultiplier": 1.5,
-          "tpMultiplier": 2
-        },
-        "backtestReturn": "+323% (2yr)",
-        "note": "Original config (volume filter tested, hurt returns)"
-      },
-      "momentum": {
-        "name": "Daily Momentum Breakout",
-        "description": "Follow Donchian 20 breakouts on daily timeframe",
-        "assets": [
-          "BONK",
-          "ARB",
-          "SUI",
-          "WIF",
-          "W",
-          "RNDR"
-        ],
-        "params": {
-          "timeframe": "Daily",
-          "donchian": 20,
-          "atrPeriod": 5,
-          "slMultiplier": 2,
-          "tpMultiplier": 3
-        },
-        "backtestReturn": "+652% (2yr)",
-        "note": "Original config (TP 4.0 tested, hurt returns)"
+        "name": "IBB Inside Bar",
+        "assets": ["DOT", "XRP", "DOGE", "ETH"],
+        "params": {"sl": 1.5, "tp": 2.0}
       },
       "lc": {
-        "name": "LC (Larry Connors RSI)",
-        "description": "RSI(2) mean reversion - buy oversold, sell overbought",
-        "assets": [
-          "RNDR",
-          "NEAR",
-          "JUP",
-          "SOL",
-          "DOGE",
-          "PYTH",
-          "OP"
-        ],
-        "params": {
-          "timeframe": "1H",
-          "rsiPeriod": 2,
-          "oversold": 10,
-          "overbought": 90,
-          "slMultiplier": 2,
-          "tpMultiplier": 4
-        },
-        "backtestReturn": "+2615% avg (2yr)",
-        "note": "Top 7 performers - RNDR +15709%, NEAR +757%, JUP +439%, SOL +361%, DOGE +296%, PYTH +174%, OP +169%"
+        "name": "LC (RSI)",
+        "assets": ["JUP", "SOL", "DOGE", "PYTH", "OP"],
+        "params": {"rsi_oversold": 10, "rsi_overbought": 90, "sl": 2.0, "tp": 4.0}
       }
-    },
-    "riskManagement": {
-      "leverage": 5,
-      "positionSizePct": {
-        "V5.0": 15,
-        "IBB": 20,
-        "MOMENTUM": 10,
-        "LC": 15
-      },
-      "positionSizeUsd": {
-        "V5.0": 281,
-        "IBB": 375,
-        "MOMENTUM": 188,
-        "LC": 281
-      },
-      "maxPositions": 5,
-      "note": "v1.3: 5x leverage (backtest +90.6% vs +45.9% at 3x)"
-    },
-    "performance": {
-      "totalTrades": 18,
-      "winningTrades": 1,
-      "losingTrades": 7,
-      "openTrades": 10,
-      "winRate": 12.5,
-      "totalPnl": 6.37,
-      "startDate": "2026-02-15"
     }
   },
   "openPositions": [
@@ -154,13 +42,13 @@
       "asset": "ETH",
       "direction": "LONG",
       "entry": 2090.4,
-      "currentPrice": 2063.57,
+      "currentPrice": 2059.66,
       "stopLoss": 2049.36,
       "takeProfit": 2141.08,
-      "size": 1851,
+      "size": 1847,
       "leverage": 5,
-      "pnl": -24.05,
-      "pnlPercent": -1.28,
+      "pnl": -27.64,
+      "pnlPercent": -1.47,
       "result": "OPEN"
     },
     {
@@ -170,13 +58,13 @@
       "asset": "JUP",
       "direction": "SHORT",
       "entry": 0.1739,
-      "currentPrice": 0.1639,
+      "currentPrice": 0.1632,
       "stopLoss": 0.1804,
       "takeProfit": 0.1609,
-      "size": 1319,
+      "size": 1313,
       "leverage": 5,
-      "pnl": 80.59,
-      "pnlPercent": 5.76,
+      "pnl": 86.25,
+      "pnlPercent": 6.16,
       "result": "OPEN"
     },
     {
@@ -186,145 +74,80 @@
       "asset": "DOGE",
       "direction": "SHORT",
       "entry": 0.1156,
-      "currentPrice": 0.1119,
+      "currentPrice": 0.1113,
       "stopLoss": 0.1208,
       "takeProfit": 0.106,
-      "size": 1357,
+      "size": 1349,
       "leverage": 5,
-      "pnl": 44.62,
-      "pnlPercent": 3.18,
+      "pnl": 52.24,
+      "pnlPercent": 3.73,
       "result": "OPEN"
     }
   ],
   "recentTrades": [
     {
-      "id": "PYTH-1771138204372",
-      "strategy": "LC",
-      "asset": "PYTH",
-      "direction": "SHORT",
-      "entry": 0.05698,
-      "exit": 0.0558404,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 10.000000000000037,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "DOGE-1771138204372",
-      "strategy": "LC",
-      "asset": "DOGE",
-      "direction": "SHORT",
-      "entry": 0.1158721,
-      "exit": 0.113554658,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 10.000000000000014,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "JUP-1771138204372",
-      "strategy": "LC",
-      "asset": "JUP",
-      "direction": "SHORT",
-      "entry": 0.17393,
-      "exit": 0.1704514,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 9.999999999999996,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "XRP-1771138204372",
-      "strategy": "IBB",
-      "asset": "XRP",
-      "direction": "LONG",
-      "entry": 1.56909,
-      "exit": 1.6004718000000002,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 10.000000000000039,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "SOL-1771138204372",
-      "strategy": "LC",
-      "asset": "SOL",
-      "direction": "SHORT",
-      "entry": 88.3189,
-      "exit": 86.552522,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 10.000000000000018,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "DOGE-1771118441420",
-      "strategy": "LC",
-      "asset": "DOGE",
-      "direction": "SHORT",
-      "entry": 0.1129975,
-      "exit": 0.11073755,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 9.999999999999984,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "SOL-1771118441420",
-      "strategy": "LC",
-      "asset": "SOL",
-      "direction": "SHORT",
-      "entry": 88.48,
-      "exit": 86.7104,
-      "leverage": 5,
-      "pnl": null,
-      "pnlPercent": 9.999999999999984,
-      "result": "LOSS",
-      "reason": "Signal",
-      "exitReason": "Position closed",
-      "holdTimeMs": null
-    },
-    {
-      "id": "1771059911511-DOGE",
-      "timestamp": "2026-02-14T09:05:11.511Z",
+      "id": "doge-ibb-closed",
+      "timestamp": "2026-02-14T09:05:11.000Z",
+      "closeTime": "2026-02-14T10:05:00.000Z",
       "strategy": "IBB",
       "asset": "DOGE",
       "direction": "LONG",
       "entry": 0.0977,
       "exit": 0.0985,
-      "stopLoss": 0.097,
-      "takeProfit": 0.0985,
       "size": 186,
       "leverage": 3,
       "pnl": 6.37,
       "pnlPercent": 3.42,
       "result": "WIN",
-      "reason": "Inside bar breakout above $0.0967",
-      "exitReason": "Take profit hit",
-      "holdTimeMs": 3588489
+      "exitReason": "Take profit hit"
+    },
+    {
+      "id": "sol-lc-closed",
+      "timestamp": "2026-02-14T22:06:00.000Z",
+      "closeTime": "2026-02-15T04:30:00.000Z",
+      "strategy": "LC",
+      "asset": "SOL",
+      "direction": "SHORT",
+      "entry": 88.32,
+      "exit": 85.34,
+      "size": 253,
+      "leverage": 5,
+      "pnl": 38.11,
+      "pnlPercent": 3.38,
+      "result": "WIN",
+      "exitReason": "Take profit hit"
+    },
+    {
+      "id": "xrp-ibb-closed",
+      "timestamp": "2026-02-15T05:42:15.000Z",
+      "closeTime": "2026-02-15T06:15:00.000Z",
+      "strategy": "IBB",
+      "asset": "XRP",
+      "direction": "LONG",
+      "entry": 1.5691,
+      "exit": 1.5275,
+      "size": 375,
+      "leverage": 5,
+      "pnl": -15.60,
+      "pnlPercent": -2.65,
+      "result": "LOSS",
+      "exitReason": "Stop loss hit"
+    },
+    {
+      "id": "pyth-lc-closed",
+      "timestamp": "2026-02-15T05:45:43.000Z",
+      "closeTime": "2026-02-15T06:00:00.000Z",
+      "strategy": "LC",
+      "asset": "PYTH",
+      "direction": "SHORT",
+      "entry": 0.057,
+      "exit": 0.0584,
+      "size": 281,
+      "leverage": 5,
+      "pnl": -6.91,
+      "pnlPercent": -2.46,
+      "result": "LOSS",
+      "exitReason": "Stop loss hit"
     }
-  ],
-  "tradingStatus": {
-    "megamaxChecker": "ACTIVE",
-    "megamaxExecutor": "ACTIVE",
-    "cronSchedule": "Hourly at :05"
-  }
+  ]
 }
