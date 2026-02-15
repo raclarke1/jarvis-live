@@ -15,7 +15,7 @@
     {
       "symbol": "ETH",
       "direction": "LONG",
-      "strategy": "V5.0",
+      "strategy": "IBB",
       "entry": 2090.4,
       "current": 2002.7676,
       "size": 1796.48,
