@@ -9,13 +9,13 @@
     "avgWinUsd": 0,
     "avgLossUsd": 0,
     "profitFactor": 0,
-    "currentCapital": 2069.671998,
+    "currentCapital": 2082.585635,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771157404643
+    "lastUpdated": 1771164605655
   },
   {
     "strategy": "IBB",
@@ -27,13 +27,13 @@
     "avgWinUsd": 6.37,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 2069.671998,
+    "currentCapital": 2082.585635,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0.34092247091187394,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771134135626,
-    "lastUpdated": 1771157404643
+    "lastUpdated": 1771164605655
   },
   {
     "strategy": "MOMENTUM",
@@ -45,12 +45,12 @@
     "avgWinUsd": 0,
     "avgLossUsd": 0,
     "profitFactor": 0,
-    "currentCapital": 2069.671998,
+    "currentCapital": 2082.585635,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771157404643
+    "lastUpdated": 1771164605655
   }
 ]
