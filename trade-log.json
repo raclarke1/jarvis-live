@@ -121,6 +121,27 @@
       "pnl": null,
       "pnlPercent": null,
       "status": "OPEN"
+    },
+    {
+      "id": "mm-genesis-005",
+      "symbol": "JUP",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "exchange": "drift",
+      "leverage": 5,
+      "entry": {
+        "time": "2026-02-15T05:44:14.000Z",
+        "price": 0.1739,
+        "size": 1319
+      },
+      "exit": {
+        "time": "2026-02-15T16:30:00.000Z",
+        "price": 0.1609,
+        "reason": "Take profit hit"
+      },
+      "pnl": 86.25,
+      "pnlPercent": 7.47,
+      "status": "CLOSED"
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-15T17:02:16.946Z",
+  "lastUpdate": "2026-02-15T17:02:51.932Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2077.15,
-    "freeCollateral": 1742.02,
+    "equity": 2076.5,
+    "freeCollateral": 1741.9,
     "leverage": 1.48,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
@@ -17,11 +17,11 @@
       "direction": "LONG",
       "strategy": "IBB",
       "entry": 2090.4,
-      "current": 2006.6775,
-      "size": 1799.99,
+      "current": 2007.304,
+      "size": 1800.55,
       "sizeUnits": 0.897,
-      "pnl": 3675.08,
-      "pnlPercent": -195.99
+      "pnl": 3675.64,
+      "pnlPercent": -196.02
     },
     {
       "symbol": "DOGE",
@@ -29,21 +29,34 @@
       "strategy": "LC",
       "entry": 0.1156,
       "current": 0.1074,
-      "size": 1301.95,
+      "size": 1302.19,
       "sizeUnits": 12124,
-      "pnl": 99.34,
-      "pnlPercent": 7.09
+      "pnl": 99.1,
+      "pnlPercent": 7.07
     }
   ],
   "stats": {
-    "totalTrades": 4,
-    "wins": 2,
+    "totalTrades": 5,
+    "wins": 3,
     "losses": 2,
-    "winRate": 50,
-    "totalPnl": 21.97,
-    "avgPnl": 5.49
+    "winRate": 60,
+    "totalPnl": 108.22,
+    "avgPnl": 21.64
   },
   "recentTrades": [
+    {
+      "id": "mm-genesis-005",
+      "symbol": "JUP",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 0.1739,
+      "exit": 0.1609,
+      "pnl": 86.25,
+      "pnlPercent": 7.47,
+      "entryTime": "2026-02-15T05:44:14.000Z",
+      "exitTime": "2026-02-15T16:30:00.000Z",
+      "status": "CLOSED"
+    },
     {
       "id": "mm-genesis-004",
       "symbol": "PYTH",
