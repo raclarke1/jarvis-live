@@ -153,28 +153,20 @@
       "direction": "SHORT",
       "leverage": 5,
       "entryPrice": 88.3189,
-      "currentPrice": 88.3189,
       "stopLoss": 90.05,
       "takeProfit": 85.34,
-      "positionSize": 251.71,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-14T22:06:00.000Z"
+      "positionSize": 253
     },
     {
-      "asset": "XRP",
+      "asset": "ETH",
       "exchange": "Drift",
       "strategy": "IBB",
       "direction": "LONG",
       "leverage": 5,
-      "entryPrice": 1.56909,
-      "currentPrice": 1.56909,
-      "stopLoss": 1.5275370000000001,
-      "takeProfit": 1.624494,
-      "positionSize": 375,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-15T05:42:15.622Z"
+      "entryPrice": 2090.4,
+      "stopLoss": 2049.36,
+      "takeProfit": 2141.08,
+      "positionSize": 1879
     },
     {
       "asset": "JUP",
@@ -182,14 +174,10 @@
       "strategy": "LC",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.17393,
-      "currentPrice": 0.17393,
-      "stopLoss": 0.180446,
-      "takeProfit": 0.160898,
-      "positionSize": 281,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-15T05:44:14.055Z"
+      "entryPrice": 0.1739,
+      "stopLoss": 0.1804,
+      "takeProfit": 0.1609,
+      "positionSize": 1405
     },
     {
       "asset": "DOGE",
@@ -197,29 +185,10 @@
       "strategy": "LC",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.1158721,
-      "currentPrice": 0.1158721,
-      "stopLoss": 0.12082026,
-      "takeProfit": 0.10597578000000002,
-      "positionSize": 281,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-15T05:44:59.341Z"
-    },
-    {
-      "asset": "PYTH",
-      "exchange": "Drift",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.05698,
-      "currentPrice": 0.05698,
-      "stopLoss": 0.058404000000000005,
-      "takeProfit": 0.054132,
-      "positionSize": 281,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-15T05:45:42.998Z"
+      "entryPrice": 0.1156,
+      "stopLoss": 0.1208,
+      "takeProfit": 0.106,
+      "positionSize": 1413
     }
   ],
   "recentTrades": [
