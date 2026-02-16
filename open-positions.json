@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "asset": "BTC",
+    "exchange": "Drift",
+    "strategy": "LC",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 69339.6,
+    "currentPrice": 69339.6,
+    "stopLoss": 69975.99,
+    "takeProfit": 66794.03999999998,
+    "positionSize": 281,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-16T12:34:55.568Z"
+  }
+]
