@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-02-16T07:00:18.481Z",
-  "version": "MegaMax v1.4",
+  "version": "MegaMax v1.5 (LC Only)",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
@@ -115,23 +115,14 @@
   ],
   "strategies": {
     "V5.0": {
-      "assets": [
-        "SOL",
-        "LTC",
-        "INJ",
-        "PEPE",
-        "RNDR"
-      ],
-      "type": "Mean Reversion"
+      "assets": [],
+      "type": "Mean Reversion",
+      "status": "PAUSED"
     },
     "IBB": {
-      "assets": [
-        "DOT",
-        "XRP",
-        "DOGE",
-        "ETH"
-      ],
-      "type": "Inside Bar Breakout"
+      "assets": [],
+      "type": "Inside Bar Breakout",
+      "status": "PAUSED"
     },
     "LC": {
       "assets": [
@@ -141,7 +132,8 @@
         "PYTH",
         "OP"
       ],
-      "type": "RSI(2) Mean Reversion"
+      "type": "RSI(2) Mean Reversion",
+      "status": "ACTIVE"
     }
   }
 }
