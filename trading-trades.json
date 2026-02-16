@@ -1,5 +1,20 @@
 [
   {
+    "id": "SOL-1771285931747",
+    "strategy": "V5.0",
+    "asset": "SOL",
+    "direction": "LONG",
+    "entry": 82.9552,
+    "exit": 84.614304,
+    "leverage": 5,
+    "pnl": null,
+    "pnlPercent": 9.999999999999996,
+    "result": "LOSS",
+    "reason": "Signal",
+    "exitReason": "Position closed",
+    "holdTimeMs": null
+  },
+  {
     "id": "BTC-1771254856512",
     "strategy": "LC",
     "asset": "BTC",
@@ -327,5 +342,24 @@
     "reason": "RSI(2) overbought at 100.0 > 90",
     "exitReason": "Position closed (detected by audit)",
     "holdTimeMs": 55763986
+  },
+  {
+    "id": "1771256900380-SOL",
+    "timestamp": "2026-02-16T15:48:20.380Z",
+    "strategy": "V5.0",
+    "asset": "SOL",
+    "direction": "LONG",
+    "entry": 82.95793,
+    "exit": 86.4036,
+    "stopLoss": 81.231263,
+    "takeProfit": 86.41126400000002,
+    "size": 281,
+    "leverage": 5,
+    "pnl": 58.3,
+    "pnlPercent": 20.77,
+    "result": "WIN",
+    "reason": "Fade breakout below 83.4500",
+    "exitReason": "Market Close",
+    "holdTimeMs": 29020196
   }
 ]
