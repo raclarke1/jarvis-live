@@ -1,16 +1,1 @@
-[
-  {
-    "strategy": "V5.0",
-    "asset": "SOL",
-    "exchange": "Drift",
-    "direction": "LONG",
-    "leverage": 5,
-    "entryPrice": 82.95793,
-    "entryTime": 1771256900378,
-    "stopLoss": 81.231263,
-    "takeProfit": 86.41126400000002,
-    "positionSize": 281,
-    "status": "OPEN",
-    "reason": "Fade breakout below 83.4500"
-  }
-]
+[]

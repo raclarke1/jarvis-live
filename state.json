@@ -120,7 +120,7 @@
       "assets": ["OP", "ARB", "RNDR", "ATOM", "DOT", "NEAR"],
       "exchange": "Kraken",
       "type": "RSI(2) Daily",
-      "params": { "sl": "2.0x ATR", "tp": "4.0x ATR" }
+      "params": { "sl": "2.0x ATR", "tp": "4.0x ATR", "maxPositions": 5, "positionSize": "15%" }
     },
     "MOMENTUM": {
       "assets": ["WIF", "PEPE", "INJ", "RNDR"],
