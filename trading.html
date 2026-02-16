@@ -392,6 +392,9 @@
             background: rgba(0, 255, 136, 0.2);
             color: var(--accent-green);
         }
+        .strategy-tag.vwap {
+            background: rgba(88, 166, 255, 0.15); color: #58a6ff; border-color: rgba(88, 166, 255, 0.3);
+        }
         .strategy-tag.momentum {
             background: rgba(255, 165, 2, 0.2);
             color: #ffa502;
@@ -468,7 +471,7 @@
         <div class="header">
             <div>
                 <h1>MegaMax Trading Performance</h1>
-                <p class="subtitle">V5.0 + IBB + Momentum + LC on Drift Protocol • Live trading • MegaMax v1.4</p>
+                <p class="subtitle">V5.0 + IBB + Momentum + LC + VWAP Scalper on Drift Protocol • Live trading • MegaMax v1.7</p>
             </div>
             <div class="updated" id="lastUpdated">Loading...</div>
         </div>
@@ -510,6 +513,11 @@
                     <span class="indicator ok"></span>
                     <span class="name">📉 LC (RSI)</span>
                     <span class="detail">RNDR, NEAR, JUP, SOL, DOGE, PYTH, OP • RSI(2) mean reversion</span>
+                </div>
+                <div class="system-check">
+                    <span class="indicator ok"></span>
+                    <span class="name">⚡ VWAP Scalper</span>
+                    <span class="detail">SOL • 30s VWAP band reversion • $50/trade</span>
                 </div>
             </div>
             <div class="last-executions" id="lastExecutions">
@@ -693,7 +701,7 @@
             const pnlClass = isProfit ? 'profit' : 'loss';
             const pnlValueClass = isProfit ? 'positive' : 'negative';
             const strategy = pos.strategy || 'V5.0';
-            const strategyClass = strategy === 'IBB' ? 'ibb' : strategy === 'LC' ? 'lc' : strategy === 'MOMENTUM' ? 'momentum' : 'v50';
+            const strategyClass = strategy === 'IBB' ? 'ibb' : strategy === 'LC' ? 'lc' : strategy === 'MOMENTUM' ? 'momentum' : strategy === 'VWAP-SCALPER' ? 'vwap' : 'v50';
             const leverage = safeNum(pos.leverage, 5);
             const direction = pos.direction || 'LONG';
             
@@ -835,7 +843,7 @@
             
             // === RENDER STRATEGY CARDS ===
             // Use trading-stats.json if available, otherwise create defaults
-            const defaultStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM'];
+            const defaultStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-SCALPER'];
             const statsMap = {};
             
             // Initialize with defaults
@@ -898,7 +906,7 @@
             
             // Render only strategies with trades or that are active
             const activeStrategies = Object.values(statsMap).filter(s => 
-                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'LC-Kraken'].includes(s.strategy)
+                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-SCALPER', 'LC-Kraken'].includes(s.strategy)
             );
             
             const grid = document.getElementById('strategiesGrid');

@@ -127,6 +127,12 @@
       "exchange": "Drift",
       "type": "Daily Breakouts",
       "params": { "sl": "1.5x ATR", "tp": "3.0x ATR", "trendFilter": "20 EMA alignment" }
+    },
+    "VWAP-SCALPER": {
+      "assets": ["SOL"],
+      "exchange": "Drift",
+      "type": "VWAP Band Reversion",
+      "params": { "vwap": "4H rolling", "bands": "±2σ entry, ±3σ SL", "tp": "VWAP mean", "rsi": "14", "bias": "8H VWAP slope", "interval": "30s", "tradeSize": "$50" }
     }
   },
   "megamax": {
@@ -144,6 +150,7 @@
     "drift-signals": "1 * * * * UTC (hourly at :01)",
     "lc-kraken": "1 0 * * * UTC (daily at 00:01)",
     "lc-exit-check": "0 */4 * * * UTC (every 4h)",
-    "position-tracker": "every 2min"
+    "position-tracker": "every 2min",
+    "vwap-scalper": "persistent daemon (30s loop)"
   }
 }
