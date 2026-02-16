@@ -1,23 +1,4 @@
 {
-  "positions": {
-    "ETH-LONG": {
-      "symbol": "ETH",
-      "direction": "LONG",
-      "entry": 2090.4,
-      "mark": 2007.304,
-      "notional": 1800.55,
-      "size": 0.897,
-      "entryTime": "2026-02-15T17:00:47.872Z"
-    },
-    "DOGE-SHORT": {
-      "symbol": "DOGE",
-      "direction": "SHORT",
-      "entry": 0.1156,
-      "mark": 0.1074,
-      "notional": 1302.19,
-      "size": 12124,
-      "entryTime": "2026-02-15T17:00:47.872Z"
-    }
-  },
-  "lastSync": "2026-02-15T17:02:51.931Z"
+  "positions": {},
+  "lastSync": "2026-02-16T07:00:18.480Z"
 }
