@@ -818,14 +818,14 @@
             // === RENDER OPEN POSITIONS ===
             const openPositions = (state.openPositions || []).map(p => ({
                 asset: p.symbol || p.asset,
-                exchange: 'Drift',
+                exchange: p.exchange || 'Drift',  // Use actual exchange from data
                 strategy: p.strategy || 'V5.0',
                 direction: p.direction || 'LONG',
-                leverage: 5,
+                leverage: p.leverage || 5,
                 entryPrice: p.entry || p.entryPrice,
                 currentPrice: p.current || p.currentPrice,
-                stopLoss: p.stopLoss || null,
-                takeProfit: p.takeProfit || null,
+                stopLoss: p.stop || p.stopLoss || null,
+                takeProfit: p.target || p.takeProfit || null,
                 positionSize: p.size || p.positionSize,
                 unrealizedPnl: p.pnl || p.unrealizedPnl,
                 unrealizedPnlPct: p.pnlPercent || p.unrealizedPnlPct,
@@ -910,9 +910,9 @@
                 .map(t => ({
                     strategy: t.strategy || 'V5.0',
                     asset: t.symbol || t.asset,
-                    exchange: 'Drift',
+                    exchange: t.exchange || 'Drift',  // Use actual exchange
                     direction: t.direction || 'LONG',
-                    leverage: 5,
+                    leverage: t.leverage || 5,
                     entryPrice: t.entry || t.entryPrice,
                     exitPrice: t.exit || t.exitPrice,
                     entryTime: t.entryTime,
