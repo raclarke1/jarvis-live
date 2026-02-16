@@ -1,33 +1,17 @@
 {
-  "lastUpdate": "2026-02-16T12:35:00.000Z",
+  "lastUpdate": "2026-02-16T12:45:12.850Z",
   "version": "MegaMax v2.0 (LC Optimized)",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2021.44,
-    "freeCollateral": 1952.87,
-    "leverage": 0.69,
+    "equity": 2021.38,
+    "freeCollateral": 2021.24,
+    "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [
-    {
-      "id": "1771245295571-BTC",
-      "symbol": "BTC",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 69336.50,
-      "size": 0.0202,
-      "sizeUsd": 1401.64,
-      "leverage": 5,
-      "stopLoss": 69975.99,
-      "takeProfit": 66794.04,
-      "entryTime": "2026-02-16T12:34:55.000Z",
-      "status": "OPEN",
-      "reason": "RSI(2) overbought at 100.0 > 85"
-    }
-  ],
+  "openPositions": [],
   "stats": {
     "totalTrades": 7,
     "wins": 4,
@@ -36,99 +20,7 @@
     "totalPnl": 211.81,
     "avgPnl": 30.26
   },
-  "recentTrades": [
-    {
-      "id": "mm-genesis-005",
-      "symbol": "JUP",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 0.1739,
-      "exit": 0.1609,
-      "pnl": 86.25,
-      "pnlPercent": 7.47,
-      "entryTime": "2026-02-15T05:44:14.000Z",
-      "exitTime": "2026-02-15T16:30:00.000Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-1771174847871-8z1w",
-      "symbol": "DOGE",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 0.1156,
-      "exit": 0.1074,
-      "pnl": 461.13,
-      "pnlPercent": 35.47,
-      "entryTime": "2026-02-15T17:00:47.871Z",
-      "exitTime": "2026-02-16T07:00:18.479Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-1771174847871-i346",
-      "symbol": "ETH",
-      "strategy": "IBB",
-      "direction": "LONG",
-      "entry": 2090.4,
-      "exit": 2007.304,
-      "pnl": -357.54,
-      "pnlPercent": -19.88,
-      "entryTime": "2026-02-15T17:00:47.871Z",
-      "exitTime": "2026-02-16T07:00:18.479Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-genesis-004",
-      "symbol": "PYTH",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 0.057,
-      "exit": 0.0584,
-      "pnl": -6.91,
-      "pnlPercent": -2.46,
-      "entryTime": "2026-02-15T05:45:43.000Z",
-      "exitTime": "2026-02-15T06:00:00.000Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-genesis-003",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "LONG",
-      "entry": 1.5691,
-      "exit": 1.5275,
-      "pnl": -15.6,
-      "pnlPercent": -2.65,
-      "entryTime": "2026-02-15T05:42:15.000Z",
-      "exitTime": "2026-02-15T06:15:00.000Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-genesis-002",
-      "symbol": "SOL",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 88.32,
-      "exit": 85.34,
-      "pnl": 38.11,
-      "pnlPercent": 3.38,
-      "entryTime": "2026-02-14T22:06:00.000Z",
-      "exitTime": "2026-02-15T04:30:00.000Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "mm-genesis-001",
-      "symbol": "DOGE",
-      "strategy": "IBB",
-      "direction": "LONG",
-      "entry": 0.0977,
-      "exit": 0.0985,
-      "pnl": 6.37,
-      "pnlPercent": 3.42,
-      "entryTime": "2026-02-14T09:05:11.000Z",
-      "exitTime": "2026-02-14T10:05:00.000Z",
-      "status": "CLOSED"
-    }
-  ],
+  "recentTrades": [],
   "strategies": {
     "V5.0": {
       "assets": [],
@@ -141,16 +33,36 @@
       "status": "PAUSED"
     },
     "LC": {
-      "assets": ["APT", "ARB", "SUI", "SOL", "DOGE", "LTC", "LINK", "BTC"],
+      "assets": [
+        "APT",
+        "ARB",
+        "SUI",
+        "SOL",
+        "DOGE",
+        "LTC",
+        "LINK",
+        "BTC"
+      ],
       "type": "RSI(2) Mean Reversion v2.0",
       "status": "ACTIVE",
       "params": {
         "oversold": 15,
         "overbought": 85,
         "slMultiplier": 1.5,
-        "tpMultiplier": 6.0,
+        "tpMultiplier": 6,
         "checkInterval": "4H"
       }
+    }
+  },
+  "megamax": {
+    "lastCheck": "2026-02-16T12:45:12.850Z",
+    "performance": {
+      "totalTrades": 0,
+      "winningTrades": 0,
+      "losingTrades": 0,
+      "winRate": null,
+      "totalPnl": 0,
+      "startDate": "2026-02-13"
     }
   }
 }
