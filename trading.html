@@ -814,6 +814,17 @@
                 // Stats file optional - compute from trades if missing
             }
             
+            // Fetch trading-trades.json (closed trade history)
+            let tradeHistoryData = [];
+            try {
+                const tradesRes = await fetch(`trading-trades.json?v=${cacheBust}`);
+                if (tradesRes.ok) {
+                    tradeHistoryData = await tradesRes.json();
+                }
+            } catch (e) {
+                // Trades file optional
+            }
+            
             // If state.json failed completely, show error
             if (!state) {
                 document.getElementById('lastUpdated').textContent = 'Error loading data';
@@ -913,7 +924,9 @@
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
             
             // === RENDER TRADE HISTORY ===
-            const closedTrades = allTrades
+            // Combine trades from state.recentTrades + trading-trades.json
+            const combinedTrades = [...allTrades, ...tradeHistoryData];
+            const closedTrades = combinedTrades
                 .filter(t => t.status === 'CLOSED' || (!t.status && t.exit))
                 .map(t => ({
                     strategy: t.strategy || 'V5.0',
