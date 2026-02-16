@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-02-16T15:49:00.000Z",
-  "version": "MegaMax v1.5",
+  "version": "MegaMax v1.6 (+Trend Filter)",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
@@ -108,13 +108,13 @@
       "assets": ["SUI", "SOL", "DOGE", "PEPE", "XRP"],
       "exchange": "Drift",
       "type": "Mean Reversion",
-      "params": { "sl": "1.0x ATR", "tp": "2.0x ATR" }
+      "params": { "sl": "1.0x ATR", "tp": "2.0x ATR", "trendFilter": "20 EMA alignment" }
     },
     "IBB": {
       "assets": ["WIF", "DOT", "W", "XRP"],
       "exchange": "Drift",
       "type": "Inside Bar Breakout",
-      "params": { "sl": "1.5x ATR", "tp": "2.0x ATR" }
+      "params": { "sl": "1.5x ATR", "tp": "2.0x ATR", "trendFilter": "20 EMA alignment" }
     },
     "LC": {
       "assets": ["OP", "ARB", "RNDR", "ATOM", "DOT", "NEAR"],
@@ -126,7 +126,7 @@
       "assets": ["WIF", "PEPE", "INJ", "RNDR"],
       "exchange": "Drift",
       "type": "Daily Breakouts",
-      "params": { "sl": "1.5x ATR", "tp": "3.0x ATR" }
+      "params": { "sl": "1.5x ATR", "tp": "3.0x ATR", "trendFilter": "20 EMA alignment" }
     }
   },
   "megamax": {
