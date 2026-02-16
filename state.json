@@ -1,68 +1,147 @@
 {
-  "lastUpdate": "2026-02-16T12:45:12.850Z",
-  "version": "MegaMax v2.0 (LC Optimized)",
+  "lastUpdate": "2026-02-16T15:12:00.000Z",
+  "version": "MegaMax v2.1 (Drift + Kraken)",
   "status": "LIVE",
-  "dataSource": "drift-direct",
-  "account": {
-    "exchange": "drift",
-    "equity": 2021.38,
-    "freeCollateral": 2021.24,
-    "leverage": 0,
-    "startingEquity": 1868.46,
-    "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+  "dataSource": "multi-exchange",
+  "exchanges": {
+    "drift": {
+      "status": "PAUSED",
+      "equity": 2021.38,
+      "freeCollateral": 2021.24,
+      "leverage": 0,
+      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+    },
+    "kraken": {
+      "status": "ACTIVE",
+      "equity": 20865.74,
+      "marginUsed": 2911.71,
+      "leverage": 2.5,
+      "positions": 3
+    }
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "NEAR",
+      "direction": "long",
+      "entry": 1.052,
+      "current": 1.052,
+      "stop": 0.9188,
+      "target": 1.3184,
+      "size": 2498.87,
+      "volume": 2376.43,
+      "leverage": 3,
+      "pnlPct": 0,
+      "entryTime": "2026-02-16T15:10:22Z",
+      "positionId": "TI3X3P-Q72CX-AY57OL"
+    },
+    {
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "OP",
+      "direction": "long",
+      "entry": 0.1896,
+      "current": 0.1892,
+      "stop": 0.1681,
+      "target": 0.2326,
+      "size": 2492.29,
+      "volume": 13157.89,
+      "leverage": 2,
+      "pnlPct": -0.21,
+      "entryTime": "2026-02-16T15:10:57Z",
+      "positionId": "TCJR5M-OSZOL-RJ2TTE"
+    },
+    {
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "ARB",
+      "direction": "long",
+      "entry": 0.1147,
+      "current": 0.1146,
+      "stop": 0.1012,
+      "target": 0.1417,
+      "size": 2497.80,
+      "volume": 21795.99,
+      "leverage": 3,
+      "pnlPct": -0.09,
+      "entryTime": "2026-02-16T15:11:05Z",
+      "positionId": "TCY5G4-FCXKR-3IRHZW"
+    }
+  ],
   "stats": {
-    "totalTrades": 7,
+    "totalTrades": 10,
     "wins": 4,
     "losses": 3,
     "winRate": 57,
     "totalPnl": 211.81,
     "avgPnl": 30.26
   },
-  "recentTrades": [],
+  "recentTrades": [
+    {
+      "time": "2026-02-16T15:10:22Z",
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "NEAR",
+      "direction": "long",
+      "entry": 1.052,
+      "status": "OPEN"
+    },
+    {
+      "time": "2026-02-16T15:10:57Z",
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "OP",
+      "direction": "long",
+      "entry": 0.1896,
+      "status": "OPEN"
+    },
+    {
+      "time": "2026-02-16T15:11:05Z",
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "ARB",
+      "direction": "long",
+      "entry": 0.1147,
+      "status": "OPEN"
+    }
+  ],
   "strategies": {
-    "V5.0": {
-      "assets": [],
+    "LC-Kraken": {
+      "exchange": "kraken",
+      "assets": ["OP", "ARB", "RNDR", "ATOM", "DOT", "NEAR"],
+      "type": "RSI(2) Daily Mean Reversion",
+      "status": "ACTIVE",
+      "timeframe": "Daily",
+      "params": {
+        "rsiPeriod": 2,
+        "oversold": 10,
+        "overbought": 90,
+        "slMultiplier": 2.0,
+        "tpMultiplier": 4.0,
+        "checkInterval": "Daily 00:05 UTC"
+      }
+    },
+    "V5.0-Drift": {
+      "exchange": "drift",
+      "assets": ["SUI", "SOL", "DOGE", "PEPE", "XRP"],
       "type": "Mean Reversion",
       "status": "PAUSED"
     },
-    "IBB": {
-      "assets": [],
+    "IBB-Drift": {
+      "exchange": "drift",
+      "assets": ["WIF", "DOT", "W", "XRP"],
       "type": "Inside Bar Breakout",
       "status": "PAUSED"
-    },
-    "LC": {
-      "assets": [
-        "APT",
-        "ARB",
-        "SUI",
-        "SOL",
-        "DOGE",
-        "LTC",
-        "LINK",
-        "BTC"
-      ],
-      "type": "RSI(2) Mean Reversion v2.0",
-      "status": "ACTIVE",
-      "params": {
-        "oversold": 15,
-        "overbought": 85,
-        "slMultiplier": 1.5,
-        "tpMultiplier": 6,
-        "checkInterval": "4H"
-      }
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-16T12:45:12.850Z",
-    "performance": {
-      "totalTrades": 0,
-      "winningTrades": 0,
-      "losingTrades": 0,
-      "winRate": null,
-      "totalPnl": 0,
-      "startDate": "2026-02-13"
+    "lastCheck": "2026-02-16T15:12:00.000Z",
+    "krakenLc": {
+      "totalTrades": 3,
+      "openPositions": 3,
+      "totalInvested": 7489,
+      "startDate": "2026-02-16"
     }
   }
 }
