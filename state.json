@@ -1,147 +1,235 @@
 {
-  "lastUpdate": "2026-02-16T15:12:00.000Z",
-  "version": "MegaMax v2.1 (Drift + Kraken)",
+  "lastUpdate": "2026-02-16T15:14:16.517Z",
+  "version": "MegaMax v1.4",
   "status": "LIVE",
-  "dataSource": "multi-exchange",
-  "exchanges": {
-    "drift": {
-      "status": "PAUSED",
-      "equity": 2021.38,
-      "freeCollateral": 2021.24,
-      "leverage": 0,
-      "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
-    },
-    "kraken": {
-      "status": "ACTIVE",
-      "equity": 20865.74,
-      "marginUsed": 2911.71,
-      "leverage": 2.5,
-      "positions": 3
-    }
+  "dataSource": "drift-direct",
+  "account": {
+    "exchange": "drift",
+    "equity": 2019.56,
+    "freeCollateral": 2019.56,
+    "leverage": 0,
+    "startingEquity": 1868.46,
+    "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
     {
       "exchange": "kraken",
-      "strategy": "LC",
       "symbol": "NEAR",
       "direction": "long",
+      "strategy": "LC",
       "entry": 1.052,
       "current": 1.052,
       "stop": 0.9188,
       "target": 1.3184,
       "size": 2498.87,
-      "volume": 2376.43,
+      "sizeUnits": 2376.42585551,
       "leverage": 3,
-      "pnlPct": 0,
-      "entryTime": "2026-02-16T15:10:22Z",
-      "positionId": "TI3X3P-Q72CX-AY57OL"
+      "pnl": 0,
+      "pnlPercent": 0
     },
     {
       "exchange": "kraken",
-      "strategy": "LC",
       "symbol": "OP",
       "direction": "long",
+      "strategy": "LC",
       "entry": 0.1896,
-      "current": 0.1892,
+      "current": 0.1896,
       "stop": 0.1681,
       "target": 0.2326,
       "size": 2492.29,
-      "volume": 13157.89,
+      "sizeUnits": 13157.89474,
       "leverage": 2,
-      "pnlPct": -0.21,
-      "entryTime": "2026-02-16T15:10:57Z",
-      "positionId": "TCJR5M-OSZOL-RJ2TTE"
+      "pnl": 0,
+      "pnlPercent": 0
     },
     {
       "exchange": "kraken",
-      "strategy": "LC",
       "symbol": "ARB",
       "direction": "long",
+      "strategy": "LC",
       "entry": 0.1147,
-      "current": 0.1146,
+      "current": 0.1147,
       "stop": 0.1012,
       "target": 0.1417,
-      "size": 2497.80,
-      "volume": 21795.99,
+      "size": 2497.8,
+      "sizeUnits": 21795.98953,
       "leverage": 3,
-      "pnlPct": -0.09,
-      "entryTime": "2026-02-16T15:11:05Z",
-      "positionId": "TCY5G4-FCXKR-3IRHZW"
+      "pnl": 0,
+      "pnlPercent": 0
     }
   ],
   "stats": {
-    "totalTrades": 10,
+    "totalTrades": 19,
     "wins": 4,
-    "losses": 3,
-    "winRate": 57,
-    "totalPnl": 211.81,
-    "avgPnl": 30.26
+    "losses": 15,
+    "winRate": 21,
+    "totalPnl": 410.4,
+    "avgPnl": 21.599999999999998
   },
   "recentTrades": [
     {
-      "time": "2026-02-16T15:10:22Z",
-      "exchange": "kraken",
+      "id": "BTC-1771254856512",
+      "symbol": "BTC",
       "strategy": "LC",
-      "symbol": "NEAR",
-      "direction": "long",
-      "entry": 1.052,
-      "status": "OPEN"
+      "direction": "SHORT",
+      "entry": 69339.6,
+      "exit": 67952.808,
+      "pnl": null,
+      "pnlPercent": 10.000000000000009,
+      "exitTime": "2026-02-16T15:14:16.512Z",
+      "status": "CLOSED"
     },
     {
-      "time": "2026-02-16T15:10:57Z",
-      "exchange": "kraken",
+      "id": "PYTH-1771138204372",
+      "symbol": "PYTH",
       "strategy": "LC",
-      "symbol": "OP",
-      "direction": "long",
-      "entry": 0.1896,
-      "status": "OPEN"
+      "direction": "SHORT",
+      "entry": 0.05698,
+      "exit": 0.0558404,
+      "pnl": null,
+      "pnlPercent": 10.000000000000037,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
     },
     {
-      "time": "2026-02-16T15:11:05Z",
-      "exchange": "kraken",
+      "id": "DOGE-1771138204372",
+      "symbol": "DOGE",
       "strategy": "LC",
-      "symbol": "ARB",
-      "direction": "long",
-      "entry": 0.1147,
-      "status": "OPEN"
+      "direction": "SHORT",
+      "entry": 0.1158721,
+      "exit": 0.113554658,
+      "pnl": null,
+      "pnlPercent": 10.000000000000014,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "JUP-1771138204372",
+      "symbol": "JUP",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 0.17393,
+      "exit": 0.1704514,
+      "pnl": null,
+      "pnlPercent": 9.999999999999996,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "XRP-1771138204372",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "LONG",
+      "entry": 1.56909,
+      "exit": 1.6004718000000002,
+      "pnl": null,
+      "pnlPercent": 10.000000000000039,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "SOL-1771138204372",
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 88.3189,
+      "exit": 86.552522,
+      "pnl": null,
+      "pnlPercent": 10.000000000000018,
+      "exitTime": "2026-02-15T06:50:04.372Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "DOGE-1771118441420",
+      "symbol": "DOGE",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 0.1129975,
+      "exit": 0.11073755,
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "exitTime": "2026-02-15T01:20:41.420Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "SOL-1771118441420",
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 88.48,
+      "exit": 86.7104,
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "exitTime": "2026-02-15T01:20:41.420Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771059911511-DOGE",
+      "symbol": "DOGE",
+      "strategy": "IBB",
+      "direction": "LONG",
+      "entry": 0.0977,
+      "exit": 0.0985,
+      "pnl": 6.37,
+      "pnlPercent": 3.42,
+      "entryTime": "2026-02-14T09:05:11.511Z",
+      "exitTime": "2026-02-14T10:05:00.000Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771117940994-SOL",
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 88.31,
+      "exit": null,
+      "pnl": null,
+      "pnlPercent": null,
+      "entryTime": "2026-02-15T01:12:20.994Z",
+      "exitTime": "2026-02-15T21:15:06.987Z",
+      "status": "CLOSED"
     }
   ],
   "strategies": {
-    "LC-Kraken": {
-      "exchange": "kraken",
-      "assets": ["OP", "ARB", "RNDR", "ATOM", "DOT", "NEAR"],
-      "type": "RSI(2) Daily Mean Reversion",
-      "status": "ACTIVE",
-      "timeframe": "Daily",
-      "params": {
-        "rsiPeriod": 2,
-        "oversold": 10,
-        "overbought": 90,
-        "slMultiplier": 2.0,
-        "tpMultiplier": 4.0,
-        "checkInterval": "Daily 00:05 UTC"
-      }
+    "V5.0": {
+      "assets": [
+        "SOL",
+        "LTC",
+        "INJ",
+        "PEPE",
+        "RNDR"
+      ],
+      "type": "Mean Reversion"
     },
-    "V5.0-Drift": {
-      "exchange": "drift",
-      "assets": ["SUI", "SOL", "DOGE", "PEPE", "XRP"],
-      "type": "Mean Reversion",
-      "status": "PAUSED"
+    "IBB": {
+      "assets": [
+        "DOT",
+        "XRP",
+        "DOGE",
+        "ETH"
+      ],
+      "type": "Inside Bar Breakout"
     },
-    "IBB-Drift": {
-      "exchange": "drift",
-      "assets": ["WIF", "DOT", "W", "XRP"],
-      "type": "Inside Bar Breakout",
-      "status": "PAUSED"
-    }
-  },
-  "megamax": {
-    "lastCheck": "2026-02-16T15:12:00.000Z",
-    "krakenLc": {
-      "totalTrades": 3,
-      "openPositions": 3,
-      "totalInvested": 7489,
-      "startDate": "2026-02-16"
+    "LC": {
+      "assets": [
+        "JUP",
+        "SOL",
+        "DOGE",
+        "PYTH",
+        "OP"
+      ],
+      "type": "RSI(2) Mean Reversion"
+    },
+    "MOMENTUM": {
+      "assets": [
+        "BONK",
+        "ARB",
+        "SUI",
+        "WIF",
+        "W",
+        "RNDR"
+      ],
+      "type": "Daily Breakouts"
     }
   }
 }

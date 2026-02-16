@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "1771245295571-BTC",
+    "timestamp": "2026-02-16T12:34:55.571Z",
+    "strategy": "LC",
+    "asset": "BTC",
+    "direction": "SHORT",
+    "entry": 69339.6,
+    "exit": null,
+    "stopLoss": 69975.99,
+    "takeProfit": 66794.03999999998,
+    "size": 281,
+    "leverage": 5,
+    "pnl": null,
+    "pnlPercent": null,
+    "result": "OPEN",
+    "reason": "RSI(2) overbought at 100.0 > 85",
+    "exitReason": null,
+    "holdTimeMs": null
+  }
+]
