@@ -898,7 +898,7 @@
             
             // Render only strategies with trades or that are active
             const activeStrategies = Object.values(statsMap).filter(s => 
-                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC'].includes(s.strategy)
+                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'LC-Kraken'].includes(s.strategy)
             );
             
             const grid = document.getElementById('strategiesGrid');
