@@ -1,16 +1,1 @@
-[
-  {
-    "strategy": "LC",
-    "asset": "BTC",
-    "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 69339.6,
-    "entryTime": 1771245295569,
-    "stopLoss": 69975.99,
-    "takeProfit": 66794.03999999998,
-    "positionSize": 281,
-    "status": "OPEN",
-    "reason": "RSI(2) overbought at 100.0 > 85"
-  }
-]
+[]

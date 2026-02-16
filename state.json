@@ -1,17 +1,33 @@
 {
-  "lastUpdate": "2026-02-16T07:00:18.481Z",
+  "lastUpdate": "2026-02-16T12:35:00.000Z",
   "version": "MegaMax v2.0 (LC Optimized)",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2023.83,
-    "freeCollateral": 2023.83,
-    "leverage": 0,
+    "equity": 2021.44,
+    "freeCollateral": 1952.87,
+    "leverage": 0.69,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "id": "1771245295571-BTC",
+      "symbol": "BTC",
+      "strategy": "LC",
+      "direction": "SHORT",
+      "entry": 69336.50,
+      "size": 0.0202,
+      "sizeUsd": 1401.64,
+      "leverage": 5,
+      "stopLoss": 69975.99,
+      "takeProfit": 66794.04,
+      "entryTime": "2026-02-16T12:34:55.000Z",
+      "status": "OPEN",
+      "reason": "RSI(2) overbought at 100.0 > 85"
+    }
+  ],
   "stats": {
     "totalTrades": 7,
     "wins": 4,
@@ -125,7 +141,7 @@
       "status": "PAUSED"
     },
     "LC": {
-      "assets": ["FTM", "APT", "ARB", "SUI", "SOL", "DOGE", "LTC", "LINK", "BTC", "ATOM"],
+      "assets": ["APT", "ARB", "SUI", "SOL", "DOGE", "LTC", "LINK", "BTC"],
       "type": "RSI(2) Mean Reversion v2.0",
       "status": "ACTIVE",
       "params": {
