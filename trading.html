@@ -751,7 +751,7 @@
         function renderTradeRow(trade) {
             const isOpen = trade.status === 'OPEN';
             const pnl = safeNum(trade.pnlUsd);
-            const isWin = pnl > 0;
+            const isWin = pnl > 0 || trade.result === 'WIN';
             const strategy = trade.strategy || 'V5.0';
             const direction = trade.direction || 'LONG';
             const leverage = safeNum(trade.leverage, 5);
@@ -914,7 +914,7 @@
             
             // === RENDER TRADE HISTORY ===
             const closedTrades = allTrades
-                .filter(t => t.status === 'CLOSED')
+                .filter(t => t.status === 'CLOSED' || (!t.status && t.exit))
                 .map(t => ({
                     strategy: t.strategy || 'V5.0',
                     asset: t.symbol || t.asset,
@@ -929,6 +929,7 @@
                     positionSize: t.size || t.positionSize || 0,
                     pnlUsd: t.pnl || t.pnlUsd || 0,
                     pnlPercent: t.pnlPercent || 0,
+                    result: t.result,
                     status: t.status
                 }));
             
@@ -940,7 +941,7 @@
             }
             
             // === UPDATE HEADER INFO ===
-            const totalWins = closedTrades.filter(t => t.pnlUsd > 0).length;
+            const totalWins = closedTrades.filter(t => t.pnlUsd > 0 || t.result === 'WIN').length;
             const winRate = closedTrades.length > 0 ? Math.round((totalWins / closedTrades.length) * 100) : 0;
             document.getElementById('tradeCount').textContent = `${closedTrades.length} closed trades • Win rate: ${winRate}%`;
             
