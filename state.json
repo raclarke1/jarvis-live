@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-02-16T07:00:18.481Z",
-  "version": "MegaMax v1.5 (LC Only)",
+  "version": "MegaMax v2.0 (LC Optimized)",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
@@ -125,15 +125,16 @@
       "status": "PAUSED"
     },
     "LC": {
-      "assets": [
-        "JUP",
-        "SOL",
-        "DOGE",
-        "PYTH",
-        "OP"
-      ],
-      "type": "RSI(2) Mean Reversion",
-      "status": "ACTIVE"
+      "assets": ["FTM", "APT", "ARB", "SUI", "SOL", "DOGE", "LTC", "LINK", "BTC", "ATOM"],
+      "type": "RSI(2) Mean Reversion v2.0",
+      "status": "ACTIVE",
+      "params": {
+        "oversold": 15,
+        "overbought": 85,
+        "slMultiplier": 1.5,
+        "tpMultiplier": 6.0,
+        "checkInterval": "4H"
+      }
     }
   }
 }
