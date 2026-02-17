@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-17T08:02:17.811Z",
+  "lastUpdate": "2026-02-17T09:01:52.246Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -41,6 +41,21 @@
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
       "entryTime": "2026-02-17T08:02:17.799Z"
+    },
+    {
+      "asset": "WIF",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.232161,
+      "currentPrice": 0.232161,
+      "stopLoss": 0.2345901,
+      "takeProfit": 0.22892220000000002,
+      "positionSize": 375,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-17T09:01:52.239Z"
     }
   ],
   "stats": {
@@ -54,17 +69,17 @@
   "recentTrades": [
     {
       "strategy": "IBB",
-      "asset": "XRP",
+      "asset": "WIF",
       "exchange": "Drift",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 1.474753,
-      "entryTime": 1771315337802,
-      "stopLoss": 1.4893138,
-      "takeProfit": 1.4553386,
+      "entryPrice": 0.232161,
+      "entryTime": 1771318912240,
+      "stopLoss": 0.2345901,
+      "takeProfit": 0.22892220000000002,
       "positionSize": 375,
       "status": "OPEN",
-      "reason": "Inside bar breakout below 1.4738"
+      "reason": "Inside bar breakout below 0.2325"
     }
   ],
   "strategies": {
@@ -110,7 +125,7 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-17T08:02:17.811Z",
+    "lastCheck": "2026-02-17T09:01:52.246Z",
     "performance": {
       "totalTrades": 1,
       "winningTrades": 0,
