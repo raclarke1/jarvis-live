@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-16T23:52:11.750Z",
+  "lastUpdate": "2026-02-17T00:01:33.009Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -56,6 +56,19 @@
       "leverage": 3,
       "pnl": 0,
       "pnlPercent": 0
+    },
+    {
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "OP",
+      "direction": "short",
+      "entry": 0.1905,
+      "stop": 0.20874,
+      "target": 0.15402,
+      "size": 1500,
+      "volume": 7874.01574803,
+      "leverage": 2,
+      "entryTime": "2026-02-17T00:01:33.009Z"
     }
   ],
   "stats": {
