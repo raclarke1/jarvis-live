@@ -1,16 +1,1 @@
-[
-  {
-    "strategy": "IBB",
-    "asset": "WIF",
-    "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.232161,
-    "entryTime": 1771318912240,
-    "stopLoss": 0.2345901,
-    "takeProfit": 0.22892220000000002,
-    "positionSize": 375,
-    "status": "OPEN",
-    "reason": "Inside bar breakout below 0.2325"
-  }
-]
+[]
