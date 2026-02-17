@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-17T01:17:30.988Z",
+  "lastUpdate": "2026-02-17T01:17:33.052Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -95,6 +95,19 @@
       "volume": 650.6745326,
       "leverage": 2,
       "entryTime": "2026-02-17T01:17:30.988Z"
+    },
+    {
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "DOT",
+      "direction": "short",
+      "entry": 1.374,
+      "stop": 1.52244,
+      "target": 1.0771200000000003,
+      "size": 1500,
+      "volume": 1091.70305677,
+      "leverage": 3,
+      "entryTime": "2026-02-17T01:17:33.052Z"
     }
   ],
   "stats": {
