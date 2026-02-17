@@ -1,44 +1,17 @@
 [
   {
-    "id": "TCY5G4-FCXKR-3IRHZW",
-    "asset": "ARB",
-    "exchange": "Kraken",
-    "strategy": "UNKNOWN",
-    "direction": "LONG",
-    "entryPrice": 0.11459883866259134,
-    "entryTime": null,
-    "positionSize": 832.59836255,
-    "volume": 21795.98953,
-    "leverage": 3,
-    "currentPnl": null,
-    "status": "OPEN"
-  },
-  {
-    "id": "TCJR5M-OSZOL-RJ2TTE",
-    "asset": "OP",
-    "exchange": "Kraken",
-    "strategy": "UNKNOWN",
-    "direction": "LONG",
-    "entryPrice": 0.18941418722886058,
-    "entryTime": null,
-    "positionSize": 1246.14596891,
-    "volume": 13157.89474,
-    "leverage": 3,
-    "currentPnl": null,
-    "status": "OPEN"
-  },
-  {
-    "id": "TI3X3P-Q72CX-AY57OL",
-    "asset": "NEAR",
-    "exchange": "Kraken",
-    "strategy": "UNKNOWN",
-    "direction": "LONG",
-    "entryPrice": 1.0515254932974638,
-    "entryTime": null,
-    "positionSize": 832.95746,
-    "volume": 2376.42585551,
-    "leverage": 3,
-    "currentPnl": null,
-    "status": "OPEN"
+    "asset": "XRP",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 1.47808,
+    "currentPrice": 1.47808,
+    "stopLoss": 1.4899348000000001,
+    "takeProfit": 1.4622735999999998,
+    "positionSize": 375,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-17T02:02:20.094Z"
   }
 ]
