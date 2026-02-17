@@ -552,5 +552,32 @@
     "exitReason": "Market Close",
     "holdTimeMs": 29020196,
     "exchange": "Drift"
+  },
+  {
+    "id": "1771318912242-WIF",
+    "timestamp": "2026-02-17T09:01:52.242Z",
+    "strategy": "IBB",
+    "asset": "WIF",
+    "direction": "SHORT",
+    "entry": 0.232161,
+    "entryPrice": 0.232161,
+    "exit": 0.2342,
+    "exitPrice": 0.2342,
+    "entryTime": "2026-02-17T09:01:52.242Z",
+    "exitTime": "2026-02-17T13:12:02.254Z",
+    "stopLoss": 0.2345901,
+    "takeProfit": 0.22892220000000002,
+    "size": 375,
+    "positionSize": 375,
+    "leverage": 5,
+    "pnl": -16.48,
+    "pnlUsd": -16.48,
+    "pnlPercent": -4.39,
+    "result": "LOSS",
+    "status": "CLOSED",
+    "reason": "Inside bar breakout below 0.2325",
+    "exitReason": "Market Close",
+    "holdTimeMs": 15010012,
+    "exchange": "Drift"
   }
 ]

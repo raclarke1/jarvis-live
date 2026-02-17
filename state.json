@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-17T10:09:49.975Z",
+  "lastUpdate": "2026-02-17T13:12:13.429Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2083.67,
-    "freeCollateral": 1409.33,
-    "leverage": 2.22,
+    "equity": 2042.22,
+    "freeCollateral": 1571.09,
+    "leverage": 1.37,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -18,11 +18,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.0206,
-      "current": 0.0206,
-      "size": 1861.59,
+      "current": 0.0208,
+      "size": 1887.04,
       "sizeUnits": 90575,
-      "pnl": 4.26,
-      "pnlPercent": 0.23
+      "pnl": 0,
+      "pnlPercent": 0
     },
     {
       "exchange": "drift",
@@ -30,21 +30,9 @@
       "direction": "SHORT",
       "strategy": "V5.0",
       "entry": 8.798,
-      "current": 8.811,
-      "size": 933.97,
+      "current": 8.8123,
+      "size": 934.11,
       "sizeUnits": 106,
-      "pnl": 0,
-      "pnlPercent": 0
-    },
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2322,
-      "current": 0.2331,
-      "size": 1882.11,
-      "sizeUnits": 8074,
       "pnl": 0,
       "pnlPercent": 0
     },
@@ -121,12 +109,12 @@
     }
   ],
   "stats": {
-    "totalTrades": 22,
+    "totalTrades": 23,
     "wins": 5,
-    "losses": 17,
-    "winRate": 23,
-    "totalPnl": 468.7,
-    "avgPnl": 21.304545454545455
+    "losses": 18,
+    "winRate": 22,
+    "totalPnl": 452.21999999999997,
+    "avgPnl": 19.661739130434782
   },
   "recentTrades": [
     {
