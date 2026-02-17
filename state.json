@@ -1,29 +1,17 @@
 {
-  "lastUpdate": "2026-02-17T03:54:44.654Z",
+  "lastUpdate": "2026-02-17T05:34:13.368Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2111.23,
-    "freeCollateral": 1914.94,
-    "leverage": 0.88,
+    "equity": 2123.02,
+    "freeCollateral": 2123,
+    "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "V5.0",
-      "entry": 0.2334,
-      "current": 0.2342,
-      "size": 1875.31,
-      "sizeUnits": 8008,
-      "pnl": 0,
-      "pnlPercent": 0
-    },
     {
       "exchange": "kraken",
       "symbol": "NEAR",
@@ -97,14 +85,26 @@
     }
   ],
   "stats": {
-    "totalTrades": 21,
+    "totalTrades": 22,
     "wins": 5,
-    "losses": 16,
-    "winRate": 24,
+    "losses": 17,
+    "winRate": 23,
     "totalPnl": 468.7,
-    "avgPnl": 22.31904761904762
+    "avgPnl": 21.304545454545455
   },
   "recentTrades": [
+    {
+      "id": "XRP-1771306453360",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 1.47808,
+      "exit": 1.4485184,
+      "pnl": null,
+      "pnlPercent": 10.000000000000027,
+      "exitTime": "2026-02-17T05:34:13.360Z",
+      "status": "CLOSED"
+    },
     {
       "id": "SOL-1771285931747",
       "symbol": "SOL",
@@ -211,19 +211,6 @@
       "pnl": null,
       "pnlPercent": 9.999999999999984,
       "exitTime": "2026-02-15T01:20:41.420Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771059911511-DOGE",
-      "symbol": "DOGE",
-      "strategy": "IBB",
-      "direction": "LONG",
-      "entry": 0.0977,
-      "exit": 0.0985,
-      "pnl": 6.37,
-      "pnlPercent": 3.42,
-      "entryTime": "2026-02-14T09:05:11.511Z",
-      "exitTime": "2026-02-14T10:05:00.000Z",
       "status": "CLOSED"
     }
   ],
