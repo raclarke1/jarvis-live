@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-17T00:01:33.009Z",
+  "lastUpdate": "2026-02-17T00:01:34.700Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -69,6 +69,19 @@
       "volume": 7874.01574803,
       "leverage": 2,
       "entryTime": "2026-02-17T00:01:33.009Z"
+    },
+    {
+      "exchange": "kraken",
+      "strategy": "LC",
+      "symbol": "ARB",
+      "direction": "short",
+      "entry": 0.1153,
+      "stop": 0.12725999999999998,
+      "target": 0.09138,
+      "size": 1500,
+      "volume": 13009.54032958,
+      "leverage": 3,
+      "entryTime": "2026-02-17T00:01:34.700Z"
     }
   ],
   "stats": {
