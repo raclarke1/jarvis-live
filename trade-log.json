@@ -2377,6 +2377,115 @@
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "RNDR-1771454730969",
+      "timestamp": "2026-02-18T22:45:30.969Z",
+      "timestampMs": 1771454730969,
+      "symbol": "RNDR",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.412231,
+        "time": "2026-02-18T22:45:30.969Z",
+        "reason": "RSI(3)=79.8 overbought, price below VWAP (1.4531) & EMA50 (1.4168)"
+      },
+      "stopLoss": {
+        "price": 1.4166515
+      },
+      "takeProfit": {
+        "price": 1.40339
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "PEPE-1771455340694",
+      "timestamp": "2026-02-18T22:55:40.694Z",
+      "timestampMs": 1771455340694,
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 4.2343,
+        "time": "2026-02-18T22:55:40.694Z",
+        "reason": "RSI(3)=90.2 overbought, price below VWAP (4.3013) & EMA50 (4.2395)"
+      },
+      "stopLoss": {
+        "price": 4.245371428571429
+      },
+      "takeProfit": {
+        "price": 4.2121571428571425
+      },
+      "leverage": 5,
+      "positionSize": 375,
+      "exit": {
+        "price": 4.2141,
+        "time": "2026-02-18T23:06:00.714Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": 8.94,
+        "fees": 0.01,
+        "netPnl": 8.94,
+        "pnlPercent": 2.39
+      }
+    },
+    {
+      "id": "RNDR-1771455972444",
+      "symbol": "RNDR",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 1.412231,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 1.38398638,
+        "time": "2026-02-18T23:06:12.444Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 9.999999999999979
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "PEPE-1771455972444",
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 4.2343,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 4.149614,
+        "time": "2026-02-18T23:06:12.444Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000057
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
     }
   ]
 }
