@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-17T23:29:29.389Z",
+  "lastUpdate": "2026-02-18T00:50:26.517Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2039.19,
-    "freeCollateral": 1159.9,
-    "leverage": 3.17,
+    "equity": 2021.11,
+    "freeCollateral": 1303.36,
+    "leverage": 2.29,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -18,11 +18,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.0206,
-      "current": 0.0205,
-      "size": 1853.35,
+      "current": 0.0204,
+      "size": 1851.26,
       "sizeUnits": 90575,
-      "pnl": 12.5,
-      "pnlPercent": 0.67
+      "pnl": 14.58,
+      "pnlPercent": 0.78
     },
     {
       "exchange": "drift",
@@ -30,8 +30,8 @@
       "direction": "SHORT",
       "strategy": "V5.0",
       "entry": 8.798,
-      "current": 8.8314,
-      "size": 936.13,
+      "current": 8.8111,
+      "size": 933.97,
       "sizeUnits": 106,
       "pnl": 0,
       "pnlPercent": 0
@@ -42,8 +42,8 @@
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 0.1004,
-      "current": 0.1005,
-      "size": 1875.27,
+      "current": 0.1006,
+      "size": 1876.89,
       "sizeUnits": 18652,
       "pnl": 0,
       "pnlPercent": 0
@@ -54,22 +54,34 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2302,
-      "current": 0.2304,
-      "size": 1875.3,
-      "sizeUnits": 8138,
-      "pnl": 0,
-      "pnlPercent": 0
+      "current": 0.2294,
+      "size": 14.68,
+      "sizeUnits": 64,
+      "pnl": 0.05,
+      "pnlPercent": 0.35
     }
   ],
   "stats": {
-    "totalTrades": 31,
+    "totalTrades": 32,
     "wins": 9,
-    "losses": 22,
-    "winRate": 29,
+    "losses": 23,
+    "winRate": 28,
     "totalPnl": 532.22,
-    "avgPnl": 17.168387096774193
+    "avgPnl": 16.631875
   },
   "recentTrades": [
+    {
+      "id": "PYTH-1771375826510",
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "LONG",
+      "entry": 0.056666,
+      "exit": 0.05779932,
+      "pnl": null,
+      "pnlPercent": 10.000000000000002,
+      "exitTime": "2026-02-18T00:50:26.511Z",
+      "status": "CLOSED"
+    },
     {
       "id": "RNDR-1771370969382",
       "symbol": "RNDR",
@@ -176,18 +188,6 @@
       "pnl": null,
       "pnlPercent": 10.000000000000027,
       "exitTime": "2026-02-17T05:34:13.360Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "SOL-1771285931747",
-      "symbol": "SOL",
-      "strategy": "V5.0",
-      "direction": "LONG",
-      "entry": 82.9552,
-      "exit": 84.614304,
-      "pnl": null,
-      "pnlPercent": 9.999999999999996,
-      "exitTime": "2026-02-16T23:52:11.747Z",
       "status": "CLOSED"
     }
   ],
