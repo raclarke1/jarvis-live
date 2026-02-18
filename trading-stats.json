@@ -9,31 +9,31 @@
     "avgWinUsd": 58.3,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 2021.11,
+    "currentCapital": 1943.09,
     "startingCapital": 1868.46,
     "totalPnlPercent": 3.1202166490050627,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771256900380,
-    "lastUpdated": 1771375826516
+    "lastUpdated": 1771380472828
   },
   {
     "strategy": "IBB",
-    "totalTrades": 8,
+    "totalTrades": 9,
     "winningTrades": 1,
-    "losingTrades": 7,
-    "winRate": 12.5,
+    "losingTrades": 8,
+    "winRate": 11.11111111111111,
     "totalPnlUsd": -10.11,
     "avgWinUsd": 6.37,
-    "avgLossUsd": 2.3542857142857145,
-    "profitFactor": 2.7057038834951452,
-    "currentCapital": 2021.11,
+    "avgLossUsd": 2.06,
+    "profitFactor": 3.092233009708738,
+    "currentCapital": 1943.09,
     "startingCapital": 1868.46,
     "totalPnlPercent": -0.541087312546161,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
-    "firstTradeTime": 1771369358556,
-    "lastUpdated": 1771375826516
+    "firstTradeTime": 1771376516003,
+    "lastUpdated": 1771380472828
   },
   {
     "strategy": "LC",
@@ -45,13 +45,13 @@
     "avgWinUsd": 134.67666666666665,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 2021.11,
+    "currentCapital": 1943.09,
     "startingCapital": 1868.46,
     "totalPnlPercent": 21.62369009772754,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771245295571,
-    "lastUpdated": 1771375826516
+    "lastUpdated": 1771380472828
   },
   {
     "strategy": "MOMENTUM",
@@ -63,30 +63,30 @@
     "avgWinUsd": 0,
     "avgLossUsd": 0,
     "profitFactor": 0,
-    "currentCapital": 2021.11,
+    "currentCapital": 1943.09,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771375826516
+    "lastUpdated": 1771380472828
   },
   {
     "strategy": "VWAP-RSI",
-    "totalTrades": 6,
+    "totalTrades": 7,
     "winningTrades": 4,
-    "losingTrades": 2,
-    "winRate": 66.66666666666666,
+    "losingTrades": 3,
+    "winRate": 57.14285714285714,
     "totalPnlUsd": 80,
     "avgWinUsd": 20,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 2021.11,
+    "currentCapital": 1943.09,
     "startingCapital": 1868.46,
     "totalPnlPercent": 4.281600890572985,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771375826516
+    "lastUpdated": 1771380472828
   }
 ]

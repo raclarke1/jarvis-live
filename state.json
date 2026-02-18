@@ -1,85 +1,194 @@
 {
-  "lastUpdate": "2026-02-18T01:01:56.006Z",
+  "lastUpdate": "2026-02-18T02:07:52.829Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 2021.11,
-    "freeCollateral": 1303.36,
-    "leverage": 2.29,
+    "equity": 1943.09,
+    "freeCollateral": 1229.6,
+    "leverage": 2.39,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
     {
-      "asset": "W",
-      "exchange": "Drift",
-      "strategy": "IBB",
+      "exchange": "drift",
+      "symbol": "W",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.020698,
-      "currentPrice": 0.020698,
-      "stopLoss": 0.0211093,
-      "takeProfit": 0.020149600000000004,
-      "positionSize": 375,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-17T06:01:53.145Z"
+      "strategy": "IBB",
+      "entry": 0.0206,
+      "current": 0.0205,
+      "size": 1860.14,
+      "sizeUnits": 90575,
+      "pnl": 5.71,
+      "pnlPercent": 0.31
     },
     {
-      "asset": "WIF",
-      "exchange": "Drift",
-      "strategy": "IBB",
+      "exchange": "drift",
+      "symbol": "INJ",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.230227,
-      "currentPrice": 0.230227,
-      "stopLoss": 0.23299209999999998,
-      "takeProfit": 0.2265402,
-      "positionSize": 375,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-17T23:01:55.732Z"
+      "strategy": "V5.0",
+      "entry": 8.798,
+      "current": 8.8217,
+      "size": 935.1,
+      "sizeUnits": 106,
+      "pnl": 0,
+      "pnlPercent": 0
     },
     {
-      "asset": "XRP",
-      "exchange": "Drift",
-      "strategy": "IBB",
+      "exchange": "drift",
+      "symbol": "DOGE",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 1.469826,
-      "currentPrice": 1.469826,
-      "stopLoss": 1.4821371,
-      "takeProfit": 1.4534112,
-      "positionSize": 375,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-18T01:01:56.000Z"
+      "strategy": "LC",
+      "entry": 0.1004,
+      "current": 0.1002,
+      "size": 1869.53,
+      "sizeUnits": 18652,
+      "pnl": 2.39,
+      "pnlPercent": 0.13
+    },
+    {
+      "exchange": "drift",
+      "symbol": "WIF",
+      "direction": "SHORT",
+      "strategy": "IBB",
+      "entry": 0.2302,
+      "current": 0.2285,
+      "size": 14.62,
+      "sizeUnits": 64,
+      "pnl": 0.11,
+      "pnlPercent": 0.74
     }
   ],
   "stats": {
-    "totalTrades": 32,
+    "totalTrades": 34,
     "wins": 9,
-    "losses": 23,
-    "winRate": 28,
+    "losses": 25,
+    "winRate": 26,
     "totalPnl": 532.22,
-    "avgPnl": 16.631875
+    "avgPnl": 15.653529411764707
   },
   "recentTrades": [
     {
-      "strategy": "IBB",
-      "asset": "XRP",
-      "exchange": "Drift",
+      "id": "RNDR-1771380472824",
+      "symbol": "RNDR",
+      "strategy": "VWAP-RSI",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 1.469826,
-      "entryTime": 1771376516002,
-      "stopLoss": 1.4821371,
-      "takeProfit": 1.4534112,
-      "positionSize": 375,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 1.4704"
+      "entry": 1.4445160000000001,
+      "exit": 1.41562568,
+      "pnl": null,
+      "pnlPercent": 10.000000000000044,
+      "exitTime": "2026-02-18T02:07:52.824Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "XRP-1771380472824",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 1.469826,
+      "exit": 1.4404294800000002,
+      "pnl": null,
+      "pnlPercent": 9.999999999999975,
+      "exitTime": "2026-02-18T02:07:52.824Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "PYTH-1771375826510",
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "LONG",
+      "entry": 0.056666,
+      "exit": 0.05779932,
+      "pnl": null,
+      "pnlPercent": 10.000000000000002,
+      "exitTime": "2026-02-18T00:50:26.511Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RNDR-1771370969382",
+      "symbol": "RNDR",
+      "strategy": "VWAP-RSI",
+      "direction": "SHORT",
+      "entry": 1.450358,
+      "exit": 1.4213508400000001,
+      "pnl": null,
+      "pnlPercent": 9.999999999999972,
+      "exitTime": "2026-02-17T23:29:29.382Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "XRP-1771370969382",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 1.473743,
+      "exit": 1.44426814,
+      "pnl": null,
+      "pnlPercent": 10.000000000000036,
+      "exitTime": "2026-02-17T23:29:29.382Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "LINK-1771366960407",
+      "symbol": "LINK",
+      "strategy": "VWAP-RSI",
+      "direction": "SHORT",
+      "entry": 8.819332,
+      "exit": 8.642945359999999,
+      "pnl": 20,
+      "pnlPercent": 10,
+      "exitTime": "2026-02-17T22:22:40.407Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "TIA-1771366960406",
+      "symbol": "TIA",
+      "strategy": "VWAP-RSI",
+      "direction": "SHORT",
+      "entry": 0.339598,
+      "exit": 0.33280604,
+      "pnl": 20,
+      "pnlPercent": 10,
+      "exitTime": "2026-02-17T22:22:40.407Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "DOT-1771366960406",
+      "symbol": "DOT",
+      "strategy": "VWAP-RSI",
+      "direction": "SHORT",
+      "entry": 0.106569,
+      "exit": 0.10443762,
+      "pnl": 20,
+      "pnlPercent": 10,
+      "exitTime": "2026-02-17T22:22:40.406Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "PYTH-1771366960406",
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "LONG",
+      "entry": 0.05693,
+      "exit": 0.058068600000000005,
+      "pnl": 20,
+      "pnlPercent": 10,
+      "exitTime": "2026-02-17T22:22:40.406Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "WIF-1771366960406",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.232161,
+      "exit": 0.22751778,
+      "pnl": null,
+      "pnlPercent": 10.000000000000007,
+      "exitTime": "2026-02-17T22:22:40.406Z",
+      "status": "CLOSED"
     }
   ],
   "strategies": {
@@ -164,17 +273,6 @@
         "tp": "2.0x ATR",
         "rsi": 3
       }
-    }
-  },
-  "megamax": {
-    "lastCheck": "2026-02-18T01:01:56.006Z",
-    "performance": {
-      "totalTrades": 1,
-      "winningTrades": 0,
-      "losingTrades": 0,
-      "winRate": 0,
-      "totalPnl": 0,
-      "startDate": "2026-02-13"
     }
   }
 }
