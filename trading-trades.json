@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "strategy": "IBB",
+    "asset": "XRP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 1.419,
+    "entryTime": 1771452118154,
+    "stopLoss": 1.4389611,
+    "takeProfit": 1.3923852,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 1.4208"
+  }
+]
