@@ -814,15 +814,43 @@
                 // Stats file optional - compute from trades if missing
             }
             
-            // Fetch trading-trades.json (closed trade history)
+            // Fetch trade history — prefer trade-log.json (source of truth), fall back to trading-trades.json
             let tradeHistoryData = [];
             try {
-                const tradesRes = await fetch(`trading-trades.json?v=${cacheBust}`);
-                if (tradesRes.ok) {
-                    tradeHistoryData = await tradesRes.json();
+                const logRes = await fetch(`trade-log.json?v=${cacheBust}`);
+                if (logRes.ok) {
+                    const logData = await logRes.json();
+                    const allLogTrades = logData.trades || logData;
+                    // Convert trade-log format to dashboard format (only closed trades)
+                    tradeHistoryData = allLogTrades.filter(t => t.status === 'CLOSED').map(t => ({
+                        id: t.id,
+                        asset: t.symbol,
+                        strategy: t.strategy,
+                        direction: t.direction,
+                        status: 'CLOSED',
+                        entryPrice: t.entry?.price,
+                        exitPrice: t.exit?.price,
+                        entryTime: t.entry?.time || t.timestamp,
+                        exitTime: t.exit?.time,
+                        leverage: t.leverage || 5,
+                        positionSize: t.positionSize || 200,
+                        pnl: t.pnl?.netPnl ?? 0,
+                        pnlPercent: t.pnl?.pnlPercent ?? 0,
+                        result: (t.pnl?.netPnl ?? 0) > 0 ? 'WIN' : 'LOSS'
+                    }));
+                    console.log(`Loaded ${tradeHistoryData.length} trades from trade-log.json`);
                 }
             } catch (e) {
-                // Trades file optional
+                console.log('trade-log.json failed, trying trading-trades.json');
+            }
+            // Fallback to trading-trades.json
+            if (tradeHistoryData.length === 0) {
+                try {
+                    const tradesRes = await fetch(`trading-trades.json?v=${cacheBust}`);
+                    if (tradesRes.ok) {
+                        tradeHistoryData = await tradesRes.json();
+                    }
+                } catch (e) { }
             }
             
             // If state.json failed completely, show error
