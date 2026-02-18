@@ -1,16 +1,16 @@
 [
   {
     "strategy": "IBB",
-    "asset": "WIF",
+    "asset": "XRP",
     "exchange": "Drift",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.226835,
-    "entryTime": 1771434115502,
-    "stopLoss": 0.23127740000000002,
-    "takeProfit": 0.2209118,
+    "entryPrice": 1.4569429999999999,
+    "entryTime": 1771437739685,
+    "stopLoss": 1.4804860999999998,
+    "takeProfit": 1.4255522,
     "positionSize": 375,
     "status": "OPEN",
-    "reason": "Inside bar breakout below 0.2282"
+    "reason": "Inside bar breakout below 1.4566"
   }
 ]
