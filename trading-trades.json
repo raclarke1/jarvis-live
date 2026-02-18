@@ -1,16 +1,1 @@
-[
-  {
-    "strategy": "IBB",
-    "asset": "W",
-    "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.019818,
-    "entryTime": 1771444917581,
-    "stopLoss": 0.0202032,
-    "takeProfit": 0.019304399999999996,
-    "positionSize": 375,
-    "status": "OPEN",
-    "reason": "Inside bar breakout below 0.0199"
-  }
-]
+[]
