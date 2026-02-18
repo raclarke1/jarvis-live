@@ -3,6 +3,86 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771452118156-XRP",
+      "timestamp": "2026-02-18T22:01:58.156Z",
+      "timestampMs": 1771452118156,
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.419,
+        "time": "2026-02-18T22:01:58.156Z",
+        "reason": "Inside bar breakout below 1.4208"
+      },
+      "stopLoss": {
+        "price": 1.4389611,
+        "distanceUsd": 0.019961099999999954,
+        "distancePct": 1.4067019027484111
+      },
+      "takeProfit": {
+        "price": 1.3923852,
+        "distanceUsd": 0.02661479999999994,
+        "distancePct": 1.8756025369978815
+      },
+      "riskReward": 1.3333333333333333,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.01330739999999997,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 1.432486,
+        "motherBarLow": 1.420752
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 10,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771444917583-W",
+      "timestamp": "2026-02-18T20:01:57.583Z",
+      "timestampMs": 1771444917583,
+      "symbol": "W",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.019818,
+        "time": "2026-02-18T20:01:57.583Z",
+        "reason": "Inside bar breakout below 0.0199"
+      },
+      "stopLoss": {
+        "price": 0.0202032,
+        "distanceUsd": 0.0003852000000000022,
+        "distancePct": 1.9436875567665872
+      },
+      "takeProfit": {
+        "price": 0.019304399999999996,
+        "distanceUsd": 0.0005136000000000029,
+        "distancePct": 2.591583409022116
+      },
+      "riskReward": 1.3333333333333333,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.00025680000000000077,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.020236,
+        "motherBarLow": 0.01993
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 22,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771437739687-XRP",
       "timestamp": "2026-02-18T18:02:19.687Z",
       "timestampMs": 1771437739687,
@@ -1633,28 +1713,6 @@
       "positionSize": 200
     },
     {
-      "id": "RNDR-1771368332893",
-      "timestamp": "2026-02-17T22:45:32.893Z",
-      "timestampMs": 1771368332893,
-      "symbol": "RNDR",
-      "strategy": "VWAP-RSI",
-      "direction": "short",
-      "status": "OPEN",
-      "entry": {
-        "price": 1.450358,
-        "time": "2026-02-17T22:45:32.893Z",
-        "reason": "RSI(3)=83.7 overbought, price below VWAP (1.4597) & EMA50 (1.4510)"
-      },
-      "stopLoss": {
-        "price": 1.4534243571428571
-      },
-      "takeProfit": {
-        "price": 1.4442252857142859
-      },
-      "leverage": 5,
-      "positionSize": 375
-    },
-    {
       "id": "XRP-1771370969382",
       "symbol": "XRP",
       "strategy": "IBB",
@@ -1700,35 +1758,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 9.999999999999972
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "PYTH-1771375536517",
-      "timestamp": "2026-02-18T00:45:36.517Z",
-      "timestampMs": 1771375536517,
-      "symbol": "PYTH",
-      "strategy": "VWAP-RSI",
-      "direction": "long",
-      "status": "OPEN",
-      "entry": {
-        "price": 0.056666,
-        "time": "2026-02-18T00:45:36.517Z",
-        "reason": "RSI(3)=20.0 oversold, price above VWAP (0.0562) & EMA50 (0.0565)"
-      },
-      "stopLoss": {
-        "price": 0.056506214285714285
-      },
-      "takeProfit": {
-        "price": 0.05698557142857143
-      },
-      "leverage": 5,
-      "positionSize": 375
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "PYTH-1771375826510",
@@ -1749,35 +1785,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000002
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "RNDR-1771379130432",
-      "timestamp": "2026-02-18T01:45:30.432Z",
-      "timestampMs": 1771379130432,
-      "symbol": "RNDR",
-      "strategy": "VWAP-RSI",
-      "direction": "short",
-      "status": "OPEN",
-      "entry": {
-        "price": 1.4445160000000001,
-        "time": "2026-02-18T01:45:30.432Z",
-        "reason": "RSI(3)=81.2 overbought, price below VWAP (1.4597) & EMA50 (1.4468)"
-      },
-      "stopLoss": {
-        "price": 1.4485528571428572
-      },
-      "takeProfit": {
-        "price": 1.4364422857142858
-      },
-      "leverage": 5,
-      "positionSize": 375
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "XRP-1771380472824",
@@ -1825,13 +1839,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000044
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "WIF-1771400891888",
@@ -1888,28 +1902,6 @@
       "botVersion": "MegaMax v1.3"
     },
     {
-      "id": "DOT-1771401330259",
-      "timestamp": "2026-02-18T07:55:30.259Z",
-      "timestampMs": 1771401330259,
-      "symbol": "DOT",
-      "strategy": "VWAP-RSI",
-      "direction": "long",
-      "status": "OPEN",
-      "entry": {
-        "price": 0.110862,
-        "time": "2026-02-18T07:55:30.259Z",
-        "reason": "RSI(3)=21.7 oversold, price above VWAP (0.1092) & EMA50 (0.1101)"
-      },
-      "stopLoss": {
-        "price": 0.110478
-      },
-      "takeProfit": {
-        "price": 0.11163000000000001
-      },
-      "leverage": 5,
-      "positionSize": 375
-    },
-    {
       "id": "INJ-1771415136923",
       "timestamp": "2026-02-18T11:45:36.923Z",
       "timestampMs": 1771415136923,
@@ -1936,10 +1928,10 @@
         "reason": "Stop Loss"
       },
       "pnl": {
-        "grossPnl": -3437.67,
-        "fees": 3.44,
-        "netPnl": -3441.11,
-        "pnlPercent": -916.71
+        "netPnl": 0,
+        "pnlPercent": 0,
+        "grossPnl": 0,
+        "note": "invalid exit price - zeroed"
       }
     },
     {
@@ -1988,13 +1980,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 9.999999999999979
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "INJ-1771415291935",
@@ -2015,35 +2007,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000036
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "LINK-1771419331583",
-      "timestamp": "2026-02-18T12:55:31.583Z",
-      "timestampMs": 1771419331583,
-      "symbol": "LINK",
-      "strategy": "VWAP-RSI",
-      "direction": "short",
-      "status": "OPEN",
-      "entry": {
-        "price": 8.791109,
-        "time": "2026-02-18T12:55:31.583Z",
-        "reason": "RSI(3)=81.9 overbought, price below VWAP (8.8327) & EMA50 (8.8179)"
-      },
-      "stopLoss": {
-        "price": 8.811498142857143
-      },
-      "takeProfit": {
-        "price": 8.750330714285715
-      },
-      "leverage": 5,
-      "positionSize": 375
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "LINK-1771420213045",
@@ -2064,13 +2034,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000046
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "WIF-1771422612379",
@@ -2125,28 +2095,6 @@
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "LINK-1771434333910",
-      "timestamp": "2026-02-18T17:05:33.910Z",
-      "timestampMs": 1771434333910,
-      "symbol": "LINK",
-      "strategy": "VWAP-RSI",
-      "direction": "short",
-      "status": "OPEN",
-      "entry": {
-        "price": 8.751598,
-        "time": "2026-02-18T17:05:33.910Z",
-        "reason": "RSI(3)=78.4 overbought, price below VWAP (8.7834) & EMA50 (8.7530)"
-      },
-      "stopLoss": {
-        "price": 8.777822642857142
-      },
-      "takeProfit": {
-        "price": 8.699148714285714
-      },
-      "leverage": 5,
-      "positionSize": 375
     },
     {
       "id": "W-1771438933465",
@@ -2221,13 +2169,13 @@
         "reason": "Position closed"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000004
+        "netPnl": 20,
+        "pnlPercent": 10,
+        "grossPnl": 20
       },
       "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
+      "botVersion": "MegaMax v1.3",
+      "positionSize": 200
     },
     {
       "id": "WIF-1771443371876",
@@ -2252,6 +2200,180 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.00000000000001
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "RNDR-1771445132306",
+      "timestamp": "2026-02-18T20:05:32.306Z",
+      "timestampMs": 1771445132306,
+      "symbol": "RNDR",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.415838,
+        "time": "2026-02-18T20:05:32.306Z",
+        "reason": "RSI(3)=76.0 overbought, price below VWAP (1.4529) & EMA50 (1.4321)"
+      },
+      "stopLoss": {
+        "price": 1.4230139285714285
+      },
+      "takeProfit": {
+        "price": 1.4014861428571428
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "LINK-1771446932560",
+      "timestamp": "2026-02-18T20:35:32.560Z",
+      "timestampMs": 1771446932560,
+      "symbol": "LINK",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 8.587891,
+        "time": "2026-02-18T20:35:32.560Z",
+        "reason": "RSI(3)=89.1 overbought, price below VWAP (8.7859) & EMA50 (8.6386)"
+      },
+      "stopLoss": {
+        "price": 8.613376714285716
+      },
+      "takeProfit": {
+        "price": 8.536919571428573
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "INJ-1771446959671",
+      "timestamp": "2026-02-18T20:35:59.671Z",
+      "timestampMs": 1771446959671,
+      "symbol": "INJ",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 2.995324,
+        "time": "2026-02-18T20:35:59.671Z",
+        "reason": "RSI(3)=86.7 overbought, price below VWAP (3.0932) & EMA50 (3.0218)"
+      },
+      "stopLoss": {
+        "price": 3.005362642857143
+      },
+      "takeProfit": {
+        "price": 2.9752467142857144
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "XRP-1771452478598",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 1.419,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 1.39062,
+        "time": "2026-02-18T22:07:58.598Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000025
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "RNDR-1771452478598",
+      "symbol": "RNDR",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 1.415838,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 1.3875212399999999,
+        "time": "2026-02-18T22:07:58.598Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.00000000000002
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "LINK-1771452478598",
+      "symbol": "LINK",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 8.587891,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 8.416133180000001,
+        "time": "2026-02-18T22:07:58.598Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 9.99999999999999
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "INJ-1771452478598",
+      "symbol": "INJ",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 2.995324,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 2.93541752,
+        "time": "2026-02-18T22:07:58.598Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 9.999999999999996
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
