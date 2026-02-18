@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-18T13:11:05.962Z",
+  "lastUpdate": "2026-02-18T13:50:12.385Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 1919.78,
-    "freeCollateral": 1101.86,
-    "leverage": 2.89,
+    "equity": 1968.71,
+    "freeCollateral": 1321.09,
+    "leverage": 1.86,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -18,23 +18,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.0206,
-      "current": 0.0205,
-      "size": 1858.78,
+      "current": 0.0203,
+      "size": 1835.86,
       "sizeUnits": 90575,
-      "pnl": 7.06,
-      "pnlPercent": 0.38
-    },
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2303,
-      "current": 0.2286,
-      "size": 1860.89,
-      "sizeUnits": 8142,
-      "pnl": 14.22,
-      "pnlPercent": 0.76
+      "pnl": 29.98,
+      "pnlPercent": 1.61
     },
     {
       "exchange": "drift",
@@ -42,22 +30,34 @@
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 0.1004,
-      "current": 0.1003,
-      "size": 1869.97,
+      "current": 0.0996,
+      "size": 1858,
       "sizeUnits": 18652,
-      "pnl": 1.94,
-      "pnlPercent": 0.1
+      "pnl": 13.91,
+      "pnlPercent": 0.74
     }
   ],
   "stats": {
-    "totalTrades": 42,
-    "wins": 9,
-    "losses": 33,
-    "winRate": 21,
-    "totalPnl": -2924.9700000000003,
-    "avgPnl": -69.64214285714286
+    "totalTrades": 44,
+    "wins": 10,
+    "losses": 34,
+    "winRate": 23,
+    "totalPnl": -2897.26,
+    "avgPnl": -65.8468181818182
   },
   "recentTrades": [
+    {
+      "id": "WIF-1771422612379",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.230205,
+      "exit": 0.2256009,
+      "pnl": null,
+      "pnlPercent": 10,
+      "exitTime": "2026-02-18T13:50:12.379Z",
+      "status": "CLOSED"
+    },
     {
       "id": "LINK-1771420213045",
       "symbol": "LINK",
@@ -165,18 +165,6 @@
       "pnl": null,
       "pnlPercent": 9.999999999999975,
       "exitTime": "2026-02-18T02:07:52.824Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PYTH-1771375826510",
-      "symbol": "PYTH",
-      "strategy": "VWAP-RSI",
-      "direction": "LONG",
-      "entry": 0.056666,
-      "exit": 0.05779932,
-      "pnl": null,
-      "pnlPercent": 10.000000000000002,
-      "exitTime": "2026-02-18T00:50:26.511Z",
       "status": "CLOSED"
     }
   ],
