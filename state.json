@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-18T23:06:12.450Z",
+  "lastUpdate": "2026-02-18T23:54:11.898Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 1957.59,
-    "freeCollateral": 1134.79,
-    "leverage": 2.82,
+    "equity": 1926.74,
+    "freeCollateral": 1114.65,
+    "leverage": 2.87,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -19,10 +19,10 @@
       "strategy": "IBB",
       "entry": 0.0198,
       "current": 0.0197,
-      "size": 1861.08,
+      "size": 1865.81,
       "sizeUnits": 94615,
-      "pnl": 12.3,
-      "pnlPercent": 0.66
+      "pnl": 7.57,
+      "pnlPercent": 0.4
     },
     {
       "exchange": "drift",
@@ -30,11 +30,11 @@
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 0.1004,
-      "current": 0.0983,
-      "size": 1832.86,
+      "current": 0.0985,
+      "size": 1838.02,
       "sizeUnits": 18652,
-      "pnl": 39.06,
-      "pnlPercent": 2.09
+      "pnl": 33.89,
+      "pnlPercent": 1.81
     },
     {
       "exchange": "drift",
@@ -42,22 +42,47 @@
       "direction": "SHORT",
       "strategy": "VWAP-RSI",
       "entry": 0.2966,
-      "current": 0.3016,
-      "size": 1875.91,
+      "current": 0.3018,
+      "size": 1877.34,
       "sizeUnits": 6220,
       "pnl": 0,
       "pnlPercent": 0
     }
   ],
   "stats": {
-    "totalTrades": 59,
+    "totalTrades": 61,
     "wins": 20,
-    "losses": 39,
-    "winRate": 34,
-    "totalPnl": 764.88,
-    "avgPnl": 12.96406779661017
+    "losses": 41,
+    "winRate": 33,
+    "totalPnl": 764.35,
+    "avgPnl": 12.53032786885246
   },
   "recentTrades": [
+    {
+      "id": "PEPE-1771458851891",
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "SHORT",
+      "entry": 4.2236,
+      "exit": 4.139128,
+      "pnl": null,
+      "pnlPercent": 9.999999999999984,
+      "exitTime": "2026-02-18T23:54:11.891Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "PEPE-1771458338798",
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "SHORT",
+      "entry": 4.2236,
+      "exit": 4.2248,
+      "pnl": -0.53,
+      "pnlPercent": -0.14,
+      "entryTime": "2026-02-18T23:45:38.798Z",
+      "exitTime": "2026-02-18T23:54:00.805Z",
+      "status": "CLOSED"
+    },
     {
       "id": "PEPE-1771455972444",
       "symbol": "PEPE",
@@ -153,30 +178,6 @@
       "pnl": null,
       "pnlPercent": 10.00000000000001,
       "exitTime": "2026-02-18T19:36:11.876Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "LINK-1771438933465",
-      "symbol": "LINK",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 8.751598,
-      "exit": 8.57656604,
-      "pnl": 20,
-      "pnlPercent": 10,
-      "exitTime": "2026-02-18T18:22:13.465Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "XRP-1771438933465",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "entry": 1.4569429999999999,
-      "exit": 1.4278041399999999,
-      "pnl": null,
-      "pnlPercent": 9.999999999999996,
-      "exitTime": "2026-02-18T18:22:13.465Z",
       "status": "CLOSED"
     }
   ],
