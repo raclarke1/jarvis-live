@@ -9,13 +9,13 @@
     "avgWinUsd": 58.3,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 1875.17,
+    "currentCapital": 1924.43,
     "startingCapital": 1868.46,
     "totalPnlPercent": 3.1202166490050627,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771256900380,
-    "lastUpdated": 1771415291940
+    "lastUpdated": 1771420213050
   },
   {
     "strategy": "IBB",
@@ -27,13 +27,13 @@
     "avgWinUsd": 6.37,
     "avgLossUsd": 2.7133333333333334,
     "profitFactor": 2.347665847665848,
-    "currentCapital": 1875.17,
+    "currentCapital": 1924.43,
     "startingCapital": 1868.46,
     "totalPnlPercent": -1.4016890915513311,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
-    "firstTradeTime": 1771412512908,
-    "lastUpdated": 1771415291940
+    "firstTradeTime": 1771416112545,
+    "lastUpdated": 1771420213050
   },
   {
     "strategy": "LC",
@@ -45,13 +45,13 @@
     "avgWinUsd": 134.67666666666665,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 1875.17,
+    "currentCapital": 1924.43,
     "startingCapital": 1868.46,
     "totalPnlPercent": 21.62369009772754,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771245295571,
-    "lastUpdated": 1771415291940
+    "lastUpdated": 1771420213050
   },
   {
     "strategy": "MOMENTUM",
@@ -63,30 +63,30 @@
     "avgWinUsd": 0,
     "avgLossUsd": 0,
     "profitFactor": 0,
-    "currentCapital": 1875.17,
+    "currentCapital": 1924.43,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771415291940
+    "lastUpdated": 1771420213050
   },
   {
     "strategy": "VWAP-RSI",
-    "totalTrades": 10,
+    "totalTrades": 11,
     "winningTrades": 4,
-    "losingTrades": 6,
-    "winRate": 40,
+    "losingTrades": 7,
+    "winRate": 36.36363636363637,
     "totalPnlUsd": -3361.11,
     "avgWinUsd": 20,
-    "avgLossUsd": 573.5183333333333,
-    "profitFactor": 0.03487246847674152,
-    "currentCapital": 1875.17,
+    "avgLossUsd": 491.58714285714285,
+    "profitFactor": 0.040684546556198437,
+    "currentCapital": 1924.43,
     "startingCapital": 1868.46,
     "totalPnlPercent": -179.88664461642207,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771415291940
+    "lastUpdated": 1771420213050
   }
 ]
