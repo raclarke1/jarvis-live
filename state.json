@@ -1,51 +1,51 @@
 {
-  "lastUpdate": "2026-02-18T18:22:13.469Z",
+  "lastUpdate": "2026-02-18T19:36:11.883Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 1965.64,
-    "freeCollateral": 1497.13,
-    "leverage": 1.86,
+    "equity": 2002.23,
+    "freeCollateral": 1747.56,
+    "leverage": 0.91,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
     {
       "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2273,
-      "current": 0.2237,
-      "size": 1847.01,
-      "sizeUnits": 8255,
-      "pnl": 29.35,
-      "pnlPercent": 1.56
-    },
-    {
-      "exchange": "drift",
       "symbol": "DOGE",
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 0.1004,
-      "current": 0.0989,
-      "size": 1844.78,
+      "current": 0.098,
+      "size": 1828.62,
       "sizeUnits": 18652,
-      "pnl": 27.14,
-      "pnlPercent": 1.45
+      "pnl": 43.29,
+      "pnlPercent": 2.31
     }
   ],
   "stats": {
-    "totalTrades": 50,
-    "wins": 11,
-    "losses": 39,
-    "winRate": 22,
-    "totalPnl": -2863.44,
-    "avgPnl": -57.2688
+    "totalTrades": 52,
+    "wins": 12,
+    "losses": 40,
+    "winRate": 23,
+    "totalPnl": -2825.17,
+    "avgPnl": -54.33019230769231
   },
   "recentTrades": [
+    {
+      "id": "WIF-1771443371876",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.226835,
+      "exit": 0.2222983,
+      "pnl": null,
+      "pnlPercent": 10.00000000000001,
+      "exitTime": "2026-02-18T19:36:11.876Z",
+      "status": "CLOSED"
+    },
     {
       "id": "LINK-1771438933465",
       "symbol": "LINK",
@@ -152,19 +152,6 @@
       "pnl": null,
       "pnlPercent": 9.999999999999993,
       "exitTime": "2026-02-18T11:48:11.935Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "INJ-1771415136923",
-      "symbol": "INJ",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 3.105996,
-      "exit": 8.8006,
-      "pnl": -3441.11,
-      "pnlPercent": -916.71,
-      "entryTime": "2026-02-18T11:45:36.923Z",
-      "exitTime": "2026-02-18T11:48:00.820Z",
       "status": "CLOSED"
     }
   ],
