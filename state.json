@@ -1,51 +1,51 @@
 {
-  "lastUpdate": "2026-02-19T18:50:55.842Z",
+  "lastUpdate": "2026-02-19T22:12:12.920Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 1817.86,
-    "freeCollateral": 1241.12,
-    "leverage": 2.06,
+    "equity": 1784.52,
+    "freeCollateral": 1598.37,
+    "leverage": 1.05,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
     {
       "exchange": "drift",
-      "symbol": "W",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.019,
-      "current": 0.0193,
-      "size": 1888.12,
-      "sizeUnits": 98069,
-      "pnl": 0,
-      "pnlPercent": 0
-    },
-    {
-      "exchange": "drift",
       "symbol": "WIF",
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2144,
-      "current": 0.2161,
-      "size": 1887.55,
+      "current": 0.2168,
+      "size": 1893.54,
       "sizeUnits": 8735,
       "pnl": 0,
       "pnlPercent": 0
     }
   ],
   "stats": {
-    "totalTrades": 79,
+    "totalTrades": 81,
     "wins": 66,
-    "losses": 13,
-    "winRate": 84,
-    "totalPnl": 2270.6400000000003,
-    "avgPnl": 28.74227848101266
+    "losses": 15,
+    "winRate": 81,
+    "totalPnl": 2252.5699999999997,
+    "avgPnl": 27.8095061728395
   },
   "recentTrades": [
+    {
+      "id": "W-1771539132911",
+      "symbol": "W",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.019116,
+      "exit": 0.01873368,
+      "pnl": null,
+      "pnlPercent": 10.000000000000052,
+      "exitTime": "2026-02-19T22:12:12.911Z",
+      "status": "CLOSED"
+    },
     {
       "id": "DOT-1771517172579",
       "symbol": "DOT",
@@ -152,18 +152,6 @@
       "pnl": 37.5,
       "pnlPercent": 10,
       "exitTime": "2026-02-19T10:06:14.106Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "DOT-1771493413219",
-      "symbol": "DOT",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 0.106488,
-      "exit": 0.10435823999999999,
-      "pnl": 37.5,
-      "pnlPercent": 10,
-      "exitTime": "2026-02-19T09:30:13.219Z",
       "status": "CLOSED"
     }
   ],
