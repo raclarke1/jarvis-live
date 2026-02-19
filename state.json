@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-19T17:20:13.822Z",
+  "lastUpdate": "2026-02-19T18:50:55.842Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 1778.27,
-    "freeCollateral": 1231.63,
-    "leverage": 2.08,
+    "equity": 1817.86,
+    "freeCollateral": 1241.12,
+    "leverage": 2.06,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -19,7 +19,7 @@
       "strategy": "IBB",
       "entry": 0.019,
       "current": 0.0193,
-      "size": 1892.83,
+      "size": 1888.12,
       "sizeUnits": 98069,
       "pnl": 0,
       "pnlPercent": 0
@@ -30,8 +30,8 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2144,
-      "current": 0.2173,
-      "size": 1898.36,
+      "current": 0.2161,
+      "size": 1887.55,
       "sizeUnits": 8735,
       "pnl": 0,
       "pnlPercent": 0
@@ -39,11 +39,11 @@
   ],
   "stats": {
     "totalTrades": 79,
-    "wins": 23,
-    "losses": 56,
-    "winRate": 29,
-    "totalPnl": 734.14,
-    "avgPnl": 9.292911392405063
+    "wins": 66,
+    "losses": 13,
+    "winRate": 84,
+    "totalPnl": 2270.6400000000003,
+    "avgPnl": 28.74227848101266
   },
   "recentTrades": [
     {
@@ -53,7 +53,7 @@
       "direction": "SHORT",
       "entry": 0.10463,
       "exit": 0.1025374,
-      "pnl": null,
+      "pnl": 37.5,
       "pnlPercent": 10,
       "exitTime": "2026-02-19T16:06:12.579Z",
       "status": "CLOSED"
@@ -65,8 +65,8 @@
       "direction": "SHORT",
       "entry": 1.384483,
       "exit": 1.3567933399999998,
-      "pnl": null,
-      "pnlPercent": 10.000000000000021,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T16:06:12.579Z",
       "status": "CLOSED"
     },
@@ -77,8 +77,8 @@
       "direction": "SHORT",
       "entry": 1.394015,
       "exit": 1.3661347,
-      "pnl": null,
-      "pnlPercent": 10.000000000000028,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T16:06:12.579Z",
       "status": "CLOSED"
     },
@@ -89,8 +89,8 @@
       "direction": "SHORT",
       "entry": 0.218707,
       "exit": 0.21433286000000001,
-      "pnl": null,
-      "pnlPercent": 9.999999999999996,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T13:42:11.910Z",
       "status": "CLOSED"
     },
@@ -101,8 +101,8 @@
       "direction": "SHORT",
       "entry": 8.601881,
       "exit": 8.429843380000001,
-      "pnl": null,
-      "pnlPercent": 9.999999999999961,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T12:22:14.500Z",
       "status": "CLOSED"
     },
@@ -113,8 +113,8 @@
       "direction": "SHORT",
       "entry": 0.052964,
       "exit": 0.051904719999999994,
-      "pnl": null,
-      "pnlPercent": 10.000000000000027,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T12:22:14.500Z",
       "status": "CLOSED"
     },
@@ -125,8 +125,8 @@
       "direction": "SHORT",
       "entry": 1.409765,
       "exit": 1.3815697,
-      "pnl": null,
-      "pnlPercent": 9.999999999999972,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T12:22:14.500Z",
       "status": "CLOSED"
     },
@@ -137,8 +137,8 @@
       "direction": "SHORT",
       "entry": 0.019818,
       "exit": 0.019421639999999997,
-      "pnl": null,
-      "pnlPercent": 10.000000000000046,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T12:22:14.500Z",
       "status": "CLOSED"
     },
@@ -149,8 +149,8 @@
       "direction": "SHORT",
       "entry": 0.221504,
       "exit": 0.21707392,
-      "pnl": null,
-      "pnlPercent": 10.000000000000004,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T10:06:14.106Z",
       "status": "CLOSED"
     },
@@ -161,8 +161,8 @@
       "direction": "SHORT",
       "entry": 0.106488,
       "exit": 0.10435823999999999,
-      "pnl": null,
-      "pnlPercent": 10.000000000000037,
+      "pnl": 37.5,
+      "pnlPercent": 10,
       "exitTime": "2026-02-19T09:30:13.219Z",
       "status": "CLOSED"
     }
