@@ -2546,6 +2546,77 @@
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "JTO-1771473940058",
+      "timestamp": "2026-02-19T04:05:40.058Z",
+      "timestampMs": 1771473940058,
+      "symbol": "JTO",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.288488,
+        "time": "2026-02-19T04:05:40.058Z",
+        "reason": "RSI(3)=86.6 overbought, price below VWAP (0.3122) & EMA50 (0.2902)"
+      },
+      "stopLoss": {
+        "price": 0.2892986428571429
+      },
+      "takeProfit": {
+        "price": 0.2868667142857143
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "TCJR5M-OSZOL-RJ2TTE",
+      "symbol": "OP",
+      "strategy": "LC",
+      "direction": "long",
+      "status": "CLOSED",
+      "leverage": 3,
+      "exchange": "Kraken",
+      "entry": {
+        "price": 0.1894
+      },
+      "exit": {
+        "price": 0.1717,
+        "time": "2026-02-18T22:00:01.191Z"
+      },
+      "positionSize": 1246.15,
+      "pnl": {
+        "netPnl": -116.71,
+        "pnlPercent": -9.37,
+        "grossPnl": -116.71
+      }
+    },
+    {
+      "id": "JTO-1771475408320",
+      "symbol": "JTO",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.288488,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.28271824,
+        "time": "2026-02-19T04:30:08.320Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.00000000000002
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
     }
   ]
 }
