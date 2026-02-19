@@ -3,6 +3,46 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771491713386-XRP",
+      "timestamp": "2026-02-19T09:01:53.386Z",
+      "timestampMs": 1771491713386,
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.416684,
+        "time": "2026-02-19T09:01:53.386Z",
+        "reason": "Inside bar breakout below 1.4222"
+      },
+      "stopLoss": {
+        "price": 1.4364168000000002,
+        "distanceUsd": 0.019732800000000106,
+        "distancePct": 1.3928864870359308
+      },
+      "takeProfit": {
+        "price": 1.3903736,
+        "distanceUsd": 0.026310400000000067,
+        "distancePct": 1.8571819827145692
+      },
+      "riskReward": 1.3333333333333295,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.013155200000000056,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 1.437219,
+        "motherBarLow": 1.422159
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 10,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771480915542-WIF",
       "timestamp": "2026-02-19T06:01:55.542Z",
       "timestampMs": 1771480915542,
@@ -2721,6 +2761,131 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 9.999999999999993
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "INJ-1771490735288",
+      "timestamp": "2026-02-19T08:45:35.290Z",
+      "timestampMs": 1771490735290,
+      "symbol": "INJ",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 3.290141,
+        "time": "2026-02-19T08:45:35.290Z",
+        "reason": "RSI(3)=80.7 overbought, price below VWAP (3.3949) & EMA50 (3.3098)"
+      },
+      "stopLoss": {
+        "price": 3.3246398571428575
+      },
+      "takeProfit": {
+        "price": 3.221143285714286
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "DOT-1771492531316",
+      "timestamp": "2026-02-19T09:15:31.318Z",
+      "timestampMs": 1771492531318,
+      "symbol": "DOT",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.106488,
+        "time": "2026-02-19T09:15:31.318Z",
+        "reason": "RSI(3)=93.0 overbought, price below VWAP (0.1088) & EMA50 (0.1068)"
+      },
+      "stopLoss": {
+        "price": 0.10668714285714286
+      },
+      "takeProfit": {
+        "price": 0.10608971428571429
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "XRP-1771493413219",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 1.416684,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 1.38835032,
+        "time": "2026-02-19T09:30:13.219Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000009
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "INJ-1771493413219",
+      "symbol": "INJ",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 3.290141,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 3.22433818,
+        "time": "2026-02-19T09:30:13.219Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000004
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "DOT-1771493413219",
+      "symbol": "DOT",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.106488,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.10435823999999999,
+        "time": "2026-02-19T09:30:13.219Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000037
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
