@@ -3,6 +3,55 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771506113175-WIF",
+      "timestamp": "2026-02-19T13:01:53.175Z",
+      "timestampMs": 1771506113175,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.218707,
+        "time": "2026-02-19T13:01:53.175Z",
+        "reason": "Inside bar breakout below 0.2192"
+      },
+      "stopLoss": {
+        "price": 0.2204653,
+        "distanceUsd": 0.0017582999999999904,
+        "distancePct": 0.8039523197702819
+      },
+      "takeProfit": {
+        "price": 0.21636260000000002,
+        "distanceUsd": 0.0023443999999999965,
+        "distancePct": 1.0719364263603801
+      },
+      "riskReward": 1.3333333333333386,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.0011721999999999954,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.220141,
+        "motherBarLow": 0.219195
+      },
+      "exit": {
+        "price": 0.2165,
+        "time": "2026-02-19T13:42:00.838Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": 18.92,
+        "fees": 0.02,
+        "netPnl": 18.9,
+        "pnlPercent": 5.05
+      },
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771498913082-XRP",
       "timestamp": "2026-02-19T11:01:53.082Z",
       "timestampMs": 1771498913082,
@@ -3123,6 +3172,33 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 9.999999999999961
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "WIF-1771508531910",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.218707,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.21433286000000001,
+        "time": "2026-02-19T13:42:11.910Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 9.999999999999996
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
