@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-19T06:22:13.940Z",
+  "lastUpdate": "2026-02-19T08:01:38.113Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -13,52 +13,60 @@
   },
   "openPositions": [
     {
-      "exchange": "drift",
-      "symbol": "W",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.0198,
-      "current": 0.0199,
-      "size": 1883.22,
-      "sizeUnits": 94615,
-      "pnl": 0,
-      "pnlPercent": 0
+      "id": "TCY5G4-FCXKR-3IRHZW",
+      "asset": "ARB",
+      "exchange": "Kraken",
+      "strategy": "UNKNOWN",
+      "direction": "LONG",
+      "entryPrice": 0.11459883866259134,
+      "entryTime": null,
+      "positionSize": 832.59836255,
+      "volume": 21795.98953,
+      "leverage": 3,
+      "currentPnl": null,
+      "status": "OPEN"
     },
     {
-      "exchange": "drift",
-      "symbol": "DOGE",
-      "direction": "SHORT",
-      "strategy": "LC",
-      "entry": 0.1004,
-      "current": 0.0984,
-      "size": 1835.28,
-      "sizeUnits": 18652,
-      "pnl": 36.63,
-      "pnlPercent": 1.96
+      "id": "TI3X3P-Q72CX-AY57OL",
+      "asset": "NEAR",
+      "exchange": "Kraken",
+      "strategy": "UNKNOWN",
+      "direction": "LONG",
+      "entryPrice": 1.0515254932974638,
+      "entryTime": null,
+      "positionSize": 832.95746,
+      "volume": 2376.42585551,
+      "leverage": 3,
+      "currentPnl": null,
+      "status": "OPEN"
     },
     {
-      "exchange": "drift",
-      "symbol": "WIF",
+      "id": "TFCAFW-UGGYH-SI2DYA",
+      "asset": "DOT",
+      "exchange": "Kraken",
+      "strategy": "UNKNOWN",
       "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2213,
-      "current": 0.2231,
-      "size": 1888.54,
-      "sizeUnits": 8464,
-      "pnl": 0,
-      "pnlPercent": 0
+      "entryPrice": 1.3691765271981926,
+      "entryTime": null,
+      "positionSize": 498.24473,
+      "volume": 1091.70305677,
+      "leverage": 3,
+      "currentPnl": null,
+      "status": "OPEN"
     },
     {
-      "exchange": "drift",
-      "symbol": "TIA",
+      "id": "TAHTC4-HQEOW-GDNOSQ",
+      "asset": "ATOM",
+      "exchange": "Kraken",
+      "strategy": "UNKNOWN",
       "direction": "SHORT",
-      "strategy": "VWAP-RSI",
-      "entry": 0.2966,
-      "current": 0.2896,
-      "size": 1801.24,
-      "sizeUnits": 6220,
-      "pnl": 43.61,
-      "pnlPercent": 2.36
+      "entryPrice": 2.3001004388780038,
+      "entryTime": null,
+      "positionSize": 748.308389,
+      "volume": 650.6745326,
+      "leverage": 3,
+      "currentPnl": null,
+      "status": "OPEN"
     }
   ],
   "stats": {
@@ -71,126 +79,22 @@
   },
   "recentTrades": [
     {
-      "id": "XRP-1771482133936",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "entry": 1.417026,
-      "exit": 1.38868548,
-      "pnl": null,
-      "pnlPercent": 9.999999999999993,
-      "exitTime": "2026-02-19T06:22:13.936Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "JTO-1771475408320",
-      "symbol": "JTO",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 0.288488,
-      "exit": 0.28271824,
-      "pnl": null,
-      "pnlPercent": 10.00000000000002,
-      "exitTime": "2026-02-19T04:30:08.320Z",
-      "status": "CLOSED"
-    },
-    {
       "id": "TCJR5M-OSZOL-RJ2TTE",
-      "symbol": "OP",
-      "strategy": "LC",
+      "asset": "OP",
+      "exchange": "Kraken",
+      "strategy": "UNKNOWN",
       "direction": "LONG",
-      "entry": 0.1894,
-      "exit": 0.1717,
-      "pnl": -116.71,
-      "pnlPercent": -9.37,
-      "exitTime": "2026-02-18T22:00:01.191Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771458851891",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2236,
-      "exit": 4.139128,
-      "pnl": null,
-      "pnlPercent": 9.999999999999984,
-      "exitTime": "2026-02-18T23:54:11.891Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771458338798",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2236,
-      "exit": 4.2248,
-      "pnl": -0.53,
-      "pnlPercent": -0.14,
-      "entryTime": "2026-02-18T23:45:38.798Z",
-      "exitTime": "2026-02-18T23:54:00.805Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771455972444",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2343,
-      "exit": 4.149614,
-      "pnl": null,
-      "pnlPercent": 10.000000000000057,
-      "exitTime": "2026-02-18T23:06:12.444Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "RNDR-1771455972444",
-      "symbol": "RNDR",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 1.412231,
-      "exit": 1.38398638,
-      "pnl": null,
-      "pnlPercent": 9.999999999999979,
-      "exitTime": "2026-02-18T23:06:12.444Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771455340694",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2343,
-      "exit": 4.2141,
-      "pnl": 8.94,
-      "pnlPercent": 2.39,
-      "entryTime": "2026-02-18T22:55:40.694Z",
-      "exitTime": "2026-02-18T23:06:00.714Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "INJ-1771452478598",
-      "symbol": "INJ",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 2.995324,
-      "exit": 2.93541752,
-      "pnl": null,
-      "pnlPercent": 9.999999999999996,
-      "exitTime": "2026-02-18T22:07:58.598Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "LINK-1771452478598",
-      "symbol": "LINK",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 8.587891,
-      "exit": 8.416133180000001,
-      "pnl": null,
-      "pnlPercent": 9.99999999999999,
-      "exitTime": "2026-02-18T22:07:58.598Z",
-      "status": "CLOSED"
+      "entryPrice": 0.18941418722886058,
+      "entryTime": null,
+      "positionSize": 1246.14596891,
+      "volume": 13157.89474,
+      "leverage": 3,
+      "currentPnl": null,
+      "status": "CLOSED",
+      "exitTime": 1771451696215.026,
+      "pnlUsd": -116.70746641,
+      "pnlPercent": -9.365473172623883,
+      "closedAt": "2026-02-18T22:00:01.191Z"
     }
   ],
   "strategies": {
@@ -275,6 +179,17 @@
         "tp": "2.0x ATR",
         "rsi": 3
       }
+    }
+  },
+  "megamax": {
+    "lastCheck": "2026-02-19T08:01:38.113Z",
+    "performance": {
+      "totalTrades": 1,
+      "winningTrades": 0,
+      "losingTrades": 0,
+      "winRate": 0,
+      "totalPnl": 0,
+      "startDate": "2026-02-13"
     }
   }
 }
