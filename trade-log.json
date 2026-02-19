@@ -3,6 +3,46 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771520516494-WIF",
+      "timestamp": "2026-02-19T17:01:56.494Z",
+      "timestampMs": 1771520516494,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.21463,
+        "time": "2026-02-19T17:01:56.494Z",
+        "reason": "Inside bar breakout below 0.2156"
+      },
+      "stopLoss": {
+        "price": 0.218647,
+        "distanceUsd": 0.0040170000000000206,
+        "distancePct": 1.8715929739551884
+      },
+      "takeProfit": {
+        "price": 0.20927399999999996,
+        "distanceUsd": 0.005356000000000027,
+        "distancePct": 2.495457298606918
+      },
+      "riskReward": 1.3333333333333333,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.002678000000000008,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.2195,
+        "motherBarLow": 0.21559
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771509754027-XRP",
       "timestamp": "2026-02-19T14:02:34.027Z",
       "timestampMs": 1771509754027,
