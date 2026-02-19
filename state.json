@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-19T10:06:14.113Z",
+  "lastUpdate": "2026-02-19T11:01:53.088Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -13,28 +13,34 @@
   },
   "openPositions": [
     {
-      "exchange": "drift",
-      "symbol": "W",
-      "direction": "SHORT",
+      "asset": "W",
+      "exchange": "Drift",
       "strategy": "IBB",
-      "entry": 0.0198,
-      "current": 0.0194,
-      "size": 1839.22,
-      "sizeUnits": 94615,
-      "pnl": 34.16,
-      "pnlPercent": 1.82
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.019818,
+      "currentPrice": 0.019818,
+      "stopLoss": 0.0202032,
+      "takeProfit": 0.019304399999999996,
+      "positionSize": 375,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-18T20:01:57.579Z"
     },
     {
-      "exchange": "drift",
-      "symbol": "DOGE",
+      "asset": "XRP",
+      "exchange": "Drift",
+      "strategy": "IBB",
       "direction": "SHORT",
-      "strategy": "LC",
-      "entry": 0.1004,
-      "current": 0.0974,
-      "size": 1816.05,
-      "sizeUnits": 18652,
-      "pnl": 55.86,
-      "pnlPercent": 2.98
+      "leverage": 5,
+      "entryPrice": 1.409765,
+      "currentPrice": 1.409765,
+      "stopLoss": 1.4257879999999998,
+      "takeProfit": 1.388401,
+      "positionSize": 375,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-19T11:01:53.079Z"
     }
   ],
   "stats": {
@@ -47,125 +53,36 @@
   },
   "recentTrades": [
     {
-      "id": "WIF-1771495574106",
-      "symbol": "WIF",
       "strategy": "IBB",
+      "asset": "XRP",
+      "exchange": "Drift",
       "direction": "SHORT",
-      "entry": 0.221504,
-      "exit": 0.21707392,
-      "pnl": null,
-      "pnlPercent": 10.000000000000004,
-      "exitTime": "2026-02-19T10:06:14.106Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "DOT-1771493413219",
-      "symbol": "DOT",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 0.106488,
-      "exit": 0.10435823999999999,
-      "pnl": null,
-      "pnlPercent": 10.000000000000037,
-      "exitTime": "2026-02-19T09:30:13.219Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "INJ-1771493413219",
-      "symbol": "INJ",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 3.290141,
-      "exit": 3.22433818,
-      "pnl": null,
-      "pnlPercent": 10.000000000000004,
-      "exitTime": "2026-02-19T09:30:13.219Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "XRP-1771493413219",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "entry": 1.416684,
-      "exit": 1.38835032,
-      "pnl": null,
-      "pnlPercent": 10.000000000000009,
-      "exitTime": "2026-02-19T09:30:13.219Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "XRP-1771482133936",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "entry": 1.417026,
-      "exit": 1.38868548,
-      "pnl": null,
-      "pnlPercent": 9.999999999999993,
-      "exitTime": "2026-02-19T06:22:13.936Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "JTO-1771475408320",
-      "symbol": "JTO",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 0.288488,
-      "exit": 0.28271824,
-      "pnl": null,
-      "pnlPercent": 10.00000000000002,
-      "exitTime": "2026-02-19T04:30:08.320Z",
-      "status": "CLOSED"
+      "leverage": 5,
+      "entryPrice": 1.409765,
+      "entryTime": 1771498913081,
+      "stopLoss": 1.4257879999999998,
+      "takeProfit": 1.388401,
+      "positionSize": 375,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 1.4140"
     },
     {
       "id": "TCJR5M-OSZOL-RJ2TTE",
-      "symbol": "OP",
-      "strategy": "LC",
+      "asset": "OP",
+      "exchange": "Kraken",
+      "strategy": "UNKNOWN",
       "direction": "LONG",
-      "entry": 0.1894,
-      "exit": 0.1717,
-      "pnl": -116.71,
-      "pnlPercent": -9.37,
-      "exitTime": "2026-02-18T22:00:01.191Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771458851891",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2236,
-      "exit": 4.139128,
-      "pnl": null,
-      "pnlPercent": 9.999999999999984,
-      "exitTime": "2026-02-18T23:54:11.891Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771458338798",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2236,
-      "exit": 4.2248,
-      "pnl": -0.53,
-      "pnlPercent": -0.14,
-      "entryTime": "2026-02-18T23:45:38.798Z",
-      "exitTime": "2026-02-18T23:54:00.805Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771455972444",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2343,
-      "exit": 4.149614,
-      "pnl": null,
-      "pnlPercent": 10.000000000000057,
-      "exitTime": "2026-02-18T23:06:12.444Z",
-      "status": "CLOSED"
+      "entryPrice": 0.18941418722886058,
+      "entryTime": null,
+      "positionSize": 1246.14596891,
+      "volume": 13157.89474,
+      "leverage": 3,
+      "currentPnl": null,
+      "status": "CLOSED",
+      "exitTime": 1771451696215.026,
+      "pnlUsd": -116.70746641,
+      "pnlPercent": -9.365473172623883,
+      "closedAt": "2026-02-18T22:00:01.191Z"
     }
   ],
   "strategies": {
@@ -250,6 +167,17 @@
         "tp": "2.0x ATR",
         "rsi": 3
       }
+    }
+  },
+  "megamax": {
+    "lastCheck": "2026-02-19T11:01:53.088Z",
+    "performance": {
+      "totalTrades": 2,
+      "winningTrades": 0,
+      "losingTrades": 0,
+      "winRate": 0,
+      "totalPnl": 0,
+      "startDate": "2026-02-13"
     }
   }
 }

@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "IBB",
+    "asset": "XRP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 1.409765,
+    "entryTime": 1771498913081,
+    "stopLoss": 1.4257879999999998,
+    "takeProfit": 1.388401,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 1.4140"
+  },
+  {
     "id": "TCJR5M-OSZOL-RJ2TTE",
     "asset": "OP",
     "exchange": "Kraken",
