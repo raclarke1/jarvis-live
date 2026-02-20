@@ -49,7 +49,7 @@
       "symbol": "SUI",
       "strategy": "V5.0",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.954668,
         "time": "2026-02-20T10:17:20.912Z",
@@ -76,8 +76,17 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.9433,
+        "time": "2026-02-20T11:46:01.570Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": 16.73,
+        "fees": 0.02,
+        "netPnl": 16.71,
+        "pnlPercent": 5.95
+      },
       "exchange": "Drift",
       "marketIndex": 8,
       "botVersion": "MegaMax v1.0"
@@ -4362,6 +4371,82 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000004
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "PYTH-1771586136091",
+      "timestamp": "2026-02-20T11:15:36.092Z",
+      "timestampMs": 1771586136092,
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.053523,
+        "time": "2026-02-20T11:15:36.092Z",
+        "reason": "RSI(3)=13.6 oversold, price above VWAP (0.0520) & EMA50 (0.0533)"
+      },
+      "stopLoss": {
+        "price": 0.053399357142857144
+      },
+      "takeProfit": {
+        "price": 0.053770285714285715
+      },
+      "leverage": 5,
+      "positionSize": 562
+    },
+    {
+      "id": "SUI-1771587972880",
+      "symbol": "SUI",
+      "strategy": "V5.0",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.954668,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.9355746399999999,
+        "time": "2026-02-20T11:46:12.880Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000032
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "PYTH-1771587972880",
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "long",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.053523,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.05459346,
+        "time": "2026-02-20T11:46:12.880Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.00000000000002
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"

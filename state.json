@@ -1,51 +1,63 @@
 {
-  "lastUpdate": "2026-02-20T10:34:52.651Z",
+  "lastUpdate": "2026-02-20T11:46:12.888Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4627.7,
-    "freeCollateral": 4420.92,
-    "leverage": 0.6,
+    "equity": 4647.39,
+    "freeCollateral": 4559.86,
+    "leverage": 0.3,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
     {
       "exchange": "drift",
-      "symbol": "SUI",
-      "direction": "SHORT",
-      "strategy": "V5.0",
-      "entry": 0.9543,
-      "current": 0.9562,
-      "size": 1407.5,
-      "sizeUnits": 1472,
-      "pnl": 0,
-      "pnlPercent": 0
-    },
-    {
-      "exchange": "drift",
       "symbol": "SOL",
       "direction": "SHORT",
       "strategy": "V5.0",
       "entry": 84.587,
-      "current": 84.5976,
-      "size": 1405.17,
+      "current": 83.4706,
+      "size": 1386.45,
       "sizeUnits": 16.61,
-      "pnl": 0,
-      "pnlPercent": 0
+      "pnl": 18.54,
+      "pnlPercent": 1.32
     }
   ],
   "stats": {
-    "totalTrades": 123,
-    "wins": 67,
-    "losses": 56,
+    "totalTrades": 126,
+    "wins": 68,
+    "losses": 58,
     "winRate": 54,
-    "totalPnl": 1936.5400000000002,
-    "avgPnl": 15.744227642276424
+    "totalPnl": 1953.25,
+    "avgPnl": 15.501984126984127
   },
   "recentTrades": [
+    {
+      "id": "PYTH-1771587972880",
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "LONG",
+      "entry": 0.053523,
+      "exit": 0.05459346,
+      "pnl": null,
+      "pnlPercent": 10.00000000000002,
+      "exitTime": "2026-02-20T11:46:12.880Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "SUI-1771587972880",
+      "symbol": "SUI",
+      "strategy": "V5.0",
+      "direction": "SHORT",
+      "entry": 0.954668,
+      "exit": 0.9355746399999999,
+      "pnl": null,
+      "pnlPercent": 10.000000000000032,
+      "exitTime": "2026-02-20T11:46:12.880Z",
+      "status": "CLOSED"
+    },
     {
       "id": "JTO-1771583692644",
       "symbol": "JTO",
@@ -141,32 +153,6 @@
       "pnl": 0,
       "pnlPercent": 0,
       "entryTime": "2026-02-20T04:45:38.713Z",
-      "exitTime": "2026-02-20T10:13:24.491Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PYTH-1771554338054",
-      "symbol": "PYTH",
-      "strategy": "VWAP-RSI",
-      "direction": "LONG",
-      "entry": 0.053312,
-      "exit": 0.053312,
-      "pnl": 0,
-      "pnlPercent": 0,
-      "entryTime": "2026-02-20T02:25:38.055Z",
-      "exitTime": "2026-02-20T10:13:24.491Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "INJ-1771548337493",
-      "symbol": "INJ",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 3.235203,
-      "exit": 3.235203,
-      "pnl": 0,
-      "pnlPercent": 0,
-      "entryTime": "2026-02-20T00:45:37.494Z",
       "exitTime": "2026-02-20T10:13:24.491Z",
       "status": "CLOSED"
     }
