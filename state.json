@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2026-02-20T14:59:25.072Z",
+  "lastUpdate": "2026-02-20T15:00:23.697Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4623.68,
-    "freeCollateral": 4240.53,
+    "equity": 4626.23,
+    "freeCollateral": 4241.05,
     "leverage": 0.4,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
@@ -18,20 +18,20 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 1.4137,
-      "current": 1.4042,
-      "size": 1857.76,
+      "current": 1.4038,
+      "size": 1857.16,
       "sizeUnits": 1323,
-      "pnl": 12.58,
-      "pnlPercent": 0.67
+      "pnl": 13.18,
+      "pnlPercent": 0.7
     }
   ],
   "stats": {
     "totalTrades": 135,
-    "wins": 0,
+    "wins": 8,
     "losses": 2,
-    "winRate": 0,
-    "totalPnl": -13.75,
-    "avgPnl": -1.375
+    "winRate": 80,
+    "totalPnl": 386.25,
+    "avgPnl": 38.625
   },
   "recentTrades": [
     {
@@ -41,7 +41,7 @@
       "direction": "SHORT",
       "entry": 0.214647,
       "exit": 0.21035406,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T14:34:13.490Z",
       "status": "CLOSED"
@@ -53,7 +53,7 @@
       "direction": "SHORT",
       "entry": 0.319019,
       "exit": 0.31263862,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T14:28:13.803Z",
       "status": "CLOSED"
@@ -65,7 +65,7 @@
       "direction": "SHORT",
       "entry": 4.1116,
       "exit": 4.029368,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T14:28:13.803Z",
       "status": "CLOSED"
@@ -90,7 +90,7 @@
       "direction": "SHORT",
       "entry": 84.520547,
       "exit": 82.83013605999999,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T11:50:12.932Z",
       "status": "CLOSED"
@@ -102,7 +102,7 @@
       "direction": "LONG",
       "entry": 0.053523,
       "exit": 0.05459346,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T11:46:12.880Z",
       "status": "CLOSED"
@@ -114,7 +114,7 @@
       "direction": "SHORT",
       "entry": 0.954668,
       "exit": 0.9355746399999999,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T11:46:12.880Z",
       "status": "CLOSED"
@@ -126,7 +126,7 @@
       "direction": "LONG",
       "entry": 0.312524,
       "exit": 0.31877448,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T10:34:52.644Z",
       "status": "CLOSED"
@@ -151,7 +151,7 @@
       "direction": "SHORT",
       "entry": 0.216341,
       "exit": 0.21201418,
-      "pnl": null,
+      "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T05:36:14.137Z",
       "status": "CLOSED"
