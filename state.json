@@ -1,39 +1,38 @@
 {
-  "lastUpdate": "2026-02-20T11:46:12.888Z",
+  "lastUpdate": "2026-02-20T11:50:12.940Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4647.39,
-    "freeCollateral": 4559.86,
-    "leverage": 0.3,
+    "equity": 4649.82,
+    "freeCollateral": 4649.69,
+    "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [
-    {
-      "exchange": "drift",
-      "symbol": "SOL",
-      "direction": "SHORT",
-      "strategy": "V5.0",
-      "entry": 84.587,
-      "current": 83.4706,
-      "size": 1386.45,
-      "sizeUnits": 16.61,
-      "pnl": 18.54,
-      "pnlPercent": 1.32
-    }
-  ],
+  "openPositions": [],
   "stats": {
-    "totalTrades": 126,
-    "wins": 68,
-    "losses": 58,
+    "totalTrades": 128,
+    "wins": 69,
+    "losses": 59,
     "winRate": 54,
-    "totalPnl": 1953.25,
-    "avgPnl": 15.501984126984127
+    "totalPnl": 1970.41,
+    "avgPnl": 15.393828125
   },
   "recentTrades": [
+    {
+      "id": "SOL-1771588212932",
+      "symbol": "SOL",
+      "strategy": "V5.0",
+      "direction": "SHORT",
+      "entry": 84.520547,
+      "exit": 82.83013605999999,
+      "pnl": null,
+      "pnlPercent": 10.000000000000039,
+      "exitTime": "2026-02-20T11:50:12.932Z",
+      "status": "CLOSED"
+    },
     {
       "id": "PYTH-1771587972880",
       "symbol": "PYTH",
@@ -141,19 +140,6 @@
       "pnl": null,
       "pnlPercent": 10.000000000000016,
       "exitTime": "2026-02-20T05:24:13.394Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "PEPE-1771562738712",
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 4.2016,
-      "exit": 4.2016,
-      "pnl": 0,
-      "pnlPercent": 0,
-      "entryTime": "2026-02-20T04:45:38.713Z",
-      "exitTime": "2026-02-20T10:13:24.491Z",
       "status": "CLOSED"
     }
   ],

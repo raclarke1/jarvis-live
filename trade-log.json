@@ -9,7 +9,7 @@
       "symbol": "SOL",
       "strategy": "V5.0",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 84.520547,
         "time": "2026-02-20T10:18:00.495Z",
@@ -36,8 +36,17 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 83.4875,
+        "time": "2026-02-20T11:50:01.823Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": 17.17,
+        "fees": 0.02,
+        "netPnl": 17.16,
+        "pnlPercent": 6.11
+      },
       "exchange": "Drift",
       "marketIndex": 0,
       "botVersion": "MegaMax v1.0"
@@ -4447,6 +4456,33 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.00000000000002
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "SOL-1771588212932",
+      "symbol": "SOL",
+      "strategy": "V5.0",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 84.520547,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 82.83013605999999,
+        "time": "2026-02-20T11:50:12.932Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000039
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
