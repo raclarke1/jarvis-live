@@ -3,6 +3,86 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771582680495-SOL",
+      "timestamp": "2026-02-20T10:18:00.495Z",
+      "timestampMs": 1771582680495,
+      "symbol": "SOL",
+      "strategy": "V5.0",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 84.520547,
+        "time": "2026-02-20T10:18:00.495Z",
+        "reason": "Fade breakout above 84.4594"
+      },
+      "stopLoss": {
+        "price": 85.1285212,
+        "distanceUsd": 0.607974200000001,
+        "distancePct": 0.7193211847055381
+      },
+      "takeProfit": {
+        "price": 83.30459859999999,
+        "distanceUsd": 1.215948400000002,
+        "distancePct": 1.4386423694110761
+      },
+      "riskReward": 2,
+      "positionSize": 281,
+      "leverage": 5,
+      "notionalValue": 1405,
+      "marketContext": {
+        "atr": 0.607974200000001,
+        "donchianHigh": 84.459395,
+        "donchianLow": 79.923189,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 0,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771582640912-SUI",
+      "timestamp": "2026-02-20T10:17:20.912Z",
+      "timestampMs": 1771582640912,
+      "symbol": "SUI",
+      "strategy": "V5.0",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.954668,
+        "time": "2026-02-20T10:17:20.912Z",
+        "reason": "Fade breakout above 0.9520"
+      },
+      "stopLoss": {
+        "price": 0.9612457999999999,
+        "distanceUsd": 0.006577799999999967,
+        "distancePct": 0.6890144008178725
+      },
+      "takeProfit": {
+        "price": 0.9415124,
+        "distanceUsd": 0.013155599999999934,
+        "distancePct": 1.378028801635745
+      },
+      "riskReward": 2,
+      "positionSize": 281,
+      "leverage": 5,
+      "notionalValue": 1405,
+      "marketContext": {
+        "atr": 0.0065777999999999896,
+        "donchianHigh": 0.952023,
+        "donchianLow": 0.896996,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 8,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771563783799-XRP",
       "timestamp": "2026-02-20T05:03:03.799Z",
       "timestampMs": 1771563783799,
@@ -4258,6 +4338,33 @@
         "pnlPercent": 0
       },
       "phantom": true
+    },
+    {
+      "id": "JTO-1771583692644",
+      "symbol": "JTO",
+      "strategy": "VWAP-RSI",
+      "direction": "long",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.312524,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.31877448,
+        "time": "2026-02-20T10:34:52.644Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000004
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
     }
   ]
 }
