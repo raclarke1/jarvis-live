@@ -1,19 +1,32 @@
 {
-  "lastUpdate": "2026-02-20T15:02:13.573Z",
+  "lastUpdate": "2026-02-20T16:10:13.554Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4592.61,
-    "freeCollateral": 4601.94,
-    "leverage": 0,
+    "equity": 4560.7,
+    "freeCollateral": 4426.69,
+    "leverage": 0.31,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "exchange": "drift",
+      "symbol": "SUI",
+      "direction": "SHORT",
+      "strategy": "V5.0",
+      "entry": 0.9687,
+      "current": 0.9756,
+      "size": 1414.6,
+      "sizeUnits": 1450,
+      "pnl": 0,
+      "pnlPercent": 0
+    }
+  ],
   "stats": {
-    "totalTrades": 135,
+    "totalTrades": 136,
     "wins": 8,
     "losses": 2,
     "winRate": 80,
