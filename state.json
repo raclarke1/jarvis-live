@@ -1,24 +1,37 @@
 {
-  "lastUpdate": "2026-02-20T11:50:12.940Z",
+  "lastUpdate": "2026-02-20T13:34:13.423Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4649.82,
-    "freeCollateral": 4649.69,
-    "leverage": 0,
+    "equity": 4713.34,
+    "freeCollateral": 4329.91,
+    "leverage": 0.39,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "exchange": "drift",
+      "symbol": "XRP",
+      "direction": "SHORT",
+      "strategy": "IBB",
+      "entry": 1.4137,
+      "current": 1.4041,
+      "size": 1857.68,
+      "sizeUnits": 1323,
+      "pnl": 12.66,
+      "pnlPercent": 0.68
+    }
+  ],
   "stats": {
-    "totalTrades": 128,
-    "wins": 69,
+    "totalTrades": 130,
+    "wins": 71,
     "losses": 59,
-    "winRate": 54,
-    "totalPnl": 1970.41,
-    "avgPnl": 15.393828125
+    "winRate": 55,
+    "totalPnl": 2028.3500000000001,
+    "avgPnl": 15.602692307692308
   },
   "recentTrades": [
     {

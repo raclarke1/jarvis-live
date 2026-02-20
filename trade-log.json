@@ -3,6 +3,104 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771588981275-W",
+      "timestamp": "2026-02-20T12:03:01.275Z",
+      "timestampMs": 1771588981275,
+      "symbol": "W",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.019842,
+        "time": "2026-02-20T12:03:01.275Z",
+        "reason": "Inside bar breakout below 0.0198"
+      },
+      "stopLoss": {
+        "price": 0.020068799999999998,
+        "distanceUsd": 0.00022679999999999922,
+        "distancePct": 1.143029936498333
+      },
+      "takeProfit": {
+        "price": 0.019539599999999997,
+        "distanceUsd": 0.0003024000000000013,
+        "distancePct": 1.5240399153311224
+      },
+      "riskReward": 1.3333333333333435,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.00015119999999999993,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.02005,
+        "motherBarLow": 0.01985
+      },
+      "exit": {
+        "price": 0.0195,
+        "time": "2026-02-20T13:34:01.523Z",
+        "reason": "Take Profit"
+      },
+      "pnl": {
+        "grossPnl": 32.32,
+        "fees": 0.03,
+        "netPnl": 32.29,
+        "pnlPercent": 8.62
+      },
+      "exchange": "Drift",
+      "marketIndex": 22,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771588916345-WIF",
+      "timestamp": "2026-02-20T12:01:56.345Z",
+      "timestampMs": 1771588916345,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.218391,
+        "time": "2026-02-20T12:01:56.345Z",
+        "reason": "Inside bar breakout below 0.2204"
+      },
+      "stopLoss": {
+        "price": 0.2207547,
+        "distanceUsd": 0.0023636999999999964,
+        "distancePct": 1.0823248210777898
+      },
+      "takeProfit": {
+        "price": 0.2152394,
+        "distanceUsd": 0.0031516000000000044,
+        "distancePct": 1.4430997614370575
+      },
+      "riskReward": 1.3333333333333373,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.0015757999999999994,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.222053,
+        "motherBarLow": 0.220379
+      },
+      "exit": {
+        "price": 0.2154,
+        "time": "2026-02-20T13:34:01.516Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": 25.68,
+        "fees": 0.03,
+        "netPnl": 25.65,
+        "pnlPercent": 6.85
+      },
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771582680495-SOL",
       "timestamp": "2026-02-20T10:18:00.495Z",
       "timestampMs": 1771582680495,
