@@ -205,7 +205,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.394015,
         "time": "2026-02-19T14:02:34.027Z",
@@ -232,11 +232,20 @@
         "motherBarHigh": 1.413221,
         "motherBarLow": 1.405518
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.394015,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771509714088-W",
@@ -343,7 +352,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.409765,
         "time": "2026-02-19T11:01:53.082Z",
@@ -370,11 +379,20 @@
         "motherBarHigh": 1.426478,
         "motherBarLow": 1.413978
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.409765,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771491713386-XRP",
@@ -383,7 +401,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.416684,
         "time": "2026-02-19T09:01:53.386Z",
@@ -410,11 +428,20 @@
         "motherBarHigh": 1.437219,
         "motherBarLow": 1.422159
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.416684,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771480915542-WIF",
@@ -472,7 +499,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.417026,
         "time": "2026-02-19T05:01:57.547Z",
@@ -499,11 +526,20 @@
         "motherBarHigh": 1.429322,
         "motherBarLow": 1.422128
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.417026,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771452118156-XRP",
@@ -512,7 +548,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.419,
         "time": "2026-02-18T22:01:58.156Z",
@@ -539,11 +575,20 @@
         "motherBarHigh": 1.432486,
         "motherBarLow": 1.420752
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.419,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771444917583-W",
@@ -601,7 +646,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.4569429999999999,
         "time": "2026-02-18T18:02:19.687Z",
@@ -628,11 +673,20 @@
         "motherBarHigh": 1.4767109999999999,
         "motherBarLow": 1.45664
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.4569429999999999,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771434115505-WIF",
@@ -788,7 +842,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.477056,
         "time": "2026-02-18T11:01:52.908Z",
@@ -815,11 +869,20 @@
         "motherBarHigh": 1.491145,
         "motherBarLow": 1.4850780000000001
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.477056,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771394515317-XRP",
@@ -828,7 +891,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.475054,
         "time": "2026-02-18T06:01:55.317Z",
@@ -855,11 +918,20 @@
         "motherBarHigh": 1.483657,
         "motherBarLow": 1.4755449999999999
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.475054,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771376516003-XRP",
@@ -868,7 +940,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.469826,
         "time": "2026-02-18T01:01:56.003Z",
@@ -895,11 +967,20 @@
         "motherBarHigh": 1.476633,
         "motherBarLow": 1.470356
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.469826,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771369358556-XRP",
@@ -908,7 +989,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.473743,
         "time": "2026-02-17T23:02:38.556Z",
@@ -935,11 +1016,20 @@
         "motherBarHigh": 1.491967,
         "motherBarLow": 1.479004
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.473743,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771369315757-WIF",
@@ -1046,7 +1136,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.474753,
         "time": "2026-02-17T08:02:17.804Z",
@@ -1073,11 +1163,20 @@
         "motherBarHigh": 1.479414,
         "motherBarLow": 1.473814
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.474753,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771308113147-W",
@@ -1135,7 +1234,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.47808,
         "time": "2026-02-17T02:02:20.099Z",
@@ -1162,11 +1261,20 @@
         "motherBarHigh": 1.489686,
         "motherBarLow": 1.481512
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.47808,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771256900380-SOL",
@@ -1224,7 +1332,7 @@
       "symbol": "BTC",
       "strategy": "LC",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 69339.6,
         "time": "2026-02-16T12:34:55.571Z",
@@ -1251,11 +1359,20 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 69339.6,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 1,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "phantom": true
     },
     {
       "id": "1771134343000-PYTH",
@@ -2723,7 +2840,7 @@
       "symbol": "RNDR",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.415838,
         "time": "2026-02-18T20:05:32.306Z",
@@ -2736,7 +2853,18 @@
         "price": 1.4014861428571428
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 1.415838,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "LINK-1771446932560",
@@ -2745,7 +2873,7 @@
       "symbol": "LINK",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 8.587891,
         "time": "2026-02-18T20:35:32.560Z",
@@ -2758,7 +2886,18 @@
         "price": 8.536919571428573
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 8.587891,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "INJ-1771446959671",
@@ -2767,7 +2906,7 @@
       "symbol": "INJ",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 2.995324,
         "time": "2026-02-18T20:35:59.671Z",
@@ -2780,7 +2919,18 @@
         "price": 2.9752467142857144
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 2.995324,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "XRP-1771452478598",
@@ -2897,7 +3047,7 @@
       "symbol": "RNDR",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.412231,
         "time": "2026-02-18T22:45:30.969Z",
@@ -2910,7 +3060,18 @@
         "price": 1.40339
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 1.412231,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "PEPE-1771455340694",
@@ -3066,7 +3227,7 @@
       "symbol": "JTO",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.288488,
         "time": "2026-02-19T04:05:40.058Z",
@@ -3079,7 +3240,18 @@
         "price": 0.2868667142857143
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 0.288488,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "TCJR5M-OSZOL-RJ2TTE",
@@ -3164,7 +3336,7 @@
       "symbol": "INJ",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 3.290141,
         "time": "2026-02-19T08:45:35.290Z",
@@ -3177,7 +3349,18 @@
         "price": 3.221143285714286
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 3.290141,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "DOT-1771492531316",
@@ -3186,7 +3369,7 @@
       "symbol": "DOT",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.106488,
         "time": "2026-02-19T09:15:31.318Z",
@@ -3199,7 +3382,18 @@
         "price": 0.10608971428571429
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 0.106488,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "XRP-1771493413219",
@@ -3316,7 +3510,7 @@
       "symbol": "PYTH",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.052964,
         "time": "2026-02-19T10:45:34.512Z",
@@ -3329,7 +3523,18 @@
         "price": 0.05274885714285714
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 0.052964,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "LINK-1771500331497",
@@ -3338,7 +3543,7 @@
       "symbol": "LINK",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 8.601881,
         "time": "2026-02-19T11:25:31.498Z",
@@ -3351,7 +3556,18 @@
         "price": 8.581070714285715
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 8.601881,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "W-1771503734499",
@@ -3495,7 +3711,7 @@
       "symbol": "RNDR",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.384483,
         "time": "2026-02-19T14:55:29.116Z",
@@ -3508,7 +3724,18 @@
         "price": 1.3677252857142856
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 1.384483,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "DOT-1771513529848",
@@ -3517,7 +3744,7 @@
       "symbol": "DOT",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.10463,
         "time": "2026-02-19T15:05:29.850Z",
@@ -3530,7 +3757,18 @@
         "price": 0.103782
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 0.10463,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "XRP-1771517172579",
@@ -3647,7 +3885,7 @@
       "symbol": "DOT",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.105,
         "time": "2026-02-19T22:55:30.209Z",
@@ -3660,7 +3898,18 @@
         "price": 0.104513
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 0.105,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "XRP-1771543574931",
@@ -3750,7 +3999,7 @@
       "symbol": "INJ",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 3.235203,
         "time": "2026-02-20T00:45:37.494Z",
@@ -3763,7 +4012,18 @@
         "price": 3.182289857142857
       },
       "leverage": 5,
-      "positionSize": 375
+      "positionSize": 375,
+      "exit": {
+        "price": 3.235203,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "PYTH-1771554338054",
@@ -3772,7 +4032,7 @@
       "symbol": "PYTH",
       "strategy": "VWAP-RSI",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.053312,
         "time": "2026-02-20T02:25:38.055Z",
@@ -3785,7 +4045,18 @@
         "price": 0.05350785714285714
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": 0.053312,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "PEPE-1771562738712",
@@ -3794,7 +4065,7 @@
       "symbol": "PEPE",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 4.2016,
         "time": "2026-02-20T04:45:38.713Z",
@@ -3807,7 +4078,18 @@
         "price": 4.175785714285714
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": 4.2016,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     },
     {
       "id": "XRP-1771565053394",
@@ -3943,6 +4225,39 @@
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "JTO-1771581336731",
+      "timestamp": "2026-02-20T09:55:36.733Z",
+      "timestampMs": 1771581336733,
+      "symbol": "JTO",
+      "strategy": "VWAP-RSI",
+      "direction": "long",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.312524,
+        "time": "2026-02-20T09:55:36.733Z",
+        "reason": "RSI(3)=13.1 oversold, price above VWAP (0.2872) & EMA50 (0.3095)"
+      },
+      "stopLoss": {
+        "price": 0.305873
+      },
+      "takeProfit": {
+        "price": 0.325826
+      },
+      "leverage": 5,
+      "positionSize": 562,
+      "exit": {
+        "price": 0.312524,
+        "time": "2026-02-20T10:13:24.491Z",
+        "reason": "Phantom trade - never executed on Drift"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "phantom": true
     }
   ]
 }
