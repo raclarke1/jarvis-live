@@ -1,33 +1,5 @@
 [
   {
-    "strategy": "IBB",
-    "asset": "W",
-    "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.019842,
-    "entryTime": 1771588981273,
-    "stopLoss": 0.020068799999999998,
-    "takeProfit": 0.019539599999999997,
-    "positionSize": 375,
-    "status": "OPEN",
-    "reason": "Inside bar breakout below 0.0198"
-  },
-  {
-    "strategy": "IBB",
-    "asset": "WIF",
-    "exchange": "Drift",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.218391,
-    "entryTime": 1771588916342,
-    "stopLoss": 0.2207547,
-    "takeProfit": 0.2152394,
-    "positionSize": 375,
-    "status": "OPEN",
-    "reason": "Inside bar breakout below 0.2204"
-  },
-  {
     "id": "TCJR5M-OSZOL-RJ2TTE",
     "asset": "OP",
     "exchange": "Kraken",
