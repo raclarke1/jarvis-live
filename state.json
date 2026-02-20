@@ -1,39 +1,38 @@
 {
-  "lastUpdate": "2026-02-20T05:24:13.435Z",
+  "lastUpdate": "2026-02-20T05:36:14.144Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4696.7,
-    "freeCollateral": 4502.68,
-    "leverage": 0.4,
+    "equity": 4669.92,
+    "freeCollateral": 4669.57,
+    "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2163,
-      "current": 0.2153,
-      "size": 1865.51,
-      "sizeUnits": 8665,
-      "pnl": 8.73,
-      "pnlPercent": 0.47
-    }
-  ],
+  "openPositions": [],
   "stats": {
-    "totalTrades": 91,
+    "totalTrades": 93,
     "wins": 67,
-    "losses": 24,
-    "winRate": 74,
-    "totalPnl": 1944.86,
-    "avgPnl": 21.37208791208791
+    "losses": 26,
+    "winRate": 72,
+    "totalPnl": 1936.5400000000002,
+    "avgPnl": 20.823010752688173
   },
   "recentTrades": [
+    {
+      "id": "WIF-1771565774137",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.216341,
+      "exit": 0.21201418,
+      "pnl": null,
+      "pnlPercent": 10.00000000000002,
+      "exitTime": "2026-02-20T05:36:14.137Z",
+      "status": "CLOSED"
+    },
     {
       "id": "PEPE-1771565053394",
       "symbol": "PEPE",
@@ -137,18 +136,6 @@
       "direction": "SHORT",
       "entry": 0.10463,
       "exit": 0.1025374,
-      "pnl": 37.5,
-      "pnlPercent": 10,
-      "exitTime": "2026-02-19T16:06:12.579Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "RNDR-1771517172579",
-      "symbol": "RNDR",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "entry": 1.384483,
-      "exit": 1.3567933399999998,
       "pnl": 37.5,
       "pnlPercent": 10,
       "exitTime": "2026-02-19T16:06:12.579Z",
