@@ -1194,15 +1194,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 0.058404000000000005,
         "time": "2026-02-15T21:15:06.986Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -36.1,
+        "pnlPercent": -12.85,
+        "grossPnl": -35.11,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 15,
@@ -1343,15 +1344,16 @@
         "motherBarLow": 1.52481
       },
       "exit": {
-        "price": null,
+        "price": 1.5275370000000001,
         "time": "2026-02-15T21:15:06.987Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -50.97,
+        "pnlPercent": -13.59,
+        "grossPnl": -49.65,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 10,
@@ -1392,15 +1394,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 0.058112000000000004,
         "time": "2026-02-15T21:15:06.987Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -32.93,
+        "pnlPercent": -11.72,
+        "grossPnl": -31.95,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 15,
@@ -1441,15 +1444,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 0.12084969999999999,
         "time": "2026-02-15T21:15:06.987Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -57.8,
+        "pnlPercent": -20.57,
+        "grossPnl": -56.82,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 6,
@@ -1540,15 +1544,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 0.17636200000000002,
         "time": "2026-02-15T21:15:06.987Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -42.92,
+        "pnlPercent": -15.28,
+        "grossPnl": -41.94,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 12,
@@ -1589,15 +1594,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 1.0996000000000001,
         "time": "2026-02-15T21:15:06.987Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -31.8,
+        "pnlPercent": -11.32,
+        "grossPnl": -30.82,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 25,
@@ -1631,15 +1637,16 @@
       "leverage": 5,
       "notionalValue": 1245,
       "exit": {
-        "price": null,
+        "price": 90.05,
         "time": "2026-02-15T21:15:06.987Z",
         "reason": "Position closed (detected by audit)"
       },
       "pnl": {
-        "netPnl": 0,
-        "pnlPercent": 0,
-        "grossPnl": 0,
-        "note": "exit price not recorded"
+        "netPnl": -25.4,
+        "pnlPercent": -10.2,
+        "grossPnl": -24.53,
+        "note": "exit price not recorded",
+        "estimated": true
       },
       "exchange": "Drift",
       "marketIndex": 0,
@@ -3637,6 +3644,50 @@
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "INJ-1771548337493",
+      "timestamp": "2026-02-20T00:45:37.494Z",
+      "timestampMs": 1771548337494,
+      "symbol": "INJ",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 3.235203,
+        "time": "2026-02-20T00:45:37.494Z",
+        "reason": "RSI(3)=83.4 overbought, price below VWAP (3.3648) & EMA50 (3.2716)"
+      },
+      "stopLoss": {
+        "price": 3.261659571428571
+      },
+      "takeProfit": {
+        "price": 3.182289857142857
+      },
+      "leverage": 5,
+      "positionSize": 375
+    },
+    {
+      "id": "PYTH-1771554338054",
+      "timestamp": "2026-02-20T02:25:38.055Z",
+      "timestampMs": 1771554338055,
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.053312,
+        "time": "2026-02-20T02:25:38.055Z",
+        "reason": "RSI(3)=24.9 oversold, price above VWAP (0.0519) & EMA50 (0.0530)"
+      },
+      "stopLoss": {
+        "price": 0.05321407142857143
+      },
+      "takeProfit": {
+        "price": 0.05350785714285714
+      },
+      "leverage": 5,
+      "positionSize": 562
     }
   ]
 }
