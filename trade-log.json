@@ -3,6 +3,46 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771596116094-WIF",
+      "timestamp": "2026-02-20T14:01:56.094Z",
+      "timestampMs": 1771596116094,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.214647,
+        "time": "2026-02-20T14:01:56.094Z",
+        "reason": "Inside bar breakout below 0.2175"
+      },
+      "stopLoss": {
+        "price": 0.2178903,
+        "distanceUsd": 0.0032433000000000045,
+        "distancePct": 1.5109924667011438
+      },
+      "takeProfit": {
+        "price": 0.2103226,
+        "distanceUsd": 0.004324400000000006,
+        "distancePct": 2.014656622268192
+      },
+      "riskReward": 1.3333333333333333,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.002162200000000003,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.218795,
+        "motherBarLow": 0.217527
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771588981275-W",
       "timestamp": "2026-02-20T12:03:01.275Z",
       "timestampMs": 1771588981275,
@@ -4581,6 +4621,115 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000039
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "PEPE-1771596335835",
+      "timestamp": "2026-02-20T14:05:35.837Z",
+      "timestampMs": 1771596335837,
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 4.1116,
+        "time": "2026-02-20T14:05:35.837Z",
+        "reason": "RSI(3)=75.7 overbought, price below VWAP (4.2253) & EMA50 (4.1559)"
+      },
+      "stopLoss": {
+        "price": 4.132942857142857
+      },
+      "takeProfit": {
+        "price": 4.0689142857142855
+      },
+      "leverage": 5,
+      "positionSize": 562,
+      "exit": {
+        "price": 4.1317,
+        "time": "2026-02-20T14:28:01.891Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": -13.74,
+        "fees": 0.01,
+        "netPnl": -13.75,
+        "pnlPercent": -2.44
+      }
+    },
+    {
+      "id": "TIA-1771597535875",
+      "timestamp": "2026-02-20T14:25:35.876Z",
+      "timestampMs": 1771597535876,
+      "symbol": "TIA",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.319019,
+        "time": "2026-02-20T14:25:35.876Z",
+        "reason": "RSI(3)=75.7 overbought, price below VWAP (0.3214) & EMA50 (0.3203)"
+      },
+      "stopLoss": {
+        "price": 0.3204117142857143
+      },
+      "takeProfit": {
+        "price": 0.31623357142857145
+      },
+      "leverage": 5,
+      "positionSize": 562
+    },
+    {
+      "id": "PEPE-1771597693803",
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 4.1116,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 4.029368,
+        "time": "2026-02-20T14:28:13.803Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000036
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "TIA-1771597693803",
+      "symbol": "TIA",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.319019,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.31263862,
+        "time": "2026-02-20T14:28:13.803Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000028
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
