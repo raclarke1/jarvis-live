@@ -9,13 +9,13 @@
     "avgWinUsd": 30.0425,
     "avgLossUsd": 0,
     "profitFactor": 999,
-    "currentCapital": 4626.23,
+    "currentCapital": 4592.61,
     "startingCapital": 1868.46,
     "totalPnlPercent": 6.431499737751946,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771582680495,
-    "lastUpdated": 1771599623695
+    "lastUpdated": 1771599733572
   },
   {
     "strategy": "IBB",
@@ -27,13 +27,13 @@
     "avgWinUsd": 34.58375,
     "avgLossUsd": 6.892962962962963,
     "profitFactor": 5.017254580624362,
-    "currentCapital": 4626.23,
+    "currentCapital": 4592.61,
     "startingCapital": 1868.46,
     "totalPnlPercent": 49.26891664793466,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771596116094,
-    "lastUpdated": 1771599623695
+    "lastUpdated": 1771599733572
   },
   {
     "strategy": "LC",
@@ -45,13 +45,13 @@
     "avgWinUsd": 60.003,
     "avgLossUsd": 42.9575,
     "profitFactor": 1.3967991619624045,
-    "currentCapital": 4626.23,
+    "currentCapital": 4592.61,
     "startingCapital": 1868.46,
     "totalPnlPercent": 13.720925253952448,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771245295571,
-    "lastUpdated": 1771599623695
+    "lastUpdated": 1771599733572
   },
   {
     "strategy": "MOMENTUM",
@@ -63,13 +63,13 @@
     "avgWinUsd": 0,
     "avgLossUsd": 0,
     "profitFactor": 0,
-    "currentCapital": 4626.23,
+    "currentCapital": 4592.61,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771599623695
+    "lastUpdated": 1771599733572
   },
   {
     "strategy": "VWAP-RSI",
@@ -81,12 +81,12 @@
     "avgWinUsd": 28.657600000000002,
     "avgLossUsd": 0.5288888888888889,
     "profitFactor": 54.184537815126056,
-    "currentCapital": 4626.23,
+    "currentCapital": 4592.61,
     "startingCapital": 1868.46,
     "totalPnlPercent": 37.57961101655909,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771599623695
+    "lastUpdated": 1771599733572
   }
 ]
