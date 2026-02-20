@@ -1,39 +1,38 @@
 {
-  "lastUpdate": "2026-02-20T00:20:09.223Z",
+  "lastUpdate": "2026-02-20T00:30:12.509Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 1780.2,
-    "freeCollateral": 1599.18,
-    "leverage": 1.05,
+    "equity": 1776.99,
+    "freeCollateral": 1776.83,
+    "leverage": 0,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
-  "openPositions": [
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2144,
-      "current": 0.2175,
-      "size": 1899.84,
-      "sizeUnits": 8735,
-      "pnl": 0,
-      "pnlPercent": 0
-    }
-  ],
+  "openPositions": [],
   "stats": {
-    "totalTrades": 84,
+    "totalTrades": 86,
     "wins": 67,
-    "losses": 17,
-    "winRate": 80,
-    "totalPnl": 2272.3900000000003,
-    "avgPnl": 27.05226190476191
+    "losses": 19,
+    "winRate": 78,
+    "totalPnl": 2238.55,
+    "avgPnl": 26.0296511627907
   },
   "recentTrades": [
+    {
+      "id": "WIF-1771547412502",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.21463,
+      "exit": 0.21033739999999998,
+      "pnl": null,
+      "pnlPercent": 10.000000000000018,
+      "exitTime": "2026-02-20T00:30:12.502Z",
+      "status": "CLOSED"
+    },
     {
       "id": "DOT-1771543574931",
       "symbol": "DOT",
@@ -137,18 +136,6 @@
       "direction": "SHORT",
       "entry": 0.052964,
       "exit": 0.051904719999999994,
-      "pnl": 37.5,
-      "pnlPercent": 10,
-      "exitTime": "2026-02-19T12:22:14.500Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "XRP-1771503734500",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "entry": 1.409765,
-      "exit": 1.3815697,
       "pnl": 37.5,
       "pnlPercent": 10,
       "exitTime": "2026-02-19T12:22:14.500Z",
