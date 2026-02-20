@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-20T20:01:59.639Z",
+  "lastUpdate": "2026-02-20T21:01:56.956Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -26,6 +26,21 @@
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
       "entryTime": "2026-02-20T20:01:59.626Z"
+    },
+    {
+      "asset": "XRP",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 1.41871,
+      "currentPrice": 1.41871,
+      "stopLoss": 1.4389249,
+      "takeProfit": 1.3917568,
+      "positionSize": 375,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-20T21:01:56.943Z"
     }
   ],
   "stats": {
@@ -39,17 +54,17 @@
   "recentTrades": [
     {
       "strategy": "IBB",
-      "asset": "W",
+      "asset": "XRP",
       "exchange": "Drift",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.019881,
-      "entryTime": 1771617719627,
-      "stopLoss": 0.0202707,
-      "takeProfit": 0.019361399999999997,
+      "entryPrice": 1.41871,
+      "entryTime": 1771621316945,
+      "stopLoss": 1.4389249,
+      "takeProfit": 1.3917568,
       "positionSize": 375,
       "status": "OPEN",
-      "reason": "Inside bar breakout below 0.0199"
+      "reason": "Inside bar breakout below 1.4214"
     },
     {
       "id": "TCJR5M-OSZOL-RJ2TTE",
@@ -173,7 +188,7 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-20T20:01:59.639Z",
+    "lastCheck": "2026-02-20T21:01:56.956Z",
     "performance": {
       "totalTrades": 3,
       "winningTrades": 0,
