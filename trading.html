@@ -750,7 +750,7 @@
         // Render trade row
         function renderTradeRow(trade) {
             const isOpen = trade.status === 'OPEN';
-            const pnl = safeNum(trade.pnlUsd);
+            const pnl = safeNum(trade.pnlUsd || trade.pnl);
             const isWin = pnl > 0 || trade.result === 'WIN';
             const strategy = trade.strategy || 'V5.0';
             const direction = trade.direction || 'LONG';
@@ -952,27 +952,38 @@
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
             
             // === RENDER TRADE HISTORY ===
-            // Combine trades from state.recentTrades + trading-trades.json
-            const combinedTrades = [...allTrades, ...tradeHistoryData];
-            const closedTrades = combinedTrades
+            // Combine trades from state.recentTrades + trade history
+            // tradeHistoryData is already normalized (from trade-log.json or trading-trades.json)
+            // allTrades from state.recentTrades needs normalization
+            const normalizedStateRecent = allTrades
                 .filter(t => t.status === 'CLOSED' || (!t.status && t.exit))
-                .map(t => ({
-                    strategy: t.strategy || 'V5.0',
-                    asset: t.symbol || t.asset,
-                    exchange: t.exchange || 'Drift',  // Use actual exchange
-                    direction: t.direction || 'LONG',
-                    leverage: t.leverage || 5,
-                    entryPrice: t.entry || t.entryPrice,
-                    exitPrice: t.exit || t.exitPrice,
-                    entryTime: t.entryTime,
-                    exitTime: t.exitTime,
-                    exitReason: t.exitReason || (t.pnl > 0 ? 'TP' : 'SL'),
-                    positionSize: t.size || t.positionSize || 0,
-                    pnlUsd: t.pnl || t.pnlUsd || 0,
-                    pnlPercent: t.pnlPercent || 0,
-                    result: t.result,
-                    status: t.status
-                }));
+                .map(t => {
+                    // Handle pnl being either a number or an object {netPnl, pnlPercent}
+                    const pnlVal = typeof t.pnl === 'object' ? (t.pnl?.netPnl ?? 0) : (t.pnl || 0);
+                    const pnlPct = typeof t.pnl === 'object' ? (t.pnl?.pnlPercent ?? 0) : (t.pnlPercent || 0);
+                    return {
+                        strategy: t.strategy || 'V5.0',
+                        asset: t.symbol || t.asset,
+                        exchange: t.exchange || 'Drift',
+                        direction: t.direction || 'LONG',
+                        leverage: t.leverage || 5,
+                        entryPrice: typeof t.entry === 'object' ? t.entry?.price : (t.entry || t.entryPrice),
+                        exitPrice: typeof t.exit === 'object' ? t.exit?.price : (t.exit || t.exitPrice),
+                        entryTime: t.entryTime || t.entry?.time || t.timestamp,
+                        exitTime: t.exitTime || t.exit?.time,
+                        exitReason: t.exitReason || (pnlVal > 0 ? 'TP' : 'SL'),
+                        positionSize: t.size || t.positionSize || 375,
+                        pnl: pnlVal,
+                        pnlPercent: pnlPct,
+                        result: t.result || (pnlVal > 0 ? 'WIN' : 'LOSS'),
+                        status: t.status || 'CLOSED'
+                    };
+                });
+            
+            // Deduplicate by preferring tradeHistoryData (more complete)
+            const historyIds = new Set(tradeHistoryData.map(t => t.id));
+            const uniqueRecent = normalizedStateRecent.filter(t => !t.id || !historyIds.has(t.id));
+            const closedTrades = [...uniqueRecent, ...tradeHistoryData];
             
             const tbody = document.getElementById('tradeTableBody');
             if (closedTrades.length === 0) {
