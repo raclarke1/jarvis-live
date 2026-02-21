@@ -543,6 +543,55 @@
             .exec-kpis { grid-template-columns: repeat(3, 1fr); }
         }
 
+        /* Decommissioned */
+        .decommissioned {
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            opacity: 0.7;
+        }
+        .decom-header h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        .decom-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .decom-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 18px;
+            min-width: 200px;
+            flex: 1;
+        }
+        .decom-item .name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        .decom-item .detail {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .decom-item .status-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255,165,2,0.15);
+            color: #ffa502;
+            margin-bottom: 6px;
+        }
+
         /* Pagination */
         .pagination {
             display: flex;
@@ -698,6 +747,14 @@
         <!-- Strategy Cards -->
         <div class="strategies-grid" id="strategiesGrid">
             <!-- Populated by JS -->
+        </div>
+        
+        <!-- Decommissioned Strategies -->
+        <div class="decommissioned" id="decommissioned" style="display:none;">
+            <div class="decom-header">
+                <h3>🗄️ Decommissioned Strategies</h3>
+            </div>
+            <div id="decomBody"></div>
         </div>
         
         <!-- Trade Log -->
@@ -1306,13 +1363,33 @@
                 });
             }
             
-            // Render only strategies with trades or that are active
+            // Split active vs decommissioned strategies
+            const decommissionedNames = ['MOMENTUM']; // Strategies no longer running
             const activeStrategies = Object.values(statsMap).filter(s => 
-                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI', 'LC-Kraken'].includes(s.strategy)
+                !decommissionedNames.includes(s.strategy) && 
+                (s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'VWAP-RSI'].includes(s.strategy))
+            );
+            const decomStrategies = Object.values(statsMap).filter(s => 
+                decommissionedNames.includes(s.strategy) || 
+                (s.totalTrades === 0 && !['V5.0', 'IBB', 'LC', 'VWAP-RSI'].includes(s.strategy))
             );
             
             const grid = document.getElementById('strategiesGrid');
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
+            
+            // Render decommissioned
+            if (decomStrategies.length > 0) {
+                const decomEl = document.getElementById('decommissioned');
+                decomEl.style.display = 'block';
+                document.getElementById('decomBody').innerHTML = `<div class="decom-items">${decomStrategies.map(s => `
+                    <div class="decom-item">
+                        <span class="status-tag">Decommissioned</span>
+                        <div class="name">${s.strategy} Strategy</div>
+                        <div class="detail">${s.totalTrades} trades • P&L: ${formatCurrency(s.totalPnlUsd)} • WR: ${s.totalTrades > 0 ? s.winRate.toFixed(0) : 0}%</div>
+                        <div class="detail" style="margin-top:2px;font-style:italic;">Replaced by active strategies</div>
+                    </div>
+                `).join('')}</div>`;
+            }
             
             // === RENDER TRADE HISTORY ===
             // Combine trades from state.recentTrades + trade history
