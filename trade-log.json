@@ -3,6 +3,183 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771635760522-XRP",
+      "timestamp": "2026-02-21T01:02:40.522Z",
+      "timestampMs": 1771635760522,
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.423866,
+        "time": "2026-02-21T01:02:40.522Z",
+        "reason": "Inside bar breakout below 1.4235"
+      },
+      "stopLoss": {
+        "price": 1.4352102,
+        "distanceUsd": 0.011344199999999915,
+        "distancePct": 0.7967182305076401
+      },
+      "takeProfit": {
+        "price": 1.4087404000000001,
+        "distanceUsd": 0.015125599999999961,
+        "distancePct": 1.062290974010192
+      },
+      "riskReward": 1.33333333333334,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.007562800000000003,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 1.431012,
+        "motherBarLow": 1.423525
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 10,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771635717081-WIF",
+      "timestamp": "2026-02-21T01:01:57.081Z",
+      "timestampMs": 1771635717081,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.224633,
+        "time": "2026-02-21T01:01:57.081Z",
+        "reason": "Inside bar breakout below 0.2252"
+      },
+      "stopLoss": {
+        "price": 0.22641529999999999,
+        "distanceUsd": 0.0017822999999999867,
+        "distancePct": 0.7934275017472885
+      },
+      "takeProfit": {
+        "price": 0.2222566,
+        "distanceUsd": 0.0023764000000000007,
+        "distancePct": 1.0579033356630596
+      },
+      "riskReward": 1.3333333333333437,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.0011881999999999947,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.2264,
+        "motherBarLow": 0.22516
+      },
+      "exit": {
+        "price": 0.2258,
+        "time": "2026-02-21T02:58:02.348Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": -9.74,
+        "fees": 0.01,
+        "netPnl": -9.75,
+        "pnlPercent": -2.6
+      },
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "OZNRK2-YKGBR-ANGDSF",
+      "timestamp": "2026-02-21T00:02:26.165Z",
+      "timestampMs": 1771632146165,
+      "symbol": "NEAR",
+      "strategy": "LC",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.051,
+        "time": "2026-02-21T00:02:26.165Z",
+        "reason": "RSI(2) = 100.00 > 90 (overbought)"
+      },
+      "stopLoss": {
+        "price": 1.1262
+      },
+      "takeProfit": {
+        "price": 0.9005999999999998
+      },
+      "positionSize": 1500,
+      "leverage": 3,
+      "exchange": "Kraken",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "OPLODR-FTCXE-NAUH5E",
+      "timestamp": "2026-02-21T00:02:24.485Z",
+      "timestampMs": 1771632144485,
+      "symbol": "RNDR",
+      "strategy": "LC",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.52,
+        "time": "2026-02-21T00:02:24.485Z",
+        "reason": "RSI(2) = 100.00 > 90 (overbought)"
+      },
+      "stopLoss": {
+        "price": 1.6924000000000001
+      },
+      "takeProfit": {
+        "price": 1.1751999999999998
+      },
+      "positionSize": 1500,
+      "leverage": 3,
+      "exchange": "Kraken",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771632116455-W",
+      "timestamp": "2026-02-21T00:01:56.455Z",
+      "timestampMs": 1771632116455,
+      "symbol": "W",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.020029,
+        "time": "2026-02-21T00:01:56.455Z",
+        "reason": "Inside bar breakout below 0.0200"
+      },
+      "stopLoss": {
+        "price": 0.020292400000000002,
+        "distanceUsd": 0.00026340000000000044,
+        "distancePct": 1.3150931149832763
+      },
+      "takeProfit": {
+        "price": 0.0196778,
+        "distanceUsd": 0.0003512000000000029,
+        "distancePct": 1.75345748664438
+      },
+      "riskReward": 1.3333333333333421,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.00017560000000000074,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.020239,
+        "motherBarLow": 0.020048
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 22,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771621316948-XRP",
       "timestamp": "2026-02-20T21:01:56.948Z",
       "timestampMs": 1771621316948,
@@ -5047,6 +5224,60 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000007
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "WIF-1771642694170",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.224633,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.22014034,
+        "time": "2026-02-21T02:58:14.170Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.00000000000002
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "XRP-1771642694170",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 1.423866,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 1.3953886800000002,
+        "time": "2026-02-21T02:58:14.170Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 9.999999999999972
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"

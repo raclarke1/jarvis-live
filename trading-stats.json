@@ -9,31 +9,31 @@
     "avgWinUsd": 30.0425,
     "avgLossUsd": 4.58,
     "profitFactor": 6.559497816593886,
-    "currentCapital": 4516.45,
+    "currentCapital": 4461.4,
     "startingCapital": 1868.46,
     "totalPnlPercent": 5.696134784796036,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": 1771603364251,
-    "lastUpdated": 1771624332705
+    "lastUpdated": 1771642694177
   },
   {
     "strategy": "IBB",
-    "totalTrades": 62,
+    "totalTrades": 65,
     "winningTrades": 32,
-    "losingTrades": 30,
-    "winRate": 51.61290322580645,
-    "totalPnlUsd": 890.45,
+    "losingTrades": 33,
+    "winRate": 49.23076923076923,
+    "totalPnlUsd": 880.7,
     "avgWinUsd": 34.58375,
-    "avgLossUsd": 7.2076666666666656,
-    "profitFactor": 4.798189427923971,
-    "currentCapital": 4516.45,
+    "avgLossUsd": 6.847878787878787,
+    "profitFactor": 5.050286529781397,
+    "currentCapital": 4461.4,
     "startingCapital": 1868.46,
-    "totalPnlPercent": 47.65689391263393,
+    "totalPnlPercent": 47.13507380409535,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
-    "firstTradeTime": 1771621316948,
-    "lastUpdated": 1771624332705
+    "firstTradeTime": 1771635760522,
+    "lastUpdated": 1771642694177
   },
   {
     "strategy": "LC",
@@ -45,13 +45,13 @@
     "avgWinUsd": 60.003,
     "avgLossUsd": 42.9575,
     "profitFactor": 1.3967991619624045,
-    "currentCapital": 4516.45,
+    "currentCapital": 4461.4,
     "startingCapital": 1868.46,
     "totalPnlPercent": 13.720925253952448,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
-    "firstTradeTime": 1771245295571,
-    "lastUpdated": 1771624332705
+    "firstTradeTime": 1771632146165,
+    "lastUpdated": 1771642694177
   },
   {
     "strategy": "MOMENTUM",
@@ -63,13 +63,13 @@
     "avgWinUsd": 0,
     "avgLossUsd": 0,
     "profitFactor": 0,
-    "currentCapital": 4516.45,
+    "currentCapital": 4461.4,
     "startingCapital": 1868.46,
     "totalPnlPercent": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771624332705
+    "lastUpdated": 1771642694177
   },
   {
     "strategy": "VWAP-RSI",
@@ -81,12 +81,12 @@
     "avgWinUsd": 28.657600000000002,
     "avgLossUsd": 0.51,
     "profitFactor": 56.19137254901961,
-    "currentCapital": 4516.45,
+    "currentCapital": 4461.4,
     "startingCapital": 1868.46,
     "totalPnlPercent": 37.57961101655909,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 0,
     "firstTradeTime": null,
-    "lastUpdated": 1771624332705
+    "lastUpdated": 1771642694178
   }
 ]
