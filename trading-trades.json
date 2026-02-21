@@ -1,19 +1,5 @@
 [
   {
-    "strategy": "MOMENTUM",
-    "asset": "INJ",
-    "exchange": "Drift",
-    "direction": "LONG",
-    "leverage": 5,
-    "entryPrice": 3.902504,
-    "entryTime": 1771675315337,
-    "stopLoss": 3.3260105,
-    "takeProfit": 5.055491,
-    "positionSize": 187,
-    "status": "OPEN",
-    "reason": "Momentum breakout above 3.8097"
-  },
-  {
     "id": "TCJR5M-OSZOL-RJ2TTE",
     "asset": "OP",
     "exchange": "Kraken",
