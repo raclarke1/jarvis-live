@@ -6,10 +6,12 @@
     <title>Trading Performance | Jarvis</title>
     <meta http-equiv="refresh" content="300">
     <style>
-        :root {
+        /* Dark theme (default) */
+        :root, [data-theme="dark"] {
             --bg-primary: #0a0a0f;
             --bg-secondary: #12121a;
             --bg-card: linear-gradient(135deg, #1a1a2e 0%, #16162a 100%);
+            --bg-card-solid: #1a1a2e;
             --text-primary: #e0e0e0;
             --text-secondary: #888;
             --accent-green: #00ff88;
@@ -19,8 +21,44 @@
             --accent-blue: #58a6ff;
             --accent-purple: #a855f7;
             --border-color: #2a2a4a;
+            --eq-grid: rgba(255,255,255,0.06);
+            --eq-zero: rgba(255,255,255,0.15);
+            --eq-label: #888;
+            --eq-fill-top: rgba(255,255,255,0.06);
+            --eq-fill-bottom: rgba(255,255,255,0);
+            --hover-bg: rgba(255,255,255,0.02);
+            --metric-bg: rgba(255,255,255,0.03);
+            --header-gradient-start: #fff;
+            --header-gradient-end: #888;
+            --tooltip-bg: rgba(20,20,35,0.95);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-primary: #f5f5f7;
+            --bg-secondary: #ffffff;
+            --bg-card: linear-gradient(135deg, #ffffff 0%, #f8f8fa 100%);
+            --bg-card-solid: #ffffff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #666;
+            --accent-green: #16a34a;
+            --accent-green-dim: rgba(22,163,74,0.12);
+            --accent-red: #dc2626;
+            --accent-red-dim: rgba(220,38,38,0.12);
+            --accent-blue: #2563eb;
+            --accent-purple: #7c3aed;
+            --border-color: #e2e2e8;
+            --eq-grid: rgba(0,0,0,0.06);
+            --eq-zero: rgba(0,0,0,0.15);
+            --eq-label: #666;
+            --eq-fill-top: rgba(0,0,0,0.04);
+            --eq-fill-bottom: rgba(0,0,0,0);
+            --hover-bg: rgba(0,0,0,0.02);
+            --metric-bg: rgba(0,0,0,0.03);
+            --header-gradient-start: #1a1a2e;
+            --header-gradient-end: #555;
+            --tooltip-bg: rgba(255,255,255,0.95);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, border-color 0.3s, color 0.2s; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
             background: var(--bg-primary);
@@ -40,7 +78,7 @@
         .header h1 {
             font-size: 2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            background: linear-gradient(135deg, var(--header-gradient-start) 0%, var(--header-gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -102,7 +140,7 @@
             margin-bottom: 20px;
         }
         .metric-card {
-            background: rgba(255,255,255,0.03);
+            background: var(--metric-bg);
             border-radius: 8px;
             padding: 12px;
         }
@@ -197,7 +235,7 @@
             border-collapse: collapse;
         }
         .trade-table th {
-            background: rgba(0,0,0,0.3);
+            background: var(--metric-bg);
             padding: 12px 16px;
             text-align: left;
             font-size: 0.7rem;
@@ -212,7 +250,7 @@
             border-bottom: 1px solid var(--border-color);
             font-size: 0.875rem;
         }
-        .trade-table tr:hover { background: rgba(255,255,255,0.02); }
+        .trade-table tr:hover { background: var(--hover-bg); }
         
         /* Tags */
         .tag {
@@ -298,7 +336,7 @@
             align-items: center;
             gap: 8px;
             padding: 8px 12px;
-            background: rgba(255,255,255,0.03);
+            background: var(--metric-bg);
             border-radius: 8px;
             font-size: 0.85rem;
         }
@@ -561,6 +599,37 @@
             .exec-kpis { grid-template-columns: repeat(3, 1fr); }
         }
 
+        /* Light mode overrides for gradient/hardcoded backgrounds */
+        [data-theme="light"] .open-positions {
+            background: linear-gradient(135deg, #eaf5ea 0%, #f0faf0 100%);
+            border-color: rgba(22,163,74,0.3);
+        }
+        [data-theme="light"] .open-positions.no-positions {
+            background: var(--bg-card);
+            border-color: var(--border-color);
+        }
+        [data-theme="light"] .position-card {
+            background: rgba(0,0,0,0.03);
+        }
+        [data-theme="light"] .pagination button {
+            background: rgba(0,0,0,0.05);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+        [data-theme="light"] .pagination button:hover:not(:disabled) {
+            background: rgba(37,99,235,0.1);
+            border-color: var(--accent-blue);
+        }
+        [data-theme="light"] .exec-kpi {
+            background: rgba(0,0,0,0.03);
+            border-color: var(--border-color);
+        }
+        [data-theme="light"] #equityTooltip {
+            background: var(--tooltip-bg);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
         /* Pagination */
         .pagination {
             display: flex;
@@ -625,7 +694,12 @@
                 <h1>MegaMax Trading Performance</h1>
                 <p class="subtitle">V5.0 + IBB + Momentum + LC + VWAP Scalper on Drift Protocol • Live trading • MegaMax v1.7</p>
             </div>
-            <div class="updated" id="lastUpdated">Loading...</div>
+            <div style="display:flex;align-items:center;gap:16px;">
+                <button id="themeToggle" onclick="toggleTheme()" style="background:var(--metric-bg);border:1px solid var(--border-color);color:var(--text-primary);padding:8px 12px;border-radius:8px;cursor:pointer;font-size:0.85rem;display:flex;align-items:center;gap:6px;transition:all 0.2s;" title="Toggle light/dark mode">
+                    <span id="themeIcon">☀️</span>
+                </button>
+                <div class="updated" id="lastUpdated">Loading...</div>
+            </div>
         </div>
         
         <!-- Executive Summary -->
@@ -726,7 +800,7 @@
             </div>
             <div style="position:relative;width:100%;height:350px;">
                 <canvas id="equityCanvas" style="width:100%;height:100%;"></canvas>
-                <div id="equityTooltip" style="position:absolute;background:rgba(20,20,35,0.95);border:1px solid #2a2a4a;border-radius:8px;padding:10px 14px;font-size:0.8rem;pointer-events:none;display:none;z-index:10;min-width:140px;"></div>
+                <div id="equityTooltip" style="position:absolute;background:var(--tooltip-bg);border:1px solid var(--border-color);border-radius:8px;padding:10px 14px;font-size:0.8rem;pointer-events:none;display:none;z-index:10;min-width:140px;color:var(--text-primary);"></div>
             </div>
         </div>
 
@@ -1499,25 +1573,26 @@
                 const yS = v => p.t + cH - ((v-yMin)/(yMax-yMin))*cH;
 
                 ctx.clearRect(0,0,W,H);
+                const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
 
                 // Grid
-                ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth = 1;
+                ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'; ctx.lineWidth = 1;
                 for (let i=0; i<=5; i++) {
                     const v = yMin+(yMax-yMin)*(i/5), y = yS(v);
                     ctx.beginPath(); ctx.moveTo(p.l,y); ctx.lineTo(W-p.r,y); ctx.stroke();
-                    ctx.fillStyle='#888'; ctx.font='11px -apple-system,sans-serif'; ctx.textAlign='right';
+                    ctx.fillStyle=isDark?'#888':'#666'; ctx.font='11px -apple-system,sans-serif'; ctx.textAlign='right';
                     ctx.fillText('$'+v.toFixed(0), p.l-8, y+4);
                 }
 
                 // Zero line
                 if (yMin<0 && yMax>0) {
-                    ctx.strokeStyle='rgba(255,255,255,0.15)'; ctx.setLineDash([4,4]);
+                    ctx.strokeStyle=isDark?'rgba(255,255,255,0.15)':'rgba(0,0,0,0.15)'; ctx.setLineDash([4,4]);
                     ctx.beginPath(); ctx.moveTo(p.l,yS(0)); ctx.lineTo(W-p.r,yS(0)); ctx.stroke();
                     ctx.setLineDash([]);
                 }
 
                 // X labels
-                ctx.fillStyle='#888'; ctx.font='11px -apple-system,sans-serif'; ctx.textAlign='center';
+                ctx.fillStyle=isDark?'#888':'#666'; ctx.font='11px -apple-system,sans-serif'; ctx.textAlign='center';
                 const step = Math.max(1,Math.floor(dates.length/10));
                 dates.forEach((d,i) => { if (i%step===0||i===dates.length-1) ctx.fillText(d.slice(5), xS(i), H-p.b+20); });
 
@@ -1534,7 +1609,7 @@
                     ctx.stroke();
                     if (isAll) {
                         const g=ctx.createLinearGradient(0,p.t,0,H-p.b);
-                        g.addColorStop(0,'rgba(255,255,255,0.06)'); g.addColorStop(1,'rgba(255,255,255,0)');
+                        g.addColorStop(0,isDark?'rgba(255,255,255,0.06)':'rgba(0,0,0,0.04)'); g.addColorStop(1,isDark?'rgba(255,255,255,0)':'rgba(0,0,0,0)');
                         ctx.fillStyle=g; ctx.lineTo(xS(pts.length-1),yS(yMin)); ctx.lineTo(xS(0),yS(yMin)); ctx.closePath(); ctx.fill();
                     }
                     if (!isAll) pts.forEach((pt,i) => { ctx.beginPath(); ctx.arc(xS(i),yS(pt.value),3,0,Math.PI*2); ctx.fillStyle=col; ctx.globalAlpha=0.8; ctx.fill(); });
@@ -1561,6 +1636,31 @@
         }
         window.addEventListener('resize', () => { if (eqData) drawEq(); });
 
+        // Theme management
+        function getPreferredTheme() {
+            const saved = localStorage.getItem('megamax-theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.getElementById('themeIcon').textContent = theme === 'dark' ? '☀️' : '🌙';
+            // Redraw equity chart with new colors
+            if (eqData) drawEq();
+        }
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const next = current === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('megamax-theme', next);
+            applyTheme(next);
+        }
+        // Apply on load
+        applyTheme(getPreferredTheme());
+        // Listen for system changes
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+            if (!localStorage.getItem('megamax-theme')) applyTheme(e.matches ? 'light' : 'dark');
+        });
+
         loadData();
         
         // Auto-refresh every 5 minutes
@@ -1571,7 +1671,7 @@
     <div class="container" style="margin-top: 32px; margin-bottom: 32px; text-align: center;">
         <a href="https://app.drift.trade/?authority=3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7" 
            target="_blank" 
-           style="display: inline-block; background: linear-gradient(135deg, #1a1a2e 0%, #16162a 100%); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 32px; color: var(--accent-blue); text-decoration: none; font-size: 1rem; font-weight: 500;">
+           style="display: inline-block; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 32px; color: var(--accent-blue); text-decoration: none; font-size: 1rem; font-weight: 500;">
             📊 View Drift Account → Open Positions & Orders
         </a>
         <div style="margin-top: 8px; color: var(--text-secondary); font-size: 0.75rem;">
