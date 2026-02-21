@@ -543,117 +543,6 @@
             .exec-kpis { grid-template-columns: repeat(3, 1fr); }
         }
 
-        /* Decommissioned */
-        .decommissioned {
-            background: rgba(255,255,255,0.02);
-            border: 1px dashed var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            opacity: 0.7;
-        }
-        .decom-header h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-        .decom-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .decom-item {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 14px 18px;
-            min-width: 200px;
-            flex: 1;
-        }
-        .decom-item .name {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-        .decom-item .detail {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-        .decom-item .status-tag {
-            display: inline-block;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(255,165,2,0.15);
-            color: #ffa502;
-            margin-bottom: 6px;
-        }
-
-        /* Equity Curves */
-        .equity-section {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-        .equity-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-        .equity-header h2 { font-size: 1.1rem; font-weight: 600; }
-        .equity-legend {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .equity-legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 6px;
-            transition: background 0.2s;
-        }
-        .equity-legend-item:hover { background: rgba(255,255,255,0.05); }
-        .equity-legend-item.hidden { opacity: 0.3; }
-        .equity-legend-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-        .equity-canvas-wrap {
-            position: relative;
-            width: 100%;
-            height: 350px;
-        }
-        .equity-canvas-wrap canvas {
-            width: 100%;
-            height: 100%;
-        }
-        .equity-tooltip {
-            position: absolute;
-            background: rgba(20,20,35,0.95);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-size: 0.8rem;
-            pointer-events: none;
-            display: none;
-            z-index: 10;
-            min-width: 140px;
-        }
-        .equity-tooltip .date { color: var(--text-secondary); margin-bottom: 6px; }
-        .equity-tooltip .line { display: flex; justify-content: space-between; gap: 12px; margin: 2px 0; }
-
         /* Pagination */
         .pagination {
             display: flex;
@@ -809,18 +698,6 @@
         <!-- Strategy Cards -->
         <div class="strategies-grid" id="strategiesGrid">
             <!-- Populated by JS -->
-        </div>
-        
-        <!-- Equity Curves -->
-        <div class="equity-section" id="equitySection" style="display:none;">
-            <div class="equity-header">
-                <h2>📈 Cumulative P&L by Strategy</h2>
-                <div class="equity-legend" id="equityLegend"></div>
-            </div>
-            <div class="equity-canvas-wrap">
-                <canvas id="equityCanvas"></canvas>
-                <div class="equity-tooltip" id="equityTooltip"></div>
-            </div>
         </div>
         
         <!-- Trade Log -->
@@ -1073,282 +950,6 @@
             `;
         }
         
-        // Strategy colors
-        const STRAT_COLORS = {
-            'V5.0': '#58a6ff',
-            'IBB': '#00ff88',
-            'LC': '#ffa502',
-            'MOMENTUM': '#a855f7',
-            'VWAP-RSI': '#ff6b81',
-            'ALL': '#ffffff'
-        };
-        
-        // Equity curve renderer
-        let equityHiddenStrats = new Set();
-        let equityCurveData = null;
-        
-        function renderEquityCurves(trades) {
-            if (!trades || trades.length === 0) return;
-            
-            document.getElementById('equitySection').style.display = 'block';
-            
-            // Group trades by date and strategy, compute cumulative P&L
-            const byDateStrat = {};
-            const strategies = new Set();
-            
-            // Sort trades by exit time
-            const sorted = [...trades].sort((a, b) => {
-                const da = new Date(a.exitTime || a.entryTime || 0);
-                const db = new Date(b.exitTime || b.entryTime || 0);
-                return da - db;
-            });
-            
-            sorted.forEach(t => {
-                const exitTime = t.exitTime || t.entryTime;
-                if (!exitTime) return;
-                const date = new Date(exitTime).toISOString().slice(0, 10);
-                const strat = t.strategy || 'Unknown';
-                const pnl = safeNum(t.pnlUsd || t.pnl);
-                strategies.add(strat);
-                
-                if (!byDateStrat[date]) byDateStrat[date] = {};
-                if (!byDateStrat[date][strat]) byDateStrat[date][strat] = 0;
-                byDateStrat[date][strat] += pnl;
-                if (!byDateStrat[date]['ALL']) byDateStrat[date]['ALL'] = 0;
-                byDateStrat[date]['ALL'] += pnl;
-            });
-            
-            strategies.add('ALL');
-            const dates = Object.keys(byDateStrat).sort();
-            
-            // Build cumulative series
-            const cumulative = {};
-            [...strategies].forEach(s => { cumulative[s] = []; });
-            let running = {};
-            [...strategies].forEach(s => { running[s] = 0; });
-            
-            dates.forEach(date => {
-                [...strategies].forEach(s => {
-                    running[s] += (byDateStrat[date][s] || 0);
-                    cumulative[s].push({ date, value: running[s] });
-                });
-            });
-            
-            equityCurveData = { dates, cumulative, strategies: [...strategies] };
-            
-            // Render legend
-            const legend = document.getElementById('equityLegend');
-            legend.innerHTML = [...strategies].map(s => `
-                <div class="equity-legend-item" data-strat="${s}" onclick="toggleEquityStrat('${s}')">
-                    <div class="equity-legend-dot" style="background:${STRAT_COLORS[s] || '#888'}"></div>
-                    <span>${s}</span>
-                </div>
-            `).join('');
-            
-            drawEquityChart();
-        }
-        
-        function toggleEquityStrat(strat) {
-            if (equityHiddenStrats.has(strat)) {
-                equityHiddenStrats.delete(strat);
-            } else {
-                equityHiddenStrats.add(strat);
-            }
-            document.querySelectorAll('.equity-legend-item').forEach(el => {
-                el.classList.toggle('hidden', equityHiddenStrats.has(el.dataset.strat));
-            });
-            drawEquityChart();
-        }
-        
-        function drawEquityChart() {
-            if (!equityCurveData) return;
-            const { dates, cumulative, strategies } = equityCurveData;
-            
-            const canvas = document.getElementById('equityCanvas');
-            const wrap = canvas.parentElement;
-            const dpr = window.devicePixelRatio || 1;
-            canvas.width = wrap.clientWidth * dpr;
-            canvas.height = wrap.clientHeight * dpr;
-            const ctx = canvas.getContext('2d');
-            ctx.scale(dpr, dpr);
-            const W = wrap.clientWidth;
-            const H = wrap.clientHeight;
-            
-            const pad = { top: 20, right: 20, bottom: 40, left: 65 };
-            const chartW = W - pad.left - pad.right;
-            const chartH = H - pad.top - pad.bottom;
-            
-            // Find min/max across visible strategies
-            let allVals = [];
-            strategies.forEach(s => {
-                if (equityHiddenStrats.has(s)) return;
-                cumulative[s].forEach(p => allVals.push(p.value));
-            });
-            if (allVals.length === 0) allVals = [0];
-            
-            const minVal = Math.min(0, Math.min(...allVals));
-            const maxVal = Math.max(0, Math.max(...allVals));
-            const range = maxVal - minVal || 1;
-            const padding = range * 0.1;
-            const yMin = minVal - padding;
-            const yMax = maxVal + padding;
-            
-            const xScale = (i) => pad.left + (i / Math.max(dates.length - 1, 1)) * chartW;
-            const yScale = (v) => pad.top + chartH - ((v - yMin) / (yMax - yMin)) * chartH;
-            
-            // Clear
-            ctx.clearRect(0, 0, W, H);
-            
-            // Grid lines
-            ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-            ctx.lineWidth = 1;
-            const gridLines = 5;
-            for (let i = 0; i <= gridLines; i++) {
-                const v = yMin + (yMax - yMin) * (i / gridLines);
-                const y = yScale(v);
-                ctx.beginPath();
-                ctx.moveTo(pad.left, y);
-                ctx.lineTo(W - pad.right, y);
-                ctx.stroke();
-                
-                // Y label
-                ctx.fillStyle = '#888';
-                ctx.font = '11px -apple-system, sans-serif';
-                ctx.textAlign = 'right';
-                ctx.fillText('$' + v.toFixed(0), pad.left - 8, y + 4);
-            }
-            
-            // Zero line
-            if (yMin < 0 && yMax > 0) {
-                ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-                ctx.setLineDash([4, 4]);
-                ctx.beginPath();
-                ctx.moveTo(pad.left, yScale(0));
-                ctx.lineTo(W - pad.right, yScale(0));
-                ctx.stroke();
-                ctx.setLineDash([]);
-            }
-            
-            // X labels (dates)
-            ctx.fillStyle = '#888';
-            ctx.font = '11px -apple-system, sans-serif';
-            ctx.textAlign = 'center';
-            const maxLabels = Math.min(dates.length, 10);
-            const step = Math.max(1, Math.floor(dates.length / maxLabels));
-            dates.forEach((d, i) => {
-                if (i % step === 0 || i === dates.length - 1) {
-                    const x = xScale(i);
-                    const label = d.slice(5); // MM-DD
-                    ctx.fillText(label, x, H - pad.bottom + 20);
-                    
-                    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
-                    ctx.beginPath();
-                    ctx.moveTo(x, pad.top);
-                    ctx.lineTo(x, H - pad.bottom);
-                    ctx.stroke();
-                }
-            });
-            
-            // Draw lines (ALL first so it's behind)
-            const drawOrder = ['ALL', ...strategies.filter(s => s !== 'ALL')];
-            drawOrder.forEach(strat => {
-                if (equityHiddenStrats.has(strat)) return;
-                const points = cumulative[strat];
-                if (!points || points.length < 2) return;
-                
-                const color = STRAT_COLORS[strat] || '#888';
-                const isAll = strat === 'ALL';
-                
-                ctx.strokeStyle = color;
-                ctx.lineWidth = isAll ? 3 : 2;
-                ctx.globalAlpha = isAll ? 0.4 : 0.9;
-                ctx.lineJoin = 'round';
-                ctx.lineCap = 'round';
-                
-                // Line
-                ctx.beginPath();
-                points.forEach((p, i) => {
-                    const x = xScale(i);
-                    const y = yScale(p.value);
-                    if (i === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
-                });
-                ctx.stroke();
-                
-                // Gradient fill for ALL
-                if (isAll) {
-                    const gradient = ctx.createLinearGradient(0, pad.top, 0, H - pad.bottom);
-                    gradient.addColorStop(0, 'rgba(255,255,255,0.06)');
-                    gradient.addColorStop(1, 'rgba(255,255,255,0)');
-                    ctx.fillStyle = gradient;
-                    ctx.lineTo(xScale(points.length - 1), yScale(yMin));
-                    ctx.lineTo(xScale(0), yScale(yMin));
-                    ctx.closePath();
-                    ctx.fill();
-                }
-                
-                // Dots on data points
-                if (!isAll) {
-                    points.forEach((p, i) => {
-                        ctx.beginPath();
-                        ctx.arc(xScale(i), yScale(p.value), 3, 0, Math.PI * 2);
-                        ctx.fillStyle = color;
-                        ctx.globalAlpha = 0.8;
-                        ctx.fill();
-                    });
-                }
-                
-                // Label at end
-                const last = points[points.length - 1];
-                ctx.fillStyle = color;
-                ctx.globalAlpha = 1;
-                ctx.font = `${isAll ? 'bold ' : ''}11px -apple-system, sans-serif`;
-                ctx.textAlign = 'left';
-                const labelX = xScale(points.length - 1) + 6;
-                const labelY = yScale(last.value) + 4;
-                ctx.fillText(`${strat} $${last.value.toFixed(0)}`, Math.min(labelX, W - 80), labelY);
-                
-                ctx.globalAlpha = 1;
-            });
-            
-            // Hover tooltip
-            canvas.onmousemove = (e) => {
-                const rect = canvas.getBoundingClientRect();
-                const mx = e.clientX - rect.left;
-                const my = e.clientY - rect.top;
-                
-                if (mx < pad.left || mx > W - pad.right || my < pad.top || my > H - pad.bottom) {
-                    document.getElementById('equityTooltip').style.display = 'none';
-                    return;
-                }
-                
-                const idx = Math.round(((mx - pad.left) / chartW) * (dates.length - 1));
-                const clampIdx = Math.max(0, Math.min(idx, dates.length - 1));
-                const date = dates[clampIdx];
-                
-                let html = `<div class="date">${date}</div>`;
-                strategies.forEach(s => {
-                    if (equityHiddenStrats.has(s)) return;
-                    const val = cumulative[s][clampIdx]?.value || 0;
-                    const color = STRAT_COLORS[s] || '#888';
-                    html += `<div class="line"><span style="color:${color}">${s}</span><span style="color:${val >= 0 ? '#00ff88' : '#ff4757'}">${formatCurrency(val)}</span></div>`;
-                });
-                
-                const tooltip = document.getElementById('equityTooltip');
-                tooltip.innerHTML = html;
-                tooltip.style.display = 'block';
-                tooltip.style.left = Math.min(mx + 12, W - 170) + 'px';
-                tooltip.style.top = (my - 10) + 'px';
-            };
-            
-            canvas.onmouseleave = () => {
-                document.getElementById('equityTooltip').style.display = 'none';
-            };
-        }
-        
-        // Redraw on resize
-        window.addEventListener('resize', () => { if (equityCurveData) drawEquityChart(); });
-        
         // Executive Summary renderer
         function renderExecSummary(trades, state) {
             if (!trades || trades.length === 0) return;
@@ -1544,12 +1145,8 @@
             pageNums.innerHTML = numsHtml;
         }
         
-        document.addEventListener('DOMContentLoaded', () => {
-            const prev = document.getElementById('prevPage');
-            const next = document.getElementById('nextPage');
-            if (prev) prev.addEventListener('click', () => renderTradePage(currentPage - 1));
-            if (next) next.addEventListener('click', () => renderTradePage(currentPage + 1));
-        });
+        document.getElementById('prevPage').addEventListener('click', () => renderTradePage(currentPage - 1));
+        document.getElementById('nextPage').addEventListener('click', () => renderTradePage(currentPage + 1));
         
         // Main data loader - fetches both state.json and trading-stats.json
         async function loadData() {
@@ -1709,21 +1306,13 @@
                 });
             }
             
-            // Split active vs decommissioned strategies
-            const decommissionedNames = []; // Add strategy names here when retired
+            // Render only strategies with trades or that are active
             const activeStrategies = Object.values(statsMap).filter(s => 
-                !decommissionedNames.includes(s.strategy) && 
-                (s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI'].includes(s.strategy))
-            );
-            const decomStrategies = Object.values(statsMap).filter(s => 
-                decommissionedNames.includes(s.strategy) || 
-                (s.totalTrades === 0 && !['V5.0', 'IBB', 'LC', 'VWAP-RSI'].includes(s.strategy))
+                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI', 'LC-Kraken'].includes(s.strategy)
             );
             
             const grid = document.getElementById('strategiesGrid');
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
-            
-            // Decommissioned section removed
             
             // === RENDER TRADE HISTORY ===
             // Combine trades from state.recentTrades + trade history
@@ -1769,9 +1358,6 @@
             
             // === RENDER EXECUTIVE SUMMARY ===
             renderExecSummary(closedTrades, state);
-            
-            // === RENDER EQUITY CURVES ===
-            renderEquityCurves(closedTrades);
             
             // === UPDATE HEADER INFO ===
             const totalWins = closedTrades.filter(t => t.pnlUsd > 0 || t.result === 'WIN').length;
