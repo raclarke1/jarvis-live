@@ -1,5 +1,33 @@
 [
   {
+    "strategy": "IBB",
+    "asset": "XRP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 1.4254660000000001,
+    "entryTime": 1771646556735,
+    "stopLoss": 1.4351032000000001,
+    "takeProfit": 1.4126164,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 1.4282"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "WIF",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.224753,
+    "entryTime": 1771646515842,
+    "stopLoss": 0.2267255,
+    "takeProfit": 0.22212300000000001,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.2251"
+  },
+  {
     "id": "TCJR5M-OSZOL-RJ2TTE",
     "asset": "OP",
     "exchange": "Kraken",
