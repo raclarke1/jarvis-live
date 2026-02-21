@@ -1,17 +1,17 @@
 [
   {
     "strategy": "IBB",
-    "asset": "WIF",
+    "asset": "XRP",
     "exchange": "Drift",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.225446,
-    "entryTime": 1771689717204,
-    "stopLoss": 0.22776980000000002,
-    "takeProfit": 0.2223476,
+    "entryPrice": 1.43998,
+    "entryTime": 1771693317272,
+    "stopLoss": 1.4556369999999998,
+    "takeProfit": 1.4191040000000001,
     "positionSize": 375,
     "status": "OPEN",
-    "reason": "Inside bar breakout below 0.2267"
+    "reason": "Inside bar breakout below 1.4469"
   },
   {
     "id": "TCJR5M-OSZOL-RJ2TTE",

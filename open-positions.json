@@ -43,5 +43,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-21T16:01:57.203Z"
+  },
+  {
+    "asset": "XRP",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 1.43998,
+    "currentPrice": 1.43998,
+    "stopLoss": 1.4556369999999998,
+    "takeProfit": 1.4191040000000001,
+    "positionSize": 375,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-21T17:01:57.269Z"
   }
 ]
