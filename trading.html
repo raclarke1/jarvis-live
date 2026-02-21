@@ -1348,109 +1348,74 @@
             renderOpenPositions(openPositions);
             
             // === RENDER STRATEGY CARDS ===
-            // Use trading-stats.json if available, otherwise create defaults
-            const defaultStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI'];
+            // Compute all stats from trade-log.json (source of truth)
+            const startingCapital = state.account?.startingEquity || 1868.46;
+            const currentCapital = state.account?.equity || 2076;
+            const canonicalStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI'];
             const statsMap = {};
             
-            // Initialize with defaults
-            defaultStrategies.forEach(s => {
-                statsMap[s] = {
-                    strategy: s,
-                    totalTrades: 0,
-                    winningTrades: 0,
-                    losingTrades: 0,
-                    winRate: 0,
-                    totalPnlUsd: 0,
-                    totalPnlPercent: 0,
-                    avgWinUsd: 0,
-                    avgLossUsd: 0,
-                    profitFactor: 0,
-                    maxDrawdownPercent: 0,
-                    avgHoldingTimeMs: 0,
-                    startingCapital: state.account?.startingEquity || 1868.46,
-                    currentCapital: state.account?.equity || 2076,
-                    firstTradeTime: null
-                };
-            });
-            
-            // Merge loaded stats
-            strategyStats.forEach(s => {
-                if (s.strategy) {
-                    statsMap[s.strategy] = { ...statsMap[s.strategy], ...s };
+            // Build stats from closed trades (tradeHistoryData comes from trade-log.json)
+            const tradesForStats = tradeHistoryData.length > 0 ? tradeHistoryData : closedTrades || [];
+            tradesForStats.forEach(t => {
+                const strat = t.strategy || 'Unknown';
+                if (!statsMap[strat]) {
+                    statsMap[strat] = {
+                        strategy: strat, totalTrades: 0, winningTrades: 0, losingTrades: 0,
+                        totalPnlUsd: 0, wins: [], losses: [], firstTradeTime: null,
+                        startingCapital, currentCapital, totalPnlPercent: 0,
+                        avgWinUsd: 0, avgLossUsd: 0, profitFactor: 0,
+                        maxDrawdownPercent: 0, avgHoldingTimeMs: 0, winRate: 0
+                    };
+                }
+                const s = statsMap[strat];
+                const pnl = safeNum(t.pnl || t.pnlUsd);
+                s.totalTrades++;
+                s.totalPnlUsd += pnl;
+                if (pnl > 0) { s.winningTrades++; s.wins.push(pnl); }
+                else { s.losingTrades++; s.losses.push(pnl); }
+                const d = t.entryTime ? new Date(t.entryTime) : null;
+                if (d && (!s.firstTradeTime || d < new Date(s.firstTradeTime))) s.firstTradeTime = t.entryTime;
+                if (t.entryTime && t.exitTime) {
+                    const hold = new Date(t.exitTime) - new Date(t.entryTime);
+                    s.avgHoldingTimeMs = s.avgHoldingTimeMs ? (s.avgHoldingTimeMs * (s.totalTrades-1) + hold) / s.totalTrades : hold;
                 }
             });
             
-            // Compute stats from trades if stats file is empty/missing
-            const allTrades = state.recentTrades || [];
-            if (allTrades.length > 0) {
-                allTrades.forEach(t => {
-                    const strat = t.strategy || 'V5.0';
-                    if (!statsMap[strat]) {
-                        statsMap[strat] = { ...statsMap['V5.0'], strategy: strat };
-                    }
-                    if (t.status === 'CLOSED') {
-                        statsMap[strat].totalTrades++;
-                        const pnl = t.pnl || 0;
-                        statsMap[strat].totalPnlUsd += pnl;
-                        if (pnl > 0) statsMap[strat].winningTrades++;
-                        else statsMap[strat].losingTrades++;
-                        
-                        if (!statsMap[strat].firstTradeTime || new Date(t.entryTime) < new Date(statsMap[strat].firstTradeTime)) {
-                            statsMap[strat].firstTradeTime = t.entryTime;
-                        }
-                    }
-                });
-                
-                // Calculate derived stats
-                Object.values(statsMap).forEach(s => {
-                    if (s.totalTrades > 0) {
-                        s.winRate = (s.winningTrades / s.totalTrades) * 100;
-                        s.totalPnlPercent = (s.totalPnlUsd / s.startingCapital) * 100;
-                    }
-                });
-            }
+            // Derive computed stats
+            Object.values(statsMap).forEach(s => {
+                if (s.totalTrades > 0) {
+                    s.winRate = (s.winningTrades / s.totalTrades) * 100;
+                    s.totalPnlPercent = (s.totalPnlUsd / s.startingCapital) * 100;
+                    s.avgWinUsd = s.wins.length > 0 ? s.wins.reduce((a,b)=>a+b,0) / s.wins.length : 0;
+                    s.avgLossUsd = s.losses.length > 0 ? s.losses.reduce((a,b)=>a+b,0) / s.losses.length : 0;
+                    const grossWin = s.wins.reduce((a,b)=>a+b,0);
+                    const grossLoss = Math.abs(s.losses.reduce((a,b)=>a+b,0));
+                    s.profitFactor = grossLoss > 0 ? grossWin / grossLoss : grossWin > 0 ? Infinity : 0;
+                    // Max drawdown
+                    let peak = 0, maxDD = 0, running = 0;
+                    [...s.wins.map(v=>({v})), ...s.losses.map(v=>({v}))]; // need chronological order
+                    // Use all pnls in order for this strategy from tradesForStats
+                    let runDD = 0, peakDD = 0, mxDD = 0;
+                    tradesForStats.filter(t => t.strategy === s.strategy).forEach(t => {
+                        runDD += safeNum(t.pnl || t.pnlUsd);
+                        if (runDD > peakDD) peakDD = runDD;
+                        const dd = peakDD - runDD;
+                        if (dd > mxDD) mxDD = dd;
+                    });
+                    s.maxDrawdownPercent = s.startingCapital > 0 ? (mxDD / s.startingCapital * 100) : 0;
+                }
+                delete s.wins; delete s.losses;
+            });
             
-            // Render only strategies with trades or that are active
-            const activeStrategies = Object.values(statsMap).filter(s => 
-                s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI', 'LC-Kraken'].includes(s.strategy)
-            );
+            // Only show strategies that have trades
+            const activeStrategies = Object.values(statsMap).filter(s => s.totalTrades > 0);
             
             const grid = document.getElementById('strategiesGrid');
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
             
             // === RENDER TRADE HISTORY ===
-            // Combine trades from state.recentTrades + trade history
-            // tradeHistoryData is already normalized (from trade-log.json or trading-trades.json)
-            // allTrades from state.recentTrades needs normalization
-            const normalizedStateRecent = allTrades
-                .filter(t => t.status === 'CLOSED' || (!t.status && t.exit))
-                .map(t => {
-                    // Handle pnl being either a number or an object {netPnl, pnlPercent}
-                    const pnlVal = typeof t.pnl === 'object' ? (t.pnl?.netPnl ?? 0) : (t.pnl || 0);
-                    const pnlPct = typeof t.pnl === 'object' ? (t.pnl?.pnlPercent ?? 0) : (t.pnlPercent || 0);
-                    return {
-                        strategy: t.strategy || 'V5.0',
-                        asset: t.symbol || t.asset,
-                        exchange: t.exchange || 'Drift',
-                        direction: t.direction || 'LONG',
-                        leverage: t.leverage || 5,
-                        entryPrice: typeof t.entry === 'object' ? t.entry?.price : (t.entry || t.entryPrice),
-                        exitPrice: typeof t.exit === 'object' ? t.exit?.price : (t.exit || t.exitPrice),
-                        entryTime: t.entryTime || t.entry?.time || t.timestamp,
-                        exitTime: t.exitTime || t.exit?.time,
-                        exitReason: t.exitReason || (pnlVal > 0 ? 'TP' : 'SL'),
-                        positionSize: t.size || t.positionSize || 375,
-                        pnl: pnlVal,
-                        pnlPercent: pnlPct,
-                        result: t.result || (pnlVal > 0 ? 'WIN' : 'LOSS'),
-                        status: t.status || 'CLOSED'
-                    };
-                });
-            
-            // Deduplicate by preferring tradeHistoryData (more complete)
-            const historyIds = new Set(tradeHistoryData.map(t => t.id));
-            const uniqueRecent = normalizedStateRecent.filter(t => !t.id || !historyIds.has(t.id));
-            const closedTrades = [...uniqueRecent, ...tradeHistoryData];
+            // Use trade-log.json as the single source of truth
+            const closedTrades = tradeHistoryData;
             
             // Store globally and render first page
             allClosedTrades = closedTrades;
