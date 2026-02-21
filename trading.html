@@ -1544,8 +1544,12 @@
             pageNums.innerHTML = numsHtml;
         }
         
-        document.getElementById('prevPage').addEventListener('click', () => renderTradePage(currentPage - 1));
-        document.getElementById('nextPage').addEventListener('click', () => renderTradePage(currentPage + 1));
+        document.addEventListener('DOMContentLoaded', () => {
+            const prev = document.getElementById('prevPage');
+            const next = document.getElementById('nextPage');
+            if (prev) prev.addEventListener('click', () => renderTradePage(currentPage - 1));
+            if (next) next.addEventListener('click', () => renderTradePage(currentPage + 1));
+        });
         
         // Main data loader - fetches both state.json and trading-stats.json
         async function loadData() {
