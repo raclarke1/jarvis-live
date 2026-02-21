@@ -1407,8 +1407,20 @@
                 delete s.wins; delete s.losses;
             });
             
-            // Only show strategies that have trades
-            const activeStrategies = Object.values(statsMap).filter(s => s.totalTrades > 0);
+            // Show all canonical strategies (even with 0 trades) + any extras from trade log
+            canonicalStrategies.forEach(name => {
+                if (!statsMap[name]) {
+                    statsMap[name] = {
+                        strategy: name, totalTrades: 0, winningTrades: 0, losingTrades: 0,
+                        totalPnlUsd: 0, totalPnlPercent: 0, winRate: 0, profitFactor: 0,
+                        avgWinUsd: 0, avgLossUsd: 0, maxDrawdownPercent: 0, avgHoldingTimeMs: 0,
+                        startingCapital, currentCapital, firstTradeTime: null
+                    };
+                }
+            });
+            const activeStrategies = canonicalStrategies.map(n => statsMap[n]).concat(
+                Object.values(statsMap).filter(s => !canonicalStrategies.includes(s.strategy))
+            );
             
             const grid = document.getElementById('strategiesGrid');
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
