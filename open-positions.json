@@ -28,5 +28,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-21T15:02:22.005Z"
+  },
+  {
+    "asset": "WIF",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.225446,
+    "currentPrice": 0.225446,
+    "stopLoss": 0.22776980000000002,
+    "takeProfit": 0.2223476,
+    "positionSize": 375,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-21T16:01:57.203Z"
   }
 ]

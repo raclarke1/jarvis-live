@@ -1,17 +1,17 @@
 [
   {
-    "strategy": "MOMENTUM",
-    "asset": "INJ",
+    "strategy": "IBB",
+    "asset": "WIF",
     "exchange": "Drift",
-    "direction": "LONG",
+    "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 3.834196,
-    "entryTime": 1771686142006,
-    "stopLoss": 3.225073,
-    "takeProfit": 5.052441999999999,
-    "positionSize": 187,
+    "entryPrice": 0.225446,
+    "entryTime": 1771689717204,
+    "stopLoss": 0.22776980000000002,
+    "takeProfit": 0.2223476,
+    "positionSize": 375,
     "status": "OPEN",
-    "reason": "Momentum breakout above 3.8097"
+    "reason": "Inside bar breakout below 0.2267"
   },
   {
     "id": "TCJR5M-OSZOL-RJ2TTE",
