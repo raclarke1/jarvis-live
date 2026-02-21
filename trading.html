@@ -543,6 +543,45 @@
             .exec-kpis { grid-template-columns: repeat(3, 1fr); }
         }
 
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        .pagination button {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .pagination button:hover:not(:disabled) {
+            background: rgba(88,166,255,0.15);
+            border-color: var(--accent-blue);
+        }
+        .pagination button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .pagination button.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: #fff;
+            font-weight: 600;
+        }
+        .pagination .page-info {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 0 8px;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -683,6 +722,12 @@
                     <!-- Populated by JS -->
                 </tbody>
             </table>
+            <div class="pagination" id="pagination" style="display:none;">
+                <button id="prevPage">← Prev</button>
+                <div id="pageNumbers"></div>
+                <button id="nextPage">Next →</button>
+                <span class="page-info" id="pageInfo"></span>
+            </div>
         </div>
         
         <!-- Footer -->
@@ -1063,6 +1108,46 @@
             document.getElementById('execStrategyBody').innerHTML = tableHtml;
         }
         
+        // Pagination state
+        const TRADES_PER_PAGE = 30;
+        let currentPage = 1;
+        let allClosedTrades = [];
+        
+        function renderTradePage(page) {
+            currentPage = page;
+            const total = allClosedTrades.length;
+            const totalPages = Math.ceil(total / TRADES_PER_PAGE);
+            const start = (page - 1) * TRADES_PER_PAGE;
+            const end = Math.min(start + TRADES_PER_PAGE, total);
+            const pageTrades = allClosedTrades.slice(start, end);
+            
+            const tbody = document.getElementById('tradeTableBody');
+            tbody.innerHTML = pageTrades.map(t => renderTradeRow(t)).join('');
+            
+            // Update pagination controls
+            const pagination = document.getElementById('pagination');
+            pagination.style.display = totalPages > 1 ? 'flex' : 'none';
+            
+            document.getElementById('prevPage').disabled = page <= 1;
+            document.getElementById('nextPage').disabled = page >= totalPages;
+            document.getElementById('pageInfo').textContent = `${start + 1}–${end} of ${total}`;
+            
+            // Page numbers
+            const pageNums = document.getElementById('pageNumbers');
+            let numsHtml = '';
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= page - 2 && i <= page + 2)) {
+                    numsHtml += `<button class="${i === page ? 'active' : ''}" onclick="renderTradePage(${i})">${i}</button>`;
+                } else if (i === page - 3 || i === page + 3) {
+                    numsHtml += `<span class="page-info">...</span>`;
+                }
+            }
+            pageNums.innerHTML = numsHtml;
+        }
+        
+        document.getElementById('prevPage').addEventListener('click', () => renderTradePage(currentPage - 1));
+        document.getElementById('nextPage').addEventListener('click', () => renderTradePage(currentPage + 1));
+        
         // Main data loader - fetches both state.json and trading-stats.json
         async function loadData() {
             const cacheBust = Date.now();
@@ -1263,11 +1348,12 @@
             const uniqueRecent = normalizedStateRecent.filter(t => !t.id || !historyIds.has(t.id));
             const closedTrades = [...uniqueRecent, ...tradeHistoryData];
             
-            const tbody = document.getElementById('tradeTableBody');
+            // Store globally and render first page
+            allClosedTrades = closedTrades;
             if (closedTrades.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No closed trades yet</td></tr>';
+                document.getElementById('tradeTableBody').innerHTML = '<tr><td colspan="7" class="empty-state">No closed trades yet</td></tr>';
             } else {
-                tbody.innerHTML = closedTrades.map(t => renderTradeRow(t)).join('');
+                renderTradePage(1);
             }
             
             // === RENDER EXECUTIVE SUMMARY ===
