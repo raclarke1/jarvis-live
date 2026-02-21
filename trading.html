@@ -1723,19 +1723,7 @@
             const grid = document.getElementById('strategiesGrid');
             grid.innerHTML = activeStrategies.map(s => renderStrategyCard(s)).join('');
             
-            // Render decommissioned
-            if (decomStrategies.length > 0) {
-                const decomEl = document.getElementById('decommissioned');
-                decomEl.style.display = 'block';
-                document.getElementById('decomBody').innerHTML = `<div class="decom-items">${decomStrategies.map(s => `
-                    <div class="decom-item">
-                        <span class="status-tag">Decommissioned</span>
-                        <div class="name">${s.strategy} Strategy</div>
-                        <div class="detail">${s.totalTrades} trades • P&L: ${formatCurrency(s.totalPnlUsd)} • WR: ${s.totalTrades > 0 ? s.winRate.toFixed(0) : 0}%</div>
-                        <div class="detail" style="margin-top:2px;font-style:italic;">Replaced by active strategies</div>
-                    </div>
-                `).join('')}</div>`;
-            }
+            // Decommissioned section removed
             
             // === RENDER TRADE HISTORY ===
             // Combine trades from state.recentTrades + trade history
