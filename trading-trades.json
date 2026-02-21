@@ -1,12 +1,40 @@
 [
   {
+    "strategy": "IBB",
+    "asset": "XRP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 1.423866,
+    "entryTime": 1771635760520,
+    "stopLoss": 1.4352102,
+    "takeProfit": 1.4087404000000001,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 1.4235"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "WIF",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.224633,
+    "entryTime": 1771635717078,
+    "stopLoss": 0.22641529999999999,
+    "takeProfit": 0.2222566,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.2252"
+  },
+  {
     "id": "TCJR5M-OSZOL-RJ2TTE",
     "asset": "OP",
     "exchange": "Kraken",
-    "strategy": "LC",
+    "strategy": "UNKNOWN",
     "direction": "LONG",
-    "entryPrice": 0.1896,
-    "entryTime": "2026-02-16T15:10:57Z",
+    "entryPrice": 0.18941418722886058,
+    "entryTime": null,
     "positionSize": 1246.14596891,
     "volume": 13157.89474,
     "leverage": 3,
@@ -15,17 +43,16 @@
     "exitTime": 1771451696215.026,
     "pnlUsd": -116.70746641,
     "pnlPercent": -9.365473172623883,
-    "closedAt": "2026-02-18T22:00:01.191Z",
-    "exitPrice": 0.1837
+    "closedAt": "2026-02-18T22:00:01.191Z"
   },
   {
     "id": "TCY5G4-FCXKR-3IRHZW",
     "asset": "ARB",
     "exchange": "Kraken",
-    "strategy": "LC",
+    "strategy": "UNKNOWN",
     "direction": "LONG",
-    "entryPrice": 0.1147,
-    "entryTime": "2026-02-16T15:11:05Z",
+    "entryPrice": 0.11459883866259134,
+    "entryTime": null,
     "positionSize": 832.59836255,
     "volume": 21795.98953,
     "leverage": 3,
@@ -34,7 +61,6 @@
     "exitTime": 1771510770917.63,
     "pnlUsd": -122.48735338,
     "pnlPercent": -14.711457395238902,
-    "closedAt": "2026-02-19T14:20:01.879Z",
-    "exitPrice": 0.1091
+    "closedAt": "2026-02-19T14:20:01.879Z"
   }
 ]
