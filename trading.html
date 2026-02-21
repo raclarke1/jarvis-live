@@ -1364,10 +1364,10 @@
             }
             
             // Split active vs decommissioned strategies
-            const decommissionedNames = ['MOMENTUM']; // Strategies no longer running
+            const decommissionedNames = []; // Add strategy names here when retired
             const activeStrategies = Object.values(statsMap).filter(s => 
                 !decommissionedNames.includes(s.strategy) && 
-                (s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'VWAP-RSI'].includes(s.strategy))
+                (s.totalTrades > 0 || ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI'].includes(s.strategy))
             );
             const decomStrategies = Object.values(statsMap).filter(s => 
                 decommissionedNames.includes(s.strategy) || 
