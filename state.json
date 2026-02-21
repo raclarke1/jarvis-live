@@ -93,7 +93,8 @@
       "exitTime": 1771451696215.026,
       "pnlUsd": -116.70746641,
       "pnlPercent": -9.365473172623883,
-      "closedAt": "2026-02-18T22:00:01.191Z"
+      "closedAt": "2026-02-18T22:00:01.191Z",
+      "exitPrice": 0.1837
     },
     {
       "id": "TCY5G4-FCXKR-3IRHZW",
@@ -111,7 +112,8 @@
       "exitTime": 1771510770917.63,
       "pnlUsd": -122.48735338,
       "pnlPercent": -14.711457395238902,
-      "closedAt": "2026-02-19T14:20:01.879Z"
+      "closedAt": "2026-02-19T14:20:01.879Z",
+      "exitPrice": 0.1091
     }
   ],
   "strategies": {
