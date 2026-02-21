@@ -3,6 +3,95 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771678915772-WIF",
+      "timestamp": "2026-02-21T13:01:55.772Z",
+      "timestampMs": 1771678915772,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.225693,
+        "time": "2026-02-21T13:01:55.772Z",
+        "reason": "Inside bar breakout below 0.2264"
+      },
+      "stopLoss": {
+        "price": 0.22801680000000002,
+        "distanceUsd": 0.0023238000000000147,
+        "distancePct": 1.0296287434701186
+      },
+      "takeProfit": {
+        "price": 0.2225946,
+        "distanceUsd": 0.003098400000000001,
+        "distancePct": 1.3728383246268165
+      },
+      "riskReward": 1.3333333333333253,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.0015492000000000062,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.227597,
+        "motherBarLow": 0.226397
+      },
+      "exit": {
+        "price": 0.2275,
+        "time": "2026-02-21T14:24:01.888Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": -15.01,
+        "fees": 0.02,
+        "netPnl": -15.03,
+        "pnlPercent": -4
+      },
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771675315339-INJ",
+      "timestamp": "2026-02-21T12:01:55.339Z",
+      "timestampMs": 1771675315340,
+      "symbol": "INJ",
+      "strategy": "MOMENTUM",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 3.902504,
+        "time": "2026-02-21T12:01:55.340Z",
+        "reason": "Momentum breakout above 3.8097"
+      },
+      "stopLoss": {
+        "price": 3.3260105,
+        "distanceUsd": 0.5764934999999998,
+        "distancePct": 14.772399977040376
+      },
+      "takeProfit": {
+        "price": 5.055491,
+        "distanceUsd": 1.152987,
+        "distancePct": 29.544799954080762
+      },
+      "riskReward": 2.000000000000001,
+      "positionSize": 187,
+      "leverage": 5,
+      "notionalValue": 935,
+      "marketContext": {
+        "atr": 0.38432899999999987,
+        "donchianHigh": 3.809675,
+        "donchianLow": 2.716774,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 18,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771657316638-WIF",
       "timestamp": "2026-02-21T07:01:56.638Z",
       "timestampMs": 1771657316638,
@@ -5655,6 +5744,60 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000002
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "INJ-1771683853830",
+      "symbol": "INJ",
+      "strategy": "MOMENTUM",
+      "direction": "long",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 3.902504,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 3.98055408,
+        "time": "2026-02-21T14:24:13.830Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000018
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "WIF-1771683853830",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.225693,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.22117914,
+        "time": "2026-02-21T14:24:13.830Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.00000000000002
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
