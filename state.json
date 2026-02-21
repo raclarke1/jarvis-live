@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-21T12:01:55.349Z",
+  "lastUpdate": "2026-02-21T13:01:55.782Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
@@ -41,6 +41,21 @@
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
       "entryTime": "2026-02-21T12:01:55.334Z"
+    },
+    {
+      "asset": "WIF",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.225693,
+      "currentPrice": 0.225693,
+      "stopLoss": 0.22801680000000002,
+      "takeProfit": 0.2225946,
+      "positionSize": 375,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-21T13:01:55.768Z"
     }
   ],
   "stats": {
@@ -53,18 +68,18 @@
   },
   "recentTrades": [
     {
-      "strategy": "MOMENTUM",
-      "asset": "INJ",
+      "strategy": "IBB",
+      "asset": "WIF",
       "exchange": "Drift",
-      "direction": "LONG",
+      "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 3.902504,
-      "entryTime": 1771675315337,
-      "stopLoss": 3.3260105,
-      "takeProfit": 5.055491,
-      "positionSize": 187,
+      "entryPrice": 0.225693,
+      "entryTime": 1771678915770,
+      "stopLoss": 0.22801680000000002,
+      "takeProfit": 0.2225946,
+      "positionSize": 375,
       "status": "OPEN",
-      "reason": "Momentum breakout above 3.8097"
+      "reason": "Inside bar breakout below 0.2264"
     },
     {
       "id": "TCJR5M-OSZOL-RJ2TTE",
@@ -188,7 +203,7 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-21T12:01:55.349Z",
+    "lastCheck": "2026-02-21T13:01:55.782Z",
     "performance": {
       "totalTrades": 3,
       "winningTrades": 0,

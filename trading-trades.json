@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "IBB",
+    "asset": "WIF",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.225693,
+    "entryTime": 1771678915770,
+    "stopLoss": 0.22801680000000002,
+    "takeProfit": 0.2225946,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.2264"
+  },
+  {
     "id": "TCJR5M-OSZOL-RJ2TTE",
     "asset": "OP",
     "exchange": "Kraken",
