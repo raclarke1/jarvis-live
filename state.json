@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-21T07:04:13.681Z",
+  "lastUpdate": "2026-02-21T09:00:12.804Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4340.24,
-    "freeCollateral": 3592.85,
-    "leverage": 1.17,
+    "equity": 4291.52,
+    "freeCollateral": 3755.4,
+    "leverage": 0.76,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -18,11 +18,11 @@
       "direction": "SHORT",
       "strategy": "V5.0",
       "entry": 0.9687,
-      "current": 0.9455,
-      "size": 1370.96,
+      "current": 0.954,
+      "size": 1383.34,
       "sizeUnits": 1450,
-      "pnl": 33.66,
-      "pnlPercent": 2.4
+      "pnl": 21.28,
+      "pnlPercent": 1.51
     },
     {
       "exchange": "drift",
@@ -30,27 +30,15 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.0199,
-      "current": 0.02,
-      "size": 1873.31,
+      "current": 0.0201,
+      "size": 1884.73,
       "sizeUnits": 93572,
       "pnl": 0,
       "pnlPercent": 0
-    },
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2252,
-      "current": 0.2246,
-      "size": 1870.64,
-      "sizeUnits": 8329,
-      "pnl": 5.06,
-      "pnlPercent": 0.27
     }
   ],
   "stats": {
-    "totalTrades": 150,
+    "totalTrades": 152,
     "wins": 10,
     "losses": 0,
     "winRate": 100,
@@ -58,6 +46,18 @@
     "avgPnl": 45.013
   },
   "recentTrades": [
+    {
+      "id": "WIF-1771664412796",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.225111,
+      "exit": 0.22060878,
+      "pnl": 50,
+      "pnlPercent": 10,
+      "exitTime": "2026-02-21T09:00:12.796Z",
+      "status": "CLOSED"
+    },
     {
       "id": "PEPE-1771657453673",
       "symbol": "PEPE",
@@ -162,18 +162,6 @@
       "direction": "LONG",
       "entry": 0.053682,
       "exit": 0.05475564,
-      "pnl": 50,
-      "pnlPercent": 10,
-      "exitTime": "2026-02-20T21:52:12.698Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "XRP-1771624332698",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "entry": 1.41871,
-      "exit": 1.3903358,
       "pnl": 50,
       "pnlPercent": 10,
       "exitTime": "2026-02-20T21:52:12.698Z",

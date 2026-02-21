@@ -9,7 +9,7 @@
       "symbol": "WIF",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.225111,
         "time": "2026-02-21T07:01:56.638Z",
@@ -36,8 +36,17 @@
         "motherBarHigh": 0.227305,
         "motherBarLow": 0.22575
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.2266,
+        "time": "2026-02-21T09:00:01.579Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": -12.4,
+        "fees": 0.01,
+        "netPnl": -12.41,
+        "pnlPercent": -3.31
+      },
       "exchange": "Drift",
       "marketIndex": 11,
       "botVersion": "MegaMax v1.0"
@@ -5619,6 +5628,33 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000057
+      },
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.3"
+    },
+    {
+      "id": "WIF-1771664412796",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "leverage": 5,
+      "entry": {
+        "price": 0.225111,
+        "reason": "Signal"
+      },
+      "stopLoss": {},
+      "takeProfit": {},
+      "exit": {
+        "price": 0.22060878,
+        "time": "2026-02-21T09:00:12.796Z",
+        "reason": "Position closed"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": 10.000000000000002
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
