@@ -239,21 +239,35 @@ function render() {
   const d = DATA;
   const a = d.account, s = d.stats;
 
+  // Recompute stats for ACTIVE strategies only (exclude killed)
+  const activeStrats = Object.entries(s.byStrategy).filter(([n]) => !KILLED_STRATS.has(n));
+  const as = {
+    totalPnl: activeStrats.reduce((sum,[,st]) => sum + st.totalPnlUsd, 0),
+    totalTrades: activeStrats.reduce((sum,[,st]) => sum + st.totalTrades, 0),
+    wins: activeStrats.reduce((sum,[,st]) => sum + st.winningTrades, 0),
+    losses: activeStrats.reduce((sum,[,st]) => sum + st.losingTrades, 0),
+  };
+  as.winRate = as.totalTrades > 0 ? (as.wins / as.totalTrades * 100) : 0;
+  const totalWins = activeStrats.reduce((sum,[,st]) => sum + (st.avgWinUsd * st.winningTrades), 0);
+  const totalLosses = activeStrats.reduce((sum,[,st]) => sum + (st.avgLossUsd * st.losingTrades), 0);
+  as.profitFactor = totalLosses > 0 ? (totalWins / totalLosses) : 999;
+  as.returnPct = a.totalDeposited > 0 ? (as.totalPnl / a.totalDeposited * 100) : 0;
+
   // Header
   document.getElementById('headerEquity').textContent = '$' + fmt(a.totalEquity);
   const retEl = document.getElementById('headerReturn');
-  retEl.textContent = (a.returnPercent >= 0 ? '+' : '') + fmt(a.returnPercent) + '%';
-  retEl.className = 'return-pct ' + (a.returnPercent >= 0 ? 'return-pos' : 'return-neg');
+  retEl.textContent = (as.returnPct >= 0 ? '+' : '') + fmt(as.returnPct) + '%';
+  retEl.className = 'return-pct ' + (as.returnPct >= 0 ? 'return-pos' : 'return-neg');
   document.getElementById('lastUpdate').textContent = new Date(d.lastUpdate).toLocaleString();
 
-  // Summary cards
+  // Summary cards — using active-only stats
   const cards = [
     { label:'Total Equity', value:fmtUsd(a.totalEquity), sub:`Drift: $${fmt(a.driftEquity)} | Kraken: $${fmt(a.krakenEquity)}` },
-    { label:'Trading P&L', value:fmtUsd(s.totalPnl), cls:pnlClass(s.totalPnl), sub:`Gross: $${fmt(s.grossPnl)}` },
-    { label:'Deposited', value:fmtUsd(a.totalDeposited), sub:`True P&L: ${fmtUsd(a.truePnl)}` },
-    { label:'Return %', value:(a.returnPercent>=0?'+':'')+fmt(a.returnPercent)+'%', cls:pnlClass(a.returnPercent) },
-    { label:'Win Rate', value:fmt(s.winRate,1)+'%', sub:`${s.wins}W / ${s.losses}L` },
-    { label:'Profit Factor', value:fmt(s.profitFactor), cls:s.profitFactor>=1?'pnl-pos':'pnl-neg' },
+    { label:'Trading P&L', value:fmtUsd(as.totalPnl), cls:pnlClass(as.totalPnl), sub:`Active strategies only` },
+    { label:'Deposited', value:fmtUsd(a.totalDeposited), sub:`Return: ${as.returnPct>=0?'+':''}${fmt(as.returnPct)}%` },
+    { label:'Return %', value:(as.returnPct>=0?'+':'')+fmt(as.returnPct)+'%', cls:pnlClass(as.returnPct) },
+    { label:'Win Rate', value:fmt(as.winRate,1)+'%', sub:`${as.wins}W / ${as.losses}L (${as.totalTrades} trades)` },
+    { label:'Profit Factor', value:fmt(as.profitFactor), cls:as.profitFactor>=1?'pnl-pos':'pnl-neg' },
     { label:'Sharpe Ratio', value:fmt(s.sharpeRatio), cls:s.sharpeRatio>=1?'pnl-pos':'pnl-neg' },
     { label:'Total Fees', value:fmtUsd(s.fees.totalFees), sub:`Drift: $${fmt(s.fees.totalDriftFees)} | Kraken: $${fmt(s.fees.totalKrakenFees)}` },
   ];
@@ -313,10 +327,13 @@ function buildCharts() {
     fill: false,
     spanGaps: true,
   }));
-  // TOTAL line (dashed white)
+  // TOTAL line (dashed white) — active strategies only
   cumDatasets.push({
     label: 'TOTAL',
-    data: eqHist.map(e => e.cumPnl),
+    data: eqHist.map(e => {
+      if (!e.cumByStrategy) return 0;
+      return Object.entries(e.cumByStrategy).filter(([s]) => !KILLED_STRATS.has(s)).reduce((sum,[,v]) => sum+v, 0);
+    }),
     borderColor: isDark ? '#ffffff' : '#1a1a2e',
     backgroundColor: 'rgba(255,255,255,0.05)',
     borderWidth: 3,
