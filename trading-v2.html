@@ -291,49 +291,57 @@ function buildCharts() {
   const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
   const textColor = isDark ? '#71717a' : '#71717a';
 
-  // Cumulative P&L by strategy — grouped by DATE
-  const trades = [...(DATA.recentTrades||[])].sort((a,b) => new Date(a.exitTime)-new Date(b.exitTime));
-  // Aggregate daily P&L per strategy
-  const dailyByStrat = {}; // { strategy: { date: totalPnl } }
-  const allDates = new Set();
-  trades.forEach(t => {
-    const s = t.strategy;
-    const d = t.exitTime ? t.exitTime.slice(0,10) : 'unknown';
-    allDates.add(d);
-    if (!dailyByStrat[s]) dailyByStrat[s] = {};
-    dailyByStrat[s][d] = (dailyByStrat[s][d]||0) + (t.pnl||0);
+  // Cumulative P&L by strategy — from equityHistory (daily, date-based like equity curve)
+  const eqHist = DATA.equityHistory || [];
+  const labels = eqHist.map(e => e.date);
+  // Collect all strategy names
+  const allStrats = new Set();
+  eqHist.forEach(e => { if (e.cumByStrategy) Object.keys(e.cumByStrategy).forEach(s => allStrats.add(s)); });
+  // Build one dataset per strategy
+  const cumDatasets = [...allStrats].map(s => ({
+    label: s,
+    data: eqHist.map(e => (e.cumByStrategy && e.cumByStrategy[s]) || null),
+    borderColor: stratColor(s),
+    backgroundColor: stratColor(s) + '15',
+    borderWidth: 2.5,
+    pointRadius: 5,
+    pointHoverRadius: 8,
+    pointBackgroundColor: stratColor(s),
+    tension: 0.3,
+    fill: false,
+    spanGaps: true,
+  }));
+  // TOTAL line (dashed white)
+  cumDatasets.push({
+    label: 'TOTAL',
+    data: eqHist.map(e => e.cumPnl),
+    borderColor: isDark ? '#ffffff' : '#1a1a2e',
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    borderWidth: 3,
+    pointRadius: 6,
+    pointHoverRadius: 9,
+    pointBackgroundColor: isDark ? '#ffffff' : '#1a1a2e',
+    borderDash: [6, 3],
+    tension: 0.3,
+    fill: true,
+    spanGaps: true,
   });
-  const sortedDates = [...allDates].sort();
-  // Build cumulative series per strategy
-  const cumDatasets = Object.keys(dailyByStrat).map(s => {
-    let cum = 0;
-    const data = sortedDates.map(d => {
-      cum += (dailyByStrat[s][d]||0);
-      return { x:d, y:Math.round(cum*100)/100 };
-    });
-    return {
-      label:s, data, borderColor:stratColor(s), backgroundColor:stratColor(s)+'20',
-      borderWidth:2.5, pointRadius:4, pointHoverRadius:7, tension:0.3, fill:false
-    };
-  });
-  // Also add a TOTAL line
-  let totalCum = 0;
-  const totalData = sortedDates.map(d => {
-    Object.keys(dailyByStrat).forEach(s => { totalCum += (dailyByStrat[s][d]||0); });
-    return { x:d, y:Math.round(totalCum*100)/100 };
-  });
-  cumDatasets.push({ label:'TOTAL', data:totalData, borderColor:'#ffffff', backgroundColor:'rgba(255,255,255,0.05)',
-    borderWidth:3, pointRadius:0, borderDash:[6,3], tension:0.3, fill:false });
 
   const ctx1 = document.getElementById('cumPnlChart').getContext('2d');
   cumPnlChart = new Chart(ctx1, {
-    type:'line',
-    data:{ datasets: cumDatasets },
-    options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
-      plugins:{legend:{labels:{color:textColor,usePointStyle:true,pointStyle:'circle',padding:16}},
-        tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: $${ctx.parsed.y.toFixed(2)}`}}},
-      scales:{x:{type:'category', labels:sortedDates.map(d=>d.slice(5)), title:{display:true,text:'Date',color:textColor},grid:{color:gridColor},ticks:{color:textColor,maxRotation:45}},
-              y:{title:{display:true,text:'Cumulative P&L ($)',color:textColor},grid:{color:gridColor},ticks:{color:textColor,callback:v=>'$'+v}}}
+    type: 'line',
+    data: { labels: labels.map(d => { const p=d.split('-'); return `${p[1]}/${p[2]}`; }), datasets: cumDatasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { labels: { color: textColor, usePointStyle: true, pointStyle: 'circle', padding: 20, font: { size: 13 } } },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: $${(ctx.parsed.y||0).toFixed(2)}` } }
+      },
+      scales: {
+        x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 12 }, padding: 8 } },
+        y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 12 }, callback: v => '$' + v }, title: { display: true, text: 'Cumulative P&L ($)', color: textColor, font: { size: 13 } } }
+      }
     }
   });
 
