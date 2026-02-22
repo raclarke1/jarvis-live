@@ -692,7 +692,7 @@
         <div class="header">
             <div>
                 <h1>MegaMax Trading Performance</h1>
-                <p class="subtitle">V5.0 + IBB + Momentum + LC + VWAP Scalper on Drift Protocol • Live trading • MegaMax v1.7</p>
+                <p class="subtitle">V5.0 + IBB + Momentum + LC + VWAP Scalper on Drift + Kraken • Live trading • MegaMax v2.0</p>
             </div>
             <div style="display:flex;align-items:center;gap:16px;">
                 <button id="themeToggle" onclick="toggleTheme()" style="background:var(--metric-bg);border:1px solid var(--border-color);color:var(--text-primary);padding:8px 12px;border-radius:8px;cursor:pointer;font-size:0.85rem;display:flex;align-items:center;gap:6px;transition:all 0.2s;" title="Toggle light/dark mode">
@@ -717,6 +717,7 @@
                         <th>Win Rate</th>
                         <th>Wins / Losses</th>
                         <th>P&L</th>
+                        <th>Fees</th>
                         <th>Avg Trade</th>
                         <th>Best Trade</th>
                         <th>Worst Trade</th>
@@ -1126,11 +1127,25 @@
                 : '';
             
             // KPI cards
+            // Account data from state.json v2.0
+            const totalDeposited = safeNum(state.account?.totalDeposited, startingEquity);
+            const acctTotalEquity = safeNum(state.account?.totalEquity || state.account?.equity, 0);
+            const truePnl = safeNum(state.account?.truePnl, totalPnl);
+            const trueReturn = totalDeposited > 0 ? (truePnl / totalDeposited * 100) : totalReturn;
+            
+            // Fee data from state.json stats
+            const feeData = state.stats?.fees || {};
+            const totalFeesVal = safeNum(feeData.totalFees);
+            const feeRate = feeData.overallFeeRate ? feeData.overallFeeRate + '%' : '-';
+            const driftFees = safeNum(feeData.totalDriftFees);
+            const krakenFees = safeNum(feeData.totalKrakenFees);
+            const feeSavings = safeNum(feeData.feeSavingsFromDrift);
+            
             document.getElementById('execKpis').innerHTML = `
                 <div class="exec-kpi">
                     <div class="label">Total P&L</div>
                     <div class="value ${totalPnl >= 0 ? 'positive' : 'negative'}">${formatCurrency(totalPnl)}</div>
-                    <div class="sub">${totalReturn >= 0 ? '+' : ''}${totalReturn.toFixed(1)}% return</div>
+                    <div class="sub">${trueReturn >= 0 ? '+' : ''}${trueReturn.toFixed(2)}% return on $${totalDeposited.toLocaleString()} deposited</div>
                 </div>
                 <div class="exec-kpi">
                     <div class="label">Win Rate</div>
@@ -1143,21 +1158,41 @@
                     <div class="sub">${(totalTrades / days).toFixed(1)} / day</div>
                 </div>
                 <div class="exec-kpi">
-                    <div class="label">Avg Trade</div>
-                    <div class="value ${avgTrade >= 0 ? 'positive' : 'negative'}">${formatCurrency(avgTrade)}</div>
-                    <div class="sub">per trade</div>
-                </div>
-                <div class="exec-kpi">
                     <div class="label">Profit Factor</div>
                     <div class="value ${profitFactor >= 1 ? 'positive' : 'negative'}">${pfDisplay}</div>
                     <div class="sub">win$ / loss$</div>
                 </div>
                 <div class="exec-kpi">
+                    <div class="label">Total Fees</div>
+                    <div class="value negative">${formatCurrency(totalFeesVal)}</div>
+                    <div class="sub">${feeRate} of volume • Drift: ${formatCurrency(driftFees)} / Kraken: ${formatCurrency(krakenFees)}</div>
+                </div>
+                <div class="exec-kpi">
                     <div class="label">Max Drawdown</div>
                     <div class="value negative">${formatCurrency(maxDD)}</div>
-                    <div class="sub">${startingEquity > 0 ? (maxDD/startingEquity*100).toFixed(1) : 0}% of starting capital</div>
+                    <div class="sub">${totalDeposited > 0 ? (maxDD/totalDeposited*100).toFixed(1) : 0}% of capital</div>
                 </div>
             `;
+            
+            // Account breakdown bar (below KPIs)
+            if (acctTotalEquity > 0) {
+                const driftSub0 = safeNum(state.account?.exchanges?.drift?.subaccounts?.['0']);
+                const driftSub1 = safeNum(state.account?.exchanges?.drift?.subaccounts?.['1']);
+                const krakenEq = safeNum(state.account?.exchanges?.kraken?.equity || state.account?.krakenEquity);
+                const kpisEl = document.getElementById('execKpis');
+                kpisEl.insertAdjacentHTML('afterend', `
+                    <div style="display:flex;gap:16px;align-items:center;margin-bottom:20px;padding:12px 16px;background:var(--metric-bg);border-radius:8px;font-size:0.85rem;">
+                        <span style="color:var(--text-secondary);">Account Equity:</span>
+                        <strong style="color:var(--accent-green);">${formatCurrency(acctTotalEquity)}</strong>
+                        <span style="color:var(--text-secondary)">|</span>
+                        <span>Drift Sub0: <strong>${formatCurrency(driftSub0)}</strong></span>
+                        <span>Drift Sub1: <strong>${formatCurrency(driftSub1)}</strong></span>
+                        <span>Kraken: <strong>${formatCurrency(krakenEq)}</strong></span>
+                        <span style="color:var(--text-secondary);margin-left:auto;">Deposited: $${totalDeposited.toLocaleString()}</span>
+                        ${feeSavings > 0 ? `<span style="color:var(--accent-green);">💰 $${feeSavings.toFixed(0)} saved via Drift</span>` : ''}
+                    </div>
+                `);
+            }
             
             // Strategy breakdown table
             const sortedStrats = Object.entries(stratStats).sort((a,b) => b[1].pnl - a[1].pnl);
@@ -1173,6 +1208,10 @@
                 const pfStr = pf === Infinity || pf > 100 ? '∞' : pf.toFixed(2);
                 const wrBarWidth = Math.max(wr * 0.6, 2);
                 
+                // Get fee data for this strategy from state.stats.byStrategy
+                const stratFeeData = state.stats?.byStrategy?.[name]?.fees || {};
+                const stratFees = safeNum(stratFeeData.totalFees);
+                
                 tableHtml += `<tr>
                     <td><strong>${name}</strong></td>
                     <td>${t}</td>
@@ -1182,6 +1221,7 @@
                     </td>
                     <td>${s.wins} / ${s.losses}</td>
                     <td class="${s.pnl >= 0 ? 'positive' : 'negative'}"><strong>${formatCurrency(s.pnl)}</strong></td>
+                    <td class="negative" style="font-size:0.85em">${formatCurrency(stratFees)}</td>
                     <td class="${avg >= 0 ? 'positive' : 'negative'}">${formatCurrency(avg)}</td>
                     <td class="positive">${formatCurrency(best)}</td>
                     <td class="negative">${formatCurrency(worst)}</td>
@@ -1204,6 +1244,7 @@
                 </td>
                 <td>${totalWins} / ${totalLosses}</td>
                 <td class="${totalPnl >= 0 ? 'positive' : 'negative'}"><strong>${formatCurrency(totalPnl)}</strong></td>
+                <td class="negative" style="font-size:0.85em"><strong>${formatCurrency(totalFeesVal)}</strong></td>
                 <td class="${avgTrade >= 0 ? 'positive' : 'negative'}">${formatCurrency(avgTrade)}</td>
                 <td class="positive">${formatCurrency(bestAll)}</td>
                 <td class="negative">${formatCurrency(worstAll)}</td>
