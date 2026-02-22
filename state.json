@@ -1,31 +1,31 @@
 {
-  "lastUpdate": "2026-02-22T15:42:21.989Z",
+  "lastUpdate": "2026-02-22T15:47:17.562Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift+kraken",
   "account": {
-    "totalEquity": 34632.17,
+    "totalEquity": 34619.21,
     "totalDeposited": 34056,
     "tradingPnl": 646.97,
-    "truePnl": 576.17,
-    "returnPercent": 1.69,
+    "truePnl": 563.21,
+    "returnPercent": 1.65,
     "exchanges": {
       "drift": {
-        "equity": 13953.53,
+        "equity": 13940.37,
         "subaccounts": {
-          "0": 3655.46,
-          "1": 10298.07
+          "0": 3642.38,
+          "1": 10297.99
         }
       },
       "kraken": {
-        "equity": 20678.64
+        "equity": 20678.84
       }
     },
-    "equity": 34632.17,
-    "driftEquity": 13953.53,
-    "krakenEquity": 20678.64,
+    "equity": 34619.21,
+    "driftEquity": 13940.37,
+    "krakenEquity": 20678.84,
     "startingEquity": 34056,
-    "freeCollateral": 13464.36,
+    "freeCollateral": 13461.04,
     "leverage": 0.51,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -258,11 +258,11 @@
       "direction": "LONG",
       "strategy": "LC",
       "entry": 85.0034,
-      "current": 83.5441,
+      "current": 83.6297,
       "size": 0.84,
       "sizeUnits": 0.01,
       "pnl": -0.01,
-      "pnlPercent": -1.74,
+      "pnlPercent": -1.64,
       "entryTime": "2026-02-22T06:44:27.509Z",
       "leverage": 5
     },
@@ -273,11 +273,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.9338,
-      "current": 0.9239,
+      "current": 0.9249,
       "size": 0.92,
       "sizeUnits": 1,
       "pnl": -0.01,
-      "pnlPercent": -1.08,
+      "pnlPercent": -0.97,
       "entryTime": null,
       "leverage": 5
     },
@@ -288,11 +288,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.154,
-      "current": 0.1512,
+      "current": 0.1513,
       "size": 0.91,
       "sizeUnits": 6,
       "pnl": -0.02,
-      "pnlPercent": -1.85,
+      "pnlPercent": -1.78,
       "entryTime": null,
       "leverage": 5
     },
@@ -303,11 +303,11 @@
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 4.093,
-      "current": 4.0733,
-      "size": 1857.42,
+      "current": 4.095,
+      "size": 1867.32,
       "sizeUnits": 456,
-      "pnl": 8.98,
-      "pnlPercent": 0.48,
+      "pnl": -0.91,
+      "pnlPercent": -0.05,
       "entryTime": "2026-02-22T08:02:12.236Z",
       "leverage": 5
     }
@@ -688,6 +688,7 @@
       "fees": 2.16
     }
   ],
+  "funding": {},
   "dataQuality": {
     "totalClosedTrades": 144,
     "tradesWithFees": 49,
