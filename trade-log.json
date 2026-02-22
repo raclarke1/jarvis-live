@@ -3,6 +3,47 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771797753637-JTO",
+      "timestamp": "2026-02-22T22:02:33.637Z",
+      "timestampMs": 1771797753637,
+      "symbol": "JTO",
+      "strategy": "IBB",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.301414,
+        "fillPrice": null,
+        "time": "2026-02-22T22:02:33.637Z",
+        "reason": "Inside bar breakout above 0.3006"
+      },
+      "stopLoss": {
+        "price": 0.29207585714285716,
+        "distanceUsd": 0.00933814285714285,
+        "distancePct": 3.0981118518525514
+      },
+      "takeProfit": {
+        "price": 0.31386485714285717,
+        "distanceUsd": 0.012450857142857152,
+        "distancePct": 4.130815802470075
+      },
+      "riskReward": 1.3333333333333353,
+      "positionSize": 915,
+      "leverage": 5,
+      "notionalValue": 4575,
+      "marketContext": {
+        "atr": 0.006225428571428576,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.300642,
+        "motherBarLow": 0.298319
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 21,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771794144892-SUI",
       "timestamp": "2026-02-22T21:02:24.892Z",
       "timestampMs": 1771794144892,
