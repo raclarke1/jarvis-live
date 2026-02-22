@@ -260,7 +260,7 @@
       "symbol": "W",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.019228,
         "time": "2026-02-22T05:28:23.740Z",
@@ -287,8 +287,17 @@
         "motherBarHigh": 0.019333,
         "motherBarLow": 0.019183
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.0193,
+        "time": "2026-02-22T10:18:01.514Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": -7.02,
+        "fees": 0.01,
+        "netPnl": -7.03,
+        "pnlPercent": -1.87
+      },
       "exchange": "Drift",
       "marketIndex": 22,
       "botVersion": "MegaMax v1.0"
