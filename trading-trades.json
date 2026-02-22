@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "LC",
+    "asset": "SOL",
+    "exchange": "Drift",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 85.19,
+    "entryTime": 1771742667505,
+    "stopLoss": 82,
+    "takeProfit": 92,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "TEST: RSI(2) oversold + above 200 SMA"
+  },
+  {
     "strategy": "Momentum",
     "asset": "JTO",
     "exchange": "Drift",

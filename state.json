@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-22T06:40:12.845Z",
+  "lastUpdate": "2026-02-22T06:49:17.487Z",
   "version": "MegaMax v1.7",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4033.02,
-    "freeCollateral": 2402.95,
-    "leverage": 2.99,
+    "equity": 4014.83,
+    "freeCollateral": 2394.57,
+    "leverage": 3.01,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -16,14 +16,14 @@
       "exchange": "drift",
       "symbol": "SOL",
       "direction": "LONG",
-      "strategy": "V5.0",
+      "strategy": "LC",
       "entry": 85.0034,
-      "current": 85.1969,
+      "current": 85.2464,
       "size": 0.85,
       "sizeUnits": 0,
       "pnl": 0,
-      "pnlPercent": 0.23,
-      "entryTime": null
+      "pnlPercent": 0.29,
+      "entryTime": "2026-02-22T06:44:27.509Z"
     },
     {
       "exchange": "drift",
@@ -31,11 +31,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.9338,
-      "current": 0.9344,
-      "size": 0.93,
+      "current": 0.9357,
+      "size": 0.94,
       "sizeUnits": 1,
       "pnl": 0,
-      "pnlPercent": 0.06,
+      "pnlPercent": 0.2,
       "entryTime": null
     },
     {
@@ -44,11 +44,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2179,
-      "current": 0.2165,
-      "size": 5572.5,
+      "current": 0.2168,
+      "size": 5580.14,
       "sizeUnits": 25742,
-      "pnl": 36.04,
-      "pnlPercent": 0.65,
+      "pnl": 28.32,
+      "pnlPercent": 0.51,
       "entryTime": "2026-02-22T03:01:55.988Z"
     },
     {
@@ -57,11 +57,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.154,
-      "current": 0.1546,
+      "current": 0.155,
       "size": 0.93,
       "sizeUnits": 6,
-      "pnl": 0,
-      "pnlPercent": 0.39,
+      "pnl": 0.01,
+      "pnlPercent": 0.65,
       "entryTime": null
     },
     {
@@ -71,7 +71,7 @@
       "strategy": "IBB",
       "entry": 0.0191,
       "current": 0.0192,
-      "size": 3737.94,
+      "size": 3741.45,
       "sizeUnits": 194563,
       "pnl": -19.46,
       "pnlPercent": -0.52,
@@ -83,11 +83,11 @@
       "direction": "SHORT",
       "strategy": "V5.0",
       "entry": 6.1405,
-      "current": 6.1425,
-      "size": 2809.58,
+      "current": 6.1446,
+      "size": 2810.54,
       "sizeUnits": 457,
-      "pnl": -0.91,
-      "pnlPercent": -0.03,
+      "pnl": -1.88,
+      "pnlPercent": -0.07,
       "entryTime": null
     }
   ],
@@ -96,8 +96,8 @@
     "wins": 76,
     "losses": 107,
     "winRate": 41.53,
-    "totalPnl": 1294.16,
-    "avgPnl": 7.07
+    "totalPnl": 2003.74,
+    "avgPnl": 10.95
   },
   "recentTrades": [
     {
@@ -106,9 +106,9 @@
       "strategy": "MOMENTUM",
       "direction": "LONG",
       "entry": 0.3105,
-      "exit": 0.07,
-      "pnl": -724.94,
-      "pnlPercent": -387.28,
+      "exit": 0.30563714285714283,
+      "pnl": -15.36,
+      "pnlPercent": -7.8500000000000005,
       "exitTime": "2026-02-22T06:22:01.962Z",
       "status": "CLOSED"
     },

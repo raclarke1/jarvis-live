@@ -3,6 +3,45 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771742667509-SOL",
+      "timestamp": "2026-02-22T06:44:27.509Z",
+      "timestampMs": 1771742667509,
+      "symbol": "SOL",
+      "strategy": "LC",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 85.19,
+        "time": "2026-02-22T06:44:27.509Z",
+        "reason": "TEST: RSI(2) oversold + above 200 SMA"
+      },
+      "stopLoss": {
+        "price": 82,
+        "distanceUsd": 3.1899999999999977,
+        "distancePct": 3.7445709590327474
+      },
+      "takeProfit": {
+        "price": 92,
+        "distanceUsd": 6.810000000000002,
+        "distancePct": 7.99389599718277
+      },
+      "riskReward": 2.1347962382445163,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 0,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771741215998-JTO",
       "timestamp": "2026-02-22T06:20:15.998Z",
       "timestampMs": 1771741215998,
@@ -37,15 +76,15 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": 0.07,
+        "price": 0.30563714285714283,
         "time": "2026-02-22T06:22:01.962Z",
         "reason": "Stop Loss"
       },
       "pnl": {
-        "grossPnl": -724.21,
+        "grossPnl": -14.64,
         "fees": 0.72,
-        "netPnl": -724.94,
-        "pnlPercent": -387.28
+        "netPnl": -15.36,
+        "pnlPercent": -7.8500000000000005
       },
       "exchange": "Drift",
       "marketIndex": 21,
