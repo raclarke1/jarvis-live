@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-22T08:24:12.357Z",
+  "lastUpdate": "2026-02-22T08:30:12.902Z",
   "version": "MegaMax v1.7",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 3939.81,
-    "freeCollateral": 2137.91,
-    "leverage": 2.83,
+    "equity": 3923.29,
+    "freeCollateral": 2678.06,
+    "leverage": 1.42,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -18,11 +18,11 @@
       "direction": "LONG",
       "strategy": "LC",
       "entry": 85.0034,
-      "current": 85.0311,
+      "current": 84.9426,
       "size": 0.85,
       "sizeUnits": 0,
       "pnl": 0,
-      "pnlPercent": 0.03,
+      "pnlPercent": -0.07,
       "entryTime": "2026-02-22T06:44:27.509Z"
     },
     {
@@ -31,25 +31,12 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.9338,
-      "current": 0.9328,
+      "current": 0.9319,
       "size": 0.93,
       "sizeUnits": 1,
       "pnl": 0,
-      "pnlPercent": -0.11,
+      "pnlPercent": -0.2,
       "entryTime": null
-    },
-    {
-      "exchange": "drift",
-      "symbol": "WIF",
-      "direction": "SHORT",
-      "strategy": "IBB",
-      "entry": 0.2179,
-      "current": 0.2185,
-      "size": 5624.03,
-      "sizeUnits": 25742,
-      "pnl": -15.45,
-      "pnlPercent": -0.27,
-      "entryTime": "2026-02-22T03:01:55.988Z"
     },
     {
       "exchange": "drift",
@@ -57,11 +44,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.154,
-      "current": 0.1552,
+      "current": 0.1553,
       "size": 0.93,
       "sizeUnits": 6,
       "pnl": 0.01,
-      "pnlPercent": 0.77,
+      "pnlPercent": 0.84,
       "entryTime": null
     },
     {
@@ -71,7 +58,7 @@
       "strategy": "IBB",
       "entry": 0.0191,
       "current": 0.0191,
-      "size": 3725.69,
+      "size": 3723.74,
       "sizeUnits": 194563,
       "pnl": 0,
       "pnlPercent": 0,
@@ -83,23 +70,35 @@
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 4.093,
-      "current": 4.0938,
-      "size": 1866.77,
+      "current": 4.0923,
+      "size": 1866.09,
       "sizeUnits": 456,
-      "pnl": -0.36,
-      "pnlPercent": -0.02,
+      "pnl": 0.32,
+      "pnlPercent": 0.02,
       "entryTime": "2026-02-22T08:02:12.236Z"
     }
   ],
   "stats": {
-    "totalTrades": 183,
+    "totalTrades": 184,
     "wins": 76,
-    "losses": 107,
-    "winRate": 41.53,
-    "totalPnl": 2003.74,
-    "avgPnl": 10.95
+    "losses": 108,
+    "winRate": 41.3,
+    "totalPnl": 1984.53,
+    "avgPnl": 10.79
   },
   "recentTrades": [
+    {
+      "id": "1771741174928-WIF",
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "entry": 0.216286,
+      "exit": 0.2185,
+      "pnl": -19.21,
+      "pnlPercent": -5.12,
+      "exitTime": "2026-02-22T08:30:01.295Z",
+      "status": "CLOSED"
+    },
     {
       "id": "1771741215998-JTO",
       "symbol": "JTO",
@@ -202,18 +201,6 @@
       "strategy": "LC",
       "direction": "SHORT",
       "entry": 1.051,
-      "exit": 0,
-      "pnl": null,
-      "pnlPercent": null,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OPLODR-FTCXE-NAUH5E",
-      "symbol": "RNDR",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "entry": 1.52,
       "exit": 0,
       "pnl": null,
       "pnlPercent": null,

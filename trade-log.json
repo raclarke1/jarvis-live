@@ -137,7 +137,7 @@
       "symbol": "WIF",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.216286,
         "time": "2026-02-22T06:19:34.928Z",
@@ -164,8 +164,17 @@
         "motherBarHigh": 0.2177,
         "motherBarLow": 0.216134
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.2185,
+        "time": "2026-02-22T08:30:01.295Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": -19.19,
+        "fees": 0.02,
+        "netPnl": -19.21,
+        "pnlPercent": -5.12
+      },
       "exchange": "Drift",
       "marketIndex": 23,
       "botVersion": "MegaMax v1.0"
