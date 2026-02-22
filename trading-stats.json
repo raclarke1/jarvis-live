@@ -1,4 +1,20 @@
 {
+  "MOMENTUM": {
+    "totalTrades": 7,
+    "winningTrades": 0,
+    "losingTrades": 7,
+    "totalPnlUsd": -724.94,
+    "winRate": 0,
+    "avgWinUsd": 0,
+    "avgLossUsd": 103.56,
+    "profitFactor": 0,
+    "maxDrawdownPercent": 0,
+    "avgHoldingTimeMs": 32204138,
+    "firstTradeTime": null,
+    "totalPnlPercent": 0,
+    "startingCapital": 0,
+    "currentCapital": 0
+  },
   "LC": {
     "totalTrades": 21,
     "winningTrades": 10,
@@ -26,22 +42,6 @@
     "profitFactor": 4.39,
     "maxDrawdownPercent": 116.18,
     "avgHoldingTimeMs": 65121897,
-    "firstTradeTime": null,
-    "totalPnlPercent": 0,
-    "startingCapital": 0,
-    "currentCapital": 0
-  },
-  "MOMENTUM": {
-    "totalTrades": 6,
-    "winningTrades": 0,
-    "losingTrades": 6,
-    "totalPnlUsd": 0,
-    "winRate": 0,
-    "avgWinUsd": 0,
-    "avgLossUsd": 0,
-    "profitFactor": 0,
-    "maxDrawdownPercent": 0,
-    "avgHoldingTimeMs": 42903529,
     "firstTradeTime": null,
     "totalPnlPercent": 0,
     "startingCapital": 0,

@@ -28,5 +28,35 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-22T05:29:04.762Z"
+  },
+  {
+    "asset": "WIF",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.216286,
+    "currentPrice": 0.216286,
+    "stopLoss": 0.2186833,
+    "takeProfit": 0.21308960000000002,
+    "positionSize": 375,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-22T06:19:34.922Z"
+  },
+  {
+    "asset": "JTO",
+    "exchange": "Drift",
+    "strategy": "Momentum",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.3105,
+    "currentPrice": 0.3105,
+    "stopLoss": 0.30563714285714283,
+    "takeProfit": 0.31779428571428575,
+    "positionSize": 187,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-22T06:20:15.994Z"
   }
 ]

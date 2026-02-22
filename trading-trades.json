@@ -1,5 +1,33 @@
 [
   {
+    "strategy": "Momentum",
+    "asset": "JTO",
+    "exchange": "Drift",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.3105,
+    "entryTime": 1771741215995,
+    "stopLoss": 0.30563714285714283,
+    "takeProfit": 0.31779428571428575,
+    "positionSize": 187,
+    "status": "OPEN",
+    "reason": "4H uptrend + 1H pullback bounce (EMA21: 0.308040)"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "WIF",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.216286,
+    "entryTime": 1771741174925,
+    "stopLoss": 0.2186833,
+    "takeProfit": 0.21308960000000002,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.2161"
+  },
+  {
     "strategy": "IBB",
     "asset": "XRP",
     "exchange": "Drift",
