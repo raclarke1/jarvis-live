@@ -3,6 +3,86 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771729359135-W",
+      "timestamp": "2026-02-22T03:02:39.135Z",
+      "timestampMs": 1771729359135,
+      "symbol": "W",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.019278,
+        "time": "2026-02-22T03:02:39.135Z",
+        "reason": "Inside bar breakout below 0.0194"
+      },
+      "stopLoss": {
+        "price": 0.0195237,
+        "distanceUsd": 0.00024570000000000147,
+        "distancePct": 1.2745098039215763
+      },
+      "takeProfit": {
+        "price": 0.0189504,
+        "distanceUsd": 0.0003276000000000008,
+        "distancePct": 1.6993464052287621
+      },
+      "riskReward": 1.3333333333333286,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.00016380000000000005,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.019514,
+        "motherBarLow": 0.019448
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 22,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771729315988-WIF",
+      "timestamp": "2026-02-22T03:01:55.988Z",
+      "timestampMs": 1771729315988,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.217768,
+        "time": "2026-02-22T03:01:55.988Z",
+        "reason": "Inside bar breakout below 0.2201"
+      },
+      "stopLoss": {
+        "price": 0.21985929999999998,
+        "distanceUsd": 0.0020912999999999904,
+        "distancePct": 0.960333933360269
+      },
+      "takeProfit": {
+        "price": 0.2149796,
+        "distanceUsd": 0.0027883999999999964,
+        "distancePct": 1.280445244480363
+      },
+      "riskReward": 1.3333333333333377,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.0013941999999999954,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.220649,
+        "motherBarLow": 0.220058
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771718546022-W",
       "timestamp": "2026-02-22T00:02:26.022Z",
       "timestampMs": 1771718546022,
@@ -818,7 +898,7 @@
       "symbol": "SUI",
       "strategy": "V5.0",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.967376,
         "time": "2026-02-20T16:02:00.348Z",
@@ -845,8 +925,17 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.9355,
+        "time": "2026-02-22T03:20:01.830Z",
+        "reason": "Market Close"
+      },
+      "pnl": {
+        "grossPnl": 46.3,
+        "fees": 0.05,
+        "netPnl": 46.25,
+        "pnlPercent": 16.48
+      },
       "exchange": "Drift",
       "marketIndex": 8,
       "botVersion": "MegaMax v1.0"
