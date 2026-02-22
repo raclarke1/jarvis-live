@@ -262,10 +262,10 @@
       "exchange": "Drift",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.000004097,
+      "entryPrice": 4.097e-06,
       "entryTime": 1771747332235,
-      "stopLoss": 0.0000041966,
-      "takeProfit": 0.0000038978,
+      "stopLoss": 4.1966e-06,
+      "takeProfit": 3.8978e-06,
       "positionSize": 375,
       "status": "OPEN",
       "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
@@ -339,24 +339,6 @@
       "positionSize": 375,
       "status": "OPEN",
       "reason": "Inside bar breakout below 0.0192"
-    },
-    {
-      "id": "TCJR5M-OSZOL-RJ2TTE",
-      "asset": "OP",
-      "exchange": "Kraken",
-      "strategy": "UNKNOWN",
-      "direction": "LONG",
-      "entryPrice": 0.18941418722886058,
-      "entryTime": null,
-      "positionSize": 1246.14596891,
-      "volume": 13157.89474,
-      "leverage": 3,
-      "currentPnl": null,
-      "status": "CLOSED",
-      "exitTime": 1771451696215.026,
-      "pnlUsd": -116.70746641,
-      "pnlPercent": -9.365473172623883,
-      "closedAt": "2026-02-18T22:00:01.191Z"
     }
   ],
   "strategies": {
