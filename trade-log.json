@@ -3,6 +3,88 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771794144892-SUI",
+      "timestamp": "2026-02-22T21:02:24.892Z",
+      "timestampMs": 1771794144892,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.916184,
+        "fillPrice": null,
+        "time": "2026-02-22T21:02:24.892Z",
+        "reason": "Inside bar breakout below 0.9179"
+      },
+      "stopLoss": {
+        "price": 0.9244931428571429,
+        "distanceUsd": 0.008309142857142904,
+        "distancePct": 0.9069294876512691
+      },
+      "takeProfit": {
+        "price": 0.9051051428571428,
+        "distanceUsd": 0.011078857142857168,
+        "distancePct": 1.2092393168683548
+      },
+      "riskReward": 1.3333333333333288,
+      "positionSize": 927,
+      "leverage": 5,
+      "notionalValue": 4635,
+      "marketContext": {
+        "atr": 0.005539428571428576,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.921149,
+        "motherBarLow": 0.917863
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771790548934-BONK",
+      "timestamp": "2026-02-22T20:02:28.934Z",
+      "timestampMs": 1771790548934,
+      "symbol": "BONK",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 6.065,
+        "fillPrice": null,
+        "time": "2026-02-22T20:02:28.934Z",
+        "reason": "Inside bar breakout below 6.0835"
+      },
+      "stopLoss": {
+        "price": 6.118367857142857,
+        "distanceUsd": 0.053367857142856856,
+        "distancePct": 0.8799316923801626
+      },
+      "takeProfit": {
+        "price": 5.993842857142857,
+        "distanceUsd": 0.07115714285714336,
+        "distancePct": 1.1732422565068978
+      },
+      "riskReward": 1.33333333333335,
+      "positionSize": 926,
+      "leverage": 5,
+      "notionalValue": 4630,
+      "marketContext": {
+        "atr": 0.035578571428571494,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 6.1033,
+        "motherBarLow": 6.0835
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 4,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771776161724-OP",
       "timestamp": "2026-02-22T16:02:41.724Z",
       "timestampMs": 1771776161724,
@@ -50,21 +132,21 @@
       "symbol": "PEPE",
       "strategy": "LC",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
-        "price": 0.000004097,
+        "price": 4.093,
         "time": "2026-02-22T08:02:12.236Z",
         "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
       },
       "stopLoss": {
-        "price": 0.0000041966,
-        "distanceUsd": 9.959999999999986e-8,
-        "distancePct": 2.431047107639733
+        "price": 4.1966,
+        "distanceUsd": 0.1036,
+        "distancePct": 2.53
       },
       "takeProfit": {
-        "price": 0.0000038978,
-        "distanceUsd": 1.9919999999999972e-7,
-        "distancePct": 4.862094215279466
+        "price": 3.8978,
+        "distanceUsd": 0.1952,
+        "distancePct": 4.77
       },
       "riskReward": 2,
       "positionSize": 375,
@@ -78,15 +160,15 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": 0.0000041966,
-        "reason": " (SL estimated)"
+        "price": 4.0737,
+        "time": "2026-02-22T16:26:13.175Z",
+        "reason": "Stop Loss"
       },
       "pnl": {
-        "grossPnl": -45.58,
-        "fees": 0.05,
-        "netPnl": -45.63,
-        "pnlPercent": -12.16,
-        "note": "Exit estimated from SL (conservative)"
+        "grossPnl": 8.84,
+        "fees": 0.01,
+        "netPnl": 8.83,
+        "pnlPercent": 2.36
       },
       "exchange": "Drift",
       "marketIndex": 10,
