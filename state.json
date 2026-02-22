@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-02-22T04:17:24.111Z",
+  "lastUpdate": "2026-02-22T04:18:18.976Z",
   "version": "MegaMax v1.4",
   "status": "LIVE",
   "dataSource": "drift-direct",
   "account": {
     "exchange": "drift",
-    "equity": 4103.27,
-    "freeCollateral": 3330.55,
-    "leverage": 1.35,
+    "equity": 4099.7,
+    "freeCollateral": 3330.13,
+    "leverage": 1.36,
     "startingEquity": 1868.46,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
@@ -18,11 +18,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2189,
-      "current": 0.2174,
-      "size": 3712.93,
+      "current": 0.2175,
+      "size": 3713.8,
       "sizeUnits": 17077,
-      "pnl": 25.01,
-      "pnlPercent": 0.67
+      "pnl": 24.14,
+      "pnlPercent": 0.65
     },
     {
       "exchange": "drift",
@@ -30,9 +30,62 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.0192,
-      "current": 0.0192,
-      "size": 1867.42,
+      "current": 0.0193,
+      "size": 1869.26,
       "sizeUnits": 97039,
+      "pnl": 0,
+      "pnlPercent": 0
+    },
+    {
+      "exchange": "kraken",
+      "symbol": "ATOM",
+      "direction": "short",
+      "strategy": "LC",
+      "entry": 2.3053,
+      "current": 2.3053,
+      "stop": 2.5642599999999995,
+      "target": 1.7873800000000002,
+      "size": 1500,
+      "leverage": 2,
+      "pnl": 0,
+      "pnlPercent": 0
+    },
+    {
+      "exchange": "kraken",
+      "symbol": "DOT",
+      "direction": "short",
+      "strategy": "LC",
+      "entry": 1.374,
+      "current": 1.374,
+      "stop": 1.52244,
+      "target": 1.0771200000000003,
+      "size": 1500,
+      "pnl": 0,
+      "pnlPercent": 0
+    },
+    {
+      "exchange": "kraken",
+      "symbol": "RNDR",
+      "direction": "short",
+      "strategy": "LC",
+      "entry": 1.52,
+      "current": 1.52,
+      "stop": 1.6924000000000001,
+      "target": 1.1751999999999998,
+      "size": 1500,
+      "pnl": 0,
+      "pnlPercent": 0
+    },
+    {
+      "exchange": "kraken",
+      "symbol": "NEAR",
+      "direction": "short",
+      "strategy": "LC",
+      "entry": 1.051,
+      "current": 1.051,
+      "stop": 1.1262,
+      "target": 0.9005999999999998,
+      "size": 1500,
       "pnl": 0,
       "pnlPercent": 0
     }
