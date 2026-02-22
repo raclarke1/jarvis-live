@@ -11,18 +11,18 @@
       "direction": "short",
       "status": "OPEN",
       "entry": {
-        "price": 0.000004097,
+        "price": 4.097e-06,
         "time": "2026-02-22T08:02:12.236Z",
         "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
       },
       "stopLoss": {
-        "price": 0.0000041966,
-        "distanceUsd": 9.959999999999986e-8,
+        "price": 4.1966e-06,
+        "distanceUsd": 9.959999999999986e-08,
         "distancePct": 2.431047107639733
       },
       "takeProfit": {
-        "price": 0.0000038978,
-        "distanceUsd": 1.9919999999999972e-7,
+        "price": 3.8978e-06,
+        "distanceUsd": 1.9919999999999972e-07,
         "distancePct": 4.862094215279466
       },
       "riskReward": 2,
@@ -30,14 +30,23 @@
       "leverage": 5,
       "notionalValue": 1875,
       "marketContext": {
-        "atr": 4.979999999999993e-8,
+        "atr": 4.979999999999993e-08,
         "donchianHigh": null,
         "donchianLow": null,
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 4.1966e-06,
+        "reason": " (SL estimated)"
+      },
+      "pnl": {
+        "grossPnl": -45.58,
+        "fees": 0.05,
+        "netPnl": -45.63,
+        "pnlPercent": -12.16,
+        "note": "Exit estimated from SL (conservative)"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -75,8 +84,17 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 82,
+        "reason": " (SL estimated)"
+      },
+      "pnl": {
+        "grossPnl": -70.21,
+        "fees": 0.07,
+        "netPnl": -70.28,
+        "pnlPercent": -18.72,
+        "note": "Exit estimated from SL (conservative)"
+      },
       "exchange": "Drift",
       "marketIndex": 0,
       "botVersion": "MegaMax v1.0"
@@ -247,8 +265,17 @@
         "motherBarHigh": 1.426319,
         "motherBarLow": 1.418858
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 1.4303342000000001,
+        "reason": " (SL estimated)"
+      },
+      "pnl": {
+        "grossPnl": -12.22,
+        "fees": 0.01,
+        "netPnl": -12.24,
+        "pnlPercent": -3.26,
+        "note": "Exit estimated from SL (conservative)"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -336,8 +363,17 @@
         "motherBarHigh": 0.019514,
         "motherBarLow": 0.019448
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.0195237,
+        "reason": " (SL estimated)"
+      },
+      "pnl": {
+        "grossPnl": -23.9,
+        "fees": 0.02,
+        "netPnl": -23.92,
+        "pnlPercent": -6.37,
+        "note": "Exit estimated from SL (conservative)"
+      },
       "exchange": "Drift",
       "marketIndex": 22,
       "botVersion": "MegaMax v1.0"
@@ -376,8 +412,17 @@
         "motherBarHigh": 0.220649,
         "motherBarLow": 0.220058
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.21985929999999998,
+        "reason": " (SL estimated)"
+      },
+      "pnl": {
+        "grossPnl": -18.01,
+        "fees": 0.02,
+        "netPnl": -18.02,
+        "pnlPercent": -4.8,
+        "note": "Exit estimated from SL (conservative)"
+      },
       "exchange": "Drift",
       "marketIndex": 11,
       "botVersion": "MegaMax v1.0"
@@ -466,119 +511,19 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 3.26294,
         "time": "2026-02-22T04:17:07.928Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Stop Loss (estimated by audit)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -147.09,
+        "fees": 0.15,
+        "netPnl": -147.23,
+        "pnlPercent": -78.66,
+        "note": "Exit estimated from SL (conservative)"
       },
       "exchange": "Drift",
       "marketIndex": 18,
-      "botVersion": "MegaMax v1.0"
-    },
-    {
-      "id": "1771707719095-XRP",
-      "timestamp": "2026-02-21T21:01:59.095Z",
-      "timestampMs": 1771707719095,
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "entry": {
-        "price": 1.4359600000000001,
-        "time": "2026-02-21T21:01:59.095Z",
-        "reason": "Inside bar breakout below 1.4425"
-      },
-      "stopLoss": {
-        "price": 1.4448274,
-        "distanceUsd": 0.00886739999999997,
-        "distancePct": 0.617524165018522
-      },
-      "takeProfit": {
-        "price": 1.4241368,
-        "distanceUsd": 0.011823200000000034,
-        "distancePct": 0.8233655533580346
-      },
-      "riskReward": 1.3333333333333417,
-      "positionSize": 375,
-      "leverage": 5,
-      "notionalValue": 1875,
-      "marketContext": {
-        "atr": 0.005911599999999994,
-        "donchianHigh": null,
-        "donchianLow": null,
-        "motherBarHigh": 1.448299,
-        "motherBarLow": 1.442458
-      },
-      "exit": {
-        "price": null,
-        "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
-      },
-      "exchange": "Drift",
-      "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
-    },
-    {
-      "id": "1771693317275-XRP",
-      "timestamp": "2026-02-21T17:01:57.275Z",
-      "timestampMs": 1771693317275,
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "entry": {
-        "price": 1.43998,
-        "time": "2026-02-21T17:01:57.275Z",
-        "reason": "Inside bar breakout below 1.4469"
-      },
-      "stopLoss": {
-        "price": 1.4556369999999998,
-        "distanceUsd": 0.01565699999999981,
-        "distancePct": 1.0873067681495443
-      },
-      "takeProfit": {
-        "price": 1.4191040000000001,
-        "distanceUsd": 0.020875999999999895,
-        "distancePct": 1.4497423575327362
-      },
-      "riskReward": 1.3333333333333428,
-      "positionSize": 375,
-      "leverage": 5,
-      "notionalValue": 1875,
-      "marketContext": {
-        "atr": 0.010437999999999947,
-        "donchianHigh": null,
-        "donchianLow": null,
-        "motherBarHigh": 1.456705,
-        "motherBarLow": 1.446866
-      },
-      "exit": {
-        "price": null,
-        "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
-      },
-      "exchange": "Drift",
-      "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
     },
     {
@@ -665,16 +610,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 3.225073,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Stop Loss (estimated by audit)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -148.54,
+        "fees": 0.15,
+        "netPnl": -148.69,
+        "pnlPercent": -79.43,
+        "note": "Exit estimated from SL (conservative)"
       },
       "exchange": "Drift",
       "marketIndex": 18,
@@ -764,16 +709,16 @@
         "motherBarLow": null
       },
       "exit": {
-        "price": null,
+        "price": 3.3260105,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Stop Loss (estimated by audit)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -138.12,
+        "fees": 0.14,
+        "netPnl": -138.26,
+        "pnlPercent": -73.86,
+        "note": "Exit estimated from SL (conservative)"
       },
       "exchange": "Drift",
       "marketIndex": 18,
@@ -829,56 +774,6 @@
       "botVersion": "MegaMax v1.0"
     },
     {
-      "id": "1771646556737-XRP",
-      "timestamp": "2026-02-21T04:02:36.737Z",
-      "timestampMs": 1771646556737,
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "entry": {
-        "price": 1.4254660000000001,
-        "time": "2026-02-21T04:02:36.737Z",
-        "reason": "Inside bar breakout below 1.4282"
-      },
-      "stopLoss": {
-        "price": 1.4351032000000001,
-        "distanceUsd": 0.009637200000000012,
-        "distancePct": 0.6760736488979753
-      },
-      "takeProfit": {
-        "price": 1.4126164,
-        "distanceUsd": 0.012849600000000017,
-        "distancePct": 0.9014315318639671
-      },
-      "riskReward": 1.3333333333333333,
-      "positionSize": 375,
-      "leverage": 5,
-      "notionalValue": 1875,
-      "marketContext": {
-        "atr": 0.0064248000000000525,
-        "donchianHigh": null,
-        "donchianLow": null,
-        "motherBarHigh": 1.433076,
-        "motherBarLow": 1.428248
-      },
-      "exit": {
-        "price": null,
-        "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
-      },
-      "exchange": "Drift",
-      "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
-    },
-    {
       "id": "1771646515844-WIF",
       "timestamp": "2026-02-21T04:01:55.844Z",
       "timestampMs": 1771646515844,
@@ -925,56 +820,6 @@
       },
       "exchange": "Drift",
       "marketIndex": 11,
-      "botVersion": "MegaMax v1.0"
-    },
-    {
-      "id": "1771635760522-XRP",
-      "timestamp": "2026-02-21T01:02:40.522Z",
-      "timestampMs": 1771635760522,
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "entry": {
-        "price": 1.423866,
-        "time": "2026-02-21T01:02:40.522Z",
-        "reason": "Inside bar breakout below 1.4235"
-      },
-      "stopLoss": {
-        "price": 1.4352102,
-        "distanceUsd": 0.011344199999999915,
-        "distancePct": 0.7967182305076401
-      },
-      "takeProfit": {
-        "price": 1.4087404000000001,
-        "distanceUsd": 0.015125599999999961,
-        "distancePct": 1.062290974010192
-      },
-      "riskReward": 1.33333333333334,
-      "positionSize": 375,
-      "leverage": 5,
-      "notionalValue": 1875,
-      "marketContext": {
-        "atr": 0.007562800000000003,
-        "donchianHigh": null,
-        "donchianLow": null,
-        "motherBarHigh": 1.431012,
-        "motherBarLow": 1.423525
-      },
-      "exit": {
-        "price": null,
-        "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
-      },
-      "exchange": "Drift",
-      "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
     },
     {
@@ -1050,16 +895,16 @@
       "exchange": "Kraken",
       "botVersion": "MegaMax v1.0",
       "exit": {
-        "price": null,
+        "price": 1.1262,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -321.98,
+        "fees": 0.32,
+        "netPnl": -322.3,
+        "pnlPercent": -21.47,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -1086,16 +931,16 @@
       "exchange": "Kraken",
       "botVersion": "MegaMax v1.0",
       "exit": {
-        "price": null,
+        "price": 1.6924000000000001,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -510.39,
+        "fees": 0.51,
+        "netPnl": -510.91,
+        "pnlPercent": -34.03,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -1145,56 +990,6 @@
       },
       "exchange": "Drift",
       "marketIndex": 22,
-      "botVersion": "MegaMax v1.0"
-    },
-    {
-      "id": "1771621316948-XRP",
-      "timestamp": "2026-02-20T21:01:56.948Z",
-      "timestampMs": 1771621316948,
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "entry": {
-        "price": 1.41871,
-        "time": "2026-02-20T21:01:56.948Z",
-        "reason": "Inside bar breakout below 1.4214"
-      },
-      "stopLoss": {
-        "price": 1.4389249,
-        "distanceUsd": 0.020214900000000036,
-        "distancePct": 1.4248789393181156
-      },
-      "takeProfit": {
-        "price": 1.3917568,
-        "distanceUsd": 0.0269531999999999,
-        "distancePct": 1.8998385857574767
-      },
-      "riskReward": 1.333333333333326,
-      "positionSize": 375,
-      "leverage": 5,
-      "notionalValue": 1875,
-      "marketContext": {
-        "atr": 0.013476599999999995,
-        "donchianHigh": null,
-        "donchianLow": null,
-        "motherBarHigh": 1.434594,
-        "motherBarLow": 1.421425
-      },
-      "exit": {
-        "price": null,
-        "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
-      },
-      "exchange": "Drift",
-      "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
     },
     {
@@ -5499,33 +5294,6 @@
       "phantom": true
     },
     {
-      "id": "XRP-1771543574931",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.400819,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.37280262,
-        "time": "2026-02-19T23:26:14.931Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 9.999999999999984
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
       "id": "DOT-1771543574931",
       "symbol": "DOT",
       "strategy": "VWAP-RSI",
@@ -5677,33 +5445,6 @@
         "pnlPercent": 0
       },
       "phantom": true
-    },
-    {
-      "id": "XRP-1771565053394",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.41065,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.382437,
-        "time": "2026-02-20T05:24:13.394Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000016
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
     },
     {
       "id": "INJ-1771565053394",
@@ -5895,16 +5636,16 @@
       "leverage": 5,
       "positionSize": 562,
       "exit": {
-        "price": null,
+        "price": 0.053399357142857144,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -6.49,
+        "fees": 0.01,
+        "netPnl": -6.5,
+        "pnlPercent": -1.16,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -6043,16 +5784,16 @@
       "leverage": 5,
       "positionSize": 562,
       "exit": {
-        "price": null,
+        "price": 0.3204117142857143,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -12.27,
+        "fees": 0.01,
+        "netPnl": -12.28,
+        "pnlPercent": -2.18,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -6158,16 +5899,16 @@
       "leverage": 5,
       "positionSize": 562,
       "exit": {
-        "price": null,
+        "price": 0.05339107142857143,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -15.23,
+        "fees": 0.02,
+        "netPnl": -15.24,
+        "pnlPercent": -2.71,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -6193,33 +5934,6 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000034
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "XRP-1771624332698",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.41871,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.3903358,
-        "time": "2026-02-20T21:52:12.698Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.000000000000004
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
@@ -6279,33 +5993,6 @@
       "botVersion": "MegaMax v1.3"
     },
     {
-      "id": "XRP-1771642694170",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.423866,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.3953886800000002,
-        "time": "2026-02-21T02:58:14.170Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 9.999999999999972
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
       "id": "JTO-1771643138183",
       "timestamp": "2026-02-21T03:05:38.185Z",
       "timestampMs": 1771643138185,
@@ -6327,16 +6014,16 @@
       "leverage": 5,
       "positionSize": 562,
       "exit": {
-        "price": null,
+        "price": 0.3136800714285714,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -22.24,
+        "fees": 0.02,
+        "netPnl": -22.27,
+        "pnlPercent": -3.96,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -6361,16 +6048,16 @@
       "leverage": 5,
       "positionSize": 562,
       "exit": {
-        "price": null,
+        "price": 0.05399314285714286,
         "time": "2026-02-22T04:17:07.930Z",
-        "reason": "Position closed (detected by audit)"
+        "reason": "Position closed (detected by audit) (SL estimated)"
       },
       "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": null,
-        "note": "Exit price unknown - position was closed before tracking"
+        "grossPnl": -6.85,
+        "fees": 0.01,
+        "netPnl": -6.85,
+        "pnlPercent": -1.22,
+        "note": "Exit estimated from SL (conservative)"
       }
     },
     {
@@ -6396,33 +6083,6 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 9.999999999999988
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "XRP-1771651095255",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.4254660000000001,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.3969566800000002,
-        "time": "2026-02-21T05:18:15.255Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 9.99999999999998
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
@@ -6677,33 +6337,6 @@
       "botVersion": "MegaMax v1.3"
     },
     {
-      "id": "XRP-1771707613851",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.43998,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.4111804000000001,
-        "time": "2026-02-21T21:00:13.851Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 9.999999999999975
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
       "id": "W-1771715534641",
       "symbol": "W",
       "strategy": "IBB",
@@ -6726,33 +6359,6 @@
         "fees": null,
         "netPnl": null,
         "pnlPercent": 10.000000000000027
-      },
-      "exchange": "Drift",
-      "botVersion": "MegaMax v1.3"
-    },
-    {
-      "id": "XRP-1771715534641",
-      "symbol": "XRP",
-      "strategy": "IBB",
-      "direction": "short",
-      "status": "CLOSED",
-      "leverage": 5,
-      "entry": {
-        "price": 1.4359600000000001,
-        "reason": "Signal"
-      },
-      "stopLoss": {},
-      "takeProfit": {},
-      "exit": {
-        "price": 1.4072408,
-        "time": "2026-02-21T23:12:14.641Z",
-        "reason": "Position closed"
-      },
-      "pnl": {
-        "grossPnl": null,
-        "fees": null,
-        "netPnl": null,
-        "pnlPercent": 10.00000000000002
       },
       "exchange": "Drift",
       "botVersion": "MegaMax v1.3"
