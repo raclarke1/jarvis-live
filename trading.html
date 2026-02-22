@@ -1113,7 +1113,7 @@
             });
             
             const equity = safeNum(state.account?.equity, 0);
-            const startingEquity = safeNum(state.account?.startingEquity, 11968.46);
+            const startingEquity = safeNum(state.account?.startingEquity, 34000);
             // Total return based on actual trade P&L, NOT equity change (deposits would inflate it)
             const totalReturn = startingEquity > 0 ? (totalPnl / startingEquity * 100) : 0;
             
@@ -1350,7 +1350,7 @@
             
             // === RENDER STRATEGY CARDS ===
             // Compute all stats from trade-log.json (source of truth)
-            const startingCapital = state.account?.startingEquity || 11968.46;
+            const startingCapital = state.account?.startingEquity || 34000;
             const currentCapital = state.account?.equity || 2076;
             const canonicalStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI'];
             const statsMap = {};
