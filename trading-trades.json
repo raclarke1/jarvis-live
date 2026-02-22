@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "MOMENTUM",
+    "asset": "OP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.123518,
+    "entryTime": 1771776161720,
+    "stopLoss": 0.133893125,
+    "takeProfit": 0.09585099999999999,
+    "positionSize": 182,
+    "status": "OPEN",
+    "reason": "Momentum breakout below 0.1254"
+  },
+  {
     "strategy": "LC",
     "asset": "PEPE",
     "exchange": "Drift",

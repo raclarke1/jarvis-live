@@ -88,5 +88,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-22T13:25:16.499Z"
+  },
+  {
+    "asset": "OP",
+    "exchange": "Drift",
+    "strategy": "MOMENTUM",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.123518,
+    "currentPrice": 0.123518,
+    "stopLoss": 0.133893125,
+    "takeProfit": 0.09585099999999999,
+    "positionSize": 182,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-22T16:02:41.718Z"
   }
 ]
