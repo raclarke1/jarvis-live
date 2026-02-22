@@ -1,31 +1,4 @@
 {
-  "MOMENTUM": {
-    "totalTrades": 7,
-    "winningTrades": 0,
-    "losingTrades": 7,
-    "winRate": 0,
-    "totalPnlUsd": -449.54,
-    "avgWinUsd": 0,
-    "avgLossUsd": 64.22,
-    "profitFactor": 0,
-    "maxDrawdownUsd": 449.54,
-    "maxDrawdownPercent": 1.32,
-    "avgHoldingTimeMs": 32204138,
-    "fees": {
-      "totalFees": 3.26,
-      "totalDriftFees": 3.26,
-      "totalKrakenFees": 0,
-      "driftVolume": 14000,
-      "krakenVolume": 0,
-      "totalVolume": 14000,
-      "driftFeeRate": 0.0233,
-      "krakenFeeRate": 0,
-      "overallFeeRate": 0.0233,
-      "feeSavingsFromDrift": 33.14,
-      "estimatedCount": 3
-    },
-    "firstTradeTime": null
-  },
   "IBB": {
     "totalTrades": 63,
     "winningTrades": 35,
@@ -52,33 +25,6 @@
       "estimatedCount": 35
     },
     "firstTradeTime": "2026-02-14T09:05:11.511Z"
-  },
-  "LC": {
-    "totalTrades": 20,
-    "winningTrades": 10,
-    "losingTrades": 10,
-    "winRate": 50,
-    "totalPnlUsd": -576.84,
-    "avgWinUsd": 60,
-    "avgLossUsd": 117.69,
-    "profitFactor": 0.51,
-    "maxDrawdownUsd": 949.92,
-    "maxDrawdownPercent": 2.79,
-    "avgHoldingTimeMs": 61453880,
-    "fees": {
-      "totalFees": 20.74,
-      "totalDriftFees": 9.51,
-      "totalKrakenFees": 11.23,
-      "driftVolume": 32000,
-      "krakenVolume": 8000,
-      "totalVolume": 40000,
-      "driftFeeRate": 0.0297,
-      "krakenFeeRate": 0.1404,
-      "overallFeeRate": 0.0519,
-      "feeSavingsFromDrift": 73.69,
-      "estimatedCount": 15
-    },
-    "firstTradeTime": null
   },
   "V5.0": {
     "totalTrades": 8,

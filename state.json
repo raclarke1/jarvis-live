@@ -1,14 +1,14 @@
 {
   "lastUpdate": "2026-02-22T16:16:50.069Z",
-  "version": "MegaMax v2.0",
+  "version": "MegaMax v2.1",
   "status": "LIVE",
   "dataSource": "drift+kraken",
   "account": {
     "totalEquity": 34631.27,
     "totalDeposited": 34056,
-    "tradingPnl": 646.97,
-    "truePnl": 575.27,
-    "returnPercent": 1.69,
+    "tradingPnl": 1673.35,
+    "truePnl": 1673.35,
+    "returnPercent": 4.91,
     "exchanges": {
       "drift": {
         "equity": 13952.02,
@@ -30,13 +30,13 @@
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "stats": {
-    "totalTrades": 144,
-    "wins": 76,
-    "losses": 68,
-    "winRate": 52.78,
-    "totalPnl": 646.97,
-    "grossPnl": 726.21,
-    "avgTrade": 4.49,
+    "totalTrades": 117,
+    "wins": 66,
+    "losses": 51,
+    "winRate": 56.41,
+    "totalPnl": 1673.35,
+    "grossPnl": 1728.59,
+    "avgTrade": 14.3,
     "maxDrawdown": 1381.38,
     "maxDrawdownPercent": 4.06,
     "profitFactor": 1.32,
@@ -57,33 +57,6 @@
       "estimatedCount": 95
     },
     "byStrategy": {
-      "MOMENTUM": {
-        "totalTrades": 7,
-        "winningTrades": 0,
-        "losingTrades": 7,
-        "winRate": 0,
-        "totalPnlUsd": -449.54,
-        "avgWinUsd": 0,
-        "avgLossUsd": 64.22,
-        "profitFactor": 0,
-        "maxDrawdownUsd": 449.54,
-        "maxDrawdownPercent": 1.32,
-        "avgHoldingTimeMs": 32204138,
-        "fees": {
-          "totalFees": 3.26,
-          "totalDriftFees": 3.26,
-          "totalKrakenFees": 0,
-          "driftVolume": 14000,
-          "krakenVolume": 0,
-          "totalVolume": 14000,
-          "driftFeeRate": 0.0233,
-          "krakenFeeRate": 0,
-          "overallFeeRate": 0.0233,
-          "feeSavingsFromDrift": 33.14,
-          "estimatedCount": 3
-        },
-        "firstTradeTime": null
-      },
       "IBB": {
         "totalTrades": 63,
         "winningTrades": 35,
@@ -110,33 +83,6 @@
           "estimatedCount": 35
         },
         "firstTradeTime": "2026-02-14T09:05:11.511Z"
-      },
-      "LC": {
-        "totalTrades": 20,
-        "winningTrades": 10,
-        "losingTrades": 10,
-        "winRate": 50,
-        "totalPnlUsd": -576.84,
-        "avgWinUsd": 60,
-        "avgLossUsd": 117.69,
-        "profitFactor": 0.51,
-        "maxDrawdownUsd": 949.92,
-        "maxDrawdownPercent": 2.79,
-        "avgHoldingTimeMs": 61453880,
-        "fees": {
-          "totalFees": 20.74,
-          "totalDriftFees": 9.51,
-          "totalKrakenFees": 11.23,
-          "driftVolume": 32000,
-          "krakenVolume": 8000,
-          "totalVolume": 40000,
-          "driftFeeRate": 0.0297,
-          "krakenFeeRate": 0.1404,
-          "overallFeeRate": 0.0519,
-          "feeSavingsFromDrift": 73.69,
-          "estimatedCount": 15
-        },
-        "firstTradeTime": null
       },
       "V5.0": {
         "totalTrades": 8,
@@ -254,21 +200,6 @@
     {
       "exchange": "drift",
       "subaccount": 0,
-      "symbol": "SOL",
-      "direction": "LONG",
-      "strategy": "LC",
-      "entry": 85.0034,
-      "current": 83.285,
-      "size": 0.83,
-      "sizeUnits": 0.01,
-      "pnl": -0.02,
-      "pnlPercent": -2.07,
-      "entryTime": "2026-02-22T06:44:27.509Z",
-      "leverage": 5
-    },
-    {
-      "exchange": "drift",
-      "subaccount": 0,
       "symbol": "SUI",
       "direction": "LONG",
       "strategy": "V5.0",
@@ -294,21 +225,6 @@
       "pnl": -0.02,
       "pnlPercent": -2.47,
       "entryTime": null,
-      "leverage": 5
-    },
-    {
-      "exchange": "drift",
-      "subaccount": 0,
-      "symbol": "PEPE",
-      "direction": "SHORT",
-      "strategy": "LC",
-      "entry": 4.093,
-      "current": 4.0645,
-      "size": 1853.41,
-      "sizeUnits": 456,
-      "pnl": 13,
-      "pnlPercent": 0.7,
-      "entryTime": "2026-02-22T08:02:12.236Z",
       "leverage": 5
     }
   ],
@@ -339,90 +255,6 @@
       "pnlPercent": -5.12,
       "fees": 0.02,
       "exitTime": "2026-02-22T08:30:01.295Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771741215998-JTO",
-      "symbol": "JTO",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "drift",
-      "entry": 0.3105,
-      "exit": 0.30563714285714283,
-      "pnl": -15.36,
-      "pnlPercent": -7.8500000000000005,
-      "fees": 0.72,
-      "exitTime": "2026-02-22T06:22:01.962Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OTDCA5-OIOAC-SKAF45",
-      "symbol": "OP",
-      "strategy": "LC",
-      "direction": "LONG",
-      "exchange": "kraken",
-      "entry": 0.1249,
-      "exit": 0.1249,
-      "pnl": 0,
-      "pnlPercent": 0,
-      "fees": 0,
-      "exitTime": "2026-02-22T06:01:48.817Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771686142009-INJ",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "drift",
-      "entry": 3.834196,
-      "exit": 3.225073,
-      "pnl": -148.69,
-      "pnlPercent": -79.43,
-      "fees": 0.15,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771675315339-INJ",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "drift",
-      "entry": 3.902504,
-      "exit": 3.3260105,
-      "pnl": -138.26,
-      "pnlPercent": -73.86,
-      "fees": 0.14,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OZNRK2-YKGBR-ANGDSF",
-      "symbol": "NEAR",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "exchange": "kraken",
-      "entry": 1.051,
-      "exit": 1.1262,
-      "pnl": -322.3,
-      "pnlPercent": -21.47,
-      "fees": 0.32,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OPLODR-FTCXE-NAUH5E",
-      "symbol": "RNDR",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "exchange": "kraken",
-      "entry": 1.52,
-      "exit": 1.6924000000000001,
-      "pnl": -510.91,
-      "pnlPercent": -34.03,
-      "fees": 0.51,
-      "exitTime": "2026-02-22T04:17:07.930Z",
       "status": "CLOSED"
     },
     {
@@ -496,20 +328,6 @@
       "status": "CLOSED"
     },
     {
-      "id": "1771711315852-INJ",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "drift",
-      "entry": 3.872063,
-      "exit": 3.26294,
-      "pnl": -147.23,
-      "pnlPercent": -78.66,
-      "fees": 0.15,
-      "exitTime": "2026-02-22T04:17:07.928Z",
-      "status": "CLOSED"
-    },
-    {
       "id": "1771603320348-SUI",
       "symbol": "SUI",
       "strategy": "V5.0",
@@ -562,45 +380,6 @@
         "trendFilter": "20 EMA"
       }
     },
-    "LC": {
-      "assets": [
-        "NEAR",
-        "DOT",
-        "ATOM",
-        "RNDR",
-        "OP",
-        "ARB",
-        "INJ",
-        "AVAX",
-        "SUI",
-        "DOGE"
-      ],
-      "exchange": "Drift+Kraken",
-      "type": "RSI(2) 4H + 200 SMA",
-      "params": {
-        "sl": "2.0x ATR",
-        "tp": "4.0x ATR",
-        "trendFilter": "200 SMA"
-      }
-    },
-    "MOMENTUM": {
-      "assets": [
-        "RNDR",
-        "BONK",
-        "JTO",
-        "PYTH",
-        "OP"
-      ],
-      "exchange": "Drift",
-      "subaccount": 0,
-      "type": "Daily Breakouts",
-      "params": {
-        "sl": "0.75x ATR(10)",
-        "tp": "2.0x ATR(10)",
-        "trendFilter": "20 EMA",
-        "leverage": "3x"
-      }
-    },
     "VWAP-RSI": {
       "assets": [
         "PEPE",
@@ -639,38 +418,34 @@
     },
     {
       "date": "2026-02-15",
-      "cumPnl": 337.98,
-      "dailyPnl": 331.61,
+      "cumPnl": -7.1,
+      "dailyPnl": -13.47,
       "trades": 17,
       "fees": 0.41,
       "byStrategy": {
-        "LC": 345.08,
         "IBB": -13.47
       },
       "cumByStrategy": {
-        "LC": 345.08,
         "IBB": -7.1
       }
     },
     {
       "date": "2026-02-16",
-      "cumPnl": 452.28,
-      "dailyPnl": 114.3,
+      "cumPnl": 79.2,
+      "dailyPnl": 86.3,
       "trades": 3,
       "fees": 0.06,
       "byStrategy": {
-        "LC": 28,
         "V5.0": 86.3
       },
       "cumByStrategy": {
-        "LC": 373.08,
-        "V5.0": 86.3,
-        "IBB": -7.1
+        "IBB": -7.1,
+        "V5.0": 86.3
       }
     },
     {
       "date": "2026-02-17",
-      "cumPnl": 685.8,
+      "cumPnl": 312.72,
       "dailyPnl": 233.52,
       "trades": 10,
       "fees": 0.02,
@@ -680,32 +455,29 @@
       },
       "cumByStrategy": {
         "IBB": 126.42,
-        "VWAP-RSI": 100,
-        "LC": 373.08,
-        "V5.0": 86.3
+        "V5.0": 86.3,
+        "VWAP-RSI": 100
       }
     },
     {
       "date": "2026-02-18",
-      "cumPnl": 1381.22,
-      "dailyPnl": 695.42,
+      "cumPnl": 1124.85,
+      "dailyPnl": 812.13,
       "trades": 31,
       "fees": 0.16,
       "byStrategy": {
         "VWAP-RSI": 353.41,
-        "IBB": 458.72,
-        "LC": -116.71
+        "IBB": 458.72
       },
       "cumByStrategy": {
-        "VWAP-RSI": 453.41,
         "IBB": 585.14,
-        "LC": 256.37,
-        "V5.0": 86.3
+        "V5.0": 86.3,
+        "VWAP-RSI": 453.41
       }
     },
     {
       "date": "2026-02-19",
-      "cumPnl": 1994.47,
+      "cumPnl": 1738.1,
       "dailyPnl": 613.25,
       "trades": 21,
       "fees": 0.13,
@@ -714,15 +486,14 @@
         "IBB": 350.75
       },
       "cumByStrategy": {
-        "VWAP-RSI": 715.91,
         "IBB": 935.89,
-        "LC": 256.37,
-        "V5.0": 86.3
+        "V5.0": 86.3,
+        "VWAP-RSI": 715.91
       }
     },
     {
       "date": "2026-02-20",
-      "cumPnl": 1955.41,
+      "cumPnl": 1699.04,
       "dailyPnl": -39.06,
       "trades": 25,
       "fees": 0.23,
@@ -733,48 +504,40 @@
       },
       "cumByStrategy": {
         "IBB": 890.45,
-        "VWAP-RSI": 702.16,
         "V5.0": 106.43,
-        "LC": 256.37
+        "VWAP-RSI": 702.16
       }
     },
     {
       "date": "2026-02-21",
-      "cumPnl": 1948.83,
+      "cumPnl": 1692.46,
       "dailyPnl": -6.58,
       "trades": 19,
       "fees": 0.09,
       "byStrategy": {
         "IBB": -6.71,
-        "VWAP-RSI": 0.13,
-        "MOMENTUM": 0
+        "VWAP-RSI": 0.13
       },
       "cumByStrategy": {
         "IBB": 883.74,
-        "VWAP-RSI": 702.29,
-        "MOMENTUM": 0,
-        "LC": 256.37,
-        "V5.0": 106.43
+        "V5.0": 106.43,
+        "VWAP-RSI": 702.29
       }
     },
     {
       "date": "2026-02-22",
-      "cumPnl": 646.97,
-      "dailyPnl": -1301.86,
+      "cumPnl": 1673.35,
+      "dailyPnl": -19.11,
       "trades": 17,
       "fees": 2.16,
       "byStrategy": {
         "IBB": -2.22,
         "V5.0": 46.25,
-        "MOMENTUM": -449.54,
-        "LC": -833.21,
         "VWAP-RSI": -63.14
       },
       "cumByStrategy": {
         "IBB": 881.52,
         "V5.0": 152.68,
-        "MOMENTUM": -449.54,
-        "LC": -576.84,
         "VWAP-RSI": 639.15
       }
     }

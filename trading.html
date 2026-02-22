@@ -1529,7 +1529,8 @@
         // ============================================================
         // Equity Curves Chart
         // ============================================================
-        const EQ_COLORS = { 'V5.0':'#58a6ff', 'IBB':'#00ff88', 'LC':'#ffa502', 'MOMENTUM':'#a855f7', 'VWAP-RSI':'#ff6b81', 'ALL':'#ffffff' };
+        const KILLED_STRATEGIES = new Set(['LC', 'MOMENTUM']);
+        const EQ_COLORS = { 'V5.0':'#58a6ff', 'IBB':'#00ff88', 'VWAP-RSI':'#ff6b81', 'ALL':'#ffffff' };
         let eqHidden = new Set();
         let eqData = null;
 
@@ -1538,7 +1539,8 @@
                 if (!trades || trades.length === 0) return;
                 document.getElementById('equitySection').style.display = 'block';
 
-                const sorted = [...trades].sort((a,b) => new Date(a.exitTime||a.entryTime||0) - new Date(b.exitTime||b.entryTime||0));
+                const filtered = trades.filter(t => !KILLED_STRATEGIES.has(t.strategy));
+                const sorted = [...filtered].sort((a,b) => new Date(a.exitTime||a.entryTime||0) - new Date(b.exitTime||b.entryTime||0));
                 const byDate = {}, strats = new Set();
                 sorted.forEach(t => {
                     const d = (t.exitTime||t.entryTime||'').slice(0,10);
