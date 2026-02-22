@@ -138,7 +138,7 @@
       "symbol": "INJ",
       "strategy": "MOMENTUM",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 3.872063,
         "time": "2026-02-21T22:01:55.852Z",
@@ -165,8 +165,18 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.928Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 18,
       "botVersion": "MegaMax v1.0"
@@ -178,7 +188,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.4359600000000001,
         "time": "2026-02-21T21:01:59.095Z",
@@ -205,8 +215,18 @@
         "motherBarHigh": 1.448299,
         "motherBarLow": 1.442458
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -218,7 +238,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.43998,
         "time": "2026-02-21T17:01:57.275Z",
@@ -245,8 +265,18 @@
         "motherBarHigh": 1.456705,
         "motherBarLow": 1.446866
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -307,7 +337,7 @@
       "symbol": "INJ",
       "strategy": "MOMENTUM",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 3.834196,
         "time": "2026-02-21T15:02:22.009Z",
@@ -334,8 +364,18 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 18,
       "botVersion": "MegaMax v1.0"
@@ -396,7 +436,7 @@
       "symbol": "INJ",
       "strategy": "MOMENTUM",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 3.902504,
         "time": "2026-02-21T12:01:55.340Z",
@@ -423,8 +463,18 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 18,
       "botVersion": "MegaMax v1.0"
@@ -485,7 +535,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.4254660000000001,
         "time": "2026-02-21T04:02:36.737Z",
@@ -512,8 +562,18 @@
         "motherBarHigh": 1.433076,
         "motherBarLow": 1.428248
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -574,7 +634,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.423866,
         "time": "2026-02-21T01:02:40.522Z",
@@ -601,8 +661,18 @@
         "motherBarHigh": 1.431012,
         "motherBarLow": 1.423525
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -663,7 +733,7 @@
       "symbol": "NEAR",
       "strategy": "LC",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.051,
         "time": "2026-02-21T00:02:26.165Z",
@@ -678,7 +748,19 @@
       "positionSize": 1500,
       "leverage": 3,
       "exchange": "Kraken",
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "OPLODR-FTCXE-NAUH5E",
@@ -687,7 +769,7 @@
       "symbol": "RNDR",
       "strategy": "LC",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.52,
         "time": "2026-02-21T00:02:24.485Z",
@@ -702,7 +784,19 @@
       "positionSize": 1500,
       "leverage": 3,
       "exchange": "Kraken",
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "1771632116455-W",
@@ -760,7 +854,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 1.41871,
         "time": "2026-02-20T21:01:56.948Z",
@@ -787,8 +881,18 @@
         "motherBarHigh": 1.434594,
         "motherBarLow": 1.421425
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      },
       "exchange": "Drift",
       "marketIndex": 10,
       "botVersion": "MegaMax v1.0"
@@ -5476,7 +5580,7 @@
       "symbol": "PYTH",
       "strategy": "VWAP-RSI",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.053523,
         "time": "2026-02-20T11:15:36.092Z",
@@ -5489,7 +5593,19 @@
         "price": 0.053770285714285715
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "SUI-1771587972880",
@@ -5612,7 +5728,7 @@
       "symbol": "TIA",
       "strategy": "VWAP-RSI",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.319019,
         "time": "2026-02-20T14:25:35.876Z",
@@ -5625,7 +5741,19 @@
         "price": 0.31623357142857145
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "PEPE-1771597693803",
@@ -5715,7 +5843,7 @@
       "symbol": "PYTH",
       "strategy": "VWAP-RSI",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.053682,
         "time": "2026-02-20T16:45:35.474Z",
@@ -5728,7 +5856,19 @@
         "price": 0.05426385714285714
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "W-1771624332697",
@@ -5872,7 +6012,7 @@
       "symbol": "JTO",
       "strategy": "VWAP-RSI",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.316183,
         "time": "2026-02-21T03:05:38.185Z",
@@ -5885,7 +6025,19 @@
         "price": 0.3211888571428571
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "PYTH-1771645536262",
@@ -5894,7 +6046,7 @@
       "symbol": "PYTH",
       "strategy": "VWAP-RSI",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.054125,
         "time": "2026-02-21T03:45:36.264Z",
@@ -5907,7 +6059,19 @@
         "price": 0.05438871428571428
       },
       "leverage": 5,
-      "positionSize": 562
+      "positionSize": 562,
+      "exit": {
+        "price": null,
+        "time": "2026-02-22T04:17:07.930Z",
+        "reason": "Position closed (detected by audit)"
+      },
+      "pnl": {
+        "grossPnl": null,
+        "fees": null,
+        "netPnl": null,
+        "pnlPercent": null,
+        "note": "Exit price unknown - position was closed before tracking"
+      }
     },
     {
       "id": "WIF-1771651095255",
