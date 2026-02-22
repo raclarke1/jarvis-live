@@ -3,6 +3,110 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "OTDCA5-OIOAC-SKAF45",
+      "timestamp": "2026-02-22T05:29:45.859Z",
+      "timestampMs": 1771738185859,
+      "symbol": "OP",
+      "strategy": "LC",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.1249,
+        "time": "2026-02-22T05:29:45.859Z",
+        "reason": "RSI(2) = 5.26 < 10 (oversold)"
+      },
+      "stopLoss": {
+        "price": 0.09102000000000002
+      },
+      "takeProfit": {
+        "price": 0.19265999999999997
+      },
+      "positionSize": 1500,
+      "leverage": 2,
+      "exchange": "Kraken",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771738144766-XRP",
+      "timestamp": "2026-02-22T05:29:04.766Z",
+      "timestampMs": 1771738144766,
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 1.4210690000000001,
+        "time": "2026-02-22T05:29:04.766Z",
+        "reason": "Inside bar breakout below 1.4189"
+      },
+      "stopLoss": {
+        "price": 1.4303342000000001,
+        "distanceUsd": 0.009265199999999973,
+        "distancePct": 0.6519880456191762
+      },
+      "takeProfit": {
+        "price": 1.4087154000000002,
+        "distanceUsd": 0.012353599999999965,
+        "distancePct": 0.8693173941589017
+      },
+      "riskReward": 1.3333333333333333,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.006176799999999982,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 1.426319,
+        "motherBarLow": 1.418858
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 10,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771738103740-W",
+      "timestamp": "2026-02-22T05:28:23.740Z",
+      "timestampMs": 1771738103740,
+      "symbol": "W",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.019228,
+        "time": "2026-02-22T05:28:23.740Z",
+        "reason": "Inside bar breakout below 0.0192"
+      },
+      "stopLoss": {
+        "price": 0.0194146,
+        "distanceUsd": 0.00018660000000000204,
+        "distancePct": 0.970459746203464
+      },
+      "takeProfit": {
+        "price": 0.018979199999999998,
+        "distanceUsd": 0.0002488000000000004,
+        "distancePct": 1.2939463282712733
+      },
+      "riskReward": 1.333333333333321,
+      "positionSize": 375,
+      "leverage": 5,
+      "notionalValue": 1875,
+      "marketContext": {
+        "atr": 0.0001244000000000009,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.019333,
+        "motherBarLow": 0.019183
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 22,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771729359135-W",
       "timestamp": "2026-02-22T03:02:39.135Z",
       "timestampMs": 1771729359135,
