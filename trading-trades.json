@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "IBB",
+    "asset": "BONK",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 6.065,
+    "entryTime": 1771790548932,
+    "stopLoss": 6.118367857142857,
+    "takeProfit": 5.993842857142857,
+    "positionSize": 926,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 6.0835"
+  },
+  {
     "strategy": "MOMENTUM",
     "asset": "OP",
     "exchange": "Drift",
