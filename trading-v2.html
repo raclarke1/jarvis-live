@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MegaMax Trading Dashboard v2</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0a0a0f; --card: #1a1a2e; --card-border: rgba(255,255,255,0.06);
+  --text: #e4e4e7; --text-muted: #71717a; --text-dim: #52525b;
+  --green: #00ff88; --red: #ff4757; --blue: #58a6ff; --purple: #a855f7;
+  --orange: #ff6b35; --gold: #ffd700; --cyan: #22d3ee;
+  --glass: rgba(26,26,46,0.8); --glass-border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+[data-theme="light"] {
+  --bg: #f4f4f8; --card: #ffffff; --card-border: rgba(0,0,0,0.08);
+  --text: #18181b; --text-muted: #71717a; --text-dim: #a1a1aa;
+  --glass: rgba(255,255,255,0.9); --glass-border: rgba(0,0,0,0.06);
+  --shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px 40px; }
+
+/* Header */
+.header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid var(--card-border); position:sticky; top:0; z-index:100; background:var(--bg); backdrop-filter:blur(20px); }
+.header-left { display:flex; align-items:center; gap:12px; }
+.logo { font-size:1.5rem; font-weight:800; letter-spacing:-0.5px; }
+.logo span { color: var(--green); }
+.badge { font-size:0.65rem; padding:2px 8px; border-radius:20px; background:var(--green); color:#000; font-weight:700; }
+.header-center { display:flex; align-items:center; gap:24px; }
+.equity-display { font-size:1.8rem; font-weight:800; letter-spacing:-1px; }
+.return-pct { font-size:1rem; font-weight:700; padding:4px 12px; border-radius:8px; }
+.return-pos { background:rgba(0,255,136,0.12); color:var(--green); }
+.return-neg { background:rgba(255,71,87,0.12); color:var(--red); }
+.header-right { display:flex; align-items:center; gap:16px; }
+.update-info { font-size:0.75rem; color:var(--text-muted); text-align:right; }
+.refresh-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; margin-right:4px; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.theme-toggle { background:var(--card); border:1px solid var(--card-border); color:var(--text); padding:6px 10px; border-radius:8px; cursor:pointer; font-size:1rem; }
+
+/* Cards Grid */
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin:20px 0; }
+.card { background:var(--glass); border:1px solid var(--glass-border); border-radius:12px; padding:16px; box-shadow:var(--shadow); transition:transform 0.2s; animation:fadeUp 0.5s ease both; }
+.card:hover { transform:translateY(-2px); }
+.card-label { font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
+.card-value { font-size:1.4rem; font-weight:800; margin-top:4px; letter-spacing:-0.5px; }
+.card-sub { font-size:0.7rem; color:var(--text-muted); margin-top:4px; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* Sections */
+.section { margin:28px 0; }
+.section-title { font-size:1rem; font-weight:700; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+.section-title .icon { font-size:1.1rem; }
+
+/* Tables */
+.table-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--glass-border); background:var(--glass); }
+table { width:100%; border-collapse:collapse; font-size:0.8rem; }
+th { text-align:left; padding:10px 12px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); font-weight:600; border-bottom:1px solid var(--card-border); background:var(--card); position:sticky; top:0; }
+td { padding:8px 12px; border-bottom:1px solid var(--card-border); }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:rgba(255,255,255,0.02); }
+.long { color:var(--green); font-weight:700; }
+.short { color:var(--red); font-weight:700; }
+.pnl-pos { color:var(--green); }
+.pnl-neg { color:var(--red); }
+
+/* Strategy colors */
+.strat-v5 { border-left:3px solid var(--green); }
+.strat-ibb { border-left:3px solid var(--blue); }
+.strat-lc { border-left:3px solid var(--purple); }
+.strat-momentum { border-left:3px solid var(--orange); }
+.strat-vwap { border-left:3px solid var(--gold); }
+.strat-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
+
+/* Chart container */
+.chart-container { background:var(--glass); border:1px solid var(--glass-border); border-radius:12px; padding:20px; box-shadow:var(--shadow); }
+.chart-container canvas { max-height:300px; }
+
+/* Heatmap */
+.heatmap { display:grid; grid-template-columns:repeat(auto-fill, minmax(100px,1fr)); gap:6px; }
+.heatmap-cell { padding:12px 8px; border-radius:8px; text-align:center; font-size:0.75rem; font-weight:700; }
+
+/* Risk grid */
+.risk-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:16px; }
+.risk-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:12px; padding:20px; }
+.risk-card h3 { font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; }
+.bar-row { display:flex; align-items:center; gap:8px; margin:6px 0; font-size:0.78rem; }
+.bar-label { min-width:70px; }
+.bar-track { flex:1; height:8px; background:rgba(255,255,255,0.06); border-radius:4px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:4px; transition:width 0.8s ease; }
+.bar-val { min-width:50px; text-align:right; font-weight:600; }
+
+/* Filter */
+.filter-bar { display:flex; gap:12px; margin-bottom:12px; align-items:center; }
+.filter-bar select { background:var(--card); color:var(--text); border:1px solid var(--card-border); padding:6px 12px; border-radius:8px; font-size:0.8rem; }
+
+/* Mobile */
+@media(max-width:768px) {
+  .header { flex-wrap:wrap; gap:8px; }
+  .header-center { order:3; width:100%; justify-content:center; }
+  .cards { grid-template-columns:repeat(2,1fr); }
+  .equity-display { font-size:1.4rem; }
+  .risk-grid { grid-template-columns:1fr; }
+}
+@media(max-width:480px) {
+  .cards { grid-template-columns:1fr 1fr; gap:8px; }
+  .card { padding:12px; }
+  .card-value { font-size:1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">Mega<span>Max</span></div>
+    <span class="badge">v2.0</span>
+  </div>
+  <div class="header-center">
+    <div class="equity-display" id="headerEquity">--</div>
+    <div class="return-pct" id="headerReturn">--</div>
+  </div>
+  <div class="header-right">
+    <div class="update-info">
+      <div><span class="refresh-dot"></span> <span id="lastUpdate">Loading...</span></div>
+      <div id="nextRefresh" style="font-size:0.65rem"></div>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌓</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Executive Summary -->
+  <div class="cards" id="summaryCards"></div>
+
+  <!-- Open Positions -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📊</span> Open Positions <span id="posCount" style="color:var(--text-muted);font-size:0.8rem"></span></div>
+    <div class="table-wrap"><table id="positionsTable"><thead><tr>
+      <th>Asset</th><th>Direction</th><th>Strategy</th><th>Exchange</th><th>Entry</th><th>Current</th><th>P&L</th><th>P&L%</th><th>Size</th><th>Leverage</th>
+    </tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <!-- Cumulative P&L Chart -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📈</span> Cumulative P&L by Strategy</div>
+    <div class="chart-container"><canvas id="cumPnlChart"></canvas></div>
+  </div>
+
+  <!-- Equity Curve -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> Equity Curve (Daily P&L)</div>
+    <div class="chart-container"><canvas id="equityChart"></canvas></div>
+  </div>
+
+  <!-- Strategy Scorecard -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏆</span> Strategy Performance Scorecard</div>
+    <div class="table-wrap"><table id="strategyTable"><thead><tr>
+      <th>Strategy</th><th>Trades</th><th>Win Rate</th><th>P&L</th><th>Profit Factor</th><th>Avg Win</th><th>Avg Loss</th><th>Max DD</th><th>Avg Hold</th>
+    </tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <!-- Monthly Returns -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📅</span> Daily Returns</div>
+    <div class="heatmap" id="heatmap"></div>
+  </div>
+
+  <!-- Risk Dashboard -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚠️</span> Risk Dashboard</div>
+    <div class="risk-grid" id="riskGrid"></div>
+  </div>
+
+  <!-- Recent Trades -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📋</span> Recent Trades</div>
+    <div class="filter-bar">
+      <select id="stratFilter" onchange="renderTrades()"><option value="ALL">All Strategies</option></select>
+      <select id="dirFilter" onchange="renderTrades()"><option value="ALL">All Directions</option></select>
+    </div>
+    <div class="table-wrap"><table id="tradesTable"><thead><tr>
+      <th>Date</th><th>Asset</th><th>Strategy</th><th>Direction</th><th>Exchange</th><th>Entry</th><th>Exit</th><th>P&L</th><th>P&L%</th><th>Status</th>
+    </tr></thead><tbody></tbody></table></div>
+  </div>
+</div>
+
+<script>
+const STRATEGY_COLORS = { 'V5.0':'#00ff88', 'IBB':'#58a6ff', 'LC':'#a855f7', 'MOMENTUM':'#ff6b35', 'Momentum':'#ff6b35', 'VWAP-RSI':'#ffd700' };
+const STRAT_CLASS = { 'V5.0':'strat-v5', 'IBB':'strat-ibb', 'LC':'strat-lc', 'MOMENTUM':'strat-momentum', 'Momentum':'strat-momentum', 'VWAP-RSI':'strat-vwap' };
+
+let DATA = null;
+let cumPnlChart = null, equityChart = null;
+
+function fmt(n, d=2) { return n == null ? '--' : Number(n).toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d}); }
+function fmtUsd(n) { return n == null ? '--' : (n < 0 ? '-' : '') + '$' + fmt(Math.abs(n)); }
+function pnlClass(n) { return n >= 0 ? 'pnl-pos' : 'pnl-neg'; }
+function stratColor(s) { return STRATEGY_COLORS[s] || '#888'; }
+function stratDot(s) { return `<span class="strat-dot" style="background:${stratColor(s)}"></span>${s}`; }
+function timeAgo(iso) {
+  if (!iso) return '--';
+  const ms = Date.now() - new Date(iso).getTime();
+  const h = Math.floor(ms/3600000), m = Math.floor((ms%3600000)/60000);
+  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+}
+function fmtHoldTime(ms) {
+  if (!ms) return '--';
+  const h = Math.floor(ms/3600000);
+  return h < 24 ? `${h}h` : `${(h/24).toFixed(1)}d`;
+}
+
+function toggleTheme() {
+  const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = t;
+  localStorage.setItem('megamax-theme', t);
+  if (DATA) { destroyCharts(); buildCharts(); }
+}
+
+function destroyCharts() {
+  if (cumPnlChart) { cumPnlChart.destroy(); cumPnlChart = null; }
+  if (equityChart) { equityChart.destroy(); equityChart = null; }
+}
+
+async function loadData() {
+  try {
+    const r = await fetch('state.json?t=' + Date.now());
+    DATA = await r.json();
+    render();
+  } catch(e) { console.error('Failed to load state.json', e); }
+}
+
+function render() {
+  const d = DATA;
+  const a = d.account, s = d.stats;
+
+  // Header
+  document.getElementById('headerEquity').textContent = '$' + fmt(a.totalEquity);
+  const retEl = document.getElementById('headerReturn');
+  retEl.textContent = (a.returnPercent >= 0 ? '+' : '') + fmt(a.returnPercent) + '%';
+  retEl.className = 'return-pct ' + (a.returnPercent >= 0 ? 'return-pos' : 'return-neg');
+  document.getElementById('lastUpdate').textContent = new Date(d.lastUpdate).toLocaleString();
+
+  // Summary cards
+  const cards = [
+    { label:'Total Equity', value:fmtUsd(a.totalEquity), sub:`Drift: $${fmt(a.driftEquity)} | Kraken: $${fmt(a.krakenEquity)}` },
+    { label:'Trading P&L', value:fmtUsd(s.totalPnl), cls:pnlClass(s.totalPnl), sub:`Gross: $${fmt(s.grossPnl)}` },
+    { label:'Deposited', value:fmtUsd(a.totalDeposited), sub:`True P&L: ${fmtUsd(a.truePnl)}` },
+    { label:'Return %', value:(a.returnPercent>=0?'+':'')+fmt(a.returnPercent)+'%', cls:pnlClass(a.returnPercent) },
+    { label:'Win Rate', value:fmt(s.winRate,1)+'%', sub:`${s.wins}W / ${s.losses}L` },
+    { label:'Profit Factor', value:fmt(s.profitFactor), cls:s.profitFactor>=1?'pnl-pos':'pnl-neg' },
+    { label:'Sharpe Ratio', value:fmt(s.sharpeRatio), cls:s.sharpeRatio>=1?'pnl-pos':'pnl-neg' },
+    { label:'Total Fees', value:fmtUsd(s.fees.totalFees), sub:`Drift: $${fmt(s.fees.totalDriftFees)} | Kraken: $${fmt(s.fees.totalKrakenFees)}` },
+  ];
+  document.getElementById('summaryCards').innerHTML = cards.map((c,i) =>
+    `<div class="card" style="animation-delay:${i*0.05}s"><div class="card-label">${c.label}</div><div class="card-value ${c.cls||''}">${c.value}</div>${c.sub?`<div class="card-sub">${c.sub}</div>`:''}</div>`
+  ).join('');
+
+  renderPositions();
+  renderStrategyTable();
+  renderHeatmap();
+  renderRisk();
+  populateFilters();
+  renderTrades();
+  destroyCharts();
+  buildCharts();
+}
+
+function renderPositions() {
+  const pos = DATA.openPositions || [];
+  document.getElementById('posCount').textContent = `(${pos.length} open)`;
+  const tbody = document.querySelector('#positionsTable tbody');
+  if (!pos.length) { tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;color:var(--text-muted);padding:20px">No open positions</td></tr>'; return; }
+  tbody.innerHTML = pos.map(p => {
+    const cls = STRAT_CLASS[p.strategy] || '';
+    return `<tr class="${cls}"><td><strong>${p.symbol}</strong></td>
+      <td class="${p.direction==='LONG'?'long':'short'}">${p.direction}</td>
+      <td>${stratDot(p.strategy)}</td><td>${p.exchange}</td>
+      <td>${p.entry}</td><td>${p.current||'--'}</td>
+      <td class="${pnlClass(p.pnl)}">${fmtUsd(p.pnl)}</td>
+      <td class="${pnlClass(p.pnlPercent)}">${p.pnlPercent!=null?fmt(p.pnlPercent)+'%':'--'}</td>
+      <td>$${fmt(p.size)}</td><td>${p.leverage||'--'}x</td></tr>`;
+  }).join('');
+}
+
+function buildCharts() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+  const textColor = isDark ? '#71717a' : '#71717a';
+
+  // Cumulative P&L by strategy from recentTrades
+  const trades = [...(DATA.recentTrades||[])].sort((a,b) => new Date(a.exitTime)-new Date(b.exitTime));
+  const stratAccum = {};
+  const datasets = {};
+  trades.forEach((t,i) => {
+    const s = t.strategy;
+    if (!stratAccum[s]) stratAccum[s] = 0;
+    stratAccum[s] += (t.pnl||0);
+    if (!datasets[s]) datasets[s] = [];
+    datasets[s].push({ x:i+1, y:stratAccum[s] });
+  });
+
+  const ctx1 = document.getElementById('cumPnlChart').getContext('2d');
+  cumPnlChart = new Chart(ctx1, {
+    type:'line',
+    data:{ datasets: Object.keys(datasets).map(s => ({
+      label:s, data:datasets[s], borderColor:stratColor(s), backgroundColor:stratColor(s)+'20',
+      borderWidth:2, pointRadius:3, pointHoverRadius:5, tension:0.3, fill:false
+    }))},
+    options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
+      plugins:{legend:{labels:{color:textColor,usePointStyle:true,pointStyle:'circle',padding:16}}},
+      scales:{x:{title:{display:true,text:'Trade #',color:textColor},grid:{color:gridColor},ticks:{color:textColor}},
+              y:{title:{display:true,text:'Cumulative P&L ($)',color:textColor},grid:{color:gridColor},ticks:{color:textColor,callback:v=>'$'+v}}}
+    }
+  });
+
+  // Equity curve
+  const eq = DATA.equityHistory || [];
+  const ctx2 = document.getElementById('equityChart').getContext('2d');
+  equityChart = new Chart(ctx2, {
+    type:'bar',
+    data:{
+      labels: eq.map(e=>e.date),
+      datasets:[
+        { type:'line', label:'Cumulative P&L', data:eq.map(e=>e.cumPnl), borderColor:'#58a6ff', backgroundColor:'rgba(88,166,255,0.1)', borderWidth:2, pointRadius:4, tension:0.3, yAxisID:'y', fill:true },
+        { type:'bar', label:'Daily P&L', data:eq.map(e=>e.dailyPnl), backgroundColor:eq.map(e=>e.dailyPnl>=0?'rgba(0,255,136,0.5)':'rgba(255,71,87,0.5)'), borderRadius:4, yAxisID:'y1' }
+      ]
+    },
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:textColor,usePointStyle:true,padding:16}}},
+      scales:{
+        x:{grid:{color:gridColor},ticks:{color:textColor}},
+        y:{position:'left',title:{display:true,text:'Cumulative ($)',color:textColor},grid:{color:gridColor},ticks:{color:textColor,callback:v=>'$'+v}},
+        y1:{position:'right',title:{display:true,text:'Daily ($)',color:textColor},grid:{display:false},ticks:{color:textColor,callback:v=>'$'+v}}
+      }
+    }
+  });
+}
+
+function renderStrategyTable() {
+  const byStrat = DATA.stats.byStrategy;
+  const rows = Object.entries(byStrat).sort((a,b) => b[1].totalPnlUsd - a[1].totalPnlUsd);
+  document.querySelector('#strategyTable tbody').innerHTML = rows.map(([name,s]) =>
+    `<tr class="${STRAT_CLASS[name]||''}">
+      <td>${stratDot(name)}</td><td>${s.totalTrades}</td>
+      <td>${fmt(s.winRate,1)}%</td>
+      <td class="${pnlClass(s.totalPnlUsd)}">${fmtUsd(s.totalPnlUsd)}</td>
+      <td class="${s.profitFactor>=1?'pnl-pos':'pnl-neg'}">${fmt(s.profitFactor)}</td>
+      <td class="pnl-pos">${fmtUsd(s.avgWinUsd)}</td>
+      <td class="pnl-neg">-${fmtUsd(s.avgLossUsd)}</td>
+      <td class="pnl-neg">${fmtUsd(s.maxDrawdownUsd)}</td>
+      <td>${fmtHoldTime(s.avgHoldingTimeMs)}</td></tr>`
+  ).join('');
+}
+
+function renderHeatmap() {
+  const eq = DATA.equityHistory || [];
+  document.getElementById('heatmap').innerHTML = eq.map(e => {
+    const v = e.dailyPnl;
+    const intensity = Math.min(Math.abs(v)/500, 1);
+    const bg = v >= 0
+      ? `rgba(0,255,136,${0.1+intensity*0.5})`
+      : `rgba(255,71,87,${0.1+intensity*0.5})`;
+    return `<div class="heatmap-cell" style="background:${bg}">
+      <div style="font-size:0.65rem;color:var(--text-muted)">${e.date.slice(5)}</div>
+      <div class="${pnlClass(v)}">${v>=0?'+':''}$${fmt(v)}</div>
+      <div style="font-size:0.6rem;color:var(--text-dim)">${e.trades} trades</div>
+    </div>`;
+  }).join('');
+}
+
+function renderRisk() {
+  const a = DATA.account, s = DATA.stats, pos = DATA.openPositions || [];
+  const fees = s.fees;
+
+  // Position concentration
+  const totalSize = pos.reduce((sum,p) => sum + (p.size||0), 0);
+  const positionBars = pos.map(p => {
+    const pct = totalSize > 0 ? (p.size/totalSize*100) : 0;
+    return `<div class="bar-row"><span class="bar-label">${p.symbol}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${stratColor(p.strategy)}"></div></div>
+      <span class="bar-val">$${fmt(p.size)}</span></div>`;
+  }).join('') || '<div style="color:var(--text-muted);font-size:0.8rem">No positions</div>';
+
+  // Strategy exposure
+  const stratExposure = {};
+  pos.forEach(p => { stratExposure[p.strategy] = (stratExposure[p.strategy]||0) + (p.size||0); });
+  const stratBars = Object.entries(stratExposure).map(([s,v]) => {
+    const pct = totalSize > 0 ? (v/totalSize*100) : 0;
+    return `<div class="bar-row"><span class="bar-label">${s}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${stratColor(s)}"></div></div>
+      <span class="bar-val">$${fmt(v)}</span></div>`;
+  }).join('') || '<div style="color:var(--text-muted);font-size:0.8rem">No exposure</div>';
+
+  document.getElementById('riskGrid').innerHTML = `
+    <div class="risk-card">
+      <h3>Leverage & Drawdown</h3>
+      <div style="display:flex;gap:24px;margin-bottom:16px">
+        <div><div class="card-label">Current Leverage</div><div class="card-value" style="font-size:1.6rem">${fmt(a.leverage,2)}x</div></div>
+        <div><div class="card-label">Max Drawdown</div><div class="card-value pnl-neg" style="font-size:1.6rem">${fmt(s.maxDrawdownPercent,1)}%</div><div class="card-sub">${fmtUsd(s.maxDrawdown)}</div></div>
+      </div>
+      <div class="bar-row"><span class="bar-label">Leverage</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.min(a.leverage/5*100,100)}%;background:${a.leverage>2?'var(--red)':a.leverage>1?'var(--orange)':'var(--green)'}"></div></div>
+        <span class="bar-val">${fmt(a.leverage,2)}x</span></div>
+    </div>
+    <div class="risk-card">
+      <h3>Position Concentration</h3>
+      ${positionBars}
+    </div>
+    <div class="risk-card">
+      <h3>Exposure by Strategy</h3>
+      ${stratBars}
+    </div>
+    <div class="risk-card">
+      <h3>Fee Breakdown</h3>
+      <div style="display:flex;gap:16px;margin-bottom:12px">
+        <div><div class="card-label">Drift Fees</div><div class="card-value" style="font-size:1.2rem">${fmtUsd(fees.totalDriftFees)}</div><div class="card-sub">${fmt(fees.driftFeeRate,3)}% rate</div></div>
+        <div><div class="card-label">Kraken Fees</div><div class="card-value" style="font-size:1.2rem">${fmtUsd(fees.totalKrakenFees)}</div><div class="card-sub">${fmt(fees.krakenFeeRate,3)}% rate</div></div>
+      </div>
+      <div class="card-sub" style="color:var(--green)">💰 Saved ${fmtUsd(fees.feeSavingsFromDrift)} by using Drift</div>
+      <div class="bar-row" style="margin-top:8px"><span class="bar-label">Drift</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${fees.totalFees>0?(fees.totalDriftFees/fees.totalFees*100):0}%;background:var(--blue)"></div></div>
+        <span class="bar-val">${fmt(fees.totalFees>0?(fees.totalDriftFees/fees.totalFees*100):0,0)}%</span></div>
+      <div class="bar-row"><span class="bar-label">Kraken</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${fees.totalFees>0?(fees.totalKrakenFees/fees.totalFees*100):0}%;background:var(--orange)"></div></div>
+        <span class="bar-val">${fmt(fees.totalFees>0?(fees.totalKrakenFees/fees.totalFees*100):0,0)}%</span></div>
+    </div>`;
+}
+
+function populateFilters() {
+  const strats = new Set((DATA.recentTrades||[]).map(t=>t.strategy));
+  const sel = document.getElementById('stratFilter');
+  sel.innerHTML = '<option value="ALL">All Strategies</option>' + [...strats].map(s=>`<option value="${s}">${s}</option>`).join('');
+}
+
+function renderTrades() {
+  const sf = document.getElementById('stratFilter').value;
+  const df = document.getElementById('dirFilter').value;
+  let trades = [...(DATA.recentTrades||[])].sort((a,b) => new Date(b.exitTime)-new Date(a.exitTime));
+  if (sf !== 'ALL') trades = trades.filter(t => t.strategy === sf);
+  if (df !== 'ALL') trades = trades.filter(t => t.direction === df);
+
+  document.querySelector('#tradesTable tbody').innerHTML = trades.map(t => {
+    const phantom = t.status === 'PHANTOM' ? ' ⚠️' : '';
+    return `<tr class="${STRAT_CLASS[t.strategy]||''}">
+      <td>${t.exitTime ? new Date(t.exitTime).toLocaleDateString() : '--'}</td>
+      <td><strong>${t.symbol}</strong>${phantom}</td>
+      <td>${stratDot(t.strategy)}</td>
+      <td class="${t.direction==='LONG'?'long':'short'}">${t.direction}</td>
+      <td>${t.exchange}</td>
+      <td>${t.entry}</td><td>${t.exit||'--'}</td>
+      <td class="${pnlClass(t.pnl)}">${fmtUsd(t.pnl)}</td>
+      <td class="${pnlClass(t.pnlPercent)}">${t.pnlPercent!=null?fmt(t.pnlPercent)+'%':'--'}</td>
+      <td>${t.status}</td></tr>`;
+  }).join('') || '<tr><td colspan="10" style="text-align:center;color:var(--text-muted);padding:20px">No trades</td></tr>';
+}
+
+// Init
+const saved = localStorage.getItem('megamax-theme');
+if (saved) document.documentElement.dataset.theme = saved;
+loadData();
+setInterval(loadData, 300000); // 5 min refresh
+
+// Countdown
+setInterval(() => {
+  const el = document.getElementById('nextRefresh');
+  if (el) { const s = 300 - Math.floor((Date.now()/1000)%300); el.textContent = `Refresh in ${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`; }
+}, 1000);
+</script>
+</body>
+</html>
