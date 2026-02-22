@@ -9,7 +9,7 @@
       "symbol": "OP",
       "strategy": "LC",
       "direction": "long",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.1249,
         "time": "2026-02-22T05:29:45.859Z",
@@ -24,7 +24,17 @@
       "positionSize": 1500,
       "leverage": 2,
       "exchange": "Kraken",
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "exit": {
+        "price": 0.1249,
+        "time": "2026-02-22T06:01:48.817Z",
+        "reason": "Manual close - migrating LC to Drift"
+      },
+      "pnl": {
+        "netPnl": 0,
+        "pnlPercent": 0,
+        "grossPnl": 0
+      }
     },
     {
       "id": "1771738144766-XRP",

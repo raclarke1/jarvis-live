@@ -1,4 +1,20 @@
 {
+  "LC": {
+    "totalTrades": 21,
+    "winningTrades": 10,
+    "losingTrades": 11,
+    "totalPnlUsd": 256.37,
+    "winRate": 47.62,
+    "avgWinUsd": 60,
+    "avgLossUsd": 31.24,
+    "profitFactor": 1.75,
+    "maxDrawdownPercent": 135.09,
+    "avgHoldingTimeMs": 82658114,
+    "firstTradeTime": null,
+    "totalPnlPercent": 0,
+    "startingCapital": 0,
+    "currentCapital": 0
+  },
   "IBB": {
     "totalTrades": 85,
     "winningTrades": 35,
@@ -26,22 +42,6 @@
     "profitFactor": 0,
     "maxDrawdownPercent": 0,
     "avgHoldingTimeMs": 42903529,
-    "firstTradeTime": null,
-    "totalPnlPercent": 0,
-    "startingCapital": 0,
-    "currentCapital": 0
-  },
-  "LC": {
-    "totalTrades": 20,
-    "winningTrades": 10,
-    "losingTrades": 10,
-    "totalPnlUsd": 256.37,
-    "winRate": 50,
-    "avgWinUsd": 60,
-    "avgLossUsd": 34.37,
-    "profitFactor": 1.75,
-    "maxDrawdownPercent": 135.09,
-    "avgHoldingTimeMs": 89386044,
     "firstTradeTime": null,
     "totalPnlPercent": 0,
     "startingCapital": 0,
