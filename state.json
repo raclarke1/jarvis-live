@@ -1,14 +1,16 @@
 {
-  "lastUpdate": "2026-02-22T15:10:16.549Z",
+  "lastUpdate": "2026-02-22T15:19:43.424Z",
   "version": "MegaMax v1.7",
   "status": "LIVE",
-  "dataSource": "drift-direct",
+  "dataSource": "drift+kraken",
   "account": {
-    "exchange": "drift",
-    "equity": 13963.26,
-    "freeCollateral": 13466.64,
+    "exchange": "drift+kraken",
+    "equity": 34643.48,
+    "driftEquity": 13963.81,
+    "krakenEquity": 20679.67,
+    "freeCollateral": 13466.63,
     "leverage": 0.5,
-    "startingEquity": 11968.46,
+    "startingEquity": 34000,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
@@ -18,11 +20,11 @@
       "direction": "LONG",
       "strategy": "LC",
       "entry": 85.0034,
-      "current": 83.3125,
+      "current": 83.0741,
       "size": 0.83,
       "sizeUnits": 0,
       "pnl": -0.02,
-      "pnlPercent": -2.04,
+      "pnlPercent": -2.32,
       "entryTime": "2026-02-22T06:44:27.509Z"
     },
     {
@@ -31,11 +33,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.9338,
-      "current": 0.9196,
+      "current": 0.9165,
       "size": 0.92,
       "sizeUnits": 1,
-      "pnl": -0.01,
-      "pnlPercent": -1.54,
+      "pnl": -0.02,
+      "pnlPercent": -1.88,
       "entryTime": null
     },
     {
@@ -44,11 +46,11 @@
       "direction": "LONG",
       "strategy": "V5.0",
       "entry": 0.154,
-      "current": 0.1504,
+      "current": 0.1498,
       "size": 0.9,
       "sizeUnits": 6,
-      "pnl": -0.02,
-      "pnlPercent": -2.4,
+      "pnl": -0.03,
+      "pnlPercent": -2.8,
       "entryTime": null
     },
     {
@@ -57,11 +59,11 @@
       "direction": "SHORT",
       "strategy": "LC",
       "entry": 4.093,
-      "current": 4.0442,
-      "size": 1844.16,
+      "current": 4.0421,
+      "size": 1843.2,
       "sizeUnits": 456,
-      "pnl": 22.25,
-      "pnlPercent": 1.21,
+      "pnl": 23.21,
+      "pnlPercent": 1.26,
       "entryTime": "2026-02-22T08:02:12.236Z"
     }
   ],
