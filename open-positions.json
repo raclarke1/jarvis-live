@@ -73,5 +73,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-22T08:02:12.234Z"
+  },
+  {
+    "asset": "DOGE",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.0966,
+    "currentPrice": 0.0966,
+    "stopLoss": 0.09595,
+    "takeProfit": 0.0979,
+    "positionSize": 50,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-22T13:25:16.499Z"
   }
 ]
