@@ -3,6 +3,47 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771776161724-OP",
+      "timestamp": "2026-02-22T16:02:41.724Z",
+      "timestampMs": 1771776161724,
+      "symbol": "OP",
+      "strategy": "MOMENTUM",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.123518,
+        "fillPrice": null,
+        "time": "2026-02-22T16:02:41.724Z",
+        "reason": "Momentum breakout below 0.1254"
+      },
+      "stopLoss": {
+        "price": 0.133893125,
+        "distanceUsd": 0.010375124999999999,
+        "distancePct": 8.399686685341406
+      },
+      "takeProfit": {
+        "price": 0.09585099999999999,
+        "distanceUsd": 0.02766700000000001,
+        "distancePct": 22.399164494243763
+      },
+      "riskReward": 2.666666666666668,
+      "positionSize": 182,
+      "leverage": 5,
+      "notionalValue": 910,
+      "marketContext": {
+        "atr": 0.013833500000000004,
+        "donchianHigh": 0.236869,
+        "donchianLow": 0.125406,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 12,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771747332236-PEPE",
       "timestamp": "2026-02-22T08:02:12.236Z",
       "timestampMs": 1771747332236,
@@ -11,18 +52,18 @@
       "direction": "short",
       "status": "OPEN",
       "entry": {
-        "price": 4.097e-06,
+        "price": 0.000004097,
         "time": "2026-02-22T08:02:12.236Z",
         "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
       },
       "stopLoss": {
-        "price": 4.1966e-06,
-        "distanceUsd": 9.959999999999986e-08,
+        "price": 0.0000041966,
+        "distanceUsd": 9.959999999999986e-8,
         "distancePct": 2.431047107639733
       },
       "takeProfit": {
-        "price": 3.8978e-06,
-        "distanceUsd": 1.9919999999999972e-07,
+        "price": 0.0000038978,
+        "distanceUsd": 1.9919999999999972e-7,
         "distancePct": 4.862094215279466
       },
       "riskReward": 2,
@@ -30,14 +71,14 @@
       "leverage": 5,
       "notionalValue": 1875,
       "marketContext": {
-        "atr": 4.979999999999993e-08,
+        "atr": 4.979999999999993e-8,
         "donchianHigh": null,
         "donchianLow": null,
         "motherBarHigh": null,
         "motherBarLow": null
       },
       "exit": {
-        "price": 4.1966e-06,
+        "price": 0.0000041966,
         "reason": " (SL estimated)"
       },
       "pnl": {
