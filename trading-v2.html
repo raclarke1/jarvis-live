@@ -77,7 +77,8 @@ tr:hover td { background:rgba(255,255,255,0.02); }
 
 /* Chart container */
 .chart-container { background:var(--glass); border:1px solid var(--glass-border); border-radius:12px; padding:20px; box-shadow:var(--shadow); }
-.chart-container canvas { max-height:300px; }
+.chart-container canvas { max-height:500px; }
+.chart-container.chart-tall canvas { max-height:600px; min-height:450px; }
 
 /* Heatmap */
 .heatmap { display:grid; grid-template-columns:repeat(auto-fill, minmax(100px,1fr)); gap:6px; }
@@ -147,7 +148,7 @@ tr:hover td { background:rgba(255,255,255,0.02); }
   <!-- Cumulative P&L Chart -->
   <div class="section">
     <div class="section-title"><span class="icon">📈</span> Cumulative P&L by Strategy</div>
-    <div class="chart-container"><canvas id="cumPnlChart"></canvas></div>
+    <div class="chart-container chart-tall"><canvas id="cumPnlChart"></canvas></div>
   </div>
 
   <!-- Equity Curve -->
