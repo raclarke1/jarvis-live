@@ -60,18 +60,18 @@
     "entryTime": "2026-02-22T06:20:15.994Z"
   },
   {
-    "asset": "SOL",
+    "asset": "PEPE",
     "exchange": "Drift",
     "strategy": "LC",
-    "direction": "LONG",
+    "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 85.19,
-    "currentPrice": 85.19,
-    "stopLoss": 82,
-    "takeProfit": 92,
+    "entryPrice": 0.000004097,
+    "currentPrice": 0.000004097,
+    "stopLoss": 0.0000041966,
+    "takeProfit": 0.0000038978,
     "positionSize": 375,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-22T06:44:27.503Z"
+    "entryTime": "2026-02-22T08:02:12.234Z"
   }
 ]

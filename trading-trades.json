@@ -1,6 +1,20 @@
 [
   {
     "strategy": "LC",
+    "asset": "PEPE",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.000004097,
+    "entryTime": 1771747332235,
+    "stopLoss": 0.0000041966,
+    "takeProfit": 0.0000038978,
+    "positionSize": 375,
+    "status": "OPEN",
+    "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
+  },
+  {
+    "strategy": "LC",
     "asset": "SOL",
     "exchange": "Drift",
     "direction": "LONG",
