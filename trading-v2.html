@@ -291,28 +291,48 @@ function buildCharts() {
   const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
   const textColor = isDark ? '#71717a' : '#71717a';
 
-  // Cumulative P&L by strategy from recentTrades
+  // Cumulative P&L by strategy — grouped by DATE
   const trades = [...(DATA.recentTrades||[])].sort((a,b) => new Date(a.exitTime)-new Date(b.exitTime));
-  const stratAccum = {};
-  const datasets = {};
-  trades.forEach((t,i) => {
+  // Aggregate daily P&L per strategy
+  const dailyByStrat = {}; // { strategy: { date: totalPnl } }
+  const allDates = new Set();
+  trades.forEach(t => {
     const s = t.strategy;
-    if (!stratAccum[s]) stratAccum[s] = 0;
-    stratAccum[s] += (t.pnl||0);
-    if (!datasets[s]) datasets[s] = [];
-    datasets[s].push({ x:i+1, y:stratAccum[s] });
+    const d = t.exitTime ? t.exitTime.slice(0,10) : 'unknown';
+    allDates.add(d);
+    if (!dailyByStrat[s]) dailyByStrat[s] = {};
+    dailyByStrat[s][d] = (dailyByStrat[s][d]||0) + (t.pnl||0);
   });
+  const sortedDates = [...allDates].sort();
+  // Build cumulative series per strategy
+  const cumDatasets = Object.keys(dailyByStrat).map(s => {
+    let cum = 0;
+    const data = sortedDates.map(d => {
+      cum += (dailyByStrat[s][d]||0);
+      return { x:d, y:Math.round(cum*100)/100 };
+    });
+    return {
+      label:s, data, borderColor:stratColor(s), backgroundColor:stratColor(s)+'20',
+      borderWidth:2.5, pointRadius:4, pointHoverRadius:7, tension:0.3, fill:false
+    };
+  });
+  // Also add a TOTAL line
+  let totalCum = 0;
+  const totalData = sortedDates.map(d => {
+    Object.keys(dailyByStrat).forEach(s => { totalCum += (dailyByStrat[s][d]||0); });
+    return { x:d, y:Math.round(totalCum*100)/100 };
+  });
+  cumDatasets.push({ label:'TOTAL', data:totalData, borderColor:'#ffffff', backgroundColor:'rgba(255,255,255,0.05)',
+    borderWidth:3, pointRadius:0, borderDash:[6,3], tension:0.3, fill:false });
 
   const ctx1 = document.getElementById('cumPnlChart').getContext('2d');
   cumPnlChart = new Chart(ctx1, {
     type:'line',
-    data:{ datasets: Object.keys(datasets).map(s => ({
-      label:s, data:datasets[s], borderColor:stratColor(s), backgroundColor:stratColor(s)+'20',
-      borderWidth:2, pointRadius:3, pointHoverRadius:5, tension:0.3, fill:false
-    }))},
+    data:{ datasets: cumDatasets },
     options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
-      plugins:{legend:{labels:{color:textColor,usePointStyle:true,pointStyle:'circle',padding:16}}},
-      scales:{x:{title:{display:true,text:'Trade #',color:textColor},grid:{color:gridColor},ticks:{color:textColor}},
+      plugins:{legend:{labels:{color:textColor,usePointStyle:true,pointStyle:'circle',padding:16}},
+        tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: $${ctx.parsed.y.toFixed(2)}`}}},
+      scales:{x:{type:'category', labels:sortedDates.map(d=>d.slice(5)), title:{display:true,text:'Date',color:textColor},grid:{color:gridColor},ticks:{color:textColor,maxRotation:45}},
               y:{title:{display:true,text:'Cumulative P&L ($)',color:textColor},grid:{color:gridColor},ticks:{color:textColor,callback:v=>'$'+v}}}
     }
   });
