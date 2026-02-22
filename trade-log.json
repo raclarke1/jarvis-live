@@ -11,18 +11,18 @@
       "direction": "short",
       "status": "OPEN",
       "entry": {
-        "price": 0.000004097,
+        "price": 4.097e-06,
         "time": "2026-02-22T08:02:12.236Z",
         "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
       },
       "stopLoss": {
-        "price": 0.0000041966,
-        "distanceUsd": 9.959999999999986e-8,
+        "price": 4.1966e-06,
+        "distanceUsd": 9.959999999999986e-08,
         "distancePct": 2.431047107639733
       },
       "takeProfit": {
-        "price": 0.0000038978,
-        "distanceUsd": 1.9919999999999972e-7,
+        "price": 3.8978e-06,
+        "distanceUsd": 1.9919999999999972e-07,
         "distancePct": 4.862094215279466
       },
       "riskReward": 2,
@@ -30,14 +30,14 @@
       "leverage": 5,
       "notionalValue": 1875,
       "marketContext": {
-        "atr": 4.979999999999993e-8,
+        "atr": 4.979999999999993e-08,
         "donchianHigh": null,
         "donchianLow": null,
         "motherBarHigh": null,
         "motherBarLow": null
       },
       "exit": {
-        "price": 0.0000041966,
+        "price": 4.1966e-06,
         "reason": " (SL estimated)"
       },
       "pnl": {
@@ -104,7 +104,7 @@
       "timestamp": "2026-02-22T06:20:15.998Z",
       "timestampMs": 1771741215998,
       "symbol": "JTO",
-      "strategy": "Momentum",
+      "strategy": "MOMENTUM",
       "direction": "long",
       "status": "CLOSED",
       "entry": {

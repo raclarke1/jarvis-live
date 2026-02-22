@@ -1113,8 +1113,9 @@
             });
             
             const equity = safeNum(state.account?.equity, 0);
-            const startingEquity = safeNum(state.account?.startingEquity, 1868.46);
-            const totalReturn = startingEquity > 0 ? ((equity - startingEquity) / startingEquity * 100) : 0;
+            const startingEquity = safeNum(state.account?.startingEquity, 11968.46);
+            // Total return based on actual trade P&L, NOT equity change (deposits would inflate it)
+            const totalReturn = startingEquity > 0 ? (totalPnl / startingEquity * 100) : 0;
             
             // Days trading
             const days = firstDate && lastDate ? Math.max(1, Math.ceil((lastDate - firstDate) / (1000*60*60*24))) : 1;
@@ -1154,7 +1155,7 @@
                 <div class="exec-kpi">
                     <div class="label">Max Drawdown</div>
                     <div class="value negative">${formatCurrency(maxDD)}</div>
-                    <div class="sub">${startingEquity > 0 ? (maxDD/startingEquity*100).toFixed(1) : 0}% of capital</div>
+                    <div class="sub">${startingEquity > 0 ? (maxDD/startingEquity*100).toFixed(1) : 0}% of starting capital</div>
                 </div>
             `;
             
@@ -1349,7 +1350,7 @@
             
             // === RENDER STRATEGY CARDS ===
             // Compute all stats from trade-log.json (source of truth)
-            const startingCapital = state.account?.startingEquity || 1868.46;
+            const startingCapital = state.account?.startingEquity || 11968.46;
             const currentCapital = state.account?.equity || 2076;
             const canonicalStrategies = ['V5.0', 'IBB', 'LC', 'MOMENTUM', 'VWAP-RSI'];
             const statsMap = {};
