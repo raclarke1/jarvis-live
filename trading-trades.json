@@ -1,6 +1,20 @@
 [
   {
     "strategy": "IBB",
+    "asset": "JTO",
+    "exchange": "Drift",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.301414,
+    "entryTime": 1771797753633,
+    "stopLoss": 0.29207585714285716,
+    "takeProfit": 0.31386485714285717,
+    "positionSize": 915,
+    "status": "OPEN",
+    "reason": "Inside bar breakout above 0.3006"
+  },
+  {
+    "strategy": "IBB",
     "asset": "SUI",
     "exchange": "Drift",
     "direction": "SHORT",

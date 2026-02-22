@@ -13,5 +13,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-22T21:02:24.886Z"
+  },
+  {
+    "asset": "JTO",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.301414,
+    "currentPrice": 0.301414,
+    "stopLoss": 0.29207585714285716,
+    "takeProfit": 0.31386485714285717,
+    "positionSize": 915,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-22T22:02:33.632Z"
   }
 ]
