@@ -13,5 +13,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-23T12:02:51.701Z"
+  },
+  {
+    "asset": "APT",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.850389,
+    "currentPrice": 0.850389,
+    "stopLoss": 0.8713279285714285,
+    "takeProfit": 0.8224704285714285,
+    "positionSize": 800,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-23T14:03:00.811Z"
   }
 ]
