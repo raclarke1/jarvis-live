@@ -1,23 +1,54 @@
 {
-  "lastUpdate": "2026-02-23T14:52:26.994Z",
+  "lastUpdate": "2026-02-23T15:02:08.802Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
   "account": {
     "exchange": "drift",
-    "totalEquity": 3645.3,
+    "totalEquity": 13886,
     "totalDeposited": 13300,
-    "driftEquity": 3645.3,
+    "driftEquity": 13886,
     "krakenEquity": 20676.58,
     "freeCollateral": 3645,
     "leverage": 0,
-    "equity": 3645.3,
+    "equity": 13886,
     "startingEquity": 13300,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
     "driftSub0Equity": 3643,
     "driftSub1Equity": 10243
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "asset": "SUI",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.903418,
+      "currentPrice": 0.903418,
+      "stopLoss": 0.9221661785714286,
+      "takeProfit": 0.8784204285714287,
+      "positionSize": 794,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-23T12:02:51.701Z"
+    },
+    {
+      "asset": "APT",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.850389,
+      "currentPrice": 0.850389,
+      "stopLoss": 0.8713279285714285,
+      "takeProfit": 0.8224704285714285,
+      "positionSize": 800,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-23T14:03:00.811Z"
+    }
+  ],
   "stats": {
     "totalTrades": 174,
     "wins": 77,
@@ -193,6 +224,20 @@
   "recentTrades": [
     {
       "strategy": "IBB",
+      "asset": "APT",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.850389,
+      "entryTime": 1771855380814,
+      "stopLoss": 0.8713279285714285,
+      "takeProfit": 0.8224704285714285,
+      "positionSize": 800,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 0.8555"
+    },
+    {
+      "strategy": "IBB",
       "asset": "SUI",
       "exchange": "Drift",
       "direction": "SHORT",
@@ -316,20 +361,6 @@
       "positionSize": 927,
       "status": "OPEN",
       "reason": "Inside bar breakout below 0.9179"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "BONK",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 6.065,
-      "entryTime": 1771790548932,
-      "stopLoss": 6.118367857142857,
-      "takeProfit": 5.993842857142857,
-      "positionSize": 926,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 6.0835"
     }
   ],
   "strategies": {
@@ -386,9 +417,9 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-23T12:02:51.720Z",
+    "lastCheck": "2026-02-23T15:02:08.802Z",
     "performance": {
-      "totalTrades": 19,
+      "totalTrades": 20,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,
