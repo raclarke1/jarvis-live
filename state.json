@@ -1,39 +1,23 @@
 {
-  "lastUpdate": "2026-02-23T12:02:51.720Z",
+  "lastUpdate": "2026-02-23T14:52:26.994Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
   "account": {
     "exchange": "drift",
-    "totalEquity": 3645.83,
+    "totalEquity": 3645.3,
     "totalDeposited": 13300,
-    "driftEquity": 3645.83,
+    "driftEquity": 3645.3,
     "krakenEquity": 20676.58,
-    "freeCollateral": 3645.79,
+    "freeCollateral": 3645,
     "leverage": 0,
-    "equity": 3645.83,
+    "equity": 3645.3,
     "startingEquity": 13300,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
     "driftSub0Equity": 3643,
     "driftSub1Equity": 10243
   },
-  "openPositions": [
-    {
-      "asset": "SUI",
-      "exchange": "Drift",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.903418,
-      "currentPrice": 0.903418,
-      "stopLoss": 0.9221661785714286,
-      "takeProfit": 0.8784204285714287,
-      "positionSize": 794,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-23T12:02:51.701Z"
-    }
-  ],
+  "openPositions": [],
   "stats": {
     "totalTrades": 174,
     "wins": 77,
