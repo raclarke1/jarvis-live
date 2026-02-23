@@ -17,46 +17,56 @@
   },
   "openPositions": [
     {
-      "asset": "SOL",
+      "asset": "W",
       "exchange": "Drift",
-      "strategy": "dust",
-      "direction": "LONG",
-      "leverage": 1,
-      "entryPrice": 85,
-      "currentPrice": 78.58,
-      "positionSize": 0.79,
-      "unrealizedPnl": -0.06,
-      "unrealizedPnlPct": -7.55,
-      "entryTime": "2026-02-22T00:00:00Z",
-      "note": "Dust position (0.01 SOL)"
+      "subaccount": 1,
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.0187,
+      "currentPrice": 0.0181,
+      "positionSize": 4441,
+      "pnl": 147.97,
+      "pnlPercent": 3.23
     },
     {
-      "asset": "SUI",
+      "asset": "SEI",
       "exchange": "Drift",
-      "strategy": "dust",
-      "direction": "LONG",
-      "leverage": 1,
-      "entryPrice": 0.9338,
-      "currentPrice": 0.8719,
-      "positionSize": 0.87,
-      "unrealizedPnl": -0.06,
-      "unrealizedPnlPct": -6.63,
-      "entryTime": "2026-02-22T00:00:00Z",
-      "note": "Dust position (1 SUI)"
+      "subaccount": 1,
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 8.628,
+      "currentPrice": 8.4022,
+      "positionSize": 4467,
+      "pnl": 120.04,
+      "pnlPercent": 2.62
     },
     {
-      "asset": "JUP",
+      "asset": "APT",
       "exchange": "Drift",
-      "strategy": "dust",
-      "direction": "LONG",
-      "leverage": 1,
-      "entryPrice": 0.154,
-      "currentPrice": 0.1432,
-      "positionSize": 0.86,
-      "unrealizedPnl": -0.06,
-      "unrealizedPnlPct": -7.01,
-      "entryTime": "2026-02-22T00:00:00Z",
-      "note": "Dust position (6 JUP)"
+      "subaccount": 1,
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.7934,
+      "currentPrice": 0.8083,
+      "positionSize": 4776,
+      "pnl": -88.0,
+      "pnlPercent": -1.88
+    },
+    {
+      "asset": "JTO",
+      "exchange": "Drift",
+      "subaccount": 1,
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.066,
+      "currentPrice": 0.0665,
+      "positionSize": 4712,
+      "pnl": -37.75,
+      "pnlPercent": -0.81
     }
   ],
   "stats": {
@@ -295,5 +305,6 @@
       "totalPnl": 0,
       "startDate": "2026-02-13"
     }
-  }
+  },
+  "driftEquity": 13886
 }
