@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-23T09:03:02.333Z",
+  "lastUpdate": "2026-02-23T12:02:51.720Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -24,14 +24,14 @@
       "strategy": "IBB",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.891616,
-      "currentPrice": 0.891616,
-      "stopLoss": 0.9087539285714286,
-      "takeProfit": 0.8687654285714286,
-      "positionSize": 845,
+      "entryPrice": 0.903418,
+      "currentPrice": 0.903418,
+      "stopLoss": 0.9221661785714286,
+      "takeProfit": 0.8784204285714287,
+      "positionSize": 794,
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-23T09:02:50.702Z"
+      "entryTime": "2026-02-23T12:02:51.701Z"
     }
   ],
   "stats": {
@@ -213,6 +213,20 @@
       "exchange": "Drift",
       "direction": "SHORT",
       "leverage": 5,
+      "entryPrice": 0.903418,
+      "entryTime": 1771848171703,
+      "stopLoss": 0.9221661785714286,
+      "takeProfit": 0.8784204285714287,
+      "positionSize": 794,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 0.9039"
+    },
+    {
+      "strategy": "IBB",
+      "asset": "SUI",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
       "entryPrice": 0.891616,
       "entryTime": 1771837370705,
       "stopLoss": 0.9087539285714286,
@@ -332,20 +346,6 @@
       "positionSize": 926,
       "status": "OPEN",
       "reason": "Inside bar breakout below 6.0835"
-    },
-    {
-      "strategy": "MOMENTUM",
-      "asset": "OP",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.123518,
-      "entryTime": 1771776161720,
-      "stopLoss": 0.133893125,
-      "takeProfit": 0.09585099999999999,
-      "positionSize": 182,
-      "status": "OPEN",
-      "reason": "Momentum breakout below 0.1254"
     }
   ],
   "strategies": {
@@ -402,9 +402,9 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-23T09:03:02.333Z",
+    "lastCheck": "2026-02-23T12:02:51.720Z",
     "performance": {
-      "totalTrades": 18,
+      "totalTrades": 19,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,

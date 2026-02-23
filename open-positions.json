@@ -5,13 +5,13 @@
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.891616,
-    "currentPrice": 0.891616,
-    "stopLoss": 0.9087539285714286,
-    "takeProfit": 0.8687654285714286,
-    "positionSize": 845,
+    "entryPrice": 0.903418,
+    "currentPrice": 0.903418,
+    "stopLoss": 0.9221661785714286,
+    "takeProfit": 0.8784204285714287,
+    "positionSize": 794,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-23T09:02:50.702Z"
+    "entryTime": "2026-02-23T12:02:51.701Z"
   }
 ]
