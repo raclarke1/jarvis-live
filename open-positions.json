@@ -28,5 +28,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-22T22:02:33.632Z"
+  },
+  {
+    "asset": "PYTH",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.05173,
+    "currentPrice": 0.05173,
+    "stopLoss": 0.05226271428571428,
+    "takeProfit": 0.051019714285714286,
+    "positionSize": 913,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-23T01:02:47.313Z"
   }
 ]
