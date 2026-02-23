@@ -6,13 +6,13 @@
   "account": {
     "exchange": "drift",
     "totalEquity": 3645.83,
-    "totalDeposited": 34000,
+    "totalDeposited": 13300,
     "driftEquity": 3645.83,
     "krakenEquity": 20676.58,
     "freeCollateral": 3645.79,
     "leverage": 0,
     "equity": 3645.83,
-    "startingEquity": 34000,
+    "startingEquity": 13300,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
     "driftSub0Equity": 3643.0,
     "driftSub1Equity": 10243.0
