@@ -1,6 +1,20 @@
 [
   {
     "strategy": "IBB",
+    "asset": "SUI",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.876608,
+    "entryTime": 1771869776872,
+    "stopLoss": 0.8940571785714286,
+    "takeProfit": 0.8533424285714286,
+    "positionSize": 913,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.8804"
+  },
+  {
+    "strategy": "IBB",
     "asset": "APT",
     "exchange": "Drift",
     "direction": "SHORT",

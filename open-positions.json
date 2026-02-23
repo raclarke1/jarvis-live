@@ -5,28 +5,13 @@
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.903418,
-    "currentPrice": 0.903418,
-    "stopLoss": 0.9221661785714286,
-    "takeProfit": 0.8784204285714287,
-    "positionSize": 794,
+    "entryPrice": 0.876608,
+    "currentPrice": 0.876608,
+    "stopLoss": 0.8940571785714286,
+    "takeProfit": 0.8533424285714286,
+    "positionSize": 913,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-23T12:02:51.701Z"
-  },
-  {
-    "asset": "APT",
-    "exchange": "Drift",
-    "strategy": "IBB",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.850389,
-    "currentPrice": 0.850389,
-    "stopLoss": 0.8713279285714285,
-    "takeProfit": 0.8224704285714285,
-    "positionSize": 800,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-23T14:03:00.811Z"
+    "entryTime": "2026-02-23T18:02:56.871Z"
   }
 ]
