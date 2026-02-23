@@ -1,47 +1,17 @@
 [
   {
-    "asset": "SUI",
+    "asset": "APT",
     "exchange": "Drift",
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.916184,
-    "currentPrice": 0.916184,
-    "stopLoss": 0.9244931428571429,
-    "takeProfit": 0.9051051428571428,
-    "positionSize": 927,
+    "entryPrice": 0.797196,
+    "currentPrice": 0.797196,
+    "stopLoss": 0.8120803928571428,
+    "takeProfit": 0.7773501428571429,
+    "positionSize": 941,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-22T21:02:24.886Z"
-  },
-  {
-    "asset": "JTO",
-    "exchange": "Drift",
-    "strategy": "IBB",
-    "direction": "LONG",
-    "leverage": 5,
-    "entryPrice": 0.301414,
-    "currentPrice": 0.301414,
-    "stopLoss": 0.29207585714285716,
-    "takeProfit": 0.31386485714285717,
-    "positionSize": 915,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-22T22:02:33.632Z"
-  },
-  {
-    "asset": "PYTH",
-    "exchange": "Drift",
-    "strategy": "IBB",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.05173,
-    "currentPrice": 0.05173,
-    "stopLoss": 0.05226271428571428,
-    "takeProfit": 0.051019714285714286,
-    "positionSize": 913,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-23T01:02:47.313Z"
+    "entryTime": "2026-02-23T02:02:52.286Z"
   }
 ]
