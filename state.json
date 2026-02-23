@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-23T03:02:15.936Z",
+  "lastUpdate": "2026-02-23T04:02:06.383Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -14,8 +14,8 @@
     "equity": 3645.83,
     "startingEquity": 13300,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "driftSub0Equity": 3643.0,
-    "driftSub1Equity": 10243.0
+    "driftSub0Equity": 3643,
+    "driftSub1Equity": 10243
   },
   "openPositions": [
     {
@@ -297,10 +297,10 @@
       "exchange": "Drift",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 4.097e-06,
+      "entryPrice": 0.000004097,
       "entryTime": 1771747332235,
-      "stopLoss": 4.1966e-06,
-      "takeProfit": 3.8978e-06,
+      "stopLoss": 0.0000041966,
+      "takeProfit": 0.0000038978,
       "positionSize": 375,
       "status": "OPEN",
       "reason": "RSI(2) = 90.91 > 90 (overbought), below 200 SMA ($0.0000)"
@@ -402,7 +402,7 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-23T03:02:15.936Z",
+    "lastCheck": "2026-02-23T04:02:06.383Z",
     "performance": {
       "totalTrades": 14,
       "winningTrades": 0,

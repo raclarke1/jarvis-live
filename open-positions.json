@@ -1,17 +1,17 @@
 [
   {
-    "asset": "APT",
+    "asset": "SUI",
     "exchange": "Drift",
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.797196,
-    "currentPrice": 0.797196,
-    "stopLoss": 0.8120803928571428,
-    "takeProfit": 0.7773501428571429,
-    "positionSize": 941,
+    "entryPrice": 0.870654,
+    "currentPrice": 0.870654,
+    "stopLoss": 0.88518075,
+    "takeProfit": 0.8512850000000001,
+    "positionSize": 926,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-23T02:02:52.286Z"
+    "entryTime": "2026-02-23T05:02:52.479Z"
   }
 ]
