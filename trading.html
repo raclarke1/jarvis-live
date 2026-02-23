@@ -262,14 +262,14 @@ function render() {
 
   // Summary cards — using active-only stats
   const cards = [
-    { label:'Total Equity', value:fmtUsd(a.totalEquity), sub:`Drift: $${fmt(a.driftEquity)} | Kraken: $${fmt(a.krakenEquity)}` },
+    { label:'Total Equity', value:fmtUsd(a.totalEquity), sub:`Main (Sub0): $${fmt(a.driftSub0Equity||0)} | Scalper (Sub1): $${fmt(a.driftSub1Equity||0)}` },
     { label:'Trading P&L', value:fmtUsd(as.totalPnl), cls:pnlClass(as.totalPnl), sub:`Active strategies only` },
     { label:'Deposited', value:fmtUsd(a.totalDeposited), sub:`Return: ${as.returnPct>=0?'+':''}${fmt(as.returnPct)}%` },
     { label:'Return %', value:(as.returnPct>=0?'+':'')+fmt(as.returnPct)+'%', cls:pnlClass(as.returnPct) },
     { label:'Win Rate', value:fmt(as.winRate,1)+'%', sub:`${as.wins}W / ${as.losses}L (${as.totalTrades} trades)` },
     { label:'Profit Factor', value:fmt(as.profitFactor), cls:as.profitFactor>=1?'pnl-pos':'pnl-neg' },
     { label:'Sharpe Ratio', value:fmt(s.sharpeRatio), cls:s.sharpeRatio>=1?'pnl-pos':'pnl-neg' },
-    { label:'Total Fees', value:fmtUsd(s.fees.totalFees), sub:`Drift: $${fmt(s.fees.totalDriftFees)} | Kraken: $${fmt(s.fees.totalKrakenFees)}` },
+    { label:'Total Fees', value:fmtUsd(s.fees.totalFees), sub:`Drift: $${fmt(s.fees.totalDriftFees)}` },
   ];
   document.getElementById('summaryCards').innerHTML = cards.map((c,i) =>
     `<div class="card" style="animation-delay:${i*0.05}s"><div class="card-label">${c.label}</div><div class="card-value ${c.cls||''}">${c.value}</div>${c.sub?`<div class="card-sub">${c.sub}</div>`:''}</div>`
@@ -465,15 +465,10 @@ function renderRisk() {
       <h3>Fee Breakdown</h3>
       <div style="display:flex;gap:16px;margin-bottom:12px">
         <div><div class="card-label">Drift Fees</div><div class="card-value" style="font-size:1.2rem">${fmtUsd(fees.totalDriftFees)}</div><div class="card-sub">${fmt(fees.driftFeeRate,3)}% rate</div></div>
-        <div><div class="card-label">Kraken Fees</div><div class="card-value" style="font-size:1.2rem">${fmtUsd(fees.totalKrakenFees)}</div><div class="card-sub">${fmt(fees.krakenFeeRate,3)}% rate</div></div>
       </div>
-      <div class="card-sub" style="color:var(--green)">💰 Saved ${fmtUsd(fees.feeSavingsFromDrift)} by using Drift</div>
       <div class="bar-row" style="margin-top:8px"><span class="bar-label">Drift</span>
-        <div class="bar-track"><div class="bar-fill" style="width:${fees.totalFees>0?(fees.totalDriftFees/fees.totalFees*100):0}%;background:var(--blue)"></div></div>
-        <span class="bar-val">${fmt(fees.totalFees>0?(fees.totalDriftFees/fees.totalFees*100):0,0)}%</span></div>
-      <div class="bar-row"><span class="bar-label">Kraken</span>
-        <div class="bar-track"><div class="bar-fill" style="width:${fees.totalFees>0?(fees.totalKrakenFees/fees.totalFees*100):0}%;background:var(--orange)"></div></div>
-        <span class="bar-val">${fmt(fees.totalFees>0?(fees.totalKrakenFees/fees.totalFees*100):0,0)}%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue)"></div></div>
+        <span class="bar-val">100%</span></div>
     </div>`;
 }
 
