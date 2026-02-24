@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-23T15:02:08.802Z",
+  "lastUpdate": "2026-02-24T03:02:28.134Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -24,29 +24,14 @@
       "strategy": "IBB",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.903418,
-      "currentPrice": 0.903418,
-      "stopLoss": 0.9221661785714286,
-      "takeProfit": 0.8784204285714287,
-      "positionSize": 794,
+      "entryPrice": 0.876608,
+      "currentPrice": 0.876608,
+      "stopLoss": 0.8940571785714286,
+      "takeProfit": 0.8533424285714286,
+      "positionSize": 913,
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-23T12:02:51.701Z"
-    },
-    {
-      "asset": "APT",
-      "exchange": "Drift",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.850389,
-      "currentPrice": 0.850389,
-      "stopLoss": 0.8713279285714285,
-      "takeProfit": 0.8224704285714285,
-      "positionSize": 800,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-23T14:03:00.811Z"
+      "entryTime": "2026-02-23T18:02:56.871Z"
     }
   ],
   "stats": {
@@ -224,6 +209,20 @@
   "recentTrades": [
     {
       "strategy": "IBB",
+      "asset": "SUI",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.876608,
+      "entryTime": 1771869776872,
+      "stopLoss": 0.8940571785714286,
+      "takeProfit": 0.8533424285714286,
+      "positionSize": 913,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 0.8804"
+    },
+    {
+      "strategy": "IBB",
       "asset": "APT",
       "exchange": "Drift",
       "direction": "SHORT",
@@ -347,20 +346,6 @@
       "positionSize": 915,
       "status": "OPEN",
       "reason": "Inside bar breakout above 0.3006"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "SUI",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.916184,
-      "entryTime": 1771794144889,
-      "stopLoss": 0.9244931428571429,
-      "takeProfit": 0.9051051428571428,
-      "positionSize": 927,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.9179"
     }
   ],
   "strategies": {
@@ -417,9 +402,9 @@
     }
   },
   "megamax": {
-    "lastCheck": "2026-02-23T15:02:08.802Z",
+    "lastCheck": "2026-02-24T03:02:28.134Z",
     "performance": {
-      "totalTrades": 20,
+      "totalTrades": 21,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,
