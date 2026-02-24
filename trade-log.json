@@ -3,13 +3,444 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771905770017-SUI",
+      "timestamp": "2026-02-24T04:02:50.017Z",
+      "timestampMs": 1771905770017,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.857698,
+        "fillPrice": null,
+        "time": "2026-02-24T04:02:50.017Z",
+        "reason": "Inside bar breakout below 0.8726"
+      },
+      "stopLoss": {
+        "price": 0.8744324285714284,
+        "distanceUsd": 0.016734428571428484,
+        "distancePct": 1.951086346409632
+      },
+      "takeProfit": {
+        "price": 0.8353854285714286,
+        "distanceUsd": 0.02231257142857135,
+        "distancePct": 2.6014484618795133
+      },
+      "riskReward": 1.3333333333333355,
+      "positionSize": 933,
+      "leverage": 5,
+      "notionalValue": 4665,
+      "marketContext": {
+        "atr": 0.01115628571428569,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.888226,
+        "motherBarLow": 0.872638
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771869776876-SUI",
+      "timestamp": "2026-02-23T18:02:56.876Z",
+      "timestampMs": 1771869776876,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.876608,
+        "fillPrice": null,
+        "time": "2026-02-23T18:02:56.876Z",
+        "reason": "Inside bar breakout below 0.8804"
+      },
+      "stopLoss": {
+        "price": 0.8940571785714286,
+        "distanceUsd": 0.01744917857142858,
+        "distancePct": 1.990533804326287
+      },
+      "takeProfit": {
+        "price": 0.8533424285714286,
+        "distanceUsd": 0.02326557142857144,
+        "distancePct": 2.6540450724350495
+      },
+      "riskReward": 1.3333333333333333,
+      "positionSize": 913,
+      "leverage": 5,
+      "notionalValue": 4565,
+      "marketContext": {
+        "atr": 0.011632785714285705,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.891188,
+        "motherBarLow": 0.880379
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771855380818-APT",
+      "timestamp": "2026-02-23T14:03:00.818Z",
+      "timestampMs": 1771855380818,
+      "symbol": "APT",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.850389,
+        "fillPrice": 0.848,
+        "time": "2026-02-23T14:03:00.818Z",
+        "reason": "Inside bar breakout below 0.8555"
+      },
+      "stopLoss": {
+        "price": 0.8713279285714285,
+        "distanceUsd": 0.02093892857142854,
+        "distancePct": 2.4622765077427555
+      },
+      "takeProfit": {
+        "price": 0.8224704285714285,
+        "distanceUsd": 0.02791857142857146,
+        "distancePct": 3.283035343657016
+      },
+      "riskReward": 1.3333333333333368,
+      "positionSize": 800,
+      "leverage": 5,
+      "notionalValue": 4000,
+      "marketContext": {
+        "atr": 0.013959285714285705,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.866424,
+        "motherBarLow": 0.855491
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 3,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771848171706-SUI",
+      "timestamp": "2026-02-23T12:02:51.706Z",
+      "timestampMs": 1771848171706,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "PHANTOM",
+      "entry": {
+        "price": 0.903418,
+        "fillPrice": null,
+        "time": "2026-02-23T12:02:51.706Z",
+        "reason": "Inside bar breakout below 0.9039"
+      },
+      "stopLoss": {
+        "price": 0.9221661785714286,
+        "distanceUsd": 0.01874817857142852,
+        "distancePct": 2.075249615507829
+      },
+      "takeProfit": {
+        "price": 0.8784204285714287,
+        "distanceUsd": 0.024997571428571397,
+        "distancePct": 2.7669994873437758
+      },
+      "riskReward": 1.3333333333333353,
+      "positionSize": 794,
+      "leverage": 5,
+      "notionalValue": 3970,
+      "marketContext": {
+        "atr": 0.012498785714285707,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.910768,
+        "motherBarLow": 0.90388
+      },
+      "exit": {
+        "reason": "Reconciliation: position not found on Drift",
+        "time": "2026-02-23T18:01:33.704Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771837370708-SUI",
+      "timestamp": "2026-02-23T09:02:50.708Z",
+      "timestampMs": 1771837370708,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "PHANTOM",
+      "entry": {
+        "price": 0.891616,
+        "fillPrice": null,
+        "time": "2026-02-23T09:02:50.708Z",
+        "reason": "Inside bar breakout below 0.8905"
+      },
+      "stopLoss": {
+        "price": 0.9087539285714286,
+        "distanceUsd": 0.017137928571428596,
+        "distancePct": 1.9221199004311942
+      },
+      "takeProfit": {
+        "price": 0.8687654285714286,
+        "distanceUsd": 0.022850571428571387,
+        "distancePct": 2.5628265339082508
+      },
+      "riskReward": 1.333333333333329,
+      "positionSize": 845,
+      "leverage": 5,
+      "notionalValue": 4225,
+      "marketContext": {
+        "atr": 0.011425285714285702,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.897814,
+        "motherBarLow": 0.890528
+      },
+      "exit": {
+        "reason": "Reconciliation: position not found on Drift",
+        "time": "2026-02-23T11:01:30.986Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771833768199-SUI",
+      "timestamp": "2026-02-23T08:02:48.199Z",
+      "timestampMs": 1771833768199,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.870654,
+        "fillPrice": null,
+        "time": "2026-02-23T08:02:48.199Z",
+        "reason": "Inside bar breakout below 0.8719"
+      },
+      "stopLoss": {
+        "price": 0.88518075,
+        "distanceUsd": 0.014526749999999922,
+        "distancePct": 1.6684871372554335
+      },
+      "takeProfit": {
+        "price": 0.8512850000000001,
+        "distanceUsd": 0.01936899999999997,
+        "distancePct": 2.224649516340586
+      },
+      "riskReward": 1.3333333333333384,
+      "positionSize": 845,
+      "leverage": 5,
+      "notionalValue": 4225,
+      "marketContext": {
+        "atr": 0.009684499999999985,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.87835,
+        "motherBarLow": 0.871861
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771830168266-SUI",
+      "timestamp": "2026-02-23T07:02:48.266Z",
+      "timestampMs": 1771830168266,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.870654,
+        "fillPrice": 0.8927,
+        "time": "2026-02-23T07:02:48.266Z",
+        "reason": "Inside bar breakout below 0.8719"
+      },
+      "stopLoss": {
+        "price": 0.88518075,
+        "distanceUsd": 0.014526749999999922,
+        "distancePct": 1.6684871372554335
+      },
+      "takeProfit": {
+        "price": 0.8512850000000001,
+        "distanceUsd": 0.01936899999999997,
+        "distancePct": 2.224649516340586
+      },
+      "riskReward": 1.3333333333333384,
+      "positionSize": 846,
+      "leverage": 5,
+      "notionalValue": 4230,
+      "marketContext": {
+        "atr": 0.009684499999999985,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.87835,
+        "motherBarLow": 0.871861
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771822972485-SUI",
+      "timestamp": "2026-02-23T05:02:52.485Z",
+      "timestampMs": 1771822972485,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.870654,
+        "fillPrice": 0.871,
+        "time": "2026-02-23T05:02:52.485Z",
+        "reason": "Inside bar breakout below 0.8719"
+      },
+      "stopLoss": {
+        "price": 0.88518075,
+        "distanceUsd": 0.014526749999999922,
+        "distancePct": 1.6684871372554335
+      },
+      "takeProfit": {
+        "price": 0.8512850000000001,
+        "distanceUsd": 0.01936899999999997,
+        "distancePct": 2.224649516340586
+      },
+      "riskReward": 1.3333333333333384,
+      "positionSize": 926,
+      "leverage": 5,
+      "notionalValue": 4630,
+      "marketContext": {
+        "atr": 0.009684499999999985,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.87835,
+        "motherBarLow": 0.871861
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771812172289-APT",
+      "timestamp": "2026-02-23T02:02:52.289Z",
+      "timestampMs": 1771812172289,
+      "symbol": "APT",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.797196,
+        "fillPrice": 0.7934,
+        "time": "2026-02-23T02:02:52.289Z",
+        "reason": "Inside bar breakout below 0.8291"
+      },
+      "stopLoss": {
+        "price": 0.8120803928571428,
+        "distanceUsd": 0.014884392857142825,
+        "distancePct": 1.8670932690508766
+      },
+      "takeProfit": {
+        "price": 0.7773501428571429,
+        "distanceUsd": 0.019845857142857137,
+        "distancePct": 2.48945769206784
+      },
+      "riskReward": 1.333333333333336,
+      "positionSize": 941,
+      "leverage": 5,
+      "notionalValue": 4705,
+      "marketContext": {
+        "atr": 0.009922928571428569,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.843093,
+        "motherBarLow": 0.829134
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 3,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771808567319-PYTH",
+      "timestamp": "2026-02-23T01:02:47.319Z",
+      "timestampMs": 1771808567319,
+      "symbol": "PYTH",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "PHANTOM",
+      "entry": {
+        "price": 0.05173,
+        "fillPrice": null,
+        "time": "2026-02-23T01:02:47.319Z",
+        "reason": "Inside bar breakout below 0.0518"
+      },
+      "stopLoss": {
+        "price": 0.05226271428571428,
+        "distanceUsd": 0.0005327142857142822,
+        "distancePct": 1.0297975753224091
+      },
+      "takeProfit": {
+        "price": 0.051019714285714286,
+        "distanceUsd": 0.0007102857142857119,
+        "distancePct": 1.3730634337632166
+      },
+      "riskReward": 1.3333333333333377,
+      "positionSize": 913,
+      "leverage": 5,
+      "notionalValue": 4565,
+      "marketContext": {
+        "atr": 0.00035514285714285693,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.052134,
+        "motherBarLow": 0.05184
+      },
+      "exit": {
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.515Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "exchange": "Drift",
+      "marketIndex": 19,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771797753637-JTO",
       "timestamp": "2026-02-22T22:02:33.637Z",
       "timestampMs": 1771797753637,
       "symbol": "JTO",
       "strategy": "IBB",
       "direction": "long",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.301414,
         "fillPrice": null,
@@ -37,8 +468,15 @@
         "motherBarHigh": 0.300642,
         "motherBarLow": 0.298319
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 21,
       "botVersion": "MegaMax v1.0"
@@ -50,7 +488,7 @@
       "symbol": "SUI",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.916184,
         "fillPrice": null,
@@ -78,8 +516,15 @@
         "motherBarHigh": 0.921149,
         "motherBarLow": 0.917863
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 9,
       "botVersion": "MegaMax v1.0"
@@ -91,7 +536,7 @@
       "symbol": "BONK",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 6.065,
         "fillPrice": null,
@@ -119,8 +564,15 @@
         "motherBarHigh": 6.1033,
         "motherBarLow": 6.0835
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 4,
       "botVersion": "MegaMax v1.0"
@@ -132,7 +584,7 @@
       "symbol": "OP",
       "strategy": "MOMENTUM",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.123518,
         "fillPrice": null,
@@ -160,8 +612,15 @@
         "motherBarHigh": null,
         "motherBarLow": null
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 12,
       "botVersion": "MegaMax v1.0"
@@ -222,7 +681,7 @@
       "symbol": "SOL",
       "strategy": "LC",
       "direction": "long",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 85.19,
         "time": "2026-02-22T06:44:27.509Z",
@@ -250,7 +709,8 @@
       },
       "exit": {
         "price": 82,
-        "reason": " (SL estimated)"
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
       },
       "pnl": {
         "grossPnl": -70.21,
@@ -402,7 +862,7 @@
       "symbol": "XRP",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 1.4210690000000001,
         "time": "2026-02-22T05:29:04.766Z",
@@ -431,7 +891,8 @@
       },
       "exit": {
         "price": 1.4303342000000001,
-        "reason": " (SL estimated)"
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
       },
       "pnl": {
         "grossPnl": -12.22,
@@ -500,7 +961,7 @@
       "symbol": "W",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.019278,
         "time": "2026-02-22T03:02:39.135Z",
@@ -529,7 +990,8 @@
       },
       "exit": {
         "price": 0.0195237,
-        "reason": " (SL estimated)"
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
       },
       "pnl": {
         "grossPnl": -23.9,
@@ -549,7 +1011,7 @@
       "symbol": "WIF",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.217768,
         "time": "2026-02-22T03:01:55.988Z",
@@ -578,7 +1040,8 @@
       },
       "exit": {
         "price": 0.21985929999999998,
-        "reason": " (SL estimated)"
+        "reason": "Marked PHANTOM by reconciliation audit (fillPrice was null)",
+        "time": "2026-02-23T01:51:57.521Z"
       },
       "pnl": {
         "grossPnl": -18.01,
