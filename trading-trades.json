@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "V5.0",
+    "asset": "SOL",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 78.661416,
+    "entryTime": 1771963371097,
+    "stopLoss": 79.40059392857142,
+    "takeProfit": 77.18306014285714,
+    "positionSize": 327,
+    "status": "OPEN",
+    "reason": "Fade breakout above 78.4927"
+  },
+  {
     "strategy": "IBB",
     "asset": "SUI",
     "exchange": "Drift",

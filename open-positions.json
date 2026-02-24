@@ -1,17 +1,17 @@
 [
   {
-    "asset": "SUI",
+    "asset": "SOL",
     "exchange": "Drift",
-    "strategy": "IBB",
+    "strategy": "V5.0",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.857698,
-    "currentPrice": 0.857698,
-    "stopLoss": 0.8744324285714284,
-    "takeProfit": 0.8353854285714286,
-    "positionSize": 933,
+    "entryPrice": 78.661416,
+    "currentPrice": 78.661416,
+    "stopLoss": 79.40059392857142,
+    "takeProfit": 77.18306014285714,
+    "positionSize": 327,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-24T04:02:50.011Z"
+    "entryTime": "2026-02-24T20:02:51.094Z"
   }
 ]
