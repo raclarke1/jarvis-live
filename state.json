@@ -1047,6 +1047,19 @@
   "feedbackLoop": {
     "lastUpdate": "2026-02-25T05:28:00.763Z",
     "currentRegime": "RANGING",
-    "strategyMetrics": {}
+    "strategyMetrics": {},
+    "regimeIndicators": {
+      "volatility": "low",
+      "realizedVol": 26.1,
+      "trendStrength": -0.0184295160782065,
+      "trendDirection": "down",
+      "ema20": 65344,
+      "ema50": 66571,
+      "correlation": 0.5,
+      "corrCategory": "medium",
+      "fundingSentiment": "neutral",
+      "btcPrice": 65202.05
+    },
+    "regimeLastCheck": "2026-02-25T05:30:02.278Z"
   }
 }
