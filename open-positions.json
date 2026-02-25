@@ -1,32 +1,32 @@
 [
   {
-    "asset": "SOL",
+    "asset": "BONK",
     "exchange": "Drift",
     "strategy": "V5.0",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 78.661416,
-    "currentPrice": 78.661416,
-    "stopLoss": 79.40059392857142,
-    "takeProfit": 77.18306014285714,
-    "positionSize": 327,
+    "entryPrice": 6.3549,
+    "currentPrice": 6.3549,
+    "stopLoss": 6.430842857142856,
+    "takeProfit": 6.203014285714286,
+    "positionSize": 348,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-24T20:02:51.094Z"
+    "entryTime": "2026-02-25T16:04:01.275Z"
   },
   {
-    "asset": "SUI",
+    "asset": "TIA",
     "exchange": "Drift",
     "strategy": "IBB",
-    "direction": "SHORT",
+    "direction": "LONG",
     "leverage": 5,
-    "entryPrice": 0.85911,
-    "currentPrice": 0.85911,
-    "stopLoss": 0.8715780000000001,
-    "takeProfit": 0.842486,
-    "positionSize": 914,
+    "entryPrice": 0.357917,
+    "currentPrice": 0.357917,
+    "stopLoss": 0.34806842857142856,
+    "takeProfit": 0.37761414285714284,
+    "positionSize": 348,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-24T22:02:50.058Z"
+    "entryTime": "2026-02-25T16:05:42.480Z"
   }
 ]

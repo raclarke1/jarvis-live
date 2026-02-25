@@ -1,6 +1,34 @@
 [
   {
     "strategy": "IBB",
+    "asset": "TIA",
+    "exchange": "Drift",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.357917,
+    "entryTime": 1772035542481,
+    "stopLoss": 0.34806842857142856,
+    "takeProfit": 0.37761414285714284,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Inside bar breakout above 0.3324"
+  },
+  {
+    "strategy": "V5.0",
+    "asset": "BONK",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 6.3549,
+    "entryTime": 1772035441277,
+    "stopLoss": 6.430842857142856,
+    "takeProfit": 6.203014285714286,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Fade breakout above 6.3350"
+  },
+  {
+    "strategy": "IBB",
     "asset": "SUI",
     "exchange": "Drift",
     "direction": "SHORT",
