@@ -3,13 +3,109 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1771970570062-SUI",
+      "timestamp": "2026-02-24T22:02:50.062Z",
+      "timestampMs": 1771970570062,
+      "symbol": "SUI",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "PHANTOM",
+      "entry": {
+        "price": 0.85911,
+        "fillPrice": null,
+        "time": "2026-02-24T22:02:50.062Z",
+        "reason": "Inside bar breakout below 0.8631"
+      },
+      "stopLoss": {
+        "price": 0.8715780000000001,
+        "distanceUsd": 0.012468000000000035,
+        "distancePct": 1.451269336871883
+      },
+      "takeProfit": {
+        "price": 0.842486,
+        "distanceUsd": 0.016624000000000083,
+        "distancePct": 1.9350257824958483
+      },
+      "riskReward": 1.3333333333333364,
+      "positionSize": 914,
+      "leverage": 5,
+      "notionalValue": 4570,
+      "marketContext": {
+        "atr": 0.008312000000000017,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.869854,
+        "motherBarLow": 0.86306
+      },
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.906Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1771963371101-SOL",
+      "timestamp": "2026-02-24T20:02:51.101Z",
+      "timestampMs": 1771963371101,
+      "symbol": "SOL",
+      "strategy": "V5.0",
+      "direction": "short",
+      "status": "PHANTOM",
+      "entry": {
+        "price": 78.661416,
+        "fillPrice": null,
+        "time": "2026-02-24T20:02:51.101Z",
+        "reason": "Fade breakout above 78.4927"
+      },
+      "stopLoss": {
+        "price": 79.40059392857142,
+        "distanceUsd": 0.7391779285714222,
+        "distancePct": 0.9396956807533469
+      },
+      "takeProfit": {
+        "price": 77.18306014285714,
+        "distanceUsd": 1.4783558571428586,
+        "distancePct": 1.8793913615067117
+      },
+      "riskReward": 2.000000000000019,
+      "positionSize": 327,
+      "leverage": 5,
+      "notionalValue": 1635,
+      "marketContext": {
+        "atr": 0.7391779285714263,
+        "donchianHigh": 78.492662,
+        "donchianLow": 75.712508,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": {
+        "reason": "Reconciliation: position not found on Drift",
+        "time": "2026-02-25T00:01:32.345Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
+      "exchange": "Drift",
+      "marketIndex": 0,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771905770017-SUI",
       "timestamp": "2026-02-24T04:02:50.017Z",
       "timestampMs": 1771905770017,
       "symbol": "SUI",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.857698,
         "fillPrice": null,
@@ -37,8 +133,15 @@
         "motherBarHigh": 0.888226,
         "motherBarLow": 0.872638
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 9,
       "botVersion": "MegaMax v1.0"
@@ -50,7 +153,7 @@
       "symbol": "SUI",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.876608,
         "fillPrice": null,
@@ -78,8 +181,15 @@
         "motherBarHigh": 0.891188,
         "motherBarLow": 0.880379
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 9,
       "botVersion": "MegaMax v1.0"
@@ -91,7 +201,7 @@
       "symbol": "APT",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.850389,
         "fillPrice": 0.848,
@@ -119,8 +229,15 @@
         "motherBarHigh": 0.866424,
         "motherBarLow": 0.855491
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 3,
       "botVersion": "MegaMax v1.0"
@@ -228,7 +345,7 @@
       "symbol": "SUI",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.870654,
         "fillPrice": null,
@@ -256,8 +373,15 @@
         "motherBarHigh": 0.87835,
         "motherBarLow": 0.871861
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 9,
       "botVersion": "MegaMax v1.0"
@@ -269,7 +393,7 @@
       "symbol": "SUI",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.870654,
         "fillPrice": 0.8927,
@@ -297,8 +421,15 @@
         "motherBarHigh": 0.87835,
         "motherBarLow": 0.871861
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 9,
       "botVersion": "MegaMax v1.0"
@@ -310,7 +441,7 @@
       "symbol": "SUI",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.870654,
         "fillPrice": 0.871,
@@ -338,8 +469,15 @@
         "motherBarHigh": 0.87835,
         "motherBarLow": 0.871861
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 9,
       "botVersion": "MegaMax v1.0"
@@ -351,7 +489,7 @@
       "symbol": "APT",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.797196,
         "fillPrice": 0.7934,
@@ -379,8 +517,15 @@
         "motherBarHigh": 0.843093,
         "motherBarLow": 0.829134
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "phantom - no Drift position found",
+        "time": "2026-02-25T02:48:39.913Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 3,
       "botVersion": "MegaMax v1.0"

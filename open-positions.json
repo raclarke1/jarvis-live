@@ -13,5 +13,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-24T20:02:51.094Z"
+  },
+  {
+    "asset": "SUI",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.85911,
+    "currentPrice": 0.85911,
+    "stopLoss": 0.8715780000000001,
+    "takeProfit": 0.842486,
+    "positionSize": 914,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-24T22:02:50.058Z"
   }
 ]
