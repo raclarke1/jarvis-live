@@ -1,32 +1,17 @@
 [
   {
-    "asset": "BONK",
-    "exchange": "Drift",
-    "strategy": "V5.0",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 6.3549,
-    "currentPrice": 6.3549,
-    "stopLoss": 6.430842857142856,
-    "takeProfit": 6.203014285714286,
-    "positionSize": 348,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-25T16:04:01.275Z"
-  },
-  {
-    "asset": "TIA",
+    "asset": "DOGE",
     "exchange": "Drift",
     "strategy": "IBB",
     "direction": "LONG",
     "leverage": 5,
-    "entryPrice": 0.357917,
-    "currentPrice": 0.357917,
-    "stopLoss": 0.34806842857142856,
-    "takeProfit": 0.37761414285714284,
+    "entryPrice": 0.104215,
+    "currentPrice": 0.104215,
+    "stopLoss": 0.10219128571428572,
+    "takeProfit": 0.10826242857142857,
     "positionSize": 348,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-25T16:05:42.480Z"
+    "entryTime": "2026-02-25T20:03:53.932Z"
   }
 ]

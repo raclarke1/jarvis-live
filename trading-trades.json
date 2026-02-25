@@ -1,6 +1,20 @@
 [
   {
     "strategy": "IBB",
+    "asset": "DOGE",
+    "exchange": "Drift",
+    "direction": "LONG",
+    "leverage": 5,
+    "entryPrice": 0.104215,
+    "entryTime": 1772049833933,
+    "stopLoss": 0.10219128571428572,
+    "takeProfit": 0.10826242857142857,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Inside bar breakout above 0.1025"
+  },
+  {
+    "strategy": "IBB",
     "asset": "TIA",
     "exchange": "Drift",
     "direction": "LONG",
