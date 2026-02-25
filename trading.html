@@ -118,7 +118,7 @@ tr:hover td { background:rgba(255,255,255,0.02); }
 <div class="header">
   <div class="header-left">
     <div class="logo">Mega<span>Max</span></div>
-    <span class="badge">v2.0</span>
+    <span class="badge">v5.0</span>
   </div>
   <div class="header-center">
     <div class="equity-display" id="headerEquity">--</div>
@@ -136,6 +136,12 @@ tr:hover td { background:rgba(255,255,255,0.02); }
 <div class="container">
   <!-- Executive Summary -->
   <div class="cards" id="summaryCards"></div>
+
+  <!-- Regime & Feedback Loop -->
+  <div class="section" style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div id="regimeWidget" class="risk-card" style="flex:1;min-width:280px"></div>
+    <div id="perfSummaryWidget" class="risk-card" style="flex:2;min-width:400px"></div>
+  </div>
 
   <!-- Open Positions -->
   <div class="section">
@@ -191,9 +197,9 @@ tr:hover td { background:rgba(255,255,255,0.02); }
 </div>
 
 <script>
-const STRATEGY_COLORS = { 'V5.0':'#00ff88', 'IBB':'#58a6ff', 'VWAP-RSI':'#ffd700' };
-const STRAT_CLASS = { 'V5.0':'strat-v5', 'IBB':'strat-ibb', 'VWAP-RSI':'strat-vwap' };
-const KILLED_STRATS = new Set(['LC','MOMENTUM','Momentum']);
+const STRATEGY_COLORS = { 'V5.0':'#00ff88', 'IBB':'#58a6ff', 'VWAP-RSI':'#ffd700', 'MOMENTUM':'#ff6b35', 'LC':'#a855f7' };
+const STRAT_CLASS = { 'V5.0':'strat-v5', 'IBB':'strat-ibb', 'VWAP-RSI':'strat-vwap', 'MOMENTUM':'strat-momentum', 'LC':'strat-lc' };
+const DISABLED_STRATS = new Set(['LC','MOMENTUM','Momentum']);
 
 let DATA = null;
 let cumPnlChart = null, equityChart = null;
@@ -240,7 +246,7 @@ function render() {
   const a = d.account, s = d.stats;
 
   // Recompute stats for ACTIVE strategies only (exclude killed)
-  const activeStrats = Object.entries(s.byStrategy).filter(([n]) => !KILLED_STRATS.has(n));
+  const activeStrats = Object.entries(s.byStrategy).filter(([n]) => !DISABLED_STRATS.has(n));
   const as = {
     totalPnl: activeStrats.reduce((sum,[,st]) => sum + st.totalPnlUsd, 0),
     totalTrades: activeStrats.reduce((sum,[,st]) => sum + st.totalTrades, 0),
@@ -280,6 +286,8 @@ function render() {
     `<div class="card" style="animation-delay:${i*0.05}s"><div class="card-label">${c.label}</div><div class="card-value ${c.cls||''}">${c.value}</div>${c.sub?`<div class="card-sub">${c.sub}</div>`:''}</div>`
   ).join('');
 
+  renderRegimeWidget();
+  renderPerfSummary();
   renderPositions();
   renderStrategyTable();
   renderHeatmap();
@@ -317,7 +325,7 @@ function buildCharts() {
   const labels = eqHist.map(e => e.date);
   // Collect all strategy names
   const allStrats = new Set();
-  eqHist.forEach(e => { if (e.cumByStrategy) Object.keys(e.cumByStrategy).filter(s => !KILLED_STRATS.has(s)).forEach(s => allStrats.add(s)); });
+  eqHist.forEach(e => { if (e.cumByStrategy) Object.keys(e.cumByStrategy).filter(s => !DISABLED_STRATS.has(s)).forEach(s => allStrats.add(s)); });
   // Build one dataset per strategy
   const cumDatasets = [...allStrats].map(s => ({
     label: s,
@@ -337,7 +345,7 @@ function buildCharts() {
     label: 'TOTAL',
     data: eqHist.map(e => {
       if (!e.cumByStrategy) return 0;
-      return Object.entries(e.cumByStrategy).filter(([s]) => !KILLED_STRATS.has(s)).reduce((sum,[,v]) => sum+v, 0);
+      return Object.entries(e.cumByStrategy).filter(([s]) => !DISABLED_STRATS.has(s)).reduce((sum,[,v]) => sum+v, 0);
     }),
     borderColor: isDark ? '#ffffff' : '#1a1a2e',
     backgroundColor: 'rgba(255,255,255,0.05)',
@@ -394,18 +402,21 @@ function buildCharts() {
 
 function renderStrategyTable() {
   const byStrat = DATA.stats.byStrategy;
-  const rows = Object.entries(byStrat).filter(([n]) => !KILLED_STRATS.has(n)).sort((a,b) => b[1].totalPnlUsd - a[1].totalPnlUsd);
-  document.querySelector('#strategyTable tbody').innerHTML = rows.map(([name,s]) =>
-    `<tr class="${STRAT_CLASS[name]||''}">
-      <td>${stratDot(name)}</td><td>${s.totalTrades}</td>
+  const rows = Object.entries(byStrat).sort((a,b) => b[1].totalPnlUsd - a[1].totalPnlUsd);
+  document.querySelector('#strategyTable tbody').innerHTML = rows.map(([name,s]) => {
+    const disabled = DISABLED_STRATS.has(name);
+    const opacity = disabled ? 'opacity:0.4' : '';
+    const badge = disabled ? ' <span style="font-size:0.6rem;background:rgba(255,71,87,0.2);color:var(--red);padding:1px 6px;border-radius:4px;margin-left:4px">DISABLED</span>' : '';
+    return `<tr class="${STRAT_CLASS[name]||''}" style="${opacity}">
+      <td>${stratDot(name)}${badge}</td><td>${s.totalTrades}</td>
       <td>${fmt(s.winRate,1)}%</td>
       <td class="${pnlClass(s.totalPnlUsd)}">${fmtUsd(s.totalPnlUsd)}</td>
       <td class="${s.profitFactor>=1?'pnl-pos':'pnl-neg'}">${fmt(s.profitFactor)}</td>
       <td class="pnl-pos">${fmtUsd(s.avgWinUsd)}</td>
       <td class="pnl-neg">-${fmtUsd(s.avgLossUsd)}</td>
       <td class="pnl-neg">${fmtUsd(s.maxDrawdownUsd)}</td>
-      <td>${fmtHoldTime(s.avgHoldingTimeMs)}</td></tr>`
-  ).join('');
+      <td>${fmtHoldTime(s.avgHoldingTimeMs)}</td></tr>`;
+  }).join('');
 }
 
 function renderHeatmap() {
@@ -477,8 +488,53 @@ function renderRisk() {
     </div>`;
 }
 
+function renderRegimeWidget() {
+  const fl = DATA.feedbackLoop || {};
+  const regime = fl.currentRegime || 'UNKNOWN';
+  const ind = fl.regimeIndicators || {};
+  const regimeColors = { 'TRENDING_UP':'var(--green)', 'TRENDING_DOWN':'var(--red)', 'RANGING':'var(--blue)', 'HIGH_VOL_CHOP':'var(--orange)' };
+  const regimeEmoji = { 'TRENDING_UP':'📈', 'TRENDING_DOWN':'📉', 'RANGING':'↔️', 'HIGH_VOL_CHOP':'🌊' };
+  const lastCheck = fl.regimeLastCheck ? timeAgo(fl.regimeLastCheck) + ' ago' : '--';
+  document.getElementById('regimeWidget').innerHTML = `
+    <h3>🏷️ Market Regime</h3>
+    <div style="font-size:1.8rem;font-weight:800;color:${regimeColors[regime]||'var(--text-muted)'};margin:12px 0">${regimeEmoji[regime]||'❓'} ${regime.replace(/_/g,' ')}</div>
+    <div style="font-size:0.75rem;color:var(--text-muted)">Last check: ${lastCheck}</div>
+    ${ind.btcPrice ? `<div style="margin-top:12px;font-size:0.78rem">
+      <div>BTC: $${fmt(ind.btcPrice,0)}</div>
+      <div>Vol: ${fmt((ind.volatility||0)*100,1)}% ${ind.volatility>0.65?'🔥':ind.volatility<0.35?'😴':'📊'}</div>
+      <div>Trend: ${ind.trend||'--'}</div>
+    </div>` : ''}`;
+}
+
+function renderPerfSummary() {
+  const fl = DATA.feedbackLoop || {};
+  const metrics = fl.strategyMetrics || {};
+  const strats = DATA.strategies || {};
+  // Build from byStrategy stats if feedbackLoop metrics empty
+  const source = Object.keys(metrics).length > 0 ? metrics : DATA.stats.byStrategy;
+  const allStrats = ['V5.0','IBB','VWAP-RSI','MOMENTUM','LC'];
+  const rows = allStrats.map(name => {
+    const s = source[name] || {};
+    const disabled = DISABLED_STRATS.has(name);
+    const assets = (strats[name]||{}).assets || [];
+    const opacity = disabled ? 'opacity:0.4' : '';
+    const badge = disabled ? ' <span style="font-size:0.55rem;background:rgba(255,71,87,0.2);color:var(--red);padding:1px 4px;border-radius:3px">OFF</span>' : '';
+    return `<tr style="${opacity}"><td>${stratDot(name)}${badge}</td>
+      <td>${s.totalTrades||0}</td>
+      <td>${fmt(s.winRate||0,0)}%</td>
+      <td class="${pnlClass(s.totalPnlUsd||s.avgPnl||0)}">${fmtUsd(s.totalPnlUsd||s.avgPnl||0)}</td>
+      <td style="font-size:0.7rem;color:var(--text-muted)">${assets.slice(0,6).join(', ')}</td></tr>`;
+  }).join('');
+  document.getElementById('perfSummaryWidget').innerHTML = `
+    <h3>📊 Strategy Overview (Top 6 Assets Each)</h3>
+    <table style="width:100%;font-size:0.78rem"><thead><tr>
+      <th style="padding:4px 8px">Strategy</th><th style="padding:4px 8px">Trades</th><th style="padding:4px 8px">Win%</th><th style="padding:4px 8px">P&L</th><th style="padding:4px 8px">Assets</th>
+    </tr></thead><tbody>${rows}</tbody></table>
+    <div style="font-size:0.65rem;color:var(--text-dim);margin-top:8px">Updated: ${fl.lastUpdate ? new Date(fl.lastUpdate).toLocaleString() : '--'}</div>`;
+}
+
 function populateFilters() {
-  const strats = new Set((DATA.recentTrades||[]).filter(t=>!KILLED_STRATS.has(t.strategy)).map(t=>t.strategy));
+  const strats = new Set((DATA.recentTrades||[]).map(t=>t.strategy));
   const sel = document.getElementById('stratFilter');
   sel.innerHTML = '<option value="ALL">All Strategies</option>' + [...strats].map(s=>`<option value="${s}">${s}</option>`).join('');
 }
@@ -486,7 +542,7 @@ function populateFilters() {
 function renderTrades() {
   const sf = document.getElementById('stratFilter').value;
   const df = document.getElementById('dirFilter').value;
-  let trades = [...(DATA.recentTrades||[])].filter(t => !KILLED_STRATS.has(t.strategy)).sort((a,b) => new Date(b.exitTime)-new Date(a.exitTime));
+  let trades = [...(DATA.recentTrades||[])].sort((a,b) => new Date(b.exitTime)-new Date(a.exitTime));
   if (sf !== 'ALL') trades = trades.filter(t => t.strategy === sf);
   if (df !== 'ALL') trades = trades.filter(t => t.direction === df);
 
