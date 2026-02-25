@@ -253,19 +253,24 @@ function render() {
   as.profitFactor = totalLosses > 0 ? (totalWins / totalLosses) : 999;
   as.returnPct = a.totalDeposited > 0 ? (as.totalPnl / a.totalDeposited * 100) : 0;
 
-  // Header
+  // The REAL numbers — equity vs deposits (what an investor sees)
+  const realPnl = a.accountPnl || (a.totalEquity - a.totalDeposited);
+  const realReturnPct = a.accountPnlPercent || (a.totalDeposited > 0 ? (realPnl / a.totalDeposited * 100) : 0);
+  const unrealizedPnl = s.unrealizedPnl || a.unrealizedPnl || 0;
+
+  // Header — shows the TRUTH (equity vs deposits)
   document.getElementById('headerEquity').textContent = '$' + fmt(a.totalEquity);
   const retEl = document.getElementById('headerReturn');
-  retEl.textContent = (as.returnPct >= 0 ? '+' : '') + fmt(as.returnPct) + '%';
-  retEl.className = 'return-pct ' + (as.returnPct >= 0 ? 'return-pos' : 'return-neg');
+  retEl.textContent = (realReturnPct >= 0 ? '+' : '') + fmt(realReturnPct) + '%';
+  retEl.className = 'return-pct ' + (realReturnPct >= 0 ? 'return-pos' : 'return-neg');
   document.getElementById('lastUpdate').textContent = new Date(d.lastUpdate).toLocaleString();
 
-  // Summary cards — using active-only stats
+  // Summary cards — honest numbers first, then trading stats
   const cards = [
-    { label:'Total Equity', value:fmtUsd(a.totalEquity), sub:`Main (Sub0): $${fmt(a.driftSub0Equity||0)} | Scalper (Sub1): $${fmt(a.driftSub1Equity||0)}` },
-    { label:'Trading P&L', value:fmtUsd(as.totalPnl), cls:pnlClass(as.totalPnl), sub:`Active strategies only` },
-    { label:'Deposited', value:fmtUsd(a.totalDeposited), sub:`Return: ${as.returnPct>=0?'+':''}${fmt(as.returnPct)}%` },
-    { label:'Return %', value:(as.returnPct>=0?'+':'')+fmt(as.returnPct)+'%', cls:pnlClass(as.returnPct) },
+    { label:'Total Equity', value:fmtUsd(a.totalEquity), sub:`Sub0: $${fmt(a.driftSub0Equity||0)} | Sub1: $${fmt(a.driftSub1Equity||0)}` },
+    { label:'Account P&L', value:(realPnl>=0?'+':'')+fmtUsd(realPnl), cls:pnlClass(realPnl), sub:`Equity vs $${fmt(a.totalDeposited)} deposited` },
+    { label:'Return', value:(realReturnPct>=0?'+':'')+fmt(realReturnPct)+'%', cls:pnlClass(realReturnPct), sub:`Unrealized: ${unrealizedPnl>=0?'+':''}$${fmt(unrealizedPnl)}` },
+    { label:'Realized P&L', value:(as.totalPnl>=0?'+':'')+fmtUsd(as.totalPnl), cls:pnlClass(as.totalPnl), sub:`${as.totalTrades} closed trades (active strats)` },
     { label:'Win Rate', value:fmt(as.winRate,1)+'%', sub:`${as.wins}W / ${as.losses}L (${as.totalTrades} trades)` },
     { label:'Profit Factor', value:fmt(as.profitFactor), cls:as.profitFactor>=1?'pnl-pos':'pnl-neg' },
     { label:'Sharpe Ratio', value:fmt(s.sharpeRatio), cls:s.sharpeRatio>=1?'pnl-pos':'pnl-neg' },

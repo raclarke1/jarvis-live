@@ -1,24 +1,24 @@
 {
-  "lastUpdate": "2026-02-25T03:30:56.592Z",
+  "lastUpdate": "2026-02-25T03:34:56.022Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
   "account": {
     "exchange": "drift",
-    "totalEquity": 12950.93,
+    "totalEquity": 12949.87,
     "totalDeposited": 13300,
-    "driftEquity": 12950.93,
-    "driftSub0Equity": 3627.02,
-    "driftSub1Equity": 9323.91,
-    "krakenEquity": 20683.82,
-    "freeCollateral": 7982.39,
+    "driftEquity": 12949.87,
+    "driftSub0Equity": 3627.09,
+    "driftSub1Equity": 9322.78,
+    "krakenEquity": 20684.23,
+    "freeCollateral": 7982.04,
     "leverage": 3.59,
-    "equity": 12950.93,
+    "equity": 12949.87,
     "startingEquity": 13300,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "accountPnl": -349.07,
-    "accountPnlPercent": -2.62,
-    "unrealizedPnl": -255.39
+    "accountPnl": -350.13,
+    "accountPnlPercent": -2.63,
+    "unrealizedPnl": -232.55
   },
   "openPositions": [
     {
@@ -28,7 +28,7 @@
       "strategy": "VWAP-RSI",
       "entry": 0.296,
       "current": 0.3092,
-      "size": 2657,
+      "size": 2657.72,
       "sizeUnits": 8594.5,
       "pnl": -113.45,
       "pnlPercent": -4.27,
@@ -42,11 +42,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.0187,
-      "current": 0.0192,
-      "size": 4691.82,
+      "current": 0.0191,
+      "size": 4690.59,
       "sizeUnits": 244978,
-      "pnl": -122.49,
-      "pnlPercent": -2.61,
+      "pnl": -97.99,
+      "pnlPercent": -2.09,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -57,10 +57,10 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 8.628,
-      "current": 8.5546,
-      "size": 4548.47,
+      "current": 8.5544,
+      "size": 4548.39,
       "sizeUnits": 531.7,
-      "pnl": 39.03,
+      "pnl": 39.13,
       "pnlPercent": 0.86,
       "leverage": 5,
       "subaccount": 1,
@@ -73,7 +73,7 @@
       "strategy": "VWAP-RSI",
       "entry": 0.0661,
       "current": 0.0671,
-      "size": 9905.06,
+      "size": 9905.2,
       "sizeUnits": 147513,
       "pnl": -147.51,
       "pnlPercent": -1.49,
@@ -87,11 +87,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 5.953,
-      "current": 5.835,
-      "size": 4138.18,
+      "current": 5.845,
+      "size": 4145.27,
       "sizeUnits": 709.2,
-      "pnl": 83.69,
-      "pnlPercent": 2.02,
+      "pnl": 76.59,
+      "pnlPercent": 1.85,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -102,11 +102,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2813,
-      "current": 0.2811,
-      "size": 7504.43,
+      "current": 0.2809,
+      "size": 7500.8,
       "sizeUnits": 26698,
-      "pnl": 5.34,
-      "pnlPercent": 0.07,
+      "pnl": 10.68,
+      "pnlPercent": 0.14,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -120,9 +120,9 @@
     "totalPnl": 655.8,
     "avgPnl": 3.77,
     "realizedPnl": 655.8,
-    "unrealizedPnl": -255.39,
-    "accountPnl": -349.07,
-    "accountPnlPercent": -2.62,
+    "unrealizedPnl": -232.55,
+    "accountPnl": -350.13,
+    "accountPnlPercent": -2.63,
     "byStrategy": {
       "LC": {
         "totalTrades": 22,
@@ -195,12 +195,12 @@
       "feeSavingsFromDrift": 75.84
     },
     "maxDrawdown": 1338.67,
-    "maxDrawdownPercent": 3.72
+    "maxDrawdownPercent": 8.75
   },
   "equityHistory": [
     {
       "date": "2026-02-14",
-      "equity": 34006.37,
+      "equity": 13306.37,
       "dailyPnl": 6.37,
       "cumPnl": 6.37,
       "trades": 1,
@@ -210,7 +210,7 @@
     },
     {
       "date": "2026-02-15",
-      "equity": 34337.98,
+      "equity": 13637.98,
       "dailyPnl": 331.61,
       "cumPnl": 337.98,
       "trades": 17,
@@ -221,7 +221,7 @@
     },
     {
       "date": "2026-02-16",
-      "equity": 34452.28,
+      "equity": 13752.28,
       "dailyPnl": 114.3,
       "cumPnl": 452.28,
       "trades": 3,
@@ -233,7 +233,7 @@
     },
     {
       "date": "2026-02-17",
-      "equity": 34685.8,
+      "equity": 13985.8,
       "dailyPnl": 233.52,
       "cumPnl": 685.8,
       "trades": 10,
@@ -246,7 +246,7 @@
     },
     {
       "date": "2026-02-18",
-      "equity": 35381.22,
+      "equity": 14681.22,
       "dailyPnl": 695.42,
       "cumPnl": 1381.22,
       "trades": 31,
@@ -259,7 +259,7 @@
     },
     {
       "date": "2026-02-19",
-      "equity": 35994.47,
+      "equity": 15294.47,
       "dailyPnl": 613.25,
       "cumPnl": 1994.47,
       "trades": 21,
@@ -272,7 +272,7 @@
     },
     {
       "date": "2026-02-20",
-      "equity": 35955.41,
+      "equity": 15255.41,
       "dailyPnl": -39.06,
       "cumPnl": 1955.41,
       "trades": 54,
@@ -285,7 +285,7 @@
     },
     {
       "date": "2026-02-21",
-      "equity": 35948.83,
+      "equity": 15248.83,
       "dailyPnl": -6.58,
       "cumPnl": 1948.83,
       "trades": 19,
@@ -299,7 +299,7 @@
     },
     {
       "date": "2026-02-22",
-      "equity": 34655.8,
+      "equity": 13955.8,
       "dailyPnl": -1293.03,
       "cumPnl": 655.8,
       "trades": 18,
@@ -1001,10 +1001,10 @@
         "SUI",
         "SOL",
         "DOGE",
-        "PEPE",
-        "XRP"
+        "PEPE"
       ],
       "exchange": "Drift",
+      "subaccount": 0,
       "type": "Mean Reversion",
       "params": {
         "sl": "1.0x ATR",
@@ -1014,16 +1014,20 @@
     },
     "IBB": {
       "assets": [
-        "WIF",
-        "DOT",
+        "SUI",
         "W",
-        "XRP"
+        "BONK",
+        "APT",
+        "PYTH",
+        "JTO",
+        "SEI"
       ],
       "exchange": "Drift",
+      "subaccount": 1,
       "type": "Inside Bar Breakout",
       "params": {
         "sl": "1.5x ATR",
-        "tp": "2.0x ATR",
+        "tp": "3.0x ATR",
         "trendFilter": "20 EMA"
       }
     },
@@ -1032,14 +1036,13 @@
         "PEPE",
         "TIA",
         "JTO",
-        "DOT",
         "RNDR",
         "PYTH",
         "LINK",
-        "ATOM",
         "INJ"
       ],
       "exchange": "Drift",
+      "subaccount": 1,
       "type": "5min Scalper",
       "params": {
         "sl": "1.0x ATR",
