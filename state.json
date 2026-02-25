@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-25T03:54:00.658Z",
+  "lastUpdate": "2026-02-25T04:30:33.458Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -953,10 +953,12 @@
   "strategies": {
     "V5.0": {
       "assets": [
-        "SUI",
-        "SOL",
-        "DOGE",
-        "PEPE"
+        "RNDR",
+        "BONK",
+        "PEPE",
+        "APT",
+        "WIF",
+        "OP"
       ],
       "exchange": "Drift",
       "subaccount": 0,
@@ -969,13 +971,12 @@
     },
     "IBB": {
       "assets": [
-        "SUI",
-        "W",
-        "BONK",
+        "WIF",
+        "PEPE",
+        "DOGE",
         "APT",
-        "PYTH",
-        "JTO",
-        "SEI"
+        "TIA",
+        "OP"
       ],
       "exchange": "Drift",
       "subaccount": 1,
@@ -986,15 +987,52 @@
         "trendFilter": "20 EMA"
       }
     },
+    "MOMENTUM": {
+      "assets": [
+        "AVAX",
+        "DOGE",
+        "SUI",
+        "WIF",
+        "W",
+        "APT"
+      ],
+      "exchange": "Drift",
+      "subaccount": 0,
+      "type": "Donchian Breakout",
+      "enabled": false,
+      "params": {
+        "sl": "0.75x ATR",
+        "tp": "2.0x ATR",
+        "trendFilter": "20 EMA"
+      }
+    },
+    "LC": {
+      "assets": [
+        "ETH",
+        "OP",
+        "APT",
+        "TIA",
+        "ARB"
+      ],
+      "exchange": "Drift",
+      "subaccount": 0,
+      "type": "RSI(2) Mean Reversion",
+      "enabled": false,
+      "note": "Disabled — extreme drawdowns",
+      "params": {
+        "sl": "2.0x ATR",
+        "tp": "4.0x ATR",
+        "trendFilter": "200 SMA"
+      }
+    },
     "VWAP-RSI": {
       "assets": [
         "PEPE",
-        "TIA",
-        "JTO",
-        "RNDR",
-        "PYTH",
-        "LINK",
-        "INJ"
+        "BONK",
+        "DOGE",
+        "AVAX",
+        "OP",
+        "TIA"
       ],
       "exchange": "Drift",
       "subaccount": 1,
