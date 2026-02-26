@@ -3,6 +3,174 @@
   "description": "MegaMax Drift Trade Log - Full data for analysis",
   "trades": [
     {
+      "id": "1772078634858-APT",
+      "timestamp": "2026-02-26T04:03:54.859Z",
+      "timestampMs": 1772078634859,
+      "symbol": "APT",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.9795,
+        "time": "2026-02-26T04:03:54.859Z",
+        "reason": "Inside bar breakout below 0.9936"
+      },
+      "stopLoss": {
+        "price": 1.0273706785714287
+      },
+      "takeProfit": {
+        "price": 0.8837586428571429
+      },
+      "positionSize": 348,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "PEPE-1772074915283",
+      "timestamp": "2026-02-26T03:01:55.285Z",
+      "timestampMs": 1772074915285,
+      "symbol": "PEPE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 4.115,
+        "time": "2026-02-26T03:01:55.285Z",
+        "reason": "RSI(3)=93.0 overbought, price below VWAP (4.1589) & EMA50 (4.1354)"
+      },
+      "stopLoss": {
+        "price": 4.130271428571429
+      },
+      "takeProfit": {
+        "price": 4.084457142857143
+      },
+      "positionSize": 193,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1772064318618-OP",
+      "timestamp": "2026-02-26T00:05:18.618Z",
+      "timestampMs": 1772064318618,
+      "symbol": "OP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.12426,
+        "time": "2026-02-26T00:05:18.618Z",
+        "reason": "Inside bar breakout below 0.1257"
+      },
+      "stopLoss": {
+        "price": 0.12839239285714285
+      },
+      "takeProfit": {
+        "price": 0.11599521428571427
+      },
+      "positionSize": 348,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1772064231338-WIF",
+      "timestamp": "2026-02-26T00:03:51.338Z",
+      "timestampMs": 1772064231338,
+      "symbol": "WIF",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.214982,
+        "time": "2026-02-26T00:03:51.338Z",
+        "reason": "Inside bar breakout below 0.2186"
+      },
+      "stopLoss": {
+        "price": 0.22276700000000002
+      },
+      "takeProfit": {
+        "price": 0.19941199999999998
+      },
+      "positionSize": 348,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1772049833935-DOGE",
+      "timestamp": "2026-02-25T20:03:53.935Z",
+      "timestampMs": 1772049833935,
+      "symbol": "DOGE",
+      "strategy": "IBB",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.104215,
+        "time": "2026-02-25T20:03:53.935Z",
+        "reason": "Inside bar breakout above 0.1025"
+      },
+      "stopLoss": {
+        "price": 0.10219128571428572
+      },
+      "takeProfit": {
+        "price": 0.10826242857142857
+      },
+      "positionSize": 348,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1772035542482-TIA",
+      "timestamp": "2026-02-25T16:05:42.483Z",
+      "timestampMs": 1772035542483,
+      "symbol": "TIA",
+      "strategy": "IBB",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.357917,
+        "time": "2026-02-25T16:05:42.483Z",
+        "reason": "Inside bar breakout above 0.3324"
+      },
+      "stopLoss": {
+        "price": 0.34806842857142856
+      },
+      "takeProfit": {
+        "price": 0.37761414285714284
+      },
+      "positionSize": 348,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1772035441279-BONK",
+      "timestamp": "2026-02-25T16:04:01.279Z",
+      "timestampMs": 1772035441279,
+      "symbol": "BONK",
+      "strategy": "V5.0",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 6.3549,
+        "time": "2026-02-25T16:04:01.279Z",
+        "reason": "Fade breakout above 6.3350"
+      },
+      "stopLoss": {
+        "price": 6.430842857142856
+      },
+      "takeProfit": {
+        "price": 6.203014285714286
+      },
+      "positionSize": 348,
+      "leverage": 5,
+      "exchange": "Drift",
+      "botVersion": "MegaMax v1.0"
+    },
+    {
       "id": "1771970570062-SUI",
       "timestamp": "2026-02-24T22:02:50.062Z",
       "timestampMs": 1771970570062,
