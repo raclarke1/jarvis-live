@@ -277,6 +277,7 @@ function render() {
     { label:'Account P&L', value:(realPnl>=0?'+':'')+fmtUsd(realPnl), cls:pnlClass(realPnl), sub:`Equity vs $${fmt(a.totalDeposited)} deposited` },
     { label:'Return', value:(realReturnPct>=0?'+':'')+fmt(realReturnPct)+'%', cls:pnlClass(realReturnPct), sub:`Unrealized: ${unrealizedPnl>=0?'+':''}$${fmt(unrealizedPnl)}` },
     { label:'Realized P&L', value:(as.totalPnl>=0?'+':'')+fmtUsd(as.totalPnl), cls:pnlClass(as.totalPnl), sub:`${as.totalTrades} closed trades (active strats)` },
+    { label:'Killed Strategy Losses', value:fmtUsd(Object.entries(s.byStrategy).filter(([n])=>DISABLED_STRATS.has(n)).reduce((sum,[,st])=>sum+st.totalPnlUsd,0)), cls:'pnl-neg', sub:'LC + MOMENTUM (killed Feb 22)' },
     { label:'Win Rate', value:fmt(as.winRate,1)+'%', sub:`${as.wins}W / ${as.losses}L (${as.totalTrades} trades)` },
     { label:'Profit Factor', value:fmt(as.profitFactor), cls:as.profitFactor>=1?'pnl-pos':'pnl-neg' },
     { label:'Sharpe Ratio', value:fmt(s.sharpeRatio), cls:s.sharpeRatio>=1?'pnl-pos':'pnl-neg' },

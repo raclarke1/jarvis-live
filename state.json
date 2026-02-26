@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-26T05:01:52.255Z",
+  "lastUpdate": "2026-02-26T12:53:12.173Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -10,7 +10,7 @@
     "driftEquity": 12981.9,
     "driftSub0Equity": 3626.96,
     "driftSub1Equity": 9354.94,
-    "krakenEquity": 20683.2,
+    "krakenEquity": 20572.6,
     "freeCollateral": 10187.94,
     "leverage": 2.14,
     "equity": 12981.9,
@@ -223,20 +223,6 @@
   ],
   "recentTrades": [
     {
-      "id": "1771747332236-PEPE",
-      "symbol": "PEPE",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 4.093,
-      "exit": 4.0737,
-      "pnl": 8.83,
-      "pnlPercent": 2.36,
-      "exitTime": "2026-02-22T16:26:13.175Z",
-      "entryTime": "2026-02-22T08:02:12.236Z",
-      "status": "CLOSED"
-    },
-    {
       "id": "1771738103740-W",
       "symbol": "W",
       "strategy": "IBB",
@@ -262,90 +248,6 @@
       "pnlPercent": -5.12,
       "exitTime": "2026-02-22T08:30:01.295Z",
       "entryTime": "2026-02-22T06:19:34.928Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771741215998-JTO",
-      "symbol": "JTO",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 0.3105,
-      "exit": 0.30563714285714283,
-      "pnl": -15.36,
-      "pnlPercent": -7.8500000000000005,
-      "exitTime": "2026-02-22T06:22:01.962Z",
-      "entryTime": "2026-02-22T06:20:15.998Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OTDCA5-OIOAC-SKAF45",
-      "symbol": "OP",
-      "strategy": "LC",
-      "direction": "LONG",
-      "exchange": "Kraken",
-      "entry": 0.1249,
-      "exit": 0.1249,
-      "pnl": 0,
-      "pnlPercent": 0,
-      "exitTime": "2026-02-22T06:01:48.817Z",
-      "entryTime": "2026-02-22T05:29:45.859Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771686142009-INJ",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 3.834196,
-      "exit": 3.225073,
-      "pnl": -148.69,
-      "pnlPercent": -79.43,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "entryTime": "2026-02-21T15:02:22.009Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "1771675315339-INJ",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 3.902504,
-      "exit": 3.3260105,
-      "pnl": -138.26,
-      "pnlPercent": -73.86,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "entryTime": "2026-02-21T12:01:55.340Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OZNRK2-YKGBR-ANGDSF",
-      "symbol": "NEAR",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "exchange": "Kraken",
-      "entry": 1.051,
-      "exit": 1.1262,
-      "pnl": -322.3,
-      "pnlPercent": -21.47,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "entryTime": "2026-02-21T00:02:26.165Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "OPLODR-FTCXE-NAUH5E",
-      "symbol": "RNDR",
-      "strategy": "LC",
-      "direction": "SHORT",
-      "exchange": "Kraken",
-      "entry": 1.52,
-      "exit": 1.6924000000000001,
-      "pnl": -510.91,
-      "pnlPercent": -34.03,
-      "exitTime": "2026-02-22T04:17:07.930Z",
-      "entryTime": "2026-02-21T00:02:24.485Z",
       "status": "CLOSED"
     },
     {
@@ -419,20 +321,6 @@
       "status": "CLOSED"
     },
     {
-      "id": "1771711315852-INJ",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 3.872063,
-      "exit": 3.26294,
-      "pnl": -147.23,
-      "pnlPercent": -78.66,
-      "exitTime": "2026-02-22T04:17:07.928Z",
-      "entryTime": "2026-02-21T22:01:55.852Z",
-      "status": "CLOSED"
-    },
-    {
       "id": "1771603320348-SUI",
       "symbol": "SUI",
       "strategy": "V5.0",
@@ -487,19 +375,6 @@
       "status": "CLOSED"
     },
     {
-      "id": "INJ-1771715534641",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 3.872063,
-      "exit": 3.94950426,
-      "pnl": null,
-      "pnlPercent": 10.000000000000009,
-      "exitTime": "2026-02-21T23:12:14.641Z",
-      "status": "CLOSED"
-    },
-    {
       "id": "1771632116455-W",
       "symbol": "W",
       "strategy": "IBB",
@@ -511,19 +386,6 @@
       "pnlPercent": 5.72,
       "exitTime": "2026-02-21T23:12:02.716Z",
       "entryTime": "2026-02-21T00:01:56.455Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "INJ-1771707613851",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 3.834196,
-      "exit": 3.91087992,
-      "pnl": null,
-      "pnlPercent": 10.000000000000032,
-      "exitTime": "2026-02-21T21:00:13.851Z",
       "status": "CLOSED"
     },
     {
@@ -551,19 +413,6 @@
       "pnlPercent": 6.31,
       "exitTime": "2026-02-21T21:00:01.812Z",
       "entryTime": "2026-02-21T16:01:57.206Z",
-      "status": "CLOSED"
-    },
-    {
-      "id": "INJ-1771683853830",
-      "symbol": "INJ",
-      "strategy": "MOMENTUM",
-      "direction": "LONG",
-      "exchange": "Drift",
-      "entry": 3.902504,
-      "exit": 3.98055408,
-      "pnl": null,
-      "pnlPercent": 10.000000000000018,
-      "exitTime": "2026-02-21T14:24:13.830Z",
       "status": "CLOSED"
     },
     {
@@ -902,6 +751,157 @@
       "exitTime": "2026-02-20T11:50:01.823Z",
       "entryTime": "2026-02-20T10:18:00.495Z",
       "status": "CLOSED"
+    },
+    {
+      "id": "SUI-1771587972880",
+      "symbol": "SUI",
+      "strategy": "V5.0",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 0.954668,
+      "exit": 0.9355746399999999,
+      "pnl": null,
+      "pnlPercent": 10.000000000000032,
+      "exitTime": "2026-02-20T11:46:12.880Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "PYTH-1771587972880",
+      "symbol": "PYTH",
+      "strategy": "VWAP-RSI",
+      "direction": "LONG",
+      "exchange": "Drift",
+      "entry": 0.053523,
+      "exit": 0.05459346,
+      "pnl": null,
+      "pnlPercent": 10.00000000000002,
+      "exitTime": "2026-02-20T11:46:12.880Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771582640912-SUI",
+      "symbol": "SUI",
+      "strategy": "V5.0",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 0.954668,
+      "exit": 0.9433,
+      "pnl": 16.71,
+      "pnlPercent": 5.95,
+      "exitTime": "2026-02-20T11:46:01.570Z",
+      "entryTime": "2026-02-20T10:17:20.912Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "JTO-1771583692644",
+      "symbol": "JTO",
+      "strategy": "VWAP-RSI",
+      "direction": "LONG",
+      "exchange": "Drift",
+      "entry": 0.312524,
+      "exit": 0.31877448,
+      "pnl": null,
+      "pnlPercent": 10.000000000000004,
+      "exitTime": "2026-02-20T10:34:52.644Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771509754027-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.394015,
+      "exit": 1.394015,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-19T14:02:34.027Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771498913082-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.409765,
+      "exit": 1.409765,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-19T11:01:53.082Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771491713386-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.416684,
+      "exit": 1.416684,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-19T09:01:53.386Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771477317547-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.417026,
+      "exit": 1.417026,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-19T05:01:57.547Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771452118156-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.419,
+      "exit": 1.419,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-18T22:01:58.156Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771437739687-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.4569429999999999,
+      "exit": 1.4569429999999999,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-18T18:02:19.687Z",
+      "status": "CLOSED"
+    },
+    {
+      "id": "1771412512908-XRP",
+      "symbol": "XRP",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 1.477056,
+      "exit": 1.477056,
+      "pnl": 0,
+      "pnlPercent": 0,
+      "exitTime": "2026-02-20T10:13:24.491Z",
+      "entryTime": "2026-02-18T11:01:52.908Z",
+      "status": "CLOSED"
     }
   ],
   "strategies": {
@@ -959,10 +959,5 @@
         "rsi": 3
       }
     }
-  },
-  "feedbackLoop": {
-    "lastUpdate": "2026-02-26T12:48:00.325Z",
-    "currentRegime": "RANGING",
-    "strategyMetrics": {}
   }
 }
