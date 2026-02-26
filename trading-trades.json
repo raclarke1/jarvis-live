@@ -1,6 +1,34 @@
 [
   {
     "strategy": "IBB",
+    "asset": "OP",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.12426,
+    "entryTime": 1772064318616,
+    "stopLoss": 0.12839239285714285,
+    "takeProfit": 0.11599521428571427,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.1257"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "WIF",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.214982,
+    "entryTime": 1772064231335,
+    "stopLoss": 0.22276700000000002,
+    "takeProfit": 0.19941199999999998,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.2186"
+  },
+  {
+    "strategy": "IBB",
     "asset": "DOGE",
     "exchange": "Drift",
     "direction": "LONG",

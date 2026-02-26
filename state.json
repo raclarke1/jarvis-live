@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-25T20:03:53.947Z",
+  "lastUpdate": "2026-02-26T00:05:18.628Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -22,19 +22,34 @@
   },
   "openPositions": [
     {
-      "asset": "DOGE",
+      "asset": "WIF",
       "exchange": "Drift",
       "strategy": "IBB",
-      "direction": "LONG",
+      "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.104215,
-      "currentPrice": 0.104215,
-      "stopLoss": 0.10219128571428572,
-      "takeProfit": 0.10826242857142857,
+      "entryPrice": 0.214982,
+      "currentPrice": 0.214982,
+      "stopLoss": 0.22276700000000002,
+      "takeProfit": 0.19941199999999998,
       "positionSize": 348,
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-25T20:03:53.932Z"
+      "entryTime": "2026-02-26T00:03:51.334Z"
+    },
+    {
+      "asset": "OP",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.12426,
+      "currentPrice": 0.12426,
+      "stopLoss": 0.12839239285714285,
+      "takeProfit": 0.11599521428571427,
+      "positionSize": 348,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-26T00:05:18.616Z"
     }
   ],
   "stats": {
@@ -240,6 +255,34 @@
   "recentTrades": [
     {
       "strategy": "IBB",
+      "asset": "OP",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.12426,
+      "entryTime": 1772064318616,
+      "stopLoss": 0.12839239285714285,
+      "takeProfit": 0.11599521428571427,
+      "positionSize": 348,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 0.1257"
+    },
+    {
+      "strategy": "IBB",
+      "asset": "WIF",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.214982,
+      "entryTime": 1772064231335,
+      "stopLoss": 0.22276700000000002,
+      "takeProfit": 0.19941199999999998,
+      "positionSize": 348,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 0.2186"
+    },
+    {
+      "strategy": "IBB",
       "asset": "DOGE",
       "exchange": "Drift",
       "direction": "LONG",
@@ -349,34 +392,6 @@
       "positionSize": 800,
       "status": "OPEN",
       "reason": "Inside bar breakout below 0.8555"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "SUI",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.903418,
-      "entryTime": 1771848171703,
-      "stopLoss": 0.9221661785714286,
-      "takeProfit": 0.8784204285714287,
-      "positionSize": 794,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.9039"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "SUI",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.891616,
-      "entryTime": 1771837370705,
-      "stopLoss": 0.9087539285714286,
-      "takeProfit": 0.8687654285714286,
-      "positionSize": 845,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.8905"
     }
   ],
   "strategies": {
@@ -474,14 +489,14 @@
     }
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-02-25T23:58:00.561Z",
+    "lastUpdate": "2026-02-26T00:08:00.596Z",
     "currentRegime": "RANGING",
     "strategyMetrics": {}
   },
   "megamax": {
-    "lastCheck": "2026-02-25T20:03:53.947Z",
+    "lastCheck": "2026-02-26T00:05:18.628Z",
     "performance": {
-      "totalTrades": 27,
+      "totalTrades": 29,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,
