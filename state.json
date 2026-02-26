@@ -959,5 +959,10 @@
         "rsi": 3
       }
     }
+  },
+  "feedbackLoop": {
+    "lastUpdate": "2026-02-26T05:08:00.961Z",
+    "currentRegime": "RANGING",
+    "strategyMetrics": {}
   }
 }
