@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-26T00:05:18.628Z",
+  "lastUpdate": "2026-02-26T04:03:54.871Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -50,6 +50,21 @@
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
       "entryTime": "2026-02-26T00:05:18.616Z"
+    },
+    {
+      "asset": "APT",
+      "exchange": "Drift",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.9795,
+      "currentPrice": 0.9795,
+      "stopLoss": 1.0273706785714287,
+      "takeProfit": 0.8837586428571429,
+      "positionSize": 348,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-26T04:03:54.854Z"
     }
   ],
   "stats": {
@@ -255,6 +270,20 @@
   "recentTrades": [
     {
       "strategy": "IBB",
+      "asset": "APT",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.9795,
+      "entryTime": 1772078634856,
+      "stopLoss": 1.0273706785714287,
+      "takeProfit": 0.8837586428571429,
+      "positionSize": 348,
+      "status": "OPEN",
+      "reason": "Inside bar breakout below 0.9936"
+    },
+    {
+      "strategy": "IBB",
       "asset": "OP",
       "exchange": "Drift",
       "direction": "SHORT",
@@ -378,20 +407,6 @@
       "positionSize": 913,
       "status": "OPEN",
       "reason": "Inside bar breakout below 0.8804"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "APT",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.850389,
-      "entryTime": 1771855380814,
-      "stopLoss": 0.8713279285714285,
-      "takeProfit": 0.8224704285714285,
-      "positionSize": 800,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.8555"
     }
   ],
   "strategies": {
@@ -489,14 +504,14 @@
     }
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-02-26T03:58:00.438Z",
+    "lastUpdate": "2026-02-26T04:08:01.081Z",
     "currentRegime": "RANGING",
     "strategyMetrics": {}
   },
   "megamax": {
-    "lastCheck": "2026-02-26T00:05:18.628Z",
+    "lastCheck": "2026-02-26T04:03:54.871Z",
     "performance": {
-      "totalTrades": 29,
+      "totalTrades": 30,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,
