@@ -466,22 +466,9 @@
     }
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-02-28T02:28:01.315Z",
+    "lastUpdate": "2026-02-28T02:38:00.960Z",
     "currentRegime": "RANGING",
-    "strategyMetrics": {},
-    "regimeIndicators": {
-      "volatility": "low",
-      "realizedVol": 24.48,
-      "trendStrength": -0.0036342853918125665,
-      "trendDirection": "down",
-      "ema20": 66544,
-      "ema50": 66787,
-      "correlation": 0.5,
-      "corrCategory": "medium",
-      "fundingSentiment": "neutral",
-      "btcPrice": 65921.84
-    },
-    "regimeLastCheck": "2026-02-28T02:30:01.913Z"
+    "strategyMetrics": {}
   },
   "megamax": {
     "lastCheck": "2026-02-28T02:03:39.892Z",
