@@ -1,332 +1,79 @@
 {
-  "lastUpdate": "2026-02-28T21:03:37.257Z",
-  "version": "MegaMax v2.0",
-  "status": "LIVE",
-  "dataSource": "drift",
+  "lastUpdate": "2026-02-28T22:08:07.610Z",
   "account": {
-    "exchange": "drift",
-    "totalEquity": 12557.64,
-    "totalDeposited": 13300,
-    "driftEquity": 12557.64,
-    "driftSub0Equity": 3598.78,
-    "driftSub1Equity": 8958.86,
-    "krakenEquity": 20468.16,
-    "freeCollateral": 10869.01,
-    "leverage": 1.54,
-    "equity": 12557.64,
-    "startingEquity": 13300,
-    "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "accountPnl": -742.36,
-    "accountPnlPercent": -5.58,
-    "unrealizedPnl": 79.96
+    "totalEquity": 11923.96,
+    "driftSub0Equity": 3513.4,
+    "driftSub1Equity": 8410.56,
+    "freeCollateral": 9871.970000000001,
+    "leverage": 0.78,
+    "unrealizedPnl": 12.82
   },
   "openPositions": [
     {
-      "asset": "APT",
-      "exchange": "Drift",
-      "strategy": "IBB",
+      "symbol": "WIF",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.889464,
-      "currentPrice": 0.889464,
-      "stopLoss": 0.90813075,
-      "takeProfit": 0.8521305000000001,
-      "positionSize": 841,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T08:05:18.006Z"
+      "size": 21180,
+      "sizeUsd": 4097.46,
+      "entry": 0.1874,
+      "mark": 0.1935,
+      "pnl": -128.33,
+      "pnlPercent": -3.23,
+      "strategy": "IBB",
+      "exchange": "Drift",
+      "subaccount": 1,
+      "leverage": 5
     },
     {
-      "asset": "TIA",
-      "exchange": "Drift",
-      "strategy": "IBB",
+      "symbol": "OP",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.302495,
-      "currentPrice": 0.302495,
-      "stopLoss": 0.3089334285714286,
-      "takeProfit": 0.2896181428571429,
-      "positionSize": 841,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T08:06:45.729Z"
+      "size": 20212,
+      "sizeUsd": 2448.68,
+      "entry": 0.1126,
+      "mark": 0.1211,
+      "pnl": -172.81,
+      "pnlPercent": -7.59,
+      "strategy": "IBB",
+      "exchange": "Drift",
+      "subaccount": 1,
+      "leverage": 5
     },
     {
-      "asset": "SUI",
-      "exchange": "Drift",
-      "strategy": "MOMENTUM",
+      "symbol": "PEPE",
       "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.834985,
-      "currentPrice": 0.834985,
-      "stopLoss": 0.884889775,
-      "takeProfit": 0.7019055999999999,
-      "positionSize": 475,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T12:03:53.243Z"
+      "size": 1124,
+      "sizeUsd": 4108.11,
+      "entry": 3.5971,
+      "mark": 3.6549,
+      "pnl": -64.98,
+      "pnlPercent": -1.61,
+      "strategy": "IBB",
+      "exchange": "Drift",
+      "subaccount": 1,
+      "leverage": 5
+    },
+    {
+      "symbol": "TIA",
+      "direction": "SHORT",
+      "size": 7689,
+      "sizeUsd": 2497.16,
+      "entry": 0.3026,
+      "mark": 0.3248,
+      "pnl": -170.15,
+      "pnlPercent": -7.31,
+      "strategy": "IBB",
+      "exchange": "Drift",
+      "subaccount": 1,
+      "leverage": 5
     }
   ],
   "stats": {
-    "totalTrades": 1,
-    "wins": 0,
-    "losses": 1,
-    "winRate": 0,
-    "totalPnl": -26.85,
-    "avgPnl": -26.85,
-    "realizedPnl": -26.85,
-    "unrealizedPnl": 79.96,
-    "accountPnl": -742.36,
-    "accountPnlPercent": -5.58,
-    "byStrategy": {
-      "V5.0": {
-        "totalTrades": 1,
-        "winningTrades": 0,
-        "losingTrades": 1,
-        "winRate": 0,
-        "totalPnlUsd": -26.85,
-        "avgWinUsd": 0,
-        "avgLossUsd": 26.85,
-        "profitFactor": 0,
-        "maxDrawdownUsd": 26.85,
-        "avgHoldingTimeMs": 1021721
-      }
-    },
+    "byStrategy": {},
     "sharpeRatio": 0,
     "fees": {
-      "totalFees": 0.62,
-      "totalDriftFees": 0.62,
-      "totalKrakenFees": 0,
-      "driftFeeRate": 0.036,
-      "krakenFeeRate": 0.06,
-      "feeSavingsFromDrift": 0.42
-    },
-    "maxDrawdown": 0,
-    "maxDrawdownPercent": 0
-  },
-  "equityHistory": [
-    {
-      "date": "2026-02-25",
-      "equity": 13273.15,
-      "dailyPnl": -26.85,
-      "cumPnl": -26.85,
-      "trades": 1,
-      "cumByStrategy": {
-        "V5.0": -26.85
-      }
-    }
-  ],
-  "recentTrades": [
-    {
-      "strategy": "MOMENTUM",
-      "asset": "SUI",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.834985,
-      "entryTime": 1772280233247,
-      "stopLoss": 0.884889775,
-      "takeProfit": 0.7019055999999999,
-      "positionSize": 475,
-      "status": "OPEN",
-      "reason": "Momentum breakout below 0.8437"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "TIA",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.302495,
-      "entryTime": 1772266005730,
-      "stopLoss": 0.3089334285714286,
-      "takeProfit": 0.2896181428571429,
-      "positionSize": 841,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.3183"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "APT",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.889464,
-      "entryTime": 1772265918007,
-      "stopLoss": 0.90813075,
-      "takeProfit": 0.8521305000000001,
-      "positionSize": 841,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.9145"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.08898,
-      "entryTime": 1772265831243,
-      "stopLoss": 0.09029003571428572,
-      "takeProfit": 0.08635992857142857,
-      "positionSize": 841,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.0924"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.093017,
-      "entryTime": 1772222668089,
-      "stopLoss": 0.09439528571428572,
-      "takeProfit": 0.09026042857142857,
-      "positionSize": 820,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.0933"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.094865,
-      "entryTime": 1772193891658,
-      "stopLoss": 0.09622775,
-      "takeProfit": 0.09213950000000001,
-      "positionSize": 818,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.0960"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "APT",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.9795,
-      "entryTime": 1772078634856,
-      "stopLoss": 1.0273706785714287,
-      "takeProfit": 0.8837586428571429,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.9936"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "OP",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.12426,
-      "entryTime": 1772064318616,
-      "stopLoss": 0.12839239285714285,
-      "takeProfit": 0.11599521428571427,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.1257"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "WIF",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.214982,
-      "entryTime": 1772064231335,
-      "stopLoss": 0.22276700000000002,
-      "takeProfit": 0.19941199999999998,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.2186"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "direction": "LONG",
-      "leverage": 5,
-      "entryPrice": 0.104215,
-      "entryTime": 1772049833933,
-      "stopLoss": 0.10219128571428572,
-      "takeProfit": 0.10826242857142857,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout above 0.1025"
-    }
-  ],
-  "strategies": {
-    "V5.0": {
-      "assets": [
-        "SUI",
-        "SOL",
-        "DOGE",
-        "PEPE"
-      ],
-      "exchange": "Drift",
-      "subaccount": 0,
-      "type": "Mean Reversion",
-      "params": {
-        "sl": "1.0x ATR",
-        "tp": "2.0x ATR",
-        "trendFilter": "20 EMA"
-      }
-    },
-    "IBB": {
-      "assets": [
-        "SUI",
-        "W",
-        "BONK",
-        "APT",
-        "PYTH",
-        "JTO",
-        "SEI"
-      ],
-      "exchange": "Drift",
-      "subaccount": 1,
-      "type": "Inside Bar Breakout",
-      "params": {
-        "sl": "1.5x ATR",
-        "tp": "3.0x ATR",
-        "trendFilter": "20 EMA"
-      }
-    },
-    "VWAP-RSI": {
-      "assets": [
-        "PEPE",
-        "BONK",
-        "DOGE",
-        "AVAX",
-        "OP",
-        "TIA"
-      ],
-      "exchange": "Drift",
-      "subaccount": 1,
-      "type": "5min Scalper",
-      "params": {
-        "sl": "1.0x ATR",
-        "tp": "2.0x ATR",
-        "rsi": 3
-      }
+      "totalFees": 0,
+      "totalDriftFees": 0
     }
   },
-  "feedbackLoop": {
-    "lastUpdate": "2026-02-28T21:58:00.883Z",
-    "currentRegime": "RANGING",
-    "strategyMetrics": {}
-  },
-  "megamax": {
-    "lastCheck": "2026-02-28T21:03:37.257Z",
-    "performance": {
-      "totalTrades": 36,
-      "winningTrades": 0,
-      "losingTrades": 0,
-      "winRate": 0,
-      "totalPnl": 0,
-      "startDate": "2026-02-13"
-    }
-  }
+  "equityHistory": [],
+  "recentTrades": []
 }

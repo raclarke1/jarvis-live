@@ -2,6 +2,211 @@
   "version": "1.0",
   "trades": [
     {
+      "id": "1772280233252-SUI",
+      "timestamp": "2026-02-28T12:03:53.252Z",
+      "timestampMs": 1772280233252,
+      "asset": "SUI",
+      "symbol": "SUI",
+      "strategy": "MOMENTUM",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.834985,
+        "fillPrice": null,
+        "time": "2026-02-28T12:03:53.252Z",
+        "reason": "Momentum breakout below 0.8437"
+      },
+      "stopLoss": {
+        "price": 0.884889775,
+        "distanceUsd": 0.04990477500000001,
+        "distancePct": 5.976727126834615
+      },
+      "takeProfit": {
+        "price": 0.7019055999999999,
+        "distanceUsd": 0.13307940000000007,
+        "distancePct": 15.937939004892312
+      },
+      "riskReward": 2.6666666666666674,
+      "positionSize": 475,
+      "leverage": 5,
+      "notionalValue": 2375,
+      "marketContext": {
+        "atr": 0.06653970000000001,
+        "donchianHigh": 1.048829,
+        "donchianLow": 0.843703,
+        "motherBarHigh": null,
+        "motherBarLow": null
+      },
+      "exit": {
+        "price": 0.8853,
+        "time": "2026-02-28T19:32:08.000Z",
+        "reason": "Stop Loss",
+        "fillId": "drift-4N8FswH7eyeQqBvi-555376",
+        "txSignature": "4N8FswH7eyeQqBvicf4GMou2bwnfTo1MaCPPQv3zEPoyJfxHwFDnk2W97sc1ViFopCHkejiyoMEzy3QgNvxvnESQ"
+      },
+      "pnl": {
+        "grossPnl": -143.11,
+        "fees": 0.53,
+        "netPnl": -143.64,
+        "pnlPercent": -6.03
+      },
+      "exchange": "Drift",
+      "marketIndex": 9,
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 26894748,
+      "holdingTimeHours": 7.470763333333333
+    },
+    {
+      "id": "1772266005732-TIA",
+      "timestamp": "2026-02-28T08:06:45.732Z",
+      "timestampMs": 1772266005732,
+      "asset": "TIA",
+      "symbol": "TIA",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.302495,
+        "fillPrice": 0.303,
+        "time": "2026-02-28T08:06:45.732Z",
+        "reason": "Inside bar breakout below 0.3183"
+      },
+      "stopLoss": {
+        "price": 0.3089334285714286,
+        "distanceUsd": 0.006438428571428567,
+        "distancePct": 2.1284413201634957
+      },
+      "takeProfit": {
+        "price": 0.2896181428571429,
+        "distanceUsd": 0.012876857142857134,
+        "distancePct": 4.2568826403269915
+      },
+      "riskReward": 2,
+      "positionSize": 841,
+      "leverage": 5,
+      "notionalValue": 4205,
+      "marketContext": {
+        "atr": 0.004292285714285713,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.319938,
+        "motherBarLow": 0.318334
+      },
+      "exit": null,
+      "pnl": null,
+      "exchange": "Drift",
+      "marketIndex": 19,
+      "botVersion": "MegaMax v1.0"
+    },
+    {
+      "id": "1772265918009-APT",
+      "timestamp": "2026-02-28T08:05:18.009Z",
+      "timestampMs": 1772265918009,
+      "asset": "APT",
+      "symbol": "APT",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.889464,
+        "fillPrice": 0.89,
+        "time": "2026-02-28T08:05:18.009Z",
+        "reason": "Inside bar breakout below 0.9145"
+      },
+      "stopLoss": {
+        "price": 0.90813075,
+        "distanceUsd": 0.018666749999999954,
+        "distancePct": 2.0986515474487955
+      },
+      "takeProfit": {
+        "price": 0.8521305000000001,
+        "distanceUsd": 0.03733349999999991,
+        "distancePct": 4.197303094897591
+      },
+      "riskReward": 2,
+      "positionSize": 841,
+      "leverage": 5,
+      "notionalValue": 4205,
+      "marketContext": {
+        "atr": 0.012444499999999978,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.922472,
+        "motherBarLow": 0.914525
+      },
+      "exit": {
+        "price": 0.90813075,
+        "reason": "Position closed (exit price estimated)",
+        "time": "2026-02-28T19:02:34.256Z"
+      },
+      "pnl": {
+        "grossPnl": -88.25,
+        "fees": 0,
+        "netPnl": -88.25,
+        "pnlPercent": -2.1,
+        "usd": -88.25,
+        "percent": -2.1
+      },
+      "exchange": "Drift",
+      "marketIndex": 3,
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 39436247
+    },
+    {
+      "id": "1772265831245-DOGE",
+      "timestamp": "2026-02-28T08:03:51.245Z",
+      "timestampMs": 1772265831245,
+      "asset": "DOGE",
+      "symbol": "DOGE",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.08898,
+        "fillPrice": 0.0887,
+        "time": "2026-02-28T08:03:51.245Z",
+        "reason": "Inside bar breakout below 0.0924"
+      },
+      "stopLoss": {
+        "price": 0.09029003571428572,
+        "distanceUsd": 0.001310035714285715,
+        "distancePct": 1.4722810904537142
+      },
+      "takeProfit": {
+        "price": 0.08635992857142857,
+        "distanceUsd": 0.00262007142857143,
+        "distancePct": 2.9445621809074285
+      },
+      "riskReward": 2,
+      "positionSize": 841,
+      "leverage": 5,
+      "notionalValue": 4205,
+      "marketContext": {
+        "atr": 0.000873357142857141,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.09316,
+        "motherBarLow": 0.092443
+      },
+      "exit": {
+        "price": 0.09029003571428572,
+        "reason": "Position closed (exit price estimated)",
+        "time": "2026-02-28T11:02:40.676Z"
+      },
+      "pnl": {
+        "grossPnl": -61.91,
+        "fees": 0,
+        "netPnl": -61.91,
+        "pnlPercent": -1.47,
+        "usd": -61.91,
+        "percent": -1.47
+      },
+      "exchange": "Drift",
+      "marketIndex": 7,
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 10729431
+    },
+    {
       "id": "1772222668103-DOGE",
       "timestamp": "2026-02-27T20:04:28.103Z",
       "timestampMs": 1772222668103,
@@ -798,6 +1003,204 @@
       "leverage": 5,
       "positionSize": 448,
       "asset": "PEPE"
+    },
+    {
+      "id": "DOGE-1772252830815",
+      "timestamp": "2026-02-28T04:27:10.817Z",
+      "timestampMs": 1772252830817,
+      "symbol": "DOGE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.09336,
+        "time": "2026-02-28T04:27:10.817Z",
+        "reason": "RSI(3)=79.1 overbought, price below VWAP (0.0949) & EMA50 (0.0934)"
+      },
+      "stopLoss": {
+        "price": 0.093457
+      },
+      "takeProfit": {
+        "price": 0.093166
+      },
+      "leverage": 5,
+      "positionSize": 451
+    },
+    {
+      "id": "OP-1772254332852",
+      "timestamp": "2026-02-28T04:52:12.853Z",
+      "timestampMs": 1772254332853,
+      "symbol": "OP",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.118743,
+        "time": "2026-02-28T04:52:12.853Z",
+        "reason": "RSI(3)=84.2 overbought, price below VWAP (0.1221) & EMA50 (0.1192)"
+      },
+      "stopLoss": {
+        "price": 0.11901592857142856
+      },
+      "takeProfit": {
+        "price": 0.11819714285714286
+      },
+      "leverage": 5,
+      "positionSize": 450
+    },
+    {
+      "id": "TIA-1772254608163",
+      "timestamp": "2026-02-28T04:56:48.164Z",
+      "timestampMs": 1772254608164,
+      "symbol": "TIA",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.319615,
+        "time": "2026-02-28T04:56:48.164Z",
+        "reason": "RSI(3)=79.2 overbought, price below VWAP (0.3288) & EMA50 (0.3201)"
+      },
+      "stopLoss": {
+        "price": 0.3202284285714285
+      },
+      "takeProfit": {
+        "price": 0.31838814285714284
+      },
+      "leverage": 5,
+      "positionSize": 450
+    },
+    {
+      "id": "BONK-1772264228786",
+      "timestamp": "2026-02-28T07:37:08.787Z",
+      "timestampMs": 1772264228787,
+      "symbol": "BONK",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 5.6868,
+        "time": "2026-02-28T07:37:08.787Z",
+        "reason": "RSI(3)=75.4 overbought, price below VWAP (5.9945) & EMA50 (5.8133)"
+      },
+      "stopLoss": {
+        "price": 5.7335642857142854
+      },
+      "takeProfit": {
+        "price": 5.593271428571429
+      },
+      "leverage": 5,
+      "positionSize": 464
+    },
+    {
+      "id": "DOGE-1772264539267",
+      "timestamp": "2026-02-28T07:42:19.268Z",
+      "timestampMs": 1772264539268,
+      "symbol": "DOGE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.090251,
+        "time": "2026-02-28T07:42:19.268Z",
+        "reason": "RSI(3)=83.3 overbought, price below VWAP (0.0934) & EMA50 (0.0913)"
+      },
+      "stopLoss": {
+        "price": 0.09092507142857142
+      },
+      "takeProfit": {
+        "price": 0.08890285714285714
+      },
+      "leverage": 5,
+      "positionSize": 457
+    },
+    {
+      "id": "BONK-1772264808986",
+      "timestamp": "2026-02-28T07:46:48.986Z",
+      "timestampMs": 1772264808986,
+      "symbol": "BONK",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 5.7461,
+        "time": "2026-02-28T07:46:48.986Z",
+        "reason": "RSI(3)=75.0 overbought, price below VWAP (5.9898) & EMA50 (5.8110)"
+      },
+      "stopLoss": {
+        "price": 5.787935714285714
+      },
+      "takeProfit": {
+        "price": 5.662428571428571
+      },
+      "leverage": 5,
+      "positionSize": 459
+    },
+    {
+      "id": "AVAX-1772274124919",
+      "timestamp": "2026-02-28T10:22:04.920Z",
+      "timestampMs": 1772274124920,
+      "symbol": "AVAX",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 8.509935,
+        "time": "2026-02-28T10:22:04.920Z",
+        "reason": "RSI(3)=80.4 overbought, price below VWAP (8.7493) & EMA50 (8.5705)"
+      },
+      "stopLoss": {
+        "price": 8.53737692857143
+      },
+      "takeProfit": {
+        "price": 8.455051142857144
+      },
+      "leverage": 5,
+      "positionSize": 475
+    },
+    {
+      "id": "DOGE-1772274405325",
+      "timestamp": "2026-02-28T10:26:45.326Z",
+      "timestampMs": 1772274405326,
+      "symbol": "DOGE",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 0.088538,
+        "time": "2026-02-28T10:26:45.326Z",
+        "reason": "RSI(3)=76.9 overbought, price below VWAP (0.0922) & EMA50 (0.0893)"
+      },
+      "stopLoss": {
+        "price": 0.0888497142857143
+      },
+      "takeProfit": {
+        "price": 0.08791457142857143
+      },
+      "leverage": 5,
+      "positionSize": 473
+    },
+    {
+      "id": "AVAX-1772275039032",
+      "timestamp": "2026-02-28T10:37:19.033Z",
+      "timestampMs": 1772275039033,
+      "symbol": "AVAX",
+      "strategy": "VWAP-RSI",
+      "direction": "short",
+      "status": "OPEN",
+      "entry": {
+        "price": 8.542341,
+        "time": "2026-02-28T10:37:19.033Z",
+        "reason": "RSI(3)=81.1 overbought, price below VWAP (8.6811) & EMA50 (8.5662)"
+      },
+      "stopLoss": {
+        "price": 8.568694642857144
+      },
+      "takeProfit": {
+        "price": 8.489633714285715
+      },
+      "leverage": 5,
+      "positionSize": 467
     }
   ]
 }
