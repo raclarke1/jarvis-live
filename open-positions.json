@@ -1,18 +1,18 @@
 [
   {
-    "asset": "WIF",
+    "asset": "DOGE",
     "exchange": "Drift",
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.214982,
-    "currentPrice": 0.214982,
-    "stopLoss": 0.22276700000000002,
-    "takeProfit": 0.19941199999999998,
-    "positionSize": 348,
+    "entryPrice": 0.08898,
+    "currentPrice": 0.08898,
+    "stopLoss": 0.09029003571428572,
+    "takeProfit": 0.08635992857142857,
+    "positionSize": 841,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-26T00:03:51.334Z"
+    "entryTime": "2026-02-28T08:03:51.241Z"
   },
   {
     "asset": "APT",
@@ -20,28 +20,28 @@
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.9795,
-    "currentPrice": 0.9795,
-    "stopLoss": 1.0273706785714287,
-    "takeProfit": 0.8837586428571429,
-    "positionSize": 348,
+    "entryPrice": 0.889464,
+    "currentPrice": 0.889464,
+    "stopLoss": 0.90813075,
+    "takeProfit": 0.8521305000000001,
+    "positionSize": 841,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-26T04:03:54.854Z"
+    "entryTime": "2026-02-28T08:05:18.006Z"
   },
   {
-    "asset": "DOGE",
+    "asset": "TIA",
     "exchange": "Drift",
     "strategy": "IBB",
     "direction": "SHORT",
     "leverage": 5,
-    "entryPrice": 0.093017,
-    "currentPrice": 0.093017,
-    "stopLoss": 0.09439528571428572,
-    "takeProfit": 0.09026042857142857,
-    "positionSize": 820,
+    "entryPrice": 0.302495,
+    "currentPrice": 0.302495,
+    "stopLoss": 0.3089334285714286,
+    "takeProfit": 0.2896181428571429,
+    "positionSize": 841,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-27T20:04:28.084Z"
+    "entryTime": "2026-02-28T08:06:45.729Z"
   }
 ]

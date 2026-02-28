@@ -1,6 +1,48 @@
 [
   {
     "strategy": "IBB",
+    "asset": "TIA",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.302495,
+    "entryTime": 1772266005730,
+    "stopLoss": 0.3089334285714286,
+    "takeProfit": 0.2896181428571429,
+    "positionSize": 841,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.3183"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "APT",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.889464,
+    "entryTime": 1772265918007,
+    "stopLoss": 0.90813075,
+    "takeProfit": 0.8521305000000001,
+    "positionSize": 841,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.9145"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "DOGE",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.08898,
+    "entryTime": 1772265831243,
+    "stopLoss": 0.09029003571428572,
+    "takeProfit": 0.08635992857142857,
+    "positionSize": 841,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.0924"
+  },
+  {
+    "strategy": "IBB",
     "asset": "DOGE",
     "exchange": "Drift",
     "direction": "SHORT",
