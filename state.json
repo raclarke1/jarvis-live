@@ -204,7 +204,8 @@
     "MOMENTUM": {}
   },
   "feedbackLoop": {
-    "currentRegime": "UNKNOWN",
+    "lastUpdate": "2026-02-28T22:18:00.593Z",
+    "currentRegime": "RANGING",
     "strategyMetrics": {}
   }
 }
