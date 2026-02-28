@@ -8,7 +8,7 @@
       "symbol": "DOGE",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.093017,
         "fillPrice": 0.0931,
@@ -36,8 +36,15 @@
         "motherBarHigh": 0.093876,
         "motherBarLow": 0.093286
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Reconciliation: position not found on Drift",
+        "time": "2026-02-28T03:03:02.650Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 7,
       "botVersion": "MegaMax v1.0",
@@ -99,7 +106,7 @@
       "symbol": "APT",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.9795,
         "fillPrice": 0.982,
@@ -127,8 +134,15 @@
         "motherBarHigh": 1.021596,
         "motherBarLow": 0.993604
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Reconciliation: position not found on Drift",
+        "time": "2026-02-28T03:03:02.650Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 3,
       "botVersion": "MegaMax v1.0",
@@ -190,7 +204,7 @@
       "symbol": "WIF",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "PHANTOM",
       "entry": {
         "price": 0.214982,
         "fillPrice": null,
@@ -218,8 +232,15 @@
         "motherBarHigh": 0.224495,
         "motherBarLow": 0.218571
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "reason": "Reconciliation: position not found on Drift",
+        "time": "2026-02-28T03:03:02.648Z"
+      },
+      "pnl": {
+        "grossPnl": 0,
+        "netPnl": 0,
+        "pnlPercent": 0
+      },
       "exchange": "Drift",
       "marketIndex": 23,
       "botVersion": "MegaMax v1.0",

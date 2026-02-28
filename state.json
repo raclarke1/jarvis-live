@@ -1,24 +1,24 @@
 {
-  "lastUpdate": "2026-02-28T02:44:40.747Z",
+  "lastUpdate": "2026-02-28T03:05:47.541Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
   "account": {
     "exchange": "drift",
-    "totalEquity": 12544.56,
+    "totalEquity": 12557.64,
     "totalDeposited": 13300,
-    "driftEquity": 12544.56,
-    "driftSub0Equity": 3598.9,
-    "driftSub1Equity": 8945.66,
-    "krakenEquity": 20470.07,
-    "freeCollateral": 10864.62,
-    "leverage": 1.55,
-    "equity": 12544.56,
+    "driftEquity": 12557.64,
+    "driftSub0Equity": 3598.78,
+    "driftSub1Equity": 8958.86,
+    "krakenEquity": 20468.16,
+    "freeCollateral": 10869.01,
+    "leverage": 1.54,
+    "equity": 12557.64,
     "startingEquity": 13300,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7",
-    "accountPnl": -755.44,
-    "accountPnlPercent": -5.68,
-    "unrealizedPnl": 72.87
+    "accountPnl": -742.36,
+    "accountPnlPercent": -5.58,
+    "unrealizedPnl": 79.96
   },
   "openPositions": [
     {
@@ -27,11 +27,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.2144,
-      "current": 0.2026,
-      "size": 1643.22,
+      "current": 0.2035,
+      "size": 1650.7,
       "sizeUnits": 8111,
-      "pnl": 95.71,
-      "pnlPercent": 5.82,
+      "pnl": 88.41,
+      "pnlPercent": 5.36,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -42,11 +42,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.317,
-      "current": 0.3221,
-      "size": 4152.93,
+      "current": 0.3217,
+      "size": 4147.2,
       "sizeUnits": 12891.5,
-      "pnl": -65.75,
-      "pnlPercent": -1.58,
+      "pnl": -60.59,
+      "pnlPercent": -1.46,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -57,11 +57,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 0.982,
-      "current": 0.9365,
-      "size": 1661.8,
+      "current": 0.9355,
+      "size": 1660.04,
       "sizeUnits": 1774.5,
-      "pnl": 80.74,
-      "pnlPercent": 4.86,
+      "pnl": 82.51,
+      "pnlPercent": 4.97,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -73,7 +73,7 @@
       "strategy": "IBB",
       "entry": 0.0931,
       "current": 0.0936,
-      "size": 4119.48,
+      "size": 4117.76,
       "sizeUnits": 43988,
       "pnl": -21.99,
       "pnlPercent": -0.53,
@@ -87,11 +87,11 @@
       "direction": "SHORT",
       "strategy": "IBB",
       "entry": 5.9528,
-      "current": 5.9946,
-      "size": 2271.95,
+      "current": 5.9749,
+      "size": 2264.49,
       "sizeUnits": 379,
-      "pnl": -15.84,
-      "pnlPercent": -0.7,
+      "pnl": -8.38,
+      "pnlPercent": -0.37,
       "leverage": 5,
       "subaccount": 1,
       "entryTime": null
@@ -105,9 +105,9 @@
     "totalPnl": -26.85,
     "avgPnl": -26.85,
     "realizedPnl": -26.85,
-    "unrealizedPnl": 72.87,
-    "accountPnl": -755.44,
-    "accountPnlPercent": -5.68,
+    "unrealizedPnl": 79.96,
+    "accountPnl": -742.36,
+    "accountPnlPercent": -5.58,
     "byStrategy": {
       "V5.0": {
         "totalTrades": 1,
@@ -201,12 +201,11 @@
     "VWAP-RSI": {
       "assets": [
         "PEPE",
-        "TIA",
-        "JTO",
-        "RNDR",
-        "PYTH",
-        "LINK",
-        "INJ"
+        "BONK",
+        "DOGE",
+        "AVAX",
+        "OP",
+        "TIA"
       ],
       "exchange": "Drift",
       "subaccount": 1,
@@ -217,10 +216,5 @@
         "rsi": 3
       }
     }
-  },
-  "feedbackLoop": {
-    "lastUpdate": "2026-02-28T02:58:01.205Z",
-    "currentRegime": "RANGING",
-    "strategyMetrics": {}
   }
 }
