@@ -1,62 +1,14 @@
 {
-  "LC": {
-    "totalTrades": 22,
-    "winningTrades": 11,
-    "losingTrades": 11,
-    "winRate": 50,
-    "totalPnlUsd": -568.01,
-    "avgWinUsd": 55.35,
-    "avgLossUsd": 106.99,
-    "profitFactor": 0.52,
-    "maxDrawdownUsd": 949.92,
-    "avgHoldingTimeMs": 78914030
-  },
-  "MOMENTUM": {
-    "totalTrades": 7,
-    "winningTrades": 0,
-    "losingTrades": 7,
-    "winRate": 0,
-    "totalPnlUsd": -449.54,
-    "avgWinUsd": 0,
-    "avgLossUsd": 64.22,
-    "profitFactor": 0,
-    "maxDrawdownUsd": 449.54,
-    "avgHoldingTimeMs": 32204138
-  },
-  "IBB": {
-    "totalTrades": 75,
-    "winningTrades": 35,
-    "losingTrades": 40,
-    "winRate": 46.67,
-    "totalPnlUsd": 881.52,
-    "avgWinUsd": 33.59,
-    "avgLossUsd": 7.36,
-    "profitFactor": 4,
-    "maxDrawdownUsd": 97.23,
-    "avgHoldingTimeMs": 61612159
-  },
   "V5.0": {
-    "totalTrades": 8,
-    "winningTrades": 5,
-    "losingTrades": 3,
-    "winRate": 62.5,
-    "totalPnlUsd": 152.68,
-    "avgWinUsd": 33.28,
-    "avgLossUsd": 4.58,
-    "profitFactor": 12.11,
-    "maxDrawdownUsd": 13.74,
-    "avgHoldingTimeMs": 33476283
-  },
-  "VWAP-RSI": {
-    "totalTrades": 62,
-    "winningTrades": 26,
-    "losingTrades": 36,
-    "winRate": 41.94,
-    "totalPnlUsd": 639.15,
-    "avgWinUsd": 27.56,
-    "avgLossUsd": 2.15,
-    "profitFactor": 9.26,
-    "maxDrawdownUsd": 76.76,
-    "avgHoldingTimeMs": 71087667
+    "totalTrades": 1,
+    "winningTrades": 0,
+    "losingTrades": 1,
+    "winRate": 0,
+    "totalPnlUsd": -26.85,
+    "avgWinUsd": 0,
+    "avgLossUsd": 26.85,
+    "profitFactor": 0,
+    "maxDrawdownUsd": 26.85,
+    "avgHoldingTimeMs": 1021721
   }
 }
