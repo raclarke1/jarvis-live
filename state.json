@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-28T17:05:14.665Z",
+  "lastUpdate": "2026-02-28T18:03:24.328Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -314,12 +314,12 @@
     }
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-02-28T17:58:00.422Z",
+    "lastUpdate": "2026-02-28T18:08:01.118Z",
     "currentRegime": "RANGING",
     "strategyMetrics": {}
   },
   "megamax": {
-    "lastCheck": "2026-02-28T17:05:14.665Z",
+    "lastCheck": "2026-02-28T18:03:24.328Z",
     "performance": {
       "totalTrades": 36,
       "winningTrades": 0,
