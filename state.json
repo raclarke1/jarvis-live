@@ -1,79 +1,210 @@
 {
-  "lastUpdate": "2026-02-28T22:08:07.610Z",
+  "lastUpdate": "2026-02-28T22:11:38.591Z",
+  "version": "MegaMax v5.0",
+  "status": "LIVE",
+  "dataSource": "drift",
   "account": {
-    "totalEquity": 11923.96,
-    "driftSub0Equity": 3513.4,
-    "driftSub1Equity": 8410.56,
-    "freeCollateral": 9871.970000000001,
-    "leverage": 0.78,
-    "unrealizedPnl": 12.82
+    "totalEquity": 11921.99,
+    "totalDeposited": 13300,
+    "driftSub0Equity": 3513.24,
+    "driftSub1Equity": 8408.75,
+    "freeCollateral": 9868.71,
+    "leverage": 1.1,
+    "unrealizedPnl": 13.9,
+    "accountPnl": -1378.01,
+    "accountPnlPercent": -10.36,
+    "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
     {
       "symbol": "WIF",
       "direction": "SHORT",
-      "size": 21180,
-      "sizeUsd": 4097.46,
+      "subaccount": 1,
+      "size": 4097.69,
+      "sizeUsd": 4097.69,
       "entry": 0.1874,
       "mark": 0.1935,
-      "pnl": -128.33,
-      "pnlPercent": -3.23,
-      "strategy": "IBB",
+      "pnl": -128.56,
+      "pnlPercent": -3.24,
       "exchange": "Drift",
-      "subaccount": 1,
-      "leverage": 5
+      "leverage": 5,
+      "strategy": "IBB",
+      "current": 0.1935
     },
     {
       "symbol": "OP",
       "direction": "SHORT",
-      "size": 20212,
-      "sizeUsd": 2448.68,
-      "entry": 0.1126,
-      "mark": 0.1211,
-      "pnl": -172.81,
-      "pnlPercent": -7.59,
-      "strategy": "IBB",
-      "exchange": "Drift",
       "subaccount": 1,
-      "leverage": 5
+      "size": 2448.72,
+      "sizeUsd": 2448.72,
+      "entry": 0.1126,
+      "mark": 0.1212,
+      "pnl": -172.85,
+      "pnlPercent": -7.6,
+      "exchange": "Drift",
+      "leverage": 5,
+      "strategy": "IBB",
+      "current": 0.1212
     },
     {
       "symbol": "PEPE",
       "direction": "SHORT",
-      "size": 1124,
-      "sizeUsd": 4108.11,
-      "entry": 3.5971,
-      "mark": 3.6549,
-      "pnl": -64.98,
-      "pnlPercent": -1.61,
-      "strategy": "IBB",
-      "exchange": "Drift",
       "subaccount": 1,
-      "leverage": 5
+      "size": 4108.33,
+      "sizeUsd": 4108.33,
+      "entry": 3.5971,
+      "mark": 3.6551,
+      "pnl": -65.21,
+      "pnlPercent": -1.61,
+      "exchange": "Drift",
+      "leverage": 5,
+      "strategy": "IBB",
+      "current": 3.6551
     },
     {
       "symbol": "TIA",
       "direction": "SHORT",
-      "size": 7689,
-      "sizeUsd": 2497.16,
-      "entry": 0.3026,
-      "mark": 0.3248,
-      "pnl": -170.15,
-      "pnlPercent": -7.31,
-      "strategy": "IBB",
-      "exchange": "Drift",
       "subaccount": 1,
-      "leverage": 5
+      "size": 2498.61,
+      "sizeUsd": 2498.61,
+      "entry": 0.3026,
+      "mark": 0.325,
+      "pnl": -171.59,
+      "pnlPercent": -7.37,
+      "exchange": "Drift",
+      "leverage": 5,
+      "strategy": "IBB",
+      "current": 0.325
     }
   ],
   "stats": {
-    "byStrategy": {},
-    "sharpeRatio": 0,
+    "byStrategy": {
+      "MOMENTUM": {
+        "totalTrades": 1,
+        "winningTrades": 0,
+        "losingTrades": 1,
+        "winRate": 0,
+        "totalPnlUsd": -143.64,
+        "avgWinUsd": 0,
+        "avgLossUsd": 143.64,
+        "profitFactor": 0,
+        "maxDrawdownUsd": 143.64,
+        "avgHoldingTimeMs": 26894748
+      },
+      "IBB": {
+        "totalTrades": 2,
+        "winningTrades": 0,
+        "losingTrades": 2,
+        "winRate": 0,
+        "totalPnlUsd": -150.16,
+        "avgWinUsd": 0,
+        "avgLossUsd": 75.08,
+        "profitFactor": 0,
+        "maxDrawdownUsd": 150.16,
+        "avgHoldingTimeMs": 25082839
+      },
+      "V5.0": {
+        "totalTrades": 1,
+        "winningTrades": 0,
+        "losingTrades": 1,
+        "winRate": 0,
+        "totalPnlUsd": -26.85,
+        "avgWinUsd": 0,
+        "avgLossUsd": 26.85,
+        "profitFactor": 0,
+        "maxDrawdownUsd": 26.85,
+        "avgHoldingTimeMs": 1021721
+      }
+    },
+    "sharpeRatio": -22.95,
     "fees": {
-      "totalFees": 0,
-      "totalDriftFees": 0
-    }
+      "totalFees": 1.15,
+      "totalDriftFees": 1.15,
+      "totalKrakenFees": 0,
+      "driftFeeRate": 0.009,
+      "krakenFeeRate": 0.06,
+      "feeSavingsFromDrift": 6.37
+    },
+    "maxDrawdown": 320.65,
+    "maxDrawdownPercent": 2.41,
+    "realizedPnl": -320.65,
+    "unrealizedPnl": 13.9,
+    "accountPnl": -1378.0100000000002,
+    "accountPnlPercent": -10.360977443609023
   },
-  "equityHistory": [],
-  "recentTrades": []
+  "equityHistory": [
+    {
+      "date": "2026-02-25",
+      "equity": 13273.15,
+      "dailyPnl": -26.85,
+      "cumPnl": -26.85,
+      "trades": 1,
+      "cumByStrategy": {
+        "V5.0": -26.85
+      }
+    },
+    {
+      "date": "2026-02-28",
+      "equity": 12979.35,
+      "dailyPnl": -293.8,
+      "cumPnl": -320.65,
+      "trades": 3,
+      "cumByStrategy": {
+        "V5.0": -26.85,
+        "MOMENTUM": -143.64,
+        "IBB": -150.16
+      }
+    }
+  ],
+  "recentTrades": [
+    {
+      "symbol": "APT",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 0.889464,
+      "exit": 0.90813075,
+      "pnl": -88.25,
+      "pnlPercent": -2.1,
+      "exitTime": "2026-02-28T19:02:34.256Z",
+      "entryTime": "2026-02-28T08:05:18.009Z",
+      "status": "CLOSED"
+    },
+    {
+      "symbol": "DOGE",
+      "strategy": "IBB",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 0.08898,
+      "exit": 0.09029003571428572,
+      "pnl": -61.91,
+      "pnlPercent": -1.47,
+      "exitTime": "2026-02-28T11:02:40.676Z",
+      "entryTime": "2026-02-28T08:03:51.245Z",
+      "status": "CLOSED"
+    },
+    {
+      "symbol": "BONK",
+      "strategy": "V5.0",
+      "direction": "SHORT",
+      "exchange": "Drift",
+      "entry": 6.3549,
+      "exit": 6.450699999999999,
+      "pnl": -26.85,
+      "pnlPercent": -1.51,
+      "exitTime": "2026-02-25T16:21:03.000Z",
+      "entryTime": "2026-02-25T16:04:01.279Z",
+      "status": "CLOSED"
+    }
+  ],
+  "strategies": {
+    "V5.0": {},
+    "IBB": {},
+    "VWAP-RSI": {},
+    "MOMENTUM": {}
+  },
+  "feedbackLoop": {
+    "currentRegime": "UNKNOWN",
+    "strategyMetrics": {}
+  }
 }
