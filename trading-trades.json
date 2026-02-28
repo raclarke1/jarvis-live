@@ -1,5 +1,19 @@
 [
   {
+    "strategy": "MOMENTUM",
+    "asset": "SUI",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.834985,
+    "entryTime": 1772280233247,
+    "stopLoss": 0.884889775,
+    "takeProfit": 0.7019055999999999,
+    "positionSize": 475,
+    "status": "OPEN",
+    "reason": "Momentum breakout below 0.8437"
+  },
+  {
     "strategy": "IBB",
     "asset": "TIA",
     "exchange": "Drift",

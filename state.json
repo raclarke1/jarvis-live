@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-28T08:06:45.737Z",
+  "lastUpdate": "2026-02-28T12:04:23.434Z",
   "version": "MegaMax v2.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -21,21 +21,6 @@
     "unrealizedPnl": 79.96
   },
   "openPositions": [
-    {
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.08898,
-      "currentPrice": 0.08898,
-      "stopLoss": 0.09029003571428572,
-      "takeProfit": 0.08635992857142857,
-      "positionSize": 841,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T08:03:51.241Z"
-    },
     {
       "asset": "APT",
       "exchange": "Drift",
@@ -65,6 +50,21 @@
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
       "entryTime": "2026-02-28T08:06:45.729Z"
+    },
+    {
+      "asset": "SUI",
+      "exchange": "Drift",
+      "strategy": "MOMENTUM",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.834985,
+      "currentPrice": 0.834985,
+      "stopLoss": 0.884889775,
+      "takeProfit": 0.7019055999999999,
+      "positionSize": 475,
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0,
+      "entryTime": "2026-02-28T12:03:53.243Z"
     }
   ],
   "stats": {
@@ -117,6 +117,20 @@
     }
   ],
   "recentTrades": [
+    {
+      "strategy": "MOMENTUM",
+      "asset": "SUI",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.834985,
+      "entryTime": 1772280233247,
+      "stopLoss": 0.884889775,
+      "takeProfit": 0.7019055999999999,
+      "positionSize": 475,
+      "status": "OPEN",
+      "reason": "Momentum breakout below 0.8437"
+    },
     {
       "strategy": "IBB",
       "asset": "TIA",
@@ -242,20 +256,6 @@
       "positionSize": 348,
       "status": "OPEN",
       "reason": "Inside bar breakout above 0.1025"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "TIA",
-      "exchange": "Drift",
-      "direction": "LONG",
-      "leverage": 5,
-      "entryPrice": 0.357917,
-      "entryTime": 1772035542481,
-      "stopLoss": 0.34806842857142856,
-      "takeProfit": 0.37761414285714284,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout above 0.3324"
     }
   ],
   "strategies": {
@@ -314,14 +314,14 @@
     }
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-02-28T11:58:00.790Z",
+    "lastUpdate": "2026-02-28T12:08:00.330Z",
     "currentRegime": "RANGING",
     "strategyMetrics": {}
   },
   "megamax": {
-    "lastCheck": "2026-02-28T08:06:45.737Z",
+    "lastCheck": "2026-02-28T12:04:23.434Z",
     "performance": {
-      "totalTrades": 35,
+      "totalTrades": 36,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,

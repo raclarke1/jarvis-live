@@ -1,20 +1,5 @@
 [
   {
-    "asset": "DOGE",
-    "exchange": "Drift",
-    "strategy": "IBB",
-    "direction": "SHORT",
-    "leverage": 5,
-    "entryPrice": 0.08898,
-    "currentPrice": 0.08898,
-    "stopLoss": 0.09029003571428572,
-    "takeProfit": 0.08635992857142857,
-    "positionSize": 841,
-    "unrealizedPnl": 0,
-    "unrealizedPnlPct": 0,
-    "entryTime": "2026-02-28T08:03:51.241Z"
-  },
-  {
     "asset": "APT",
     "exchange": "Drift",
     "strategy": "IBB",
@@ -43,5 +28,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-02-28T08:06:45.729Z"
+  },
+  {
+    "asset": "SUI",
+    "exchange": "Drift",
+    "strategy": "MOMENTUM",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.834985,
+    "currentPrice": 0.834985,
+    "stopLoss": 0.884889775,
+    "takeProfit": 0.7019055999999999,
+    "positionSize": 475,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-02-28T12:03:53.243Z"
   }
 ]
