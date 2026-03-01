@@ -1,15 +1,15 @@
 {
-  "lastUpdate": "2026-03-01T03:01:15.903Z",
+  "lastUpdate": "2026-03-01T03:10:00.000Z",
   "version": "Max2 v1.0",
   "status": "TESTING",
   "account": {
-    "sub0Equity": 3510.42,
-    "sub1Equity": 8363.16,
-    "totalEquity": 11873.58,
+    "sub0Equity": 3510.64,
+    "sub1Equity": 8358.69,
+    "totalEquity": 11869.33,
     "startingEquity": 11874,
     "leverage": {
       "sub0": 0.04,
-      "sub1": 0
+      "sub1": 0.12
     }
   },
   "openPositions": [
@@ -18,58 +18,70 @@
       "direction": "SHORT",
       "subaccount": 0,
       "strategy": "BB_SQUEEZE",
-      "size": "$139.08",
-      "entryPrice": 87.9647,
-      "currentPrice": 88.025,
-      "unrealizedPnl": -0.1,
-      "stopLoss": 91,
-      "takeProfit": 84
+      "size": "$138.90",
+      "entryPrice": 87.96,
+      "currentPrice": 87.91,
+      "unrealizedPnl": 0.09,
+      "stopLoss": 91.00,
+      "takeProfit": 84.00
     },
     {
       "asset": "DOGE",
       "direction": "LONG",
       "subaccount": 1,
       "strategy": "MOMENTUM",
-      "size": "$40.03",
-      "entryPrice": -0.0972,
-      "currentPrice": 0.0971,
-      "unrealizedPnl": 80.07,
-      "stopLoss": 0.09,
-      "takeProfit": 0.1
+      "size": "$39.89",
+      "entryPrice": 0.0972,
+      "currentPrice": 0.0968,
+      "unrealizedPnl": -0.16,
+      "stopLoss": 0.094,
+      "takeProfit": 0.101
+    },
+    {
+      "asset": "TIA",
+      "direction": "LONG",
+      "subaccount": 1,
+      "strategy": "UNKNOWN",
+      "size": "$965.40",
+      "entryPrice": 0.3369,
+      "currentPrice": 0.3363,
+      "unrealizedPnl": -1.72,
+      "stopLoss": null,
+      "takeProfit": null
     }
   ],
   "orders": [
     {
       "asset": "SOL",
-      "type": "triggerMarket",
+      "type": "Stop-Loss",
       "direction": "LONG",
-      "triggerPrice": 91,
+      "triggerPrice": 91.00,
       "triggerCondition": "above",
       "size": 1.58
     },
     {
       "asset": "SOL",
-      "type": "triggerMarket",
+      "type": "Take-Profit",
       "direction": "LONG",
-      "triggerPrice": 84,
+      "triggerPrice": 84.00,
       "triggerCondition": "below",
       "size": 1.58
     },
     {
       "asset": "DOGE",
-      "type": "triggerMarket",
+      "type": "Stop-Loss",
       "direction": "SHORT",
-      "triggerPrice": 0.09,
+      "triggerPrice": 0.094,
       "triggerCondition": "below",
-      "size": 412
+      "size": 412.0
     },
     {
       "asset": "DOGE",
-      "type": "triggerMarket",
+      "type": "Take-Profit",
       "direction": "SHORT",
-      "triggerPrice": 0.1,
+      "triggerPrice": 0.101,
       "triggerCondition": "above",
-      "size": 412
+      "size": 412.0
     }
   ],
   "recentTrades": [],
