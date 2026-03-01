@@ -43,5 +43,20 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-03-01T12:04:11.263Z"
+  },
+  {
+    "asset": "TIA",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.321263,
+    "currentPrice": 0.321263,
+    "stopLoss": 0.32803175,
+    "takeProfit": 0.3077255,
+    "positionSize": 348,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-03-01T16:04:25.145Z"
   }
 ]
