@@ -13,5 +13,35 @@
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
     "entryTime": "2026-03-01T04:04:10.405Z"
+  },
+  {
+    "asset": "WIF",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.19861,
+    "currentPrice": 0.19861,
+    "stopLoss": 0.2047774642857143,
+    "takeProfit": 0.18627507142857141,
+    "positionSize": 348,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-03-01T08:03:53.682Z"
+  },
+  {
+    "asset": "PEPE",
+    "exchange": "Drift",
+    "strategy": "IBB",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 3.6371,
+    "currentPrice": 3.6371,
+    "stopLoss": 3.7192678571428575,
+    "takeProfit": 3.472764285714286,
+    "positionSize": 348,
+    "unrealizedPnl": 0,
+    "unrealizedPnlPct": 0,
+    "entryTime": "2026-03-01T08:05:19.615Z"
   }
 ]

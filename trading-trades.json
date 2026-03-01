@@ -1,6 +1,34 @@
 [
   {
     "strategy": "IBB",
+    "asset": "PEPE",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 3.6371,
+    "entryTime": 1772352319617,
+    "stopLoss": 3.7192678571428575,
+    "takeProfit": 3.472764285714286,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 3.6648"
+  },
+  {
+    "strategy": "IBB",
+    "asset": "WIF",
+    "exchange": "Drift",
+    "direction": "SHORT",
+    "leverage": 5,
+    "entryPrice": 0.19861,
+    "entryTime": 1772352233684,
+    "stopLoss": 0.2047774642857143,
+    "takeProfit": 0.18627507142857141,
+    "positionSize": 348,
+    "status": "OPEN",
+    "reason": "Inside bar breakout below 0.1985"
+  },
+  {
+    "strategy": "IBB",
     "asset": "TIA",
     "exchange": "Drift",
     "direction": "LONG",
