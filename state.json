@@ -1,18 +1,18 @@
 {
-  "lastUpdate": "2026-03-01T13:51:31.998Z",
+  "lastUpdate": "2026-03-01T14:04:30.827Z",
   "version": "MegaMax v5.0",
   "status": "LIVE",
   "dataSource": "drift",
   "account": {
-    "totalEquity": 11915.7,
+    "totalEquity": 11830.89,
     "totalDeposited": 13300,
-    "driftSub0Equity": 3512.78,
-    "driftSub1Equity": 8402.92,
-    "freeCollateral": 11018.77,
-    "leverage": 0.44,
-    "unrealizedPnl": 128.52,
-    "accountPnl": -1384.3,
-    "accountPnlPercent": -10.41,
+    "driftSub0Equity": 3512.1,
+    "driftSub1Equity": 8318.79,
+    "freeCollateral": 11001.54,
+    "leverage": 0.45,
+    "unrealizedPnl": 47.9,
+    "accountPnl": -1469.11,
+    "accountPnlPercent": -11.05,
     "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
   },
   "openPositions": [
@@ -20,61 +20,61 @@
       "symbol": "SOL",
       "direction": "SHORT",
       "subaccount": 0,
-      "size": 134.26,
-      "sizeUsd": 134.26,
+      "size": 135.98,
+      "sizeUsd": 135.98,
       "entry": 87.9647,
-      "mark": 84.975,
-      "pnl": 4.72,
-      "pnlPercent": 3.4,
+      "mark": 86.062,
+      "pnl": 3.01,
+      "pnlPercent": 2.16,
       "exchange": "Drift",
       "leverage": 5,
       "strategy": "V5.0",
-      "current": 84.975
+      "current": 86.062
     },
     {
       "symbol": "APT",
       "direction": "SHORT",
       "subaccount": 1,
-      "size": 1716.02,
-      "sizeUsd": 1716.02,
+      "size": 1739.92,
+      "sizeUsd": 1739.92,
       "entry": 0.943,
-      "mark": 0.9305,
-      "pnl": 22.97,
-      "pnlPercent": 1.32,
+      "mark": 0.9435,
+      "pnl": -0.93,
+      "pnlPercent": -0.05,
       "exchange": "Drift",
       "leverage": 5,
       "strategy": "IBB",
-      "current": 0.9305
+      "current": 0.9435
     },
     {
       "symbol": "WIF",
       "direction": "SHORT",
       "subaccount": 1,
-      "size": 1693.52,
-      "sizeUsd": 1693.52,
+      "size": 1724.65,
+      "sizeUsd": 1724.65,
       "entry": 0.1984,
-      "mark": 0.1932,
-      "pnl": 45.85,
-      "pnlPercent": 2.64,
+      "mark": 0.1967,
+      "pnl": 14.72,
+      "pnlPercent": 0.85,
       "exchange": "Drift",
       "leverage": 5,
       "strategy": "IBB",
-      "current": 0.1932
+      "current": 0.1967
     },
     {
       "symbol": "PEPE",
       "direction": "SHORT",
       "subaccount": 1,
-      "size": 1682.59,
-      "sizeUsd": 1682.59,
+      "size": 1710.82,
+      "sizeUsd": 1710.82,
       "entry": 3.6033,
-      "mark": 3.5054,
-      "pnl": 47,
-      "pnlPercent": 2.72,
+      "mark": 3.5642,
+      "pnl": 18.77,
+      "pnlPercent": 1.09,
       "exchange": "Drift",
       "leverage": 5,
       "strategy": "IBB",
-      "current": 3.5054
+      "current": 3.5642
     }
   ],
   "stats": {
@@ -140,9 +140,9 @@
     "maxDrawdown": 410.15,
     "maxDrawdownPercent": 3.08,
     "realizedPnl": 12164.78,
-    "unrealizedPnl": 128.52,
-    "accountPnl": -1384.2999999999993,
-    "accountPnlPercent": -10.408270676691723
+    "unrealizedPnl": 47.9,
+    "accountPnl": -1469.1099999999988,
+    "accountPnlPercent": -11.04593984962405
   },
   "equityHistory": [
     {
@@ -359,8 +359,7 @@
     "MOMENTUM": {}
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-03-01T13:58:00.649Z",
-    "currentRegime": "RANGING",
+    "currentRegime": "UNKNOWN",
     "strategyMetrics": {}
   }
 }
