@@ -1,0 +1,42 @@
+{
+  "lastUpdate": "2026-03-01T01:52:03.295Z",
+  "version": "Max2 v1.0",
+  "status": "TEST",
+  "dataSource": "drift",
+  "account": {
+    "totalEquity": 11872.19,
+    "totalDeposited": 0,
+    "driftSub0Equity": 3509.27,
+    "driftSub1Equity": 8362.92,
+    "freeCollateral": 11871.62,
+    "leverage": 0,
+    "unrealizedPnl": 0,
+    "accountPnl": 11872.19,
+    "accountPnlPercent": 0,
+    "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+  },
+  "openPositions": [],
+  "stats": {
+    "byStrategy": {},
+    "sharpeRatio": 0,
+    "fees": {
+      "totalFees": 0,
+      "totalDriftFees": 0,
+      "driftFeeRate": 0.036,
+      "krakenFeeRate": 0.06,
+      "feeSavingsFromDrift": 0
+    },
+    "maxDrawdown": 0,
+    "maxDrawdownPercent": 0,
+    "realizedPnl": 0,
+    "unrealizedPnl": 0,
+    "accountPnl": 11872.19,
+    "accountPnlPercent": 0
+  },
+  "equityHistory": [],
+  "recentTrades": [],
+  "strategies": {
+    "BB_SQUEEZE": {},
+    "MOMENTUM": {}
+  }
+}
