@@ -1,42 +1,40 @@
 {
-  "lastUpdate": "2026-03-01T01:52:03.295Z",
+  "lastUpdate": "2026-03-01T02:59:57.295Z",
   "version": "Max2 v1.0",
-  "status": "TEST",
-  "dataSource": "drift",
+  "status": "TESTING",
   "account": {
-    "totalEquity": 11872.19,
-    "totalDeposited": 0,
-    "driftSub0Equity": 3509.27,
-    "driftSub1Equity": 8362.92,
-    "freeCollateral": 11871.62,
-    "leverage": 0,
-    "unrealizedPnl": 0,
-    "accountPnl": 11872.19,
-    "accountPnlPercent": 0,
-    "wallet": "3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"
+    "sub0Equity": 3510.64,
+    "sub1Equity": 8363.09,
+    "totalEquity": 11873.73,
+    "startingEquity": 11874,
+    "leverage": {
+      "sub0": 0.04,
+      "sub1": 0
+    }
   },
-  "openPositions": [],
-  "stats": {
-    "byStrategy": {},
-    "sharpeRatio": 0,
-    "fees": {
-      "totalFees": 0,
-      "totalDriftFees": 0,
-      "driftFeeRate": 0.036,
-      "krakenFeeRate": 0.06,
-      "feeSavingsFromDrift": 0
+  "openPositions": [
+    {
+      "asset": "SOL",
+      "direction": "SHORT",
+      "subaccount": 0,
+      "strategy": "BB_SQUEEZE",
+      "size": "$138.92",
+      "entryPrice": 87.9647,
+      "currentPrice": 87.9212,
+      "unrealizedPnl": 0.07
     },
-    "maxDrawdown": 0,
-    "maxDrawdownPercent": 0,
-    "realizedPnl": 0,
-    "unrealizedPnl": 0,
-    "accountPnl": 11872.19,
-    "accountPnlPercent": 0
-  },
-  "equityHistory": [],
+    {
+      "asset": "DOGE",
+      "direction": "LONG",
+      "subaccount": 1,
+      "strategy": "MOMENTUM",
+      "size": "$39.99",
+      "entryPrice": -0.0972,
+      "currentPrice": 0.0971,
+      "unrealizedPnl": 80.04
+    }
+  ],
+  "orders": [],
   "recentTrades": [],
-  "strategies": {
-    "BB_SQUEEZE": {},
-    "MOMENTUM": {}
-  }
+  "equityHistory": []
 }
