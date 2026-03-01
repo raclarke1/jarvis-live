@@ -1,0 +1,53 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Max2 Dashboard&lt;/title&gt;
+  &lt;style&gt;
+    body { background: #121212; color: #fff; font-family: Arial, sans-serif; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+    a { color: #00bfff; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Max2 Trading Dashboard&lt;/h1&gt;
+  &lt;div id="overview"&gt;&lt;/div&gt;
+  &lt;h2&gt;Open Positions&lt;/h2&gt;
+  &lt;table id="positions"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Sub&lt;/th&gt;&lt;th&gt;Strategy&lt;/th&gt;&lt;th&gt;Asset&lt;/th&gt;&lt;th&gt;Direction&lt;/th&gt;&lt;th&gt;Size&lt;/th&gt;&lt;th&gt;Entry&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;/table&gt;
+  &lt;h2&gt;Trade History&lt;/h2&gt;
+  &lt;table id="history"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;Strategy&lt;/th&gt;&lt;th&gt;Asset&lt;/th&gt;&lt;th&gt;Direction&lt;/th&gt;&lt;th&gt;Outcome&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;/table&gt;
+  &lt;h2&gt;Strategy Performance&lt;/h2&gt;
+  &lt;div id="performance"&gt;&lt;/div&gt;
+  &lt;h2&gt;Equity Curve&lt;/h2&gt;
+  &lt;canvas id="equityCurve" width="800" height="400"&gt;&lt;/canvas&gt;
+  &lt;a href="https://app.drift.trade/overview?authority=3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"&gt;View on Drift&lt;/a&gt;
+
+  &lt;script&gt;
+    async function loadData() {
+      const response = await fetch('state-max2.json');
+      const data = await response.json();
+      // Populate overview
+      document.getElementById('overview').innerHTML = `Sub0 Balance: ${data.subaccounts[0].balance} | Sub1 Balance: ${data.subaccounts[1].balance}`;
+
+      // Positions
+      const posBody = document.getElementById('positions').querySelector('tbody');
+      posBody.innerHTML = '';
+      data.positions.forEach(pos =&gt; {
+        const row = document.createElement('tr');
+        row.innerHTML = `&lt;td&gt;${pos.subaccount}&lt;/td&gt;&lt;td&gt;${pos.strategy}&lt;/td&gt;&lt;td&gt;${pos.asset}&lt;/td&gt;&lt;td&gt;${pos.direction}&lt;/td&gt;&lt;td&gt;${pos.size}&lt;/td&gt;&lt;td&gt;${pos.entryPrice}&lt;/td&gt;`;
+        posBody.appendChild(row);
+      });
+
+      // History (assume trades in data)
+      // Similar for history, performance
+
+      // Equity curve with Chart.js (include script if needed)
+    }
+
+    loadData();
+    setInterval(loadData, 60000); // Refresh every 60s
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
