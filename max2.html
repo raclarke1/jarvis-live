@@ -1,53 +1,265 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Max2 Dashboard&lt;/title&gt;
-  &lt;style&gt;
-    body { background: #121212; color: #fff; font-family: Arial, sans-serif; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #333; padding: 8px; text-align: left; }
-    a { color: #00bfff; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Max2 Trading Dashboard&lt;/h1&gt;
-  &lt;div id="overview"&gt;&lt;/div&gt;
-  &lt;h2&gt;Open Positions&lt;/h2&gt;
-  &lt;table id="positions"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Sub&lt;/th&gt;&lt;th&gt;Strategy&lt;/th&gt;&lt;th&gt;Asset&lt;/th&gt;&lt;th&gt;Direction&lt;/th&gt;&lt;th&gt;Size&lt;/th&gt;&lt;th&gt;Entry&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;/table&gt;
-  &lt;h2&gt;Trade History&lt;/h2&gt;
-  &lt;table id="history"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;Strategy&lt;/th&gt;&lt;th&gt;Asset&lt;/th&gt;&lt;th&gt;Direction&lt;/th&gt;&lt;th&gt;Outcome&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;/table&gt;
-  &lt;h2&gt;Strategy Performance&lt;/h2&gt;
-  &lt;div id="performance"&gt;&lt;/div&gt;
-  &lt;h2&gt;Equity Curve&lt;/h2&gt;
-  &lt;canvas id="equityCurve" width="800" height="400"&gt;&lt;/canvas&gt;
-  &lt;a href="https://app.drift.trade/overview?authority=3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7"&gt;View on Drift&lt;/a&gt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max2 Trading Dashboard</title>
+  <style>
+    body {
+      background-color: #0a0a0f;
+      color: #e4e4e7;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      background-color: #00ff88;
+      color: #000;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background-color: #1a1a2e;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .card-title {
+      font-size: 0.9rem;
+      color: #71717a;
+      margin-bottom: 8px;
+    }
+    .card-value {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #1a1a2e;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #2a2a3e;
+    }
+    th {
+      background-color: #25253a;
+      color: #a1a1aa;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .long { color: #00ff88; }
+    .short { color: #ff4757; }
+    .profit { color: #00ff88; }
+    .loss { color: #ff4757; }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    .footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      table {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Max2 Trading System</h1>
+      <span class="badge" id="statusBadge">TESTING</span>
+      <div>
+        <span class="card-title">Total Equity:</span>
+        <span id="totalEquity" class="card-value">--</span>
+      </div>
+      <div>
+        <span class="card-title">Overall P&L:</span>
+        <span id="overallPnl" class="card-value">--</span>
+      </div>
+    </div>
 
-  &lt;script&gt;
+    <div class="card-container">
+      <div class="card">
+        <div class="card-title">Sub0 Equity</div>
+        <div id="sub0Equity" class="card-value">--</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Sub1 Equity</div>
+        <div id="sub1Equity" class="card-value">--</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Total Leverage</div>
+        <div id="totalLeverage" class="card-value">--</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Free Collateral</div>
+        <div id="freeCollateral" class="card-value">--</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Open Positions</h2>
+    <table id="positionsTable">
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Direction</th>
+          <th>Strategy</th>
+          <th>Entry</th>
+          <th>Current</th>
+          <th>P&L</th>
+          <th>SL</th>
+          <th>TP</th>
+          <th>Subaccount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2 class="section-title">Orders</h2>
+    <table id="ordersTable">
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Type</th>
+          <th>Direction</th>
+          <th>Trigger</th>
+          <th>Condition</th>
+          <th>Size</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2 class="section-title">Trade History</h2>
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Asset</th>
+          <th>Direction</th>
+          <th>Strategy</th>
+          <th>Entry</th>
+          <th>Exit</th>
+          <th>P&L</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="footer">
+      <a href="https://app.drift.trade/overview?authority=3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7" target="_blank">View Drift Account</a>
+    </div>
+  </div>
+
+  <script>
     async function loadData() {
-      const response = await fetch('state-max2.json');
-      const data = await response.json();
-      // Populate overview
-      document.getElementById('overview').innerHTML = `Sub0 Balance: ${data.subaccounts[0].balance} | Sub1 Balance: ${data.subaccounts[1].balance}`;
+      try {
+        const response = await fetch('state-max2.json');
+        const data = await response.json();
 
-      // Positions
-      const posBody = document.getElementById('positions').querySelector('tbody');
-      posBody.innerHTML = '';
-      data.positions.forEach(pos =&gt; {
-        const row = document.createElement('tr');
-        row.innerHTML = `&lt;td&gt;${pos.subaccount}&lt;/td&gt;&lt;td&gt;${pos.strategy}&lt;/td&gt;&lt;td&gt;${pos.asset}&lt;/td&gt;&lt;td&gt;${pos.direction}&lt;/td&gt;&lt;td&gt;${pos.size}&lt;/td&gt;&lt;td&gt;${pos.entryPrice}&lt;/td&gt;`;
-        posBody.appendChild(row);
-      });
+        // Header
+        document.getElementById('statusBadge').textContent = data.status;
+        document.getElementById('totalEquity').textContent = '$' + data.account.totalEquity.toLocaleString();
+        // Overall P&L - assuming it's accountPnl or calculate from starting
+        const overallPnl = data.account.totalEquity - data.account.startingEquity;
+        document.getElementById('overallPnl').textContent = (overallPnl >= 0 ? '+' : '') + '$' + overallPnl.toLocaleString();
+        document.getElementById('overallPnl').classList.add(overallPnl >= 0 ? 'profit' : 'loss');
 
-      // History (assume trades in data)
-      // Similar for history, performance
+        // Account Cards
+        document.getElementById('sub0Equity').textContent = '$' + data.account.sub0Equity.toLocaleString();
+        document.getElementById('sub1Equity').textContent = '$' + data.account.sub1Equity.toLocaleString();
+        document.getElementById('totalLeverage').textContent = ((data.account.leverage.sub0 + data.account.leverage.sub1) / 2).toFixed(2) + 'x';
+        // Free collateral not in state, omit or calculate if possible
+        document.getElementById('freeCollateral').textContent = '--'; // Add if available
 
-      // Equity curve with Chart.js (include script if needed)
+        // Open Positions Table
+        const positionsBody = document.querySelector('#positionsTable tbody');
+        positionsBody.innerHTML = '';
+        data.openPositions.forEach(pos => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${pos.asset}</td>
+            <td class="${pos.direction.toLowerCase()}">${pos.direction}</td>
+            <td>${pos.strategy}</td>
+            <td>${pos.entryPrice.toFixed(2)}</td>
+            <td>${pos.currentPrice.toFixed(2)}</td>
+            <td class="${pos.unrealizedPnl >= 0 ? 'profit' : 'loss'}">${pos.unrealizedPnl.toFixed(2)}</td>
+            <td>${pos.stopLoss ? pos.stopLoss.toFixed(2) : '--'}</td>
+            <td>${pos.takeProfit ? pos.takeProfit.toFixed(2) : '--'}</td>
+            <td>${pos.subaccount}</td>
+          `;
+          positionsBody.appendChild(row);
+        });
+
+        // Orders Table
+        const ordersBody = document.querySelector('#ordersTable tbody');
+        ordersBody.innerHTML = '';
+        data.orders.forEach(order => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${order.asset}</td>
+            <td>${order.type}</td>
+            <td class="${order.direction.toLowerCase()}">${order.direction}</td>
+            <td>${order.triggerPrice.toFixed(2)}</td>
+            <td>${order.triggerCondition}</td>
+            <td>${order.size.toFixed(4)}</td>
+          `;
+          ordersBody.appendChild(row);
+        });
+
+        // Trade History - assuming empty, but fetch if exists
+        const historyBody = document.querySelector('#historyTable tbody');
+        historyBody.innerHTML = '<tr><td colspan="7" style="text-align:center">No trade history available</td></tr>';
+        // If fetching max2-trade-log.json:
+        // const logResponse = await fetch('max2-trade-log.json');
+        // const logData = await logResponse.json();
+        // logData.forEach(trade => { ... });
+
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
     }
 
+    // Initial load
     loadData();
-    setInterval(loadData, 60000); // Refresh every 60s
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+
+    // Auto-refresh every 60 seconds
+    setInterval(loadData, 60000);
+  </script>
+</body>
+</html>

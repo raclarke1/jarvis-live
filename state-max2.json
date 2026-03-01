@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-03-01T02:59:57.295Z",
+  "lastUpdate": "2026-03-01T03:01:15.903Z",
   "version": "Max2 v1.0",
   "status": "TESTING",
   "account": {
-    "sub0Equity": 3510.64,
-    "sub1Equity": 8363.09,
-    "totalEquity": 11873.73,
+    "sub0Equity": 3510.42,
+    "sub1Equity": 8363.16,
+    "totalEquity": 11873.58,
     "startingEquity": 11874,
     "leverage": {
       "sub0": 0.04,
@@ -18,23 +18,60 @@
       "direction": "SHORT",
       "subaccount": 0,
       "strategy": "BB_SQUEEZE",
-      "size": "$138.92",
+      "size": "$139.08",
       "entryPrice": 87.9647,
-      "currentPrice": 87.9212,
-      "unrealizedPnl": 0.07
+      "currentPrice": 88.025,
+      "unrealizedPnl": -0.1,
+      "stopLoss": 91,
+      "takeProfit": 84
     },
     {
       "asset": "DOGE",
       "direction": "LONG",
       "subaccount": 1,
       "strategy": "MOMENTUM",
-      "size": "$39.99",
+      "size": "$40.03",
       "entryPrice": -0.0972,
       "currentPrice": 0.0971,
-      "unrealizedPnl": 80.04
+      "unrealizedPnl": 80.07,
+      "stopLoss": 0.09,
+      "takeProfit": 0.1
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "asset": "SOL",
+      "type": "triggerMarket",
+      "direction": "LONG",
+      "triggerPrice": 91,
+      "triggerCondition": "above",
+      "size": 1.58
+    },
+    {
+      "asset": "SOL",
+      "type": "triggerMarket",
+      "direction": "LONG",
+      "triggerPrice": 84,
+      "triggerCondition": "below",
+      "size": 1.58
+    },
+    {
+      "asset": "DOGE",
+      "type": "triggerMarket",
+      "direction": "SHORT",
+      "triggerPrice": 0.09,
+      "triggerCondition": "below",
+      "size": 412
+    },
+    {
+      "asset": "DOGE",
+      "type": "triggerMarket",
+      "direction": "SHORT",
+      "triggerPrice": 0.1,
+      "triggerCondition": "above",
+      "size": 412
+    }
+  ],
   "recentTrades": [],
   "equityHistory": []
 }
