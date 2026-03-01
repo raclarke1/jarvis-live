@@ -359,7 +359,8 @@
     "MOMENTUM": {}
   },
   "feedbackLoop": {
-    "currentRegime": "UNKNOWN",
+    "lastUpdate": "2026-03-01T14:08:00.360Z",
+    "currentRegime": "RANGING",
     "strategyMetrics": {}
   }
 }
