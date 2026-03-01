@@ -1,17 +1,17 @@
 [
   {
-    "asset": "OP",
+    "asset": "TIA",
     "exchange": "Drift",
-    "strategy": "V5.0",
-    "direction": "SHORT",
+    "strategy": "IBB",
+    "direction": "LONG",
     "leverage": 5,
-    "entryPrice": 0.122959,
-    "currentPrice": 0.122959,
-    "stopLoss": 0.12511678571428572,
-    "takeProfit": 0.11864342857142857,
-    "positionSize": 749,
+    "entryPrice": 0.332142,
+    "currentPrice": 0.332142,
+    "stopLoss": 0.3223641428571428,
+    "takeProfit": 0.35169771428571434,
+    "positionSize": 348,
     "unrealizedPnl": 0,
     "unrealizedPnlPct": 0,
-    "entryTime": "2026-03-01T00:03:48.881Z"
+    "entryTime": "2026-03-01T04:04:10.405Z"
   }
 ]

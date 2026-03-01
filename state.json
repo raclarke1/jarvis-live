@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-03-01T00:03:48.894Z",
+  "lastUpdate": "2026-03-01T04:04:10.421Z",
   "version": "MegaMax v5.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -17,19 +17,19 @@
   },
   "openPositions": [
     {
-      "asset": "OP",
+      "asset": "TIA",
       "exchange": "Drift",
-      "strategy": "V5.0",
-      "direction": "SHORT",
+      "strategy": "IBB",
+      "direction": "LONG",
       "leverage": 5,
-      "entryPrice": 0.122959,
-      "currentPrice": 0.122959,
-      "stopLoss": 0.12511678571428572,
-      "takeProfit": 0.11864342857142857,
-      "positionSize": 749,
+      "entryPrice": 0.332142,
+      "currentPrice": 0.332142,
+      "stopLoss": 0.3223641428571428,
+      "takeProfit": 0.35169771428571434,
+      "positionSize": 348,
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
-      "entryTime": "2026-03-01T00:03:48.881Z"
+      "entryTime": "2026-03-01T04:04:10.405Z"
     }
   ],
   "stats": {
@@ -112,6 +112,20 @@
     }
   ],
   "recentTrades": [
+    {
+      "strategy": "IBB",
+      "asset": "TIA",
+      "exchange": "Drift",
+      "direction": "LONG",
+      "leverage": 5,
+      "entryPrice": 0.332142,
+      "entryTime": 1772337850407,
+      "stopLoss": 0.3223641428571428,
+      "takeProfit": 0.35169771428571434,
+      "positionSize": 348,
+      "status": "OPEN",
+      "reason": "Inside bar breakout above 0.3282"
+    },
     {
       "strategy": "V5.0",
       "asset": "OP",
@@ -237,20 +251,6 @@
       "positionSize": 348,
       "status": "OPEN",
       "reason": "Inside bar breakout below 0.1257"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "WIF",
-      "exchange": "Drift",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.214982,
-      "entryTime": 1772064231335,
-      "stopLoss": 0.22276700000000002,
-      "takeProfit": 0.19941199999999998,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout below 0.2186"
     }
   ],
   "strategies": {
@@ -260,14 +260,14 @@
     "MOMENTUM": {}
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-03-01T03:58:01.202Z",
+    "lastUpdate": "2026-03-01T04:08:00.572Z",
     "currentRegime": "RANGING",
     "strategyMetrics": {}
   },
   "megamax": {
-    "lastCheck": "2026-03-01T00:03:48.894Z",
+    "lastCheck": "2026-03-01T04:04:10.421Z",
     "performance": {
-      "totalTrades": 37,
+      "totalTrades": 38,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,
