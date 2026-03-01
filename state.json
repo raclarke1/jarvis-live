@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-28T23:03:24.504Z",
+  "lastUpdate": "2026-03-01T00:03:48.894Z",
   "version": "MegaMax v5.0",
   "status": "LIVE",
   "dataSource": "drift",
@@ -17,49 +17,19 @@
   },
   "openPositions": [
     {
-      "asset": "APT",
+      "asset": "OP",
       "exchange": "Drift",
-      "strategy": "IBB",
+      "strategy": "V5.0",
       "direction": "SHORT",
       "leverage": 5,
-      "entryPrice": 0.889464,
-      "currentPrice": 0.889464,
-      "stopLoss": 0.90813075,
-      "takeProfit": 0.8521305000000001,
-      "positionSize": 841,
+      "entryPrice": 0.122959,
+      "currentPrice": 0.122959,
+      "stopLoss": 0.12511678571428572,
+      "takeProfit": 0.11864342857142857,
+      "positionSize": 749,
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T08:05:18.006Z"
-    },
-    {
-      "asset": "TIA",
-      "exchange": "Drift",
-      "strategy": "IBB",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.302495,
-      "currentPrice": 0.302495,
-      "stopLoss": 0.3089334285714286,
-      "takeProfit": 0.2896181428571429,
-      "positionSize": 841,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T08:06:45.729Z"
-    },
-    {
-      "asset": "SUI",
-      "exchange": "Drift",
-      "strategy": "MOMENTUM",
-      "direction": "SHORT",
-      "leverage": 5,
-      "entryPrice": 0.834985,
-      "currentPrice": 0.834985,
-      "stopLoss": 0.884889775,
-      "takeProfit": 0.7019055999999999,
-      "positionSize": 475,
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0,
-      "entryTime": "2026-02-28T12:03:53.243Z"
+      "entryTime": "2026-03-01T00:03:48.881Z"
     }
   ],
   "stats": {
@@ -142,6 +112,20 @@
     }
   ],
   "recentTrades": [
+    {
+      "strategy": "V5.0",
+      "asset": "OP",
+      "exchange": "Drift",
+      "direction": "SHORT",
+      "leverage": 5,
+      "entryPrice": 0.122959,
+      "entryTime": 1772323428882,
+      "stopLoss": 0.12511678571428572,
+      "takeProfit": 0.11864342857142857,
+      "positionSize": 749,
+      "status": "OPEN",
+      "reason": "Fade breakout above 0.1227"
+    },
     {
       "strategy": "MOMENTUM",
       "asset": "SUI",
@@ -267,20 +251,6 @@
       "positionSize": 348,
       "status": "OPEN",
       "reason": "Inside bar breakout below 0.2186"
-    },
-    {
-      "strategy": "IBB",
-      "asset": "DOGE",
-      "exchange": "Drift",
-      "direction": "LONG",
-      "leverage": 5,
-      "entryPrice": 0.104215,
-      "entryTime": 1772049833933,
-      "stopLoss": 0.10219128571428572,
-      "takeProfit": 0.10826242857142857,
-      "positionSize": 348,
-      "status": "OPEN",
-      "reason": "Inside bar breakout above 0.1025"
     }
   ],
   "strategies": {
@@ -290,14 +260,14 @@
     "MOMENTUM": {}
   },
   "feedbackLoop": {
-    "lastUpdate": "2026-02-28T23:58:00.878Z",
+    "lastUpdate": "2026-03-01T00:08:00.397Z",
     "currentRegime": "RANGING",
     "strategyMetrics": {}
   },
   "megamax": {
-    "lastCheck": "2026-02-28T23:03:24.504Z",
+    "lastCheck": "2026-03-01T00:03:48.894Z",
     "performance": {
-      "totalTrades": 36,
+      "totalTrades": 37,
       "winningTrades": 0,
       "losingTrades": 0,
       "winRate": 0,
