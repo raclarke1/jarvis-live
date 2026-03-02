@@ -2,6 +2,114 @@
   "version": "1.0",
   "trades": [
     {
+      "id": "1772395510937-OP",
+      "timestamp": "2026-03-01T20:05:10.937Z",
+      "timestampMs": 1772395510937,
+      "asset": "OP",
+      "symbol": "OP",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.12085,
+        "fillPrice": 0.1198,
+        "time": "2026-03-01T20:05:10.937Z",
+        "reason": "Inside bar breakout below 0.1227"
+      },
+      "stopLoss": {
+        "price": 0.12389853571428572,
+        "distanceUsd": 0.003048535714285719,
+        "distancePct": 2.5225781665583114
+      },
+      "takeProfit": {
+        "price": 0.11475292857142858,
+        "distanceUsd": 0.006097071428571424,
+        "distancePct": 5.04515633311661
+      },
+      "riskReward": 1.9999999999999953,
+      "positionSize": 348,
+      "leverage": 5,
+      "notionalValue": 1740,
+      "marketContext": {
+        "atr": 0.0020323571428571435,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.12385,
+        "motherBarLow": 0.122652
+      },
+      "exit": {
+        "price": 0.12389853571428572,
+        "reason": "Position closed (exit price estimated)",
+        "time": "2026-03-02T04:02:52.951Z"
+      },
+      "pnl": {
+        "grossPnl": -43.89,
+        "fees": 0,
+        "netPnl": -43.89,
+        "pnlPercent": -2.52,
+        "usd": -43.89,
+        "percent": -2.52
+      },
+      "exchange": "Drift",
+      "marketIndex": 11,
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 28662014
+    },
+    {
+      "id": "1772381065150-TIA",
+      "timestamp": "2026-03-01T16:04:25.150Z",
+      "timestampMs": 1772381065150,
+      "asset": "TIA",
+      "symbol": "TIA",
+      "strategy": "IBB",
+      "direction": "short",
+      "status": "CLOSED",
+      "entry": {
+        "price": 0.321263,
+        "fillPrice": 0.3224,
+        "time": "2026-03-01T16:04:25.150Z",
+        "reason": "Inside bar breakout below 0.3223"
+      },
+      "stopLoss": {
+        "price": 0.32803175,
+        "distanceUsd": 0.00676874999999999,
+        "distancePct": 2.106918630530123
+      },
+      "takeProfit": {
+        "price": 0.3077255,
+        "distanceUsd": 0.013537500000000036,
+        "distancePct": 4.213837261060264
+      },
+      "riskReward": 2.000000000000008,
+      "positionSize": 348,
+      "leverage": 5,
+      "notionalValue": 1740,
+      "marketContext": {
+        "atr": 0.004512500000000003,
+        "donchianHigh": null,
+        "donchianLow": null,
+        "motherBarHigh": 0.32414,
+        "motherBarLow": 0.322283
+      },
+      "exit": {
+        "price": 0.32803175,
+        "reason": "Position closed (exit price estimated)",
+        "time": "2026-03-02T04:02:40.114Z"
+      },
+      "pnl": {
+        "grossPnl": -36.66,
+        "fees": 0,
+        "netPnl": -36.66,
+        "pnlPercent": -2.11,
+        "usd": -36.66,
+        "percent": -2.11
+      },
+      "exchange": "Drift",
+      "marketIndex": 19,
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 43094964
+    },
+    {
       "id": "1772366651268-APT",
       "timestamp": "2026-03-01T12:04:11.268Z",
       "timestampMs": 1772366651268,
@@ -9,7 +117,7 @@
       "symbol": "APT",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.942504,
         "fillPrice": 0.943,
@@ -37,11 +145,23 @@
         "motherBarHigh": 0.966572,
         "motherBarLow": 0.957711
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.9612012857142858,
+        "reason": "Position closed (exit price estimated)",
+        "time": "2026-03-02T15:45:06.527Z"
+      },
+      "pnl": {
+        "grossPnl": -34.52,
+        "fees": 0,
+        "netPnl": -34.52,
+        "pnlPercent": -1.98,
+        "usd": -34.52,
+        "percent": -1.98
+      },
       "exchange": "Drift",
       "marketIndex": 3,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 99655259
     },
     {
       "id": "1772352319619-PEPE",
@@ -51,7 +171,7 @@
       "symbol": "PEPE",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 3.6371,
         "fillPrice": 3.6033,
@@ -79,11 +199,23 @@
         "motherBarHigh": 3.7554,
         "motherBarLow": 3.6648
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 3.7192678571428575,
+        "reason": "Position closed (exit price estimated)",
+        "time": "2026-03-01T20:02:41.077Z"
+      },
+      "pnl": {
+        "grossPnl": -39.31,
+        "fees": 0,
+        "netPnl": -39.31,
+        "pnlPercent": -2.26,
+        "usd": -39.31,
+        "percent": -2.26
+      },
       "exchange": "Drift",
       "marketIndex": 10,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 43041458
     },
     {
       "id": "1772352233686-WIF",
@@ -93,7 +225,7 @@
       "symbol": "WIF",
       "strategy": "IBB",
       "direction": "short",
-      "status": "OPEN",
+      "status": "CLOSED",
       "entry": {
         "price": 0.19861,
         "fillPrice": null,
@@ -121,11 +253,23 @@
         "motherBarHigh": 0.203463,
         "motherBarLow": 0.198538
       },
-      "exit": null,
-      "pnl": null,
+      "exit": {
+        "price": 0.18627507142857141,
+        "reason": "Take-profit hit",
+        "time": "2026-03-02T00:02:38.915Z"
+      },
+      "pnl": {
+        "grossPnl": 108.06,
+        "fees": 0,
+        "netPnl": 108.06,
+        "pnlPercent": 6.21,
+        "usd": 108.06,
+        "percent": 6.21
+      },
       "exchange": "Drift",
       "marketIndex": 23,
-      "botVersion": "MegaMax v1.0"
+      "botVersion": "MegaMax v1.0",
+      "holdingTimeMs": 57525229
     },
     {
       "id": "1772337850410-TIA",
@@ -1593,6 +1737,28 @@
       },
       "takeProfit": {
         "price": 0.340191
+      },
+      "leverage": 5,
+      "positionSize": 193
+    },
+    {
+      "id": "AVAX-1772377317855",
+      "timestamp": "2026-03-01T15:01:57.857Z",
+      "timestampMs": 1772377317857,
+      "symbol": "AVAX",
+      "strategy": "VWAP-RSI",
+      "direction": "long",
+      "status": "OPEN",
+      "entry": {
+        "price": 9.1365,
+        "time": "2026-03-01T15:01:57.857Z",
+        "reason": "RSI(3)=24.9 oversold, price above VWAP (9.0623) & EMA50 (9.1359)"
+      },
+      "stopLoss": {
+        "price": 9.105894857142857
+      },
+      "takeProfit": {
+        "price": 9.197710285714285
       },
       "leverage": 5,
       "positionSize": 193
