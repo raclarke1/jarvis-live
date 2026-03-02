@@ -55,19 +55,20 @@
         "avgHoldingTimeMs": 26894748
       },
       "VWAP-RSI": {
-        "totalTrades": 7,
-        "winningTrades": 7,
+        "totalTrades": 28,
+        "winningTrades": 0,
         "losingTrades": 0,
-        "winRate": 100,
-        "totalPnlUsd": 12691.87,
-        "avgWinUsd": 1813.12,
+        "winRate": 0,
+        "totalPnlUsd": -890.59,
+        "avgWinUsd": 0,
         "avgLossUsd": 0,
-        "profitFactor": 999,
-        "maxDrawdownUsd": 0,
-        "avgHoldingTimeMs": 124752861
+        "profitFactor": 0,
+        "maxDrawdownUsd": 890.59,
+        "avgHoldingTimeMs": 0,
+        "note": "Exit data corrupted - PnL derived from account equity delta"
       }
     },
-    "sharpeRatio": 10.54,
+    "sharpeRatio": 0,
     "fees": {
       "totalFees": 4.37,
       "totalDriftFees": 4.37,
@@ -76,12 +77,12 @@
       "krakenFeeRate": 0.06,
       "feeSavingsFromDrift": 15.75
     },
-    "maxDrawdown": 410.15,
+    "maxDrawdown": 1300.74,
     "maxDrawdownPercent": 3.08,
-    "realizedPnl": 12118.460000000001,
+    "realizedPnl": -1464.0,
     "unrealizedPnl": 0,
-    "accountPnl": -1467.4599999999991,
-    "accountPnlPercent": -11.033533834586459
+    "accountPnl": -1467.46,
+    "accountPnlPercent": -11.03
   },
   "equityHistory": [
     {
@@ -116,7 +117,7 @@
         "V5.0": -92.57,
         "MOMENTUM": -143.64,
         "IBB": -330.19,
-        "VWAP-RSI": 12691.87
+        "VWAP-RSI": 0
       }
     },
     {
@@ -129,7 +130,7 @@
         "V5.0": -92.57,
         "MOMENTUM": -143.64,
         "IBB": -337.2,
-        "VWAP-RSI": 12691.87
+        "VWAP-RSI": 0
       }
     }
   ],
@@ -223,97 +224,6 @@
       "pnlPercent": -1.75,
       "exitTime": "2026-03-01T04:02:39.741Z",
       "entryTime": "2026-03-01T00:03:48.886Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 4.115,
-      "exit": 0.1218,
-      "pnl": 935.97,
-      "pnlPercent": 97.04,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-26T03:01:55.284Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 3.7340999999999998,
-      "exit": 0.1218,
-      "pnl": 2185.82,
-      "pnlPercent": 96.74,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-27T13:01:43.166Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 3.7340999999999998,
-      "exit": 0.1218,
-      "pnl": 2185.82,
-      "pnlPercent": 96.74,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-27T13:02:01.824Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 3.6631,
-      "exit": 0.1218,
-      "pnl": 864.78,
-      "pnlPercent": 96.67,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-27T20:01:53.439Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 3.6647,
-      "exit": 0.1218,
-      "pnl": 2179.59,
-      "pnlPercent": 96.68,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-28T02:22:09.006Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 3.666,
-      "exit": 0.1218,
-      "pnl": 2174.78,
-      "pnlPercent": 96.68,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-28T02:26:56.146Z",
-      "status": "CLOSED"
-    },
-    {
-      "symbol": "PEPE",
-      "strategy": "VWAP-RSI",
-      "direction": "SHORT",
-      "exchange": "Drift",
-      "entry": 3.6659,
-      "exit": 0.1218,
-      "pnl": 2165.11,
-      "pnlPercent": 96.68,
-      "exitTime": "2026-03-01T01:34:42.000Z",
-      "entryTime": "2026-02-28T02:31:45.106Z",
       "status": "CLOSED"
     },
     {
