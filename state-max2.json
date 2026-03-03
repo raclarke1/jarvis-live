@@ -1,14 +1,14 @@
 {
-  "lastUpdate": "2026-03-03T15:19:32.591Z",
+  "lastUpdate": "2026-03-03T15:31:44.406Z",
   "version": "Max2 v1.0",
   "status": "LIVE",
   "account": {
-    "sub0Equity": 3517.56,
-    "sub1Equity": 8315.28,
-    "totalEquity": 11832.84,
+    "sub0Equity": 3517.77,
+    "sub1Equity": 8315.29,
+    "totalEquity": 11833.060000000001,
     "startingEquity": 11874,
-    "pnl": -41.159999999999854,
-    "pnlPercent": "-0.35",
+    "pnl": -40.93999999999869,
+    "pnlPercent": "-0.34",
     "leverage": {
       "sub0": 0,
       "sub1": 0
@@ -16,11 +16,84 @@
   },
   "openPositions": [],
   "orders": [],
-  "recentTrades": [],
+  "recentTrades": [
+    {
+      "reconcileId": "trade-0-SOL-1771811612000",
+      "strategy": "BB_SQUEEZE",
+      "asset": "SOL",
+      "direction": "LONG",
+      "subaccount": 0,
+      "entryPrice": 77.7558,
+      "exitPrice": 77.5878,
+      "baseSize": 3.21,
+      "notionalSize": 249.596118,
+      "grossPnl": -0.5392799999999748,
+      "fees": 0.174801,
+      "netPnl": -0.7140809999999748,
+      "returnPct": -0.286094593826966,
+      "entryTime": "2026-02-23T01:52:53.000Z",
+      "exitTime": "2026-02-23T01:53:32.000Z",
+      "holdTimeHrs": 0,
+      "source": "drift-reconcile",
+      "entryTxs": [
+        "63GWN4QYYGGFY6P2SEpZ5VgDKUatE1VjAJmSN4Y1h5v9fwbgGhCTXtYsEd9XNrN17iS7SXp4PHn8D6T4sZUKc2Qs"
+      ],
+      "exitTx": "58GWHrZWoobvU6LfKKPMWFCTSSFYrFnEfmgco6odxCd7HyGCouVjMN7LJtnWFUwK2NBNmZGYg8jX7cbyYkHqMod6"
+    },
+    {
+      "reconcileId": "trade-0-SOL-1771975800000",
+      "strategy": "BB_SQUEEZE",
+      "asset": "SOL",
+      "direction": "SHORT",
+      "subaccount": 0,
+      "entryPrice": 78.3752182764363,
+      "exitPrice": 79.3939,
+      "baseSize": 20.8,
+      "notionalSize": 1630.2045401498751,
+      "grossPnl": -21.188579850125006,
+      "fees": 1.148560540688143,
+      "netPnl": -22.337140390813147,
+      "returnPct": -1.3702047712834582,
+      "entryTime": "2026-02-23T01:53:32.000Z",
+      "exitTime": "2026-02-24T23:30:00.000Z",
+      "holdTimeHrs": 45.6,
+      "source": "drift-reconcile",
+      "entryTxs": [
+        "58GWHrZWoobvU6LfKKPMWFCTSSFYrFnEfmgco6odxCd7HyGCouVjMN7LJtnWFUwK2NBNmZGYg8jX7cbyYkHqMod6",
+        "3okQHgwsyb6kbkg6oQV7z63k826dbjzwV24DiNUqeyKGFH356cfyqpVzn3VtBWVXbuYqoT89t3nst7vFSczXEevG",
+        "2dnQSjSTHLrZQN8XqyMDau3jhbPR8smDzXhTD5i6JhqbJ2VoXiJ5fMF9Jk6EJobFdi7qEfBYYg5ic1yQWWnxC7KH",
+        "5VEgbLRFycmBD8xNnS17NF8nQNq6CmD4PQB3Z2YWjQEx8jqmqZbczpRe7p7n9m7yKFzesYBUrfbEfkDGsWMb6diB"
+      ],
+      "exitTx": "AwJ5D8bBfBw21kqbL3CY8wzcqKrn2KU2h5PkUsGHbimiPCVQ6o658U3AvigMVnk3uzDuJq575jNSA6jeqpUzNab"
+    },
+    {
+      "reconcileId": "trade-1-APT-1772366602000",
+      "strategy": "MOMENTUM",
+      "asset": "APT",
+      "direction": "LONG",
+      "subaccount": 1,
+      "entryPrice": 0.909,
+      "exitPrice": 0.9430000000000001,
+      "baseSize": 1844.1,
+      "notionalSize": 1676.2869,
+      "grossPnl": 62.699400000000054,
+      "fees": 1.1953466161291004,
+      "netPnl": 61.504053383870954,
+      "returnPct": 3.6690648470659144,
+      "entryTime": "2026-02-28T18:07:10.000Z",
+      "exitTime": "2026-03-01T12:03:22.000Z",
+      "holdTimeHrs": 17.9,
+      "source": "drift-reconcile",
+      "entryTxs": [
+        "3M8uosoJe2sd38tZo9CFfKdE65sLtt2ik7iKzDepHVnYECQvrHdpJHKrgU32J6BLgN9bZi9SB2oRpBsiCQbSyAJT"
+      ],
+      "exitTx": "2R15E1GHsA9vNkfaDri9jeZ3EmLj3Ac2vDz7HHNGqdXUBhhgg9HibWMPDcpvCZrJRDEWAEmtLTzZesaxJehoH38A"
+    }
+  ],
   "equityHistory": [
     {
       "date": "2026-03-03",
-      "equity": 11832.84,
+      "equity": 11833.060000000001,
       "dailyPnl": -39.29000000000087,
       "cumPnl": -39.29000000000087,
       "unrealizedPnl": 0,
