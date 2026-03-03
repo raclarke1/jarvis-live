@@ -1,13 +1,13 @@
 {
-  "lastUpdate": "2026-03-03T23:20:47.474Z",
+  "lastUpdate": "2026-03-03T23:30:48.404Z",
   "version": "Max2 v1.0",
   "status": "LIVE",
   "account": {
-    "sub0Equity": 3521.04,
+    "sub0Equity": 3520.92,
     "sub1Equity": 8315.4,
-    "totalEquity": 11836.439999999999,
+    "totalEquity": 11836.32,
     "startingEquity": 11874,
-    "pnl": -37.56000000000131,
+    "pnl": -37.68000000000029,
     "pnlPercent": "-0.32",
     "leverage": {
       "sub0": 0,
@@ -93,7 +93,7 @@
   "equityHistory": [
     {
       "date": "2026-03-03",
-      "equity": 11836.439999999999,
+      "equity": 11836.32,
       "dailyPnl": -39.29000000000087,
       "cumPnl": -39.29000000000087,
       "unrealizedPnl": 0,
