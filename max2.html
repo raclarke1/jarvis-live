@@ -127,7 +127,7 @@
         <div id="totalLeverage" class="card-value">--</div>
       </div>
       <div class="card">
-        <div class="card-title">Free Collateral</div>
+        <div class="card-title">Starting Capital</div>
         <div id="freeCollateral" class="card-value">--</div>
       </div>
     </div>
@@ -181,74 +181,165 @@
       <tbody></tbody>
     </table>
 
+    <h2 class="section-title">Equity History</h2>
+    <canvas id="equityChart" height="200" style="max-width:100%; background:#1a1a2e; border-radius:8px; padding:8px;"></canvas>
+
     <div class="footer">
+      <span id="lastUpdate" style="color:#71717a;"></span><br>
       <a href="https://app.drift.trade/overview?authority=3gPExFYHC8fqkwwrb6De8n9fwYdbJPBG3XYLstKNNkt7" target="_blank">View Drift Account</a>
+      &nbsp;|&nbsp;
+      <a href="trading.html">Legacy MegaMax</a>
     </div>
   </div>
 
   <script>
+    function drawEquityChart(history, startingEquity) {
+      const canvas = document.getElementById('equityChart');
+      if (!canvas || history.length === 0) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width = canvas.parentElement.offsetWidth - 16;
+      const h = canvas.height = 200;
+      ctx.clearRect(0, 0, w, h);
+
+      const equities = history.map(e => e.equity);
+      const min = Math.min(startingEquity, ...equities) * 0.995;
+      const max = Math.max(startingEquity, ...equities) * 1.005;
+      const range = max - min || 1;
+      const padding = { left: 60, right: 20, top: 20, bottom: 30 };
+      const chartW = w - padding.left - padding.right;
+      const chartH = h - padding.top - padding.bottom;
+
+      // Starting equity line
+      const startY = padding.top + chartH - ((startingEquity - min) / range) * chartH;
+      ctx.strokeStyle = '#555';
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(padding.left, startY);
+      ctx.lineTo(w - padding.right, startY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#71717a';
+      ctx.font = '10px sans-serif';
+      ctx.fillText('Start: $' + startingEquity.toLocaleString(), padding.left + 4, startY - 4);
+
+      // Equity line
+      const lastEquity = equities[equities.length - 1];
+      ctx.strokeStyle = lastEquity >= startingEquity ? '#00ff88' : '#ff4757';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      history.forEach((e, i) => {
+        const x = padding.left + (i / Math.max(history.length - 1, 1)) * chartW;
+        const y = padding.top + chartH - ((e.equity - min) / range) * chartH;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+
+      // Y-axis labels
+      ctx.fillStyle = '#71717a';
+      ctx.font = '10px sans-serif';
+      for (let i = 0; i <= 4; i++) {
+        const val = min + (range * i / 4);
+        const y = padding.top + chartH - (i / 4) * chartH;
+        ctx.fillText('$' + val.toFixed(0), 4, y + 3);
+      }
+
+      // X-axis labels
+      if (history.length > 1) {
+        ctx.fillText(history[0].date, padding.left, h - 4);
+        ctx.fillText(history[history.length - 1].date, w - padding.right - 60, h - 4);
+      }
+    }
+
     async function loadData() {
       try {
-        const response = await fetch('state-max2.json');
+        const response = await fetch('state-max2.json?' + Date.now());
         const data = await response.json();
 
         // Header
         document.getElementById('statusBadge').textContent = data.status;
-        document.getElementById('totalEquity').textContent = '$' + data.account.totalEquity.toLocaleString();
-        // Overall P&L - assuming it's accountPnl or calculate from starting
-        const overallPnl = data.account.totalEquity - data.account.startingEquity;
-        document.getElementById('overallPnl').textContent = (overallPnl >= 0 ? '+' : '') + '$' + overallPnl.toLocaleString();
-        document.getElementById('overallPnl').classList.add(overallPnl >= 0 ? 'profit' : 'loss');
+        document.getElementById('totalEquity').textContent = '$' + data.account.totalEquity.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+        const pnl = data.account.pnl || (data.account.totalEquity - data.account.startingEquity);
+        const pnlPct = data.account.pnlPercent || ((pnl / data.account.startingEquity) * 100).toFixed(2);
+        document.getElementById('overallPnl').textContent = (pnl >= 0 ? '+' : '') + '$' + Math.abs(pnl).toFixed(2) + ' (' + pnlPct + '%)';
+        document.getElementById('overallPnl').className = 'card-value ' + (pnl >= 0 ? 'profit' : 'loss');
 
         // Account Cards
-        document.getElementById('sub0Equity').textContent = '$' + data.account.sub0Equity.toLocaleString();
-        document.getElementById('sub1Equity').textContent = '$' + data.account.sub1Equity.toLocaleString();
-        document.getElementById('totalLeverage').textContent = ((data.account.leverage.sub0 + data.account.leverage.sub1) / 2).toFixed(2) + 'x';
-        // Free collateral not in state, omit or calculate if possible
-        document.getElementById('freeCollateral').textContent = '--'; // Add if available
+        document.getElementById('sub0Equity').textContent = '$' + data.account.sub0Equity.toLocaleString(undefined, {minimumFractionDigits: 2});
+        document.getElementById('sub1Equity').textContent = '$' + data.account.sub1Equity.toLocaleString(undefined, {minimumFractionDigits: 2});
+        document.getElementById('totalLeverage').textContent =
+          'Sub0: ' + (data.account.leverage.sub0 || 0).toFixed(2) + 'x | Sub1: ' + (data.account.leverage.sub1 || 0).toFixed(2) + 'x';
+        document.getElementById('freeCollateral').textContent = '$' + data.account.startingEquity.toLocaleString();
+
+        // Last update
+        document.getElementById('lastUpdate').textContent = 'Last updated: ' + new Date(data.lastUpdate).toLocaleString();
 
         // Open Positions Table
         const positionsBody = document.querySelector('#positionsTable tbody');
         positionsBody.innerHTML = '';
-        data.openPositions.forEach(pos => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${pos.asset}</td>
-            <td class="${pos.direction.toLowerCase()}">${pos.direction}</td>
-            <td>${pos.strategy}</td>
-            <td>${pos.entryPrice.toFixed(2)}</td>
-            <td>${pos.currentPrice.toFixed(2)}</td>
-            <td class="${pos.unrealizedPnl >= 0 ? 'profit' : 'loss'}">${pos.unrealizedPnl.toFixed(2)}</td>
-            <td>${pos.stopLoss ? pos.stopLoss.toFixed(2) : '--'}</td>
-            <td>${pos.takeProfit ? pos.takeProfit.toFixed(2) : '--'}</td>
-            <td>${pos.subaccount}</td>
-          `;
-          positionsBody.appendChild(row);
-        });
+        if (data.openPositions.length === 0) {
+          positionsBody.innerHTML = '<tr><td colspan="9" style="text-align:center;color:#71717a">No open positions</td></tr>';
+        } else {
+          data.openPositions.forEach(pos => {
+            const row = document.createElement('tr');
+            const formatPrice = (p) => p ? (p < 1 ? p.toFixed(6) : p.toFixed(2)) : '--';
+            row.innerHTML =
+              '<td>' + pos.asset + '</td>' +
+              '<td class="' + pos.direction.toLowerCase() + '">' + pos.direction + '</td>' +
+              '<td>' + pos.strategy + '</td>' +
+              '<td>' + formatPrice(pos.entryPrice) + '</td>' +
+              '<td>' + formatPrice(pos.currentPrice) + '</td>' +
+              '<td class="' + (pos.unrealizedPnl >= 0 ? 'profit' : 'loss') + '">$' + (pos.unrealizedPnl || 0).toFixed(2) + '</td>' +
+              '<td>' + formatPrice(pos.stopLoss) + '</td>' +
+              '<td>' + formatPrice(pos.takeProfit) + '</td>' +
+              '<td>Sub' + pos.subaccount + '</td>';
+            positionsBody.appendChild(row);
+          });
+        }
 
         // Orders Table
         const ordersBody = document.querySelector('#ordersTable tbody');
         ordersBody.innerHTML = '';
-        data.orders.forEach(order => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${order.asset}</td>
-            <td>${order.type}</td>
-            <td class="${order.direction.toLowerCase()}">${order.direction}</td>
-            <td>${order.triggerPrice.toFixed(2)}</td>
-            <td>${order.triggerCondition}</td>
-            <td>${order.size.toFixed(4)}</td>
-          `;
-          ordersBody.appendChild(row);
-        });
+        if (data.orders.length === 0) {
+          ordersBody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#71717a">No pending orders</td></tr>';
+        } else {
+          data.orders.forEach(order => {
+            const row = document.createElement('tr');
+            const formatPrice = (p) => p < 1 ? p.toFixed(6) : p.toFixed(2);
+            row.innerHTML =
+              '<td>' + order.asset + '</td>' +
+              '<td>' + order.type + '</td>' +
+              '<td class="' + order.direction.toLowerCase() + '">' + order.direction + '</td>' +
+              '<td>' + formatPrice(order.triggerPrice) + '</td>' +
+              '<td>' + order.triggerCondition + '</td>' +
+              '<td>' + order.size.toFixed(4) + '</td>';
+            ordersBody.appendChild(row);
+          });
+        }
 
-        // Trade History - assuming empty, but fetch if exists
+        // Trade History
         const historyBody = document.querySelector('#historyTable tbody');
-        historyBody.innerHTML = '<tr><td colspan="7" style="text-align:center">No trade history available</td></tr>';
-        // If fetching max2-trade-log.json:
-        // const logResponse = await fetch('max2-trade-log.json');
-        // const logData = await logResponse.json();
-        // logData.forEach(trade => { ... });
+        historyBody.innerHTML = '';
+        if (!data.recentTrades || data.recentTrades.length === 0) {
+          historyBody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#71717a">No trades yet — Max2 is scanning for signals</td></tr>';
+        } else {
+          data.recentTrades.slice().reverse().forEach(trade => {
+            const row = document.createElement('tr');
+            row.innerHTML =
+              '<td>' + new Date(trade.timestamp).toLocaleDateString() + '</td>' +
+              '<td>' + trade.asset + '</td>' +
+              '<td class="' + trade.direction.toLowerCase() + '">' + trade.direction + '</td>' +
+              '<td>' + trade.strategy + '</td>' +
+              '<td>$' + (trade.entryPrice || 0).toFixed(2) + '</td>' +
+              '<td>' + (trade.exitPrice ? '$' + trade.exitPrice.toFixed(2) : 'Open') + '</td>' +
+              '<td class="' + ((trade.pnl || 0) >= 0 ? 'profit' : 'loss') + '">' + (trade.pnl ? '$' + trade.pnl.toFixed(2) : '--') + '</td>';
+            historyBody.appendChild(row);
+          });
+        }
+
+        // Equity chart
+        drawEquityChart(data.equityHistory || [], data.account.startingEquity);
 
       } catch (error) {
         console.error('Error loading data:', error);

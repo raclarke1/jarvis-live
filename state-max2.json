@@ -1,89 +1,30 @@
 {
-  "lastUpdate": "2026-03-01T03:10:00.000Z",
+  "lastUpdate": "2026-03-03T05:55:58.503Z",
   "version": "Max2 v1.0",
-  "status": "TESTING",
+  "status": "LIVE",
   "account": {
-    "sub0Equity": 3510.64,
-    "sub1Equity": 8358.69,
-    "totalEquity": 11869.33,
+    "sub0Equity": 3519.56,
+    "sub1Equity": 8315.15,
+    "totalEquity": 11834.71,
     "startingEquity": 11874,
+    "pnl": -39.29000000000087,
+    "pnlPercent": "-0.33",
     "leverage": {
-      "sub0": 0.04,
-      "sub1": 0.12
+      "sub0": 0,
+      "sub1": 0
     }
   },
-  "openPositions": [
-    {
-      "asset": "SOL",
-      "direction": "SHORT",
-      "subaccount": 0,
-      "strategy": "BB_SQUEEZE",
-      "size": "$138.90",
-      "entryPrice": 87.96,
-      "currentPrice": 87.91,
-      "unrealizedPnl": 0.09,
-      "stopLoss": 91.00,
-      "takeProfit": 84.00
-    },
-    {
-      "asset": "DOGE",
-      "direction": "LONG",
-      "subaccount": 1,
-      "strategy": "MOMENTUM",
-      "size": "$39.89",
-      "entryPrice": 0.0972,
-      "currentPrice": 0.0968,
-      "unrealizedPnl": -0.16,
-      "stopLoss": 0.094,
-      "takeProfit": 0.101
-    },
-    {
-      "asset": "TIA",
-      "direction": "LONG",
-      "subaccount": 1,
-      "strategy": "UNKNOWN",
-      "size": "$965.40",
-      "entryPrice": 0.3369,
-      "currentPrice": 0.3363,
-      "unrealizedPnl": -1.72,
-      "stopLoss": null,
-      "takeProfit": null
-    }
-  ],
-  "orders": [
-    {
-      "asset": "SOL",
-      "type": "Stop-Loss",
-      "direction": "LONG",
-      "triggerPrice": 91.00,
-      "triggerCondition": "above",
-      "size": 1.58
-    },
-    {
-      "asset": "SOL",
-      "type": "Take-Profit",
-      "direction": "LONG",
-      "triggerPrice": 84.00,
-      "triggerCondition": "below",
-      "size": 1.58
-    },
-    {
-      "asset": "DOGE",
-      "type": "Stop-Loss",
-      "direction": "SHORT",
-      "triggerPrice": 0.094,
-      "triggerCondition": "below",
-      "size": 412.0
-    },
-    {
-      "asset": "DOGE",
-      "type": "Take-Profit",
-      "direction": "SHORT",
-      "triggerPrice": 0.101,
-      "triggerCondition": "above",
-      "size": 412.0
-    }
-  ],
+  "openPositions": [],
+  "orders": [],
   "recentTrades": [],
-  "equityHistory": []
+  "equityHistory": [
+    {
+      "date": "2026-03-03",
+      "equity": 11834.71,
+      "dailyPnl": -39.29000000000087,
+      "cumPnl": -39.29000000000087,
+      "unrealizedPnl": 0,
+      "positions": 0
+    }
+  ]
 }
